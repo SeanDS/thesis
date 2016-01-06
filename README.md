@@ -1,2 +1,3 @@
-# thesis
-Sean Leavey's thesis
+# Sean Leavey's Thesis
+
+Copyright Sean Leavey, 2015
