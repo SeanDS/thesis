@@ -70,3 +70,5 @@ superclean: clean
 	rm -f $(DYNAMICGRAPHICS)/*
 	# remove dependencies directory
 	rm -rf $(DEPENDENCIES)
+	# meta info
+	rm -rf $(META)
