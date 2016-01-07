@@ -1,0 +1,17 @@
+.directory
+.meta
+.deps
+*.out
+*.log
+*.bak
+*.aux
+*.bbl
+*.blg
+*.idx
+*.toc
+*.lof
+*.lot
+*.run.xml
+*blx.bib
+*.cb*
+*~
