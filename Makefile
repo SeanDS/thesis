@@ -29,6 +29,9 @@ ROOT:=$(shell pwd)
 
 all: $(PROJECT).pdf
 
+# force gitinfo to be generated on every run
+.PHONY: $(META)/gitinfo
+
 $(eval -include $(DEPENDENCIES)/$(PROJECT).pdfP)
 
 $(DEPENDENCIES):
