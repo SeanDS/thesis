@@ -1,11 +1,3 @@
-\documentclass[twoside,nogutter,hidelinks,draft]{glasgowthesis}
-%\documentclass[twoside,hidelinks]{glasgowthesis}
-% ^^ draft shows overfilled boxes.
-% ^^ replace "oneside" with "twoside" to set the gutter correctly for
-%    two-sided printing.
-% ^^ add "nogutter" option for digital copy (without binding offsets),
-%    if printed copy is twoside, use [twoside,nogutter] for digital copy.
-
 %%%
 % Packages
 
@@ -18,9 +10,7 @@
 \usepackage{color}
 \usepackage{changebar}
 \usepackage{soul}
-
-% appendices
-\usepackage{appendix}
+\usepackage{hyphenat} % for \hyp{} instead of "-".
 
 %%%
 % Bibliography
@@ -45,48 +35,7 @@
 }
 
 %%%
-% Fancy headers and footers
-
-% import package
-\usepackage{fancyhdr}
-
-% set page style
-\pagestyle{fancy}
-
-\renewcommand{\headrulewidth}{0.2pt}
-
-% page number (bold): left-even, right-odd
-\fancyhead[LE,RO]{\bfseries\thepage}
-
-% chapter in the right on even pages
-%\fancyhead[RE]{\bfseries\nouppercase{\leftmark}}
-
-% section in the left on odd pages
-\fancyhead[LO]{\bfseries\nouppercase{\rightmark}}
-
-% set footer content
-\fancyfoot[LE,RO]{\input{".meta/gitinfo"}}
-
-% adjust for fancyhdr warning
-\setlength{\headheight}{15pt}
-% \pagestyle{fancy}                    % clear all header and footer fields
-% \fancyhf{}
-% \fancyhead[L]{\slshape \rightmark}   % put section heading left
-% \fancyhead[R]{\thepage}              % put page number right
-
-% redefine "plain" to fix page numbering (on first page of chapters)
-\fancypagestyle{plain} { %
-   \fancyhf{}                          % clear all header and footer fields
-   \fancyhead[L]{\slshape \rightmark}  % no section heading for these pages
-   \fancyhead[R]{\bfseries\thepage}
-   \renewcommand{\headrulewidth}{0pt}  % no headrule for these pages
-   \renewcommand{\footrulewidth}{0pt}
-}
-
-%%%
 % Custom commands
-
-\hyphenation{Internet analysis analyse}
 
 \newcommand\TLSins[1]{
   \cbstart{}
@@ -105,21 +54,37 @@
   }
 }
 
-\newenvironment{codelisting}
-{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
-{\end{list}}
-
 % red, italic, bold note command
 \newcommand{\note}[1]{\textcolor{red}{\emph{\textbf{Note:}[#1]}}}
 
+\usepackage{xcolor}   % Farben, wichtig fuer Griffregister und fancy chapters 
+\usepackage{ifthen}   % Abfragen von boolschen Parametern (ob 
+\usepackage{chapterthumb}
+\usepackage{scrpage2}
+%\lohead[\putchapterthumb]{\putchapterthumb}
+\addtokomafont{chapterthumb}{\bfseries}
+%\definecolor{thumbcolor}{rgb}{0.3,0.3,.8}
+\definecolor{thumbcolor}{cmyk}{0.89,0.58,.08,0.}
+%\definecolor{thumbcolor}{rgb}{0.4,0.4,.8} %<- verwendet in Abgabe-Version.
+%\definecolor{thumbcolor}{gray}{0.5}
+\definecolor{thumbtextcolor}{rgb}{1,1,1}
+\newboolean{PrintThumbs}
+\setboolean{PrintThumbs}{true} % turn on chapter thumbs
+
+% commands to turn chapter thumbs on and off in the document
+\newcommand{\chapterthumbson}{\ifpdfoutput{\ihead[\putchapterthumb]{\putchapterthumb}}{}}
+\newcommand{\chapterthumbsoff}{\ifpdfoutput{\ihead[]{}}{}}
+
+% set page style (to use chapter thumbs)
+\pagestyle{scrheadings}
 
 %%%
 % Document
 
 \begin{document}
 
-\pagestyle{empty}
-\pagenumbering{gobble}
+%\pagestyle{empty}
+%\pagenumbering{gobble}
 
 \title{Awesome Thesis}
 \author{Sean Stephan Leavey}
@@ -174,9 +139,6 @@
 
 % -----------------------------------------------------------------------------
 \cleardoublepage
-% Reset page numbering
-\pagestyle{fancy}
-\pagenumbering{arabic}
-\setcounter{page}{1}
+
 % Number chapter boomarks
 \bookmarksetup{numbered}

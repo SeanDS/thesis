@@ -20,9 +20,9 @@
 \DeclareOption{nogutter}{
   \PassOptionsToPackage{bindingoffset=0cm, left=2.75cm, right=2.75cm, top=1.8cm, bottom=1.8cm, includehead, includefoot}{geometry}
 }
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
 \ProcessOptions
-\LoadClass[12pt,a4paper,openright]{book}
+\LoadClass[12pt,a4paper,openright]{scrbook}
 
 \usepackage{geometry}
 
@@ -88,30 +88,10 @@
 % gets 1.8cm and the body text still fits within guidelines.
 \textheight 24.3cm
 
-
 % Specify page titles for well-known sections.
 \renewcommand{\contentsname}{Table of Contents}
 
-% Specify fancy header settings.
-\usepackage{fancyhdr}
-\fancyhf{}          % clear default settings
-
-\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ #1}}{}}
-\fancyhead[RE,LO]{\slshape \leftmark}  % put chapter heading on left (odd
-                                       % pages)/right (even pages)
-\fancyhead[RO,LE]{\thepage}            % put page number right (odd
-                                       % pages)/right (even pages)
-\renewcommand{\headrulewidth}{0pt}     % no headrule
-
-% redefine "plain" to fix page numbering on first page of chapters
-\fancypagestyle{plain} {
-  \fancyhf{}                          % clear default settings
-  \fancyhead[R]{\thepage}             % put page number right
-  \renewcommand{\headrulewidth}{0pt}  % no headrule
-}
-
-
-% Title page layout.
+% Title page layout
 \renewcommand\maketitle{
   \begin{titlepage}%
     % This will apply only in here. It's the only way I know to affect
@@ -132,6 +112,10 @@
         \@author
       }
     }
+    \vskip 1em%
+    {
+      \textsc{MSci}
+    }
     \vskip 3em%
     {
       \textsc{
@@ -141,12 +125,15 @@
     }
     \vskip 3em%
     {
-      \textsc{\Large
+      \textsc{\large
         School of Physics and Astronomy
       }
 
       \textsc{\large
-        College of Science and Engineering \\
+        College of Science and Engineering
+      }
+      
+      \textsc{\Large
         University of Glasgow
       }
     }
@@ -176,9 +163,3 @@
   \global\let\date\relax
   \global\let\and\relax
 }
-
-
-
-% \newenvironment{codelisting}
-% {\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
-% {\end{list}}
