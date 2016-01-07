@@ -3,6 +3,9 @@
 # path to use - first argument
 metadir=$1
 
+# create directory if it doesn't exist
+mkdir -p $(dirname $1)
+
 # current git hash
 hash=`git rev-parse --short HEAD`
 
