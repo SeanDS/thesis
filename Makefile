@@ -38,16 +38,11 @@ $(DEPENDENCIES):
 	mkdir $@
 
 $(PROJECT).pdf: $(PROJECT).tex
+	# (re)generate gitinfo
+	$(SCRIPTS)/generate-git-info.sh $(META)/gitinfo
+
 	if [ ! -e $(DEPENDENCIES) ]; then mkdir $(DEPENDENCIES); fi
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
-
-$(PROJECT).tex: meta
-
-# ===== Meta files =====
-meta: $(META)/gitinfo
-
-$(META)/gitinfo: $(SCRIPTS)/generate-git-info.sh
-	$(SCRIPTS)/generate-git-info.sh $@
 
 # ===== PDF images =====
 
