@@ -1,0 +1,20 @@
+\chapter{Control of the Sagnac Speedmeter interferometer}
+\label{c:speedmeter-control}
+
+\note{Pillage paper}
+
+    * Definition of degrees of freedom, powers, sidebands, etc...
+    * Control loop design / noise budget
+      * Inclusion of other noises, like seismic, thermal, electronic, etc. Calculation of noise budget.
+      * Suspension hierarchical gain (handling ESD / coil ranges) (see labbook posts)
+        * Crossover at ~200 Hz, show calculation of how high a frequency we need to control the arms to keep the power in there (see labbook)
+      * Photodetector transimpedance
+        * Set transimpedance so that signals are ~1 V...?
+      * Mixing displacement and velocity signals
+      * CDS overall gain setting
+        * Set overall gain to not max the actuators on the suspensions, and provide ~1 V on the input to CDS
+      * Whitening/dewhitening design (see labbook posts)
+        * ADC input noise and effective number of bits (see labbook, Borja's email from 2015-08-28)
+        * Set input voltage to CDS to be ~1/10th range, i.e. 1 V.
+        * Make sure input noise from ADCs is 1/10th below the signal at all frequencies
+    * Dark noise measurements of op-amp over long timescales (explain additional low frequency noise)
