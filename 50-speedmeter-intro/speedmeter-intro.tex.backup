@@ -1,9 +1,0 @@
-\chapter{The Sagnac-Speedmeter Experiment}
-\label{c:speedmeter-intro}
-
-\section{Concept}
-
-\section{Implementation}
-
-\subsection{Wiring}
-\note{Avoidance of ground loops, interfacing with CDS, avoiding plugging the wrong things in (why we use D-sub-9 and D-sub-15), etc.}

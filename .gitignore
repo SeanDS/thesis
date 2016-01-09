@@ -30,4 +30,5 @@
 *~
 *.fdb_latexmk
 *.fls
+.tex.backup
 /*.pdf
