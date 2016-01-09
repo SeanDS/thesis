@@ -33,11 +33,8 @@
 \usepackage{graphicx}
 \fi
 
-% Fonts.
-% Times New Roman for the body.
-\usepackage{times}
-% The guidelines state Arial for the headings. Really. Helvetica is
-% close enough.
+% Fonts
+\usepackage{stix}
 \usepackage{sectsty}
 \usepackage{helvet}
 \allsectionsfont{\sffamily}
@@ -119,9 +116,12 @@
     \vskip 3em%
     {
       \textsc{
-        Submitted in fulfilment of the requirements for the degree of\\
-        \emph{Doctor of Philosophy}
+        Submitted in fulfilment of the requirements for the degree of
       }
+    }
+    \vskip 1em%
+    {
+      \emph{Doctor of Philosophy}
     }
     \vskip 3em%
     {

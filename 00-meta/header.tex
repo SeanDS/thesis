@@ -37,25 +37,8 @@
 %%%
 % Custom commands
 
-\newcommand\TLSins[1]{
-  \cbstart{}
-  {
-    \color{blue}
-    \ul{#1}
-  }
-  \cbend{}
-}
-
-\newcommand\TLSdel[1]{
-  \cbdelete{}
-  {
-    \color{red}
-    \st{#1}
-  }
-}
-
 % red, italic, bold note command
-\newcommand{\note}[1]{\textcolor{red}{\emph{\textbf{Note:}[#1]}}}
+\newcommand{\note}[1]{\textcolor{red}{\emph{[\textbf{Note: }#1]}}}
 
 \usepackage{xcolor}   % Farben, wichtig fuer Griffregister und fancy chapters 
 \usepackage{ifthen}   % Abfragen von boolschen Parametern (ob 
