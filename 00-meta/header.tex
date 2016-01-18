@@ -2,14 +2,11 @@
 % Packages
 
 \usepackage{graphicx}
-\usepackage{url}
 \usepackage[font=scriptsize]{subfig}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{bookmark}
 \usepackage{color}
-\usepackage{changebar}
-\usepackage{soul}
+\usepackage{bookmark}
 \usepackage{hyphenat} % for \hyp{} instead of "-".
 
 %%%
@@ -35,31 +32,24 @@
 }
 
 %%%
+% Hyperlinks
+%
+% (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
+
+% import package
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan
+}
+
+%%%
 % Custom commands
 
 % red, italic, bold note command
 \newcommand{\note}[1]{\textcolor{red}{\emph{[\textbf{Note: }#1]}}}
-
-\usepackage{xcolor}   % Farben, wichtig fuer Griffregister und fancy chapters 
-\usepackage{ifthen}   % Abfragen von boolschen Parametern (ob 
-\usepackage{chapterthumb}
-\usepackage{scrpage2}
-%\lohead[\putchapterthumb]{\putchapterthumb}
-\addtokomafont{chapterthumb}{\bfseries}
-%\definecolor{thumbcolor}{rgb}{0.3,0.3,.8}
-\definecolor{thumbcolor}{cmyk}{0.89,0.58,.08,0.}
-%\definecolor{thumbcolor}{rgb}{0.4,0.4,.8} %<- verwendet in Abgabe-Version.
-%\definecolor{thumbcolor}{gray}{0.5}
-\definecolor{thumbtextcolor}{rgb}{1,1,1}
-\newboolean{PrintThumbs}
-\setboolean{PrintThumbs}{true} % turn on chapter thumbs
-
-% commands to turn chapter thumbs on and off in the document
-\newcommand{\chapterthumbson}{\ifpdfoutput{\ihead[\putchapterthumb]{\putchapterthumb}}{}}
-\newcommand{\chapterthumbsoff}{\ifpdfoutput{\ihead[]{}}{}}
-
-% set page style (to use chapter thumbs)
-\pagestyle{scrheadings}
 
 %%%
 % Document

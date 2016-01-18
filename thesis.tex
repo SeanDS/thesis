@@ -1,10 +1,11 @@
-\documentclass[twoside,nogutter,hidelinks,draft]{glasgowthesis}
+\documentclass[twoside,nogutter]{glasgowthesis}
 %\documentclass[twoside,hidelinks]{glasgowthesis}
-% ^^ draft shows overfilled boxes.
+% ^^ draft shows overfilled boxes (but disables links)
 % ^^ replace "oneside" with "twoside" to set the gutter correctly for
 %    two-sided printing.
 % ^^ add "nogutter" option for digital copy (without binding offsets),
 %    if printed copy is twoside, use [twoside,nogutter] for digital copy.
+% ^^ add "hidelinks" option to remove coloured links (e.g. for printing)
 
 % title, contents, etc.
 \frontmatter
@@ -12,7 +13,6 @@
 
 % main chapters
 \mainmatter
-\chapterthumbson
 \input{"10-introduction/introduction.tex"}
 \input{"20-detection/detection.tex"}
 \input{"30-waveguides/waveguides.tex"}
@@ -24,10 +24,8 @@
 
 % appendices
 \appendix
-\chapterthumbson
 \input{"AA-reflection-phase/appendix.tex"}
 
 % end
 \backmatter
-\chapterthumbsoff
 \input{"00-meta/footer.tex"}

@@ -20,9 +20,9 @@
 \DeclareOption{nogutter}{
   \PassOptionsToPackage{bindingoffset=0cm, left=2.75cm, right=2.75cm, top=1.8cm, bottom=1.8cm, includehead, includefoot}{geometry}
 }
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions
-\LoadClass[12pt,a4paper,openright]{scrbook}
+\LoadClass[12pt,a4paper,openright]{book}
 
 \usepackage{geometry}
 

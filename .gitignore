@@ -25,6 +25,7 @@
 *.lof
 *.lot
 *.run.xml
+*.tex.backup
 *blx.bib
 *.cb*
 *~
