@@ -1,6 +1,7 @@
 \chapter{Demonstration of a Plate Capacitor Electrostatic Drive Actuator}
 \label{c:esd-concept}
 
+* Introduce Holger's paper~\cite{Wittel2015} \etal, discuss need for high voltages
 * HV power supply design considerations (bleed resistor, voltage requirements, etc.)
 * HV power supply current limiting circuit explanation (called ``foldback limiting'', see Horowitz and Hill p694)
 * HV power supply heatsink considerations: power produced by MOSFETs at maximum current rating (100 mA, produces 25 W of heat - see datasheets) - chose heatsinks to dissipate this heat and make installation of the board easy (can screw TO-220 casing to L-shaped brackets)
@@ -8,3 +9,20 @@
 * Protective earthing
 * HV amplifier transfer function, usign both HV output (via voltage divider) and monitor output
 * HV amplifier monitor noise measurement
+* This experiment will inform the main SSM experiment.
+
+\section{High voltage power supply}
+There are a number of requirements for the plate capacitor's power supply. Due to the nature of the load--a capacitor formed from the parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates will actuate directly upon the test masses, and so any noise present upon the power supply can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted in the development of this experiment by group colleagues with the finite element modelling package \emph{ANSYS} have concluded that the 
+% ESD volts -> force from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
+
+This suggests that a potential difference of \SI{750}{\volt} across the plate capacitor will be sufficient to achieve measureable actuation.
+
+As this experiment is somewhat a technology demonstration for the main \note{Sagnac Speedmeter} experiment, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\columnwidth]{70-esd-concept/graphics/dynamic/esd-ansys.pdf}
+    \label{fig:esd-ansys}
+  \end{center}
+  \caption{blah}
+\end{figure}

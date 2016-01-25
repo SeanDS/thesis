@@ -5,16 +5,10 @@
 # Sean Leavey
 # January 2016
 
+# project
 PROJECT=thesis
-GRAPHICS=graphics
-DYNAMICGRAPHICS=$(GRAPHICS)/dynamic
-GRAPHICSSOURCES=$(GRAPHICS)/sources
-GRAPHICSSCRIPTS=$(GRAPHICS)/scripts
-META=.meta
-DATA=data
-SCRIPTS=scripts
-# generated dependencies from latexmk
-DEPENDENCIES=.deps
+
+# terminal commands
 PDFLATEX=pdflatex
 BIBTEX=bibtex
 LATEXMK=latexmk -f -use-make -halt-on-error -recorder -deps \
@@ -24,6 +18,29 @@ LATEXMK=latexmk -f -use-make -halt-on-error -recorder -deps \
 
 # makefile directory
 ROOT:=$(shell pwd)
+
+# meta directory
+META=.meta
+
+# generated dependencies from latexmk
+DEPENDENCIES=.deps
+
+# graphics
+GRAPHICS=graphics
+DYNAMICGRAPHICS=$(GRAPHICS)/dynamic
+GRAPHICSSOURCES=$(GRAPHICS)/sources
+GRAPHICSSCRIPTS=$(GRAPHICS)/scripts
+
+# data
+DATA=data
+DATARAW=$(DATA)/raw
+DATASCRIPTS=$(DATA)/scripts
+
+# scripts (non-plotting)
+SCRIPTS=scripts
+
+# chapters
+CHAPTERESD=70-esd-concept
 
 # ===== Project files =====
 
@@ -45,10 +62,16 @@ $(PROJECT).pdf: $(PROJECT).tex
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
 
 # ===== PDF images =====
+$(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py $(CHAPTERESD)/$(DATA)/esd-ansys-data.csv
+	# remove first prerequisite in passing them to python
+	@python $< $@ $(filter-out $<,$^)
 
 # ===== Plot scripts =====
 
 # ===== Data files =====
+$(CHAPTERESD)/$(DATA)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/convert_esd_mat.py $(CHAPTERESD)/$(DATARAW)/itm.mat $(CHAPTERESD)/$(DATARAW)/etm.mat
+	# remove first prerequisite in passing them to python
+	@python $< $@ $(filter-out $<,$^)
 
 # ===== SVG images =====
 
