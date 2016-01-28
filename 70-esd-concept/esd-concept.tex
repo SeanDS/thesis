@@ -12,17 +12,25 @@
 * This experiment will inform the main SSM experiment.
 
 \section{High voltage power supply}
-There are a number of requirements for the plate capacitor's power supply. Due to the nature of the load--a capacitor formed from the parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates will actuate directly upon the test masses, and so any noise present upon the power supply can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted in the development of this experiment by group colleagues with the finite element modelling package \emph{ANSYS} have concluded that the 
+
+% ESD force gradient, from esd-ansys.pdf figure
+\newcommand{\ESDFORCEGRAD}{\SI{-3.68}{\nano\newton\per\volt}}
+
+% ESD maximum voltage
+\newcommand{\ESDMAXVOLTAGE}{\SI{750}{\volt}}
+
+% ESD maximum force, read from esd-ansys.pdf figure (gradient * voltage doesn't work because there's a non-zero y-intercept)
+\newcommand{\ESDMAXFORCE}{\SI{-1.48e-6}{\micro\newton}}
+
+There are a number of requirements for the plate capacitor's power supply. Due to the nature of the load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted in the development of this experiment by group colleagues with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT's ETMs, the force gradient will be \ESDFORCEGRAD, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE, leading to a maximum mirror actuation force of \ESDMAXFORCE.
 % ESD volts -> force from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
 
-This suggests that a potential difference of \SI{750}{\volt} across the plate capacitor will be sufficient to achieve measureable actuation.
-
-As this experiment is somewhat a technology demonstration for the main \note{Sagnac Speedmeter} experiment, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment.
+As this experiment is somewhat a technology demonstration for the main \SSMEXPT, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=\columnwidth]{70-esd-concept/graphics/dynamic/esd-ansys.pdf}
+    \caption{Simulations of the actuation force produced by the proposed ESD design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
     \label{fig:esd-ansys}
   \end{center}
-  \caption{blah}
 \end{figure}
