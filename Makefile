@@ -33,6 +33,7 @@ GRAPHICSSCRIPTS=$(GRAPHICS)/scripts
 
 # data
 DATA=data
+DATAGENERATED=$(DATA)/generated
 DATARAW=$(DATA)/raw
 DATASCRIPTS=$(DATA)/scripts
 
@@ -59,6 +60,13 @@ $(PROJECT).pdf: $(PROJECT).tex
 	$(SCRIPTS)/generate-git-info.sh $(META)/gitinfo
 
 	if [ ! -e $(DEPENDENCIES) ]; then mkdir $(DEPENDENCIES); fi
+	
+	# create directories for generated plots etc.
+	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
+	
+	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir $(CHAPTERESD)/$(DATAGENERATED); fi
+	
+	# call Latexmk
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
 
 # ===== PDF images =====
@@ -69,7 +77,7 @@ $(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)
 # ===== Plot scripts =====
 
 # ===== Data files =====
-$(CHAPTERESD)/$(DATA)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/convert_esd_mat.py $(CHAPTERESD)/$(DATARAW)/itm.mat $(CHAPTERESD)/$(DATARAW)/etm.mat
+$(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/convert_esd_mat.py $(CHAPTERESD)/$(DATARAW)/itm.mat $(CHAPTERESD)/$(DATARAW)/etm.mat
 	# remove first prerequisite in passing them to python
 	@python $< $@ $(filter-out $<,$^)
 
