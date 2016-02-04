@@ -15,6 +15,9 @@ FIG_SIZE_A_HW = (FIG_SIZE_A[0] / 2, FIG_SIZE_A[1])
 # default line transparency
 ALPHA_LINE_A = 0.8
 
+# default line width
+LW_A = 2
+
 # default marker size
 MS_A = 15
 
