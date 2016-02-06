@@ -31,7 +31,7 @@ c1 = colours.next() # carrier
 c2 = colours.next() # sidebands
 
 # arrow arguments
-args = {'width': lf.ARROW_WIDTH, 'head_width': lf.ARROW_HEAD_WIDTH, 'head_length': lf.ARROW_HEAD_LENGTH, 'overhang': lf.ARROW_OVERHANG}
+args = {'width': lf.ARROW_WIDTH, 'head_width': lf.ARROW_HEAD_WIDTH, 'head_length': lf.ARROW_HEAD_LENGTH, 'overhang': lf.ARROW_OVERHANG, 'length_includes_head': True}
 
 # plot
 ax.arrow(-1, 0, 0, 3, color=c2, **args)
