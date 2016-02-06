@@ -41,6 +41,7 @@ DATASCRIPTS=$(DATA)/scripts
 SCRIPTS=scripts
 
 # chapters
+CHAPTERWGM=30-waveguides
 CHAPTERESD=70-esd-concept
 
 # ===== Project files =====
@@ -62,15 +63,25 @@ $(PROJECT).pdf: $(PROJECT).tex
 	if [ ! -e $(DEPENDENCIES) ]; then mkdir $(DEPENDENCIES); fi
 	
 	# create directories for generated plots etc.
+	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
 	
+	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir $(CHAPTERWGM)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir $(CHAPTERESD)/$(DATAGENERATED); fi
 	
 	# call Latexmk
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
 
 # ===== PDF images =====
-$(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py $(CHAPTERESD)/$(DATA)/esd-ansys-data.csv
+$(CHAPTERWGM)/$(DYNAMICGRAPHICS)/coating-vs-grating-noise.pdf: $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py $(CHAPTERWGM)/$(DATA)/coating_vs_grating_noise.csv
+	# remove first prerequisite in passing them to python
+	@python $< $@ $(filter-out $<,$^)
+
+$(CHAPTERWGM)/$(DYNAMICGRAPHICS)/individual-factors.pdf: $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_individual_factors.py $(CHAPTERWGM)/$(DATA)/individual_factors.csv
+	# remove first prerequisite in passing them to python
+	@python $< $@ $(filter-out $<,$^)
+
+$(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv
 	# remove first prerequisite in passing them to python
 	@python $< $@ $(filter-out $<,$^)
 

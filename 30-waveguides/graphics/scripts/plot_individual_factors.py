@@ -1,7 +1,6 @@
 import sys
 import numpy as np
 import scipy.stats as stats
-import matplotlib
 import matplotlib.pyplot as plt
 import lookfeel as lf
 
@@ -12,7 +11,7 @@ save_path = sys.argv[1]
 data_path = sys.argv[2]
 
 # load curve CSV data
-curves = np.genfromtxt(data_path, delimiter=',', skip_header=0)
+curves = np.genfromtxt(data_path, delimiter=',', skip_header=1)
 
 # rotation angle used to generate this data (see plot_individual_factors.m)
 rotation = 1e-7
