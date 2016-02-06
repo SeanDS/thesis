@@ -15,6 +15,12 @@ FIG_SIZE_A_HW = (FIG_SIZE_A[0] / 2, FIG_SIZE_A[1])
 # default line transparency
 ALPHA_LINE_A = 0.8
 
+# arrow widths
+ARROW_WIDTH = 0.02
+ARROW_HEAD_WIDTH = 0.1
+ARROW_HEAD_LENGTH = 0.5
+ARROW_OVERHANG = 0.3
+
 ###
 # Matplotlib settings
 

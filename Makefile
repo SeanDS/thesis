@@ -40,7 +40,11 @@ DATASCRIPTS=$(DATA)/scripts
 # scripts (non-plotting)
 SCRIPTS=scripts
 
+# look and feel script
+LOOKFEELSCRIPT=$(SCRIPTS)/lookfeel.py
+
 # chapters
+CHAPTERDETECTION=20-detection
 CHAPTERWGM=30-waveguides
 CHAPTERESD=70-esd-concept
 
@@ -63,9 +67,11 @@ $(PROJECT).pdf: $(PROJECT).tex
 	if [ ! -e $(DEPENDENCIES) ]; then mkdir $(DEPENDENCIES); fi
 	
 	# create directories for generated plots etc.
+	if [ ! -e $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
 	
+	if [ ! -e $(CHAPTERDETECTION)/$(DATAGENERATED) ]; then mkdir $(CHAPTERDETECTION)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir $(CHAPTERWGM)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir $(CHAPTERESD)/$(DATAGENERATED); fi
 	
@@ -73,6 +79,9 @@ $(PROJECT).pdf: $(PROJECT).tex
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
 
 # ===== PDF images =====
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/sideband-structure.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py
+	@python $< $@
+
 $(CHAPTERWGM)/$(DYNAMICGRAPHICS)/coating-vs-grating-noise.pdf: $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py $(CHAPTERWGM)/$(DATA)/coating_vs_grating_noise.csv
 	# remove first prerequisite in passing them to python
 	@python $< $@ $(filter-out $<,$^)
@@ -86,6 +95,10 @@ $(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)
 	@python $< $@ $(filter-out $<,$^)
 
 # ===== Plot scripts =====
+$(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py: $(LOOKFEELSCRIPT)
+$(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py: $(LOOKFEELSCRIPT)
+$(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_individual_factors.py: $(LOOKFEELSCRIPT)
+$(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py: $(LOOKFEELSCRIPT)
 
 # ===== Data files =====
 $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/convert_esd_mat.py $(CHAPTERESD)/$(DATARAW)/itm.mat $(CHAPTERESD)/$(DATARAW)/etm.mat
