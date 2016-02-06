@@ -13,10 +13,14 @@ ax = plt.gca()
 
 # turn off y-axis graphics
 ax.tick_params(
-    axis='y',
+    axis='both',
     which='both',
     left='off',
-    labelleft='off')
+    labelleft='off',
+    right='off',
+    labelright='off',
+    top='off',
+    labeltop='off')
 
 # turn off all spines except lower x
 ax.spines['left'].set_visible(False)

@@ -106,6 +106,14 @@ $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/
 	@python $< $@ $(filter-out $<,$^)
 
 # ===== SVG images =====
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/michelson.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
+
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/fabry-perot-michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/fabry-perot-michelson.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
+
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/dual-recycled-fabry-perot-michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/dual-recycled-fabry-perot-michelson.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
 # ===== Misc =====
 
