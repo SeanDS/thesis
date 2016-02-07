@@ -31,7 +31,36 @@ blah blah blah
   * Initial LIGO, GEO-600, TAMA, Virgo, etc.
   * Enhanced LIGO (and Enhanced Virgo?)
 
-\section{Detection Apparatus}
+\subsection{Sources}
+Gravitational waves from any Earth-bound object, including the Earth itself, are not even remotely detectable. The strain in spacetime produced by such objects is so weak that there is no hope for us to make such a detection with any known technology. A good estimate for the strain produced by a pair of rotating objects is given in \cite{Sathyaprakash2009} as:
+\begin{equation}
+  \label{eq:happrox}
+  h \lesssim \frac{2 \left( M v^{2} \right)_{\text{nonspherical}}}{r},
+\end{equation}
+where $\left( M v^{2} \right)_{\text{nonspherical}}$ is the kinetic energy associated with the non-spherical parts of the source and $r$ is the distance to the source. To get an idea of what the spacetime strain would be for man-made objects, we can consider the case of two cars of mass $M = \SI{e3}{\kilo\gram}$ attached to opposite ends of a rod of length $d = \SI{10}{\meter}$, spinning about its centre in a centrifuge at a frequency of $f = \SI{10}{\hertz}$. The tangential velocity of the cars will be around $2 \pi f d \approx \SI{600}{\meter\per\second}$. Using Equation\,\ref{eq:happrox} the strain turns out to be around... \note{contact Sathya for clarification}.
+
+It is only those produced by the most massive objects in the universe which we have any chance of detecting: black holes, neutron stars and supernovae, amongst others. Even then, gravitational radiation is only produced by \checkme{the presence of a quadropolar moment} within the source, which means that in general only a subset of sources that happen to be in coalescence or contain surface asymmetries will produce waves.
+
+\subsubsection{Compact Binary Coalescence}
+As detected by LIGO in 2016...
+
+\note{Show a picture of the waveform, with annotations.}
+
+\subsubsection{Core Collapse}
+\note{Look up numbers from that rates paper.}
+
+\subsubsection{Continuous Wave}
+\note{Pulsars}
+
+\subsubsection{Stochastic Background}
+CMB...
+
+\note{Make a table of the rules of thumb for strains produced by each source, a la Sathya's article.}
+
+\subsection{Source Localisation}
+\note{See Section 2.3 of Sathya's Living Review. Don't go into detail about the type of detector, just the position on Earth.}
+
+\section{Detection}
 The field of experimental gravitational wave detection began with Joseph Weber's studies in the 1960s \cite{Weber1960}. His \emph{Weber bar} was developed to act as a strain meter, with piezoelectric sensors placed on the surface of an aluminium cylinder to convert changes in length into electrical signals. Whilst the expected change in length of such a cylinder from gravitational radiation would in most cases be tiny---\checkme{of the order \SI{1e-22}{\meter} for a particularly loud source}---the resonant frequency of the cylinder, typically in the kilohertz range, acts to enhance the amplitude of the length change. The sensitivity of such a bar as a function of frequency is determined in part by its quality factor (Q), with a necessary trade-off being made between peak sensitivity (high Q) and detection bandwidth (low Q). As sources of gravitational radiation are almost universally weak, the only reasonable hope of making such a detection is to choose a high Q material and hope for a favourable signal frequency.
 
 The original resonant bar detectors were evolved over time to become cryogenic, to decrease the effect of thermal noise; and spherical, to maximise the test mass's Q. Despite such improvements the peak sensitivity of state-of-the-art resonant bar detectors was surpassed by interferometric gravitational wave detectors in 2003 \cite{Pitkin2011} after it was shown that second generation detectors would offer superior sensitivity across a much wider bandwidth\footnote{Interestingly, a Weber bar had a particularly high profile opportunity to make the first detection. One was contained in the scientific payload of Apollo 17 with the intention to observe gravitational radiation from the low seismic noise environment of the Moon. Unfortunately a manufacturing error led to a failure in the experiment.} \cite{Harry2002a}. The interferometer was first suggested as a means for gravitational wave detection shortly after the introduction of the Weber bar\footnote{The first known example being by Gertsenshtein and Pustovoit in the Soviet \emph{Journal of Experimental and Theoretical Physics} in 1962.}, but efforts to build prototypes and understand the significant sources of noise only gained momentum in the 1970s (see for example Moss \etal \cite{Moss1971} from 1971 or Weiss \cite{Weiss1972} from 1972).
@@ -60,9 +89,12 @@ Over the course of the 1980s the \MI (see Figure\,\ref{fig:mi}) was developed in
       \caption{\DRFPMI}
       \label{fig:drfpmi}
     \end{subfigure}
-    \caption{The evolution of the gravitational wave detector. Figure\,\ref{fig:mi} shows the simple \MI used since the famous Michelson and Morley experiments of the 1880s, and proposed for gravitational wave detection in early literature. Figure\,\ref{fig:fpmi} shows a \MI with the addition of \FP arm cavities to enhance sensitivity. Figure\,\ref{fig:drfpmi} shows a \FPMI with the addition of recycling mirrors.}
+    \caption[The evolution of the gravitational wave detector]{The evolution of the gravitational wave detector. Figure\,\ref{fig:mi} shows the simple \MI used since the famous Michelson and Morley experiments of the 1880s, and proposed for gravitational wave detection in early literature. Figure\,\ref{fig:fpmi} shows a \MI with the addition of \FP arm cavities to enhance sensitivity. Figure\,\ref{fig:drfpmi} shows a \FPMI with the addition of recycling mirrors.}
   \end{center}
 \end{figure}
+
+\subsection{Pulsar Timing}
+\note{Short note on pulsar timing arrays.}
 
 \section{Limiting noise sources in future detectors}
 Quantum noise, thermal noise (since if you push QN low enough, you run into thermal), possibly mention others (Newtonian noise - why ET will be under ground, etc.)
