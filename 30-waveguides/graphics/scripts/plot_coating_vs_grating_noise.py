@@ -23,11 +23,10 @@ with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
     ax.semilogx(noise_data[:, 0], noise_data[:, 2], '-o', color=colours.next())
     ax.semilogx(noise_data[:, 0], noise_data[:, 3], '--', color=colours.next())
 
-#ax.set_xlim([-0.05, 0.05])
 ax.set_ylim([0, 15e-22])
 ax.grid(True)
-ax.set_ylabel('Cavity length change\n[m / rad]')
-legend1 = ax.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3', 'WGM 1', 'WGM 2', 'WGM 3'])
+ax.set_ylabel('Displacement noise [m / sqrt(Hz)]')
+legend1 = ax.legend(['Dielectric coating stack', 'Grating'])
 
 fig.tight_layout()
 
