@@ -64,16 +64,16 @@ $(PROJECT).pdf: $(PROJECT).tex
 	# (re)generate gitinfo
 	$(SCRIPTS)/generate-git-info.sh $(META)/gitinfo
 
-	if [ ! -e $(DEPENDENCIES) ]; then mkdir $(DEPENDENCIES); fi
+	if [ ! -e $(DEPENDENCIES) ]; then mkdir -p $(DEPENDENCIES); fi
 	
 	# create directories for generated plots etc.
-	if [ ! -e $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS); fi
-	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
-	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
 	
-	if [ ! -e $(CHAPTERDETECTION)/$(DATAGENERATED) ]; then mkdir $(CHAPTERDETECTION)/$(DATAGENERATED); fi
-	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir $(CHAPTERWGM)/$(DATAGENERATED); fi
-	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir $(CHAPTERESD)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERDETECTION)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERDETECTION)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERWGM)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERESD)/$(DATAGENERATED); fi
 	
 	# call Latexmk
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
