@@ -14,7 +14,7 @@
    height="210mm"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="fabry-perot-pdh-field-tf.svg">
+   sodipodi:docname="fabry-perot-field-tf.svg">
   <metadata
      id="metadata16">
     <rdf:RDF>
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -169,7 +169,7 @@
      showgrid="false"
      inkscape:zoom="2"
      inkscape:cx="514.97783"
-     inkscape:cy="342.89996"
+     inkscape:cy="322.89996"
      inkscape:window-x="501"
      inkscape:window-y="166"
      inkscape:window-maximized="0"
@@ -178,7 +178,10 @@
   <g
      id="b-cav-mir-3"
      transform="translate(673.08965,358.13034)"
-     style="opacity:0.7">
+     style="opacity:0.7"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <linearGradient
        gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
        y2="14.6831"
@@ -211,7 +214,10 @@
   <g
      id="g3"
      transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,458.77977,387.98531)"
-     style="opacity:0.7">
+     style="opacity:0.7"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <linearGradient
        id="b-bsp-grad"
        gradientUnits="userSpaceOnUse"
@@ -241,10 +247,16 @@
      style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 361.695,371.04249 100,0"
      id="path4177"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <g
      id="c-laser1"
-     transform="translate(299.625,347.99049)">
+     transform="translate(299.625,347.99049)"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <rect
        id="rect4166"
        height="12.756"
@@ -333,9 +345,15 @@
      style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 533.7589,372.67831 139.3307,0"
      id="path4177-47"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <g
-     id="g14960">
+     id="g14960"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <path
        inkscape:connector-curvature="0"
        id="path4177-4-4"
@@ -349,7 +367,10 @@
   </g>
   <g
      id="g4314"
-     transform="translate(51.5383,-8.54551)">
+     transform="translate(51.5383,-8.54551)"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <g
        transform="matrix(0,1,-1,0,423.4971,490.9807)"
        id="e-pd1">
@@ -385,7 +406,10 @@
     </g>
   </g>
   <g
-     id="g14988">
+     id="g14988"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <path
        inkscape:connector-curvature="0"
        id="path4177-4"
@@ -400,7 +424,10 @@
   <g
      id="b-cav-mir-3-3"
      style="opacity:0.7"
-     transform="matrix(-1,0,0,-1,533.761,387.22634)">
+     transform="matrix(-1,0,0,-1,533.761,387.22634)"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411">
     <linearGradient
        gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
        y2="14.6831"
@@ -434,40 +461,61 @@
      style="fill:none;stroke:#ff6600;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1,2;stroke-dashoffset:0"
      d="m 465.01944,380.87129 -1.78166,-11.86895"
      id="path4177-4-4-6"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <path
      style="fill:none;stroke:#ff6600;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 2.00000001;stroke-dashoffset:0"
      d="m 465.01053,380.47387 0,51.48514"
      id="path4177-5-2"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <path
      style="fill:none;stroke:#ff6600;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 1;stroke-dashoffset:0"
      d="m 471.52763,370.61275 -8.79858,-1.29106"
      id="path4177-4-7"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <path
      style="fill:none;stroke:#ff6600;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1,1;stroke-dashoffset:0"
      d="m 471.40391,370.59557 62.38875,0"
      id="path4177-47-8-6"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <path
      style="fill:#008000;stroke:#ff6600;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.5,1.5;stroke-dashoffset:0"
      d="m 533.7589,370.59557 139.3307,0"
      id="path4177-47-4"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
      d="m 479.96094,406.80733 c -15.46875,0 -14.96875,-14.96875 -14.96875,-14.96875"
      id="path15064"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
      x="484"
      y="412.2106"
      id="text15694"
-     sodipodi:linespacing="125%"><tspan
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411"><tspan
        sodipodi:role="line"
        id="tspan15696"
        x="484"
@@ -478,14 +526,20 @@
      d="m 465.00928,431.92831 c 0,15.46875 14.96875,14.96875 14.96875,14.96875"
      id="path15064-0"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411" />
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
      x="484.70312"
      y="451.72189"
      id="text15694-5"
-     sodipodi:linespacing="125%"><tspan
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/sean/fabry-perot-field-tf.png"
+     inkscape:export-xdpi="299.96411"
+     inkscape:export-ydpi="299.96411"><tspan
        sodipodi:role="line"
        id="tspan15696-1"
        x="484.70312"
