@@ -31,6 +31,15 @@
 }
 
 %%%
+% List of symbols, definitions, etc.
+
+% import package
+\usepackage[acronym,nomain]{glossaries}
+
+% make the list
+\makeglossaries
+
+%%%
 % Hyperlinks
 %
 % (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
@@ -112,7 +121,7 @@
 %\pagestyle{empty}
 %\pagenumbering{gobble}
 
-\title{Pushing the Sensitivity of Future Interferometric Gravitational Wave Detectors}
+\title{Enhancing the Sensitivity of Future Interferometric Gravitational Wave Detectors}
 \author{Sean Stephan Leavey}
 \date{Month Year}
 
@@ -136,35 +145,30 @@
 %\setcounter{page}{1}
 
 % -----------------------------------------------------------------------------
-%\newpage
+\newpage
 
-%\vspace*{1.75in}
-%\begin{center} {\bf Education Use Consent}\end{center}
-%\noindent I hereby give my permission for this project to be shown to other
-%University of Glasgow students and to be distributed in an electronic
-%format. {\bf Please note that you are under no obligation to sign this
-%  declaration, but doing so would help future students. }
+\vspace*{1.75in}
+\begin{center} {\bf Creative Commons Licence}\end{center}
+\noindent I hereby grant permission under the following terms...
 
-%\begin{description}
-%\item [Your Name]\ \\ \ \\ \ \\
-%\HRule
-%\end{description}
-%\addcontentsline{toc}{chapter}{Education Use Consent}
-
-% -----------------------------------------------------------------------------
-%\newpage
+\begin{description}
+\item Sean Stephan Leavey\ \\ \ \\ \ \\
+\hrule
+\end{description}
+\addcontentsline{toc}{chapter}{Licence}
+\newpage
 
 % -----------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------
-%\newpage
+\newpage
 %\thispagestyle{empty}
 \tableofcontents
 \listoftables
 \listoffigures
 
-\section{List of Symbols}
-Put a list of optical and electronic symbols here.
+\addcontentsline{toc}{chapter}{List of Acronyms and Symbols}
+\printglossaries
 
 % -----------------------------------------------------------------------------
 \cleardoublepage

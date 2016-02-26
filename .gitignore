@@ -36,3 +36,5 @@
 .tex.backup
 /*.pdf
 *.pyc
+*.glsdefs
+*.nlo
