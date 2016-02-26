@@ -40,6 +40,10 @@
 \makeglossaries
 
 %%%
+% superscript th, st, nd, rd, etc.
+\usepackage[super]{nth}
+
+%%%
 % Hyperlinks
 %
 % (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
@@ -159,6 +163,9 @@
 \newpage
 
 % -----------------------------------------------------------------------------
+
+% import glossary terms
+\input{"00-meta/definitions.tex"} 
 
 % -----------------------------------------------------------------------------
 \newpage
