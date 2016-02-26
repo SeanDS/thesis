@@ -2,7 +2,6 @@
 % Packages
 
 \usepackage{graphicx}
-\usepackage[font=scriptsize]{subfig}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{color}
@@ -56,6 +55,10 @@
 \usepackage[font=small]{caption}
 
 %%%
+% Subcaptions
+\usepackage{subcaption}
+
+%%%
 % Custom commands
 
 % red, italic, bold - for notes
@@ -64,21 +67,42 @@
 % blue, normal text - for statements that need fact-checked
 \newcommand{\checkme}[1]{\textcolor{blue}{#1}}
 
+% inline code, monospace font
+\newcommand{\code}[1]{\texttt{#1}}
+
+% naive with diaeresis
+\newcommand{\naive}{na\"ive\xspace}
+
 % et al.
 % (and a backslash to prevent TeX thinking a new sentence starts afterwards)
 \newcommand{\etal}{et~al.\@}
+
+% Michelson interferometer
+\newcommand{\MI}{Michelson interferometer\xspace}
+
+% Fabry-Perot with accent
+\newcommand{\FP}{Fabry-P\'{e}rot\xspace}
+
+% Fabry-Perot Michelson interferometer
+\newcommand{\FPMI}{Fabry-P\'{e}rot Michelson interferometer\xspace}
+
+% Dual-recycled Fabry-Perot Michelson interferometer
+\newcommand{\DRFPMI}{Dual-recycled Fabry-P\'{e}rot Michelson interferometer\xspace}
 
 % Sagnac Speedmeter
 \newcommand{\SSM}{Sagnac speedmeter\xspace}
 
 % Sagnac Speedmeter experiment
-\newcommand{\SSMEXPT}{\SSM experiment\xspace}
+\newcommand{\SSMEXPT}{Sagnac speedmeter experiment\xspace}
 
 % AEI 10m prototype
 \newcommand{\AEIPROTOTYPE}{AEI \SI{10}{\meter} prototype\xspace}
 
 % Glasgow 10m prototype
 \newcommand{\GLASGOWTENM}{Glasgow \SI{10}{\meter} prototype\xspace}
+
+% Matlab
+\newcommand{\MATLAB}{Matlab\xspace}
 
 %%%
 % Document
@@ -138,6 +162,9 @@
 \tableofcontents
 \listoftables
 \listoffigures
+
+\section{List of Symbols}
+Put a list of optical and electronic symbols here.
 
 % -----------------------------------------------------------------------------
 \cleardoublepage

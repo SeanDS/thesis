@@ -40,7 +40,12 @@ DATASCRIPTS=$(DATA)/scripts
 # scripts (non-plotting)
 SCRIPTS=scripts
 
+# look and feel script
+LOOKFEELSCRIPT=$(SCRIPTS)/lookfeel.py
+
 # chapters
+CHAPTERDETECTION=20-detection
+CHAPTERWGM=30-waveguides
 CHAPTERESD=70-esd-concept
 
 # ===== Project files =====
@@ -59,22 +64,41 @@ $(PROJECT).pdf: $(PROJECT).tex
 	# (re)generate gitinfo
 	$(SCRIPTS)/generate-git-info.sh $(META)/gitinfo
 
-	if [ ! -e $(DEPENDENCIES) ]; then mkdir $(DEPENDENCIES); fi
+	if [ ! -e $(DEPENDENCIES) ]; then mkdir -p $(DEPENDENCIES); fi
 	
 	# create directories for generated plots etc.
-	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
 	
-	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir $(CHAPTERESD)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERDETECTION)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERDETECTION)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERWGM)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERESD)/$(DATAGENERATED); fi
 	
 	# call Latexmk
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
 
 # ===== PDF images =====
-$(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py $(CHAPTERESD)/$(DATA)/esd-ansys-data.csv
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/sideband-structure.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py
+	@python $< $@
+
+$(CHAPTERWGM)/$(DYNAMICGRAPHICS)/coating-vs-grating-noise.pdf: $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py $(CHAPTERWGM)/$(DATA)/coating_vs_grating_noise.csv
+	# remove first prerequisite in passing them to python
+	@python $< $@ $(filter-out $<,$^)
+
+$(CHAPTERWGM)/$(DYNAMICGRAPHICS)/individual-factors.pdf: $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_individual_factors.py $(CHAPTERWGM)/$(DATA)/individual_factors.csv
+	# remove first prerequisite in passing them to python
+	@python $< $@ $(filter-out $<,$^)
+
+$(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv
 	# remove first prerequisite in passing them to python
 	@python $< $@ $(filter-out $<,$^)
 
 # ===== Plot scripts =====
+$(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py: $(LOOKFEELSCRIPT)
+$(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py: $(LOOKFEELSCRIPT)
+$(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_individual_factors.py: $(LOOKFEELSCRIPT)
+$(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py: $(LOOKFEELSCRIPT)
 
 # ===== Data files =====
 $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/convert_esd_mat.py $(CHAPTERESD)/$(DATARAW)/itm.mat $(CHAPTERESD)/$(DATARAW)/etm.mat
@@ -82,6 +106,14 @@ $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/
 	@python $< $@ $(filter-out $<,$^)
 
 # ===== SVG images =====
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/michelson.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
+
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/fabry-perot-michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/fabry-perot-michelson.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
+
+$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/dual-recycled-fabry-perot-michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/dual-recycled-fabry-perot-michelson.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
 # ===== Misc =====
 

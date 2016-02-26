@@ -15,23 +15,36 @@ FIG_SIZE_A_HW = (FIG_SIZE_A[0] / 2, FIG_SIZE_A[1])
 # default line transparency
 ALPHA_LINE_A = 0.8
 
-# default line width
-LW_A = 2
-
-# default marker size
-MS_A = 15
-
-# default marker edge width
-MEW_A = 3
-
-# default border axis pad
-BORDER_AXIS_PAD = 2
+# arrow widths
+ARROW_WIDTH = 0.02
+ARROW_HEAD_WIDTH = 0.1
+ARROW_HEAD_LENGTH = 0.5
+ARROW_OVERHANG = 0.3
 
 ###
 # Matplotlib settings
 
-# set default font sizes
-matplotlib.rcParams.update({'font.size': 20, 'legend.fontsize': 18})
+# set defaults
+matplotlib.rcParams.update(
+    {
+        'font.size': 20,
+        'grid.alpha': 0.5,
+        'grid.linestyle': ':',
+        'legend.borderaxespad': 2,
+        'legend.fancybox': True,
+        'legend.fontsize': 16,
+        'legend.framealpha': 0.6,
+        'lines.linewidth': 2,
+        'lines.markeredgewidth': 3,
+        'lines.markersize': 15,
+        'xtick.major.pad': 10,
+        'xtick.minor.pad': 10,
+        'xtick.labelsize': 16,
+        'ytick.major.pad': 10,
+        'ytick.minor.pad': 10,
+        'ytick.labelsize': 16
+    }
+)
 
 class Colours(object):
     """Colours iterable"""

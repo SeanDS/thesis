@@ -1,7 +1,6 @@
 import sys
 import numpy as np
 import scipy.stats as stats
-import matplotlib
 import matplotlib.pyplot as plt
 import lookfeel as lf
 
@@ -27,9 +26,9 @@ ax1 = plt.gca()
 colours = lf.Colours()
 
 # plot
-ax1.plot(data[:, 0], data[:, 4], 'x', ms=lf.MS_A, mew=lf.MEW_A, color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.plot(data[:, 0], data[:, 5], '+', ms=lf.MS_A, mew=lf.MEW_A, color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.plot(data[:, 0], data[:, 6], 'x', ms=lf.MS_A, mew=lf.MEW_A, color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.plot(data[:, 0], data[:, 4], 'x', color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.plot(data[:, 0], data[:, 5], '+', color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.plot(data[:, 0], data[:, 6], 'x', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 ax1.plot(fitx, fitx * gradient + intercept, '--', color=colours.current(), alpha=0.8)
 
 # enforce log tick labels
@@ -38,7 +37,7 @@ ax1.yaxis.get_major_formatter().set_powerlimits((0, 0))
 ax1.set_xlabel('Voltage [V]')
 ax1.set_ylabel('Force [N]')
 
-ax1.legend(['Force in x-direction', 'Force in y-direction', 'Force in z-direction', 'Fit for force in z-direction\n(gradient = {:.2f} nN/V)'.format(gradient * 1e9)], borderaxespad=lf.BORDER_AXIS_PAD)
+ax1.legend(['Force in x-direction', 'Force in y-direction', 'Force in z-direction', 'Fit for force in z-direction\n(gradient = {:.2f} nN/V)'.format(gradient * 1e9)])
 
 ax1.set_xticks(xrange(650, 751, 10))
 
