@@ -74,6 +74,15 @@
 %%%
 % Custom commands
 
+% command to make plural versions of commands (http://tex.stackexchange.com/questions/259287/how-to-define-a-newcommand-that-expands-into-another-newcommand)
+% e.g.
+% 	\makename[es]{veggie}{potato}
+% makes the commands \veggie (=potato) and \veggies (=potatoes)
+\newcommand{\makename}[3][s]{%
+  \expandafter\newcommand\csname #2\endcsname{#3\xspace}%
+  \expandafter\newcommand\csname #2s\endcsname{#3#1\xspace}%
+}
+
 % red, italic, bold - for notes
 \newcommand{\note}[1]{\textcolor{red}{\emph{[\textbf{Note: }#1]}}}
 
@@ -116,6 +125,15 @@
 
 % Matlab
 \newcommand{\MATLAB}{Matlab\xspace}
+
+% AC
+\newcommand{\ac}{ac\xspace}
+
+% ESD/ESDs
+\makename[s]{ESD}{ESD}
+
+% MOSFET
+\newcommand{\MOSFET}{MOSFET\xspace}
 
 %%%
 % Document
