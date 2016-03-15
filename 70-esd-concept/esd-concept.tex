@@ -39,12 +39,28 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT,
 
 \section{High voltage amplifier}
 
-A means of controlling the \ac{} component of the high voltage supply is necessary to perform frequency-dependent corrections upon the mirror. Although the ESD, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This is to provide a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
+A means of controlling the \AC{} component of the high voltage supply is necessary to perform frequency-dependent corrections upon the mirror. Although the ESD, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This is to provide a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
 
-The key component of a high bandwidth amplifier is the power op-amp. This class of op-amps typically utilises a \MOSFET design, and can provide high voltage output given a low voltage input. As an example, the Apex PA95 op-amps used in Advanced LIGO's \ESDs provide up to \SI{900}{\volt} output up to a frequency of around \SI{15}{\kilo\hertz}, and up to \SI{50}{\volt} at \SI{250}{\kilo\hertz}. The PA98 op-amp, also from Apex, provides an output of \SI{450}{\volt} nominally up to \SI{60}{\kilo\hertz}, potentially up to \SI{500}{\kilo\hertz} for a low capacitive load.
+The key component of a high bandwidth amplifier is the power op-amp. This class of op-amps typically utilises a \MOSFET{} design, and can provide high voltage output given a low voltage input. As an example, the Apex PA95 op-amps used in Advanced LIGO's \ESDs{} provide up to \SI{900}{\volt} output up to a frequency of around \SI{15}{\kilo\hertz}, and up to \SI{50}{\volt} at \SI{250}{\kilo\hertz}. The PA98 op-amp, also from Apex, provides an output of \SI{450}{\volt} nominally up to \SI{60}{\kilo\hertz}, potentially up to \SI{500}{\kilo\hertz} for a low capacitive load.
 
 % claim about voltage output of PA95 comes from figure ``Power Response'' on p3 of PA95 datasheet (https://www.apexanalog.com/resources/products/pa95u.pdf)
 % claim about voltage output of PA98 comes from figure 8: ``power Response'' on p7 of PA98 datasheet (https://www.apexanalog.com/resources/products/pa98u.pdf)
+
+For the \ESD{} experiment an amplifier circuit utilising the PA98 was built based on a design used for the \AEIPROTOTYPE{}. Two notable modifications have been made, both of which are safety enhancements.
+
+The first modification is the use of alternative high voltage connectors. The \AEIPROTOTYPE{} design called for two SHV connectors carrying the separate +HV and -HV rails to the vacuum feedthrough, where the vacuum system acts as the virtual ground between the two rails. While both cables are connected, this system is safe; however, if one cable is disconnected, a fault with the amplifier circuit can cause the vacuum system to become live. To avoid the possibility of this situation ocurring in the \SSM{}, a Bulgin-type connector was used to combine the +HV and -HV rails in a single connector and cable. With this style of connector it is not possible to disconnect from the vacuum system any single HV rail while leaving the other connected.
+
+The second modification made to the amplifier circuit was the addition of a safety interlock mechanism. The breakdown voltage of the plate capacitors as a function of pressure, given by Paschen's Law, has a minimum in the region of \SI{e3}{} to \SI{e7}{\milli\bar} depending on the separation of the anode and cathode. Although the use of high voltage plate capacitors is in general safe at both atmospheric pressure and high vacuum (below \SI{e-6}{\milli\bar}), the act of pumping gas out of the vacuum system necessarily passes through the region in which arcing can occur.
+
+To prevent this from happening, a cut-off mechanism was added to the design to prevent high voltage output unless a voltage above \SI{5}{\volt} was applied across terminals on the enclosure. This threshold was chosen based on the monitor output voltage provided by the Edwards Vacuum
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\columnwidth]{70-esd-concept/graphics/dynamic/esd-paschen.pdf}
+    \caption{blah}
+    \label{fig:esd-paschen}
+  \end{center}
+\end{figure}
 
 \subsection{Transfer functions}
 \note{Describe measurement: use of voltage divider, need to take into account impedance of the send box in its design, bandwidth of each measurement: CDS up to 10 kHz, SR785 up to 100 kHz, Agilent up to MHz. Describe monitor and HV rail outputs, and how we avoid ground loops (isolated case from double LEMO and monitor outputs.}

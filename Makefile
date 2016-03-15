@@ -94,11 +94,15 @@ $(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-ansys.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)
 	# remove first prerequisite in passing them to python
 	@python $< $@ $(filter-out $<,$^)
 
+$(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-paschen.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_paschen.py
+	@python $< $@
+
 # ===== Plot scripts =====
 $(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py: $(LOOKFEELSCRIPT)
 $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py: $(LOOKFEELSCRIPT)
 $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_individual_factors.py: $(LOOKFEELSCRIPT)
 $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py: $(LOOKFEELSCRIPT)
+$(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_paschen.py: $(LOOKFEELSCRIPT)
 
 # ===== Data files =====
 $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/convert_esd_mat.py $(CHAPTERESD)/$(DATARAW)/itm.mat $(CHAPTERESD)/$(DATARAW)/etm.mat

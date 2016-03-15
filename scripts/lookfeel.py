@@ -33,7 +33,7 @@ matplotlib.rcParams.update(
         'legend.borderaxespad': 2,
         'legend.fancybox': True,
         'legend.fontsize': 16,
-        'legend.framealpha': 0.6,
+        'legend.framealpha': 0.9,
         'lines.linewidth': 2,
         'lines.markeredgewidth': 3,
         'lines.markersize': 15,
