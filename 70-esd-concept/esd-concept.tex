@@ -13,6 +13,8 @@
 
 \section{High voltage power supply}
 
+\note{Describe indicator LEDs: their brightness is proportional to current, so while they are still lit the experiment is live.}
+
 % ESD force gradient, from esd-ansys.pdf figure
 \newcommand{\ESDFORCEGRAD}{\SI{-3.68}{\nano\newton\per\volt}}
 
@@ -34,5 +36,17 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT,
     \label{fig:esd-ansys}
   \end{center}
 \end{figure}
+
+\section{High voltage amplifier}
+
+A means of controlling the \ac{} component of the high voltage supply is necessary to perform frequency-dependent corrections upon the mirror. Although the ESD, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This is to provide a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
+
+The key component of a high bandwidth amplifier is the power op-amp. This class of op-amps typically utilises a \MOSFET design, and can provide high voltage output given a low voltage input. As an example, the Apex PA95 op-amps used in Advanced LIGO's \ESDs provide up to \SI{900}{\volt} output up to a frequency of around \SI{15}{\kilo\hertz}, and up to \SI{50}{\volt} at \SI{250}{\kilo\hertz}. The PA98 op-amp, also from Apex, provides an output of \SI{450}{\volt} nominally up to \SI{60}{\kilo\hertz}, potentially up to \SI{500}{\kilo\hertz} for a low capacitive load.
+
+% claim about voltage output of PA95 comes from figure ``Power Response'' on p3 of PA95 datasheet (https://www.apexanalog.com/resources/products/pa95u.pdf)
+% claim about voltage output of PA98 comes from figure 8: ``power Response'' on p7 of PA98 datasheet (https://www.apexanalog.com/resources/products/pa98u.pdf)
+
+\subsection{Transfer functions}
+\note{Describe measurement: use of voltage divider, need to take into account impedance of the send box in its design, bandwidth of each measurement: CDS up to 10 kHz, SR785 up to 100 kHz, Agilent up to MHz. Describe monitor and HV rail outputs, and how we avoid ground loops (isolated case from double LEMO and monitor outputs.}
 
 \section{Outlook}
