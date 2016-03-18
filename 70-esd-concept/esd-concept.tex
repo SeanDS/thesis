@@ -1,7 +1,7 @@
 \chapter{Demonstration of a Plate Capacitor Electrostatic Drive Actuator}
 \label{c:esd-concept}
 
-* Introduce Holger's paper~\cite{Wittel2015} \etal, discuss need for high voltages
+* Introduce Holger's paper~\cite{Wittel2015} \etal{}, discuss need for high voltages
 * HV power supply design considerations (bleed resistor, voltage requirements, etc.)
 * HV power supply current limiting circuit explanation (called ``foldback limiting'', see Horowitz and Hill p694)
 * HV power supply heatsink considerations: power produced by MOSFETs at maximum current rating (100 mA, produces 25 W of heat - see datasheets) - chose heatsinks to dissipate this heat and make installation of the board easy (can screw TO-220 casing to L-shaped brackets)
@@ -10,6 +10,8 @@
 * HV amplifier transfer function, usign both HV output (via voltage divider) and monitor output
 * HV amplifier monitor noise measurement
 * This experiment will inform the main SSM experiment.
+
+As described in Chapter\,\ref{c:speedmeter-control}, the \ESD{} is best employed as a high frequency actuator...
 
 \section{High voltage power supply}
 
@@ -24,10 +26,10 @@
 % ESD maximum force, read from esd-ansys.pdf figure (gradient * voltage doesn't work because there's a non-zero y-intercept)
 \newcommand{\ESDMAXFORCE}{\SI{-1.48e-6}{\micro\newton}}
 
-There are a number of requirements for the plate capacitor's power supply. Due to the nature of the load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted in the development of this experiment by group colleagues with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT's ETMs, the force gradient will be \ESDFORCEGRAD, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE, leading to a maximum mirror actuation force of \ESDMAXFORCE.
+There are a number of requirements for the plate capacitor's power supply. Due to the nature of the load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted in the development of this experiment by group colleagues with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT{}'s ETMs, the force gradient will be \ESDFORCEGRAD{}, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE{}, leading to a maximum mirror actuation force of \ESDMAXFORCE{}.
 % ESD volts -> force from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
 
-As this experiment is somewhat a technology demonstration for the main \SSMEXPT, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment.
+As this experiment is somewhat a technology demonstration for the main \SSMEXPT{}, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment.
 
 \begin{figure}
   \begin{center}
@@ -39,20 +41,18 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT,
 
 \section{High voltage amplifier}
 
-A means of controlling the \AC{} component of the high voltage supply is necessary to perform frequency-dependent corrections upon the mirror. Although the ESD, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This is to provide a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
+A means of controlling the \AC{} component of the high voltage (\gls{HV}) supply is necessary to perform frequency-dependent corrections upon the mirror. Although the ESD, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This is to provide a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
 
-The key component of a high bandwidth amplifier is the power op-amp. This class of op-amps typically utilises a \MOSFET{} design, and can provide high voltage output given a low voltage input. As an example, the Apex PA95 op-amps used in Advanced LIGO's \ESDs{} provide up to \SI{900}{\volt} output up to a frequency of around \SI{15}{\kilo\hertz}, and up to \SI{50}{\volt} at \SI{250}{\kilo\hertz}. The PA98 op-amp, also from Apex, provides an output of \SI{450}{\volt} nominally up to \SI{60}{\kilo\hertz}, potentially up to \SI{500}{\kilo\hertz} for a low capacitive load.
+The key component of a high bandwidth amplifier is the power op-amp. This class of op-amps typically utilises a \MOSFET{} design, and can provide high voltage output given a low voltage input. As an example, the Apex PA95 op-amps used in Advanced LIGO's \ESDs{} provide up to \SI{900}{\volt} output up to a frequency of around \SI{15}{\kilo\hertz}, and up to \SI{50}{\volt} at \SI{250}{\kilo\hertz}. The PA98 op-amp, also from Apex, provides an output of \SI{450}{\volt} nominally up to \SI{60}{\kilo\hertz}, potentially up to \SI{500}{\kilo\hertz} for a low capacitive load. For the purposes of this experiment, the choice was made to use the PA98 op-amp to provide the ability to study the effect of the actuator across a very wide bandwidth. To this end, an amplifier circuit utilising the PA98 was built based on a design used for the \AEIPROTOTYPE{}. Two notable modifications have been made, both of which are safety enhancements.
 
 % claim about voltage output of PA95 comes from figure ``Power Response'' on p3 of PA95 datasheet (https://www.apexanalog.com/resources/products/pa95u.pdf)
 % claim about voltage output of PA98 comes from figure 8: ``power Response'' on p7 of PA98 datasheet (https://www.apexanalog.com/resources/products/pa98u.pdf)
 
-For the \ESD{} experiment an amplifier circuit utilising the PA98 was built based on a design used for the \AEIPROTOTYPE{}. Two notable modifications have been made, both of which are safety enhancements.
+The first modification is the use of alternative high voltage connectors. The \AEIPROTOTYPE{} design called for two \emph{SHV} connectors carrying the separate +\gls{HV} and -\gls{HV} rails to the vacuum feedthrough on separate cables, with the vacuum system acting as the virtual ground between the two rails. While both cables are connected, this system is safe; however, if one cable is disconnected, a fault with the amplifier circuit can cause the vacuum system to become live. To avoid the possibility of this situation ocurring in the \SSM{}, a Bulgin-type connector was used to combine the +\gls{HV} and -\gls{HV} rails in a single connector and cable. With this style of connector it is not possible to disconnect from the vacuum system any single \gls{HV} rail while leaving the other connected.
 
-The first modification is the use of alternative high voltage connectors. The \AEIPROTOTYPE{} design called for two SHV connectors carrying the separate +HV and -HV rails to the vacuum feedthrough, where the vacuum system acts as the virtual ground between the two rails. While both cables are connected, this system is safe; however, if one cable is disconnected, a fault with the amplifier circuit can cause the vacuum system to become live. To avoid the possibility of this situation ocurring in the \SSM{}, a Bulgin-type connector was used to combine the +HV and -HV rails in a single connector and cable. With this style of connector it is not possible to disconnect from the vacuum system any single HV rail while leaving the other connected.
+The second modification made to the amplifier circuit was the addition of a safety interlock mechanism. The breakdown voltage of the plate capacitors as a function of pressure, given by Paschen's Law, has a minimum in the region of \SI{e3}{} to \SI{e7}{\milli\bar} depending on the separation of the anode and cathode. In addition, related effects such as surface tracking can lead to arcing at voltages above \SI{50}{\volt} in low vacuum. Although the use of high voltage plate capacitors is in general safe at both atmospheric pressure and high vacuum (below \SI{e-6}{\milli\bar}), the act of pumping gas out of the vacuum system necessarily passes through pressures at which arcing can occur, and so a safety mechanism was decided to be necessary.
 
-The second modification made to the amplifier circuit was the addition of a safety interlock mechanism. The breakdown voltage of the plate capacitors as a function of pressure, given by Paschen's Law, has a minimum in the region of \SI{e3}{} to \SI{e7}{\milli\bar} depending on the separation of the anode and cathode. In addition, related effects such as surface tracking can lead to arcing at voltages above \SI{50}{\volt} in low vacuum. Although the use of high voltage plate capacitors is in general safe at both atmospheric pressure and high vacuum (below \SI{e-6}{\milli\bar}), the act of pumping gas out of the vacuum system necessarily passes through pressures at which arcing can occur.
-
-To prevent the possibility of arcing, a cut-off mechanism was added to the design to prevent high voltage output unless a voltage above \SI{5}{\volt} was applied across terminals on the enclosure. This threshold was chosen based on the monitor output voltage provided by the pressure gauge attached to the vacuum system. This varies logarithmically from \SI{0}{} to \SI{10}{\volt} for pressures between standard atmosphere and ultra-high vacuum. A voltage above \SI{5}{\volt} indicates a pressure below \SI{e-5}{\milli\bar}.
+To prevent the possibility of arcing, a cut-off function was added to the circuit to prevent high voltage output unless a voltage above \SI{5}{\volt} is applied across terminals on the enclosure. This threshold was chosen based on the monitor output voltage provided by a pressure gauge attached to the vacuum system. This varies logarithmically from \SI{0}{} to \SI{10}{\volt} for pressures between standard atmosphere and ultra-high vacuum. A voltage above \SI{5}{\volt} indicates a pressure below \SI{e-5}{\milli\bar}.
 
 % pressure vs voltage claim from speedmeter labbook, at https://arran.physics.gla.ac.uk/wp/speedmeter/2015/01/30/esd-hv-amplifier-pressure-cutoff/
 
@@ -64,7 +64,48 @@ To prevent the possibility of arcing, a cut-off mechanism was added to the desig
   \end{center}
 \end{figure}
 
+\subsection{Description of signal and noise paths}
+The \gls{HV} amplifier is designed to have a very wide bandwidth, and the power amplifier has been chosen with this goal in mind. The amplifier circuit, however, contains more than just the power amplifier, but also filtering and safety mechanisms in the form of additional integrated circuits and other passive and active components. The control input from \gls{CDS} is a differential signal, and any common mode noise that may have entered in each channel on the way to the amplifier is to a great extent removed by a balanced line receiver present at the amplifier's input. This outputs a single-ended signal which which is split into two parts, with one being inverted via a buffer op-amp, and these two signals are sent to their respective power amplifiers. Additional op-amps also control the supply voltage provided to each power amplifier. To prevent high current in-rush when the power supply is attached to the amplifier--as reactive components such as capacitors and inductors charge--an op-amp limits the current to a level low enough for the power supply to provide without locking.
+
+In \gls{CDS}, the signal $S$ is sent from the digital to the analogue domain via \gls{ADC}s, where it is split into two channels, $A$ and $B$, containing the same signal but with opposite sign. These signals are sent to the amplifier in a two-core cable. As laboratories inevitably contain stray electromagnetic fields, channels $A$ and $B$ pick up noise $n_{A}$ and $n_{B}$, respectively:
+\begin{align}
+  A &= S + n_{A}, \\
+  B &= -S + n_{B}.
+\end{align}
+These noise sources can be further represented in terms of common and differential modes at the amplifier input, $n_{\left(+\right)}$ and $n_{\left(-\right)}$, respectively:
+\begin{align}
+  n_{\left(+\right)} &= n_{A} + n_{B}, \\
+  n_{\left(-\right)} &= n_{A} - n_{B}.
+\end{align}
+The purpose of this so-called \emph{differential sending} is to allow $n_{\left(+\right)}$ to be cancelled at the amplifier. Injecting channels $A$ and $B$ into an op-amp with high \emph{common-mode rejection}, we get:
+\begin{align}
+  S_{\text{out}} &= G_{\left(-\right)} \left(A - B\right) + G_{\left(+\right)} \frac{\left(A + B\right)}{2} \\
+                 &= G_{\left(-\right)} \left(2S + n_{\left(-\right)}\right) + G_{\left(+\right)} \frac{n_{\left(+\right)}}{2},
+\end{align}
+where $G_{\left(-\right)}$ and $G_{\left(+\right)}$ are the op-amp's differential and common mode (power) gains, respectively.
+
+As the original signal produced by \gls{CDS} is inverted in one channel, each channel contains purely differential signal, but the noise picked up by each channel is in both the differential and common modes. An op-amp's ability to remove common mode noise between its inputs is typically expressed as its \emph{common mode rejection ratio} (\gls{CMRR}), defined as the logarithm of the ratio of the differential and common mode gains:
+\begin{equation}
+  \text{CMRR} = 20 \log_{10} \left( \frac{G_{\left(-\right)}}{G_{\left(+\right)}} \right),
+\end{equation}
+with the resulting number expressed in decibels. Within the amplifier, the signals are subtracted by an AD829 with $\text{CMRR} = 120$ (at \SI{1}{\kilo\hertz}) configured with $G_{\left(-\right)} = 1$, resulting in only $5 \times 10^{-7} n_{\left(+\right)}$ making its way to the output (neglecting imbalances in nearby components such as resistors), making it comparible or less significant than the output noise of the op-amp itself. As the channels are physically close to one another as they are sent to the amplifier--contained within the same shielded cable--$n_{\left(-\right)}$ also tends to be small for frequencies below a few hundred \SI{}{\giga\hertz}, or less than \SI{}{\milli\meter} wavelength. Using a receiving op-amp with sufficiently high \gls{CMRR}, a desired control signal can be sent from \gls{CDS} to the amplifier without the addition of significant noise.
+
+% small differential noise claim: f = c/lambda, assume lambda has to be less than the channel separation in a cable, roughly 1mm, so 3e8 / 1e-3 = 3e11 = 300 GHz.
+
+The gain of the amplifier can be determined from inspection of the path an input signal takes to the output... \note{discuss how gain arises in circuit}
+
 \subsection{Transfer functions}
-\note{Describe measurement: use of voltage divider, need to take into account impedance of the send box in its design, bandwidth of each measurement: CDS up to 10 kHz, SR785 up to 100 kHz, Agilent up to MHz. Describe monitor and HV rail outputs, and how we avoid ground loops (isolated case from double LEMO and monitor outputs.}
+\note{Describe measurement: use of voltage divider, need to take into account impedance of the send box in its design, bandwidth of each measurement: CDS up to 10 kHz, SR785 up to 100 kHz, Agilent up to MHz. Describe monitor and \gls{HV} rail outputs, and how we avoid ground loops (isolated case from double LEMO and monitor outputs.}
+
+The presence of stray capacitance at the inputs and outputs of these additional integrated circuits can have an influence upon the overall response of the amplifier as a function of frequency. It is beneficial, therefore, to check that the frequency response of the amplifier is dominated by the power amplifier and not by some auxiliary component.
+
+\subsection{Noise measurements}
+
+\note{Spectral density noise with SR785}
+
+\section{The Experiment}
+
+\subsection{Transfer functions}
+\note{Hopefully these are flat, just like the actuator TFs, once the cavity effect is removed...}
 
 \section{Outlook}
