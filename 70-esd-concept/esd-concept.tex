@@ -50,14 +50,16 @@ For the \ESD{} experiment an amplifier circuit utilising the PA98 was built base
 
 The first modification is the use of alternative high voltage connectors. The \AEIPROTOTYPE{} design called for two SHV connectors carrying the separate +HV and -HV rails to the vacuum feedthrough, where the vacuum system acts as the virtual ground between the two rails. While both cables are connected, this system is safe; however, if one cable is disconnected, a fault with the amplifier circuit can cause the vacuum system to become live. To avoid the possibility of this situation ocurring in the \SSM{}, a Bulgin-type connector was used to combine the +HV and -HV rails in a single connector and cable. With this style of connector it is not possible to disconnect from the vacuum system any single HV rail while leaving the other connected.
 
-The second modification made to the amplifier circuit was the addition of a safety interlock mechanism. The breakdown voltage of the plate capacitors as a function of pressure, given by Paschen's Law, has a minimum in the region of \SI{e3}{} to \SI{e7}{\milli\bar} depending on the separation of the anode and cathode. Although the use of high voltage plate capacitors is in general safe at both atmospheric pressure and high vacuum (below \SI{e-6}{\milli\bar}), the act of pumping gas out of the vacuum system necessarily passes through the region in which arcing can occur.
+The second modification made to the amplifier circuit was the addition of a safety interlock mechanism. The breakdown voltage of the plate capacitors as a function of pressure, given by Paschen's Law, has a minimum in the region of \SI{e3}{} to \SI{e7}{\milli\bar} depending on the separation of the anode and cathode. In addition, related effects such as surface tracking can lead to arcing at voltages above \SI{50}{\volt} in low vacuum. Although the use of high voltage plate capacitors is in general safe at both atmospheric pressure and high vacuum (below \SI{e-6}{\milli\bar}), the act of pumping gas out of the vacuum system necessarily passes through pressures at which arcing can occur.
 
-To prevent this from happening, a cut-off mechanism was added to the design to prevent high voltage output unless a voltage above \SI{5}{\volt} was applied across terminals on the enclosure. This threshold was chosen based on the monitor output voltage provided by the Edwards Vacuum
+To prevent the possibility of arcing, a cut-off mechanism was added to the design to prevent high voltage output unless a voltage above \SI{5}{\volt} was applied across terminals on the enclosure. This threshold was chosen based on the monitor output voltage provided by the pressure gauge attached to the vacuum system. This varies logarithmically from \SI{0}{} to \SI{10}{\volt} for pressures between standard atmosphere and ultra-high vacuum. A voltage above \SI{5}{\volt} indicates a pressure below \SI{e-5}{\milli\bar}.
+
+% pressure vs voltage claim from speedmeter labbook, at https://arran.physics.gla.ac.uk/wp/speedmeter/2015/01/30/esd-hv-amplifier-pressure-cutoff/
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=\columnwidth]{70-esd-concept/graphics/dynamic/esd-paschen.pdf}
-    \caption{blah}
+    \caption{The minimum breakdown voltage between the two plates of the \ESD{} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \ESD{} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
     \label{fig:esd-paschen}
   \end{center}
 \end{figure}
