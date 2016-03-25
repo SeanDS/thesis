@@ -45,6 +45,7 @@ LOOKFEELSCRIPT=$(SCRIPTS)/lookfeel.py
 
 # chapters
 CHAPTERDETECTION=20-detection
+CHAPTERINSTRUMENTATION=25-instrumentation
 CHAPTERWGM=30-waveguides
 CHAPTERESD=70-esd-concept
 
@@ -68,10 +69,12 @@ $(PROJECT).pdf: $(PROJECT).tex
 	
 	# create directories for generated plots etc.
 	if [ ! -e $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
 	
 	if [ ! -e $(CHAPTERDETECTION)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERDETECTION)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERINSTRUMENTATION)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERINSTRUMENTATION)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERWGM)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERESD)/$(DATAGENERATED); fi
 	
@@ -80,6 +83,9 @@ $(PROJECT).pdf: $(PROJECT).tex
 
 # ===== PDF images =====
 $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/sideband-structure.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py
+	@python $< $@
+
+$(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS)/fringe.pdf: $(CHAPTERINSTRUMENTATION)/$(GRAPHICSSCRIPTS)/plot_fringe.py
 	@python $< $@
 
 $(CHAPTERWGM)/$(DYNAMICGRAPHICS)/coating-vs-grating-noise.pdf: $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py $(CHAPTERWGM)/$(DATA)/coating_vs_grating_noise.csv
