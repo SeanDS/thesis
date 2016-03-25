@@ -40,6 +40,45 @@ Over the course of the 1980s the \MI (see Figure\,\ref{fig:mi}) was developed in
 \section{Limiting noise sources in future detectors}
 Quantum noise, thermal noise (since if you push QN low enough, you run into thermal), possibly mention others (Newtonian noise - why ET will be under ground, etc.)
 
+\subsection{Measurement noise in gravitational wave interferometry}
+Gravitational wave interferometry is ultimately a matter of signals and noise. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. The measurement of any signal necessarily entails the measurement of some noise. Part of scientists' jobs, both experimental and theoretical, is to design experiments and apparatus in such a way as to maximise the ratio of signal to noise in the region of interest.
+
+\subsubsection{Spectral density}
+In gravitational wave interferometry, a lot of thought and planning typically goes in to the design of the apparatus in order to minimise noise \emph{transients}\textemdash pulses of unwanted noise with finite energy\textemdash such as a door slam\footnote{And, of course, some forms of gravitational wave signal; though it is not the intention of experimentalists to minimise the effect of this particular source.}. Such transients have finite energy over a finite time, and can be entirely characterised\textemdash within measurement error\textemdash by a Fourier transform of the time series in which the event occurred. With sufficient isolation from unwanted transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes, with energy approaching infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of power present within each frequency of a signal in the steady state. This distribution can then be integrated back into a finite, steady state power.
+
+Typically the time evolution of a particular signal is the only data an experimentalist has at their disposal in order to characterise a signal in terms of its spectral density. A true representation of the power spectral density requires, like the measurement of energy spectral density, infinite time. A compromise can be made, however, in order to estimate the power spectral density from a set of Fourier transforms of the time series. By averaging Fourier transforms of various subsets of the data $\left[ t, t + \Delta t \right]$, a power spectral density can be approximated for a particular frequency range, determined by the bounds established by the inverse of the longest and shortest subsets of the time series transformed. While this compromise is typically reasonable in most cases, and indeed essential for any finite measurement, it is unable to exclude the possibility that part of the power spectral density is formed from signal content in frequencies outwith the measured range. Longer time series measurements allow for more averaging of frequency bands, and thus a better approximation to the true power spectral density.
+
+\subsubsection{Bandlimiting}
+\note{Nyquist-Shannon sampling theorem, https://en.wikipedia.org/wiki/Bandlimiting}
+
+\subsection{Technical Noise}
+
+\subsubsection{Laser Frequency Noise}
+A perfect laser provides output at a single, well defined frequency, or in other words, it has an infinitely narrow linewidth. In reality, such lasers do not exist and instead the output contains spectral impurities. As the laser wavelength is the ``metre stick'' by which we make measurements of length in interferometers, it is very important to ensure that the laser's wavelength, and therefore frequency, is well defined. A well designed laser will get an experimentalist part of the way there, but in most cavity experiments a frequency stabilisation control loop involving optics and electronics is necessary.
+
+Apart from its linewidth, it is possible to represent a laser's frequency noise in terms of its noise spectral density, measurable via some heterodyne technique with a standard spectrum analyser. The effect of laser frequency noise is for a beat signal $V \left( t \right)$ to occur due to overlapping sinusoidal waves:
+\begin{equation}
+  V \left( t \right) = V_0 \left( t \right) \sin \left[ 2 \pi f_0 + \phi \left( t \right) \right],
+\end{equation}
+where $V_0 \left( t \right)$ is the beat amplitude and $\phi \left( t \right)$ is the phase difference at time $t$. We can rewrite this in terms of frequency $f \left( t \right)$,
+\begin{equation}
+  \begin{split}
+    f \left( t \right) &= f_0 + \frac{1}{2 \pi} \frac{\text{d} \phi \left( t \right)}{\text{d} t} \\
+                       &= f_0 + \Delta f \left( t \right),
+  \end{split}
+\end{equation}
+with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The power spectral density arises from the autocorrelation between a frequency fluctuation at time $t$ and another at time $t + \Delta t$, which can be expressed in the form:
+\begin{equation}
+  S_{\Delta f} \left( f \right) = 2 \int^{\infty}_{0} \langle \Delta f \left( t \right) \Delta f \left( t + \Delta t \right) \rangle \text{e}^{\left( -\text{i2}\pi f \Delta t \right) \text{d}\Delta t}
+\end{equation}
+
+
+
+\note{See https://arran.physics.gla.ac.uk/wp/speedmeter/2016/03/24/update-on-linear-cavity-work, Optics Communications 201 (2002) 391-397, and Applied Optics 49, issue 25, 4801-4807, 2010}
+
+\subsubsection{Laser Intensity Noise}
+\note{describe RIN, etc...}
+
 \subsection{Thermal Noise}
 
 \subsection{Quantum Noise}
