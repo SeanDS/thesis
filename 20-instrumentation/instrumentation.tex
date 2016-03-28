@@ -3,8 +3,18 @@
 
 \section{Interferometer Response}
 
+The effect that an interferometer has on a means of readout (e.g. a photodetector) as some variable is modulated is termed the \emph{response}. The most important response to consider in gravitational wave interferometry is the arm cavity differential degree of freedom's response to the beam splitter's output port. The response varies as a function of frequency depending on the interferometer topology and its light storage time. For instance, in a Michelson interferometer the dARM response is typically flat for frequencies below the arm cavity pole, and decaying \checkme{at a rate proportional to frequency} above. At higher frequencies, less light can be stored as the cavity cannot build up sufficient light power due to mirror loss and round-trip time. This effect is shown in \note{Figure XXX} for different end test mass reflectivities and in \note{Figure XXX} for different arm cavity lengths.
+
+In order to calculate a response function for a set of optics, it is necessary to understand the propagation of a light field through vacuum and through optics. We define the field amplitude of light across time $t$ and space $x$ as:
+\begin{equation}
+  A = A_0 \text{e}^{\text{i} \omega t},
+\end{equation}
+for initial amplitude $A_0$ and $\omega = 2 \pi f$, where $f$ denotes frequency.
+
 \subsection{Interferometer Fields}
 * Intro to field equations of Fabry-Perot. Perhaps generalise to Michelson? Point reader towards analytical calculation of DRFPMI (Ken Strain paper).
+
+To be able to calculate the effect the motion
 
 \subsubsection{Transmission and reflection}
 
@@ -42,11 +52,11 @@ In precision measurement, typically an experimentalist can only infer the quanti
   E &= E_0 \text{e}^{\text{i} \left( kx - \omega t \right)}, \\
   B &= B_0 \text{e}^{\text{i}  \left( kx - \omega t \right)},
 \end{align}
-where $E_0$ and $B_0$ are the initial field amplitudes, $k = \frac{2 \pi}{\lambda}$ is the wave vector, $x$ is the displacement, $\omega$ is the angular frequency and $t$ is time. The energy $S$ is the sum of the two, weighted by the permittivity of free space $\epsilon_0$ and speed of light in vacuum $c_0$:
+where $E_0$ and $B_0$ are the initial field amplitudes, $k = \frac{2 \pi}{\lambda}$ is the wave vector, $x$ is the displacement, $\omega$ is the angular frequency and $t$ is time. The intensity $S$ is the product of the two, with the magnetic field weighted by the permittivity of free space $\epsilon_0$ and speed of light in vacuum $c_0$ \checkme{check this is consistent with Living Review p31}:
 \begin{equation}
   S = \frac{1}{2} \epsilon_0 \left( E^2 + c_0^2 B^2 \right).
 \end{equation}
-As the $E$ and $B$ fields are orthogonal, their sum at any point in time and space remains constant. We can therefore state that the wave's energy is proportional to the square of an ``amplitude'' $A$, expressing the combination of $E$ and $B$:
+As the $E$ and $B$ fields are orthogonal, their sum at any point in time and space remains constant. We can therefore state that the wave's intensity is proportional to the square of an ``amplitude'' $A$, expressing the combination of $E$ and $B$:
 \begin{equation}
   S \propto A^2.
 \end{equation}
