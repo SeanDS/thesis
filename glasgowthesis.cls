@@ -36,7 +36,7 @@
 % Fonts
 \usepackage{stix}
 \usepackage{sectsty}
-\usepackage{helvet}
+\usepackage{libertine}
 \allsectionsfont{\sffamily}
 
 % Set paragraph layout.

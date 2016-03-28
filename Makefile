@@ -125,6 +125,9 @@ $(CHAPTERINTRO)/$(DYNAMICGRAPHICS)/fabry-perot-michelson.pdf: $(CHAPTERINTRO)/$(
 $(CHAPTERINTRO)/$(DYNAMICGRAPHICS)/dual-recycled-fabry-perot-michelson.pdf: $(CHAPTERINTRO)/$(GRAPHICSSOURCES)/dual-recycled-fabry-perot-michelson.svg
 	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
+$(CHAPTERINTRO)/$(DYNAMICGRAPHICS)/thesis-structure.pdf: $(CHAPTERINTRO)/$(GRAPHICSSOURCES)/thesis-structure.svg
+	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
+
 # ===== Misc =====
 
 # delete all files used to compile document, except its source text and figures

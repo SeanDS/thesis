@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="thesis-structure.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="442.72468"
+     inkscape:cy="545.50021"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1325"
+     inkscape:window-height="984"
+     inkscape:window-x="2075"
+     inkscape:window-y="67"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="opacity:0.5;fill:#d62728;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4153-0-1"
+       cx="658.72522"
+       cy="675.81024"
+       r="110" />
+    <circle
+       style="opacity:0.5;fill:#2ca02c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4153-2-5"
+       cy="671.79364"
+       cx="471.68243"
+       r="110" />
+    <circle
+       style="opacity:0.5;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4153-0"
+       cx="109.17338"
+       cy="683.74487"
+       r="110" />
+    <g
+       id="g4226"
+       transform="translate(22.530913,308.94991)"
+       style="opacity:0.5">
+      <circle
+         r="110"
+         cy="368.13956"
+         cx="261.04498"
+         id="path4153"
+         style="opacity:1;fill:#ff7f0e;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4185-7"
+         y="378.86221"
+         x="199.4483"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans'"
+           y="378.86221"
+           x="199.4483"
+           id="tspan4187-5"
+           sodipodi:role="line" /></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="41.937222"
+       y="622.58923"
+       id="text4185-7-0-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4187-5-2-5"
+         x="41.937222"
+         y="622.58923"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans'">Instrumentation</tspan></text>
+    <g
+       id="g4373-2"
+       transform="matrix(0.63416323,0,0,0.63416323,-12.501397,728.47952)">
+      <rect
+         ry="22.864775"
+         rx="22.864777"
+         y="165.73929"
+         x="65.802002"
+         height="46.859306"
+         width="275.90503"
+         id="rect4283-0"
+         style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4185-7-0-4-1"
+         y="194.51064"
+         x="204.14868"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4303-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+           y="194.51064"
+           x="204.14868"
+           sodipodi:role="line">Chapter 8: ESD Experiment</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="418.83282"
+       y="619.73199"
+       id="text4185-7-0-9-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4187-5-2-1-8"
+         x="418.83282"
+         y="619.73199"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans'">Simulations</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="619.72394"
+       y="619.24176"
+       id="text4185-7-0-9-6-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4187-5-2-1-9-2"
+         x="619.72394"
+         y="619.24176"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans'">Materials</tspan></text>
+    <g
+       transform="matrix(0.60131209,0,0,0.60131209,349.00964,742.28846)"
+       id="g4373-1-5-4-2">
+      <rect
+         ry="24.113932"
+         rx="24.113935"
+         y="165.73929"
+         x="65.802002"
+         height="46.859306"
+         width="275.90503"
+         id="rect4283-9-5-3-9"
+         style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4185-7-0-4-7-4-7-7"
+         y="194.51064"
+         x="204.14868"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4303-3-4-6-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+           y="194.51064"
+           x="204.14868"
+           sodipodi:role="line">Chapter 9: Einstein Telescope</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="256.94339"
+       y="620.7782"
+       id="text4185-7-0-9-2-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4187-5-2-1-4-0"
+         x="256.94339"
+         y="620.7782"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans'">Theory</tspan></text>
+    <rect
+       style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4283-9-4"
+       width="274.47647"
+       height="31.573837"
+       x="64.190331"
+       y="755.14673"
+       rx="14.500001"
+       ry="14.499999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.36907959px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="213.12273"
+       y="774.5329"
+       id="text4185-7-0-4-7-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="213.12273"
+         y="774.5329"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.47601604px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+         id="tspan4303-3-46">Chapter 6: Speedmeter</tspan></text>
+    <g
+       transform="matrix(0.71522292,0,0,0.71522292,145.69868,516.1063)"
+       id="g4373-1-5-4-8-2">
+      <rect
+         ry="20.273397"
+         rx="20.273401"
+         y="165.73929"
+         x="65.802002"
+         height="46.859306"
+         width="275.90503"
+         id="rect4283-9-5-3-2-4"
+         style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4185-7-0-4-7-4-7-6-8"
+         y="194.51064"
+         x="204.14868"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4303-3-4-6-0-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+           y="194.51064"
+           x="204.14868"
+           sodipodi:role="line">Chapter 1: Introduction</tspan></text>
+    </g>
+    <g
+       transform="matrix(0.60367684,0,0,0.60367684,173.03864,581.73673)"
+       id="g4373-1-5-4-8-4-1">
+      <rect
+         ry="24.019472"
+         rx="24.019476"
+         y="165.73929"
+         x="65.802002"
+         height="46.859306"
+         width="275.90503"
+         id="rect4283-9-5-3-2-8-9"
+         style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4185-7-0-4-7-4-7-6-4-1"
+         y="194.51064"
+         x="204.14868"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:62.88071823px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4303-3-4-6-0-4-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+           y="194.51064"
+           x="204.14868"
+           sodipodi:role="line">Chapter 2: Instrumentation</tspan></text>
+    </g>
+    <rect
+       style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4283-9-5-5"
+       width="458.82693"
+       height="27.460192"
+       x="53.559284"
+       y="792.94885"
+       rx="14.500001"
+       ry="14.5" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.84895706px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="288.91806"
+       y="809.8092"
+       id="text4185-7-0-4-7-4-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="288.91806"
+         y="809.8092"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.72027206px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+         id="tspan4303-3-4-2">Chapter 7: Speedmeter Control</tspan></text>
+    <rect
+       style="opacity:1;fill:#1f77b4;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4283-9-5-6-8"
+       width="440.52304"
+       height="31.145021"
+       x="245.45277"
+       y="719.64685"
+       rx="14.5"
+       ry="14.499999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.79364777px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="465.97629"
+       y="738.76971"
+       id="text4185-7-0-4-7-4-5-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="465.97629"
+         y="738.76971"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.29299259px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';text-align:center;text-anchor:middle"
+         id="tspan4303-3-4-7-7">Chapter 3: Waveguide Exp</tspan></text>
+  </g>
+</svg>
