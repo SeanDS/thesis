@@ -44,8 +44,8 @@ SCRIPTS=scripts
 LOOKFEELSCRIPT=$(SCRIPTS)/lookfeel.py
 
 # chapters
-CHAPTERDETECTION=20-detection
-CHAPTERINSTRUMENTATION=25-instrumentation
+CHAPTERINTRO=10-introduction
+CHAPTERINSTRUMENTATION=20-instrumentation
 CHAPTERWGM=30-waveguides
 CHAPTERESD=70-esd-concept
 
@@ -68,12 +68,12 @@ $(PROJECT).pdf: $(PROJECT).tex
 	if [ ! -e $(DEPENDENCIES) ]; then mkdir -p $(DEPENDENCIES); fi
 	
 	# create directories for generated plots etc.
-	if [ ! -e $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERDETECTION)/$(DYNAMICGRAPHICS); fi
+	if [ ! -e $(CHAPTERINTRO)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERINTRO)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERWGM)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERWGM)/$(DYNAMICGRAPHICS); fi
 	if [ ! -e $(CHAPTERESD)/$(DYNAMICGRAPHICS) ]; then mkdir -p $(CHAPTERESD)/$(DYNAMICGRAPHICS); fi
 	
-	if [ ! -e $(CHAPTERDETECTION)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERDETECTION)/$(DATAGENERATED); fi
+	if [ ! -e $(CHAPTERINTRO)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERINTRO)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERINSTRUMENTATION)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERINSTRUMENTATION)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERWGM)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERWGM)/$(DATAGENERATED); fi
 	if [ ! -e $(CHAPTERESD)/$(DATAGENERATED) ]; then mkdir -p $(CHAPTERESD)/$(DATAGENERATED); fi
@@ -82,7 +82,7 @@ $(PROJECT).pdf: $(PROJECT).tex
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<;
 
 # ===== PDF images =====
-$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/sideband-structure.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py
+$(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS)/sideband-structure.pdf: $(CHAPTERINSTRUMENTATION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py
 	@python $< $@
 
 $(CHAPTERINSTRUMENTATION)/$(DYNAMICGRAPHICS)/fringe.pdf: $(CHAPTERINSTRUMENTATION)/$(GRAPHICSSCRIPTS)/plot_fringe.py
@@ -104,7 +104,7 @@ $(CHAPTERESD)/$(DYNAMICGRAPHICS)/esd-paschen.pdf: $(CHAPTERESD)/$(GRAPHICSSCRIPT
 	@python $< $@
 
 # ===== Plot scripts =====
-$(CHAPTERDETECTION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py: $(LOOKFEELSCRIPT)
+$(CHAPTERINSTRUMENTATION)/$(GRAPHICSSCRIPTS)/plot_sideband_structure.py: $(LOOKFEELSCRIPT)
 $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_coating_vs_grating_noise.py: $(LOOKFEELSCRIPT)
 $(CHAPTERWGM)/$(GRAPHICSSCRIPTS)/plot_individual_factors.py: $(LOOKFEELSCRIPT)
 $(CHAPTERESD)/$(GRAPHICSSCRIPTS)/plot_esd_ansys.py: $(LOOKFEELSCRIPT)
@@ -116,13 +116,13 @@ $(CHAPTERESD)/$(DATAGENERATED)/esd-ansys-data.csv: $(CHAPTERESD)/$(DATASCRIPTS)/
 	@python $< $@ $(filter-out $<,$^)
 
 # ===== SVG images =====
-$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/michelson.svg
+$(CHAPTERINTRO)/$(DYNAMICGRAPHICS)/michelson.pdf: $(CHAPTERINTRO)/$(GRAPHICSSOURCES)/michelson.svg
 	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
-$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/fabry-perot-michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/fabry-perot-michelson.svg
+$(CHAPTERINTRO)/$(DYNAMICGRAPHICS)/fabry-perot-michelson.pdf: $(CHAPTERINTRO)/$(GRAPHICSSOURCES)/fabry-perot-michelson.svg
 	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
-$(CHAPTERDETECTION)/$(DYNAMICGRAPHICS)/dual-recycled-fabry-perot-michelson.pdf: $(CHAPTERDETECTION)/$(GRAPHICSSOURCES)/dual-recycled-fabry-perot-michelson.svg
+$(CHAPTERINTRO)/$(DYNAMICGRAPHICS)/dual-recycled-fabry-perot-michelson.pdf: $(CHAPTERINTRO)/$(GRAPHICSSOURCES)/dual-recycled-fabry-perot-michelson.svg
 	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
 # ===== Misc =====
