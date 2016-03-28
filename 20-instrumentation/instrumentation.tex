@@ -5,16 +5,36 @@
 
 The effect that an interferometer has on a means of readout (e.g. a photodetector) as some variable is modulated is termed the \emph{response}. The most important response to consider in gravitational wave interferometry is the arm cavity differential degree of freedom's response to the beam splitter's output port. The response varies as a function of frequency depending on the interferometer topology and its light storage time. For instance, in a Michelson interferometer the dARM response is typically flat for frequencies below the arm cavity pole, and decaying \checkme{at a rate proportional to frequency} above. At higher frequencies, less light can be stored as the cavity cannot build up sufficient light power due to mirror loss and round-trip time. This effect is shown in \note{Figure XXX} for different end test mass reflectivities and in \note{Figure XXX} for different arm cavity lengths.
 
-In order to calculate a response function for a set of optics, it is necessary to understand the propagation of a light field through vacuum and through optics. We define the field amplitude of light across time $t$ and space $x$ as:
-\begin{equation}
-  A = A_0 \text{e}^{\text{i} \omega t},
-\end{equation}
-for initial amplitude $A_0$ and $\omega = 2 \pi f$, where $f$ denotes frequency.
+In order to calculate a response function for a set of optics, it is necessary to understand the propagation of a light field through vacuum and through optics.
 
 \subsection{Interferometer Fields}
 * Intro to field equations of Fabry-Perot. Perhaps generalise to Michelson? Point reader towards analytical calculation of DRFPMI (Ken Strain paper).
 
-To be able to calculate the effect the motion
+We define the field amplitude of light across dimension $x$ as:
+\begin{equation}
+  \label{eq:field-amplitude}
+  A = A_0 \text{e}^{\text{i} kx},
+\end{equation}
+for initial amplitude $A_0$ and wavenumber $k = \frac{2 \pi}{\lambda}$, where $\lambda$ denotes wavelength. Upon transmission through an optic, the transmitted field is equal to the input field, $A_{\text{in}}$, scaled by the optic's field transmissivity, $t$:
+\begin{equation}
+  A_{\text{t}} = tA_{\text{in}}.
+\end{equation}
+The reflected field is similarly scaled by the optic's field reflectivity, $r$:
+\begin{equation}
+  \label{eq:reflected-field}
+  A_{\text{r}} = \text{i}rA_{\text{in}}.
+\end{equation}
+Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. We choose to apply this phase shift to the reflected field by convention (see Appendix\,\ref{a:reflection-phase}).
+
+The field due to motion of a mirror at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}kL}$ in phase, and a factor of $\text{i}r$ in amplitude. Distance $x$ may in general be a time varying function, so the time varying field is then:
+\begin{equation}
+  A_{\text{r}} \left( t \right) = \text{i} r \text{e}^{\text{i} k x \left( t \right)}.
+\end{equation}
+If we assume the motion of the mirror is sinusoidal (a very good approximation, given that mirrors are typically attached to a rigid body), then the field can be expressed in terms of the the amplitude $x_0$ and frequency $f$ of oscillation:
+\begin{equation}
+  A
+\end{equation}
+\note{See G.V. p216, derive equivalent version}
 
 \subsubsection{Transmission and reflection}
 
