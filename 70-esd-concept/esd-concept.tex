@@ -2,14 +2,18 @@
 \label{c:esd-concept}
 
 * Introduce Holger's paper~\cite{Wittel2015} \etal{}, discuss need for high voltages
+* Actuators usually couple noise, which is why magnets are usually on a stage above the test masses. This necessarily limits range, as any actuation performed by the magnets will be filtered by 1/f
 * HV power supply design considerations (bleed resistor, voltage requirements, etc.)
 * HV power supply current limiting circuit explanation (called ``foldback limiting'', see Horowitz and Hill p694)
 * HV power supply heatsink considerations: power produced by MOSFETs at maximum current rating (100 mA, produces 25 W of heat - see datasheets) - chose heatsinks to dissipate this heat and make installation of the board easy (can screw TO-220 casing to L-shaped brackets)
 * HV amplifier design: pressure and temperature cut-offs (explanation of how it works), input/output signals, choice of connectors, routing of signals for ease of assembly (front panel disconnect, etc.)
-* Protective earthing
+* Protective earthing (how the removal of the ground supply from the GEO supply will clamp ground to Earth beyond 18 V)
 * HV amplifier transfer function, usign both HV output (via voltage divider) and monitor output
 * HV amplifier monitor noise measurement
 * This experiment will inform the main SSM experiment.
+
+* Discuss how Andreas' design (with my modifications) was a first prototype, and we decided to redesign it afterwards because of various problems: requirement for a 5V offset at all times, the heat production (due to quiescent current) of the PA98s, lack of switchable whitening. New design incorporates this stuff, along with significant digital signalling thought, and quad channels. New connector to the vacuum feedthrough, too.
+* Discuss digital signalling design: avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc. Mention that we considered EtherCAT for this but decided it was too expensive (needs a dedicated block inside the amplifier box)
 
 As described in Chapter\,\ref{c:speedmeter-control}, the \ESD{} is best employed as a high frequency actuator...
 
