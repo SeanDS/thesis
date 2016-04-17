@@ -1,3 +1,4 @@
+import os
 import sys
 import numpy as np
 import scipy.stats as stats
@@ -8,7 +9,7 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # individual factors data
-data_path = sys.argv[2]
+data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '30-individual-factors.csv')
 
 # load curve CSV data
 curves = np.genfromtxt(data_path, delimiter=',', skip_header=1)

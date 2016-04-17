@@ -1,3 +1,4 @@
+import os
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,8 +7,8 @@ import lookfeel as lf
 # save path
 save_path = sys.argv[1]
 
-# individual factors data
-data_path = sys.argv[2]
+# data path
+data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '30-coating-vs-grating-noise.csv')
 
 # load noise CSV data
 noise_data = np.genfromtxt(data_path, delimiter=',', skip_header=1)

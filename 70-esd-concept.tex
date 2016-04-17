@@ -36,11 +36,10 @@ There are a number of requirements for the plate capacitor's power supply. Due t
 As this experiment is somewhat a technology demonstration for the main \SSMEXPT{}, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment.
 
 \begin{figure}
-  \begin{center}
-    \includegraphics[width=\columnwidth]{70-esd-concept/graphics/dynamic/esd-ansys.pdf}
-    \caption{Simulations of the actuation force produced by the proposed ESD design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
-    \label{fig:esd-ansys}
-  \end{center}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-esd-ansys.pdf}
+  \caption{Simulations of the actuation force produced by the proposed ESD design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
+  \label{fig:esd-ansys}
 \end{figure}
 
 \section{High voltage amplifier}
@@ -61,11 +60,10 @@ To prevent the possibility of arcing, a cut-off function was added to the circui
 % pressure vs voltage claim from speedmeter labbook, at https://arran.physics.gla.ac.uk/wp/speedmeter/2015/01/30/esd-hv-amplifier-pressure-cutoff/
 
 \begin{figure}
-  \begin{center}
-    \includegraphics[width=\columnwidth]{70-esd-concept/graphics/dynamic/esd-paschen.pdf}
-    \caption{The minimum breakdown voltage between the two plates of the \ESD{} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \ESD{} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
-    \label{fig:esd-paschen}
-  \end{center}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-esd-paschen.pdf}
+  \caption{The minimum breakdown voltage between the two plates of the \ESD{} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \ESD{} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
+  \label{fig:esd-paschen}
 \end{figure}
 
 \subsection{Description of signal and noise paths}

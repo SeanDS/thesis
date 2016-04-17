@@ -7,26 +7,241 @@
 %    if printed copy is twoside, use [twoside,nogutter] for digital copy.
 % ^^ add "hidelinks" option to remove coloured links (e.g. for printing)
 
+%%%
+% Packages
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{bookmark}
+\usepackage{hyphenat} % for \hyp{} instead of "-".
+
+%%%
+% Bibliography
+
+% import package and set some options
+\usepackage[minnames=1,maxnames=5,style=numeric-comp,sorting=none,backend=bibtex]{biblatex}
+
+% set path to database
+\bibliography{bibliography.bib}
+
+%%%
+% SI units
+
+% import package
+\usepackage[separate-uncertainty=true]{siunitx}
+
+% for nice display of negative symbol in equations
+\sisetup{
+   detect-mode,
+   detect-family,
+   detect-inline-family=math,
+}
+
+%%%
+% List of symbols, definitions, etc.
+
+% import package
+\usepackage[acronym,nomain]{glossaries}
+
+% make the list
+\makeglossaries
+
+%%%
+% superscript th, st, nd, rd, etc.
+\usepackage[super]{nth}
+
+%%%
+% Hyperlinks
+%
+% (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
+
+% import package
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan
+}
+
+%%%
+% Fix silly LaTeX space/punctuation behaviour with custom commands
+%
+% The command '\xspace' should be added to the end of custom commands which lack arguments, to make LaTeX put a space after the command's output.
+\usepackage{xspace}
+
+%%%
+% Smaller text in captions
+\usepackage[font=small]{caption}
+
+%%%
+% Subcaptions
+\usepackage{subcaption}
+
+%%%
+% Wrapping text around figures
+\usepackage{wrapfig}
+
+%%%
+% Custom commands
+
+% command to make plural versions of commands (http://tex.stackexchange.com/questions/259287/how-to-define-a-newcommand-that-expands-into-another-newcommand)
+% e.g.
+% 	\makename[es]{veggie}{potato}
+% makes the commands \veggie (=potato) and \veggies (=potatoes)
+\newcommand{\makename}[3][s]{%
+  \expandafter\newcommand\csname #2\endcsname{#3\xspace}%
+  \expandafter\newcommand\csname #2s\endcsname{#3#1\xspace}%
+}
+
+% red, italic, bold - for notes
+\newcommand{\note}[1]{\textcolor{red}{\emph{[\textbf{Note: }#1]}}}
+
+% blue, normal text - for statements that need fact-checked
+\newcommand{\checkme}[1]{\textcolor{blue}{#1}}
+
+% inline code, monospace font
+\newcommand{\code}[1]{\texttt{#1}}
+
+% naive with diaeresis
+\newcommand{\naive}{na\"ive\xspace}
+
+% et al.
+% (and a backslash to prevent TeX thinking a new sentence starts afterwards)
+\newcommand{\etal}{et~al.\@}
+
+% Michelson interferometer
+\newcommand{\MI}{Michelson interferometer\xspace}
+
+% Fabry-Perot with accent
+\newcommand{\FP}{Fabry-P\'{e}rot\xspace}
+
+% Fabry-Perot Michelson interferometer
+\newcommand{\FPMI}{Fabry-P\'{e}rot Michelson interferometer\xspace}
+
+% Dual-recycled Fabry-Perot Michelson interferometer
+\newcommand{\DRFPMI}{Dual-recycled Fabry-P\'{e}rot Michelson interferometer\xspace}
+
+% Sagnac Speedmeter
+\newcommand{\SSM}{Sagnac speedmeter\xspace}
+
+% Sagnac Speedmeter experiment
+\newcommand{\SSMEXPT}{Sagnac speedmeter experiment\xspace}
+
+% AEI 10m prototype
+\newcommand{\AEIPROTOTYPE}{AEI \SI{10}{\meter} prototype\xspace}
+
+% Glasgow 10m prototype
+\newcommand{\GLASGOWTENM}{Glasgow \SI{10}{\meter} prototype\xspace}
+
+% Matlab
+\newcommand{\MATLAB}{Matlab\xspace}
+
+% AC
+\newcommand{\AC}{ac\xspace}
+
+% ESD/ESDs
+\makename[s]{ESD}{ESD}
+
+% MOSFET
+\newcommand{\MOSFET}{MOSFET\xspace}
+
 % title, contents, etc.
 \frontmatter
-\include{"00-meta/header"}
+%%%
+% Document
+
+\begin{document}
+
+%\pagestyle{empty}
+%\pagenumbering{gobble}
+
+\title{Enhancing the Sensitivity of Future Interferometric Gravitational Wave Detectors}
+\author{Sean Stephan Leavey}
+\date{Month Year}
+
+\maketitle
+
+\cleardoublepage
+
+\input{"00-abstract.tex"}
+%\addcontentsline{toc}{chapter}{Abstract}
+
+\newpage
+\input{"00-acknowledgements.tex"}
+%\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\cleardoublepage
+\vspace*{1.75in}
+\begin{flushright} Dedication. (Is what you need.)\end{flushright}
+
+
+%\pagenumbering{roman}
+%\setcounter{page}{1}
+
+% -----------------------------------------------------------------------------
+\newpage
+
+\vspace*{1.75in}
+\begin{center} {\bf Creative Commons Licence}\end{center}
+\noindent I hereby grant permission under the following terms...
+
+\begin{description}
+\item Sean Stephan Leavey\ \\ \ \\ \ \\
+\hrule
+\end{description}
+\addcontentsline{toc}{chapter}{Licence}
+\newpage
+
+% -----------------------------------------------------------------------------
+
+% import glossary terms
+\input{"00-definitions.tex"} 
+
+% -----------------------------------------------------------------------------
+\newpage
+%\thispagestyle{empty}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\addcontentsline{toc}{chapter}{List of Acronyms and Symbols}
+\printglossaries
+
+% -----------------------------------------------------------------------------
+\cleardoublepage
+
+% Number chapter boomarks
+\bookmarksetup{numbered}
+
+\section{Thesis Statement}
+\label{c:intro:thesisstatement}
+
+\input{"00-statement.tex"}
 
 % main chapters
 \mainmatter
-\include{"10-introduction/introduction"}
-\include{"20-instrumentation/instrumentation"}
-\include{"30-waveguides/waveguides"}
-\include{"40-et-lf-control/et-lf-control"}
-\include{"50-speedmeter-intro/speedmeter-intro"}
-\include{"60-speedmeter-control/speedmeter-control"}
-\include{"70-esd-concept/esd-concept"}
-\include{"80-slow-controls-integration/slow-controls-integration"}
+\include{10-introduction}
+\include{20-instrumentation}
+\include{30-waveguides}
+\include{40-et-lf-control}
+\include{50-speedmeter-intro}
+\include{60-speedmeter-control}
+\include{70-esd-concept}
+\include{80-slow-controls-integration}
 
 % appendices
 \appendix
-\include{"AA-simulation-tools/appendix"}
-\include{"AB-alignment-control/appendix"}
+\include{AA-simulation-tools}
+\include{AB-alignment-control}
 
 % end
 \backmatter
-\include{"00-meta/footer"}
+
+% bibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+\end{document}

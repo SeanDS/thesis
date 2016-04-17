@@ -1,3 +1,4 @@
+import os
 import sys
 import numpy as np
 import scipy.stats as stats
@@ -6,8 +7,9 @@ import lookfeel as lf
 
 # first argument should be save path
 save_path = sys.argv[1]
-# second argument should be data path
-data_path = sys.argv[2]
+
+# data path
+data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-python', '70-esd-ansys.csv')
 
 # load
 data = np.genfromtxt(data_path, delimiter=',', skip_header=1)
