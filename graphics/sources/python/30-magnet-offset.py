@@ -1,3 +1,5 @@
+from __future__ import division
+
 import os
 import sys
 import numpy as np
@@ -28,9 +30,9 @@ fit_y = fit(data[:, 0])
 # subtract central value of fit x-axis
 data[:, 0] -= data[np.argmax(fit_y), 0]
 
-# subtract central force
-data[:, 1] -= max(fit_y)
-fit_y -= max(fit_y)
+# divide by central force
+data[:, 1] *= 100 / max(fit_y)
+fit_y *= 100 / max(fit_y)
 
 # colour wheel
 colours = lf.Colours()
@@ -44,10 +46,10 @@ with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
     ax.plot(data[:, 0], fit_y, '-', color=colours.next())
 
 ax.set_xlim([-6.5, 6.5])
-ax.set_ylim([-0.5, 0.2])
+#ax.set_ylim([-0.5, 0.2])
 ax.grid(True)
-ax.set_xlabel('Displacement relative to position of maximum force [mm]')
-ax.set_ylabel('Force relative to maximum [N]')
+ax.set_xlabel('Displacement relative to regression\'s\nposition of maximum force [mm]')
+ax.set_ylabel('Force relative to regression\nmaximum [%]')
 ax.legend(['Measurements', 'Quadratic fit'], loc='lower left')
 
 fig.tight_layout()

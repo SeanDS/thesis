@@ -35,19 +35,20 @@ As discussed in \note{instrumentation chapter}, heterodyne locking...
 \subsection{Off-Axis Voice Coil}
 \note{Put results from test of off-axis voice coil force measurements.}
 
+To examine the effect of misalignment of the voice coil and magnet to their shared radial axis, the apparatus shown in Figure \ref{fig:misaligned-voice-coil-experiment} was set up. A rod was placed above the magnet, with the voice coil attached to its end. The magnet was glued to a thick perspex disc attached to the base edge of an upturned plastic cup, to allow the force applied to the magnet to rigidly couple to the base of the cup. The cup was itself placed upon scales accurate to \SI{1}{\micro\gram} and a translation stage with \SI{25}{\micro\meter} accuracy. With the front edge of the voice coil separated by \SI{7.9}{\milli\meter} to the base of the magnet, a series of force measurements were taken. A constant current source of \SI{50}{\milli\ampere} was applied through the coil while incrementing the translation stage in steps of \SI{0.1}{\milli\meter}. The results in Figure \ref{fig:misaligned-voice-coil-results} show that the effect is negligible within the main experiment's misalignment error.
+
+\note{Add coil sweet spot plot}
+
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-magnet-offset-experiment.pdf}
-  \caption{Experiment to measure the effect of misaligned voice coil actuation.}
-  \label{fig:misaligned-voice-coil-experiment}
+  \caption{\label{fig:misaligned-voice-coil-experiment}Experiment to measure the effect of misaligned voice coil actuation.}
 \end{figure}
-
-Perspex disc is used to couple the force from the magnet to the edges of the cup where it is most rigid. The scales used are accurate to \SI{1}{\micro\gram}.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-magnet-offset.pdf}
-  \caption{Change in force as a function of transverse displacement from voice coil axis. A quadratic fit has been applied to the data and the axes shown are with respect to the position and magnitude of the maximum fitted force, following the assumption that this position is nearest to the optimal alignment. This fit is probably a worst case scenario, as the magnet was positioned close to the voice coil's position of maximum force, where the field gradient is quite flat. \checkme{Assuming the voice coils and magnets were aligned within \SI{0.5}{\milli\meter}, the maximum drop in force would have been negligible\textemdash of the order 1\%\textemdash and so this explanation can be ruled out.}}
+  \caption{Change in force as a function of transverse displacement from voice coil axis. A quadratic fit has been applied to the data and the axes shown are with respect to the position and magnitude of the maximum fitted force, following the assumption that this position is nearest to the optimal alignment. This fit is probably a worst case scenario, as the magnet was positioned close to the voice coil's position of maximum force, where the field gradient is quite flat. \checkme{Assuming the voice coils and magnets were aligned within \SI{0.5}{\milli\meter}, the maximum drop in force would have been negligible\textemdash less than 1\%\textemdash and so this explanation can be ruled out.}}
   \label{fig:misaligned-voice-coil-results}
 \end{figure}
 
