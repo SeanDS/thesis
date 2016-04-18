@@ -97,6 +97,8 @@ $(GFXGENPY)/30-coating-vs-grating-noise.pdf: $(DATA)/30-coating-vs-grating-noise
 
 $(GFXGENPY)/30-individual-factors.pdf: $(DATA)/30-individual-factors.csv
 
+$(GFXGENPY)/30-magnet-offset.py: $(DATA)/30-magnet-offset.csv
+
 $(GFXGENPY)/70-esd-ansys.pdf: $(DATAGENPY)/70-esd-ansys.csv
 
 # ===== Data dependencies =====

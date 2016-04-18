@@ -35,6 +35,24 @@ As discussed in \note{instrumentation chapter}, heterodyne locking...
 \subsection{Off-Axis Voice Coil}
 \note{Put results from test of off-axis voice coil force measurements.}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-magnet-offset-experiment.pdf}
+  \caption{Experiment to measure the effect of misaligned voice coil actuation.}
+  \label{fig:misaligned-voice-coil-experiment}
+\end{figure}
+
+Perspex disc is used to couple the force from the magnet to the edges of the cup where it is most rigid. The scales used are accurate to \SI{1}{\micro\gram}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-magnet-offset.pdf}
+  \caption{Change in force as a function of transverse displacement from voice coil axis. A quadratic fit has been applied to the data and the axes shown are with respect to the position and magnitude of the maximum fitted force, following the assumption that this position is nearest to the optimal alignment. This fit is probably a worst case scenario, as the magnet was positioned close to the voice coil's position of maximum force, where the field gradient is quite flat. \checkme{Assuming the voice coils and magnets were aligned within \SI{0.5}{\milli\meter}, the maximum drop in force would have been negligible\textemdash of the order 1\%\textemdash and so this explanation can be ruled out.}}
+  \label{fig:misaligned-voice-coil-results}
+\end{figure}
+
+\note{Use figure of magnet offset results to calculate the maximum force drop that could have been witnessed}
+
 \section{Analysis and Results}
 \note{Bayesian stuff...}
 
