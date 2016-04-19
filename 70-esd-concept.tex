@@ -11,6 +11,7 @@
 * HV amplifier transfer function, usign both HV output (via voltage divider) and monitor output
 * HV amplifier monitor noise measurement
 * This experiment will inform the main SSM experiment.
+* 10 ohm resistor on output of amplifier design to damp resonant RCL modes: resistor adds loss, so lowers the Q associated with any suspension or cable pickups
 
 * Discuss how Andreas' design (with my modifications) was a first prototype, and we decided to redesign it afterwards because of various problems: requirement for a 5V offset at all times, the heat production (due to quiescent current) of the PA98s, lack of switchable whitening. New design incorporates this stuff, along with significant digital signalling thought, and quad channels. New connector to the vacuum feedthrough, too.
 * Discuss digital signalling design: avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc. Mention that we considered EtherCAT for this but decided it was too expensive (needs a dedicated block inside the amplifier box)
