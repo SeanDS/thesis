@@ -43,7 +43,29 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT{
   \label{fig:esd-ansys}
 \end{figure}
 
-\section{High voltage amplifier}
+\subsection{Custom HV power supply design}
+
+\emph{Note: the power supply design presented in this section was eventually shown not to work with the amplifier introduced in Section\,\ref{sec:hv-amplifier}. The text in this section exists to discuss why a high voltage supply is necessary, as a reference for how the experiment's power supply was built and to provide the possibility that the design be adapted in the future.}
+
+An \gls{HV} power supply can be as simple as a mains voltage transformer (to change the peak voltage), a bridge rectifier (to remove current reversal) and filter capacitors (to suppress the sinusoidal change in voltage). This approach is dangerous, however, due to the lack of current limit protection; and as capacitors cannot provide infinite filtering at all frequencies it leads to a compromise between having \gls{AC} components present upon the intended \gls{DC} output or dangerously high energy stored in large capacitors. Instead, a common approach is to use a power \gls{MOSFET} as a regulator. Such a circuit uses the \gls{MOSFET} as a switch to open and close the gate to keep the current flowing through it constant. As this \gls{MOSFET} operates at very high frequency (\SI{}{\mega\hertz}), the device is more than capable of removing much of the \gls{AC} component of the mains supply. Additional smoothing capacitors help to provide further filtering before and after the regulator.
+
+Commercial power supplies are expensive and are typically more suited to high current applications. It was initially thought that the power supply for the \gls{HV} amplifier could be built from scratch for low cost following the aforementioned \gls{MOSFET} approach, which led to the circuit shown in Figure\,\ref{fig:hv-power-supply}. The zener diodes D3-D8 set the output voltage of the positive and negative rails to be +\SI{360}{\volt} and \SI{-360}{\volt}, respectively. This design also features current limiting circuitry by means of the bipolar junction transistors T3 and T4. These use the voltage drop across \emph{witness} resistors R7 and R8 to clamp the output to the ground rail in the event of a short. If the voltage drop across R7 or R8 reaches \SI{0.7}{\volt}, corresponding to a current of \SI{70}{\milli\ampere}, each respective transistor opens up a low resistance path to ground for the field normally facilitating current flow through the \gls{MOSFET}, effectively halting the output current.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-hv-power-supply.pdf}
+  \caption{\gls{HV} power supply design. This circuit follows the \emph{de-facto} standard design of a transformer, bridge rectifier, \gls{MOSFET} regulator, zener diodes and smoothing capacitors. It is an evolution on a single-sided power supply from Henning Valbruch (AEI, Hannover) with the addition of a negative output rail and current limit circuitry. This design \emph{does not} work with the \gls{HV} amplifier as discussed in Section\,\ref{sec:hv-amplifier}\textemdash see Section\,\ref{sec:hv-psu-amp-measurements} for more details.}
+  \label{fig:hv-power-supply}
+\end{figure}
+
+The power dissipated in each \gls{MOSFET} in certain circumstances can reach \SI{50}{\watt}, so sufficient heat sinks are required. For this design the choice was made to mount L-shaped angle brackets to the enclosure and the circuit board, onto which the \gls{MOSFET} casings were fixed. These brackets were further connected via the enclosure to large metal fins. \note{Photo?}
+% 50W claim: see Ken's email, 2016-01-19 11:56. Device can withstand 100mA @ 500V for brief periods.
+
+\subsubsection{\label{sec:hv-psu-tests}Tests}
+
+To test the assembled power supply a series of parallel resistors were connected to the output and the output current was inferred from the voltage across these resistors. \note{Use paper labbook to describe this in more detail.} High power resistors were necessary in order to test the current limit circuitry: for current exceeding \SI{70}{\milli\ampere} at full output (\SI{\pm360}{\volt}), the resistance must be approximately \SI{5.1}{\kilo\ohm} and so dissipated power is around \SI{25}{\watt}. For output resistance \SI{<5.1}{\kilo\ohm}, the voltage output was observed to drop towards zero.
+
+\section{\label{sec:hv-amplifier}High voltage amplifier}
 
 A means of controlling the \AC{} component of the high voltage (\gls{HV}) supply is necessary to perform frequency-dependent corrections upon the mirror. Although the ESD, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This is to provide a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
 
@@ -67,8 +89,8 @@ To prevent the possibility of arcing, a cut-off function was added to the circui
   \label{fig:esd-paschen}
 \end{figure}
 
-\subsection{Description of signal and noise paths}
-The \gls{HV} amplifier is designed to have a very wide bandwidth, and the power amplifier has been chosen with this goal in mind. The amplifier circuit, however, contains more than just the power amplifier, but also filtering and safety mechanisms in the form of additional integrated circuits and other passive and active components. The control input from \gls{CDS} is a differential signal, and any common mode noise that may have entered in each channel on the way to the amplifier is to a great extent removed by a balanced line receiver present at the amplifier's input. This outputs a single-ended signal which which is split into two parts, with one being inverted via a buffer op-amp, and these two signals are sent to their respective power amplifiers. Additional op-amps also control the supply voltage provided to each power amplifier. To prevent high current in-rush when the power supply is attached to the amplifier--as reactive components such as capacitors and inductors charge--an op-amp limits the current to a level low enough for the power supply to provide without locking.
+\subsection{Signal and noise paths}
+The \gls{HV} amplifier is designed to have a very wide bandwidth, and the power amplifier has been chosen with this goal in mind. The amplifier circuit, however, contains more than just the power amplifier, but also filtering and safety mechanisms in the form of additional integrated circuits and other passive and active components. The control input from \gls{CDS} is a differential signal, and any common mode noise that may have entered in each channel on the way to the amplifier is to a great extent removed by a balanced line receiver present at the amplifier's input. This outputs a single-ended signal which is split into two parts, with one being inverted via a buffer op-amp, and these two signals are sent to their respective power amplifiers. Additional op-amps also control the supply voltage provided to each power amplifier. To prevent high current in-rush when the power supply is attached to the amplifier--as reactive components such as capacitors and inductors charge--an op-amp limits the current to a level low enough for the power supply to provide without locking.
 
 In \gls{CDS}, the signal $S$ is sent from the digital to the analogue domain via \gls{ADC}s, where it is split into two channels, $A$ and $B$, containing the same signal but with opposite sign. These signals are sent to the amplifier in a two-core cable. As laboratories inevitably contain stray electromagnetic fields, channels $A$ and $B$ pick up noise $n_{A}$ and $n_{B}$, respectively:
 \begin{align}
@@ -97,6 +119,10 @@ with the resulting number expressed in decibels. Within the amplifier, the signa
 
 The gain of the amplifier can be determined from inspection of the path an input signal takes to the output... \note{discuss how gain arises in circuit}
 
+\section{\label{sec:hv-psu-amp-measurements}Measurements with power supply and amplifier}
+
+With the power supply connected to the amplifier, the power supply was observed not to work. On closer inspection it was revealed that the \gls{MOSFET}s used to regulate the output voltage were failing irreversibly immediately after switch-on. As this effect was not observed for constant load (see Section\,\ref{sec:hv-psu-tests}), it is thought that it was due to a combination of two characteristics of the system. The amplifier's current draw is initially larger on the positive rail than on the negative rail \checkme{is this the correct way round?}. The presence of chokes (in the form of the mains transformer and the \gls{AC} filtering in both the power supply and amplifier), which due to tolerances can have slightly imbalanced filtering, can lead to the creation of parasitic reverse voltages exceeding each \gls{MOSFET}'s rating. Examination of power supply designs for amplifier electronics in the literature reveals that it is common practice to build protective circuitry alongside many of the components of the general power supply design shown in Figure\,\ref{fig:hv-power-supply}, presumably to prevent such issues. As it was impractical to retrofit such protective circuitry into the power supply as designed, the decision was taken to instead purchase commercial \emph{Delta Elektronika ES 150} power supplies for use with the amplifier.
+
 \subsection{Transfer functions}
 \note{Describe measurement: use of voltage divider, need to take into account impedance of the send box in its design, bandwidth of each measurement: CDS up to 10 kHz, SR785 up to 100 kHz, Agilent up to MHz. Describe monitor and \gls{HV} rail outputs, and how we avoid ground loops (isolated case from double LEMO and monitor outputs.}
 
@@ -105,6 +131,12 @@ The presence of stray capacitance at the inputs and outputs of these additional 
 \subsection{Noise measurements}
 
 \note{Spectral density noise with SR785}
+
+\section{\label{sec:hv-amplifier-alt}Alternative amplifier design}
+\note{Discuss new design: why it was felt necessary, what we fixed/changed, how it performs, etc...}
+
+\section{Wiring scheme}
+\note{Discuss wiring diagram for ESD experiment...}
 
 \section{The Experiment}
 
