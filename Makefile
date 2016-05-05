@@ -97,7 +97,15 @@ $(GFXGENPY)/30-coating-vs-grating-noise.pdf: $(DATA)/30-coating-vs-grating-noise
 
 $(GFXGENPY)/30-individual-factors.pdf: $(DATA)/30-individual-factors.csv
 
+$(GFXGENPY)/30-posterior-coupling.pdf: $(DATA)/30-posterior-coupling.csv
+
+$(GFXGENPY)/30-posterior-scaling.pdf: $(DATA)/30-posterior-scaling.csv
+
+$(GFXGENPY)/30-posterior-stddev.pdf: $(DATA)/30-posterior-stddev.csv
+
 $(GFXGENPY)/30-magnet-offset.py: $(DATA)/30-magnet-offset.csv
+
+$(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.csv $(DATA)/30-coupling-best-fit-simulations.csv
 
 $(GFXGENPY)/70-esd-ansys.pdf: $(DATAGENPY)/70-esd-ansys.csv
 

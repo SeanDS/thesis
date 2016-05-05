@@ -9,8 +9,12 @@ import matplotlib
 # default fig size
 FIG_SIZE_A = (10, 7)
 
-# half-width fig size
-FIG_SIZE_A_HW = (FIG_SIZE_A[0] / 2, FIG_SIZE_A[1])
+# smaller fig size (for two plots side-by-side)
+# (be sure to scale fonts too)
+FIG_SIZE_A_SM = (FIG_SIZE_A[0] / 1.5, FIG_SIZE_A[1] / 1.41)
+
+# faller fig size (for Bode-style plots)
+FIG_SIZE_A_TALL = (FIG_SIZE_A[0], FIG_SIZE_A[1] * 1.41)
 
 # default line transparency
 ALPHA_LINE_A = 0.8
@@ -24,27 +28,28 @@ ARROW_OVERHANG = 0.3
 ###
 # Matplotlib settings
 
+default_settings = {
+    'font.sans-serif': ['Linux Biolinum O'], 
+    'font.size': 20,
+    'grid.alpha': 0.5,
+    'grid.linestyle': ':',
+    'legend.borderaxespad': 2,
+    'legend.fancybox': True,
+    'legend.fontsize': 16,
+    'legend.framealpha': 0.9,
+    'lines.linewidth': 2,
+    'lines.markeredgewidth': 3,
+    'lines.markersize': 15,
+    'xtick.major.pad': 10,
+    'xtick.minor.pad': 10,
+    'xtick.labelsize': 16,
+    'ytick.major.pad': 10,
+    'ytick.minor.pad': 10,
+    'ytick.labelsize': 16
+}
+
 # set defaults
-matplotlib.rcParams.update(
-    {
-        'font.size': 20,
-        'grid.alpha': 0.5,
-        'grid.linestyle': ':',
-        'legend.borderaxespad': 2,
-        'legend.fancybox': True,
-        'legend.fontsize': 16,
-        'legend.framealpha': 0.9,
-        'lines.linewidth': 2,
-        'lines.markeredgewidth': 3,
-        'lines.markersize': 15,
-        'xtick.major.pad': 10,
-        'xtick.minor.pad': 10,
-        'xtick.labelsize': 16,
-        'ytick.major.pad': 10,
-        'ytick.minor.pad': 10,
-        'ytick.labelsize': 16
-    }
-)
+matplotlib.rcParams.update(default_settings)
 
 class Colours(object):
     """Colours iterable"""
@@ -87,3 +92,20 @@ class Colours(object):
         """Returns current colour"""
         
         return self.colours[self.current_index]
+
+def set_font_size(group):
+    if group == 'sm':
+        scale_fonts(1.4)
+    else:
+        raise Exception('Specified font group is not valid')
+
+def scale_fonts(factor):
+    factor = float(factor)
+  
+    """Scales fonts by factor, for instance to handle LaTeX subplots"""
+    matplotlib.rcParams.update({
+	'font.size': default_settings['font.size'] * factor,
+	'legend.fontsize': default_settings['legend.fontsize'] * factor,
+	'xtick.labelsize': default_settings['xtick.labelsize'] * factor,
+	'ytick.labelsize': default_settings['ytick.labelsize'] * factor
+    })
