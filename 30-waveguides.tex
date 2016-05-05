@@ -22,12 +22,12 @@ Apart from using different coating materials \cite{Granata2013, Cole2013} or dif
   \caption{\label{fig:waveguide-reflection}Propagation of light within a waveguide mirror. The grating and waveguide layers have refractive index $n_H$, and sit atop a substrate of refractive index $n_L$. Blue arrows represent incident light and red arrows represent reflected light. In realisations of waveguide mirrors such as this, a thin etch-stop layer is placed between the grating and waveguide layers to assist fabrication \cite{Friedrich2011}.}
 \end{figure}
 
-Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to mirrors employed in Advanced LIGO (see Figure\,\ref{fig:coating-vs-grating-noise}).
+Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to the \gls{ETM} employed in Advanced LIGO at room temperature. Figure\,\ref{fig:coating-vs-grating-noise} shows Brownian thermal noise modelled for different numbers of bilayers (following \cite{Harry2002}) for the Advanced LIGO \gls{ETM}. As the dielectric mirror uses more bilayers to decrease transmissivity, the Brownian thermal noise contribution increases. The grating, however, requires only a change in grating parameters to produce a specific transmissivity, and this does not have a strong dependence on Brownian thermal noise.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-coating-vs-grating-noise.pdf}
-  \caption{\label{fig:coating-vs-grating-noise}Coating vs grating noise}
+  \caption{\label{fig:coating-vs-grating-noise}Reproduction of the results from Heinert \etal{} \cite{Heinert2013} showing Brownian thermal noise in an Advanced LIGO style \gls{ETM} at room temperature versus that of a \gls{WGM} at cryogenic temperature, as a function of transmissivity. The markers in the coating curve represent the number of quarter-wavelength bilayers forming the dielectric stack. Each additional bilayer in the coating stack produces lower overall transmissivity, but also increases the Brownian thermal noise. The grating's Brownian thermal noise contribution is independent of transmissivity. The transmissivity of Advanced LIGO's ETM is shown as a vertical, dashed line.}
 \end{figure}
 
 Previous efforts to demonstrate grating structures as alternatives to dielectric mirrors have identified phase noise in the light reflected from the grating not otherwise present in dielectric mirrors \cite{Wise2005, Freise2007}. This effect arises from transverse motion of grating mirrors with respect to the incident light. Incident light at angle $\alpha$ is reflected into the m\textsuperscript{th} diffraction order, exiting at angle $\beta_m$ (see Figure\,\ref{fig:grating-propagation}). The change in path length $\delta l_L$ between the reflected and incident light is then
@@ -216,7 +216,25 @@ Four spot positions corresponding to $y$ in Equation~\ref{eq:offset-effect} were
 
 For each nominal spot position an additional measurement was taken with $V_L$ set to $\pm \SI{0.1}{\volt}$ from its balanced setting for a period of \SI{60}{\second}. This allowed two additional data points to be obtained for each spot position. By calculating the gradient (cavity length change per spot position with respect to the centre of yaw) of the central and inner-left spot positions, it was possible to assign an effective spot position for each of the offset points.
 
-The spot positions used to obtain cavity error signals are shown in Table~\ref{tab:spot-positions}. These positions are shown with respect to the centre of the \gls{ETM}'s reflective surface. The spot positions were subject to two sources of error: the measurement of the spot positions with respect to the centre, and the error in the \gls{ETM}'s centre of rotation due to misalignment between the voice coils and their corresponding magnets. The spot position error was assumed to be \SI{\pm1}{\milli\meter} from visual inspection of the suspensions, measured \emph{via} the CCD camera placed in transmission of the \gls{ETM}, using the known width of the \gls{ETM}'s reaction mass as a calibration. The error in the spot position measurements dominated the error in voice coil alignment. Although misaligned voice coils could have lead to a change in the expected \gls{ETM} force coupling (leading to a change in the centre of rotation of the \gls{ETM}), it was found from separate measurements that the effect of any possible misalignment during the experiment could only account for a drop in force of \SI{0.11}\%. This contributed a negligible error (\SI{\pm0.03}{\milli\meter}) to the results.
+The spot positions used to obtain cavity error signals are shown in Table~\ref{tab:spot-positions}. These positions are shown with respect to the centre of the \gls{ETM}'s reflective surface. The spot positions were subject to two sources of error: the measurement of the spot positions with respect to the centre, and the error in the \gls{ETM}'s centre of rotation due to misalignment between the voice coils and their corresponding magnets. The spot position error was assumed to be \SI{\pm1}{\milli\meter} from visual inspection of the suspensions, measured \emph{via} the CCD camera placed in transmission of the \gls{ETM}, using the known width of the \gls{ETM}'s reaction mass as a calibration.
+
+Misalignment between the voice coils and magnets can lead to unintended torque and longitudinal actuation, confusing the calibration. To evaluate whether this effect could be significant, a small experiment was configured as shown in Figure\,\ref{fig:misaligned-voice-coil-experiment}. A rod was placed above a magnet with the voice coil attached to its end, with both magnet and voice coil having the same dimensions as those of the main experiment. The magnet was glued to a thick perspex disc attached to the base edge of an upturned plastic cup to allow the force applied to the magnet to rigidly couple to the base of the cup. The cup was itself placed upon scales accurate to \SI{1}{\micro\gram} and a translation stage with \SI{25}{\micro\meter} precision.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-magnet-offset-experiment.pdf}
+  \caption{\label{fig:misaligned-voice-coil-experiment}Experiment to measure the effect of misaligned voice coil actuation.}
+\end{figure}
+
+With the front edge of the voice coil separated from the base of the magnet by \SI{7.9}{\milli\meter}\textemdash close to that of the main experiment\textemdash a series of force measurements were taken. A constant current source of \SI{50}{\milli\ampere} was applied through the coil while incrementing the translation stage in steps of \SI{0.1}{\milli\meter}. The results in Figure\,\ref{fig:misaligned-voice-coil-results} show that the effect is negligible within the main experiment's alignment error, with an upper limit for the drop in force determined to be \SI{0.11}{}\% given the error from determining the alignment by visual inspection. This corresponds to a negligible error of less than \SI{\pm30}{\micro\meter} in the results, which is dominated by the spot position error.
+
+\note{Add coil sweet spot plot?}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-magnet-offset.pdf}
+  \caption{\label{fig:misaligned-voice-coil-results}Change in force as a function of transverse displacement from voice coil axis. A quadratic fit has been applied to the data and the axes shown are with respect to the position and magnitude of the maximum fitted force, following the assumption that this position is nearest to the optimal alignment. This fit is probably a worst case scenario, as the magnet was positioned close to the voice coil's position of maximum force, where the field gradient is quite flat. \checkme{Assuming the voice coils and magnets were aligned within \SI{0.5}{\milli\meter}, the maximum drop in force would have been negligible\textemdash less than 1\%\textemdash and so this explanation can be ruled out.}}
+\end{figure}
 
 \begin{table}
   \centering
@@ -331,30 +349,7 @@ The upper limit on the predicted coupling level, 1:17000, represents a significa
   \\ Error bars are shown on the measured spot positions corresponding to their uncertainty. The errors in cavity length change are obtained from the noise floor surrounding each measurement. The noise floors were approximately constant for all measurements, with mean value \SI{8e-5}{\meter \per \radian}. Phase error bars are visible for the central values. The errors on each phase measurement, from left to right, are: \num{+-0.0188}, \num{+-0.0254}, \num{+-0.0283}, \num{+-0.1387}, \num{+-0.1721}, \num{+-0.2178}, \num{+-3.2726}, \num{+-3.2303}, \num{+-2.0603}, \num{+-0.0385}, \num{+-0.0342} and \num{+-0.0336} degrees.}
 \end{figure}
 
-\subsection{Acknowledgements}
-The authors would like to thank members of the LIGO Scientific Collaboration for fruitful discussions. The Glasgow authors are grateful for the support from the Science and Technologies Facility Council (STFC) under grant number ST/L000946/1. The Jena authors are grateful for the support from the Deutsche Forschungsgemeinschaft under project Sonderforschungsbereich Transregio 7.
-
-\subsection{Off-Axis Voice Coil}
-\note{Put results from test of off-axis voice coil force measurements.}
-
-To examine the effect of misalignment of the voice coil and magnet to their shared radial axis, the apparatus shown in Figure\,\ref{fig:misaligned-voice-coil-experiment} was set up. A rod was placed above the magnet, with the voice coil attached to its end. The magnet was glued to a thick perspex disc attached to the base edge of an upturned plastic cup, to allow the force applied to the magnet to rigidly couple to the base of the cup. The cup was itself placed upon scales accurate to \SI{1}{\micro\gram} and a translation stage with \SI{25}{\micro\meter} accuracy. With the front edge of the voice coil separated by \SI{7.9}{\milli\meter} to the base of the magnet, a series of force measurements were taken. A constant current source of \SI{50}{\milli\ampere} was applied through the coil while incrementing the translation stage in steps of \SI{0.1}{\milli\meter}. The results in Figure\,\ref{fig:misaligned-voice-coil-results} show that the effect is negligible within the main experiment's misalignment error.
-
-\note{Add coil sweet spot plot}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-magnet-offset-experiment.pdf}
-  \caption{\label{fig:misaligned-voice-coil-experiment}Experiment to measure the effect of misaligned voice coil actuation.}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-magnet-offset.pdf}
-  \caption{\label{fig:misaligned-voice-coil-results}Change in force as a function of transverse displacement from voice coil axis. A quadratic fit has been applied to the data and the axes shown are with respect to the position and magnitude of the maximum fitted force, following the assumption that this position is nearest to the optimal alignment. This fit is probably a worst case scenario, as the magnet was positioned close to the voice coil's position of maximum force, where the field gradient is quite flat. \checkme{Assuming the voice coils and magnets were aligned within \SI{0.5}{\milli\meter}, the maximum drop in force would have been negligible\textemdash less than 1\%\textemdash and so this explanation can be ruled out.}}
-\end{figure}
-
-\note{Use figure of magnet offset results to calculate the maximum force drop that could have been witnessed}
-
 \section{Outlook}
+The evidence for transverse to longitudinal coupling is consistent with zero from Figure\,\ref{fig:wgm-coupling-prob}, though it is not the most likely value from the experiment despite the literature suggesting otherwise. A future improvement upon this experiment might be to perform local measurements of the rotation of the \gls{ETM} with multiple sensors, to avoid the calibration susceptible to measurement error outlined in Section\,\ref{sec:length-changes}.
 
-The work presented in this chapter shows that waveguide mirrors potentially offer a competitive alternative to dielectric mirrors in future gravitational wave detectors.
+While the reduction in Brownian thermal noise in \gls{WGM}s is a clear advantage to future gravitational wave detectors, other technologies at similarly early stages of technical readiness present similar improvements, such as the use of crystalline coatings. The mirror coating technique that eventually becomes standard may depend on the direction that another field, fabrication engineering, takes in the near future.
