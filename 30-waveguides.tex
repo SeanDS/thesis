@@ -5,11 +5,11 @@
 
 At their most sensitive frequencies, the advanced detectors \note{make sure ``advanced'' is suitably defined in the introduction, with citations} are expected to be limited by Brownian thermal noise arising from the reflective coatings on the detectors' test masses \cite{Levin1998, Nakagawa2002, Harry2002, Crooks2002}. In order to help mitigate this limitation beyond the next generation of detectors, efforts are under way to develop mirror coatings with lower thermal noise \cite{Flaminio2010, Bassiri2013}.
 
-In the case of Advanced LIGO, each end test mass (ETM) consists of a substrate with 19 pairs of sub-wavelength coatings which produce a transmission of \SI{5}{ppm} for \SI{1064}{\nano\meter} light \cite{Dannenberg2009}. Each layer within this stack contributes to the overall thermal noise \cite{Harry2002, Crooks2002}. The approach taken by Levin to calculate the thermal noise of mirrors \cite{Levin1998} shows that mechanical loss at the front surface of a mirror contributes more to the Brownian noise level than loss from an equivalent volume in the substrate. Additionally, typical coating materials tend to exhibit mechanical loss orders of magnitude higher than typical substrate materials \cite{Harry2002, Crooks2002}. For these reasons particular attention is being given to the reduction of coating thermal noise to improve the sensitivity of future detectors.
+In the case of Advanced LIGO, each end test mass (\gls{ETM}) consists of a substrate with 19 pairs of sub-wavelength coatings which produce a transmission of \SI{5}{ppm} for \SI{1064}{\nano\meter} light \cite{Dannenberg2009}. Each layer within this stack contributes to the overall thermal noise \cite{Harry2002, Crooks2002}. The approach taken by Levin to calculate the thermal noise of mirrors \cite{Levin1998} shows that mechanical loss at the front surface of a mirror contributes more to the Brownian noise level than loss from an equivalent volume in the substrate. Additionally, typical coating materials tend to exhibit mechanical loss orders of magnitude higher than typical substrate materials \cite{Harry2002, Crooks2002}. For these reasons particular attention is being given to the reduction of coating thermal noise to improve the sensitivity of future detectors.
 
 One strategy, to be applied for example in KAGRA, is to cool the mirrors to cryogenic temperatures. While this can potentially reduce the thermal noise of the mirrors \cite{Uchiyama2012}, the application of cryogenic mirrors requires new infrastructure, different choices of mirror substrate and coating materials and poses the challenge of heat extraction from the mirror without spoiling its seismic isolation and thermal noise performance. Efforts in the application of cryogenics are also under way to identify suitable substrate and coating materials for ET-LF, the low frequency interferometer as part of the proposed Einstein Telescope \cite{Punturo2010, Martin2010, Hild2011, Abernathy2011}.
 
-Apart from using different coating materials \cite{Granata2013, Cole2013} or different beam shapes \cite{Mours2006, DAmbrosio2004, Bondarescu2006} such as with LG33 modes \cite{Sorazu2013}, another potential approach is to utilise waveguide mirrors (WGMs) \cite{Brueckner2008, Brueckner2009, Brueckner2010, Friedrich2011}. These mirrors can possess high reflectivity at a wavelength determined by their structure. In contrast to conventional dielectric mirrors, mirrors possessing waveguide coatings can exhibit high reflectivity without requiring multiple stacks \cite{Bunkowski2006}. A waveguide coating instead presents incident light with a periodic grating structure of high refractive index material $n_H$ on top of a substrate with low refractive index $n_L$ (see Figure\,\ref{fig:waveguide-reflection}). Light is forced into a single reflective diffraction order, the \nth{0}. In transmission, only the \nth{0} and \nth{1} diffraction orders are allowed as long as the condition in Equation~\ref{eq:grating-equation} for the grating period, $p$; and the light's wavelength in vacuum, $\lambda$, is fulfilled \cite{Brueckner2008}. The light diffracted into the \nth{1} order undergoes total internal reflection at the substrate boundary where it excites resonant waveguide modes. Light leaving the waveguide then contains a \SI{180}{\degree} phase shift with respect to the \nth{0} order transmitted light, causing destructive interference such that most of the incident light is reflected \cite{Sharon1997}.
+Apart from using different coating materials \cite{Granata2013, Cole2013} or different beam shapes \cite{Mours2006, DAmbrosio2004, Bondarescu2006} such as with LG33 modes \cite{Sorazu2013}, another potential approach is to utilise waveguide mirrors (\gls{WGM}s) \cite{Brueckner2008, Brueckner2009, Brueckner2010, Friedrich2011}. These mirrors can possess high reflectivity at a wavelength determined by their structure. In contrast to conventional dielectric mirrors, mirrors possessing waveguide coatings can exhibit high reflectivity without requiring multiple stacks \cite{Bunkowski2006}. A waveguide coating instead presents incident light with a periodic grating structure of high refractive index material $n_H$ on top of a substrate with low refractive index $n_L$ (see Figure\,\ref{fig:waveguide-reflection}). Light is forced into a single reflective diffraction order, the \nth{0}. In transmission, only the \nth{0} and \nth{1} diffraction orders are allowed as long as the condition in Equation~\ref{eq:grating-equation} for the grating period, $p$; and the light's wavelength in vacuum, $\lambda$, is fulfilled \cite{Brueckner2008}. The light diffracted into the \nth{1} order undergoes total internal reflection at the substrate boundary where it excites resonant waveguide modes. Light leaving the waveguide then contains a \SI{180}{\degree} phase shift with respect to the \nth{0} order transmitted light, causing destructive interference such that most of the incident light is reflected \cite{Sharon1997}.
 
 \begin{equation}
   \frac{\lambda}{n_{H}} < p < \frac{\lambda}{n_{L}}
@@ -22,7 +22,7 @@ Apart from using different coating materials \cite{Granata2013, Cole2013} or dif
   \caption{\label{fig:waveguide-reflection}Propagation of light within a waveguide mirror. The grating and waveguide layers have refractive index $n_H$, and sit atop a substrate of refractive index $n_L$. Blue arrows represent incident light and red arrows represent reflected light. In realisations of waveguide mirrors such as this, a thin etch-stop layer is placed between the grating and waveguide layers to assist fabrication \cite{Friedrich2011}.}
 \end{figure}
 
-Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised WGM can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to mirrors employed in Advanced LIGO (see Figure\,\ref{fig:coating-vs-grating-noise}).
+Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to mirrors employed in Advanced LIGO (see Figure\,\ref{fig:coating-vs-grating-noise}).
 
 \begin{figure}
   \centering
@@ -36,7 +36,7 @@ Previous efforts to demonstrate grating structures as alternatives to dielectric
   \left( \sin{\alpha} + \sin{\beta_m} \right),
 \end{equation}
 where $\zeta_a$ and $\zeta_b$ represent the relative optical path length of each depicted ray.
-The phase modulation induced in the light reflected from the WGM is proportional to Fourier frequency with a \SI{90}{\degree} phase lead over the transverse motion \cite{Barr2011}. The noise added to the reflected light can be enough to mitigate the improvement in coating thermal noise, as witnessed in a study of \nth{2} order Littrow gratings \cite{Barr2011}. Although WGMs also possess gratings, the resonant waveguide structure has been shown in simulations by Brown \emph{et al.} to be invariant to transverse to longitudinal coupling \cite{Brown2013}.
+The phase modulation induced in the light reflected from the \gls{WGM} is proportional to Fourier frequency with a \SI{90}{\degree} phase lead over the transverse motion \cite{Barr2011}. The noise added to the reflected light can be enough to mitigate the improvement in coating thermal noise, as witnessed in a study of \nth{2} order Littrow gratings \cite{Barr2011}. Although \gls{WGM}s also possess gratings, the resonant waveguide structure has been shown in simulations by Brown \emph{et al.} to be invariant to transverse to longitudinal coupling \cite{Brown2013}.
 
 \begin{figure}
   \centering
@@ -59,32 +59,32 @@ The phase modulation induced in the light reflected from the WGM is proportional
     Fill factor           & 0.38                      \\ \hline
     Reflectivity          & 96\%                      \\ \hline
   \end{tabular}
-  \caption{\label{tab:waveguide-parameters}Design parameters of the WGM produced by Friedrich-Schiller Jena for the experiment to measure transverse to longitudinal coupling. It is similar to the one used in \cite{Friedrich2011}, with increased reflective surface area.}
+  \caption{\label{tab:waveguide-parameters}Design parameters of the \gls{WGM} produced by Friedrich-Schiller Jena for the experiment to measure transverse to longitudinal coupling. It is similar to the one used in \cite{Friedrich2011}, with increased reflective surface area.}
 \end{table}
 
 There are two mechanisms by which grating mirrors can couple transverse motion into longitudinal phase changes (see Figure\,\ref{fig:waveguide-scanning}). The first is through transverse motion of the grating, which can in principle be minimised with appropriate suspension design. The second mechanism is the coupling of changes in the opposite cavity mirror's alignment into the spot position on the grating mirror. This effect is of particular importance to gravitational wave observatories, where longer arm lengths can increase its detrimental impact. For this reason the second mechanism is considered in more detail in this work.
 
-In order to quantify its transverse coupling, a WGM was produced in collaboration with Friedrich-Schiller University Jena, Germany (see Table \ref{tab:waveguide-parameters} for its properties). It was designed for light of wavelength \SI{1064}{\nano\meter}, and consisted of an etched grating structure on top of a waveguide layer, both tantala, on a silica substrate. This chapter details an experiment carried out to measure its transverse coupling level.
+In order to quantify its transverse coupling, a \gls{WGM} was produced in collaboration with Friedrich-Schiller University Jena, Germany (see Table \ref{tab:waveguide-parameters} for its properties). It was designed for light of wavelength \SI{1064}{\nano\meter}, and consisted of an etched grating structure on top of a waveguide layer, both tantala, on a silica substrate. This chapter details an experiment carried out to measure its transverse coupling level.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-waveguide-scanning.pdf}
-  \caption{\label{fig:waveguide-scanning}Two ways in which light can be scanned across the surface of the WGM. The left panel shows the effect of WGM motion with respect to a static beam, while the right panel shows the effect of light beam motion (due to rotation of the cavity mirror opposite the WGM) with respect to a static WGM. The latter effect is the one primarily considered in this work.}
+  \caption{\label{fig:waveguide-scanning}Two ways in which light can be scanned across the surface of the \gls{WGM}. The left panel shows the effect of \gls{WGM} motion with respect to a static beam, while the right panel shows the effect of light beam motion (due to rotation of the cavity mirror opposite the \gls{WGM}) with respect to a static \gls{WGM}. The latter effect is the one primarily considered in this work.}
 \end{figure}
 
 \section{Experiment}
 
-The fabricated WGM was used as the input coupler for a \FP{} cavity, held on resonance using the Pound-Drever-Hall (PDH) technique \cite{Drever1983}. The error signal provided by the PDH technique represents changes in cavity length, and this can be fed back to the laser's frequency \emph{via} a frequency stabilisation servo.
+The fabricated \gls{WGM} was used as the input coupler for a \FP{} cavity, held on resonance using the Pound-Drever-Hall (PDH) technique \cite{Drever1983}. The error signal provided by the PDH technique represents changes in cavity length, and this can be fed back to the laser's frequency \emph{via} a frequency stabilisation servo.
 
 \subsection{Cavity Length Signals}
 \label{sec:lengthsignals}
 
-A non-zero WGM transverse to longitudinal coupling, $\omega_1$, produces a phase shift on the reflected light. This manifests itself as an effective change in cavity length, $\delta l_W$, as the laser light is scanned across its grooves by a rotation of the ETM:
+A non-zero \gls{WGM} transverse to longitudinal coupling, $\omega_1$, produces a phase shift on the reflected light. This manifests itself as an effective change in cavity length, $\delta l_W$, as the laser light is scanned across its grooves by a rotation of the \gls{ETM}:
 \begin{equation}
   \delta l_W \left( \theta, \kappa, \omega_1 \right) = \theta \kappa \omega_1,
   \label{eq:wgm-length-change}
 \end{equation}
-where $\theta$ is the ETM's rotation angle and $\kappa$ is the cavity's coefficient of ETM rotation to transverse WGM spot motion.
+where $\theta$ is the \gls{ETM}'s rotation angle and $\kappa$ is the cavity's coefficient of \gls{ETM} rotation to transverse \gls{WGM} spot motion.
 
 Additional cavity length changes are also produced \emph{via} two geometrical effects (see Figure\,\ref{fig:mirror-longitudinal-effect}). The first effect, $\delta l_s$, is due to the position of the beam with respect to the centre of the mirror's surface. For a rotation $\theta$, a beam offset from the centre of the mirror by a displacement $y$ will receive a change in (longitudinal) path length of
 \begin{equation}
@@ -99,7 +99,7 @@ and the change in path length this causes is
 \begin{equation}
   \delta l_d \left( d, \theta \right) = y_d \tan{\theta} \approx \frac{d}{4} \theta^2.
 \end{equation}
-The total longitudinal effect $\delta l_E$ caused by the rotation of the ETM is therefore
+The total longitudinal effect $\delta l_E$ caused by the rotation of the \gls{ETM} is therefore
 \begin{equation}
 \delta l_E \left(y, \theta, d \right) = \delta l_s + \delta l_d \approx y \theta + \frac{d}{4} \theta^2.
 \label{eq:etm-length-change}
@@ -108,18 +108,18 @@ The total longitudinal effect $\delta l_E$ caused by the rotation of the ETM is 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-mirror-longitudinal-effect.pdf}
-  \caption{\label{fig:mirror-longitudinal-effect}Geometrical ETM longitudinal effects. For a given rotation $\theta$ and spot centre position offset $y$, the (longitudinal) position change in the surface of the mirror (show in blue) as seen by the reflected light is approximately $y \theta + \frac{d}{4} \theta^2$. The straight, solid red line in the figure shows this longitudinal change.}
+  \caption{\label{fig:mirror-longitudinal-effect}Geometrical \gls{ETM} longitudinal effects. For a given rotation $\theta$ and spot centre position offset $y$, the (longitudinal) position change in the surface of the mirror (show in blue) as seen by the reflected light is approximately $y \theta + \frac{d}{4} \theta^2$. The straight, solid red line in the figure shows this longitudinal change.}
 \end{figure}
 
-Considering the ETM's level of rotation and its dimensions and mass, it is possible to calculate the cavity length change due to the two geometrical effects shown in Equation~\ref{eq:etm-length-change} and then, from the residual cavity length change, infer the WGM's coupling level. The phase effect associated with transverse to longitudinal coupling is expected to be independent of spot position, whereas there is a phase change about the ETM's centre of rotation. It is therefore expected that a spot position will exist, for a non-zero WGM transverse coupling level, offset from the ETM's centre of rotation, for which there is a cavity error signal minimum. This effect arises as a result of $\delta l_W$ and $\delta l_{E}$ combining coherently (see Figure\,\ref{fig:coupling-contributions}). The spot position corresponding to the cavity error signal minimum allows the WGM's transverse to longitudinal coupling level to be inferred.
+Considering the \gls{ETM}'s level of rotation and its dimensions and mass, it is possible to calculate the cavity length change due to the two geometrical effects shown in Equation~\ref{eq:etm-length-change} and then, from the residual cavity length change, infer the \gls{WGM}'s coupling level. The phase effect associated with transverse to longitudinal coupling is expected to be independent of spot position, whereas there is a phase change about the \gls{ETM}'s centre of rotation. It is therefore expected that a spot position will exist, for a non-zero \gls{WGM} transverse coupling level, offset from the \gls{ETM}'s centre of rotation, for which there is a cavity error signal minimum. This effect arises as a result of $\delta l_W$ and $\delta l_{E}$ combining coherently (see Figure\,\ref{fig:coupling-contributions}). The spot position corresponding to the cavity error signal minimum allows the \gls{WGM}'s transverse to longitudinal coupling level to be inferred.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-individual-factors.pdf}
-  \caption{\label{fig:coupling-contributions}Simulations of indicative cavity longitudinal error signals during ETM rotation for different levels of WGM coupling. The signals are functions of the transverse position of the reflected light relative to the ETM's centre of rotation, the angle of rotation, the mirror depth and the WGM's coupling level. The rotation to longitudinal coupling of the ETM (black dashed line) combines with the transverse to longitudinal coupling of the WGM (red, green and blue dashed lines) to produce cavity length changes (red, green and blue solid lines). In this example configuration, the ETM rotation is \SI{1e-7}{\radian}, the ETM's depth is \SI{0.1}{\meter} and the corresponding WGM coupling levels are 1:370 (red), 1:3700 (green) and 1:37000 (blue).}
+  \caption{\label{fig:coupling-contributions}Simulations of indicative cavity longitudinal error signals during \gls{ETM} rotation for different levels of \gls{WGM} coupling. The signals are functions of the transverse position of the reflected light relative to the \gls{ETM}'s centre of rotation, the angle of rotation, the mirror depth and the \gls{WGM}'s coupling level. The rotation to longitudinal coupling of the \gls{ETM} (black dashed line) combines with the transverse to longitudinal coupling of the \gls{WGM} (red, green and blue dashed lines) to produce cavity length changes (red, green and blue solid lines). In this example configuration, the \gls{ETM} rotation is \SI{1e-7}{\radian}, the \gls{ETM}'s depth is \SI{0.1}{\meter} and the corresponding \gls{WGM} coupling levels are 1:370 (red), 1:3700 (green) and 1:37000 (blue).}
 \end{figure}
 
-Examples of WGM coupling levels yielding cavity length changes smaller than (blue), larger than (red) and roughly equivalent to (green) the ETM's effects are shown in Figure\,\ref{fig:coupling-contributions}. For cases where the WGM's coupling level yields a significant cavity length change with respect to that of the ETM's rotation, coherent combination creates a trough offset from the ETM's centre of rotation.
+Examples of \gls{WGM} coupling levels yielding cavity length changes smaller than (blue), larger than (red) and roughly equivalent to (green) the \gls{ETM}'s effects are shown in Figure\,\ref{fig:coupling-contributions}. For cases where the \gls{WGM}'s coupling level yields a significant cavity length change with respect to that of the \gls{ETM}'s rotation, coherent combination creates a trough offset from the \gls{ETM}'s centre of rotation.
 
 % Coupling levels in fig:coupling-contributions
 % rotation angle is 1e-7 rad (from plot_individual_factors script, an arbitrary choice, not the real level of rotation used in the experiment)
@@ -134,7 +134,7 @@ Examples of WGM coupling levels yielding cavity length changes smaller than (blu
 \subsection{The Glasgow 10~m Prototype}
 \label{sec:glasgow10m}
 
-The \GLASGOWTENM{} facility provided a test bed in which the WGM's transverse to longitudinal coupling could be quantified. The prototype is housed in a Class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
+The \GLASGOWTENM{} facility provided a test bed in which the \gls{WGM}'s transverse to longitudinal coupling could be quantified. The prototype is housed in a Class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
 
 In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering and an electro-optic modulator (EOM) to impose RF sidebands on the light to facilitate PDH control. The light was then coupled into the vacuum system \emph{via} a periscope. This configuration can be viewed in Figure\,\ref{fig:prototype-setup}.
 
@@ -144,38 +144,38 @@ Tanks 2 and 3 housed a beam splitter and steering mirror, respectively, attached
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-waveguide-arm-in-prototype.pdf}
   \caption{\label{fig:prototype-setup}The experimental setup in the prototype facility. The laser light is passed through input optics (not shown), a mode cleaning fibre and an EOM before being coupled into the vacuum system \emph{via} a periscope. It then travels to tank 2 where it is reflected off a beam splitter and directed into one of the arms of the prototype by a steering mirror in tank 3. The two cavity mirrors in tanks 4 and 5 form a \FP{} cavity. The cavity mirrors are suspended from triple stage suspensions, and the beam splitter and steering mirror are both suspended from double suspensions. \\
-  \\The ETM is rotated in yaw using the \SI{70}{\hertz} source. It is fed to a coil driver where it is coupled into tank 5 \emph{via} a vacuum feedthrough. Coil formers on the front edges of the reaction mass contain wound copper wire connected to the vacuum feedthrough. Magnets are attached to the back of the ETM. The reaction mass is behind the ETM, containing a hole in its centre to allow light to exit the vacuum tank where it can be viewed with the CCD camera. A larger version of the contents of tank 5 can be viewed in the panel to the right of the figure. \\
+  \\The \gls{ETM} is rotated in yaw using the \SI{70}{\hertz} source. It is fed to a coil driver where it is coupled into tank 5 \emph{via} a vacuum feedthrough. Coil formers on the front edges of the reaction mass contain wound copper wire connected to the vacuum feedthrough. Magnets are attached to the back of the \gls{ETM}. The reaction mass is behind the \gls{ETM}, containing a hole in its centre to allow light to exit the vacuum tank where it can be viewed with the CCD camera. A larger version of the contents of tank 5 can be viewed in the panel to the right of the figure. \\
   \\The cavity is held on resonance by the frequency stabilisation servo. This feeds back to the light's frequency \emph{via} the laser crystal's temperature below \SI{12}{\hertz} and its PZT above \SI{12}{\hertz} up to a unity gain frequency of \SI{14}{\kilo \hertz}.}
 \end{figure}
 
-The WGM was attached to an aluminium block of mass \SI{2.7}{\kilo\gram} and suspended from tank 4's cascaded (triple) pendulum, forming the cavity's ITM. A silica test mass, also \SI{2.7}{\kilo\gram}, with a \SI{40}{ppm} transmission coating, was used as the ETM, suspended from a similar triple pendulum in tank 5. On the rear surface of the ETM were three magnets for the purpose of actuation, the positions of which are shown in Figure\,\ref{fig:etm-rear}. With optimal alignment the mirrors formed an overcoupled cavity with finesse \num{155}.
+The \gls{WGM} was attached to an aluminium block of mass \SI{2.7}{\kilo\gram} and suspended from tank 4's cascaded (triple) pendulum, forming the cavity's \gls{ITM}. A silica test mass, also \SI{2.7}{\kilo\gram}, with a \SI{40}{ppm} transmission coating, was used as the \gls{ETM}, suspended from a similar triple pendulum in tank 5. On the rear surface of the \gls{ETM} were three magnets for the purpose of actuation, the positions of which are shown in Figure\,\ref{fig:etm-rear}. With optimal alignment the mirrors formed an overcoupled cavity with finesse \num{155}.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-etm-rear.pdf}
-  \caption{\label{fig:etm-rear}The positions of the magnets on the rear surface of the ETM. The magnet designations used in this article are shown in red text. The top magnet is positioned at the centre of yaw, near the top of the mass. The left and right magnets are positioned \SI{56.3}{\milli\meter} either side of the centre of yaw. Coils on the ETM's reaction mass (not shown) are positioned coaxially behind each magnet.}
+  \caption{\label{fig:etm-rear}The positions of the magnets on the rear surface of the \gls{ETM}. The magnet designations used in this article are shown in red text. The top magnet is positioned at the centre of yaw, near the top of the mass. The left and right magnets are positioned \SI{56.3}{\milli\meter} either side of the centre of yaw. Coils on the \gls{ETM}'s reaction mass (not shown) are positioned coaxially behind each magnet.}
 \end{figure}
 
-A three-stage reaction chain was placed behind the triple pendulum of the ETM to provide voice coil actuation upon the magnets on the ETM's rear surface. The upper and intermediate stages were identical to those of the chain carrying the ETM, however\textemdash for the purposes of another experiment, not reported here\textemdash the lower stage was split into two parts separately suspended from the intermediate stage. The part closer to the ETM was a \SI{1.8}{\kilo\gram} aluminium block that carried the voice coils. The other part was a \SI{0.9}{\kilo\gram} aluminium block required to balance the suspension.
+A three-stage reaction chain was placed behind the triple pendulum of the \gls{ETM} to provide voice coil actuation upon the magnets on the \gls{ETM}'s rear surface. The upper and intermediate stages were identical to those of the chain carrying the \gls{ETM}, however\textemdash for the purposes of another experiment, not reported here\textemdash the lower stage was split into two parts separately suspended from the intermediate stage. The part closer to the \gls{ETM} was a \SI{1.8}{\kilo\gram} aluminium block that carried the voice coils. The other part was a \SI{0.9}{\kilo\gram} aluminium block required to balance the suspension.
 
 \begin{table}
   \centering
   \begin{tabular}{|l|l|}
     \hline
-    \textbf{Parameter}        & \textbf{Description}	    \\ \hline
-    Cavity input power      & Approx. \SI{150}{\milli\watt} \\ \hline
-    ETM transmissivity      & $40$~ppm                      \\ \hline
-    ETM radius of curvature & \SI{15}{\meter}               \\ \hline
-    ETM spot size           & \SI{2.138}{\milli \meter}     \\ \hline
-    ITM transmissivity      & \SI{4}{\%}                    \\ \hline
-    ITM radius of curvature & $\infty$                      \\ \hline
-    ITM spot size           & \SI{1.554}{\milli \meter}     \\ \hline
-    Cavity length           & \SI{9.81}{\meter}             \\ \hline
-    Cavity finesse          & \SI{155}{}                    \\ \hline
-    Cavity g-factor         & \SI{0.347}{}                  \\ \hline
-    Beam waist size         & \SI{1.554}{\milli \meter}     \\ \hline
-    Beam waist position     & At ITM                        \\ \hline
-    Sideband frequency      & \SI{10}{\mega\hertz}          \\ \hline
+    \textbf{Parameter}        & \textbf{Description}	      \\ \hline
+    Cavity input power      & Approx. \SI{150}{\milli\watt}   \\ \hline
+    \gls{ETM} transmissivity      & $40$~ppm                  \\ \hline
+    \gls{ETM} radius of curvature & \SI{15}{\meter}           \\ \hline
+    \gls{ETM} spot size           & \SI{2.138}{\milli \meter} \\ \hline
+    \gls{ITM} transmissivity      & \SI{4}{\%}                \\ \hline
+    \gls{ITM} radius of curvature & $\infty$                  \\ \hline
+    \gls{ITM} spot size           & \SI{1.554}{\milli \meter} \\ \hline
+    Cavity length           & \SI{9.81}{\meter}               \\ \hline
+    Cavity finesse          & \SI{155}{}                      \\ \hline
+    Cavity g-factor         & \SI{0.347}{}                    \\ \hline
+    Beam waist size         & \SI{1.554}{\milli \meter}       \\ \hline
+    Beam waist position     & At \gls{ITM}                    \\ \hline
+    Sideband frequency      & \SI{10}{\mega\hertz}            \\ \hline
   \end{tabular}
   \caption{\label{tab:cavity-parameters}Cavity parameters.}
 \end{table}
@@ -191,17 +191,17 @@ As discussed in \note{instrumentation chapter}, heterodyne locking...
 \section{Measurements and Analysis}
 \label{sec:measurements}
 
-From the orientation of the WGM's gratings, it was expected that actuation of the ETM in yaw, which would scan the cavity light across the WGM's surface transverse to the direction of its grooves, would exhibit WGM transverse to longitudinal coupling if present.
+From the orientation of the \gls{WGM}'s gratings, it was expected that actuation of the \gls{ETM} in yaw, which would scan the cavity light across the \gls{WGM}'s surface transverse to the direction of its grooves, would exhibit \gls{WGM} transverse to longitudinal coupling if present.
 
-For the purposes of actuation upon the ETM, two sinusoidal signals $V_L$ and $V_R$ (corresponding to the left and right voice coils on the ETM's reaction mass, respectively) were produced using separate, phase locked signal generators. A signal frequency of \SI{70}{\hertz} was chosen so as to be above the suspensions' pole frequencies but low enough to provide an adequate signal-to-noise ratio. The signals $V_L$ and $V_R$, with suitable balancing (see below), could then be actuated in- or out-of-phase to produce longitudinal or yaw actuation upon the ETM, respectively.
+For the purposes of actuation upon the \gls{ETM}, two sinusoidal signals $V_L$ and $V_R$ (corresponding to the left and right voice coils on the \gls{ETM}'s reaction mass, respectively) were produced using separate, phase locked signal generators. A signal frequency of \SI{70}{\hertz} was chosen so as to be above the suspensions' pole frequencies but low enough to provide an adequate signal-to-noise ratio. The signals $V_L$ and $V_R$, with suitable balancing (see below), could then be actuated in- or out-of-phase to produce longitudinal or yaw actuation upon the \gls{ETM}, respectively.
 
-When $V_L$ and $V_R$ were identical in magnitude but out-of-phase, the ETM's movement contained a linear combination of rotational and longitudinal components due to force imbalances between the voice coils. To ensure that actuation upon the ETM contained only a yaw component, the cavity's longitudinal error signal was minimised during out-of-phase actuation by changing the gain of $V_L$. This balanced the magnitude of the torque applied by each actuator to the left and right sides of the ETM. Any WGM transverse to longitudinal coupling present would act with phase orthogonal to this voice coil actuation and would thus be unchanged by the torque balancing.
+When $V_L$ and $V_R$ were identical in magnitude but out-of-phase, the \gls{ETM}'s movement contained a linear combination of rotational and longitudinal components due to force imbalances between the voice coils. To ensure that actuation upon the \gls{ETM} contained only a yaw component, the cavity's longitudinal error signal was minimised during out-of-phase actuation by changing the gain of $V_L$. This balanced the magnitude of the torque applied by each actuator to the left and right sides of the \gls{ETM}. Any \gls{WGM} transverse to longitudinal coupling present would act with phase orthogonal to this voice coil actuation and would thus be unchanged by the torque balancing.
 
-Pitch actuation upon the ETM, which would scan the cavity light in a direction parallel to the WGM's grooves, was not expected to contribute to the cavity's error signal via the WGM's coupling. However, unintended pitch actuation upon the ETM would couple into the cavity's length \emph{via} the same geometrical mechanism as yaw shown in Equation~\ref{eq:etm-length-change}. To minimise the ETM's pitch component during actuation in yaw, the cavity's error signal was minimised by applying an offset voltage to the top coil. In practice, minimal pitch coupling was achieved when the offset signal was zero.
+Pitch actuation upon the \gls{ETM}, which would scan the cavity light in a direction parallel to the \gls{WGM}'s grooves, was not expected to contribute to the cavity's error signal via the \gls{WGM}'s coupling. However, unintended pitch actuation upon the \gls{ETM} would couple into the cavity's length \emph{via} the same geometrical mechanism as yaw shown in Equation~\ref{eq:etm-length-change}. To minimise the \gls{ETM}'s pitch component during actuation in yaw, the cavity's error signal was minimised by applying an offset voltage to the top coil. In practice, minimal pitch coupling was achieved when the offset signal was zero.
 
 \subsection{Actuator Calibration}
 
-To calibrate the cavity's longitudinal response to voice coil actuation, the voice coils were actuated with the balanced $V_L$ and $V_R$ signals in-phase at a frequency $f = \SI{70}{\hertz}$ for a period of \SI{120}{\second}. This, along with the ETM's mass $m$, could then be used to obtain the force applied to the ETM by the voice coils:
+To calibrate the cavity's longitudinal response to voice coil actuation, the voice coils were actuated with the balanced $V_L$ and $V_R$ signals in-phase at a frequency $f = \SI{70}{\hertz}$ for a period of \SI{120}{\second}. This, along with the \gls{ETM}'s mass $m$, could then be used to obtain the force applied to the \gls{ETM} by the voice coils:
 \begin{equation}
   F = 4 \pi^2 f^2 m \delta l.
   \label{eq:force-calibration}
@@ -212,11 +212,11 @@ To calibrate the cavity's longitudinal response to voice coil actuation, the voi
 
 % The spot positions were scaled to account for the defocusing effect - see https://arran.physics.gla.ac.uk/labbooks/index.php?LabBook=JIF_Diff, "Working out Monitor Perspective", October 29th 2013
 
-Four spot positions corresponding to $y$ in Equation~\ref{eq:offset-effect} were chosen across the surface of the ETM. The input beam was aligned to the cavity axis corresponding to each spot position using the beam splitter and steering mirror nearest to the ITM, and the cavity mirrors were aligned to create a fundamental mode resonance. The voice coil signals $V_L$ and $V_R$ were set out-of-phase to produce motion on the ETM in yaw. The magnitudes of $V_L$ and $V_R$ were not altered between the longitudinal calibration and this yaw actuation, so it was expected that the previously outlined minimisation of yaw to tilt actuation would also result in minimal longitudinal to tilt actuation. The cavity length signal was recorded for a period of \SI{300}{\second}.
+Four spot positions corresponding to $y$ in Equation~\ref{eq:offset-effect} were chosen across the surface of the \gls{ETM}. The input beam was aligned to the cavity axis corresponding to each spot position using the beam splitter and steering mirror nearest to the \gls{ITM}, and the cavity mirrors were aligned to create a fundamental mode resonance. The voice coil signals $V_L$ and $V_R$ were set out-of-phase to produce motion on the \gls{ETM} in yaw. The magnitudes of $V_L$ and $V_R$ were not altered between the longitudinal calibration and this yaw actuation, so it was expected that the previously outlined minimisation of yaw to tilt actuation would also result in minimal longitudinal to tilt actuation. The cavity length signal was recorded for a period of \SI{300}{\second}.
 
 For each nominal spot position an additional measurement was taken with $V_L$ set to $\pm \SI{0.1}{\volt}$ from its balanced setting for a period of \SI{60}{\second}. This allowed two additional data points to be obtained for each spot position. By calculating the gradient (cavity length change per spot position with respect to the centre of yaw) of the central and inner-left spot positions, it was possible to assign an effective spot position for each of the offset points.
 
-The spot positions used to obtain cavity error signals are shown in Table~\ref{tab:spot-positions}. These positions are shown with respect to the centre of the ETM's reflective surface. The spot positions were subject to two sources of error: the measurement of the spot positions with respect to the centre, and the error in the ETM's centre of rotation due to misalignment between the voice coils and their corresponding magnets. The spot position error was assumed to be \SI{\pm1}{\milli\meter} from visual inspection of the suspensions, measured \emph{via} the CCD camera placed in transmission of the ETM, using the known width of the ETM's reaction mass as a calibration. The error in the spot position measurements dominated the error in voice coil alignment. Although misaligned voice coils could have lead to a change in the expected ETM force coupling (leading to a change in the centre of rotation of the ETM), it was found from separate measurements that the effect of any possible misalignment during the experiment could only account for a drop in force of \SI{0.11}\%. This contributed a negligible error (\SI{\pm0.03}{\milli\meter}) to the results.
+The spot positions used to obtain cavity error signals are shown in Table~\ref{tab:spot-positions}. These positions are shown with respect to the centre of the \gls{ETM}'s reflective surface. The spot positions were subject to two sources of error: the measurement of the spot positions with respect to the centre, and the error in the \gls{ETM}'s centre of rotation due to misalignment between the voice coils and their corresponding magnets. The spot position error was assumed to be \SI{\pm1}{\milli\meter} from visual inspection of the suspensions, measured \emph{via} the CCD camera placed in transmission of the \gls{ETM}, using the known width of the \gls{ETM}'s reaction mass as a calibration. The error in the spot position measurements dominated the error in voice coil alignment. Although misaligned voice coils could have lead to a change in the expected \gls{ETM} force coupling (leading to a change in the centre of rotation of the \gls{ETM}), it was found from separate measurements that the effect of any possible misalignment during the experiment could only account for a drop in force of \SI{0.11}\%. This contributed a negligible error (\SI{\pm0.03}{\milli\meter}) to the results.
 
 \begin{table}
   \centering
@@ -229,19 +229,19 @@ The spot positions used to obtain cavity error signals are shown in Table~\ref{t
     \num{-0.4} & \num{0.0} & \num{0.4}                                  \\ \hline
     \num{12.1} & \num{12.5} & \num{12.9}                                \\ \hline
   \end{tabular}
-  \caption{\label{tab:spot-positions}Spot positions on the ETM for the far left, inner left, central and right positions, respectively. The positions are shown in groups of three corresponding to the offset applied to $V_L$. All spot positions have an error of \SI{\pm1}{\milli\meter}.}
+  \caption{\label{tab:spot-positions}Spot positions on the \gls{ETM} for the far left, inner left, central and right positions, respectively. The positions are shown in groups of three corresponding to the offset applied to $V_L$. All spot positions have an error of \SI{\pm1}{\milli\meter}.}
 \end{table}
 
-Knowledge of the distance of the ETM's voice coils from the centre of rotation, $y_c$; the ETM's moment of inertia, $I$; the coil driving frequency, $f$; and the force calibration from Equation~\ref{eq:force-calibration}, allowed the rotation angle to be obtained geometrically using the relation
+Knowledge of the distance of the \gls{ETM}'s voice coils from the centre of rotation, $y_c$; the \gls{ETM}'s moment of inertia, $I$; the coil driving frequency, $f$; and the force calibration from Equation~\ref{eq:force-calibration}, allowed the rotation angle to be obtained geometrically using the relation
 \begin{equation}
   \theta = \frac{F y_c}{4 \pi^2 f^2 I}.
   \label{eq:rotation-calibration}
 \end{equation}
-The numerical simulation tool \emph{FINESSE} \cite{Freise2004} was then used to calculate $\kappa$ for the cavity parameters shown in Table~\ref{tab:cavity-parameters}. This was determined to be \SI{18.5}{\meter \per \radian}. The WGM's transverse displacement was then the product of $\kappa$ and $\theta$.
+The numerical simulation tool \emph{FINESSE} \cite{Freise2004} was then used to calculate $\kappa$ for the cavity parameters shown in Table~\ref{tab:cavity-parameters}. This was determined to be \SI{18.5}{\meter \per \radian}. The \gls{WGM}'s transverse displacement was then the product of $\kappa$ and $\theta$.
 
 \subsection{Analysis of the Coupling Level}
 \label{sec:simulations}
-Using the known contribution to the cavity length signal from the rotation of the ETM, $\delta l_E$, and the cavity length signals $\delta l$ measured during the experiment, the WGM's coupling level could be calculated statistically using Bayes' theorem. For this experiment, Bayes' theorem can be expressed mathematically as:
+Using the known contribution to the cavity length signal from the rotation of the \gls{ETM}, $\delta l_E$, and the cavity length signals $\delta l$ measured during the experiment, the \gls{WGM}'s coupling level could be calculated statistically using Bayes' theorem. For this experiment, Bayes' theorem can be expressed mathematically as:
 \begin{equation}
   p \left( \vec{\omega} | \mathcal{D} \right) \propto p \left( \mathcal{D} | \vec{\omega} \right) p \left( \vec{\omega} \right),
   \label{eq:bayes}
@@ -251,9 +251,9 @@ where $p \left( \vec{\omega} | \mathcal{D} \right)$ is the probability density d
 In this analysis we are primarily interested in estimates of the model parameters. We are therefore free to ignore the constant evidence factor $p \left( \mathcal{D} \right)$ present in Bayes' theorem when calculating the posterior. In the future it may be of interest to compare different models for the coupling level (or lack thereof), in which case the evidence could be calculated to obtain a model odds ratio.
 
 \subsubsection{Model and Parameters}
-To obtain a posterior for the WGM's coupling level, it was necessary to build a model and state prior belief of the parameters' probability distributions.
+To obtain a posterior for the \gls{WGM}'s coupling level, it was necessary to build a model and state prior belief of the parameters' probability distributions.
 
-In the model, the ETM's geometrical longitudinal effect at arbitrary spot position $y$ (Equation~\ref{eq:etm-length-change}) for the rotation and mirror depth used in the experiment was combined coherently with a specified level of WGM transverse to longitudinal coupling, $\omega_1$. It was then possible to predict the total change in cavity length $\delta l$ as a function of spot position $y$, given the fixed parameters $\theta$, $\kappa$ and $d$, using equations~\ref{eq:wgm-length-change} and \ref{eq:etm-length-change}:
+In the model, the \gls{ETM}'s geometrical longitudinal effect at arbitrary spot position $y$ (Equation~\ref{eq:etm-length-change}) for the rotation and mirror depth used in the experiment was combined coherently with a specified level of \gls{WGM} transverse to longitudinal coupling, $\omega_1$. It was then possible to predict the total change in cavity length $\delta l$ as a function of spot position $y$, given the fixed parameters $\theta$, $\kappa$ and $d$, using equations~\ref{eq:wgm-length-change} and \ref{eq:etm-length-change}:
 \begin{equation}
   \begin{split}
     \delta l \left( \vec{\omega}, y, \theta, \kappa, d \right) & = \delta l_W \left( \theta, \kappa, \omega_1 \right) + \delta l_E \left( y, \theta, d \right) \\
@@ -261,9 +261,9 @@ In the model, the ETM's geometrical longitudinal effect at arbitrary spot positi
   \end{split}
 \end{equation}
 
-The effect of \emph{beam smearing} was also considered. The suspended optics contain residual displacement noise, leading to a broadening of the trough at which the ETM's longitudinal coupling and any WGM coupling cancel (see Figure\,\ref{fig:coupling-contributions}). To model this effect, the assumption was made that the motion of the spots on the ETM followed a Gaussian distribution about their nominally measured position. Eight-hundred small `offset distances' $\delta y$ were applied uniformly to the spot positions, drawn from a randomly generated Gaussian distribution. The number of offset distances was chosen as a compromise between adequate statistical significance and technical constraints. Calculating the cavity length change as a function of spot position for each of these offset positions, and combining them in an uncorrelated sum, allowed an average, `smeared' signal to be modelled which more closely resembled the measurements. The standard deviation of the Gaussian distribution was an additional parameter, $\omega_2$, provided as an input to the model.
+The effect of \emph{beam smearing} was also considered. The suspended optics contain residual displacement noise, leading to a broadening of the trough at which the \gls{ETM}'s longitudinal coupling and any \gls{WGM} coupling cancel (see Figure\,\ref{fig:coupling-contributions}). To model this effect, the assumption was made that the motion of the spots on the \gls{ETM} followed a Gaussian distribution about their nominally measured position. Eight-hundred small `offset distances' $\delta y$ were applied uniformly to the spot positions, drawn from a randomly generated Gaussian distribution. The number of offset distances was chosen as a compromise between adequate statistical significance and technical constraints. Calculating the cavity length change as a function of spot position for each of these offset positions, and combining them in an uncorrelated sum, allowed an average, `smeared' signal to be modelled which more closely resembled the measurements. The standard deviation of the Gaussian distribution was an additional parameter, $\omega_2$, provided as an input to the model.
 
-The summing of signals introduced by the modelling of beam smearing led to an artificial increase in the magnitude of the model's predicted cavity length signals. To compensate for this effect, a further parameter was introduced: a multiplicative scaling factor, $\omega_3$, applied uniformly to the model. This factor also had the additional effect of compensating for the uncertainty in the calibrated cavity length signals. By marginalising over a suitable distribution of scaling factors, it was possible to account for this uncertainty in the analysis of the WGM's coupling level. The model used in the analysis to predict the smeared, scaled cavity length change, $\delta l'$, was then:
+The summing of signals introduced by the modelling of beam smearing led to an artificial increase in the magnitude of the model's predicted cavity length signals. To compensate for this effect, a further parameter was introduced: a multiplicative scaling factor, $\omega_3$, applied uniformly to the model. This factor also had the additional effect of compensating for the uncertainty in the calibrated cavity length signals. By marginalising over a suitable distribution of scaling factors, it was possible to account for this uncertainty in the analysis of the \gls{WGM}'s coupling level. The model used in the analysis to predict the smeared, scaled cavity length change, $\delta l'$, was then:
 \begin{equation}
   \delta l' \left( \vec{\omega}, y, \theta, \kappa, d \right) = \omega_3 \sqrt{\sum_{i=1}^{800} \delta l \left( \vec{\omega}, y + \delta y_i, \theta, \kappa, d \right)^2},
   \label{eq:model}
@@ -286,7 +286,7 @@ Bayes' theorem requires an assumption of probability distributions (\emph{priors
   \begin{tabular}{|p{3cm}|c|c|c|}
     \hline
     \textbf{Parameter}   & \textbf{Symbol}     & \textbf{Distribution} & \textbf{Dimensions} \\ \hline
-    WGM transverse to longitudinal coupling & $\omega_1$ & Uniform, $\left[ 0, \frac{1}{1000} \right]$ & $\frac{\SI{}{\meter} \text{ (longitudinal)}}{\SI{}{\meter} \text{ (transverse)}}$ \\ \hline
+    \gls{WGM} transverse to longitudinal coupling & $\omega_1$ & Uniform, $\left[ 0, \frac{1}{1000} \right]$ & $\frac{\SI{}{\meter} \text{ (longitudinal)}}{\SI{}{\meter} \text{ (transverse)}}$ \\ \hline
     Spot smearing noise standard deviation & $\omega_2$ & Uniform, $\left[ 0, 3 \times 10^{-3} \right]$ & $\SI{}{\meter} \text{ (transverse)}$ \\ \hline
     Calibration scaling                    & $\omega_3$ & Uniform, $\left[ 0, \frac{1}{10} \right]$ &  \\ \hline
   \end{tabular}
@@ -302,14 +302,14 @@ To ensure the convergence of the MCMC on the posterior, a `burn-in' period of \n
 \label{sec:summary}
 From the parameter marginalisation it was possible to produce a posterior probability density distribution for the coupling level as shown in Figure\,\ref{fig:wgm-coupling-prob}. The coupling level predicted from the distribution is bounded between 0 and 1:17000 with 95\% confidence, with a mean coupling level of 1:27600. The probability density distributions for the scaling and standard deviation parameters are shown in Figures\,\ref{fig:posterior-scaling} and \ref{fig:posterior-stddev}, respectively. The scaling posterior distribution indicates a mean value of \num{29.3e-3} with standard deviation \num{0.94e-3}. The posterior distribution for the beam smearing parameter indicates a range of possible values between \num{0} and \SI{1.3e-3}{\meter}. All of the posterior distributions lie well within their prior ranges (see Table\,\ref{tab:priors}).
 
-The measured cavity length signals as well as the 95\% upper limit and mean WGM coupling level predicted by the analysis are shown in Figure\,\ref{fig:wgm-coupling}. The phase discrepancy between the model and the measurements, as witnessed in this figure most profoundly for the spot positions around \SI{-5e-3}{\meter}, is thought to be an artefact from the modelling of the beam smearing effect. The residual test mass motion that motivated the inclusion in the model of beam smearing may have contained some non-Gaussian behaviour.
+The measured cavity length signals as well as the 95\% upper limit and mean \gls{WGM} coupling level predicted by the analysis are shown in Figure\,\ref{fig:wgm-coupling}. The phase discrepancy between the model and the measurements, as witnessed in this figure most profoundly for the spot positions around \SI{-5e-3}{\meter}, is thought to be an artefact from the modelling of the beam smearing effect. The residual test mass motion that motivated the inclusion in the model of beam smearing may have contained some non-Gaussian behaviour.
 
 The upper limit on the predicted coupling level, 1:17000, represents a significant improvement over previously measured grating designs such as the \nth{2} order Littrow grating measured in \cite{Barr2011}, where the coupling factor was of order 1:100.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-posterior-coupling.pdf}
-  \caption{\label{fig:wgm-coupling-prob}Posterior probability density distribution of WGM coupling levels (in units of meters longitudinal per metre transverse) yielded by statistical analysis of the data. The shaded region shows the coupling levels falling within the most probable 95\% of the distribution.}
+  \caption{\label{fig:wgm-coupling-prob}Posterior probability density distribution of \gls{WGM} coupling levels (in units of meters longitudinal per metre transverse) yielded by statistical analysis of the data. The shaded region shows the coupling levels falling within the most probable 95\% of the distribution.}
 \end{figure}
 
 \begin{figure}
@@ -326,7 +326,7 @@ The upper limit on the predicted coupling level, 1:17000, represents a significa
 \begin{figure}[H]
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-coupling-best-fit.pdf}
-  \caption{\label{fig:wgm-coupling}Measurements and simulations of the cavity length signal for spot positions with respect to the ETM's centre of yaw. The calibrated cavity length change per radian (vertical axis) from the measurements is shown (blue stars) alongside the model's simulated cavity length changes per radian for the mean (red), 95\% upper limit (green) and zero (black) WGM coupling levels. The simulated plots use a scaling factor of \num{29.3e-3} and a beam smearing standard deviation of \SI{0.8e-3}{\meter}.
+  \caption{\label{fig:wgm-coupling}Measurements and simulations of the cavity length signal for spot positions with respect to the \gls{ETM}'s centre of yaw. The calibrated cavity length change per radian (vertical axis) from the measurements is shown (blue stars) alongside the model's simulated cavity length changes per radian for the mean (red), 95\% upper limit (green) and zero (black) \gls{WGM} coupling levels. The simulated plots use a scaling factor of \num{29.3e-3} and a beam smearing standard deviation of \SI{0.8e-3}{\meter}.
   \bigskip
   \\ Error bars are shown on the measured spot positions corresponding to their uncertainty. The errors in cavity length change are obtained from the noise floor surrounding each measurement. The noise floors were approximately constant for all measurements, with mean value \SI{8e-5}{\meter \per \radian}. Phase error bars are visible for the central values. The errors on each phase measurement, from left to right, are: \num{+-0.0188}, \num{+-0.0254}, \num{+-0.0283}, \num{+-0.1387}, \num{+-0.1721}, \num{+-0.2178}, \num{+-3.2726}, \num{+-3.2303}, \num{+-2.0603}, \num{+-0.0385}, \num{+-0.0342} and \num{+-0.0336} degrees.}
 \end{figure}
