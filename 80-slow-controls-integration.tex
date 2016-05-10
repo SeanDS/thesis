@@ -29,7 +29,7 @@ The monitoring of environmental variables such as ambient temperature and pressu
 
 It is desirable to be able to combine the \emph{slow} channels monitored by EtherCAT with the \emph{fast} channels and real-time control system provided by \gls{CDS}.
 
-\section{Slow controls via EtherCAT}
+\section{Slow controls with CDS}
 As the \gls{CDS} frame builder is capable of recording any \gls{EPICS} channels, it is desirable to integrate EtherCAT channels into \gls{EPICS}. An added benefit of this approach is that, having \gls{EPICS} analogues, EtherCAT channels may be integrated into the same control loops as the main experiment's fast channels, albeit at a much slower rate.
 
 \subsection{Polling rate and aliasing}
@@ -73,3 +73,15 @@ The effect of the sample rate can be further witnessed in Figure\,\ref{fig:sampl
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/80-epics-aliasing.pdf}
   \caption{\label{fig:sample-aliasing}The frame builder's sample limit. With a signal of frequency \SI{8}{\hertz}, the frame builder, sampling at a rate of \SI{16}{\hertz}, is just able to interpret the underlying waveform. Note the slight drift in the sampling phase, which probably arises from non-deterministic networking and computational interrupts. Signals above \SI{16}{\hertz} will appear aliased when measured by the frame builder. Note that, as with Figure\,\ref{fig:epics-test}, a timing latency between the two waveforms has been removed for clarity.}
 \end{figure}
+
+\section{Interfacing EtherCAT to EPICS}
+With the connection made between remote \gls{EPICS} \gls{IOC}s and \gls{CDS} defined, the remaining step is to provide a means of transferring signals between EtherCAT devices and \gls{EPICS}. As with \gls{EPICS} itself, the scientific community at large has overcome this problem in the form of \emph{dls-ethercat} module developed for the Diamond Light Source synchrotron facility in Oxfordshire, UK.
+
+\subsection{EtherCAT to EPICS}
+
+\subsection{Throughput tests}
+
+\subsection{Integration with CDS controls}
+
+\subsection{Combined slow and fast controls}
+\note{Tests...}
