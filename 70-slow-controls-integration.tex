@@ -1,4 +1,4 @@
-\chapter{Integration of Slow Control Channels in LIGO CDS}
+\chapter{Integration of slow control channels in LIGO CDS}
 \label{c:slow-controls-integration}
 
 \section{The LIGO CDS system}
@@ -21,7 +21,7 @@ Recorded channels are read from \gls{EPICS} by the \gls{CDS} \emph{frame builder
 \subsubsection{Data acquisition}
 Large \gls{CDS} experiments with many filter banks and complex control systems possess many \gls{EPICS} channels. In Advanced LIGO, the total number is of the order \num{200000} \cite{aligonoise2016}. Even in a lab-based experiment the number can grow to many thousands. Hardware limitations prevent every channel from being recorded at the highest possible speed: hard drive storage and \gls{CPU} speed would quickly become saturated. Instead, the frame builder allows channels to be acquired at a specific sample rate, or not at all. This allows channels containing useful high frequency signals to be recorded at a sample rate allowing the underlying signal to be recovered, while recording low frequency signal channels at a rate which doesn't waste storage space.
 
-\subsection{The CDS system in Glasgow}
+\subsection{The Glasgow CDS system}
 In the laboratory housing the \GLASGOWTENM{} and \SSM{} experiments, a control room is separated from the clean room. The \gls{CDS} system is used for experimental control, with the main frame builder situated in the control room. Separate so-called \emph{front-ends} are situated in the control room and the clean room, providing analogue and digital interfaces to the experiment to allow signals to be sent to and from the frame builder.
 
 \section{Monitoring auxiliary channels}

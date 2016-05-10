@@ -1,4 +1,4 @@
-\chapter{\label{a:simulation-tools}Simulation Tools}
+\chapter{\label{a:simulation-tools}Simulation tools}
 How to build simulations in both tools...
 
 \note{Mention about difference in homodyne angles between Optickle and Finesse - empirical formula on speedmeter labbook post from end of 2015/early 2016}
@@ -23,14 +23,14 @@ Once an optical system has been defined by the user, a call to the \lstinline{ti
   \item the constructi
 \end{itemize}
 
-\subsection{Drive and Field Maps}
+\subsection{Drive and field maps}
 The drive-to-field matrix produced by \lstinline{tickle} is the mapping between a \emph{drive} of an optic---a degree of freedom such as longitudinal motion of a mirror---to the corresponding fields in the interferometer. A \emph{field} is in this case the amplitude of the light between a particular pair of optics or sensors for a given wavelength. The individual transfer functions are themselves products of each optic's drive matrix (which converts a force input at the test mass to a phase change in the reflected and transmitted light, via the optic's mechanical transfer function) and a phase matrix defining the phase change light would have travelling between each optic in the system. The field-to-drive matrix is also produced in a similar way, but this time maps the interaction that light fields have with the optical drives--i.e. the effect of radiation pressure.
 
 The field-to-field matrix is a similar mapping to the drive-to-field matrix, but this instead maps each field to each other field. As such, with this matrix the propagation of input light from lasers or vacuum injection to an arbitrary part of the interferometer can be calculated, albeit without the effect of radiation pressure.
 
 The effect of field amplitudes propagating to other fields, optics modifying incident fields, and fields modifying optics can be collected together into a \emph{propagation matrix} $\mathbf{M}_{\text{AC}}$.
 
-\subsection{Calculation of Field Amplitudes}
+\subsection{Calculation of field amplitudes}
 The field amplitudes within the interferometer $\vec{v}_{\text{AC}}$ can be determined by calculating the steady-state solution of the optical system to a given excitation. An excitation is, for instance, the injection of light. The field amplitudes within the interferometer are of course determined by the excitation of the interferometer by external light injection, but in general they are also influenced by the signal sidebands produced by the modulation of optics within the interferometer at non-zero frequencies. Furthermore, the presence of optics will alter the injected excitation. The field amplitudes within the interferometer therefore depend not only on the excitation but also on the existing field amplitudes, analogous to feedback systems. In the initial state these fields are zero and so the interferometer's field amplitude vector is simply equal to the excitation vector, i.e. $\vec{v}_{\text{AC}} = \vec{v}_{\text{exc}}$. The stored light will increase until eventually the injected excitation is equal to the light power lost in the interferometer. Once this condition is reached the interferometer is in its steady-state.
 
 The steady state condition can be solved numerically using matrix inversion. As described above, the field amplitudes depend not only on the input but also on the field amplitudes themselves, i.e.
@@ -47,18 +47,18 @@ Since $\mathbf{M}_{\text{AC}}$ is a matrix and $\vec{v}_{\text{AC}}$ and $\vec{v
 \end{equation}
 where $\mathbb{I}$ is the identity matrix. The calculation of the field amplitudes in the interferometer therefore becomes a task of finding the inverse of $\mathbb{I} - \mathbf{M}_{\text{AC}}$.
 
-\subsection{Probe Signals}
+\subsection{Probe signals}
 With the steady-state field amplitudes, the signals produced by the interferometer can be determined with the application of a \emph{probe matrix} $\mathbf{M}_{\text{probe}}$ which maps the fields in the interferometer to probes contained within the interferometer. Since the fields amplitudes are determined for every wavelength under consideration, it is possible to calculate the signals that would appear on photodetector circuits implementing RF demodulation. The probe matrix contains complex amplitudes to transform the fields at the location of the probe by the required amount given the demodulation frequencies and phase angles. The probe signals are therefore defined as:
 \begin{equation}
   \vec{v}_{\text{probe}} = \mathbf{M}_{\text{probe}} \left( \mathbb{I} - \mathbf{M}_{\text{AC}} \right)^{-1} \vec{v}_{\text{exc}}.
 \end{equation}
 
-\subsection{Calculation of Transfer Functions}
+\subsection{Calculation of transfer functions}
 The operation of calculating the probe signals from the field amplitudes in the interferometer can be repeated for arbitrary frequencies of excitation to produce a three-dimensional drive-to-probe transfer matrix. This represents the transfer function from each optic's degree of freedom to each probe. As such, the signal from a particular \emph{interferometer} degree of freedom can be constructed via a linear combination of optic degrees of freedom transfer functions. The differential arm degree of freedom transfer function for a \MI to its asymmetric port, for instance, can be calculated by extracting the transfer function of each end test mass to a probe situated at the asymmetric port and taking the difference of the two \note{, as shown in Equation x in Section y.}
 
-\subsection{Probe Quantum Noise}
+\subsection{Probe quantum noise}
 ...
 
-\section{Reflection Phase Convention}
+\section{Reflection phase convention}
 \label{a:reflection-phase}
 \note{Difference between Optickle and Finesse sign conventions for transmission and reflection. See footnote 1 on p2 of T1100110 for more details.}

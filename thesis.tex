@@ -193,7 +193,6 @@
 \item Sean Stephan Leavey\ \\ \ \\ \ \\
 \hrule
 \end{description}
-\addcontentsline{toc}{chapter}{Licence}
 \newpage
 
 % -----------------------------------------------------------------------------
@@ -204,12 +203,21 @@
 % -----------------------------------------------------------------------------
 \newpage
 %\thispagestyle{empty}
-\tableofcontents
-\listoftables
-\listoffigures
 
-\addcontentsline{toc}{chapter}{List of Acronyms and Symbols}
+\addcontentsline{toc}{chapter}{Preliminaries}
+
+% change contents title to lower case
+\renewcommand{\contentsname}{Table of contents}
+\tableofcontents
+
+\listoftables
+\addcontentsline{toc}{section}{List of tables}
+
+\listoffigures
+\addcontentsline{toc}{section}{List of figures}
+
 \printglossaries
+\addcontentsline{toc}{section}{List of acronyms and symbols}
 
 % -----------------------------------------------------------------------------
 \cleardoublepage
@@ -217,8 +225,8 @@
 % Number chapter boomarks
 \bookmarksetup{numbered}
 
-\section{Thesis Statement}
-\label{c:intro:thesisstatement}
+\section*{\label{c:intro:thesisstatement}Thesis statement}
+\addcontentsline{toc}{section}{Thesis statement}
 
 \input{"00-statement.tex"}
 

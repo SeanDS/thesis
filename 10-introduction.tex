@@ -17,7 +17,7 @@
 * Speedmeter mirror thermal noise for different layer configurations (i.e. MATLAB scripts that I made already)
 * Mirrors with similar reflectivity for different polarisations...?
 
-\chapter{Gravitational Waves}
+\chapter{Gravitational waves}
 \label{c:gw-detection}
 
 * Section on DOFs, both for a DRMI and angular DOFs (for benefit of alignment appendix)
@@ -29,7 +29,7 @@ At 09:50:45 \gls{UTC} on \nth{14} September 2015, gravitational waves from the b
 
 From the gravitational waveform witnessed at the LIGO sites it was possible to determine the type and parameters of the waves' source. \emph{GW150914}'s waveform can be observed in Figure\,\note{ADD FIGURE}. This waveform, consistent with a binary black hole merger, swept up in frequency (the \emph{inspiral}) before combining (the \emph{merger}) and creating an audible ``chirp''. The signal was only above each detector's noise level from a frequency of around \checkme{x}. Not only did LIGO make the first observation of a gravitational wave, it also made the first detection of a binary black hole system. The window into the universe opening up due to the LIGO\textemdash and the worldwide network of gravitational wave detectors in operation and under assembly, GEO-600, Virgo and KAGRA\textemdash represents a new opportunity to study the universe in a completely different way. Some secrets have already been learned, but there are surely many more to be uncovered. Although this is just the beginning of gravitational astronomy, work is already under way to produce bigger and better gravitational wave detectors both on the Earth and in Space.
 
-\section{General Relativity and Gravitational Waves}
+\section{General relativity and gravitational waves}
 
 One hundred years ago, the landscape in the field of physics was dominated by two physical theories: that of universal gravitation, by Newton, and that of electromagnetism, by Maxwell. Although Newton's theory explained with great precision the motion of objects from apples to planets, it did not reconcile the prediction from Maxwell that the speed of light is constant: a prediction hinted experimentally in the late 19th Century by Michelson and Morley. In 1905, Albert Einstein published his Special Theory of Relativity, implying alongside a wide range of other consequences that space and time are linked in a single continuum known as spacetime. The finite speed of light and the existence of spacetime, however, did not accommodate the idea from Newton that gravity was instantaneous attraction between matter across universal distances, nor did it fix the age-old problem with Newtonian mechanics in explaining the apparent precession of the planet Mercury's orbit. Einstein's later work, his General Theory of Relativity, extended Special Relativity to include strong gravitational attraction, and in doing so he solved the problem with Mercury's orbit and predicted the existence of gravitational waves that dictate how matter should move in spacetime.
 
@@ -45,26 +45,26 @@ where $G$ is the gravitational constant, $\left( M v^{2} \right)_{\text{nonspher
 
 It is only the waves produced by the most massive objects in the universe which we have any chance of detecting: black holes, neutron stars and supernovae, amongst others. Even then, gravitational radiation is only produced by \checkme{the presence of a quadropolar moment} within the source, which means that in general only a subset of sources that happen to be in coalescence or contain surface asymmetries will produce waves.
 
-\subsubsection{Compact Binary Coalescence}
+\subsubsection{Compact binary coalescence}
 As detected by LIGO in 2016...
 
 \note{Show a picture of the waveform, with annotations - it might be available from https://wiki.ligo.org/viewauth/EPO/DiscoveryTalks.}
 
-\subsubsection{Core Collapse}
+\subsubsection{Core collapse}
 \note{Look up numbers from that rates paper.}
 
-\subsubsection{Continuous Wave}
+\subsubsection{Continuous wave}
 \note{Pulsars}
 
-\subsubsection{Stochastic Background}
+\subsubsection{Stochastic background}
 CMB...
 
 \note{Make a table of the rules of thumb for strains produced by each source, a la Sathya's article.}
 
-\subsection{Source Localisation}
+\subsection{Source localisation}
 \note{See Section 2.3 of Sathya's Living Review. Don't go into detail about the type of detector, just the position on Earth.}
 
-\section{Development of the Gravitational Wave Detector}
+\section{Development of the gravitational wave detector}
 The field of experimental gravitational wave detection began with Joseph Weber's studies in the 1960s \cite{Weber1960}. His \emph{Weber bar} was developed to act as a strain meter, with piezoelectric sensors placed on the surface of an aluminium cylinder to convert changes in length into electrical signals. Whilst the expected change in length of such a cylinder from gravitational radiation would in most cases be tiny---\checkme{of the order \SI{1e-22}{\meter} for a particularly loud source}---the resonant frequency of the cylinder, typically in the kilohertz range, acts to enhance the amplitude of the length change. The sensitivity of such a bar as a function of frequency is determined in part by its quality factor (Q), with a necessary trade-off being made between peak sensitivity (high Q) and detection bandwidth (low Q). As sources of gravitational radiation are almost universally weak, the only reasonable hope of making such a detection is to choose a high Q material and hope for a favourable signal frequency.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -76,7 +76,7 @@ The original resonant bar detectors were evolved over time to become cryogenic, 
 
 % Search 'Lunar Surface Gravimeter' for Moon bar detector details
 
-\subsection{The Gravitational Wave Interferometer}
+\subsection{The gravitational wave interferometer}
 %* First interferometric detectors:
 %  * Drever, Hough, Glasgow and Munich stuff
 %  * Glasgow 10m, Caltech 40m, Garching 30m, etc.
@@ -111,10 +111,10 @@ Over the course of the 1980s the \MI (see Figure\,\ref{fig:mi}) was developed in
   \end{center}
 \end{figure}
 
-\subsection{Pulsar Timing}
+\subsection{Pulsar timing}
 \note{Short note on pulsar timing arrays.}
 
-\section{Thesis Structure}
+\section{Thesis structure}
 Chapter\,\ref{c:instrumentation} introduces some theoretical foundations and motivation for the work presented in the rest of this thesis. Chapter\,\ref{c:waveguides} presents an investigation into waveguide mirrors, which offer a large potential improvement in Brownian thermal noise over conventional dielectric mirrors. One downside is the potential presence of a coupling effect between transverse motion and reflection phase. This chapter presents an experiment conducted to measure this coupling in order to give a clearer picture of this type of mirror's potential use in future gravitational wave facilities.
 
 The next set of chapters, \ref{c:speedmeter-intro}, \ref{c:speedmeter-control}, \ref{c:esd-concept} and \ref{c:slow-controls-integration}, present a view of current research into a new type of gravitational wave interferometer: the \SSM{}. Chapter\,\ref{c:speedmeter-intro} introduces the concept in more detail and presents work performed to facilitate the measurements made in subsequent chapters and still to be made in the future. Chapter\,\ref{c:speedmeter-control} demonstrates a fundamental problem with the \SSM{} configuration which is not present with current detectors: that the controller cannot determine the displacement of the cavity mirrors at low frequencies, leading to loss of sensitivity. A solution to the problem is presented through the modelling of the complete control system, using existing measurements of the response and noise of the apparatus as well as estimates for noise in the experiment as fully assembled, backed by numerical simulations. Chapter\,\ref{c:esd-concept} outlines an experiment to test a new actuator design to be used in the \SSMEXPT{}: a plate capacitor electrostatic actuator. Designs and tests of high-voltage equipment to create the required actuation are presented, \note{along with preliminary results}. Finally, Chapter\,\ref{c:slow-controls-integration} presents the software and hardware mechanisms used to create the complete control system to be used in the main experiment, via integration to the main, fast control system of a separate, lower-cost system intended for the measurement and control of slower auxiliary channels.

@@ -76,7 +76,7 @@ In order to quantify its transverse coupling, a \gls{WGM} was produced in collab
 
 The fabricated \gls{WGM} was used as the input coupler for a \FP{} cavity, held on resonance using the Pound-Drever-Hall (PDH) technique \cite{Drever1983}. The error signal provided by the PDH technique represents changes in cavity length, and this can be fed back to the laser's frequency \emph{via} a frequency stabilisation servo.
 
-\subsection{Cavity Length Signals}
+\subsection{Cavity length signals}
 \label{sec:lengthsignals}
 
 A non-zero \gls{WGM} transverse to longitudinal coupling, $\omega_1$, produces a phase shift on the reflected light. This manifests itself as an effective change in cavity length, $\delta l_W$, as the laser light is scanned across its grooves by a rotation of the \gls{ETM}:
@@ -131,7 +131,7 @@ Examples of \gls{WGM} coupling levels yielding cavity length changes smaller tha
 % green: 5e-10 m, so 1:3702
 % blue: 5e-11, so 1:37024
 
-\subsection{The Glasgow 10~m Prototype}
+\subsection{The \GLASGOWTENM{}}
 \label{sec:glasgow10m}
 
 The \GLASGOWTENM{} facility provided a test bed in which the \gls{WGM}'s transverse to longitudinal coupling could be quantified. The prototype is housed in a Class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
@@ -180,17 +180,17 @@ A three-stage reaction chain was placed behind the triple pendulum of the \gls{E
   \caption{\label{tab:cavity-parameters}Cavity parameters.}
 \end{table}
 
-\subsection{Measuring Cavity Length Changes}
+\subsection{Measuring cavity length changes}
 
 An RF photodetector was placed at the viewport on tank 1, where it could view the light reflected from the cavity. By using PDH demodulation, the signal from this photodetector provided an error signal for the cavity length. This signal was fed back to the laser \emph{via} the frequency stabilisation servo to maintain cavity resonance. The frequency stabilisation servo's high frequency feedback signal\textemdash a voltage applied across the laser's piezoelectric transducer (PZT)\textemdash provided a means of calibrating cavity length changes at frequencies greater than \SI{12}{\hertz}. Using the PZT's frequency response, \SI{1.35}{\mega\hertz \per \volt_{rms}}, the cavity length change $\delta l$ per error signal volt could be calculated to be \SI{133}{\nano\meter \per \volt_{peak}}.
 
-\subsubsection{The Pound-Drever-Hall Technique}
+\subsubsection{The Pound-Drever-Hall technique}
 \note{Describe PDH}
 
 \subsubsection{Cavity control}
 \note{Describe servos and filters used to lock the cavity}
 
-\section{Measurements and Analysis}
+\section{Measurements and analysis}
 \label{sec:measurements}
 
 From the orientation of the \gls{WGM}'s gratings, it was expected that actuation of the \gls{ETM} in yaw, which would scan the cavity light across the \gls{WGM}'s surface transverse to the direction of its grooves, would exhibit \gls{WGM} transverse to longitudinal coupling if present.
@@ -201,7 +201,7 @@ When $V_L$ and $V_R$ were identical in magnitude but out-of-phase, the \gls{ETM}
 
 Pitch actuation upon the \gls{ETM}, which would scan the cavity light in a direction parallel to the \gls{WGM}'s grooves, was not expected to contribute to the cavity's error signal via the \gls{WGM}'s coupling. However, unintended pitch actuation upon the \gls{ETM} would couple into the cavity's length \emph{via} the same geometrical mechanism as yaw shown in Equation~\ref{eq:etm-length-change}. To minimise the \gls{ETM}'s pitch component during actuation in yaw, the cavity's error signal was minimised by applying an offset voltage to the top coil. In practice, minimal pitch coupling was achieved when the offset signal was zero.
 
-\subsection{Actuator Calibration}
+\subsection{Actuator calibration}
 
 To calibrate the cavity's longitudinal response to voice coil actuation, the voice coils were actuated with the balanced $V_L$ and $V_R$ signals in-phase at a frequency $f = \SI{70}{\hertz}$ for a period of \SI{120}{\second}. This, along with the \gls{ETM}'s mass $m$, could then be used to obtain the force applied to the \gls{ETM} by the voice coils:
 \begin{equation}
@@ -209,7 +209,7 @@ To calibrate the cavity's longitudinal response to voice coil actuation, the voi
   \label{eq:force-calibration}
 \end{equation}
 
-\subsection{Measurement of Waveguide Mirror Transverse to Longitudinal Coupling}
+\subsection{Measurement of waveguide mirror transverse to longitudinal coupling}
 \label{sec:length-changes}
 
 % The spot positions were scaled to account for the defocusing effect - see https://arran.physics.gla.ac.uk/labbooks/index.php?LabBook=JIF_Diff, "Working out Monitor Perspective", October 29th 2013
@@ -259,7 +259,7 @@ Knowledge of the distance of the \gls{ETM}'s voice coils from the centre of rota
 \end{equation}
 The numerical simulation tool \emph{FINESSE} \cite{Freise2004} was then used to calculate $\kappa$ for the cavity parameters shown in Table~\ref{tab:cavity-parameters}. This was determined to be \SI{18.5}{\meter \per \radian}. The \gls{WGM}'s transverse displacement was then the product of $\kappa$ and $\theta$.
 
-\subsection{Analysis of the Coupling Level}
+\subsection{Analysis of the coupling level}
 \label{sec:simulations}
 Using the known contribution to the cavity length signal from the rotation of the \gls{ETM}, $\delta l_E$, and the cavity length signals $\delta l$ measured during the experiment, the \gls{WGM}'s coupling level could be calculated statistically using Bayes' theorem. For this experiment, Bayes' theorem can be expressed mathematically as:
 \begin{equation}
@@ -270,7 +270,7 @@ where $p \left( \vec{\omega} | \mathcal{D} \right)$ is the probability density d
 
 In this analysis we are primarily interested in estimates of the model parameters. We are therefore free to ignore the constant evidence factor $p \left( \mathcal{D} \right)$ present in Bayes' theorem when calculating the posterior. In the future it may be of interest to compare different models for the coupling level (or lack thereof), in which case the evidence could be calculated to obtain a model odds ratio.
 
-\subsubsection{Model and Parameters}
+\subsubsection{Model and parameters}
 To obtain a posterior for the \gls{WGM}'s coupling level, it was necessary to build a model and state prior belief of the parameters' probability distributions.
 
 In the model, the \gls{ETM}'s geometrical longitudinal effect at arbitrary spot position $y$ (Equation~\ref{eq:etm-length-change}) for the rotation and mirror depth used in the experiment was combined coherently with a specified level of \gls{WGM} transverse to longitudinal coupling, $\omega_1$. It was then possible to predict the total change in cavity length $\delta l$ as a function of spot position $y$, given the fixed parameters $\theta$, $\kappa$ and $d$, using equations~\ref{eq:wgm-length-change} and \ref{eq:etm-length-change}:
