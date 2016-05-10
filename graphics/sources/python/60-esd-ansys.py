@@ -9,7 +9,7 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data path
-data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-python', '70-esd-ansys.csv')
+data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-python', '60-esd-ansys.csv')
 
 # load
 data = np.genfromtxt(data_path, delimiter=',', skip_header=1)

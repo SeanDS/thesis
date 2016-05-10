@@ -10,8 +10,8 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data paths
-data_path_local = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '80-epics-test-local.csv')
-data_path_remote = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '80-epics-test-remote.csv')
+data_path_local = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '70-epics-test-local.csv')
+data_path_remote = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '70-epics-test-remote.csv')
 
 # load data
 data_local = np.genfromtxt(data_path_local, delimiter=',', skip_header=1)

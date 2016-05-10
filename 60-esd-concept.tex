@@ -36,7 +36,7 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT{
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-esd-ansys.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-ansys.pdf}
   \caption{Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
   \label{fig:esd-ansys}
 \end{figure}
@@ -53,7 +53,7 @@ The addition of \gls{LED}s (D11 and D12) allows for visual identification of cur
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-hv-power-supply.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-power-supply.pdf}
   \caption{\gls{HV} power supply design. This circuit uses a transformer, bridge rectifier, \gls{MOSFET} regulator, zener diodes and smoothing capacitors. It is an evolution on a single-sided power supply by Henning Valbruch (AEI, Hannover), following the \emph{de-facto} standard design \cite{Horowitz2015}, with the addition of a negative output rail and current limiting circuitry. This design \emph{does not} work with the \gls{HV} amplifier as discussed in Section\,\ref{sec:hv-amplifier}\textemdash see Section\,\ref{sec:hv-psu-amp-measurements} for more details.}
   \label{fig:hv-power-supply}
 \end{figure}
@@ -82,7 +82,7 @@ The second modification made to the amplifier circuit was the addition of a safe
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-esd-paschen.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-paschen.pdf}
   \caption{The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \gls{ESD} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
   \label{fig:esd-paschen}
 \end{figure}
@@ -93,7 +93,7 @@ To prevent the possibility of arcing, a cut-off function was added to the circui
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-amplifier-interlock.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-amplifier-interlock.pdf}
   \caption{\gls{HV} amplifier pressure interlock circuit. An op-amp (N8A) compares the voltage from a fixed \SI{5}{\volt} reference against an externally supplied voltage (``in'') intended to be connected to a pressure gauge. When the external voltage is lower than \SI{5}{\volt} (indicating suitably high vacuum), the op-amp's output is negative and transistor T14 is not open. In this scenario the current from the +\SI{15}{\volt} supply can flow through optoisolators N7, N9, N12 and N13 to provide the supply rails for the PA98s. When the external voltage is higher than \SI{5}{\volt} (indicating a pressure above the safe limit), the op-amp's output is positive. As the op-amp's output is fed back to the \emph{positive} input, the op-amp quickly reaches its positive supply rail, \SI{15}{\volt}. This operates T14 which opens a low-resistance path to ground for the current that would otherwise operate the optoisolators, effectively turning off the PA98s' supply rails.}
   \label{fig:amplifier-interlock}
 \end{figure}

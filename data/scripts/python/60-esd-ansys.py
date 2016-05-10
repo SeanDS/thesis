@@ -16,8 +16,8 @@ path = sys.argv[1]
 voltages = xrange(650, 751, 10)
 
 # load MAT files
-mat_itm = scipy.io.loadmat(os.path.join(os.path.dirname(__file__), '..', '..', '70-itm.mat'))
-mat_etm = scipy.io.loadmat(os.path.join(os.path.dirname(__file__), '..', '..', '70-etm.mat'))
+mat_itm = scipy.io.loadmat(os.path.join(os.path.dirname(__file__), '..', '..', '60-itm.mat'))
+mat_etm = scipy.io.loadmat(os.path.join(os.path.dirname(__file__), '..', '..', '60-etm.mat'))
 
 # extract data
 data = np.asarray([voltages]).T

@@ -49,19 +49,19 @@ Equations\,\ref{eq:programmatic-sine} and \ref{eq:programmatic-time-step} were i
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/80-epics-ioc-test.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-epics-ioc-test.pdf}
   \caption{\label{fig:epics-ioc-test}Configuration for EPICS IOC test. A Python program running on \lstinline{cds-fe3} generates a sine wave and injects it into the EPICS IOC running on the same machine. The frame builder running on \lstinline{cds-fb1} is able to communicate with the EPICS IOC on \lstinline{cds-fe3} using the Ethernet network.}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/80-epics-test.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-epics-test.pdf}
   \caption{\label{fig:epics-test}Test of EPICS recording from a remote IOC. The sine wave recorded locally is recovered remotely by the frame builder. Note that an offset has been applied to the remote data to synchronise the start points: in reality, there exists a timing latency between the local and remote signals.}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/80-epics-test-stars.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-epics-test-stars.pdf}
   \caption{\label{fig:epics-test-stars}The first peak of the sine wave presented in Figure\,\ref{fig:epics-test}. The sine wave generated at a sample rate of \SI{32}{\hertz} is recorded locally at that frequency, whereas the data recorded by the frame builder across the network is at half that rate, \SI{16}{\hertz}, shown by the presence of \checkme{two blue markers for every one orange marker}.}
 \end{figure}
 
@@ -70,7 +70,7 @@ The effect of the sample rate can be further witnessed in Figure\,\ref{fig:sampl
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/80-epics-aliasing.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-epics-aliasing.pdf}
   \caption{\label{fig:sample-aliasing}The frame builder's sample limit. With a signal of frequency \SI{8}{\hertz}, the frame builder, sampling at a rate of \SI{16}{\hertz}, is just able to interpret the underlying waveform. Note the slight drift in the sampling phase, which probably arises from non-deterministic networking and computational interrupts. Signals above \SI{16}{\hertz} will appear aliased when measured by the frame builder. Note that, as with Figure\,\ref{fig:epics-test}, a timing latency between the two waveforms has been removed for clarity.}
 \end{figure}
 

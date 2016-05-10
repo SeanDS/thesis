@@ -107,13 +107,13 @@ $(GFXGENPY)/30-magnet-offset.py: $(DATA)/30-magnet-offset.csv
 
 $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.csv $(DATA)/30-coupling-best-fit-simulations.csv
 
-$(GFXGENPY)/70-esd-ansys.pdf: $(DATAGENPY)/70-esd-ansys.csv
+$(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
-$(GFXGENPY)/80-epics-test.pdf: $(DATA)/80-epics-test-local.csv $(DATA)/80-epics-test-remote.csv
+$(GFXGENPY)/70-epics-test.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
 
-$(GFXGENPY)/80-epics-test-stars.pdf: $(DATA)/80-epics-test-local.csv $(DATA)/80-epics-test-remote.csv
+$(GFXGENPY)/70-epics-test-stars.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
 
-$(GFXGENPY)/80-epics-aliasing.pdf: $(DATA)/80-epics-aliasing-local.csv $(DATA)/80-epics-aliasing-remote.csv
+$(GFXGENPY)/70-epics-aliasing.pdf: $(DATA)/70-epics-aliasing-local.csv $(DATA)/70-epics-aliasing-remote.csv
 
 # ===== Data dependencies =====
 
@@ -124,7 +124,7 @@ $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
 # ===== Extra data dependencies =====
 
 # data set generated from other data sets
-$(DATAGENPY)/70-esd-ansys.csv: $(DATA)/70-itm.mat $(DATA)/70-etm.mat
+$(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
 
 # ===== Misc =====
 
