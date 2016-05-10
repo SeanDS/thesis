@@ -98,7 +98,7 @@ To prevent the possibility of arcing, a cut-off function was added to the circui
   \label{fig:amplifier-interlock}
 \end{figure}
 
-\subsection{Signal and noise paths}
+\subsection{\label{sec:signal-and-noise-paths}Signal and noise paths}
 The \gls{HV} amplifier is designed to have a very wide bandwidth, and the power amplifier has been chosen with this goal in mind. The amplifier circuit, however, contains more than just the power amplifier, but also filtering and safety mechanisms in the form of additional integrated circuits and other passive and active components. The control input from \gls{CDS} is a differential signal, and any common mode noise that may have entered in each channel on the way to the amplifier is to a great extent removed by a balanced line receiver present at the amplifier's input. This outputs a single-ended signal which is split into two parts, with one being inverted via a buffer op-amp, and these two signals are sent to their respective power amplifiers. Additional op-amps also control the supply voltage provided to each power amplifier. To prevent high current in-rush when the power supply is attached to the amplifier--as reactive components such as capacitors and inductors charge--an op-amp limits the current to a level low enough for the power supply to provide without locking.
 
 In \gls{CDS}, the signal $S$ is sent from the digital to the analogue domain via \gls{ADC}s, where it is split into two channels, $A$ and $B$, containing the same signal but with opposite sign. These signals are sent to the amplifier in a two-core cable. As laboratories inevitably contain stray electromagnetic fields, channels $A$ and $B$ pick up noise $n_{A}$ and $n_{B}$, respectively:

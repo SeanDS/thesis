@@ -6,7 +6,7 @@ How to build simulations in both tools...
 \section{Finesse}
 
 \section{Optickle}
-Optickle is a tool primarily designed to produce a series of matrices as outputs. As it is based in \MATLAB, it is possible to study the behaviour of the code to determine its capabilities and limitations. This section attempts to explain the basic operation of the primary feature that Optickle provides: the \code{tickle} function.
+Optickle is a tool primarily designed to produce a series of matrices as outputs. As it is based in \MATLAB, it is possible to study the behaviour of the code to determine its capabilities and limitations. This section attempts to explain the basic operation of the primary feature that Optickle provides: the \lstinline{tickle} function.
 
 In order to simulate an interferometer, an optical environment is created into which optics, sensors and links between optics may be defined. The primary output of Optickle is a transfer matrix mapping \emph{drives} of each optic in the system to probes within that system. A drive is simply a degree of freedom of an optic, such as longitudinal motion of a mirror. Probes are the simulation equivalent of photodetectors, but can be lossless and can perform arbitrary RF demodulations. Another useful output is the quantum noise spectral density at a probe. Dividing the noise spectral density at a probe by a suitable linear combination of optical transfer functions--a degree of freedom of the interferometer---results in the probe's noise-to-signal ratio, or sensitivity, to that degree of freedom.
 
@@ -17,14 +17,14 @@ Whilst Optickle's code is extensive, the vast majority can be categorised into a
   \item defining manipulations of sets of matrices to produce transfer functions and noise spectral densities for optics and sensors within the system.
 \end{itemize}
 
-Once an optical system has been defined by the user, a call to the \code{tickle} function results in a number of operations being performed:
+Once an optical system has been defined by the user, a call to the \lstinline{tickle} function results in a number of operations being performed:
 \begin{itemize}
   \item the construction of matrices mapping the drives of an optic to the fields in the interferometer, and each field to each other field;
   \item the constructi
 \end{itemize}
 
 \subsection{Drive and Field Maps}
-The drive-to-field matrix produced by \code{tickle} is the mapping between a \emph{drive} of an optic---a degree of freedom such as longitudinal motion of a mirror---to the corresponding fields in the interferometer. A \emph{field} is in this case the amplitude of the light between a particular pair of optics or sensors for a given wavelength. The individual transfer functions are themselves products of each optic's drive matrix (which converts a force input at the test mass to a phase change in the reflected and transmitted light, via the optic's mechanical transfer function) and a phase matrix defining the phase change light would have travelling between each optic in the system. The field-to-drive matrix is also produced in a similar way, but this time maps the interaction that light fields have with the optical drives--i.e. the effect of radiation pressure.
+The drive-to-field matrix produced by \lstinline{tickle} is the mapping between a \emph{drive} of an optic---a degree of freedom such as longitudinal motion of a mirror---to the corresponding fields in the interferometer. A \emph{field} is in this case the amplitude of the light between a particular pair of optics or sensors for a given wavelength. The individual transfer functions are themselves products of each optic's drive matrix (which converts a force input at the test mass to a phase change in the reflected and transmitted light, via the optic's mechanical transfer function) and a phase matrix defining the phase change light would have travelling between each optic in the system. The field-to-drive matrix is also produced in a similar way, but this time maps the interaction that light fields have with the optical drives--i.e. the effect of radiation pressure.
 
 The field-to-field matrix is a similar mapping to the drive-to-field matrix, but this instead maps each field to each other field. As such, with this matrix the propagation of input light from lasers or vacuum injection to an arbitrary part of the interferometer can be calculated, albeit without the effect of radiation pressure.
 

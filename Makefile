@@ -109,6 +109,12 @@ $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.
 
 $(GFXGENPY)/70-esd-ansys.pdf: $(DATAGENPY)/70-esd-ansys.csv
 
+$(GFXGENPY)/80-epics-test.pdf: $(DATA)/80-epics-test-local.csv $(DATA)/80-epics-test-remote.csv
+
+$(GFXGENPY)/80-epics-test-stars.pdf: $(DATA)/80-epics-test-local.csv $(DATA)/80-epics-test-remote.csv
+
+$(GFXGENPY)/80-epics-aliasing.pdf: $(DATA)/80-epics-aliasing-local.csv $(DATA)/80-epics-aliasing-remote.csv
+
 # ===== Data dependencies =====
 
 $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
