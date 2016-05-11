@@ -13,34 +13,93 @@ In order to calculate a response function for a set of optics, it is necessary t
 We define the field amplitude of light across dimension $x$ as:
 \begin{equation}
   \label{eq:field-amplitude}
-  A = A_0 \text{e}^{\text{i} kx},
+  E = E_0 \text{e}^{\text{i} kx},
 \end{equation}
-for initial amplitude $A_0$ and wavenumber $k = \frac{2 \pi}{\lambda}$, where $\lambda$ denotes wavelength. Upon transmission through an optic, the transmitted field is equal to the input field, $A_{\text{in}}$, scaled by the optic's field transmissivity, $t$:
+for initial amplitude $E_0$ and wavenumber $k = \frac{2 \pi}{\lambda}$, where $\lambda$ denotes wavelength. Upon transmission through an optic, the transmitted field is equal to the input field, $E_{\text{in}}$, scaled by the optic's field transmissivity, $t$:
 \begin{equation}
-  A_{\text{t}} = tA_{\text{in}}.
+  \label{eq:transmitted-field}
+  E_{\text{t}} = tE_{\text{in}}.
 \end{equation}
 The reflected field is similarly scaled by the optic's field reflectivity, $r$:
 \begin{equation}
   \label{eq:reflected-field}
-  A_{\text{r}} = \text{i}rA_{\text{in}}.
+  E_{\text{r}} = \text{i}rE_{\text{in}}.
 \end{equation}
 Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. We choose to apply this phase shift to the reflected field by convention (see Appendix\,\ref{a:reflection-phase}).
 
-The field due to motion of a mirror at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}kL}$ in phase, and a factor of $\text{i}r$ in amplitude. Distance $x$ may in general be a time varying function, so the time varying field is then:
-\begin{equation}
-  A_{\text{r}} \left( t \right) = \text{i} r \text{e}^{\text{i} k x \left( t \right)}.
-\end{equation}
-If we assume the motion of the mirror is sinusoidal (a very good approximation, given that mirrors are typically attached to a rigid body), then the field can be expressed in terms of the the amplitude $x_0$ and frequency $f$ of oscillation:
-\begin{equation}
-  A
-\end{equation}
-\note{See G.V. p216, derive equivalent version}
+\subsubsection{Simple cavities}
+\note{Make sure this is consistent with PDH description etc. later, i.e. reflected field is E7 or whatever, etc.}
 
-\subsubsection{Transmission and reflection}
-\note{Make sure this is consistent with PDH description etc. later, i.e. reflected field is E_7 or whatever, etc.}
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/20-fabry-perot.pdf}
+  \caption{\label{fig:fabry-perot}\FP{} cavity with its mirror input and output coefficients. Coefficients $a_1$ and $a_5$ are for the fields incident upon the cavity from either side, whilst $a_4$ and $a_8$ are for the fields leaving the cavity on either side. Coefficients at the outputs of the \FP{} can be calculated from inputs $a_1$ and $a_5$. The mirrors in the cavity are separated by free space through which the fields leaving each mirror's inside surface propagate.}
+\end{figure}
+
+Combining Equations \ref{eq:field-amplitude}, \ref{eq:transmitted-field} and \ref{eq:reflected-field} allows us to determine the field amplitude at different ports of a collection of mirrors. Combinations of mirrors produce \emph{optical cavities}, which possess the property that they can, under certain conditions, accumulate light power. If we take the simplest of examples, the two-mirror \FP{} cavity (see Figure\,\ref{fig:fabry-perot}), we can determine the fields coefficients present at the output nodes of the mirrors to be:
+
+\begin{equation}
+  \label{eq:fabry-perot-coefficients-1}
+  \begin{split}
+    a_1 &= it_1 a_0 + r_1 a_5, \\
+    a_3 &= it_2 a_2, \\
+    a_4 &= r_2 a_2, \\
+    a_6 &= r_1 a_0 + it_1 a_5.
+  \end{split}
+\end{equation}
+
+Similarly, the coefficients at the input nodes within the cavity can be determined from the output nodes of the opposite mirrors and the separation $D$:
+\begin{equation}
+  \label{eq:fabry-perot-coefficients-2}
+  \begin{split}
+    a_2 &= a_1 \text{e}^{\text{i} kD}, \\
+    a_5 &= a_4 \text{e}^{\text{i} kD}, \\
+  \end{split}
+\end{equation}
+
+Note the lack of a field input from the right side of the cavity in Figure\,\ref{fig:fabry-perot}. In general this field is present and has a small effect on the coefficients, but in gravitational wave detectors it is typically small by design. As this additional term adds mathematical complexity but not significant additional clarity, it has been neglected.
+
+The coefficients in Equations \ref{eq:fabry-perot-coefficients-1} and \ref{eq:fabry-perot-coefficients-2} can be used to determine the field amplitude at different points of the interferometer. As there is only one input field in this example, the coefficients can be reduced to depend only on $a_0$, $r_1$ and $r_2$, $t_1$ and $t_2$ and $D$. The light reflected from the \FP{} is an important field to know as this is used in many experiments to assist with interferometer sensing and control. Coefficient $a_6$ determines the reflected field, but this depends on $a_0$ and $a_5$, the latter being one of the coefficients inside the cavity. Coefficient $a_5$ can have terms progressively substituted as follows:
+\begin{equation}
+  \label{eq:fabry-perot-reflected-coefficient}
+  \begin{split}
+    a_5 &= a_4 \text{e}^{\text{i} kD} \\
+        &= a_2 r_2 \text{e}^{\text{i} kD} \\
+        &= a_1 r_2 \text{e}^{\text{2i} kD} \\
+        &= r_2 \left( it_1 a_0 + r_1 a_5 \right) \text{e}^{\text{2i} kD}, \\
+  \end{split}
+\end{equation}
+where we find that the equation for $a_5$ depends on itself. This shows how the cavity operates: on each subsequent round trip, the cavity field is enhanced with addition field in the form of light transmitting through the first mirror. The field builds up until the amount of light entering the cavity is equal to the amount leaving. We can manipulate Equation\,\ref{eq:fabry-perot-reflected-coefficient} to show this:
+\begin{equation}
+  a_5 = a_0 \frac{it_1 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}},
+\end{equation}
+where it is clear to see that the cavity coefficient depends on the input coefficient $a_0$. The coefficient representing the reflected light from the interferometer is then just $a_5$ scaled by $t_1$:
+\begin{equation}
+  a_6 = a_0 \left( r_1 - \frac{t_1^2 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}} \right).
+\end{equation}
+
+With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected field amplitude as a function of the input field. The output field as a function of input field $E_{\text{in}}$ is then simply:
+\begin{equation}
+  \label{eq:fabry-perot-field}
+  \begin{split}
+    E_{\text{out}} &= a_6 E_{\text{in}} \\
+                   &= E_{\text{in}} \left( r_1 - \frac{t_1^2 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}} \right).
+  \end{split}
+\end{equation}
+The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. This is an important figure of merit for cavities and will be especially important in the later chapters of this work.
 
 \subsubsection{Signal sidebands}
 \note{Talk about signal sidebands ON THE CARRIER ONLY (see G.H. thesis p58)}
+
+The field due to motion of a mirror at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}kx}$ in phase, and a factor of $\text{i}r$ in amplitude. Distance $x$ may in general be a time varying function, so the time varying field is then:
+\begin{equation}
+  E \left( t \right) = \text{i} r E_0 \text{e}^{\text{i} k x \left( t \right)}.
+\end{equation}
+This lets us calculate the effect of mirror motion on the field. If we assume the motion of the mirror is sinusoidal (usually a reasonable approximation, given that mirrors are, in the field of gravitational wave detection, typically suspended from pendulums), then the field can be expressed in terms of the peak amplitude $x_0$ and frequency $f$ of oscillation:
+\begin{equation}
+  E
+\end{equation}
+\note{See p23 of Living Review, but explain phase modulation in terms of x(t).}
 
 \subsubsection{Heterodyne detection}
 Add RF sidebands that don't resonate, schnupp asymmetry, etc...
