@@ -88,24 +88,27 @@ With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected fiel
 \end{equation}
 The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. This is an important figure of merit for cavities and will be especially important in the later chapters of this work.
 
+\subsubsection{Cavity figures of merit}
+\note{FSR, finesse, etc.}
+
 \subsubsection{Signal sidebands}
 \note{Talk about signal sidebands ON THE CARRIER ONLY (see G.H. thesis p58)}
 
-The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $\text{i}r$ in amplitude:
+The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $r$ in amplitude:
 \begin{equation}
-  E_{\text{r}} \left( x \right) = \text{i} r E_0 \text{e}^{2\text{i} k \left( x + \Delta x \right)}.
+  E_{\text{r}} \left( x \right) = r E_0 \text{e}^{2\text{i} k \left( x + \Delta x \right)}.
 \end{equation}
 For clarity, we can express the constant $x$ term as a static phase representing the carrier, separated from $\Delta x$ via the wave number:
 \begin{equation}
   \label{eq:field-amplitude-phase}
-  E_{\text{r}} \left( t \right) = \text{i} r E_0 \text{e}^{\text{i} \left( 2 \omega_0 t + k \Delta x\right)}.
+  E_{\text{r}} \left( t \right) = r E_0 \text{e}^{\text{i} \left( 2 \omega_0 t + k \Delta x\right)}.
 \end{equation}
 It is possible to express any particular motion in the form of a series of sinusoidal functions. Expressing mirror motion as a single frequency sinusoid modulating the impinging field, we see:
 \begin{equation}
   \label{eq:field-phase-modulation}
   E_{\text{r}} \left( t \right) = E_0 \text{e}^{\text{i} \left(\omega_0 t + m \cos{\left( \omega t \right)} \right)},
 \end{equation}
-where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. Note that we have neglected for now the reflection terms $ir$. With some algebraic manipulation involving Bessel functions, we can express this as \cite{Freise2010}:
+where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. Note that we have neglected for now the reflection term $r$. With some algebraic manipulation involving Bessel functions, we can express this as \cite{Freise2010}:
 \begin{equation}
   \label{eq:field-phase-bessel}
   E \left( t \right) = E_0 \text{e}^{\text{i} \omega_0 t} \sum^{\infty}_{n=-\infty} \text{i}^n J_{n} \left( m \right) \text{e}^{\text{i} n \omega t}.
@@ -117,7 +120,7 @@ When $m$ is $0$ all Bessel functions $J_{n}$ are $0$ except the first, which is 
 \end{equation}
 Here it is clear to see the presence of upper and lower sidebands at frequencies $\omega_0 \pm \omega$.
 
-Amplitude modulation has a similar but not identical effect to phase modulation. Devices such as electro-optic modulators (\glspl{EOM}) can perform amplitude modulation on a light field, and the effect can be expressed again in terms of the modulation depth and frequency:
+Amplitude modulation has a similar but not identical effect to phase modulation. Devices such as piezoelectric transducers for trimming laser outputs can perform amplitude modulation on a light field, and the effect can be expressed again in terms of the modulation depth and frequency:
 \begin{equation}
   E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + m \cos{\omega t} \right),
 \end{equation}
@@ -127,15 +130,25 @@ and we can manipulate this expression to show the presence of exactly one upper 
   E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + \frac{m}{2} \text{e}^{\text{i} \omega t} + \frac{m}{2} \text{e}^{-\text{i} \omega t} \right).
 \end{equation}
 
-Recall the reflection terms $ir$ we neglected earlier. Upon reflection, Equation\,\ref{eq:field-phase-mod-expanded} gains an imaginary coefficient and so the phase modulation becomes amplitude modulation. When the wave next reflects from a mirror, this amplitude modulation again becomes phase modulation. Similarly, amplitude modulation shown in Equation\,\ref{eq:field-amp-mod} is converted to phase modulation upon reflection. When these signals are measured by a photodetector, the number of mirrors a wave has reflected from, however, does not matter: to the photodetector, amplitude and phase modulation are indistinguishable. There is an interesting caveat to highlight here: if amplitude modulation of a field produces only two sidebands, whereas phase modulation produces infinitely many, how can they express the same signal on a photodetector? To resolve this apparent inconsistency it is useful to visualise the signal sidebands in a phasor diagram, as shown in Figure XXX.
+There is an interesting caveat to highlight here: if there are infinitely many phase modulation sidebands for a given modulation depth, is the phase modulation constant? To resolve this apparent inconsistency it is useful to remember that each Bessel function in the series can be of different sign, such that the sum of all Bessel functions in Equation\,\ref{eq:field-phase-bessel} \checkme{has magnitude equal to the modulation depth}. A \emph{phasor diagram} is useful to visualise this effect. The first four phase modulation sidebands are shown alongside the resultant vector in Figure XXX.
 
 \note{RECREATE TOBIN'S ANIMATION FROM https://dsp.stackexchange.com/questions/2284/why-are-sidebands-generated-in-am-and-fm}
 
-\subsubsection{Heterodyne detection}
-Add RF sidebands that don't resonate, schnupp asymmetry, etc...
+\subsubsection{Signal detection}
+When signals are measured by a photodetector, only amplitude modulation can be detected directly. Although the field impinging upon the photodetector contains phase modulation, the photodetector's stray capacitance acts as a filter to remove this effect from the output signal; in essence, the photodetector only sees the time averaged field. A piezoelectric transducer modulating a laser crystal can be readily witnessed on a photodetector, but to access mirror motion encoded as phase modulation, special techniques are required.
 
-\subsubsection{Homodyne detection}
-pick off a bit of carrier light with a DARM offset...
+In general, phase modulation measurement techniques fall into two broad categories: \emph{heterodyne} detection, and \emph{homodyne} detection. With heterodyne detection, one or more laser frequencies are used in addition to the carrier which have different properties such that they follow a different path to the detector. At the detector, a comparison can be made between the paths taken by the heterodyne fields, where the difference in amplitude and phase can offer insight into the motion of the interferometer's optics. In homodyne detection, the carrier is itself used as a reference, by mixing some light from one part of the interferometer with light from another. If this is conducted in a particular way, it can be a powerful technique to measure phase modulation without requiring carefully controlled heterodyne fields.
+
+Both heterodyne and homodyne techniques will be discussed in greater detail later on.
+
+%\subsubsection{Heterodyne detection}
+%Add RF sidebands that don't resonate, schnupp asymmetry, etc...
+
+%\subsubsection{Homodyne detection}
+%pick off a bit of carrier light with a DARM offset...
+
+\subsubsection{Numerical simulation tools}
+Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
 \section{Limiting noise sources in detectors}
 Quantum noise, thermal noise (since if you push QN low enough, you run into thermal), possibly mention others (Newtonian noise - why ET will be under ground, etc.)
@@ -153,7 +166,7 @@ In engineering circles the standard representation of signal to noise is in unit
 \begin{equation}
   \text{SNR}_{\SI{}{\deci\bel}} = 10 \log_{10} \left( \frac{s}{n} \right).
 \end{equation}
-As this representation is logarithmic, it is a useful for expressing both small and large signals. It is borrowed from engineering circles, and is particularly popular in dicussions of electronic filtering.
+As this representation is logarithmic, it is a useful for expressing both small and large signals. It is borrowed from engineering circles, and is particularly popular in discussions of electronic filtering.
 
 \subsubsection{Optimal operating point}
 
