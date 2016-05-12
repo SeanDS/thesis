@@ -91,15 +91,45 @@ The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph
 \subsubsection{Signal sidebands}
 \note{Talk about signal sidebands ON THE CARRIER ONLY (see G.H. thesis p58)}
 
-The field due to motion of a mirror at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}kx}$ in phase, and a factor of $\text{i}r$ in amplitude. Distance $x$ may in general be a time varying function, so the time varying field is then:
+The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $\text{i}r$ in amplitude:
 \begin{equation}
-  E \left( t \right) = \text{i} r E_0 \text{e}^{\text{i} k x \left( t \right)}.
+  E_{\text{r}} \left( x \right) = \text{i} r E_0 \text{e}^{2\text{i} k \left( x + \Delta x \right)}.
 \end{equation}
-This lets us calculate the effect of mirror motion on the field. If we assume the motion of the mirror is sinusoidal (usually a reasonable approximation, given that mirrors are, in the field of gravitational wave detection, typically suspended from pendulums), then the field can be expressed in terms of the peak amplitude $x_0$ and frequency $f$ of oscillation:
+For clarity, we can express the constant $x$ term as a static phase representing the carrier, separated from $\Delta x$ via the wave number:
 \begin{equation}
-  E
+  \label{eq:field-amplitude-phase}
+  E_{\text{r}} \left( t \right) = \text{i} r E_0 \text{e}^{\text{i} \left( 2 \omega_0 t + k \Delta x\right)}.
 \end{equation}
-\note{See p23 of Living Review, but explain phase modulation in terms of x(t).}
+It is possible to express any particular motion in the form of a series of sinusoidal functions. Expressing mirror motion as a single frequency sinusoid modulating the impinging field, we see:
+\begin{equation}
+  \label{eq:field-phase-modulation}
+  E_{\text{r}} \left( t \right) = E_0 \text{e}^{\text{i} \left(\omega_0 t + m \cos{\left( \omega t \right)} \right)},
+\end{equation}
+where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. Note that we have neglected for now the reflection terms $ir$. With some algebraic manipulation involving Bessel functions, we can express this as \cite{Freise2010}:
+\begin{equation}
+  \label{eq:field-phase-bessel}
+  E \left( t \right) = E_0 \text{e}^{\text{i} \omega_0 t} \sum^{\infty}_{n=-\infty} \text{i}^n J_{n} \left( m \right) \text{e}^{\text{i} n \omega t}.
+\end{equation}
+When $m$ is $0$ all Bessel functions $J_{n}$ are $0$ except the first, which is $1$; this shows that the field contains only the carrier component when there is no external modulation applied by a moving mirror. Conversely, when a non-zero modulation index and signal frequency is present, there exists a sum of sinusoidal functions as a product of the carrier, which we call \emph{signal sidebands}. For small modulation depths $m \ll 1$, Equation\,\ref{eq:field-phase-bessel} can be approximated to:
+\begin{equation}
+  \label{eq:field-phase-mod-expanded}
+  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 - \frac{m^2}{4} + \text{i} \frac{m}{2} \left( \text{e}^{-\text{i} \omega t} + \text{e}^{\text{i} \omega t} \right) \right).
+\end{equation}
+Here it is clear to see the presence of upper and lower sidebands at frequencies $\omega_0 \pm \omega$.
+
+Amplitude modulation has a similar but not identical effect to phase modulation. Devices such as electro-optic modulators (\glspl{EOM}) can perform amplitude modulation on a light field, and the effect can be expressed again in terms of the modulation depth and frequency:
+\begin{equation}
+  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + m \cos{\omega t} \right),
+\end{equation}
+and we can manipulate this expression to show the presence of exactly one upper and one lower sideband:
+\begin{equation}
+  \label{eq:field-amp-mod}
+  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + \frac{m}{2} \text{e}^{\text{i} \omega t} + \frac{m}{2} \text{e}^{-\text{i} \omega t} \right).
+\end{equation}
+
+Recall the reflection terms $ir$ we neglected earlier. Upon reflection, Equation\,\ref{eq:field-phase-mod-expanded} gains an imaginary coefficient and so the phase modulation becomes amplitude modulation. When the wave next reflects from a mirror, this amplitude modulation again becomes phase modulation. Similarly, amplitude modulation shown in Equation\,\ref{eq:field-amp-mod} is converted to phase modulation upon reflection. When these signals are measured by a photodetector, the number of mirrors a wave has reflected from, however, does not matter: to the photodetector, amplitude and phase modulation are indistinguishable. There is an interesting caveat to highlight here: if amplitude modulation of a field produces only two sidebands, whereas phase modulation produces infinitely many, how can they express the same signal on a photodetector? To resolve this apparent inconsistency it is useful to visualise the signal sidebands in a phasor diagram, as shown in Figure XXX.
+
+\note{RECREATE TOBIN'S ANIMATION FROM https://dsp.stackexchange.com/questions/2284/why-are-sidebands-generated-in-am-and-fm}
 
 \subsubsection{Heterodyne detection}
 Add RF sidebands that don't resonate, schnupp asymmetry, etc...
