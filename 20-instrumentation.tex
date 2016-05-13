@@ -73,7 +73,7 @@ where we find that the equation for $a_5$ depends on itself. This shows how the 
 \begin{equation}
   a_5 = a_0 \frac{it_1 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}},
 \end{equation}
-where it is clear to see that the cavity coefficient depends on the input coefficient $a_0$. The coefficient representing the reflected light from the interferometer is then just $a_5$ scaled by $t_1$:
+where it is clear to see that the cavity coefficient depends on the input coefficient $a_0$. The coefficient representing the reflected light from the interferometer is then just $a_5$ scaled by $t_1$, with the addition of the light reflected before entering the cavity:
 \begin{equation}
   a_6 = a_0 \left( r_1 - \frac{t_1^2 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}} \right).
 \end{equation}
@@ -89,11 +89,30 @@ With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected fiel
 The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. This is an important figure of merit for cavities and will be especially important in the later chapters of this work.
 
 \subsubsection{Cavity figures of merit}
-\note{FSR, finesse, etc.}
+Resonance is achieved within a \FP{} cavity by making the microscopic length equivalent to an integer number of half-wavelengths for a given carrier. For this we can look at the ratio of the field in the cavity to the field entering it:
+\begin{equation}
+  \frac{a_1}{a_0} = \frac{\text{i} t}{1 - r_1 r_2 \text{e}^{2\text{i}kD}},
+\end{equation}
+but we see that the denominator contains a complex exponential with maxima in both the sine and cosine quadratures. In reality, we measure the light power with photodetectors, so taking the square of the modulus leads to:
+\begin{equation}
+  \begin{split}
+    \left|\frac{a_1}{a_0}\right|^2 &= \frac{t^2}{1-r_1 r_2 \text{e}^{2\text{i}kD} - r_1 r_2 \text{e}^{-2\text{i}kD} + r_1^2 r_2^2} \\
+                                   &= \frac{t^2}{1 - 2 r_1 r_2 \cos{\left( 2kD \right)} + r_1^2 r_2^2},
+  \end{split}
+\end{equation}
+which occurs when $kD$ becomes an integer multiple of $\pi$. This means that either the wave number, representing carrier wavelength, or the cavity length can be controlled to achieve cavity resonance. Both of these techniques are used in interferometry, sometimes simultaneously. The wavelength of a laser can usually be trimmed via a piezoelectric transducer or a heating element on the laser crystal. This results in a different output wavelength, which changes the number of wavelengths that can fit inside the cavity length and therefore can be used to achieve resonance for a particular length. The cavity length can be controlled with actuators on the mirrors: typically voice coils and magnets, these have also been implemented in the form of piezoelectric transducers and more exotic devices such as electrostatic drives.
+
+As the resonance condition requires only an integer multiple of $\pi$, it is clear to see that resonance within the cavity is periodic as a function of laser frequency or length. A plot of the resonance condition as a function of cavity length is shown in Figure\,\ref{fig:cavity-fsr}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-cavity-fsr.pdf}
+  \caption{\label{fig:cavity-fsr}Resonant enhancement of input light in a cavity. When the length offset from zero is an integer number of half-wavelengths, the cavity enhances the input power many times over. When the offset is between integer half-wavelengths, it is anti-resonant and the cavity power is much smaller than the input power.}
+\end{figure}
+
+\note{Describe FSR, finesse, etc.}
 
 \subsubsection{Signal sidebands}
-\note{Talk about signal sidebands ON THE CARRIER ONLY (see G.H. thesis p58)}
-
 The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $r$ in amplitude:
 \begin{equation}
   E_{\text{r}} \left( x \right) = r E_0 \text{e}^{2\text{i} k \left( x + \Delta x \right)}.
@@ -130,7 +149,14 @@ and we can manipulate this expression to show the presence of exactly one upper 
   E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + \frac{m}{2} \text{e}^{\text{i} \omega t} + \frac{m}{2} \text{e}^{-\text{i} \omega t} \right).
 \end{equation}
 
-There is an interesting caveat to highlight here: if there are infinitely many phase modulation sidebands for a given modulation depth, is the phase modulation constant? To resolve this apparent inconsistency it is useful to remember that each Bessel function in the series can be of different sign, such that the sum of all Bessel functions in Equation\,\ref{eq:field-phase-bessel} \checkme{has magnitude equal to the modulation depth}. A \emph{phasor diagram} is useful to visualise this effect. The first four phase modulation sidebands are shown alongside the resultant vector in Figure XXX.
+The sideband structure created by amplitude and phase modulation is shown in Figure\,\ref{fig:sideband-structure}. This shows the magnitude of the frequency components, with the infinite set of phase modulation sidebands containing the same collective magnitude as the two amplitude modulation sidebands, for identical modulation depth. In reality, the arrows are phasors that rotate in the complex plane at different velocities. The upper sidebands rotate more quickly than the carrier, whilst the lower sidebands rotate more slowly. At any given point, the resultant phase modulation vector has magnitude equivalent to that of the two amplitude modulation sidebands (see Figure XXX).
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-sideband-structure.pdf}
+  \caption{Sideband structure for amplitude and phase modulation. The carrier, at frequency $\omega$, is present in the centre. Upper and lower sidebands exist offset from the carrier. Amplitude modulation (AM) produces exactly two sidebands, whereas phase modulation (PM) produces infinitely many. The vertical axis shows the magnitude of each sideband in this example, though in any real experiment the modulation depth will be significantly lower. In terms of amplitude, the carrier and sidebands rotate in the complex plane at different velocities, and so an equivalent amplitude plot would show off-vertical vectors.}
+  \label{fig:sideband-structure}
+\end{figure}
 
 \note{RECREATE TOBIN'S ANIMATION FROM https://dsp.stackexchange.com/questions/2284/why-are-sidebands-generated-in-am-and-fm}
 
@@ -294,10 +320,3 @@ with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The po
 \subsection{Surpassing the Standard Quantum Limit}
 \subsubsection{Quantum non-demolition}
 Give general overview of technique, then explain the Sagnac speedmeter in more detail.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-sideband-structure.pdf}
-  \caption{Sideband structure}
-  \label{fig:sideband-structure}
-\end{figure}

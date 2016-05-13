@@ -32,25 +32,50 @@ colours = lf.Colours()
 
 # get colours
 c1 = colours.next() # carrier
-c2 = colours.next() # sidebands
+c2 = colours.next() # phase modulation sidebands
+colours.next()
+c3 = colours.next() # amplitude modulation sidebands
 
 # arrow arguments
 args = {'width': lf.ARROW_WIDTH, 'head_width': lf.ARROW_HEAD_WIDTH, 'head_length': lf.ARROW_HEAD_LENGTH, 'overhang': lf.ARROW_OVERHANG, 'length_includes_head': True}
 
-# plot
-ax.arrow(-1, 0, 0, 3, color=c2, **args)
-ax.arrow(0, 0, 0, 10, color=c1, **args)
-ax.arrow(1, 0, 0, 3, color=c2, **args)
+## plot carrier
+p1 = ax.arrow(0, 0, 0, 15, color=c1, **args)
 
-ax.set_xticks([-1, 0, 1])
-ax.set_xticklabels(['-fmod', 'carrier', '+fmod'])
+## plot amplitude modulation sidebands
+p2 = ax.arrow(-0.5, 0, 0, 8, color=c3, **args)
+ax.arrow(0.5, 0, 0, 8, color=c3, **args)
+
+## plot phase modulation sidebands
+# first order
+p3 = ax.arrow(-0.5, 0, 0, 5, color=c2, alpha=0.8, **args)
+ax.arrow(0.5, 0, 0, 5, color=c2, alpha=0.8, **args)
+# second order
+ax.arrow(-0.6, 0, 0, 1.5, color=c2, alpha=0.8, **args)
+ax.arrow(-0.4, 0, 0, 1.5, color=c2, alpha=0.8, **args)
+ax.arrow(0.4, 0, 0, 1.5, color=c2, alpha=0.8, **args)
+ax.arrow(0.6, 0, 0, 1.5, color=c2, alpha=0.8, **args)
+# third order
+ax.arrow(-0.65, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(-0.55, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(-0.45, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(-0.35, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(0.65, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(0.55, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(0.45, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+ax.arrow(0.35, 0, 0, 0.75, color=c2, alpha=0.8, **args)
+
+ax.legend([p1, p2, p3], ['Carrier', 'AM sidebands', 'PM sidebands'])
+
+ax.set_xticks([-0.5, 0, 0.5])
+ax.set_xticklabels([r'$\omega_0-\omega$', r'$\omega_0$', r'$\omega_0+\omega$'])
 
 ax.set_xlabel('Frequency')
-ax.set_ylabel('Amplitude')
+ax.set_ylabel('Magnitude')
 
 ax.grid(True)
 
 ax.set_xlim([-1.3, 1.3])
-ax.set_ylim([0, 11])
+ax.set_ylim([0, 16])
 
 plt.savefig(save_path)
