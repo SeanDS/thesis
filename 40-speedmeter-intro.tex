@@ -3,22 +3,36 @@
 
 \section{Concept}
 * Show Michelson response and noise. This should be radiation pressure dominated below the pole. Relate this to the analytical response equation I used in the controls paper for a Michelson.
-* Introduce Sagnac speedmeter, showing it has better quantum noise IN ABSENCE OF ASYMMETRIES, and thus better overall sensitivity for equivalent shot noise.
+* Introduce Sagnac speedmeter, showing it has better quantum noise IN ABSENCE OF ASYMMETRIES, and thus better overall sensitivity for equivalent shot noise. DON'T SHOW THE SSM SENSITIVITY HERE.
 * Introduce losses to show the degrading effect they have, introducing ``Michelson-like'' sensitivity. The main thing to show here is the effect on the quantum noise when there are asymmetries, like test mass asymmetry. This broadens the peak around the suspension resonance, which introduces the Michelson-like sensitivity.
 
 \section{Implementation}
 
 Some technical challenges in the implementation of the speedmeter are discussed in this chapter. Certain topics involve substantially more scientific endeavour and are thus presented as discrete chapters: the control of the primary degree of freedom of the speedmeter, presented in Chapter X; and a proof-of-principle experiment to demonstrate a new type of actuator, presented in Chapter Y.
 
-\subsection{Wiring}
-\note{Avoidance of ground loops, interfacing with CDS, avoiding plugging the wrong things in (why we use D-sub-9 and D-sub-15), in-vacuum wiring: why it needs careful thought, and what we did (octopus cables, etc.).}
-\note{Avoidance of ground loops}
-\note{Auxiliary coil driver subrack wiring design / motivation / assembly}
-\note{In-vacuum cabling design, strain relief housing}
-\note{Backplane board design - talk about rationale, show Eagle diagrams, etc.}
+\subsection{Experimental design}
+\note{Discuss the experiment layout, power, cavity lengths, etc. Introduce the real sensitivity curves here.}
+
+\subsection{Mechanics}
+\note{Vacuum system requirements, tanks, optical table, suspensions, seismic noise, etc.}
+
+\subsection{Sensing and Control}
+
+\subsubsection{Avoidance of ground loops}
+
+One of the main issues faced by experiments involving numerous interfaces between digital and analogue devices is the creation of ground loops. Effectively an antenna.
+
+\note{Avoidance of ground loops, interfacing with CDS, in-vacuum wiring: why it needs careful thought, etc}
 \note{Display wiring diagrams in landscape mode, full page}
 
 \note{Generate A4 versions of wiring diagrams for inclusion here.}
+
+\subsubsection{Connectors}
+\note{How we avoided plugging the wrong things in, i.e. why we use DB9/DB15/DB25 etc.}
+\note{Differential sending - take stuff from HV chapter on CMRR?}
+
+\subsubsection{In-vacuum signalling}
+\note{Octopus cables, strain relief housing, etc.}
 
 \begin{figure}
   \centering
@@ -26,3 +40,8 @@ Some technical challenges in the implementation of the speedmeter are discussed 
   \caption{In-vacuum DB50 housing for octopus cable.}
   \label{fig:db50-housing}
 \end{figure}
+
+\subsubsection{Auxiliary coil drivers}
+\note{Put aux coil driver stuff here}
+\note{Auxiliary coil driver subrack wiring design / motivation / assembly}
+\note{Backplane board design - talk about rationale, show Eagle diagrams, etc.}
