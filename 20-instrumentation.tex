@@ -1,13 +1,15 @@
 \chapter{Sensitivity and noise in gravitational wave detectors}
 \label{c:instrumentation}
 
-\section{Interferometer response}
+\section{Interferometer foundations}
 
 The effect that an interferometer has on a means of readout (e.g. a photodetector) as some variable is modulated is termed the \emph{response}. The most important response to consider in gravitational wave interferometry is the arm cavity differential degree of freedom's response to the beam splitter's output port. The response varies as a function of frequency depending on the interferometer topology and its light storage time. For instance, in a Michelson interferometer the dARM response is typically flat for frequencies below the arm cavity pole, and decaying \checkme{at a rate proportional to frequency} above. At higher frequencies, less light can be stored as the cavity cannot build up sufficient light power due to mirror loss and round-trip time. This effect is shown in \note{Figure XXX} for different end test mass reflectivities and in \note{Figure XXX} for different arm cavity lengths.
 
 In order to calculate a response function for a set of optics, it is necessary to understand the propagation of a light field through vacuum and through optics.
 
-\subsection{Interferometer fields}
+\note{Move most of this to an appendix}
+
+\subsection{MOVETOAPP Interferometer fields}
 * Intro to field equations of Fabry-Perot. Perhaps generalise to Michelson? Point reader towards analytical calculation of DRFPMI (Ken Strain paper).
 
 We define the field amplitude of light across dimension $x$ as:
@@ -27,7 +29,7 @@ The reflected field is similarly scaled by the optic's field reflectivity, $r$:
 \end{equation}
 Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. We choose to apply this phase shift to the reflected field by convention (see Appendix\,\ref{a:reflection-phase}).
 
-\subsubsection{Simple cavities}
+\subsection{MOVETOAPP Simple cavities}
 \note{Make sure this is consistent with PDH description etc. later, i.e. reflected field is E7 or whatever, etc.}
 
 \begin{figure}
@@ -88,7 +90,7 @@ With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected fiel
 \end{equation}
 The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. This is an important figure of merit for cavities and will be especially important in the later chapters of this work.
 
-\subsubsection{Cavity figures of merit}
+\subsubsection{MOVETOAPP Cavity figures of merit}
 Resonance is achieved within a \FP{} cavity by making the microscopic length equivalent to an integer number of half-wavelengths for a given carrier. For this we can look at the ratio of the field in the cavity to the field entering it:
 \begin{equation}
   \frac{a_1}{a_0} = \frac{\text{i} t}{1 - r_1 r_2 \text{e}^{2\text{i}kD}},
@@ -102,17 +104,32 @@ but we see that the denominator contains a complex exponential with maxima in bo
 \end{equation}
 which occurs when $kD$ becomes an integer multiple of $\pi$. This means that either the wave number, representing carrier wavelength, or the cavity length can be controlled to achieve cavity resonance. Both of these techniques are used in interferometry, sometimes simultaneously. The wavelength of a laser can usually be trimmed via a piezoelectric transducer or a heating element on the laser crystal. This results in a different output wavelength, which changes the number of wavelengths that can fit inside the cavity length and therefore can be used to achieve resonance for a particular length. The cavity length can be controlled with actuators on the mirrors: typically voice coils and magnets, these have also been implemented in the form of piezoelectric transducers and more exotic devices such as electrostatic drives.
 
-As the resonance condition requires only an integer multiple of $\pi$, it is clear to see that resonance within the cavity is periodic as a function of laser frequency or length. A plot of the resonance condition as a function of cavity length is shown in Figure\,\ref{fig:cavity-fsr}.
+As the resonance condition requires only an integer multiple of $\pi$, it is clear to see that resonance within the cavity is periodic as a function of laser frequency or length. A plot of the resonance condition as a function of length and frequency is shown in Figure\,\ref{fig:cavity-fsr}. The resonant peaks occur for every half wavelength offset from the nominal length (\SI{10}{\meter}). Conversely, the resonant peaks also occur in terms of frequency offsets from the nominal carrier frequency ($f = \frac{c_0}{\lambda}$). For this cavity, the frequency offset between resonant peaks is approximately \SI{15}{\mega\hertz}. For a much longer cavity, such as that of Advanced LIGO\textemdash \SI{4}{\kilo\meter}\textemdash the frequency offset reduces to approximately \SI{37.5}{\kilo\hertz}. The difference arises from the fact that a change in laser frequency will change the wavelength, and a longer cavity can fit more waves, so a smaller frequency offset is required for the same change in effective length.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-cavity-fsr.pdf}
-  \caption{\label{fig:cavity-fsr}Resonant enhancement of input light in a cavity. When the length offset from zero is an integer number of half-wavelengths, the cavity enhances the input power many times over. When the offset is between integer half-wavelengths, it is anti-resonant and the cavity power is much smaller than the input power.}
+  \caption{\label{fig:cavity-fsr}Resonant enhancement of input light in a cavity. When the length offset from zero is an integer number of half-wavelengths, the cavity enhances the input power many times over. When the offset is between integer half-wavelengths, it is anti-resonant and the cavity power is much smaller than the input power. In this example, the mirror reflectivities are $r_1 = 0.99$, $r_2 = 1$, $t = \sqrt{1 - r_1^2}$ and the cavity's macroscopic length is \SI{10}{\meter}.}
 \end{figure}
 
-\note{Describe FSR, finesse, etc.}
+The frequency offset between successive resonant peaks is termed the \emph{free spectral range} (\gls{FSR}). This figure of merit provides some idea of the bandwidth a control system may need to be able to hold a cavity resonant.
 
-\subsubsection{Signal sidebands}
+Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maximum} (\gls{FWHM}), which represents the width of a resonant peak at half of its maximum power, in units of frequency. As the width of the resonant peak is a function of mirror reflectivity, the \gls{FWHM} is defined:
+\begin{equation}
+  \text{FWHM} = \frac{c_0}{\pi L} \sin^{-1}{\left( \frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}} \right)}.
+\end{equation}
+
+The ratio of the \gls{FSR} to the \gls{FWHM} defines the cavity \emph{finesse}, $\mathcal{F}$, defined as:
+\begin{equation}
+  \mathcal{F} = \frac{\text{FSR}}{\text{FWHM}} = \frac{\pi}{2 \sin^{-1}{\frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}}}},
+\end{equation}
+which indicates the cavity's ability to store photons. It is closely related to the quality factor $Q$, namely the ratio of the energy stored in the cavity to the energy lost per radian of oscillation, via the relation \cite{Band2006}:
+\begin{equation}
+Q = \frac{f_0}{\text{FSR}} \mathcal{F}.
+\end{equation}
+The finesse and quality factor indicate the time it would take for light to escape a resonant cavity in the event that the input light source were to be removed. A more technical use for the finesse figure is to quickly approximate the stored power in a cavity on resonance as a function of the input. \note{Show example of high and low finesse plots}
+
+\subsection{MOVETOAPP Signal sidebands}
 The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $r$ in amplitude:
 \begin{equation}
   E_{\text{r}} \left( x \right) = r E_0 \text{e}^{2\text{i} k \left( x + \Delta x \right)}.
@@ -160,7 +177,7 @@ The sideband structure created by amplitude and phase modulation is shown in Fig
 
 \note{RECREATE TOBIN'S ANIMATION FROM https://dsp.stackexchange.com/questions/2284/why-are-sidebands-generated-in-am-and-fm}
 
-\subsubsection{Signal detection}
+\subsection{MOVETOAPP Signal detection}
 When signals are measured by a photodetector, only amplitude modulation can be detected directly. Although the field impinging upon the photodetector contains phase modulation, the photodetector's stray capacitance acts as a filter to remove this effect from the output signal; in essence, the photodetector only sees the time averaged field. A piezoelectric transducer modulating a laser crystal can be readily witnessed on a photodetector, but to access mirror motion encoded as phase modulation, special techniques are required.
 
 In general, phase modulation measurement techniques fall into two broad categories: \emph{heterodyne} detection, and \emph{homodyne} detection. With heterodyne detection, one or more laser frequencies are used in addition to the carrier which have different properties such that they follow a different path to the detector. At the detector, a comparison can be made between the paths taken by the heterodyne fields, where the difference in amplitude and phase can offer insight into the motion of the interferometer's optics. In homodyne detection, the carrier is itself used as a reference, by mixing some light from one part of the interferometer with light from another. If this is conducted in a particular way, it can be a powerful technique to measure phase modulation without requiring carefully controlled heterodyne fields.
@@ -173,7 +190,10 @@ Both heterodyne and homodyne techniques will be discussed in greater detail late
 %\subsubsection{Homodyne detection}
 %pick off a bit of carrier light with a DARM offset...
 
-\subsubsection{Numerical simulation tools}
+\subsection{MOVETOAPP Cavity response}
+\note{Define the cavity pole frequency as half the FWHM from earlier}
+
+\subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
 \section{Limiting noise sources in detectors}
