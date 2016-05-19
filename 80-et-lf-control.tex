@@ -1,28 +1,34 @@
 \chapter{Control of the low frequency Einstein Telescope detector}
 \label{c:et-lf-control}
 
-  * Build upon the PDH stuff laid out in Chapter 3: describe the evolution of the ET-LF interferometer in order to control it: the need for a Schnupp asymmetry (to provide the equivalent of a PDH-style controller), DARM offset, etc...
+\begin{itemize}
+  \item Build upon the PDH stuff laid out in Chapter 3: describe the evolution of the ET-LF interferometer in order to control it: the need for a Schnupp asymmetry (to provide the equivalent of a PDH-style controller), DARM offset, etc...
   
-  See documentation from ET-LF repository, and aLIGO design study
+  \item See documentation from ET-LF repository, and aLIGO design study
   
-  Also see scribblings / emails from Ken etc. around the time of the Florence meeting where we discussed the low frequency sensing problem
+  \item Also see scribblings / emails from Ken etc. around the time of the Florence meeting where we discussed the low frequency sensing problem
   
-  See noise budget from before Florence
+  \item See noise budget from before Florence
 
-  * The Einstein telescope facility: ET-LF and ET-HF, the xylophone, etc.
-    * Unprecedented LF sensitivity: opens up universe
-    * Pushing warm technology to the limit with ET-HF
-    * Challenges: control at low frequencies with such detuning
-  * ET-LF layout
-  * Predicted sensitivity vs Optickle calculated sensitivity
-  * ISC stuff...
-    * Consider only plane waves - justification: only want to control lengths for now. Angles are not considered a challenging aspect as nothing much has changed since aLIGO.
-    * Optical response: with and without mechanical TFs - show the difference it makes to the response at low frequencies, and why it is necessary to turn them off in the case when you're computing a sensing matrix
-    * From sensing matrix to control matrix (control loops, locking order, bandwidth, etc.)
-    * Dynamic range of sensors and actuators in ET-LF
-      * Problem with dynamic range, need local control or SPI or similar
+  \item The Einstein telescope facility: ET-LF and ET-HF, the xylophone, etc.
+    \begin{itemize}
+      \item Unprecedented LF sensitivity: opens up universe
+      \item Pushing warm technology to the limit with ET-HF
+      \item Challenges: control at low frequencies with such detuning
+      \item ET-LF layout
+      \item Predicted sensitivity vs Optickle calculated sensitivity
+      \item ISC stuff...
+	\begin{itemize}
+	  \item Consider only plane waves - justification: only want to control lengths for now. Angles are not considered a challenging aspect as nothing much has changed since aLIGO.
+	  \item Optical response: with and without mechanical TFs - show the difference it makes to the response at low frequencies, and why it is necessary to turn them off in the case when you're computing a sensing matrix
+	  \item From sensing matrix to control matrix (control loops, locking order, bandwidth, etc.)
+	  \item Dynamic range of sensors and actuators in ET-LF
+	  \item Problem with dynamic range, need local control or SPI or similar
+	\end{itemize}
+      \end{itemize}
+\end{itemize}
   
-  See Bryan's paper for sidebands on sidebands in the context of the Caltech prototype for aLIGO, to describe the use of beats between sidebands: https://iopscience.iop.org/article/10.1088/0264-9381/23/18/010/pdf
+See Bryan's paper for sidebands on sidebands in the context of the Caltech prototype for aLIGO, to describe the use of beats between sidebands: https://iopscience.iop.org/article/10.1088/0264-9381/23/18/010/pdf
 
 \section{The Einstein Telescope Facility}
 
@@ -38,12 +44,30 @@
 \section{Modelling ET-LF}
 \note{See email sent to Andreas about outcomes of ASPERA. Basically, we had to model the interferometer controls and higher order modes, so we did it simultaneously with two tools. Discuss how this was achieved, via a shared parameter set, etc.}
 
-\section{Conceptual control scheme}
+\subsection{Modelling higher order modes and parametric instabilities}
+\note{Finesse...}
+
+\subsection{Modelling control loops}
+\note{Optickle + SimulinkNb}
+Optickle facilitates the modelling of control loops in a number of ways. The primary output from an Optickle simulation is the interferometer matrix, describing the mapping of every degree of freedom of the interferometer to every probe within the interferometer. As such, with this matrix it is possible to construct the signals produced by the various readouts within the interferometer, and these can be manually propagated through electronics to calculate the signal characteristics in a controller. Furthermore, Optickle is written in Matlab and so benefits from the \emph{Simulink} and \emph{Control Systems} toolboxes provided as extensions, with which it is possible to define control loops around the interferometer plant and perform linearisation to calculate loop gains and transfer functions. With a little effort, this process can be automated in a script. However, an \gls{LSC} tool developed for \gls{LIGO}, \emph{SimulinkNb}, became available in 2015 and acts as an interface between Optickle and Simulink. It is primarily designed to calculate out-of-loop noise budgets for an interferometer model defined within Optickle, and as a consequence of this it is able to model control loops.
+
+\subsection{Combined modelling effort}
+It was decided that the best approach to combine the benefits of the two tools would be to develop identical models with both Finesse and Optickle...
+
+\subsection{Recycling cavity lengths and RF sidebands}
+\note{Defined sideband frequencies...}
+
 \note{Discuss how we chose to follow Advanced LIGO as much as possible, but had to define some as-yet undefined parameters first}
+
+\section{Conceptual control scheme}
 
 \note{Put the control matrices here: show the slopes of the error signals for tuned and detuned operation}
 
 \section{Control noise}
 \note{Highlight the dynamic range problem with photodetectors sensing the low frequency motion (poster from Florence), and introduce the basic control loop developed with SimulinkNb - discuss the noises included, the assumptions made, etc. Finish with the list from the poster of what has to be done: further modelling of suspension SPIs, or better sensors, or both, etc...}
+
+\subsection{Seismic noise in ET-LF}
+\note{Take transfer function through S.A. from lowest noise site measured...}
+\note{Assume optimal worst contribution of noise to ETMs...}
 
 \section{Outlook}

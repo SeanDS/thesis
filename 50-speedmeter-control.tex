@@ -1,21 +1,31 @@
 \chapter{Control of the \SSM{} interferometer}
 \label{c:speedmeter-control}
 
-\note{Pillage paper}
+\note{Copy and paste paper, but expand on some of the information. For instance, discuss more detail about the suspension servo design, each individual part of the control loop e.g. actuator response, etc.}
 
-    * Definition of degrees of freedom, powers, sidebands, etc...
-    * Control loop design / noise budget
-      * Inclusion of other noises, like seismic, thermal, electronic, etc. Calculation of noise budget.
-      * Suspension hierarchical gain (handling ESD / coil ranges) (see labbook posts)
-        * Crossover at ~200 Hz, show calculation of how high a frequency we need to control the arms to keep the power in there (see labbook)
-      * Photodetector transimpedance
-        * Set transimpedance so that signals are ~1 V...?
-      * Mixing displacement and velocity signals
-      * CDS overall gain setting
-        * Set overall gain to not max the actuators on the suspensions, and provide ~1 V on the input to CDS
-      * Whitening/dewhitening design (see labbook posts)
-        * ADC input noise and effective number of bits (see labbook, Borja's email from 2015-08-28)
-        * Set input voltage to CDS to be ~1/10th range, i.e. 1 V.
-        * Make sure input noise from ADCs is 1/10th below the signal at all frequencies
-    * Dark noise measurements of op-amp over long timescales (explain additional low frequency noise)
-    * Note in ``outlook'' section on how we might verify how effective the optimal filter is compared to naive addition or a ``bad'' filter. Perhaps make a TF from an open port? Choose an optimally bad filter?
+\begin{itemize}
+  \item Definition of degrees of freedom, powers, sidebands, etc...
+  \item Control loop design / noise budget
+  \item Inclusion of other noises, like seismic, thermal, electronic, etc. Calculation of noise budget.
+  \item Suspension hierarchical gain (handling ESD / coil ranges) (see labbook posts)
+     \begin{itemize}
+        \item Crossover at ~200 Hz, show calculation of how high a frequency we need to control the arms to keep the power in there (see labbook)
+     \end{itemize}
+  \item Photodetector transimpedance
+    \begin{itemize}
+      \item Set transimpedance so that signals are ~1 V...?
+    \end{itemize}
+  \item Mixing displacement and velocity signals
+  \item CDS overall gain setting
+    \begin{itemize}
+      \item Set overall gain to not max the actuators on the suspensions, and provide ~1 V on the input to CDS
+    \end{itemize}
+  \item Whitening/dewhitening design (see labbook posts)
+    \begin{itemize}
+      \item ADC input noise and effective number of bits (see labbook, Borja's email from 2015-08-28)
+      \item Set input voltage to CDS to be ~1/10th range, i.e. 1 V.
+      \item Make sure input noise from ADCs is 1/10th below the signal at all frequencies (i.e. contributes 1\% to signal)
+    \end{itemize}
+  \item Dark noise measurements of op-amp over long timescales (explain additional low frequency noise)
+  \item Note in ``outlook'' section on how we might verify how effective the optimal filter is compared to naive addition or a ``bad'' filter. Perhaps make a TF from an open port? Choose an optimally bad filter?
+\end{itemize}
