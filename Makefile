@@ -109,6 +109,10 @@ $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.
 
 $(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
+$(GFXGENPY)/60-new-amplifier-tfs.pdf: $(DATA)/60-new-amplifier-tfs-channel-a.txt $(DATA)/60-new-amplifier-tfs-channel-b.txt $(DATA)/60-new-amplifier-tfs-channel-c.txt $(DATA)/60-new-amplifier-tfs-channel-d.txt
+
+$(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-channel-a.txt $(DATA)/60-new-amplifier-coherence-channel-b.txt $(DATA)/60-new-amplifier-coherence-channel-c.txt $(DATA)/60-new-amplifier-coherence-channel-d.txt
+
 $(GFXGENPY)/70-epics-test.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
 
 $(GFXGENPY)/70-epics-test-stars.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv

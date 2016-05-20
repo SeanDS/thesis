@@ -1,0 +1,77 @@
+# -*- coding: utf-8 -*-
+from __future__ import division
+
+import sys
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import lookfeel as lf
+
+# first argument should be save path
+save_path = sys.argv[1]
+
+# data paths
+data_path_a = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-a.txt')
+data_path_b = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-b.txt')
+data_path_c = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-c.txt')
+data_path_d = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-d.txt')
+
+# number of headers
+n_headers = 13
+
+# data delimiter
+delimiter = None
+
+# load data
+data_a = np.genfromtxt(data_path_a, delimiter=delimiter, skip_header=n_headers)
+data_b = np.genfromtxt(data_path_b, delimiter=delimiter, skip_header=n_headers)
+data_c = np.genfromtxt(data_path_c, delimiter=delimiter, skip_header=n_headers)
+data_d = np.genfromtxt(data_path_d, delimiter=delimiter, skip_header=n_headers)
+
+# figure
+fig = plt.figure(figsize=lf.FIG_SIZE_A)
+
+ax1 = fig.add_subplot(211)
+ax2 = fig.add_subplot(212, sharex=ax1)
+
+# colour wheel
+colours = lf.Colours()
+
+colour_a = colours.next()
+colour_b = colours.next()
+colour_c = colours.next()
+colour_d = colours.next()
+
+# plot magnitude
+ax1.loglog(data_a[:, 0], data_a[:, 1], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_b[:, 0], data_b[:, 3], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_c[:, 0], data_c[:, 5], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_d[:, 0], data_d[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
+
+# plot phase
+ax2.semilogx(data_a[:, 0], data_a[:, 2], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_b[:, 0], data_b[:, 4], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_c[:, 0], data_c[:, 6], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_d[:, 0], data_d[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
+
+ax1.set_ylabel('Magnitude')
+ax2.set_xlabel('Frequency [Hz]')
+ax2.set_ylabel(u'Phase [°]')
+
+ax1.set_xlim([1e0, 1e4])
+ax1.set_ylim([1e-2, 1e0])
+ax2.set_ylim([-180, 180])
+
+# set y-labels for phase
+ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
+
+ax1.grid(True)
+ax2.grid(True)
+
+# override legend padding
+with plt.rc_context({'legend.borderaxespad': 1}):
+  ax1.legend(['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='upper right')
+
+plt.tight_layout()
+
+plt.savefig(save_path)
