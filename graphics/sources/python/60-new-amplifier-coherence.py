@@ -69,8 +69,8 @@ with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 3}):
   ax4.plot(data_d[::x_select, 0], data_d[::x_select, 3], '.', color=colour_c, alpha=lf.ALPHA_LINE_A)
   ld, = ax4.plot(data_d[::x_select, 0], data_d[::x_select, 4], '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
-with plt.rc_context({'legend.borderaxispad': 0}):
-  fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='right')
+#with plt.rc_context({'legend.borderaxispad': 0}):
+fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='right')
 
 ax3.set_xlabel('Frequency [Hz]')
 ax4.set_xlabel('Frequency [Hz]')
