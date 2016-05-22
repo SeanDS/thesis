@@ -1,0 +1,20 @@
+# Dual 10 dB dewhitening filters
+# Sean Leavey
+
+r r1 10k nin nm1
+r r2 4.7k nm1 n1
+c c1 1u n1 n2
+r r3 10k nm1 n2
+
+op o1 op27 gnd nm1 n2
+
+r r4 10k n2 nm2
+r r5 4.7k nm2 n3
+c c2 1u n3 nout
+r r6 10k nm2 nout
+
+op o2 op27 gnd nm2 nout
+
+freq log 0.1 100k 100
+uinput nin 0
+uoutput nout:db:deg

@@ -35,9 +35,11 @@ GFXSRCSVG=$(GFXSRC)/svg
 DATA=data
 DATAGEN=$(DATA)/generated
 DATAGENPY=$(DATAGEN)/from-python
+DATAGENMAT=$(DATAGEN)/from-matlab
 DATARAW=$(DATA)/raw
 DATASCR=$(DATA)/scripts
 DATASCRPY=$(DATASCR)/python
+DATASCRMAT=$(DATASCR)/matlab
 
 # scripts (non-plotting)
 SCRIPTS=scripts
@@ -70,6 +72,7 @@ $(PROJECT).pdf: $(PROJECT).tex
 	if [ ! -e $(GFXGENSVG) ]; then mkdir -p $(GFXGENSVG); fi
 	if [ ! -e $(DATAGEN) ]; then mkdir -p $(DATAGEN); fi
 	if [ ! -e $(DATAGENPY) ]; then mkdir -p $(DATAGENPY); fi
+	if [ ! -e $(DATAGENMAT) ]; then mkdir -p $(DATAGENMAT); fi
 	
 	# call Latexmk
 	$(LATEXMK) -pdf -pdflatex=$(PDFLATEX) -deps-out=$(DEPENDENCIES)/$@P $<
@@ -113,6 +116,8 @@ $(GFXGENPY)/60-new-amplifier-tfs.pdf: $(DATA)/60-new-amplifier-tfs-channel-a.txt
 
 $(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-channel-a.txt $(DATA)/60-new-amplifier-coherence-channel-b.txt $(DATA)/60-new-amplifier-coherence-channel-c.txt $(DATA)/60-new-amplifier-coherence-channel-d.txt
 
+$(GFXGENPY)/60-new-amplifier-dewhitening.pdf: $(DATAGENMAT)/60-new-amplifier-single-dewhitening.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv
+
 $(GFXGENPY)/70-epics-test.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
 
 $(GFXGENPY)/70-epics-test-stars.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
@@ -129,6 +134,12 @@ $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
 
 # data set generated from other data sets
 $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
+
+$(DATAGENMAT)/60-new-amplifier-single-dewhitening.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierSingleDewhitening.fil
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierSingleDewhitening.fil'); exit;"
+
+$(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierDualDewhitening.fil
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierDualDewhitening.fil'); exit;"
 
 # ===== Misc =====
 
