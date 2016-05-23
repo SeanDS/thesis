@@ -156,7 +156,7 @@ The presence of stray capacitance at the inputs and outputs of these additional 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-new-amplifier-tfs.pdf}
-  \caption{Second amplifier transfer functions.}
+  \caption{Second amplifier transfer functions. The expected performance of the dewhitening filter is shown in \checkme{green} alongside the transfer functions of each channel. The curves agree closely, showing that the implemented filter operates as expected. The mismatch at high frequency is caused by the anti-aliasing filters implemented in CDS, which aggressively filter signals above \checkme{a few \SI{}{\kilo\hertz}}.}
   \label{fig:new-amplifier-tfs}
 \end{figure}
 

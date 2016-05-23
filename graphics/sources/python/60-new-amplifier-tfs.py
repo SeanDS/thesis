@@ -15,6 +15,7 @@ data_path_a = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 
 data_path_b = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-b.txt')
 data_path_c = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-c.txt')
 data_path_d = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-tfs-channel-d.txt')
+data_path_dual = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-new-amplifier-dual-dewhitening.csv')
 
 # number of headers
 n_headers = 13
@@ -27,6 +28,7 @@ data_a = np.genfromtxt(data_path_a, delimiter=delimiter, skip_header=n_headers)
 data_b = np.genfromtxt(data_path_b, delimiter=delimiter, skip_header=n_headers)
 data_c = np.genfromtxt(data_path_c, delimiter=delimiter, skip_header=n_headers)
 data_d = np.genfromtxt(data_path_d, delimiter=delimiter, skip_header=n_headers)
+data_dual = np.genfromtxt(data_path_dual, delimiter=',')
 
 # figure
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
@@ -41,25 +43,31 @@ colour_a = colours.next()
 colour_b = colours.next()
 colour_c = colours.next()
 colour_d = colours.next()
+colour_e = colours.next()
+
+# DC adjustment to filter
+filter_adjust = 0.35
 
 # plot magnitude
 ax1.loglog(data_a[:, 0], data_a[:, 1], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_b[:, 0], data_b[:, 3], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_c[:, 0], data_c[:, 5], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_d[:, 0], data_d[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_dual[:, 0], filter_adjust * data_dual[:, 1], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
 
 # plot phase
 ax2.semilogx(data_a[:, 0], data_a[:, 2], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_b[:, 0], data_b[:, 4], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_c[:, 0], data_c[:, 6], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_d[:, 0], data_d[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_dual[:, 0], data_dual[:, 2], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')
 
 ax1.set_xlim([1e0, 1e4])
-ax1.set_ylim([1e-2, 1e0])
+ax1.set_ylim([1e-2, 1e1])
 ax2.set_ylim([-180, 180])
 
 # set y-labels for phase
@@ -69,8 +77,8 @@ ax1.grid(True)
 ax2.grid(True)
 
 # override legend padding
-with plt.rc_context({'legend.borderaxespad': 1}):
-  ax1.legend(['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='upper right')
+with plt.rc_context({'legend.borderaxespad': 0.5}):
+  ax1.legend(['Channel A', 'Channel B', 'Channel C', 'Channel D', 'Expected filter transfer function'], loc='upper right')
 
 plt.tight_layout()
 
