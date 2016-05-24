@@ -110,6 +110,10 @@ $(GFXGENPY)/30-magnet-offset.py: $(DATA)/30-magnet-offset.csv
 
 $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.csv $(DATA)/30-coupling-best-fit-simulations.csv
 
+$(GFXGENPY)/30-pzt-servo-tf.pdf: $(DATA)/30-pzt-servo-tf.csv
+
+$(GFXGENPY)/30-temperature-servo-tf.pdf: $(DATA)/30-temperature-servo-tf.txt
+
 $(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
 $(GFXGENPY)/60-new-amplifier-tfs.pdf: $(DATA)/60-new-amplifier-tfs-channel-a.txt $(DATA)/60-new-amplifier-tfs-channel-b.txt $(DATA)/60-new-amplifier-tfs-channel-c.txt $(DATA)/60-new-amplifier-tfs-channel-d.txt $(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv

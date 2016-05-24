@@ -22,12 +22,12 @@ Apart from using different coating materials \cite{Granata2013, Cole2013} or dif
   \caption{\label{fig:waveguide-reflection}Propagation of light within a waveguide mirror. The grating and waveguide layers have refractive index $n_H$, and sit atop a substrate of refractive index $n_L$. Blue arrows represent incident light and red arrows represent reflected light. In realisations of waveguide mirrors such as this, a thin etch-stop layer is placed between the grating and waveguide layers to assist fabrication \cite{Friedrich2011}.}
 \end{figure}
 
-Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to the \gls{ETM} employed in Advanced LIGO at room temperature. Figure\,\ref{fig:coating-vs-grating-noise} shows Brownian thermal noise modelled for different numbers of bilayers (following \cite{Harry2002}) for the Advanced LIGO \gls{ETM}. As the dielectric mirror uses more bilayers to decrease transmissivity, the Brownian thermal noise contribution increases. The grating, however, requires only a change in grating parameters to produce a specific transmissivity, and this does not have a strong dependence on Brownian thermal noise.
+Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to the \gls{ETM} employed in Advanced LIGO at room temperature. Figure\,\ref{fig:coating-vs-grating-noise} shows Brownian thermal noise modelled for different numbers of bilayers (following \cite{Harry2002}) for the Advanced LIGO \gls{ETM}. For each additional bilayer in the dielectric stack, the mirror's transmissivity decreases but its Brownian thermal noise increases. The grating, however, requires only a change in grating parameters to produce a specific transmissivity, and this does not have a strong dependence on Brownian thermal noise.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-coating-vs-grating-noise.pdf}
-  \caption{\label{fig:coating-vs-grating-noise}Reproduction of the results from Heinert \etal{} \cite{Heinert2013} showing Brownian thermal noise in an Advanced LIGO style \gls{ETM} at room temperature versus that of a \gls{WGM} at cryogenic temperature, as a function of transmissivity. The markers in the coating curve represent the number of quarter-wavelength bilayers forming the dielectric stack. Each additional bilayer in the coating stack produces lower overall transmissivity, but also increases the Brownian thermal noise. The grating's Brownian thermal noise contribution is independent of transmissivity. The transmissivity of Advanced LIGO's ETM is shown as a vertical, dashed line.}
+  \caption{\label{fig:coating-vs-grating-noise}Reproduction of the results from Heinert \etal{} \cite{Heinert2013} showing Brownian thermal noise in an Advanced LIGO style \gls{ETM} at room temperature versus that of a \gls{WGM} at cryogenic temperature, as a function of transmissivity. The markers in the coating curve represent the number of quarter-wavelength bilayers forming the dielectric stack. Each additional bilayer in the coating stack produces lower overall transmissivity, but also increases Brownian thermal noise. The grating's Brownian thermal noise contribution is independent of transmissivity. The transmissivity of Advanced LIGO's ETM is shown as a vertical, dashed line.}
 \end{figure}
 
 Previous efforts to demonstrate grating structures as alternatives to dielectric mirrors have identified phase noise in the light reflected from the grating not otherwise present in dielectric mirrors \cite{Wise2005, Freise2007}. This effect arises from transverse motion of grating mirrors with respect to the incident light. Incident light at angle $\alpha$ is reflected into the m\textsuperscript{th} diffraction order, exiting at angle $\beta_m$ (see Figure\,\ref{fig:grating-propagation}). The change in path length $\delta l_L$ between the reflected and incident light is then
@@ -74,7 +74,7 @@ In order to quantify its transverse coupling, a \gls{WGM} was produced in collab
 
 \section{Experiment}
 
-The fabricated \gls{WGM} was used as the input coupler for a \FP{} cavity, held on resonance using the Pound-Drever-Hall (PDH) technique \cite{Drever1983}. The error signal provided by the PDH technique represents changes in cavity length, and this can be fed back to the laser's frequency \emph{via} a frequency stabilisation servo.
+The fabricated \gls{WGM} was used as the input coupler for a \FP{} cavity, held on resonance using the Pound-Drever-Hall (\gls{PDH}) technique \cite{Drever1983}. The error signal provided by the \gls{PDH} technique represents changes in cavity length, and this can be fed back to the laser's frequency \emph{via} a frequency stabilisation servo. This technique is described in more detail in Section\,\ref{sec:pdh}.
 
 \subsection{Cavity length signals}
 \label{sec:lengthsignals}
@@ -131,12 +131,12 @@ Examples of \gls{WGM} coupling levels yielding cavity length changes smaller tha
 % green: 5e-10 m, so 1:3702
 % blue: 5e-11, so 1:37024
 
-\subsection{The \GLASGOWTENM{}}
+\subsection{The Glasgow 10\,m prototype}
 \label{sec:glasgow10m}
 
 The \GLASGOWTENM{} facility provided a test bed in which the \gls{WGM}'s transverse to longitudinal coupling could be quantified. The prototype is housed in a Class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
 
-In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering and an electro-optic modulator (\gls{EOM}) to impose RF sidebands on the light to facilitate PDH control. The light was then coupled into the vacuum system \emph{via} a periscope. This configuration can be viewed in Figure\,\ref{fig:prototype-setup}.
+In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering and an electro-optic modulator (\gls{EOM}) to impose RF sidebands on the light to facilitate \gls{PDH} control. The light was then coupled into the vacuum system \emph{via} a periscope. This configuration can be viewed in Figure\,\ref{fig:prototype-setup}.
 
 Tanks 2 and 3 housed a beam splitter and steering mirror, respectively, attached to double stage suspensions. In tanks 4 and 5 were sets of two triple suspension chains based on the GEO-600 design \cite{Plissi2000}. A viewport present to the rear of tank 5, and to the side of tank 1, allowed for light to exit the vacuum envelope for the purposes of sensing and control.
 
@@ -182,15 +182,38 @@ A three-stage reaction chain was placed behind the triple pendulum of the \gls{E
 
 \subsection{Measuring cavity length changes}
 
-An RF photodetector was placed at the viewport on tank 1, where it could view the light reflected from the cavity. By using PDH demodulation, the signal from this photodetector provided an error signal for the cavity length. This signal was fed back to the laser \emph{via} the frequency stabilisation servo to maintain cavity resonance. The frequency stabilisation servo's high frequency feedback signal\textemdash a voltage applied across the laser's piezoelectric transducer (PZT)\textemdash provided a means of calibrating cavity length changes at frequencies greater than \SI{12}{\hertz}. Using the PZT's frequency response, \SI{1.35}{\mega\hertz \per \volt_{rms}}, the cavity length change $\delta l$ per error signal volt could be calculated to be \SI{133}{\nano\meter \per \volt_{peak}}.
+An RF photodetector was placed at the viewport on tank 1, where it could view the light reflected from the cavity. By using \gls{PDH} demodulation, the signal from this photodetector provided an error signal for the cavity length. This signal was fed back to the laser \emph{via} the frequency stabilisation servo to maintain cavity resonance. The frequency stabilisation servo's high frequency feedback signal\textemdash a voltage applied across the laser's piezoelectric transducer (\gls{PZT})\textemdash provided a means of calibrating cavity length changes at frequencies greater than \SI{12}{\hertz}. Using the \gls{PZT}'s frequency response, \SI{1.35}{\mega\hertz \per \volt_{rms}}, the cavity length change $\delta l$ per error signal volt could be calculated to be \SI{133}{\nano\meter \per \volt_{peak}}.
 
-\subsubsection{The Pound-Drever-Hall technique}
-\note{Describe PDH}
+\subsubsection{\label{sec:pdh}The Pound-Drever-Hall technique}
 \note{Make sure the mathematics here is consistent with the transmission/reflection description in Chapter 2}
-\note{Describe other techniques for locking cavities, but don't go into too much detail. Use journal club from locking microcontrollers for references}
+
+Numerous techniques exist to control cavity length fluctuations, the earliest of which was through the use of \emph{DC locking}. This involves keeping the power on a photodetector constant by feeding back an error signal to either the laser's \gls{PZT} or to actuators on the cavity mirrors. The error signal arises from a change in measured photodetector power from some set point. This set point is necessarily away from the centre of the Airy peak \note{make sure this is explained somewhere}, because at that point a cavity length increase or decrease results in an identical drop in power incident upon the photodetector; instead the set point must be somewhere on the slope leading to or from the peak, where a length increase has opposite sign compared to a length decrease. As the set point is not situated at the operating point producing maximum cavity power build-up, and thus sensitivity, this technique has since been superseded by a range of techniques that result in superior performance. however there are other techniques such as dither locking \cite{White1965}, which uses a dither signal applied to a mirror to act as a local oscillator to the carrier from which an error signal can be derived, and tilt locking \cite{Shaddock1999}, which uses the beat between the first and fundamental spacial modes of the carrier. We will focus on another technique, Pound-Drever-Hall (\gls{PDH}) \cite{Drever1983, Black2001}, which is particularly suited for \FP{} experiments requiring good sensitivity across a wide bandwidth.
+
+As described in Appendix\,\ref{a:interferometry}, phase modulation is not detectable upon standard photodetectors. Although modulation due to the presence of phase sidebands leads to a change in light power, this change happens on time scales too short for a photodetector to register: any stray capacitance in the material or transmission lines filters the phase modulation in the same way as a low pass filter, which averages the modulation to zero. Figure\,\ref{fig:cavity-fsr}, however, shows that the phase of the error signal from a cavity detuned from resonance appears to be a good error signal: it is bipolar about the optimal operating point. The Pound-Drever-Hall technique provides access to this phase information.
+
+The key features of \gls{PDH} are highlighted below. More detailed descriptions can be found in, for example, \cite{Black2001} and \cite{Freise2010}. Mirror motion imparts phase modulation upon the carrier as shown in Section\,\ref{sec:signal-sidebands}. From Equation\,\ref{eq:field-phase-mod-expanded} we see that phase modulation upon the carrier produces upper and lower sidebands with frequencies $\omega_0 \pm \omega$, where $\omega$ represents the phase modulation frequency:
+\begin{equation}
+  \label{eq:field-phase-mod-expanded-30}
+  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 - \frac{m^2}{4} + \text{i} \frac{m}{2} \left( \text{e}^{-\text{i} \omega t} + \text{e}^{\text{i} \omega t} \right) \right).
+\end{equation}
+Phase modulation can also be intentionally imparted upon the carrier through the use of an \gls{EOM}. With the \gls{PDH} technique, the \gls{EOM} is typically placed in the path of the cavity's input light where it imparts strong phase modulation to the carrier at \gls{RF} frequencies. The choice of this modulation frequency is motivated by the availability of low cost and low noise electronics, and the avoidance of the audio band where experiments in the field of gravitational wave interferometry typically desire high sensitivity. The \gls{RF} sidebands produced by the \gls{EOM} must be chosen to be greater than the cavity's \gls{FWHM} (see Section\,\ref{sec:cavity-fom}) to prevent them from entering the cavity. As the carrier light resonates within the cavity and reflects back towards the laser, any phase modulation imparted to the carrier by mirror motion beats with the \gls{RF} sidebands that do not enter the cavity.
+
+In a typical \gls{PDH} setup, a frequency generator is fed to the \gls{EOM} and to a mixer connected to the output of an \gls{RF} photodetector placed in reflection of the cavity (see Figure\,\ref{fig:prototype-setup}). This ensures that the same frequency used to create the \gls{RF} sidebands is used to demodulate the superposition of fields reflecting from the cavity. Mixing the oscillator's signal with the reflected light is equivalent to multiplying the reflected field by a factor of $\sin{\omega t}$ or $\cos{\omega t}$, which yields amplitude modulation proportional to the cavity motion at the frequency of the mirror motion. The key feature of this amplitude modulation is that it is bipolar about the Airy peak, meaning that mirror motion in a certain direction yields amplitude modulation with a certain sign. This \emph{error signal} can be fed back to the cavity's actuators to hold the cavity at the top of the Airy peak. Note here that the \gls{PDH} technique allows the cavity to be held at the top of the Airy peak and not to the side as with the DC locking technique described earlier.
 
 \subsubsection{Cavity control}
 \note{Describe servos and filters used to lock the cavity}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-temperature-servo-tf.pdf}
+  \caption{\label{fig:temperature-servo-tf}Temperature servo transfer function.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-pzt-servo-tf.pdf}
+  \caption{\label{fig:pzt-servo-tf}Estimated open loop transfer function of the analogue servo used to feed the cavity error signal back to the PZT. The feedback is flat below \SI{100}{\hertz}, where the temperature feedback servo performs the majority of the actuation. Above this point, a slope proportional to $\frac{1}{f^3}$ removes feedback at higher frequencies to limit the bandwidth, and hence provide higher low frequency gain. The slope of the servo is approximately $\frac{1}{f}$ above xxx to provide a stable unity gain crossing.}
+\end{figure}
 
 \section{Measurements and analysis}
 \label{sec:measurements}
