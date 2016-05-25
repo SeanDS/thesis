@@ -16,11 +16,11 @@ Apart from using different coating materials \cite{Granata2013, Cole2013} or dif
   \label{eq:grating-equation}
 \end{equation}
 
-\begin{figure}
+\begin{wrapfigure}{r}{0.5\textwidth}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-waveguide-reflection.pdf}
-  \caption{\label{fig:waveguide-reflection}Propagation of light within a waveguide mirror. The grating and waveguide layers have refractive index $n_H$, and sit atop a substrate of refractive index $n_L$. Blue arrows represent incident light and red arrows represent reflected light. In realisations of waveguide mirrors such as this, a thin etch-stop layer is placed between the grating and waveguide layers to assist fabrication \cite{Friedrich2011}.}
-\end{figure}
+  \includegraphics[width=0.45\textwidth]{graphics/generated/from-svg/30-waveguide-reflection.pdf}
+  \caption{\label{fig:waveguide-reflection}Propagation of light within a waveguide mirror. The grating and waveguide layers have refractive index $n_H$, and sit atop a substrate of refractive index $n_L$. Blue arrows represent incident light and orange arrows represent reflected light. In realisations of waveguide mirrors such as this, a thin etch-stop layer is placed between the grating and waveguide layers to assist fabrication \cite{Friedrich2011}.}
+\end{wrapfigure}
 
 Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to the \gls{ETM} employed in Advanced LIGO at room temperature. Figure\,\ref{fig:coating-vs-grating-noise} shows Brownian thermal noise modelled for different numbers of bilayers (following \cite{Harry2002}) for the Advanced LIGO \gls{ETM}. For each additional bilayer in the dielectric stack, the mirror's transmissivity decreases but its Brownian thermal noise increases. The grating, however, requires only a change in grating parameters to produce a specific transmissivity, and this does not have a strong dependence on Brownian thermal noise.
 
@@ -38,19 +38,29 @@ Previous efforts to demonstrate grating structures as alternatives to dielectric
 where $\zeta_a$ and $\zeta_b$ represent the relative optical path length of each depicted ray.
 The phase modulation induced in the light reflected from the \gls{WGM} is proportional to Fourier frequency with a \SI{90}{\degree} phase lead over the transverse motion \cite{Barr2011}. The noise added to the reflected light can be enough to mitigate the improvement in coating thermal noise, as witnessed in a study of \nth{2} order Littrow gratings \cite{Barr2011}. Although \glspl{WGM} also possess gratings, the resonant waveguide structure has been shown in simulations by Brown \emph{et al.} to be invariant to transverse to longitudinal coupling \cite{Brown2013}.
 
+\begin{wrapfigure}{r}{0.49\textwidth}
+  \centering
+  \includegraphics[width=0.45\textwidth]{graphics/generated/from-svg/30-grating-propagation.pdf}
+  \caption{\label{fig:grating-propagation}Optical path length changes $\zeta_a$ and $\zeta_b$ due to transverse motion of a Littrow grating. Incident light diffracted into a different order undergoes a path length change $\delta l_L = \zeta_a + \zeta_b$.}
+\end{wrapfigure}
+  
+There are two mechanisms by which grating mirrors can couple transverse motion into longitudinal phase changes (see Figure\,\ref{fig:waveguide-scanning}). The first is through transverse motion of the grating, which can in principle be minimised with appropriate suspension design. The second mechanism is the coupling of changes in the opposite cavity mirror's alignment into the spot position on the grating mirror. This effect is of particular importance to gravitational wave observatories, where longer arm lengths can increase its detrimental impact. For this reason the second mechanism is considered in more detail in this work.
+
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-grating-propagation.pdf}
-  \caption{\label{fig:grating-propagation}Optical path length changes $\zeta_a$ and $\zeta_b$ due to transverse motion of a Littrow grating. Incident light diffracted into a different order undergoes a path length change $\delta l_L = \zeta_a + \zeta_b$.}
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/30-waveguide-scanning.pdf}
+  \caption{\label{fig:waveguide-scanning}Two ways in which light can be scanned across the surface of the \gls{WGM}. The left panel shows the effect of \gls{WGM} motion with respect to a static beam, while the right panel shows the effect of light beam motion (due to rotation of the cavity mirror opposite the \gls{WGM}) with respect to a static \gls{WGM}. The latter effect is the one primarily considered in this work.}
 \end{figure}
 
-\begin{table}
+In order to quantify its transverse coupling, a \gls{WGM} was produced in collaboration with Friedrich-Schiller University Jena, Germany (see Table \ref{tab:waveguide-parameters} for its properties). It was designed for light of wavelength \SI{1064}{\nano\meter}, and consisted of an etched grating structure on top of a waveguide layer, both tantala, on a silica substrate. This chapter details an experiment carried out to measure its transverse coupling level.
+
+\begin{wraptable}{l}{0.49\textwidth}
   \centering
   \begin{tabular}{|l|l|}
     \hline
     \textbf{Parameter}    & \textbf{Value}            \\ \hline
     Materials             & \ce{SiO_2}, \ce{Ta_2O_5}, \\
-                          & \ce{Al_2O_3}              \\ \hline
+			  & \ce{Al_2O_3}              \\ \hline
     Design $\lambda$      & \SI{1064}{\nano\meter}    \\ \hline
     Grating depth         & \SI{390}{\nano\meter}     \\ \hline
     Waveguide depth       & \SI{80}{\nano\meter}      \\ \hline
@@ -60,17 +70,7 @@ The phase modulation induced in the light reflected from the \gls{WGM} is propor
     Reflectivity          & 96\%                      \\ \hline
   \end{tabular}
   \caption{\label{tab:waveguide-parameters}Design parameters of the \gls{WGM} produced by Friedrich-Schiller Jena for the experiment to measure transverse to longitudinal coupling. It is similar to the one used in \cite{Friedrich2011}, with increased reflective surface area.}
-\end{table}
-
-There are two mechanisms by which grating mirrors can couple transverse motion into longitudinal phase changes (see Figure\,\ref{fig:waveguide-scanning}). The first is through transverse motion of the grating, which can in principle be minimised with appropriate suspension design. The second mechanism is the coupling of changes in the opposite cavity mirror's alignment into the spot position on the grating mirror. This effect is of particular importance to gravitational wave observatories, where longer arm lengths can increase its detrimental impact. For this reason the second mechanism is considered in more detail in this work.
-
-In order to quantify its transverse coupling, a \gls{WGM} was produced in collaboration with Friedrich-Schiller University Jena, Germany (see Table \ref{tab:waveguide-parameters} for its properties). It was designed for light of wavelength \SI{1064}{\nano\meter}, and consisted of an etched grating structure on top of a waveguide layer, both tantala, on a silica substrate. This chapter details an experiment carried out to measure its transverse coupling level.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-waveguide-scanning.pdf}
-  \caption{\label{fig:waveguide-scanning}Two ways in which light can be scanned across the surface of the \gls{WGM}. The left panel shows the effect of \gls{WGM} motion with respect to a static beam, while the right panel shows the effect of light beam motion (due to rotation of the cavity mirror opposite the \gls{WGM}) with respect to a static \gls{WGM}. The latter effect is the one primarily considered in this work.}
-\end{figure}
+\end{wraptable}
 
 \section{Experiment}
 
@@ -107,7 +107,7 @@ The total longitudinal effect $\delta l_E$ caused by the rotation of the \gls{ET
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-mirror-longitudinal-effect.pdf}
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/30-mirror-longitudinal-effect.pdf}
   \caption{\label{fig:mirror-longitudinal-effect}Geometrical \gls{ETM} longitudinal effects. For a given rotation $\theta$ and spot centre position offset $y$, the (longitudinal) position change in the surface of the mirror (show in blue) as seen by the reflected light is approximately $y \theta + \frac{d}{4} \theta^2$. The straight, solid red line in the figure shows this longitudinal change.}
 \end{figure}
 
@@ -136,23 +136,23 @@ Examples of \gls{WGM} coupling levels yielding cavity length changes smaller tha
 
 The \GLASGOWTENM{} facility provided a test bed in which the \gls{WGM}'s transverse to longitudinal coupling could be quantified. The prototype is housed in a Class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
 
-In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering and an electro-optic modulator (\gls{EOM}) to impose RF sidebands on the light to facilitate \gls{PDH} control. The light was then coupled into the vacuum system \emph{via} a periscope. This configuration can be viewed in Figure\,\ref{fig:prototype-setup}.
-
-Tanks 2 and 3 housed a beam splitter and steering mirror, respectively, attached to double stage suspensions. In tanks 4 and 5 were sets of two triple suspension chains based on the GEO-600 design \cite{Plissi2000}. A viewport present to the rear of tank 5, and to the side of tank 1, allowed for light to exit the vacuum envelope for the purposes of sensing and control.
+In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering and an electro-optic modulator (\gls{EOM}) to impose RF sidebands on the light to facilitate \gls{PDH} control. The light was then coupled into the vacuum system \emph{via} a periscope. A control system senses the motion of the cavity with the RF photodiode near Tank 1 and provides corrective actuation on the laser's \gls{PZT} via a frequency stabilisation servo and associated electronics (see Section\,\ref{sec:cavity-length-measurement}). This configuration can be viewed in Figure\,\ref{fig:prototype-setup}.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-waveguide-arm-in-prototype.pdf}
   \caption{\label{fig:prototype-setup}The experimental setup in the prototype facility. The laser light is passed through input optics (not shown), a mode cleaning fibre and an EOM before being coupled into the vacuum system \emph{via} a periscope. It then travels to tank 2 where it is reflected off a beam splitter and directed into one of the arms of the prototype by a steering mirror in tank 3. The two cavity mirrors in tanks 4 and 5 form a \FP{} cavity. The cavity mirrors are suspended from triple stage suspensions, and the beam splitter and steering mirror are both suspended from double suspensions. \\
   \\The \gls{ETM} is rotated in yaw using the \SI{70}{\hertz} source. It is fed to a coil driver where it is coupled into tank 5 \emph{via} a vacuum feedthrough. Coil formers on the front edges of the reaction mass contain wound copper wire connected to the vacuum feedthrough. Magnets are attached to the back of the \gls{ETM}. The reaction mass is behind the \gls{ETM}, containing a hole in its centre to allow light to exit the vacuum tank where it can be viewed with the CCD camera. A larger version of the contents of tank 5 can be viewed in the panel to the right of the figure. \\
-  \\The cavity is held on resonance by the frequency stabilisation servo. This feeds back to the light's frequency \emph{via} the laser crystal's temperature below \SI{12}{\hertz} and its PZT above \SI{12}{\hertz} up to a unity gain frequency of \SI{14}{\kilo \hertz}.}
+  \\The cavity is held on resonance by the frequency stabilisation servo. This feeds back to the light's frequency \emph{via} the laser crystal's temperature below \SI{12}{\hertz} and its PZT above \SI{12}{\hertz} up to a unity gain frequency of \SI{24.5}{\kilo \hertz} (see Section\,\ref{sec:cavity-control}).}
 \end{figure}
+
+Tanks 2 and 3 housed a beam splitter and steering mirror, respectively, attached to double stage suspensions. In tanks 4 and 5 were sets of two triple suspension chains based on the GEO-600 design \cite{Plissi2000}. A viewport present to the rear of tank 5, and to the side of tank 1, allowed for light to exit the vacuum envelope for the purposes of sensing and control.
 
 The \gls{WGM} was attached to an aluminium block of mass \SI{2.7}{\kilo\gram} and suspended from tank 4's cascaded (triple) pendulum, forming the cavity's \gls{ITM}. A silica test mass, also \SI{2.7}{\kilo\gram}, with a \SI{40}{ppm} transmission coating, was used as the \gls{ETM}, suspended from a similar triple pendulum in tank 5. On the rear surface of the \gls{ETM} were three magnets for the purpose of actuation, the positions of which are shown in Figure\,\ref{fig:etm-rear}. With optimal alignment the mirrors formed an overcoupled cavity with finesse \num{155}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-etm-rear.pdf}
+  \includegraphics[width=0.4\columnwidth]{graphics/generated/from-svg/30-etm-rear.pdf}
   \caption{\label{fig:etm-rear}The positions of the magnets on the rear surface of the \gls{ETM}. The magnet designations used in this article are shown in red text. The top magnet is positioned at the centre of yaw, near the top of the mass. The left and right magnets are positioned \SI{56.3}{\milli\meter} either side of the centre of yaw. Coils on the \gls{ETM}'s reaction mass (not shown) are positioned coaxially behind each magnet.}
 \end{figure}
 
@@ -180,7 +180,7 @@ A three-stage reaction chain was placed behind the triple pendulum of the \gls{E
   \caption{\label{tab:cavity-parameters}Cavity parameters.}
 \end{table}
 
-\subsection{Measuring cavity length changes}
+\subsection{\label{sec:cavity-length-measurement}Measuring cavity length changes}
 
 An RF photodetector was placed at the viewport on tank 1, where it could view the light reflected from the cavity. By using \gls{PDH} demodulation, the signal from this photodetector provided an error signal for the cavity length. This signal was fed back to the laser \emph{via} the frequency stabilisation servo to maintain cavity resonance. The frequency stabilisation servo's high frequency feedback signal\textemdash a voltage applied across the laser's piezoelectric transducer (\gls{PZT})\textemdash provided a means of calibrating cavity length changes at frequencies greater than \SI{12}{\hertz}. Using the \gls{PZT}'s frequency response, \SI{1.35}{\mega\hertz \per \volt_{rms}}, the cavity length change $\delta l$ per error signal volt could be calculated to be \SI{133}{\nano\meter \per \volt_{peak}}.
 
@@ -198,21 +198,15 @@ The key features of \gls{PDH} are highlighted below. More detailed descriptions 
 \end{equation}
 Phase modulation can also be intentionally imparted upon the carrier through the use of an \gls{EOM}. With the \gls{PDH} technique, the \gls{EOM} is typically placed in the path of the cavity's input light where it imparts strong phase modulation to the carrier at \gls{RF} frequencies. The choice of this modulation frequency is motivated by the availability of low cost and low noise electronics, and the avoidance of the audio band where experiments in the field of gravitational wave interferometry typically desire high sensitivity. The \gls{RF} sidebands produced by the \gls{EOM} must be chosen to be greater than the cavity's \gls{FWHM} (see Section\,\ref{sec:cavity-fom}) to prevent them from entering the cavity. As the carrier light resonates within the cavity and reflects back towards the laser, any phase modulation imparted to the carrier by mirror motion beats with the \gls{RF} sidebands that do not enter the cavity.
 
-In a typical \gls{PDH} setup, a frequency generator is fed to the \gls{EOM} and to a mixer connected to the output of an \gls{RF} photodetector placed in reflection of the cavity (see Figure\,\ref{fig:prototype-setup}). This ensures that the same frequency used to create the \gls{RF} sidebands is used to demodulate the superposition of fields reflecting from the cavity. Mixing the oscillator's signal with the reflected light is equivalent to multiplying the reflected field by a factor of $\sin{\omega t}$ or $\cos{\omega t}$, which yields amplitude modulation proportional to the cavity motion at the frequency of the mirror motion. The key feature of this amplitude modulation is that it is bipolar about the Airy peak, meaning that mirror motion in a certain direction yields amplitude modulation with a certain sign. This \emph{error signal} can be fed back to the cavity's actuators to hold the cavity at the top of the Airy peak. Note here that the \gls{PDH} technique allows the cavity to be held at the top of the Airy peak and not to the side as with the DC locking technique described earlier.
+In a typical \gls{PDH} setup, a frequency generator is fed to the \gls{EOM} and to a mixer connected to the output of an \gls{RF} photodetector placed in reflection of the cavity (see Figure\,\ref{fig:prototype-setup}). This ensures that the same frequency used to create the \gls{RF} sidebands is used to demodulate the superposition of fields reflecting from the cavity. Mixing the oscillator's signal with the reflected light is equivalent to multiplying the reflected field by a factor of $\sin{\omega t}$ or $\cos{\omega t}$, which yields a signal proportional to the cavity motion at the frequency of the mirror motion. The key feature of this signal is that it is bipolar about the Airy peak, meaning that mirror motion in a certain direction yields a change in detected power with a certain sign. This \emph{error} signal can be fed back to the cavity's actuators to hold the cavity at the top of the Airy peak. Note that the \gls{PDH} technique allows the cavity to be held at the top of the Airy peak and not to the side as with the DC locking technique described earlier.
 
-\subsubsection{Cavity control}
-\note{Describe servos and filters used to lock the cavity}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-temperature-servo-tf.pdf}
-  \caption{\label{fig:temperature-servo-tf}Temperature servo transfer function.}
-\end{figure}
+\subsubsection{\label{sec:cavity-control}Cavity control}
+The \gls{PDH} error signal was sensed with the RF photodiode placed near Tank 1. This was coupled into an analogue servo containing filters designed to keep the \FP{} on resonance. This analogue servo design resembles that of the servo presented in \cite{Macarthur2014}, and contains feedback paths to the laser's temperature and \gls{PZT}, providing corrections to the laser frequency at low and high frequencies, respectively. The open loop gains of both the temperature and \gls{PZT} feedback are shown in Figure\,\ref{fig:servo-tf}. Below \SI{12}{\hertz}, the servo takes advantage of the laser temperature actuator's large low frequency response. The feedback is reduced at \SI{0.6}{\hertz} to prevent exciting the \gls{ETM} suspension's main mechanical mode, and an integrator above \SI{1}{\hertz} allows for a stable crossover with the feedback to the laser's \gls{PZT}. The \gls{PZT} is capable of providing actuation to frequencies up to many tens of \SI{}{\kilo\hertz}, and so above \SI{12}{\hertz} it provides the strongest actuation. A two pole integrator limits the bandwidth of the feedback to enhance the mid frequency performance, where the measurements are to be made, and a further differentiator at \SI{3}{\kilo\hertz} The unity gain point of the overall servo is situated at around \SI{24.5}{\kilo\hertz}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-pzt-servo-tf.pdf}
-  \caption{\label{fig:pzt-servo-tf}Estimated open loop transfer function of the analogue servo used to feed the cavity error signal back to the PZT. The feedback is flat below \SI{100}{\hertz}, where the temperature feedback servo performs the majority of the actuation. Above this point, a slope proportional to $\frac{1}{f^3}$ removes feedback at higher frequencies to limit the bandwidth, and hence provide higher low frequency gain. The slope of the servo is approximately $\frac{1}{f}$ above xxx to provide a stable unity gain crossing.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/30-servo-tf.pdf}
+  \caption{\label{fig:servo-tf}Estimated open loop gain of the analogue servo used to feed the cavity error signal back to the laser's temperature and PZT. The PZT feedback is flat below \SI{100}{\hertz}, where the temperature feedback servo performs the majority of the actuation. Above this point, a slope proportional to $\frac{1}{f^3}$ removes feedback at higher frequencies to limit the bandwidth, and hence provide higher low frequency gain. An integrator is present above \SI{3}{\kilo\hertz} to facilitate a stable unity gain crossing. Note that the temperature curve is only shown up to \SI{12}{\hertz}; above this frequency its response is greatly reduced and becomes insignificant to cavity control.}
 \end{figure}
 
 \section{Measurements and analysis}

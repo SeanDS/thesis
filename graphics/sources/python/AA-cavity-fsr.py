@@ -12,7 +12,6 @@ save_path = sys.argv[1]
 # cavity amplitude function
 def cavity_amplitude_vs_length(lengths, k, r1, r2, t):
   return (1j * t) / (1 - r1 * r2 * np.exp(2j * k * lengths))
-  
   #return t**2 / (1 - 2*r1*r2*np.cos(2*k*lengths) + r1**2 * r2**2)
 
 # mirror properties
@@ -46,13 +45,10 @@ powers = amplitudes * np.conj(amplitudes)
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 
 # first axis
-ax1 = fig.add_subplot(211)
+ax1 = fig.gca()
 
 # copy first axis, for second unit
 ax2 = ax1.twiny()
-
-# second plot
-ax3 = fig.add_subplot(212, sharex=ax1)
 
 # colour wheel
 colours = lf.Colours()
@@ -84,18 +80,6 @@ ax2.set_xticks([tick * length_offset_to_megahertz for tick in ax1.get_xticks()])
 ax2.set_xlim([lower_limit * length_offset_to_megahertz, upper_limit * length_offset_to_megahertz])
 
 ax2.set_xlabel('Frequency offset for {0:.0f} m cavity [MHz]'.format(cavity_length))
-
-# phase offset, to bring it to cross at zero on the peak
-phase_offset = -90
-
-# phase plot
-ax3.plot(plot_lengths, phase_offset + np.angle(amplitudes) * 180 / np.pi, color=colour_a)
-ax3.set_xlabel(r'Length offset [$\lambda$]')
-ax3.set_ylabel(u'Phase [°]')
-
-ax3.set_yticks([-90, -45, 0, 45, 90])
-
-ax3.grid(True)
 
 fig.tight_layout()
 

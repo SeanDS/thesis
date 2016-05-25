@@ -39,6 +39,9 @@ ax.plot(
   color=colours.next()
 )
 
+# increment colour to get rid of it
+colours.next()
+
 # 3rd standard deviation
 stddev = 0.94
 
