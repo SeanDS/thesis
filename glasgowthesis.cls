@@ -85,6 +85,10 @@
 % gets 1.8cm and the body text still fits within guidelines.
 \textheight 24.3cm
 
+% Specify section number depth to allow subsubsection headings to be
+% numbered (so that they can be cross-referenced properly).
+\setcounter{secnumdepth}{3}
+
 % Specify page titles for well-known sections.
 \renewcommand{\contentsname}{Table of Contents}
 
