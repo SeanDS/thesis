@@ -10,8 +10,7 @@ import matplotlib
 FIG_SIZE_A = (10, 7)
 
 # smaller fig size (for two plots side-by-side)
-# (be sure to scale fonts too)
-FIG_SIZE_A_SM = (FIG_SIZE_A[0] / 1.5, FIG_SIZE_A[1] / 1.41)
+FIG_SIZE_A_SM = (FIG_SIZE_A[0], FIG_SIZE_A[1] / 1.41)
 
 # faller fig size (for Bode-style plots)
 FIG_SIZE_A_TALL = (FIG_SIZE_A[0], FIG_SIZE_A[1] * 1.41)
@@ -93,12 +92,6 @@ class Colours(object):
         
         return self.colours[self.current_index]
 
-def set_font_size(group):
-    if group == 'sm':
-        scale_fonts(1.4)
-    else:
-        raise Exception('Specified font group is not valid')
-
 def scale_fonts(factor):
     factor = float(factor)
   
@@ -108,4 +101,14 @@ def scale_fonts(factor):
 	'legend.fontsize': default_settings['legend.fontsize'] * factor,
 	'xtick.labelsize': default_settings['xtick.labelsize'] * factor,
 	'ytick.labelsize': default_settings['ytick.labelsize'] * factor
+    })
+
+def scale_markers(factor):
+    factor = float(factor)
+    
+    """Scales markers, lines, etc. by factor"""
+    matplotlib.rcParams.update({
+	'lines.linewidth': default_settings['lines.linewidth'] * factor,
+	'lines.markeredgewidth': default_settings['lines.markeredgewidth'] * factor,
+	'lines.markersize': default_settings['lines.markersize'] * factor
     })

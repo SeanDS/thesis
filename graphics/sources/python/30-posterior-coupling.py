@@ -1,3 +1,5 @@
+from __future__ import division
+
 import os
 import sys
 import numpy as np
@@ -32,6 +34,9 @@ colours = lf.Colours()
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 ax = plt.gca()
 
+# normalise y-axis
+data[:, 1] /= np.max(data[:, 1])
+
 ax.plot(
   data[:, 0], data[:, 1],
   lw=2,
@@ -65,9 +70,9 @@ for i in range(0, len(data[:, 0])):
 ax.grid(True)
 ax.xaxis.set_major_formatter(FixedOrderFormatter(-5))
 #ax.yaxis.set_major_formatter(FixedOrderFormatter(3))
-ax.set_ylabel('Probability Density [arb. units]')
-ax.set_xlabel('Transverse to Longitudinal Coupling [m / m]')
-ax.set_ylim([min(data[:, 1]), 30e3])
+ax.set_ylabel('Normalised probability density')
+ax.set_xlabel('Transverse to longitudinal coupling [m / m]')
+ax.set_ylim([0, 1])
 ax.set_xlim([0, max(data[:, 0])])
 
 plt.savefig(sys.argv[1], format="PDF")
