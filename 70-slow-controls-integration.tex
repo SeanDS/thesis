@@ -1,6 +1,11 @@
 \chapter{Integration of slow control channels in LIGO CDS}
 \label{c:slow-controls-integration}
 
+\section{Motivation and Requirements}
+Context, motivation, requirements...
+
+Channel list, graph diagram (graphviz?) of signal pathways?
+
 \section{The LIGO CDS system}
 The \gls{CDS} system designed for use in \gls{LIGO} and used for the practical experiments in Chapters \note{X, Y, Z} provides high-speed, low-noise analogue-to-digital and digital-to-analogue converters (\glspl{ADC} and \glspl{DAC}, respectively) to send signals between the experimental hardware and the software-defined controls. The software-defined controls run within a real-time Linux kernel, allowing for deterministic operation, and the channel infrastructure is built on top of the widely used open-source \emph{\gls{EPICS}} system. While \gls{CDS}'s inputs and outputs are well suited to the measurement and control of key sensors and actuators within a low-noise experiment, they are also expensive. Each input or output channel consists of various integrated circuits and filters, all of which must be carefully chosen to minimise noise which can potentially contaminate the sensitivity of the system, along with power supply components, specialised connectors and rack infrastructure; this leads to an expense per channel of roughly \checkme{\pounds600}.
 
@@ -73,6 +78,13 @@ The effect of the sample rate can be further witnessed in Figure\,\ref{fig:sampl
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-epics-aliasing.pdf}
   \caption{\label{fig:sample-aliasing}The frame builder's sample limit. With a signal of frequency \SI{8}{\hertz}, the frame builder, sampling at a rate of \SI{16}{\hertz}, is just able to interpret the underlying waveform. Note the slight drift in the sampling phase, which probably arises from non-deterministic networking and computational interrupts. Signals above \SI{16}{\hertz} will appear aliased when measured by the frame builder. Note that, as with Figure\,\ref{fig:epics-test}, a timing latency between the two waveforms has been removed for clarity.}
 \end{figure}
+
+\subsection{Timing drift}
+Show glitches caused by mismatch in sampling frequencies...
+
+Make diagram to show timing lag (see Sebastian's comment in labbook 2016 05 24)
+
+Show less glitches when threading is used to prevent wait time between samples
 
 \section{Interfacing EtherCAT to EPICS}
 With the connection made between remote \gls{EPICS} \glspl{IOC} and \gls{CDS} defined, the remaining step is to provide a means of transferring signals between EtherCAT devices and \gls{EPICS}. As with \gls{EPICS} itself, the scientific community at large has overcome this problem in the form of \emph{dls-ethercat} module developed for the Diamond Light Source synchrotron facility in Oxfordshire, UK.

@@ -3,11 +3,15 @@
 
 \emph{The following chapter has been adapted from \emph{Upper limit to the transverse to longitudinal motion coupling of a waveguide mirror \cite{Leavey2015}}, published in \emph{Classical and Quantum Gravity} in 2015. The material from the article has been expanded as appropriate for this thesis; however, the results presented are identical.}
 
+\section{Thermal noise in advanced detectors}
+
 At their most sensitive frequencies, the advanced detectors \note{make sure ``advanced'' is suitably defined in the introduction, with citations} are expected to be limited by Brownian thermal noise arising from the reflective coatings on the detectors' test masses \cite{Levin1998, Nakagawa2002, Harry2002, Crooks2002}. In order to help mitigate this limitation beyond the next generation of detectors, efforts are under way to develop mirror coatings with lower thermal noise \cite{Flaminio2010, Bassiri2013}.
 
 In the case of Advanced LIGO, each end test mass (\gls{ETM}) consists of a substrate with 19 pairs of sub-wavelength coatings which produce a transmission of \SI{5}{ppm} for \SI{1064}{\nano\meter} light \cite{Dannenberg2009}. Each layer within this stack contributes to the overall thermal noise \cite{Harry2002, Crooks2002}. The approach taken by Levin to calculate the thermal noise of mirrors \cite{Levin1998} shows that mechanical loss at the front surface of a mirror contributes more to the Brownian noise level than loss from an equivalent volume in the substrate. Additionally, typical coating materials tend to exhibit mechanical loss orders of magnitude higher than typical substrate materials \cite{Harry2002, Crooks2002}. For these reasons particular attention is being given to the reduction of coating thermal noise to improve the sensitivity of future detectors.
 
 One strategy, to be applied for example in KAGRA, is to cool the mirrors to cryogenic temperatures. While this can potentially reduce the thermal noise of the mirrors \cite{Uchiyama2012}, the application of cryogenic mirrors requires new infrastructure, different choices of mirror substrate and coating materials and poses the challenge of heat extraction from the mirror without spoiling its seismic isolation and thermal noise performance. Efforts in the application of cryogenics are also under way to identify suitable substrate and coating materials for ET-LF, the low frequency interferometer as part of the proposed Einstein Telescope \cite{Punturo2010, Martin2010, Hild2011, Abernathy2011}.
+
+\section{Waveguide and grating mirrors}
 
 Apart from using different coating materials \cite{Granata2013, Cole2013} or different beam shapes \cite{Mours2006, DAmbrosio2004, Bondarescu2006} such as with LG33 modes \cite{Sorazu2013}, another potential approach is to utilise waveguide mirrors (\glspl{WGM}) \cite{Brueckner2008, Brueckner2009, Brueckner2010, Friedrich2011}. These mirrors can possess high reflectivity at a wavelength determined by their structure. In contrast to conventional dielectric mirrors, mirrors possessing waveguide coatings can exhibit high reflectivity without requiring multiple stacks \cite{Bunkowski2006}. A waveguide coating instead presents incident light with a periodic grating structure of high refractive index material $n_H$ on top of a substrate with low refractive index $n_L$ (see Figure\,\ref{fig:waveguide-reflection}). Light is forced into a single reflective diffraction order, the \nth{0}. In transmission, only the \nth{0} and \nth{1} diffraction orders are allowed as long as the condition in Equation~\ref{eq:grating-equation} for the grating period, $p$; and the light's wavelength in vacuum, $\lambda$, is fulfilled \cite{Brueckner2008}. The light diffracted into the \nth{1} order undergoes total internal reflection at the substrate boundary where it excites resonant waveguide modes. Light leaving the waveguide then contains a \SI{180}{\degree} phase shift with respect to the \nth{0} order transmitted light, causing destructive interference such that most of the incident light is reflected \cite{Sharon1997}.
 
@@ -30,6 +34,8 @@ Calculations by Heinert \etal{} \cite{Heinert2013} showed that a suitably optimi
   \caption{\label{fig:coating-vs-grating-noise}Reproduction of the results from Heinert \etal{} \cite{Heinert2013} showing Brownian thermal noise in an Advanced LIGO style \gls{ETM} at room temperature versus that of a \gls{WGM} at cryogenic temperature, as a function of transmissivity. The markers in the coating curve represent the number of quarter-wavelength bilayers forming the dielectric stack. Each additional bilayer in the coating stack produces lower overall transmissivity, but also increases Brownian thermal noise. The grating's Brownian thermal noise contribution is independent of transmissivity. The transmissivity of Advanced LIGO's ETM is shown as a vertical, dashed line.}
 \end{figure}
 
+\subsection{Transverse to longitudinal coupling in grating mirrors}
+
 Previous efforts to demonstrate grating structures as alternatives to dielectric mirrors have identified phase noise in the light reflected from the grating not otherwise present in dielectric mirrors \cite{Wise2005, Freise2007}. This effect arises from transverse motion of grating mirrors with respect to the incident light. Incident light at angle $\alpha$ is reflected into the m\textsuperscript{th} diffraction order, exiting at angle $\beta_m$ (see Figure\,\ref{fig:grating-propagation}). The change in path length $\delta l_L$ between the reflected and incident light is then
 \begin{equation}
   \delta l_L = \zeta_a + \zeta_b = \delta y
@@ -43,7 +49,7 @@ The phase modulation induced in the light reflected from the \gls{WGM} is propor
   \includegraphics[width=0.45\textwidth]{graphics/generated/from-svg/30-grating-propagation.pdf}
   \caption{\label{fig:grating-propagation}Optical path length changes $\zeta_a$ and $\zeta_b$ due to transverse motion of a Littrow grating. Incident light diffracted into a different order undergoes a path length change $\delta l_L = \zeta_a + \zeta_b$.}
 \end{wrapfigure}
-  
+
 There are two mechanisms by which grating mirrors can couple transverse motion into longitudinal phase changes (see Figure\,\ref{fig:waveguide-scanning}). The first is through transverse motion of the grating, which can in principle be minimised with appropriate suspension design. The second mechanism is the coupling of changes in the opposite cavity mirror's alignment into the spot position on the grating mirror. This effect is of particular importance to gravitational wave observatories, where longer arm lengths can increase its detrimental impact. For this reason the second mechanism is considered in more detail in this work.
 
 \begin{figure}
