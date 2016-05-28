@@ -93,11 +93,12 @@ Show FFT with ripples
 
 Show no glitches when threading is used to prevent wait time between samples...
 
-The delay per cycle for the lab computer is:
+The delay per second $\frac{\delta t_{\text{delay}}}{\delta t}$ for the lab computer was determined to be \SI{6}{\milli\second\per\second}. As long as the separate process that generates each data point runs within the time between samples, it will not lead to glitches. The maximum frequency that can be sampled is therefore:
 \begin{equation}
-  t_{\text{delay, cycle}} = f_{\text{s}} \frac{\delta t_{\text{delay}}}{\delta t}.
+  f_{\text{max}} = \left(\frac{\delta t_{\text{delay}}}{\delta t}\right)^{-1} = \SI{166}{\hertz},
 \end{equation}
-If we assume that the program execution time is identical in both threaded and non-threaded cases, this technique will work for frequencies up to the inverse of the delay per cycle, $f_{\text{max}} = \frac{1}{t_{\text{delay, cycle}}} = \SI{2.6}{\kilo\hertz}$. This falls well within the specification of the slow controls system.
+% see https://arran.physics.gla.ac.uk/wp/speedmeter/?p=8684
+assuming that the program execution time is identical in both threaded and non-threaded cases. This upper limit is well beyond the specification of the slow controls system. In reality program execution is not deterministic, and so the real number may be higher or lower at a given time. This drift can be made deterministic by running the sine wave generator on a real time kernel. However, even if the program execution time were ten times higher, the maximum frequency (\SI{16.6}{\hertz}) would still be high enough to be limited by the frame builder's sample rate.
 
 \section{Interfacing EtherCAT to EPICS}
 With the connection made between remote \gls{EPICS} \glspl{IOC} and \gls{CDS} defined, the remaining step is to provide a means of transferring signals between EtherCAT devices and \gls{EPICS}. As with \gls{EPICS} itself, the scientific community at large has overcome this problem in the form of \emph{dls-ethercat} module developed for the Diamond Light Source synchrotron facility in Oxfordshire, UK.
