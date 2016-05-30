@@ -7,9 +7,9 @@ How to build simulations in both tools...
 
 \note{Describe weird empirical equation that sets the homodyne angle in terms of the angle of incidence etc. in the Optickle model}
 
-\section{Finesse}
+\section{\label{sec:finesse-sim}Finesse}
 
-\section{Optickle}
+\section{\label{sec:optickle-sim}Optickle}
 Optickle is a tool primarily designed to produce a series of matrices as outputs. As it is based in \MATLAB, it is possible to study the behaviour of the code to determine its capabilities and limitations. This section attempts to explain the basic operation of the primary feature that Optickle provides: the \lstinline!tickle! function.
 
 In order to simulate an interferometer, an optical environment is created into which optics, sensors and links between optics may be defined. The primary output of Optickle is a transfer matrix mapping \emph{drives} of each optic in the system to probes within that system. A drive is simply a degree of freedom of an optic, such as longitudinal motion of a mirror. Probes are the simulation equivalent of photodetectors, but can be lossless and can perform arbitrary RF demodulations. Another useful output is the quantum noise spectral density at a probe. Dividing the noise spectral density at a probe by a suitable linear combination of optical transfer functions--a degree of freedom of the interferometer---results in the probe's noise-to-signal ratio, or sensitivity, to that degree of freedom.

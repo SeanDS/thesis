@@ -86,11 +86,11 @@
 \textheight 24.3cm
 
 %% Page headers
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
 % Useful: https://tex.stackexchange.com/questions/29638/header-problem-with-book-class
 
 % enable
-\pagestyle{fancy}
+%\pagestyle{fancy}
 
 % override header behaviour to fix overlapping issues
 % https://tex.stackexchange.com/questions/48873/section-title-and-page-number-overlapping-in-heading-fancyhdr

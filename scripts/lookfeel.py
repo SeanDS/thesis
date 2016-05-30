@@ -24,6 +24,10 @@ ARROW_HEAD_WIDTH = 0.1
 ARROW_HEAD_LENGTH = 0.5
 ARROW_OVERHANG = 0.3
 
+# line widths
+LW_NORMAL = 2
+LW_THICK = LW_NORMAL * 2
+
 ###
 # Matplotlib settings
 
@@ -36,7 +40,7 @@ default_settings = {
     'legend.fancybox': True,
     'legend.fontsize': 16,
     'legend.framealpha': 0.9,
-    'lines.linewidth': 2,
+    'lines.linewidth': LW_NORMAL,
     'lines.markeredgewidth': 3,
     'lines.markersize': 15,
     'xtick.major.pad': 10,

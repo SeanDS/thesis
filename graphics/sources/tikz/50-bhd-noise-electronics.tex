@@ -1,0 +1,43 @@
+\documentclass[]{standalone}
+\usepackage[siunitx,european]{circuitikz}
+\usetikzlibrary{positioning}
+\begin{document}
+  \begin{tikzpicture}[scale=2]
+    \draw[]
+    % V+ voltage
+    (0,2) node[above=1mm]{$\text{V}+$}
+    % V- voltage
+    (0,0) node[below=1mm]{$\text{V}-$}
+	  % connect to BHD B
+	  to[empty photodiode, o-*, n=bhdb] (0,1)
+	  % connect to BHD A
+	  to[empty photodiode, *-o, n=bhda] (0,2)
+    % op-amp
+    (1,1) node[op amp,anchor=-](opamp1){}
+    % connect difference to op-amp 1 negative input
+    (0,1) to[*-] (opamp1.-)
+    % connect op-amp 1 positive input to ground
+    (opamp1.+) to[-] ++(0,-0.5) node[rground]{}
+    % give op-amp 1 nodes some names and markers
+    (opamp1.-) node(node1)[circ]{}
+    (opamp1.out) node(node2)[circ]{}
+    % connect the op-amp 1 feedback resistor via coordinates perpendicular to the op-amp I/Os
+    (node1) to[-] ++(0,0.5) coordinate (l1) to[R, l=$\text{R}_{\text{T}}$] (l1 -| opamp1.out) to (node2)
+    % connection to second op-amp
+    (node2) to[R, l=$\text{R}$] ++(1,0) node[op amp,anchor=-](opamp2){}
+    % connect op-amp 2 positive input to ground
+    (opamp2.+) to[R, l_=$\text{R}$] ++(0,-1) node[rground]{}
+    % give op-amp 2 nodes some names and markers
+    (opamp2.-) node(node3)[circ]{}
+    (opamp2.out) node(node4)[circ]{}
+    % connect the op-amp 2 feedback resistor via coordinates perpendicular to the op-amp I/Os
+    (node3) to[-] ++(0,0.5) coordinate (l2) to[R, l=$100\text{R}$] (l2 -| opamp2.out) coordinate (r2) to (node4)
+    % floating output
+    (node4) to[short,-o] ++(0.5,0) node[right=1mm,align=center]{To DAQ}
+    % label for op-amp 1
+    (opamp1) node[label={[label distance=4mm]-75:$\text{N}_1$}]{}
+    % label for op-amp 2
+    (opamp2) node[label={[label distance=4mm]-75:$\text{N}_2$}]{}
+    ;
+  \end{tikzpicture}
+\end{document}

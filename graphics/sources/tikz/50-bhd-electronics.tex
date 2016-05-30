@@ -1,0 +1,34 @@
+\documentclass[]{standalone}
+\usepackage[siunitx,european]{circuitikz}
+\usetikzlibrary{positioning}
+\begin{document}
+  \begin{tikzpicture}[scale=2]
+    \draw[]
+    % V+ voltage
+    (0,2) node[above=1mm]{$\text{V}+$}
+    % V- voltage
+    (0,0) node[below=1mm]{$\text{V}-$}
+	  % connect to BHD B
+	  to[empty photodiode, o-*, n=bhdb] (0,1)
+	  % connect to BHD A
+	  to[empty photodiode, *-o, n=bhda] (0,2)
+    % op-amp
+    (1,1) node[op amp,anchor=-](opamp){}
+    % connect difference to op-amp negative input
+    (0,1) to[*-] (opamp.-)
+    % connect op-amp positive input to ground
+    (opamp.+) to[-] ++(0,-0.5) node[rground]{}
+    % give the op-amp nodes some names and markers
+    (opamp.-) node(node1)[circ]{}
+    (opamp.out) node(node2)[circ]{}
+    % connect the feedback resistor via coordinates perpendicular to the op-amp I/Os
+    (node1) to[-] ++(0,0.5) coordinate (l) to[R, l=$\text{R}_{\text{T}}$] (l -| opamp.out) coordinate (r) to (node2)
+    % floating output
+    (node2) to[short,-o] ++(0.5,0) node[right=1mm,align=center]{Difference\\signal}
+    % label for BHD A
+    (bhda) node[left=4mm]{BHD A}
+    % label for BHD B
+    (bhdb) node[left=4mm]{BHD B}
+    ;
+  \end{tikzpicture}
+\end{document}

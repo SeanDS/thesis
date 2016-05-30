@@ -27,9 +27,11 @@ GFX=graphics
 GFXGEN=$(GFX)/generated
 GFXGENPY=$(GFXGEN)/from-python
 GFXGENSVG=$(GFXGEN)/from-svg
+GFXGENTIKZ=$(GFXGEN)/from-tikz
 GFXSRC=$(GFX)/sources
 GFXSRCPY=$(GFXSRC)/python
 GFXSRCSVG=$(GFXSRC)/svg
+GFXSRCTIKZ=$(GFXSRC)/tikz
 
 # data
 DATA=data
@@ -70,6 +72,7 @@ $(PROJECT).pdf: $(PROJECT).tex
 	if [ ! -e $(GFXGEN) ]; then mkdir -p $(GFXGEN); fi
 	if [ ! -e $(GFXGENPY) ]; then mkdir -p $(GFXGENPY); fi
 	if [ ! -e $(GFXGENSVG) ]; then mkdir -p $(GFXGENSVG); fi
+	if [ ! -e $(GFXGENTIKZ) ]; then mkdir -p $(GFXGENTIKZ); fi
 	if [ ! -e $(DATAGEN) ]; then mkdir -p $(DATAGEN); fi
 	if [ ! -e $(DATAGENPY) ]; then mkdir -p $(DATAGENPY); fi
 	if [ ! -e $(DATAGENMAT) ]; then mkdir -p $(DATAGENMAT); fi
@@ -94,6 +97,11 @@ $(GFXGENPY)/%.pdf: $(GFXSRCPY)/%.py $(LOOKFEELSCRIPT)
 # call Python script to generate graphic
 	@python $< $@
 
+$(GFXGENTIKZ)/%.pdf: $(GFXSRCTIKZ)/%.tex
+# call LaTeX to compile TikZ image
+	pdflatex $<
+	mv $(notdir $@) $@
+
 # ===== Extra dependencies for plot scripts =====
 
 $(GFXGENPY)/30-coating-vs-grating-noise.pdf: $(DATA)/30-coating-vs-grating-noise.csv
@@ -109,6 +117,22 @@ $(GFXGENPY)/30-magnet-offset.py: $(DATA)/30-magnet-offset.csv
 $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.csv $(DATA)/30-coupling-best-fit-simulations.csv
 
 $(GFXGENPY)/30-servo-tf.pdf: $(DATAGENMAT)/30-servo-tf.csv
+
+$(GFXGENPY)/50-bhd-response.pdf: $(DATA)/50-bhd-response.csv
+
+$(GFXGENPY)/50-op-amp-noise-time-series.pdf: $(DATA)/50-op-amp-noise-time-series-reduced.csv $(DATA)/50-op-amp-null-time-series-reduced.csv $(DATA)/50-op-amp-temperature-time-series-reduced.csv
+
+$(GFXGENPY)/50-op-amp-noise-spectrum.pdf: $(DATA)/50-op-amp-noise-spectrum-reduced.csv $(DATA)/50-op-amp-null-spectrum-reduced.csv
+
+$(GFXGENPY)/50-readout-noise-velocity.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv
+
+$(GFXGENPY)/50-readout-noise-velocity-rms.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv
+
+$(GFXGENPY)/50-readout-noise-mixed.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
+
+$(GFXGENPY)/50-readout-noise-mixed-rms.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
+
+$(GFXGENPY)/50-optimal-filters.pdf: $(DATA)/50-optimal-filters.csv
 
 $(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
