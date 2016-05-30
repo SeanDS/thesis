@@ -76,7 +76,7 @@ The original resonant bar detectors were evolved over time to become cryogenic, 
 
 % Search 'Lunar Surface Gravimeter' for Moon bar detector details
 
-\subsection{The gravitational wave interferometer}
+\subsection{\label{sec:gw-interferometry}The gravitational wave interferometer}
 %* First interferometric detectors:
 %  * Drever, Hough, Glasgow and Munich stuff
 %  * Glasgow 10m, Caltech 40m, Garching 30m, etc.
@@ -86,28 +86,40 @@ The original resonant bar detectors were evolved over time to become cryogenic, 
 %  * Initial LIGO, GEO-600, TAMA, Virgo, etc.
 %  * Enhanced LIGO (and Enhanced Virgo?)
 
-Over the course of the 1980s the \MI (see Figure\,\ref{fig:mi}) was developed into a very respectable gravitational wave detection apparatus.
+Over the course of the 1980s the \MI{} (see Figure\,\ref{fig:mi}) was developed into a very respectable gravitational wave detection apparatus.
+
+\subsubsection{The simplest interferometer}
+Gravitational waves modulate the phase of light, and the level of modulation (the modulation depth, see Appendix\,\ref{sec:signal-sidebands}) depends on the ratio of the carrier frequency $f_0$ and the gravitational wave frequency $f_g$. The simplest detector is then just to take some coherent light from a laser, split it into two parts and shine one on a mirror. Comparing the phase of the returning light to the initial light, you can detect passing gravitational waves by an additional phase accumulation on the returning light with respect to the first, on top of the expected round trip phase. This approach has a number of disadvantages. Using the standard ground-based gravitational wave detector wavelength ($\lambda_0 = \SI{1064}{\nano\meter}$), the effect of the gravitational wave on the light is, when the arm length is optimal for a wave of frequency $\SI{e3}{\hertz}$, of the order $\frac{f_0}{f_g} = \frac{\SI{e14}{}}{\SI{e3}{}} = \SI{e11}{}$. It has been known for some time \checkme{where?} that gravitational radiation from likely sources would reach us with strain of at most $h_g = \SI{e-21}{}$, which means that the interferometer electronics would need to be capable of making a phase measurement of at least \SI{e-10}{\radian}, \note{which is some feat}. Furthermore, the optimal antenna length for a gravitational wave detector is $\frac{\lambda_g}{4}$, as with electromagnetic antennae, and so for this frequency the arm would have to be $\frac{\lambda_g}{4} = \frac{c_0}{4 f_g} = \SI{75}{\kilo\meter}$ \cite{Abbott2016}. This is clearly impractical for ground based detectors.
+
+\subsubsection{\FP{} arm cavities}
+One way to simultaneously reduce the phase measurement requirement and the required arm length is to introduce a \FP{} arm cavity\footnote{Other techniques were tested around this time such as delay lines, though they were found to have additional technical challenges for no greater benefit \note{cite something from Garching?}.}. This increases the effective photon path length by reflecting it many times between two partially transmitting mirrors. While this improves the phase measurement requirement by approximately the cavity gain factor (typically of the order \num{100} to \num{1000}), this still leaves the interferometer susceptible to laser frequency fluctuations. As a laser frequency fluctuation has an effect on the phase of the light measured at some fixed distance, such noise is indistinguishable from length changes caused by passing gravitational waves. This problem can be addressed through the use of a second \FP{} arm cavity with input light from the same laser. By placing two arm cavities at the reflected and transmitted ports of a beam splitter, the light that recombines at the beam splitter's output port contains \checkme{anti-coherent} copies of the laser's frequency fluctuations which cancel.
+
+\subsubsection{Power recycling}
+The \FPMI{} can provide good cancellation of laser frequency noise and good sensitivity to differential arm length fluctuations, but one problem is still apparent: the vast majority of the light that recombines at the beam splitter is sent back towards the laser, where it samples the position of input optics not necessarily isolated from the ground and interferes with the laser crystal. This light is typically rejected by means of a Faraday isolator, leading to loss. To save this light from being lost, an additional mirror can be placed at the input to the interferometer to reflect the light returning to the laser back into the interferometer. This technique is called power recycling, and increases the power in the arms by approximately the gain of the cavity the power recycling mirror forms with each arm's input mirrors.
+
+\subsubsection{Signal recycling}
+blah
 
 \begin{figure}
   \begin{center}
     \begin{subfigure}{.3\textwidth}
       \includegraphics[width=\columnwidth]{graphics/generated/from-svg/10-michelson.pdf}
-      \caption{Simple \MI}
+      \caption{Simple \MI{}}
       \label{fig:mi}
     \end{subfigure}
     \hfill
     \begin{subfigure}{.3\textwidth}
       \includegraphics[width=\columnwidth]{graphics/generated/from-svg/10-fabry-perot-michelson.pdf}
-      \caption{\FPMI}
+      \caption{\FPMI{}}
       \label{fig:fpmi}
     \end{subfigure}
     \hfill
     \begin{subfigure}{.3\textwidth}
       \includegraphics[width=\columnwidth]{graphics/generated/from-svg/10-dual-recycled-fabry-perot-michelson.pdf}
-      \caption{\DRFPMI}
+      \caption{\DRFPMI{}}
       \label{fig:drfpmi}
     \end{subfigure}
-    \caption[The evolution of the gravitational wave detector]{The evolution of the gravitational wave detector. Figure\,\ref{fig:mi} shows the simple \MI used since the famous Michelson and Morley experiments of the 1880s, and proposed for gravitational wave detection in early literature. Figure\,\ref{fig:fpmi} shows a \MI with the addition of \FP arm cavities to enhance sensitivity. Figure\,\ref{fig:drfpmi} shows a \FPMI with the addition of recycling mirrors.}
+    \caption[The evolution of the gravitational wave detector]{The evolution of the gravitational wave detector. Figure\,\ref{fig:mi} shows the simple \MI{} used since the famous Michelson and Morley experiments of the 1880s, and proposed for gravitational wave detection in early literature. Figure\,\ref{fig:fpmi} shows a \MI{} with the addition of \FP{} arm cavities to enhance sensitivity. Figure\,\ref{fig:drfpmi} shows a \FPMI{} with the addition of recycling mirrors.}
   \end{center}
 \end{figure}
 

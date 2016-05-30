@@ -172,7 +172,7 @@ The sideband structure created by amplitude and phase modulation is shown in Fig
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/AA-sideband-structure.pdf}
-  \caption{Sideband structure for amplitude and phase modulation. The carrier, at frequency $\omega$, is present in the centre. Upper and lower sidebands exist offset from the carrier. Amplitude modulation (AM) produces exactly two sidebands, whereas phase modulation (PM) produces infinitely many. The vertical axis shows the magnitude of each sideband in this example, though in any real experiment the modulation depth will be significantly lower. In terms of amplitude, the carrier and sidebands rotate in the complex plane at different velocities, and so an equivalent amplitude plot would show off-vertical vectors.}
+  \caption{Sideband structure for amplitude and phase modulation. The carrier, at frequency $\omega$, is present in the centre. Upper and lower sidebands exist offset from the carrier. Amplitude modulation (AM) produces exactly two sidebands, whereas phase modulation (PM) produces infinitely many. The vertical axis shows the magnitude of each sideband in this example, though in any real experiment the modulation depth will be significantly lower. In terms of amplitude, the carrier and sidebands rotate in the complex plane at different velocities, and so an equivalent amplitude plot would show off-vertical vectors. \note{A better way to show this might be to show a table like in Danzmann's talk - see ``Why do we need arm cavities?'' in snippets}. \note{ALSO, this is wrong: the sidebands are equally spaced at intervals of the sideband frequency, not sidebands of sidebands.}}
   \label{fig:sideband-structure}
 \end{figure}
 
@@ -183,7 +183,9 @@ When signals are measured by a photodetector, only amplitude modulation can be d
 
 In general, phase modulation measurement techniques fall into two broad categories: \emph{heterodyne} detection, and \emph{homodyne} detection. With heterodyne detection, one or more laser frequencies are used in addition to the carrier which have different properties such that they follow a different path to the detector. At the detector, a comparison can be made between the paths taken by the heterodyne fields, where the difference in amplitude and phase can offer insight into the motion of the interferometer's optics. In homodyne detection, the carrier is itself used as a reference, by mixing some light from one part of the interferometer with light from another. If this is conducted in a particular way, it can be a powerful technique to measure phase modulation without requiring carefully controlled heterodyne fields.
 
-Both heterodyne and homodyne techniques will be discussed in greater detail later on.
+\note{Both heterodyne and homodyne techniques will be discussed in greater detail later on...}
+
+\note{See Danzmann's talk again, from ``Why do we need arm cavities'' in snippets}
 
 %\subsubsection{Heterodyne detection}
 %Add RF sidebands that don't resonate, schnupp asymmetry, etc...
