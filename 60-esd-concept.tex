@@ -3,6 +3,7 @@
 \begin{itemize}
   \item Introduce Holger's paper~\cite{Wittel2015} \etal{}, discuss need for high voltages
   \item Actuators usually couple noise, which is why magnets are usually on a stage above the test masses. This necessarily limits range, as any actuation performed by the magnets will be filtered by 1/f
+  \item Immunity to seismic noise due to turning points on graph from Holger's paper (see C.G. talk)
   \item HV power supply design considerations (bleed resistor, voltage requirements, etc.)
   \item HV power supply current limiting circuit explanation (called ``foldback limiting'', see Horowitz and Hill p694)
   \item HV power supply heatsink considerations: power produced by MOSFETs at maximum current rating (100 mA, produces 25 W of heat - see datasheets) - chose heatsinks to dissipate this heat and make installation of the board easy (can screw TO-220 casing to L-shaped brackets)
@@ -12,6 +13,8 @@
   \item HV amplifier monitor noise measurement
   \item This experiment will inform the main SSM experiment.
   \item 10 ohm resistor on output of amplifier design to damp resonant RCL modes: resistor adds loss, so lowers the Q associated with any suspension or cable pickups
+  \item ESDs are useful in particular for this expeirment because the mirror masses are small. Previously considered for GEO but the mirrors are too heavy for it to be effective.
+  \item Immune to EM pickup, possibly, because there are no mirrors on the bottom stages of any suspension.
 
   \item Discuss how Andreas' design (with my modifications) was a first prototype, and we decided to redesign it afterwards because of various problems: requirement for a 5V offset at all times, the heat production (due to quiescent current) of the PA98s, lack of switchable whitening. New design incorporates this stuff, along with significant digital signalling thought, and quad channels. New connector to the vacuum feedthrough, too.
   \item Discuss digital signalling design: avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc. Mention that we considered EtherCAT for this but decided it was too expensive (needs a dedicated block inside the amplifier box)
@@ -148,6 +151,40 @@ The presence of stray capacitance at the inputs and outputs of these additional 
 \note{Discuss safety features: new interlock that requires a digital LOW signal, which is pulled low by CDS. Same temperature cut-offs as before. 45k resistors on output to limit current to non-lethal levels. Warning label on box. Protective earth.}
 
 \note{45k resistor gives 27 nV/sqrt(Hz) noise - is this significant?}
+
+\note{Plot of noise budget for amplifier: PA95 input and output noise, Johnson noise, requirement in terms of displacement?}
+
+\note{Short note on enclosure: 19 inch rack enclosure, front panel with LEDs, on button, etc.}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-amplifier-signal-path.pdf}
+  \caption{\label{fig:hv-amp-signal-path}Signal path. \note{Differential receiving, switchable 10dB dewhiteners, test points, clamp diodes, amplifier with appropriate power resistors, voltage divider for monitor}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-amplifier-soft-start.pdf}
+  \caption{\label{fig:hv-amp-soft-start}Soft-start. \note{Mostly from Andreas' design. Optoisolators, optocouplers, choke, 1.5KE voltage clamp, charger circuit.}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-amplifier-interlock.pdf}
+  \caption{\label{fig:hv-amp-interlock}Interlock. Four temperature sensors in TO-220 packages for easy attachment to metal. Positive feedback trip switch. CMOS switches (interlock one pulled to 15V). Bypass jumpers. AND gate. 1M resistor to clamp voltage to a ground reference.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/60-hv-amp-top.pdf}
+  \caption{\label{fig:hv-amp-top}Top view of the high voltage amplifier printed circuit board. In the lower left corner there are IDC connectors for the signal and control inputs and the monitor outputs. These connect via ribbon cables to the inside of the amplifier enclosure's front panel. Various other sockets are present in the lower half and upper centre of the board for high and low voltage inputs and outputs. The eight PA95 amplifier ICs are situated near the top of the board, and some space is left at the top of the board to allow these amplifiers to be attached to heat sinks. The copper layer immediately below the heat sink locations is isolated from the board's main ground plane to prevent the heat sinks from shorting the board's ground to earth. The bottom view is shown in Figure\,\ref{fig:hv-amp-bottom}.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/60-hv-amp-bottom.pdf}
+  \caption{\label{fig:hv-amp-bottom}Bottom view of the high voltage amplifier printed circuit board. The lower right corner of the board contains the ``soft start'' circuitry to charge the high voltage capacitors on the board, and the high voltage supply rails are routed from here to the top of the board where they are fed to each of the eight PA95 ICs. The remaining tracks on the bottom are predominantly used for board signal routing. The top view is shown in Figure\,\ref{fig:hv-amp-top}.}
+\end{figure}
 
 \begin{figure}
   \centering
