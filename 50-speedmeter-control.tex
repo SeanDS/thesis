@@ -97,6 +97,17 @@ In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravi
 % Or p53 of Rana's thesis
 % Or Advanced Virgo design study
 
+\section{\label{app:required-control}Required controller precision}
+
+The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \ssm{}. Using the parameters listed in Appendix\,\ref{app:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
+
+\begin{equation}
+  \frac{\Delta L_{\left(-\right)}}{L_{\textrm{RT}}} = \frac{\Delta f}{f_{0}},
+\end{equation}
+with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the requirement for the \SSM{} is that the residual motion of the mirrors must be less than \SI{3.5e-13}{\meter}. This uses the assumption that the frequency fluctuations $\Delta f$ fall within \SI{1}{\percent} of the arm cavity full-width half-maxima\textemdash a common heuristic method used to ensure that technical noise sources do not couple strongly to the gravitational wave channel.
+
+As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The above requirement, however, is sufficient to highlight the problem of velocity-only control as shown in Section\,\ref{sec:velocity-control}.
+
 %     \caption{\ssm{} optical layout and extraction of the BHD signal sensitive to the arm cavity differential mode. Figure\,(a) contains a simplified layout of the experiment. Light from the input optics (not shown) is incident upon the main beam splitter. The shaded green area shows the BHD extracting the signal from the main beam splitter's output port (see Section\,\ref{sec:bhd}). The triangular arm cavities are shown in the shaded grey area, and mirror \MINT{} couples light between them. Two additional photodetectors (shaded blue area) are present behind \MINT{} for individual arm cavity signal extraction. The sensing and feedback signal paths are described in detail in Sections\,\ref{sec:velocity-control} and \ref{sec:mixed-control}. Figure\,(b) contains the frequency response of the BHD to \lminus{}, simulated numerically with \emph{Optickle}. Figure\,(c) contains a simplified version of the intended balanced homodyne detector readout electronics. The difference current from two matched, high quantum efficiency photodetectors is amplified via a transimpedance op-amp stage, with this signal representing the differential velocity of the arm cavity mirrors (see Equation\,\ref{eq:asymdarmbhdresponse}).}
 %   \end{figure}
 % 
@@ -264,41 +275,22 @@ The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in O
   \caption{\label{fig:optimal-filters}Optimal filters to combine the BHD and PDH signals for different values of \MINT{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the BHD signal with respect to the PDH signal before the two are combined, for different \MINT{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the PDH signal. For all values of \MINT{} shown, the optimal combination involves suppressing the BHD signal with respect to the PDH at frequencies below around \SI{1}{\kilo\hertz}; equivalently, the PDH signal must be amplified with respect to the BHD signal in the same band, an example of which is presented in Section\,\ref{sec:combined-filter}.}
 \end{figure}
 
-% \section{\label{sec:noise-budget}Noise budget}
-% 
-%   In order to show that quantum noise is reduced with respect to an equivalent Michelson interferometer, the design of the proof-of-concept \ssm{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique, each anticipated significant source of noise has been estimated and projected into differential mode displacement-equivalent noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The projection requires that the characteristics of the length sensing and control loop be well defined. A detailed description of the interferometer's optomechanics, signal extraction, control law and suspension and actuator dynamics is provided in Appendix\,\ref{app:control-scheme}, while the computed noise budget for the differential mode is presented in Figure\,\ref{fig:noise-budget}.
-%   
-%   \begin{figure}
-%     \includegraphics[width=\columnwidth]{graphics/dynamic/noise-budget.pdf}
-%     \caption{\label{fig:noise-budget}\ssm{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the PDH readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band.}
-%   \end{figure}
-%   
-%   The sensitivity between \SI{100}{\hertz} and \SI{700}{\hertz}, shaded in blue, is the quantum noise limited measurement band. This band is constrained from below by test mass suspension mechanical mode cross-couplings (not shown) and from above by the first violin mode of the ETM suspensions. Suspension thermal noise is the second highest noise source present in this band and is at most a factor of \SI{2.3}{} below quantum noise, allowing a careful direct measurement of quantum radiation pressure noise to be made in this region. The contribution to the quantum noise from the PDH feedback is far below the limiting quantum noise, showing that the use of the displacement readout as part of the combined filter presented in Section\,\ref{sec:combined-filter} does not significantly affect the sensitivity of the \ssm{} in the desired band.
-% 
-% \section{\label{sec:summary}Summary}
-%   
-%   We have demonstrated that positional drifts of the cavity mirrors in the proof-of-concept \ssm{} at low frequencies due to sensing noise lead to an inability to control the cavity mirrors over time scales longer than a few hours. We have shown that this drift can be suppressed by taking a small amount of light from the path between the arm cavities to provide a displacement readout, and that this does not significantly affect the sensitivity of the main, velocity readout. A combination of the displacement and velocity readouts provides a suitable error signal for the control of the arm cavity differential mode at all relevant frequencies without spoiling the quantum non-demolition effect at higher frequencies, facilitating measurements with arbitrary integration time and allowing the \ssm{} to reach its design sensitivity.
-%   
-%   Since the main readout of any interferometer primarily sensitive to velocity will encounter the problem of vanishing signal in the presence of flat or increasing sensing noise at low frequencies, we believe the solution presented in this work is applicable to any audio-band speed-meter.
-% 
-% \begin{acknowledgments}
-%   The authors would like to thank members of the LIGO, Virgo and KAGRA scientific collaborations for fruitful discussions, and in particular Chris Wipf and Matt Evans. The presented work was made possible by support grants from the European Research Council (ERC-2012-StG: 307245), the Science and Technologies Facility Council (ST/L000946/1 and ST/K502005/1), the International Max Planck Partnership and ET-RD.
-%   
-%   This document has been assigned LIGO identifier P1500276.
-% \end{acknowledgments}
-% 
-% \appendix
-% 
-% \section{\label{app:required-control}Required control}
-%   
-%   The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \ssm{}. Using the parameters listed in Appendix\,\ref{app:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
-%   
-%   \begin{equation}
-%     \frac{\Delta L_{\left(-\right)}}{L_{\textrm{RT}}} = \frac{\Delta f}{f_{0}},
-%   \end{equation}
-%   with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the requirement for the \ssm{} is that the residual motion of the mirrors must be less than \SI{3.5e-13}{\meter}. This uses the assumption that the frequency fluctuations $\Delta f$ fall within \SI{1}{\percent} of the arm cavity full-width half-maxima\textemdash a common heuristic method used to ensure that technical noise sources do not couple strongly to the gravitational wave channel.
-%   
-%   As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The above requirement, however, is sufficient to highlight the problem of velocity-only control as shown in Section\,\ref{sec:velocity-control}.
+\section{\label{sec:noise-budget}Noise budget}
+
+In order to show that quantum noise is reduced with respect to an equivalent Michelson interferometer, the design of the proof-of-concept \SSM{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique, each anticipated significant source of noise has been estimated and projected into differential mode displacement-equivalent noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The projection requires that the characteristics of the length sensing and control loop be well defined. A detailed description of the interferometer's optomechanics, signal extraction, control law and suspension and actuator dynamics is provided in Appendix\,\ref{app:control-scheme}, while the computed noise budget for the differential mode is presented in Figure\,\ref{fig:noise-budget}.
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-speedmeter-noise-budget.pdf}
+  \caption{\label{fig:noise-budget}\SSM{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the PDH readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band.}
+\end{figure}
+
+The sensitivity between \SI{100}{\hertz} and \SI{700}{\hertz}, shaded in \checkme{blue}, is the quantum noise limited measurement band. This band is constrained from below by test mass suspension mechanical mode cross-couplings (not shown) and from above by the first violin mode of the ETM suspensions. Suspension thermal noise is the second highest noise source present in this band and is at most a factor of \SI{2.3}{} below quantum noise, allowing a careful direct measurement of quantum radiation pressure noise to be made in this region. The contribution to the quantum noise from the PDH feedback is far below the limiting quantum noise, showing that the use of the displacement readout as part of the combined filter presented in Section\,\ref{sec:combined-filter} does not significantly affect the sensitivity of the \SSM{} in the desired band.
+
+\section{\label{sec:summary}Summary}
+
+We have demonstrated that positional drifts of the cavity mirrors in the proof-of-concept \SSM{} at low frequencies due to sensing noise lead to an inability to control the cavity mirrors over time scales longer than a few hours. We have shown that this drift can be suppressed by taking a small amount of light from the path between the arm cavities to provide a displacement readout, and that this does not significantly affect the sensitivity of the main, velocity readout. A combination of the displacement and velocity readouts provides a suitable error signal for the control of the arm cavity differential mode at all relevant frequencies without spoiling the quantum non-demolition effect at higher frequencies, facilitating measurements with arbitrary integration time and allowing the \SSM{} to reach its design sensitivity.
+
+Since the main readout of any interferometer primarily sensitive to velocity will encounter the problem of vanishing signal in the presence of flat or increasing sensing noise at low frequencies, we believe the solution presented in this work is applicable to any audio-band speed-meter.
 % 
 % \section{\label{app:optickle}Calculation of field transfer matrix}
 % 
