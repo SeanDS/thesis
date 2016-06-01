@@ -99,7 +99,7 @@ In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravi
 
 \section{\label{app:required-control}Required controller precision}
 
-The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \ssm{}. Using the parameters listed in Appendix\,\ref{app:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
+The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \SSM{}. Using the parameters listed in Appendix\,\ref{app:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
 
 \begin{equation}
   \frac{\Delta L_{\left(-\right)}}{L_{\textrm{RT}}} = \frac{\Delta f}{f_{0}},
@@ -190,12 +190,18 @@ As such, the estimated rms displacement shown in Figure\,\ref{fig:sensing-noise-
  
 \section{\label{sec:mixed-control}Velocity-displacement control}
    
-Light from each counter-propagating mode is incident upon the inter-cavity steering mirror \MINT{}, and as such this is a natural port in which to separate the modes and sense the motion of each arm cavity (see the shaded blue region of Figure\,\ref{fig:simplified-speedmeter-layout}). Using RF modulation, for instance \emph{via} the Pound-Drever-Hall (\gls{PDH}) technique \cite{Drever1983}, it is possible to obtain a displacement error signal for each cavity that, unlike the velocity signal from the \gls{BHD}, has flat response at \gls{DC}, with a similar cavity pole frequency. The individual cavity \gls{PDH} signals can be mixed to obtain a measurement of \LMINUS{}, and the frequency dependence of the signal $s_{\textrm{PDH}}$ is, following ref.\,\cite{Kimble2001}, given by:
+Light from each counter-propagating mode is incident upon the inter-cavity steering mirror \MINT{}, and as such this is a natural port in which to separate the modes and sense the motion of each arm cavity (see the shaded blue region of Figure\,\ref{fig:simplified-speedmeter-layout}). Using RF modulation, for instance \emph{via} the Pound-Drever-Hall (\gls{PDH}) technique \cite{Drever1983}, it is possible to obtain a displacement error signal for each cavity that, unlike the velocity signal from the \gls{BHD}, has flat response at \gls{DC}, with a similar cavity pole frequency (see Figure\,\ref{fig:pdh-response}). The individual cavity \gls{PDH} signals can be mixed to obtain a measurement of \LMINUS{}, and the frequency dependence of the signal $s_{\textrm{PDH}}$ is, following ref.\,\cite{Kimble2001}, given by:
 \begin{equation}
   \label{eq:m9darmpdhresponse}
   s_{\textrm{PDH}} \left( \Omega \right) \propto \sqrt{\frac{\gamma_{\textrm{arm}}}{\left(\Omega^2 + \gamma_{\textrm{arm}}^2 \right)}} L_{\left(-\right)},
 \end{equation}
 ignoring again the effect of losses and constant terms as with Equation \ref{eq:asymdarmbhdresponse}. Note that for $\Omega \ll \gamma_{\textrm{arm}}$, the response is flat as expected for a displacement measurement and as such the PDH readout offers a suitable signal to sense \LMINUS{} at low frequencies.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-pdh-response.pdf}
+  \caption{\label{fig:pdh-response}blah}
+\end{figure}
 
 \subsection{\label{sec:combined-filter}Combined filter}
 
@@ -302,7 +308,7 @@ Since the main readout of any interferometer primarily sensitive to velocity wil
 %   
 %   \begin{figure*}
 %     \includegraphics[width=0.9\textwidth]{graphics/dynamic/speedmeter-control-loop.pdf}
-%     \caption{\label{fig:control-loop}\ssm{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \lminus{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating brownian and suspension thermal noise is injected at the input to the interferometer plant.}
+%     \caption{\label{fig:control-loop}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \lminus{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating brownian and suspension thermal noise is injected at the input to the interferometer plant.}
 %   \end{figure*}
 %   
 %   The intended control loop schematic for the proof-of-concept experiment is shown in Figure\,\ref{fig:control-loop}. The ``fiducial'' section is well defined and is based on existing DAQ hardware and software, an implementation of the LIGO control and data system \cite{Bork2010}. The bottom section contains the blocks which have been modelled during the course of this work.
@@ -327,7 +333,7 @@ Since the main readout of any interferometer primarily sensitive to velocity wil
 %   
 %   \begin{figure}
 %     \includegraphics[width=\columnwidth]{graphics/dynamic/suspension-crossover.pdf}
-%     \caption{\label{fig:suspension-crossover}Simulated proof-of-principle \ssm{} ETM suspension open loop transfer functions showing the difference in gain between the two test mass actuators. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The ESD actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. Second order low-pass notch filters are present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
+%     \caption{\label{fig:suspension-crossover}Simulated proof-of-principle \SSM{} ETM suspension open loop transfer functions showing the difference in gain between the two test mass actuators. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The ESD actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. Second order low-pass notch filters are present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
 %   \end{figure}
 %   
 %   Before being sent to the actuators, the driving filter outputs are converted into the analogue domain using appropriate DAC gain and noise injection stages. The conversion from voltage to force is represented by gain stages at the input to each suspension block.

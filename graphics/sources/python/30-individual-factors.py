@@ -29,7 +29,9 @@ colours = lf.Colours()
 # colours
 c0 = 'k' # force black
 c1 = colours.next()
+colours.next()
 c2 = colours.next()
+colours.next()
 c3 = colours.next()
 
 ax1.semilogy(curves[:, 0], curves[:, 1] / rotation, '--', color=c0, zorder=3)

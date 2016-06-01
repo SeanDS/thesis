@@ -22,7 +22,15 @@
 
 As described in Chapter\,\ref{c:speedmeter-control}, the \gls{ESD} is best employed as a high frequency actuator...
 
-\section{High voltage power supply}
+\section{Anticipated control loop}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-esd-experiment-control-loop.pdf}
+  \caption{\label{fig:esd-ansys}ESD experiment control loop.}
+\end{figure}
+
+\section{Actuator requirements}
 
 % ESD force gradient, from esd-ansys.pdf figure
 \newcommand{\ESDFORCEGRAD}{\SI{-3.68}{\nano\newton\per\volt}}
@@ -33,23 +41,22 @@ As described in Chapter\,\ref{c:speedmeter-control}, the \gls{ESD} is best emplo
 % ESD maximum force, read from esd-ansys.pdf figure (gradient * voltage doesn't work because there's a non-zero y-intercept)
 \newcommand{\ESDMAXFORCE}{\SI{-1.48e-6}{\micro\newton}}
 
-There are a number of requirements for the plate capacitor's power supply. Due to the nature of the load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates produce a field that will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT{}'s ETMs, the force gradient will be \ESDFORCEGRAD{}, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE{}, leading to a maximum mirror actuation force of \ESDMAXFORCE{}.
+There are a number of requirements for the power supply for the actuator electronics. Due to the nature of the actuator load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates produce a field that will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT{}'s \glspl{ETM}, the force gradient will be \ESDFORCEGRAD{}, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE{}, leading to a maximum mirror actuation force of \ESDMAXFORCE{}.
 % ESD volts -> force from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
 
-As this experiment is somewhat a technology demonstration for the main \SSMEXPT{}, it is worth keeping in mind its goals. For this reason, the power supply should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment. \note{Which means the displacement noise of the actuator should be less than xxx m/sqrt Hz}
+As this experiment is somewhat a technology demonstration for the main \SSMEXPT{}, it is worth keeping in mind its goals. For this reason, the actuator should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment. \note{Which means the displacement noise of the actuator should be less than xxx m/sqrt Hz}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-ansys.pdf}
-  \caption{Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
-  \label{fig:esd-ansys}
+  \caption{\label{fig:esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
 \end{figure}
 
-\subsubsection{\label{sec:hv-psu-tests}Tests}
+\subsection{Power supply}
+To avoid the use of costly commercial power supplies, an attempt was made to build a \SI{\pm450}{\volt} supply using a mains transformer. This is documented in Appendix\,\ref{a:hv-power-supply}, though this design was not able to drive reactive loads due to design issues not realised until testing. As the amplifier contains capacitors that charge upon switch-on, this represented a reactive load that caused damage to the sensitive \glspl{MOSFET} present within the power supply. Instead, commercial Delta Elektronika power supplies were acquired.
 
-A series of parallel resistors were connected to the output of the completed power supply and the output current was inferred from the voltage across these resistors. High power resistors were necessary in order to test the current limit circuitry: for current exceeding \SI{70}{\milli\ampere} at full output (\SI{720}{\volt} potential difference), the resistance must be approximately \SI{10.3}{\kilo\ohm} and so dissipated power is around \SI{50}{\watt}.
-
-A \SI{680}{\kilo\ohm}, \SI{1}{\watt} resistor was connected to check normal operating conditions, and this was observed to operate at the full output voltage for many minutes with negligible heating of the heat sink. For load \SI{<10.3}{\kilo\ohm}, the voltage output was observed to drop in order to maintain the current limit, as intended. This load was assembled from numerous \SI{25}{\watt} rated \SI{22}{\kilo\ohm} and \SI{50}{\kilo\ohm} resistors connected in parallel to provide \SI{10}{\kilo\ohm} or less. This parallel configuration allows the total power dissipation to be shared to avoid exceeding any one resistor's rating.
+\subsection{Noise budget}
+\note{The actuator must not add more noise than we already expect from seismic etc...}
 
 \section{\label{sec:hv-amplifier}High voltage amplifier}
 
@@ -67,8 +74,7 @@ The second modification made to the amplifier circuit was the addition of a safe
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-paschen.pdf}
-  \caption{The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \gls{ESD} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
-  \label{fig:esd-paschen}
+  \caption{\label{fig:esd-paschen}The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \gls{ESD} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
 \end{figure}
 
 To prevent the possibility of arcing, a cut-off function was added to the circuit to prevent high voltage output unless a voltage above \SI{5}{\volt} is applied across terminals on the enclosure (see Figure\,\ref{fig:amplifier-interlock}). This threshold was chosen based on the monitor output voltage provided by a pressure gauge attached to the vacuum system. The monitor output varies logarithmically from \SI{0}{} to \SI{10}{\volt} for pressures between standard atmosphere and ultra-high vacuum. A voltage above \SI{5}{\volt} indicates a pressure below \SI{e-5}{\milli\bar}.
@@ -78,8 +84,7 @@ To prevent the possibility of arcing, a cut-off function was added to the circui
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-amplifier-interlock.pdf}
-  \caption{\gls{HV} amplifier pressure interlock circuit. An op-amp (N8A) compares the voltage from a fixed \SI{5}{\volt} reference against an externally supplied voltage (``in'') intended to be connected to a pressure gauge. When the external voltage is lower than \SI{5}{\volt} (indicating suitably high vacuum), the op-amp's output is negative and transistor T14 is not open. In this scenario the current from the +\SI{15}{\volt} supply can flow through optoisolators N7, N9, N12 and N13 to provide the supply rails for the PA98s. When the external voltage is higher than \SI{5}{\volt} (indicating a pressure above the safe limit), the op-amp's output is positive. As the op-amp's output is fed back to the \emph{positive} input, the op-amp quickly reaches its positive supply rail, \SI{15}{\volt}. This operates T14 which opens a low-resistance path to ground for the current that would otherwise operate the optoisolators, effectively turning off the PA98s' supply rails.}
-  \label{fig:amplifier-interlock}
+  \caption{\label{fig:amplifier-interlock}HV amplifier pressure interlock circuit. An op-amp (N8A) compares the voltage from a fixed \SI{5}{\volt} reference against an externally supplied voltage (``in'') intended to be connected to a pressure gauge. When the external voltage is lower than \SI{5}{\volt} (indicating suitably high vacuum), the op-amp's output is negative and transistor T14 is not open. In this scenario the current from the +\SI{15}{\volt} supply can flow through optoisolators N7, N9, N12 and N13 to provide the supply rails for the PA98s. When the external voltage is higher than \SI{5}{\volt} (indicating a pressure above the safe limit), the op-amp's output is positive. As the op-amp's output is fed back to the \emph{positive} input, the op-amp quickly reaches its positive supply rail, \SI{15}{\volt}. This operates T14 which opens a low-resistance path to ground for the current that would otherwise operate the optoisolators, effectively turning off the PA98s' supply rails.}
 \end{figure}
 
 \subsection{\label{sec:signal-and-noise-paths}Signal and noise paths}

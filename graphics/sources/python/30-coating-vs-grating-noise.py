@@ -18,19 +18,19 @@ colours = lf.Colours()
 
 # figure and axis
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
-ax = plt.gca()
+ax1 = plt.gca()
 
 with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
-    ax.semilogx(noise_data[:, 0], noise_data[:, 2], '-o', color=colours.next())
-    ax.semilogx(noise_data[:, 0], noise_data[:, 3], '--', color=colours.next())
+    ax1.semilogx(noise_data[:, 0], noise_data[:, 2], '-o', color=colours.next())
+    ax1.semilogx(noise_data[:, 0], noise_data[:, 3], '--', color=colours.next())
     
-    ax.vlines(0.0000043, 0, 15e-22, colors=colours.next(), linestyles='dashed', zorder=2)
+    ax1.vlines(0.0000043, 0, 15e-22, colors=colours.next(), linestyles='dashed', zorder=2)
 
-ax.set_ylim([0, 15e-22])
-ax.grid(True)
-ax.set_xlabel('Transmissivity')
-ax.set_ylabel('Displacement noise [m / sqrt(Hz)]')
-legend1 = ax.legend(['Dielectric coating stack', 'Grating', 'Advanced LIGO ETM'])
+ax1.set_ylim([0, 15e-22])
+ax1.grid(True)
+ax1.set_xlabel('Transmissivity')
+ax1.set_ylabel('Displacement noise [m / sqrt(Hz)]')
+legend1 = ax1.legend(['Dielectric coating stack', 'Grating', 'Advanced LIGO ETM'])
 
 fig.tight_layout()
 
