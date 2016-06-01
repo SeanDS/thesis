@@ -120,6 +120,8 @@ $(GFXGENPY)/30-servo-tf.pdf: $(DATAGENMAT)/30-servo-tf.csv
 
 $(GFXGENPY)/50-bhd-response.pdf: $(DATA)/50-bhd-response.csv
 
+$(GFXGENPY)/50-pdh-response.pdf: $(DATA)/50-pdh-response.csv
+
 $(GFXGENPY)/50-op-amp-noise-time-series.pdf: $(DATA)/50-op-amp-noise-time-series-reduced.csv $(DATA)/50-op-amp-null-time-series-reduced.csv $(DATA)/50-op-amp-temperature-time-series-reduced.csv
 
 $(GFXGENPY)/50-op-amp-noise-spectrum.pdf: $(DATA)/50-op-amp-noise-spectrum-reduced.csv $(DATA)/50-op-amp-null-spectrum-reduced.csv
