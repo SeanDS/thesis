@@ -177,7 +177,7 @@ $(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv: $(DATASCRMAT)/createWhiteni
 # delete all files used to compile document, except its source text and figures
 .PHONY: clean
 clean:
-	@rm -f *.log *.ist *.glsdefs *.acn *.bak *.bbl *.blg *.idx *.toc *.out *.run.xml *-blx.bib *.fdb_latexmk *.fls *.tex.backup *.lof *.lot *.cb* *~ *.aux
+	@rm -f *.log *.ist *.glsdefs *.acn *.bak *.bbl *.blg *.idx *.toc *.out *.run.xml *-blx.bib *.fdb_latexmk *.fls *.tex.backup *.lof *.lot *.cb* *~ *.aux *.acr *.alg
 
 .PHONY: superclean
 superclean: clean
