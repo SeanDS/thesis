@@ -59,6 +59,9 @@ Reduction of quantum noise below the SQL in a particular optical configuration i
 The method on which we focus employs an interferometer topology intrinsically sensitive to a QND observable \cite{Danilishin2012}. The measurement of velocity, itself approximately proportional to the QND observable of the free test mass momentum, is one way in which a reduction in quantum radiation pressure noise can be achieved. A proof-of-concept experiment is under way at the University of Glasgow to demonstrate an audio-band reduction of quantum radiation pressure noise in a \SSM{} topology over an equivalent Michelson design \cite{Graef2014}. This topology is being considered as an alternative to the Einstein Telescope's Michelson interferometer design \cite{MuellerEbhardt2009a, Voronchev2015}. The topology under investigation in the proof-of-concept experiment utilises a zero-area Sagnac interferometer with the addition of arm cavities based on the concept presented in ref.\,\cite{Chen2003}. By design, this interferometer produces a signal at the beam splitter's output port proportional to differential arm cavity mirror \emph{velocity}, in contrast to the \emph{displacement}-proportional signal sensed in the Michelson topology.
 
 The presence of arm cavities within the proof-of-concept \SSM{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers, and this aspect will be addressed in the following work. In Section\,\ref{sec:velocity-control} we describe in more detail the proof-of-concept \SSM{} experiment and its control requirements. We then describe a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the control challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, and in Section\,\ref{sec:noise-budget} we present a noise budget of the \SSM{} using the alternative control strategy. A summary is provided in Section\,\ref{sec:summary}.
+
+\section{Degrees of freedom of the \SSM{}}
+\note{Specify DOFs, show TFs to prove it}
  
 \section{\label{sec:velocity-control}Velocity control}
    
@@ -108,7 +111,7 @@ with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the r
 
 As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The above requirement, however, is sufficient to highlight the problem of velocity-only control as shown in Section\,\ref{sec:velocity-control}.
 
-%     \caption{\ssm{} optical layout and extraction of the BHD signal sensitive to the arm cavity differential mode. Figure\,(a) contains a simplified layout of the experiment. Light from the input optics (not shown) is incident upon the main beam splitter. The shaded green area shows the BHD extracting the signal from the main beam splitter's output port (see Section\,\ref{sec:bhd}). The triangular arm cavities are shown in the shaded grey area, and mirror \MINT{} couples light between them. Two additional photodetectors (shaded blue area) are present behind \MINT{} for individual arm cavity signal extraction. The sensing and feedback signal paths are described in detail in Sections\,\ref{sec:velocity-control} and \ref{sec:mixed-control}. Figure\,(b) contains the frequency response of the BHD to \lminus{}, simulated numerically with \emph{Optickle}. Figure\,(c) contains a simplified version of the intended balanced homodyne detector readout electronics. The difference current from two matched, high quantum efficiency photodetectors is amplified via a transimpedance op-amp stage, with this signal representing the differential velocity of the arm cavity mirrors (see Equation\,\ref{eq:asymdarmbhdresponse}).}
+%     \caption{\ssm{} optical layout and extraction of the BHD signal sensitive to the arm cavity differential mode. Figure\,(a) contains a simplified layout of the experiment. Light from the input optics (not shown) is incident upon the main beam splitter. The shaded green area shows the BHD extracting the signal from the main beam splitter's output port (see Section\,\ref{sec:bhd}). The triangular arm cavities are shown in the shaded grey area, and mirror \MINT{} couples light between them. Two additional photodetectors (shaded blue area) are present behind \MINT{} for individual arm cavity signal extraction. The sensing and feedback signal paths are described in detail in Sections\,\ref{sec:velocity-control} and \ref{sec:mixed-control}. Figure\,(b) contains the frequency response of the BHD to \LINUS{}, simulated numerically with \emph{Optickle}. Figure\,(c) contains a simplified version of the intended balanced homodyne detector readout electronics. The difference current from two matched, high quantum efficiency photodetectors is amplified via a transimpedance op-amp stage, with this signal representing the differential velocity of the arm cavity mirrors (see Equation\,\ref{eq:asymdarmbhdresponse}).}
 %   \end{figure}
 % 
 \subsection{\label{sec:bhd}Balanced homodyne detection}
@@ -176,7 +179,7 @@ The noise projection for \LMINUS{}, calculated using the numerical optomechanica
   \caption{\label{fig:readout-noise-velocity-rms}blah}
 \end{figure}
 
-%       \caption{Noise associated with the velocity readout scheme. The spectral density in (a) shows the noise associated with the readout of the signal representing \lminus{} using the BHD. The significant noise sources associated with sensing and feedback are shown. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics. The time series in (b) shows the root-mean-square arm cavity mirror motion due to readout noise over one day. Beyond a few hours the motion is greater than the control requirement presented in Appendix\,\ref{app:required-control}}
+%       \caption{Noise associated with the velocity readout scheme. The spectral density in (a) shows the noise associated with the readout of the signal representing \LMINUS{} using the BHD. The significant noise sources associated with sensing and feedback are shown. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics. The time series in (b) shows the root-mean-square arm cavity mirror motion due to readout noise over one day. Beyond a few hours the motion is greater than the control requirement presented in Appendix\,\ref{app:required-control}}
 %     \end{figure}
 
 Although for sensing noise we only consider electronic and shot noise, in the experiment there will be other contributing forms of time-varying offset present upon the \gls{BHD} error signal:
@@ -186,7 +189,7 @@ Although for sensing noise we only consider electronic and shot noise, in the ex
   \item thermoelectric potentials and op-amp drift in pre-amplifier and whitening electronics;
   \item any other time-varying effects.
 \end{itemize}
-As such, the estimated rms displacement shown in Figure\,\ref{fig:sensing-noise-velocity-rms} represents a ``best case'' scenario where the op-amp's electronic noise is the dominant effect at low frequencies, and this drift becomes unacceptably large after a few hours. To allow for long term cavity stability it is essential for the error signal to contain a signal significantly above the electronic noise at low frequencies. In the next section we present a strategy for obtaining an error signal of suitable magnitude across the entire control bandwidth.
+As such, the estimated rms displacement shown in Figure\,\ref{fig:readout-noise-velocity-rms} represents a ``best case'' scenario where the op-amp's electronic noise is the dominant effect at low frequencies, and this drift becomes unacceptably large after a few hours. To allow for long term cavity stability it is essential for the error signal to contain a signal significantly above the electronic noise at low frequencies. In the next section we present a strategy for obtaining an error signal of suitable magnitude across the entire control bandwidth.
  
 \section{\label{sec:mixed-control}Velocity-displacement control}
    
@@ -275,15 +278,105 @@ where $S_{n_{1},n_{1}}$ is the noise power spectral density at the \gls{BHD} por
 \end{equation}
 The reflectivity of \MINT{} is implicit in both the field-to-field and mode-to-field transfer matrices for each signal sideband, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, and as such $\alpha_{\textrm{opt}}$ depends on the value of \MINT{}.
 
-The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in Optickle by default, and so some modifications to the code were necessary (see Appendix\,\ref{app:optickle} and \cite{Leavey2016}). The effect of \MINT{}'s reflectivity on $\alpha_{\textrm{opt}}$ is shown in Figure\,\ref{fig:optimal-filters}. Note that, because it is calculated with precomputed spectral densities and not tested for stability, the filter predicted by Equation\,\ref{eq:optimal-filter} is not necessarily realisable. A causal Wiener filter has previously been calculated for single-readout interferometers \cite{MuellerEbhardt2009, Miao2010}, but a similar calculation for more than one readout has not yet been investigated. While Equation\,\ref{eq:optimal-filter} enables the lowest noise spectral density for the measurement of the motion of the differential mode of the \SSM{}, in the case of the proof-of-concept experiment simply combining the \gls{BHD} and \gls{PDH} signals with \gls{DC} gain, as suggested in Section\,\ref{sec:combined-filter}, is close to optimal. The difference in response gradients above the cavity pole frequency prevents the \gls{PDH} signal from contaminating the \gls{QND} effect in the intended measurement band. The calculation presented in this section, however, is a general solution for any system with multiple readouts for a single variable and may prove useful for future gravitational wave detectors utilising \gls{QND} techniques.
+The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in Optickle by default, and so some modifications to the code were necessary (see Appendix\,\ref{sec:optickle-field-tfs}). The effect of \MINT{}'s reflectivity on $\alpha_{\textrm{opt}}$ is shown in Figure\,\ref{fig:optimal-filters}. Note that, because it is calculated with precomputed spectral densities and not tested for stability, the filter predicted by Equation\,\ref{eq:optimal-filter} is not necessarily realisable. A causal Wiener filter has previously been calculated for single-readout interferometers \cite{MuellerEbhardt2009, Miao2010}, but a similar calculation for more than one readout has not yet been investigated. While Equation\,\ref{eq:optimal-filter} enables the lowest noise spectral density for the measurement of the motion of the differential mode of the \SSM{}, in the case of the proof-of-concept experiment simply combining the \gls{BHD} and \gls{PDH} signals with \gls{DC} gain, as suggested in Section\,\ref{sec:combined-filter}, is close to optimal. The difference in response gradients above the cavity pole frequency prevents the \gls{PDH} signal from contaminating the \gls{QND} effect in the intended measurement band. The calculation presented in this section, however, is a general solution for any system with multiple readouts for a single variable and may prove useful for future gravitational wave detectors utilising \gls{QND} techniques.
 \begin{figure}
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-optimal-filters.pdf}
   \caption{\label{fig:optimal-filters}Optimal filters to combine the BHD and PDH signals for different values of \MINT{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the BHD signal with respect to the PDH signal before the two are combined, for different \MINT{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the PDH signal. For all values of \MINT{} shown, the optimal combination involves suppressing the BHD signal with respect to the PDH at frequencies below around \SI{1}{\kilo\hertz}; equivalently, the PDH signal must be amplified with respect to the BHD signal in the same band, an example of which is presented in Section\,\ref{sec:combined-filter}.}
 \end{figure}
 
+\section{\label{ssm-control-scheme}Control scheme}  
+The intended control loop schematic for the proof-of-concept experiment is shown in Figure\,\ref{fig:ssm-control-loop}. The ``fiducial'' section is well defined and is based on existing DAQ hardware and software, an implementation of the LIGO control and data system \cite{Bork2010}. The bottom section contains the blocks which have been modelled during the course of this work.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop.pdf}
+  \caption{\label{fig:ssm-control-loop}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \LMINUS{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant.}
+\end{figure}
+
+All blocks shown are frequency dependent matrices with one or more inputs and outputs. The green blocks represent simple filters possessing single inputs and outputs. Each filter multiplies its input by a transfer function in order to calculate its output. The blue blocks represent transfer matrices, which are multiple-input and multiple-output filters. The grey triangles represent dc gain, and are equivalent to simple filters without frequency-dependent response. The undulating orange arrows represent noise injection.
+
+\subsection{Sensing}
+
+The outputs from the interferometer block are probe signals modelled by Optickle for a given set of test mass displacement inputs. Quantum vacuum noise, also modelled by Optickle, is injected onto these signals. The BHD signal is calculated by taking the difference between the two homodyne probe signals, BHD A and BHD B. Each signal is passed through a quantum efficiency gain stage to represent the conversion of light power into photocurrent by the photodetector, and then through a transimpedance gain stage to convert the photocurrent into a voltage. The PDH signals receive additional gain due to RF demodulation. At this point, the signals are sent to the DAQ. Whitening filters ensure the signals are far above the noise of the ADCs. The noise associated with the conversion process is injected at this point. To prevent aliasing due to the ADC sample frequency, \SI{65536}{\hertz}, filters are employed to suppress signal content above around \SI{10}{\kilo\hertz}. The conversion from volts to digital counts within the ADCs is represented by a gain block for each channel.
+
+\subsubsection{Photodiode quantum efficiency}
+\note{A PD has quantum efficiency... state equation for voltage in terms of photocurrent and eta... discuss why we use high QE PDs for the BHD and not for the PDH...}
+
+\subsubsection{Photodetector readout}
+\note{Transimpedance chosen to match current and voltage noise... whitening filters chosen to boost signal above noise (see Ken's emails and labbook posts)}
+
+\subsection{Control}
+
+In the digital domain, dewhitening filters reverse the effect of the whitening filters to recover the original signals. At this point, the arm cavity displacement signal can be constructed by taking the difference between the individual PDH signals. This signal is then combined with the BHD's velocity signal via readout gain stages (as presented in Section\,\ref{sec:combined-filter}) which set the crossover frequency between velocity and displacement measurements. If an optimal filter were to be employed as shown in Section\,\ref{sec:optimal-filter}, these gain blocks would be filters.
+
+The unity gain frequency of the feedback system is set by the loop gain block. A filter is also present here to compensate the feedback signals for the shape of the interferometer's frequency response. The output from this filter is split into two signals to be applied differentially to ETMs $\textrm{M}_{\textrm{A}}^{\textrm{ETM 1}}$ and $\textrm{M}_{\textrm{B}}^{\textrm{ETM 1}}$, as shown in Figure\,\ref{fig:simplified-speedmeter-layout}. Actuator range can be further extended by splitting this feedback between the other mirrors in each cavity, but this is not modelled in this work. The signal applied to the $\textrm{M}_{\textrm{B}}^{\textrm{ETM 1}}$ suspension system is inverted in order to move the test masses differentially.
+
+\subsubsection{Interferometer compensation}
+\note{Basically whitening for the interferometer shape}
+
+\subsection{Driving}
+
+Each test mass's correction signal is passed through a set of driving filters representing the dynamics of each actuator. The ETMs are suspended from triple pendulums to provide sufficient isolation from seismic noise within the measurement band. In order to provide corrective actuation upon the test masses, voice coil actuators are present on the suspension stage immediately above each test mass in addition to (unsuspended) ESDs situated behind each test mass. The ESDs are sufficiently insensitive to seismic motion transverse to the test mass that they need not be suspended \cite{Wittel2015}. The ESDs' ability to actuate directly upon the test masses makes them suitable for high frequency corrections whereas the extensive range of the voice coils makes them suitable for the suppression of the dominating seismic noise below the measurement band.
+
+Each correction signal is passed through a gain hierarchy to split the feedback between the voice coil and ESD actuators. The open loop transfer functions for each actuator are shown in Figure\,\ref{fig:suspension-crossover}. The crossover frequency between the two actuators is \SI{18}{\hertz}.
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-etm-suspension-tfs.pdf}
+  \caption{\label{fig:suspension-crossover}Simulated proof-of-principle \SSM{} \gls{ETM} suspension open loop transfer functions showing the difference in gain between the two test mass actuators. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The \gls{ESD} actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. Second order low-pass notch filters are present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
+\end{figure}
+
+\subsubsection{ETM suspension gain heirarchy}
+\note{Discuss in much more detail the implementation of coil and ETM crossover - show TFs of the suspension from each stage to the test mass, and the actuators to the test mass, and talk about how the actuator filters were constructed from these}
+
+Before being sent to the actuators, the driving filter outputs are converted into the analogue domain using appropriate \gls{DAC} gain and noise injection stages. The conversion from voltage to force is represented by gain stages at the input to each suspension block.
+
+The suspension block contains three inputs, each representing a different passive filtering stage of the suspension system. These input signals are mapped to a single output representing the displacement of each \gls{ETM}, and these signals are fed back to the interferometer block, completing the loop.
+
+\subsection{Loop Gain}
+
+The open loop gain of the control system is shown in Figure\,\ref{fig:open-loop-gain}. The greatest gain is required in the region below \SI{10}{\hertz} where the test mass suspensions provide little to no isolation from seismic noise. Above this frequency the required gain decreases as other noise sources become dominant. The unity gain frequency is at \SI{350}{\hertz}.
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-controller-open-loop-gain.pdf}
+  \caption{\label{fig:open-loop-gain}Simulated \SSM{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
+  % phase margin calculated with script graphics/scripts/open-loop-gain/phaseMargin.py
+\end{figure}
+
+\section{\label{app:parameters}Experimental parameters}
+The parameters used in the simulations presented in this work are shown in Table\,\ref{tab:parameters}. Unless otherwise stated, the mirrors specified in the figures and simulations are assumed to have unity reflectivity. All listed transmissivities represent power, no substrate loss is assumed for any optic and all simulations have been performed using the plane-wave approximation.
+% FWHM, finesse etc. calculations from Finesse simulation for SSM with the 'maxtem 0' and 'trace 2' commands.
+
+\begin{table}
+  \centering
+  \begin{tabular}{ll}
+    \textbf{Parameter}   & \textbf{Fiducial value} \\
+    Laser wavelength $\lambda_{0}$        & \SI{1064}{\nano\meter} \\
+    Input power             & \SI{1.8}{\watt} \\
+    Round-trip cavity length $L_{\textrm{RT}}$ & \SI{2.83}{\meter} \\
+    \MINT{} transmissivity & \SI{e4}{} ppm \\
+    ITM transmissivity      & \SI{700}{} ppm                 \\
+    Arm cavity \gls{FWHM} & \SI{12.2}{\kilo\hertz} \\
+    Arm cavity finesse      & \SI{8663}{} \\
+    BHD quantum efficiency  & \SI{0.95}{\ampere\per\watt} \\
+    PDH quantum efficiency  & \SI{0.80}{\ampere\per\watt} \\
+    \RT{}                   & \SI{10}{\kilo\ohm} \\
+    PDH demodulation gain   & \SI{21}{\decibel} \\
+    ADC/DAC quantisation noise  & \SI{1.8}{\micro\volt\per\sqrthz} \\
+    ETM mass                & \SI{113}{\gram} \\
+    ETM fibres              & \SI{4}{} \\
+    ETM fibre diameter      & \SI{40}{\micro\meter} \\
+    ETM fibre length        & \SI{200}{\milli\meter} \\
+    ITM mass                & \SI{0.86}{\gram} \\
+    ITM fibres              & \SI{2}{} \\
+    ITM fibre diameter      & \SI{10}{\micro\meter} \\
+    ITM fibre length        & \SI{100}{\milli\meter} \\
+    Suspension vertical-to-horizontal coupling & \SI{0.01}{} \\
+  \end{tabular}
+  \caption{\label{tab:parameters}Experimental parameters. The properties for the suspensions and test masses are given in order for the reader to be able to reproduce the suspension thermal noise spectral density presented in Figure\,\ref{fig:noise-budget}.}
+\end{table}
+
 \section{\label{sec:noise-budget}Noise budget}
 
-In order to show that quantum noise is reduced with respect to an equivalent Michelson interferometer, the design of the proof-of-concept \SSM{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique, each anticipated significant source of noise has been estimated and projected into differential mode displacement-equivalent noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The projection requires that the characteristics of the length sensing and control loop be well defined. A detailed description of the interferometer's optomechanics, signal extraction, control law and suspension and actuator dynamics is provided in Appendix\,\ref{app:control-scheme}, while the computed noise budget for the differential mode is presented in Figure\,\ref{fig:noise-budget}.
+In order to show that quantum noise is reduced with respect to an equivalent Michelson interferometer, the design of the proof-of-concept \SSM{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique, each anticipated significant source of noise has been estimated and projected into differential mode displacement-equivalent noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The projection requires that the characteristics of the length sensing and control loop be well defined. A detailed description of the interferometer's optomechanics, signal extraction, control law and suspension and actuator dynamics is provided in Section,\ref{ssm-control-scheme}, while the computed noise budget for the differential mode is presented in Figure\,\ref{fig:noise-budget}.
 
 \begin{figure}
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-speedmeter-noise-budget.pdf}
@@ -297,90 +390,3 @@ The sensitivity between \SI{100}{\hertz} and \SI{700}{\hertz}, shaded in \checkm
 We have demonstrated that positional drifts of the cavity mirrors in the proof-of-concept \SSM{} at low frequencies due to sensing noise lead to an inability to control the cavity mirrors over time scales longer than a few hours. We have shown that this drift can be suppressed by taking a small amount of light from the path between the arm cavities to provide a displacement readout, and that this does not significantly affect the sensitivity of the main, velocity readout. A combination of the displacement and velocity readouts provides a suitable error signal for the control of the arm cavity differential mode at all relevant frequencies without spoiling the quantum non-demolition effect at higher frequencies, facilitating measurements with arbitrary integration time and allowing the \SSM{} to reach its design sensitivity.
 
 Since the main readout of any interferometer primarily sensitive to velocity will encounter the problem of vanishing signal in the presence of flat or increasing sensing noise at low frequencies, we believe the solution presented in this work is applicable to any audio-band speed-meter.
-% 
-% \section{\label{app:optickle}Calculation of field transfer matrix}
-% 
-%   By default, Optickle will only output the signal and noise on \emph{probes} defined within the system, where a probe is analogous to a photodetector with unity quantum efficiency. A probe signal is a superposition of the field amplitudes in a given location within the interferometer, where the exact linear combination of field amplitudes is determined by the type of probe. In the process of determining a probe signal, the quadrature sum of the field amplitudes immediately in front of the probe is computed. The phase information contained within these fields is lost in this process. Similarly, transfer functions from \emph{drives} (test mass modes within the interferometer) to probes are provided, but not transfer functions from drives to fields.
-%   
-%   In order to calculate the cross-correlation spectral density required for the calculation of the optimal filter in Section\,\ref{sec:optimal-filter}, the complex field and drive transfer matrices, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, must be extracted from Optickle indirectly. Optickle's calculation of the quantum noise at each probe within the interferometer uses field-to-field and drive-to-field matrices, but because the quantum noise and drive excitations are not necessarily unity, these matrices are not transfer matrices. In order to obtain $\mathbf{M}^{\textrm{ff}}$ the code which computes the quantum noise at each probe has to be modified to instead inject quantum noise at open ports with unity amplitude. Similarly, $\mathbf{R}$ can be computed by setting the drive amplitudes to unity. The modified source code is publicly available \cite{paperdata}.
-%   
-% \section{\label{app:control-scheme}Control scheme}
-%   
-%   \begin{figure*}
-%     \includegraphics[width=0.9\textwidth]{graphics/dynamic/speedmeter-control-loop.pdf}
-%     \caption{\label{fig:control-loop}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \lminus{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating brownian and suspension thermal noise is injected at the input to the interferometer plant.}
-%   \end{figure*}
-%   
-%   The intended control loop schematic for the proof-of-concept experiment is shown in Figure\,\ref{fig:control-loop}. The ``fiducial'' section is well defined and is based on existing DAQ hardware and software, an implementation of the LIGO control and data system \cite{Bork2010}. The bottom section contains the blocks which have been modelled during the course of this work.
-%   
-%   All blocks shown are frequency dependent matrices with one or more inputs and outputs. The green blocks represent simple filters possessing single inputs and outputs. Each filter multiplies its input by a transfer function in order to calculate its output. The blue blocks represent transfer matrices, which are multiple-input and multiple-output filters. The grey triangles represent dc gain, and are equivalent to simple filters without frequency-dependent response. The undulating orange arrows represent noise injection.
-%   
-%   \subsection{Sensing}
-%   
-%   The outputs from the interferometer block are probe signals modelled by Optickle for a given set of test mass displacement inputs. Quantum vacuum noise, also modelled by Optickle, is injected onto these signals. The BHD signal is calculated by taking the difference between the two homodyne probe signals, BHD A and BHD B. Each signal is passed through a quantum efficiency gain stage to represent the conversion of light power into photocurrent by the photodetector, and then through a transimpedance gain stage to convert the photocurrent into a voltage. The PDH signals receive additional gain due to RF demodulation. At this point, the signals are sent to the DAQ. Whitening filters ensure the signals are far above the noise of the ADCs. The noise associated with the conversion process is injected at this point. To prevent aliasing due to the ADC sample frequency, \SI{65536}{\hertz}, filters are employed to suppress signal content above around \SI{10}{\kilo\hertz}. The conversion from volts to digital counts within the ADCs is represented by a gain block for each channel.
-%   
-%   \subsection{Control}
-%   
-%   In the digital domain, dewhitening filters reverse the effect of the whitening filters to recover the original signals. At this point, the arm cavity displacement signal can be constructed by taking the difference between the individual PDH signals. This signal is then combined with the BHD's velocity signal via readout gain stages (as presented in Section\,\ref{sec:combined-filter}) which set the crossover frequency between velocity and displacement measurements. If an optimal filter were to be employed as shown in Section\,\ref{sec:optimal-filter}, these gain blocks would be filters.
-%   
-%   The unity gain frequency of the feedback system is set by the loop gain block. A filter is also present here to compensate the feedback signals for the shape of the interferometer's frequency response. The output from this filter is split into two signals to be applied differentially to ETMs $\textrm{M}_{\textrm{A}}^{\textrm{ETM 1}}$ and $\textrm{M}_{\textrm{B}}^{\textrm{ETM 1}}$, as shown in Figure\,\ref{fig:simplified-speedmeter-layout}. Actuator range can be further extended by splitting this feedback between the other mirrors in each cavity, but this is not modelled in this work. The signal applied to the $\textrm{M}_{\textrm{B}}^{\textrm{ETM 1}}$ suspension system is inverted in order to move the test masses differentially.
-%   
-%   \subsection{Driving}
-%   
-%   Each test mass's correction signal is passed through a set of driving filters representing the dynamics of each actuator. The ETMs are suspended from triple pendulums to provide sufficient isolation from seismic noise within the measurement band. In order to provide corrective actuation upon the test masses, voice coil actuators are present on the suspension stage immediately above each test mass in addition to (unsuspended) ESDs situated behind each test mass. The ESDs are sufficiently insensitive to seismic motion transverse to the test mass that they need not be suspended \cite{Wittel2015}. The ESDs' ability to actuate directly upon the test masses makes them suitable for high frequency corrections whereas the extensive range of the voice coils makes them suitable for the suppression of the dominating seismic noise below the measurement band.
-%   
-%   Each correction signal is passed through a gain hierarchy to split the feedback between the voice coil and ESD actuators. The open loop transfer functions for each actuator are shown in Figure\,\ref{fig:suspension-crossover}. The crossover frequency between the two actuators is \SI{18}{\hertz}.
-%   
-%   \begin{figure}
-%     \includegraphics[width=\columnwidth]{graphics/dynamic/suspension-crossover.pdf}
-%     \caption{\label{fig:suspension-crossover}Simulated proof-of-principle \SSM{} ETM suspension open loop transfer functions showing the difference in gain between the two test mass actuators. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The ESD actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. Second order low-pass notch filters are present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
-%   \end{figure}
-%   
-%   Before being sent to the actuators, the driving filter outputs are converted into the analogue domain using appropriate DAC gain and noise injection stages. The conversion from voltage to force is represented by gain stages at the input to each suspension block.
-%   
-%   The suspension block contains three inputs, each representing a different passive filtering stage of the suspension system. These input signals are mapped to a single output representing the displacement of each ETM, and these signals are fed back to the interferometer block, completing the loop.
-%   
-%   \subsection{Loop Gain}
-%   
-%   The open loop gain of the control system is shown in Figure\,\ref{fig:open-loop-gain}. The greatest gain is required in the region below \SI{10}{\hertz} where the test mass suspensions provide little to no isolation from seismic noise. Above this frequency the required gain decreases as other noise sources become dominant. The unity gain frequency is at \SI{350}{\hertz}.
-%   
-%   \begin{figure}
-%     \includegraphics[width=\columnwidth]{graphics/dynamic/open-loop-gain.pdf}
-%     \caption{\label{fig:open-loop-gain}Simulated \ssm{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
-%     % phase margin calculated with script graphics/scripts/open-loop-gain/phaseMargin.py
-%   \end{figure}
-% 
-% \section{\label{app:parameters}Experimental parameters}
-% 
-%   The parameters used in the simulations presented in this work are shown in Table\,\ref{tab:parameters}. Unless otherwise stated, the mirrors specified in the figures and simulations are assumed to have unity reflectivity. All listed transmissivities represent power, no substrate loss is assumed for any optic and all simulations have been performed using the plane-wave approximation.
-%   % FWHM, finesse etc. calculations from Finesse simulation for SSM with the 'maxtem 0' and 'trace 2' commands.
-%   
-%   \begin{table}
-%     \begin{ruledtabular}
-%       \begin{tabular}{ll}
-% 	\textbf{Parameter}   & \textbf{Fiducial value} \\
-% 	Laser wavelength $\lambda_{0}$        & \SI{1064}{\nano\meter} \\
-% 	Input power             & \SI{1.8}{\watt} \\
-% 	Round-trip cavity length $L_{\textrm{RT}}$ & \SI{2.83}{\meter} \\
-% 	\MINT{} transmissivity & \SI{e4}{} ppm \\
-% 	ITM transmissivity      & \SI{700}{} ppm                 \\
-% 	Arm cavity full-width half-maximum & \SI{12.2}{\kilo\hertz} \\
-% 	Arm cavity finesse      & \SI{8663}{} \\
-% 	BHD quantum efficiency  & \SI{0.95}{\ampere\per\watt} \\
-% 	PDH quantum efficiency  & \SI{0.80}{\ampere\per\watt} \\
-% 	\rt{}                   & \SI{10}{\kilo\ohm} \\
-% 	PDH demodulation gain   & \SI{21}{\decibel} \\
-% 	ADC/DAC quantisation noise  & \SI{1.8}{\micro\volt\per\sqrthz} \\
-% 	ETM mass                & \SI{113}{\gram} \\
-% 	ETM fibres              & \SI{4}{} \\
-% 	ETM fibre diameter      & \SI{40}{\micro\meter} \\
-% 	ETM fibre length        & \SI{200}{\milli\meter} \\
-% 	ITM mass                & \SI{0.86}{\gram} \\
-% 	ITM fibres              & \SI{2}{} \\
-% 	ITM fibre diameter      & \SI{10}{\micro\meter} \\
-% 	ITM fibre length        & \SI{100}{\milli\meter} \\
-% 	Suspension vertical-to-horizontal coupling & \SI{0.01}{} \\
-%       \end{tabular}
-%       \caption{\label{tab:parameters}Experimental parameters. The properties for the suspensions and test masses are given in order for the reader to be able to reproduce the suspension thermal noise spectral density presented in Figure\,\ref{fig:noise-budget}.}
-%     \end{ruledtabular}
-%     \end{table}

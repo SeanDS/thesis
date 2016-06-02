@@ -10,7 +10,7 @@ How to build simulations in both tools...
 \section{\label{sec:finesse-sim}Finesse}
 
 \section{\label{sec:optickle-sim}Optickle}
-Optickle is a tool primarily designed to produce a series of matrices as outputs. As it is based in \MATLAB, it is possible to study the behaviour of the code to determine its capabilities and limitations. This section attempts to explain the basic operation of the primary feature that Optickle provides: the \lstinline!tickle! function.
+Optickle is a tool primarily designed to produce a series of matrices as outputs. As it is based in \MATLAB{}, it is possible to study the behaviour of the code to determine its capabilities and limitations. This section attempts to explain the basic operation of the primary feature that Optickle provides: the \lstinline!tickle! function.
 
 In order to simulate an interferometer, an optical environment is created into which optics, sensors and links between optics may be defined. The primary output of Optickle is a transfer matrix mapping \emph{drives} of each optic in the system to probes within that system. A drive is simply a degree of freedom of an optic, such as longitudinal motion of a mirror. Probes are the simulation equivalent of photodetectors, but can be lossless and can perform arbitrary RF demodulations. Another useful output is the quantum noise spectral density at a probe. Dividing the noise spectral density at a probe by a suitable linear combination of optical transfer functions--a degree of freedom of the interferometer---results in the probe's noise-to-signal ratio, or sensitivity, to that degree of freedom.
 
@@ -62,6 +62,11 @@ The operation of calculating the probe signals from the field amplitudes in the 
 
 \subsection{Probe quantum noise}
 ...
+
+\section{\label{sec:optickle-field-tfs}Calculation of field transfer matrices}
+By default, Optickle will only output the signal and noise on \emph{probes} defined within the system, where a probe is analogous to a photodetector with unity quantum efficiency. A probe signal is a superposition of the field amplitudes in a given location within the interferometer, where the exact linear combination of field amplitudes is determined by the type of probe. In the process of determining a probe signal, the quadrature sum of the field amplitudes immediately in front of the probe is computed. The phase information contained within these fields is lost in this process. Similarly, transfer functions from \emph{drives} (test mass modes within the interferometer) to probes are provided, but not transfer functions from drives to fields.
+
+In order to calculate the cross-correlation spectral density required for the calculation of the optimal filter in Section\,\ref{sec:optimal-filter}, the complex field and drive transfer matrices, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, must be extracted from Optickle indirectly. Optickle's calculation of the quantum noise at each probe within the interferometer uses field-to-field and drive-to-field matrices, but because the quantum noise and drive excitations are not necessarily unity, these matrices are not transfer matrices. In order to obtain $\mathbf{M}^{\textrm{ff}}$ the code which computes the quantum noise at each probe has to be modified to instead inject quantum noise at open ports with unity amplitude. Similarly, $\mathbf{R}$ can be computed by setting the drive amplitudes to unity. The modified source code is publicly available \cite{controlspaperdata}.
 
 \section{Reflection phase convention}
 \label{a:reflection-phase}

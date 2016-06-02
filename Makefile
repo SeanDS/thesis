@@ -134,6 +134,10 @@ $(GFXGENPY)/50-readout-noise-mixed.pdf: $(DATA)/50-sensing-noise-velocity.csv $(
 
 $(GFXGENPY)/50-readout-noise-mixed-rms.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
 
+$(GFXGENPY)/50-etm-suspension-tfs.pdf: $(DATA)/50-etm-suspension-tfs.csv
+
+$(GFXGENPY)/50-controller-open-loop-gain.pdf: $(DATA)/50-controller-open-loop-gain.csv
+
 $(GFXGENPY)/50-optimal-filters.pdf: $(DATA)/50-optimal-filters.csv
 
 $(GFXGENPY)/50-speedmeter-noise-budget.pdf: $(DATA)/50-speedmeter-noise-budget.csv
