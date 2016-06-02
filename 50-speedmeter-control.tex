@@ -5,6 +5,8 @@
 
 % \note{Copy and paste paper, but expand on some of the information. For instance, discuss more detail about the suspension servo design, each individual part of the control loop e.g. actuator response, etc.}
 
+\section{Introduction}
+
 The \SSM{} interferometer topology can potentially provide enhanced sensitivity to gravitational waves in the audio-band compared to equivalent Michelson interferometers. A challenge with the \SSM{} interferometer arises from the intrinsic lack of sensitivity at low frequencies where the velocity-proportional signal is smaller than the noise associated with the sensing of the signal. Using as an example the on-going proof-of-concept \SSM{} experiment in Glasgow, we quantify the problem and present a solution involving the extraction of a small displacement-proportional signal. This displacement signal can be combined with the existing velocity signal to enhance low frequency sensitivity, and we derive optimal filters to accomplish this for different signal strengths. We show that the extraction of the displacement signal for low frequency control purposes can be performed without reducing significantly the quantum non-demolition character of this type of interferometer.
 
 \note{Some stuff to write about:}
@@ -33,6 +35,7 @@ The \SSM{} interferometer topology can potentially provide enhanced sensitivity 
     \end{itemize}
   \item Dark noise measurements of op-amp over long timescales (explain additional low frequency noise)
   \item Note in ``outlook'' section on how we might verify how effective the optimal filter is compared to naive addition or a ``bad'' filter. Perhaps make a TF from an open port? Choose an optimally bad filter?
+  \item Quantisation noise paper also talks about maximum ADC input voltage being less than total rms signal - cite it in the relevant part
 \end{itemize}
 
 %\section{Long term drift of velocity readout}
@@ -46,36 +49,30 @@ The \SSM{} interferometer topology can potentially provide enhanced sensitivity 
 
 %\subsection{Stability with and without sensor blending}
 
-The Advanced LIGO gravitational wave observatories \cite{aligo2015} made the first detection of gravitational waves from a binary black hole in 2015 \cite{Abbott2016} at the start of their joint observing run. In the coming years Advanced Virgo \cite{avirgo2015} in Italy and KAGRA \cite{kagra2013} in Japan are expected to join the network, opening up a new window through which to observe the universe. These detectors are, fundamentally, Michelson interferometers with the addition of \FP{} arm cavities and other optical modifications \cite{aligo2015, Abbott2016a} to achieve exquisite sensitivity to motion of the test masses. Using the Local Lorenz gauge, an incident gravitational wave can be pictured as a change in length between the cavity mirrors in each arm of the interferometer. The primary degree of freedom a gravitational wave would excite is the differential mode of the cavity lengths, \LMINUS{}, which can be defined in terms of the position of the end test masses (\glspl{ETM}) $x_{\textrm{A}}^{\textrm{ETM}}$ and $x_{\textrm{B}}^{\textrm{ETM}}$ in cavities A and B, respectively, as:
-\begin{equation}
-  \label{eq:darm}
-  \textrm{\LMINUS{}} = \frac{x_{\textrm{A}}^{\textrm{ETM}} - x_{\textrm{B}}^{\textrm{ETM}}}{2}.
-\end{equation}
+The presence of arm cavities within the proof-of-concept \SSM{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers, and this aspect will be addressed in this chapter. In Section\,\ref{sec:velocity-control} we describe in more detail the proof-of-concept \SSM{} experiment and its control requirements. We then describe a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the control challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, and in Section\,\ref{sec:noise-budget} we present a noise budget of the \SSM{} using the alternative control strategy. A summary is provided in Section\,\ref{sec:summary}.
 
-Quantum noise, the combination of quantum radiation pressure noise at low frequencies and quantum shot noise at high frequencies, restricts the ultimate sensitivity of classical Michelson interferometers at what is termed the \emph{Standard Quantum Limit} (\gls{SQL}) \cite{Braginsky1995}. As quantum noise is expected to limit the sensitivity of the aforementioned \emph{second generation} detectors over a wide frequency band, particular effort is being paid to its reduction in proposals for \emph{third-generation} instruments such as the Einstein Telescope facility \cite{Hild2011} and LIGO Cosmic Explorer \cite{aligoinst2015}.
+\note{Section\,\ref{c:speedmeter-intro} introduced the motivation behind the \SSMEXPT{}...}
 
-Reduction of quantum noise below the SQL in a particular optical configuration involves a so-called \emph{quantum non-demolition} (\gls{QND}) measurement \cite{Braginsky1995}: either the use of quantum correlations in the outgoing light or the enhancement of the test mass dynamics by means of light \cite{Chen2011}. Quantum correlations arise naturally between the otherwise uncorrelated sources of quantum noise due to the interaction between the light and the motional degrees of freedom of the interferometer and can be used to effectively avoid radiation pressure noise contributions to the readout signal. This group of methods includes frequency-dependent squeezing \cite{Kimble2001}, variational readout \cite{Kimble2001, Vyatchanin1995, Vyatchanin1996} and speed meters \cite{Braginsky1990, Braginsky2000, Chen2003, Danilishin2004}. The latter approach implies the use of light-mirror interactions to create new test mass dynamics in order to increase their response to the gravitational wave action. This includes so-called ``optical springs'' \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, ``optical inertia'' \cite{Khalili2011, Voronchev2012} and ``intracavity schemes'' \cite{Braginsky1997, Khalili2002, Danilishin2006}.
-   
-The method on which we focus employs an interferometer topology intrinsically sensitive to a QND observable \cite{Danilishin2012}. The measurement of velocity, itself approximately proportional to the QND observable of the free test mass momentum, is one way in which a reduction in quantum radiation pressure noise can be achieved. A proof-of-concept experiment is under way at the University of Glasgow to demonstrate an audio-band reduction of quantum radiation pressure noise in a \SSM{} topology over an equivalent Michelson design \cite{Graef2014}. This topology is being considered as an alternative to the Einstein Telescope's Michelson interferometer design \cite{MuellerEbhardt2009a, Voronchev2015}. The topology under investigation in the proof-of-concept experiment utilises a zero-area Sagnac interferometer with the addition of arm cavities based on the concept presented in ref.\,\cite{Chen2003}. By design, this interferometer produces a signal at the beam splitter's output port proportional to differential arm cavity mirror \emph{velocity}, in contrast to the \emph{displacement}-proportional signal sensed in the Michelson topology.
+\section{Control of the proof-of-concept experiment}
 
-The presence of arm cavities within the proof-of-concept \SSM{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers, and this aspect will be addressed in the following work. In Section\,\ref{sec:velocity-control} we describe in more detail the proof-of-concept \SSM{} experiment and its control requirements. We then describe a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the control challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, and in Section\,\ref{sec:noise-budget} we present a noise budget of the \SSM{} using the alternative control strategy. A summary is provided in Section\,\ref{sec:summary}.
+\subsection{\label{sec:ssm-dofs}Degrees of freedom}
+It is obvious that the arm cavities of the \SSM{} must be held resonant in order to maintain the  stored light power required for the design sensitivity, and so these cavities represent a degree of freedom that must be controlled with active feedback. To assess the importance of other sets of optics present within the interferometer, transfer functions from individual mirrors to the \gls{BHD} port were calculated using both FINESSE and Optickle.
+\note{Specify DOFs, show TFs to prove it, show agreement between sim tools}
 
-\section{Degrees of freedom of the \SSM{}}
-\note{Specify DOFs, show TFs to prove it}
- 
-\section{\label{sec:velocity-control}Velocity control}
-   
-Figure\,\ref{fig:simplified-speedmeter-layout} shows a simplified optical layout of the proof-of-concept \SSM{}. The main beam splitter (BS) splits the input field towards the two triangular arm cavities where they form counter-propagating modes. One mode from each arm cavity is coupled into the other via the inter-cavity mirror \MINT{}, and the other modes recombine at the main beam splitter.
+The results in Figure \note{xxx} show that the experiment's controller only needs to provide active feedback to the arm cavities. It should be noted, however, that the desired \gls{BHD} homodyne angle depends on the path length M11 to M16 (reference layout). This is an auxiliary control loop not considered part of the main longitudinal control strategy, and will be the subject of future work.
+
+\subsection{\label{sec:velocity-control}Simple control strategy}
+Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optical layout with the addition of a basic control loop. The main beam splitter (BS) splits the input field towards the two triangular arm cavities where they form counter-propagating modes. One mode from each arm cavity is coupled into the other via the inter-cavity mirror \MINT{}, and the other modes recombine at the main beam splitter. Here, and for the rest of this chapter, we will consider only the cavity mirrors, the beam splitter and \MINT{}, defined as shown in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/50-simplified-speedmeter-layout.pdf}
-  \caption{\label{fig:simplified-speedmeter-layout}blah}
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/50-simplified-speedmeter-layout-velocity.pdf}
+  \caption{\label{fig:simplified-speedmeter-layout-velocity}blah}
 \end{figure}
 
-Each arm cavity in the \SSM{} is an independent degree of freedom and so changes to \LMINUS{} lead to frequency-dependent signals at the output port. Motion of an arm cavity mirror imparts signal sidebands upon the counter-propagating modes. These modes have different optical path lengths to the beam splitter and so the signal at the output port contains the superposition of signals representing the mirror's displacement from different points in time, which is analogous to velocity. At dc frequencies the two modes at the output port contain the same displacement information and the velocity signal is therefore zero (for a more complete description of the \SSM{}'s behaviour, see, for example, Section\,IIb of \cite{Chen2003}). Motion of \MINT{} and BS imprints common phase changes on both counter-propagating modes and are not considered degrees of freedom for signals sensed at the output port.
+As shown in Section\,\ref{sec:ssm-dofs}, each arm cavity in the \SSM{} is an independent degree of freedom and so changes to \LMINUS{} lead to frequency-dependent signals at the output port. Motion of an arm cavity mirror imparts signal sidebands upon the counter-propagating modes. These modes have different optical path lengths to the beam splitter and so the signal at the output port contains the superposition of signals representing the mirror's displacement from different points in time, which is analogous to velocity. At dc frequencies the two modes at the output port contain the same displacement information and the velocity signal is therefore zero (for a more complete description of the \SSM{}'s behaviour, see, for example, Section\,IIb of \cite{Chen2003}). Motion of \MINT{} and BS imprints common phase changes on both counter-propagating modes and are not considered degrees of freedom for signals sensed at the output port.
 
-The error signal (\emph{readout}) representing \LMINUS{} is sensed at the main beam splitter's output port by means of a balanced homodyne detector (\gls{BHD}, see Section\,\ref{sec:bhd}) \cite{Steinlechner2015}, as shown in the shaded green area in Figure\,\ref{fig:simplified-speedmeter-layout}. The frequency dependence of the phase quadrature signal at the output port $s_{\textrm{BHD}}$ is given by the following relationship, ignoring the effect of losses (a full treatment of the effect of loss is given in ref.\,\cite{Danilishin2015}):
+The error signal (\emph{readout}) representing \LMINUS{} is sensed at the main beam splitter's output port by means of a balanced homodyne detector (\gls{BHD}, see Section\,\ref{sec:bhd}) \cite{Steinlechner2015}, as shown in the shaded green area in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}. The frequency dependence of the phase quadrature signal at the output port $s_{\textrm{BHD}}$ is given by the following relationship, ignoring the effect of losses (a full treatment of the effect of loss is given in ref.\,\cite{Danilishin2015}):
 \begin{equation}
   \label{eq:asymdarmbhdresponse}
   s_{\textrm{BHD}} \left( \Omega \right) \propto \frac{\Omega}{ \left(\Omega^2 + \gamma_{\textrm{arm}}^2 \right)} L_{\left(-\right)},
@@ -94,13 +91,13 @@ Other terms in the response function dependent upon mirror mass, laser power and
   \caption{\label{fig:bhd-response}blah}
 \end{figure}
 
-In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravitational waves, the positions of the cavity mirrors are controlled using \emph{linear inverting feedback}, where an error signal is extracted and applied through a control law to cavity mirror actuators. In the experiment, voice coils and plate capacitor electrostatic drives (\glspl{ESD}) \cite{Wittel2015} are used to actuate on the position of the end test masses within each cavity. This feedback maintains the interferometer close to its operating point within the bandwidth of the controller. In order to achieve the required stability, the relative position of the cavity mirrors must be controlled to within \SI{3.5e-13}{\meter} rms (see Appendix\,\ref{app:required-control}).
+In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravitational waves, the positions of the cavity mirrors are controlled using \emph{linear inverting feedback}, where an error signal is extracted and applied through a control law to cavity mirror actuators. In the experiment, voice coils and plate capacitor electrostatic drives (\glspl{ESD}) \cite{Wittel2015} are used to actuate on the position of the end test masses within each cavity. This feedback maintains the interferometer close to its operating point within the bandwidth of the controller. In order to achieve the required stability, the relative position of the cavity mirrors must be controlled to within \SI{3.5e-13}{\meter} rms (see Section,\ref{sec:ssm-required-control}).
    
 % For phase noise calculation, see p56 of Lisa Barsotti's thesis
 % Or p53 of Rana's thesis
 % Or Advanced Virgo design study
 
-\section{\label{app:required-control}Required controller precision}
+\subsection{\label{sec:ssm-required-control}Required controller precision}
 
 The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \SSM{}. Using the parameters listed in Appendix\,\ref{app:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
 
@@ -116,7 +113,7 @@ As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce
 % 
 \subsection{\label{sec:bhd}Balanced homodyne detection}
      
-The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter. A local oscillator is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter. The difference current is converted to a voltage by an op-amp with transimpedance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}). An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band.
+The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter. A local oscillator is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter. The difference current is converted to a voltage by an op-amp with transimpadance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}) \note{explain why this transimpedance was chosen}. An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band.
 
 \begin{figure}
   \centering
@@ -157,6 +154,58 @@ The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in t
 
 The op-amp noise drift produces an offset upon the \gls{BHD} error signal which is to be fed back to the cavity mirror actuators, and thus op-amp noise directly contributes to cavity mirror displacement noise, affecting the experiment's sensitivity to the arm cavity differential mode. Since the signal measured at the \gls{BHD} represents cavity mirror velocity, it must necessarily drop below the noise at low frequencies where the velocity tends to zero.
 
+\subsection{Technical noise}
+The conversion of analogue signals to digital for use by \gls{CDS} involves the use of \glspl{ADC}. Noise in the \gls{ADC} arises from quantisation error $\epsilon_{\text{ADC}}$, which is the mismatch between the underlying signal input and the level determined by the \gls{ADC} \cite{Allen1997}. An \gls{ADC}'s job is to take an analogue signal of some voltage and convert it into a corresponding binary word proportional to that input. Most \glspl{ADC} work by splitting the input signal into copies and comparing each copy against an increasing threshold voltage. Initially ignoring additional technical complexity, we can imagine the thresholds of the \gls{ADC} to represent bits of a binary word. The first threshold will check if the input is above or below \SI{1}{\volt}, and output a corresponding high or low signal at that bit location. Subsequent thresholds check for \SI{2}{\volt}, \SI{4}{\volt} and so on. With this simple picture the most obvious flaw is that this system can only determine integer voltage levels, and so the quantisation error is \SI{0.5}{\volt}. In reality, however, input signals are stationary random processes and oscillate between thresholds; in effect they are self-dithered. By averaging over successive cycles, the \gls{ADC} can make a better approximation of the underlying signal, reducing the quantisation error to the interval $\epsilon_{\text{ADC}} \in \left( \frac{-\Delta}{2}, \frac{\Delta}{2} \right]$, where $\Delta$ is the smallest representable voltage level of the \gls{ADC}:
+\begin{equation}
+  \begin{split}
+    \Delta &= \frac{V_{\text{max}} - V_{\text{min}}}{2^{b}} \\
+           &= \frac{V_{\text{range}}}{2^{b}}.
+  \end{split}
+\end{equation}
+
+Quantisation noise depends on the noise produced by the components that make up an \gls{ADC}'s threshold sensors. In the case of \gls{CDS}, the effective number of bits\footnote{One might decide to purchase an \gls{ADC} based merely upon its number of bits, but this is not a good guide for determining its sensitivity. A 24-bit \gls{ADC} is no better than a 16-bit \gls{ADC} if the first 8 bits are noise. A more useful figure of merit is the \gls{ENOB}.} (\gls{ENOB}) is $b = 13.9$, corresponding to a noise level of \SI{1.8e-6}{\volt\per\sqrthz} using the relation:
+\begin{equation}
+  \epsilon_{\text{ADC}} = \frac{V_{\text{range}}}{2^b \sqrt{12 f_{N}}},
+\end{equation}
+where $f_{N}$ is the Nyquist frequency. This noise floor is flat across much of the bandwidth of \gls{CDS}, as it is determined by the noise of op-amps chosen for low noise in the audio band.
+
+From the digital to the analogue domain, the same process happens in reverse with \glspl{DAC}. This time, quantisation noise arises directly from the inability of the \gls{DAC} to faithfully reconstruct the digital signal without adding noise. With the \gls{CDS} system, the \glspl{ADC} and \glspl{DAC} are well matched and both possess the same noise floor.
+
+\subsubsection{Whitening and dewhitening filters}
+The signals sensed by the interferometer's photodetectors contain large components at low frequencies arising from seismic noise, and small components at higher frequencies where the measurement of radiation pressure and shot noise can be made. The \gls{ADC}'s input range of \SI{\pm10}{\volt} and its noise \SI{1.8e-6}{\volt\per\sqrthz} lead to a dynamic range $\text{D}$ of:
+\begin{equation}
+  \begin{split}
+    \text{D} &= 20 \log_{10} \left( \frac{V_{\text{max}}}{\epsilon_{\text{ADC}}} \right) \\
+             &= \SI{134.9}{\deci\bel}.
+  \end{split}
+\end{equation}
+Well chosen signal amplification should result in an \gls{RMS} signal of less than $\frac{1}{10} V_{\text{max}}$, giving headroom to the sensors for larger, less frequent noise transients to be detected without clipping while still allowing small signal detection. As the signal from the interferometer is shaped approximately inversely to frequency, signals at \SI{1}{\kilo\hertz} are typically many orders of magnitude smaller than those of seismic noise at a few \SI{}{\hertz}. This means that signals of the level of quantum noise are sometimes lost in the noise from the \glspl{ADC} and \glspl{DAC}. To avoid this problem, a technique called \emph{whitening} can be used. This involves applying a filter to the desired input or output signal in order to increase certain frequency components of a signal.
+
+\note{discuss whitening/dewhitening requirements}
+
+\subsubsection{Aliasing and imaging}
+
+A consequence of the Nyquist sampling theorem is that \gls{AC} signal content can be exactly reconstructed by a sampler if and only if the signal power above the Nyquist frequency is zero. Non-zero signal at frequencies $f > f_{\text{N}}$ will enter the band of the sampler every \checkme{$\frac{f}{f_{\text{N}}}$} cycles and appear on top of the real signal content in that band. To prevent this occurrence, anti-aliasing filters can be utilised to aggressively suppress higher frequency content using analogue electronics before the signal is sampled by the \gls{ADC}. Similarly, the output from a \gls{DAC} can be propagated through an anti-imaging filter to prevent the \gls{DAC}'s finite sample rate from creating higher frequency copies of in-band signal content.
+
+With \gls{CDS}, the sample rate is \SI{65536}{\hertz}, and so the Nyquist frequency is \SI{32768}{\hertz}, and the anti-aliasing and anti-imaging filters have cut-off frequency \SI{9}{\kilo\hertz} to ensure that frequency content near the Nyquist frequency is practically zero.
+
+\note{TF of AA/AI filters}
+
+\subsubsection{Suspension gain hierarchy}
+
+\subsubsection{Interferometer compensation}
+
+\subsubsection{Loop gain}
+
+\subsection{Control loop with velocity sensing}
+
+A control loop schematic using the calculations, filters and servos presented in this section is shown in Figure\,\ref{fig:ssm-control-loop-velocity}. The items contained within the grey box are implemented in software as part of the LIGO control and data system \cite{Bork2010}. The lower section contains the blocks which exist in the analogue domain.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop-velocity.pdf}
+  \caption{\label{fig:ssm-control-loop-velocity}Simple \SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller, shown in the grey box. Within the controller, the error signal representing \LMINUS{} is fed through a series of filters and sent to the test mass actuators, with the addition of \gls{DAC} noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant. \note{ADD AI FILTERS}}
+\end{figure}
+
 \subsection{Noise projection}
 
 To reach the desired sensitivity of the interferometer it is crucial to understand the noise characteristics associated with the sensing and control apparatus employed in the experiment. Individual noise sources, for example arising from the \gls{BHD} op-amp electronics, can be projected into units of differential displacement-equivalent noise using the linear projection technique \cite{Smith2006}. The sources of noise can be logically separated into two broad categories: \emph{sensing noise} and \emph{displacement noise}. Both sources of noise are fed back to the test masses because in practice it is not possible for the controller to distinguish them.
@@ -165,7 +214,7 @@ Sources of sensing noise are associated with the readout of the variable of inte
 
 Displacement noise sources directly influence the positions of the test mass surfaces being measured by the interferometer and are therefore transformed by the dynamics of the test masses \cite{Danilishin2015}. As the readout variable in the \gls{BHD} is the time derivative of position, the control system measures and actively suppresses these noise sources. Significant sources of displacement noise in the \SSM{} experiment are quantum radiation pressure noise, seismic noise, suspension thermal noise \cite{Hammond2012} and coating brownian noise arising from the dielectric coatings present upon the cavity mirrors \cite{Harry2002}.
 
-The noise projection for \LMINUS{}, calculated using the numerical optomechanical simulation tool \emph{Optickle} \cite{Evans2012} (see Appendix\,\ref{sec:optickle-sim}) and the control noise modelling tool \emph{SimulinkNb} \cite{SimulinkNb}, is shown in Figure\,\ref{fig:readout-noise-velocity}. The root-mean-square (\gls{RMS}) differential displacement this creates is shown in Figure\,\ref{fig:readout-noise-velocity-rms} as a function of time. It shows that, as the interferometer is held at its operating point, over a period of several hours the expected drift is large enough for the cavities to become uncontrollable (see Appendix\,\ref{app:required-control}).
+The noise projection for \LMINUS{}, calculated using the numerical optomechanical simulation tool \emph{Optickle} \cite{Evans2012} (see Appendix\,\ref{sec:optickle-sim}) and the control noise modelling tool \emph{SimulinkNb} \cite{SimulinkNb}, is shown in Figure\,\ref{fig:readout-noise-velocity}. The root-mean-square (\gls{RMS}) differential displacement this creates is shown in Figure\,\ref{fig:readout-noise-velocity-rms} as a function of time. It shows that, as the interferometer is held at its operating point, over a period of several hours the expected drift is large enough for the cavities to become uncontrollable (see Appendix\,\ref{sec:ssm-required-control}).
 
 \begin{figure}
   \centering
@@ -179,7 +228,7 @@ The noise projection for \LMINUS{}, calculated using the numerical optomechanica
   \caption{\label{fig:readout-noise-velocity-rms}blah}
 \end{figure}
 
-%       \caption{Noise associated with the velocity readout scheme. The spectral density in (a) shows the noise associated with the readout of the signal representing \LMINUS{} using the BHD. The significant noise sources associated with sensing and feedback are shown. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics. The time series in (b) shows the root-mean-square arm cavity mirror motion due to readout noise over one day. Beyond a few hours the motion is greater than the control requirement presented in Appendix\,\ref{app:required-control}}
+%       \caption{Noise associated with the velocity readout scheme. The spectral density in (a) shows the noise associated with the readout of the signal representing \LMINUS{} using the BHD. The significant noise sources associated with sensing and feedback are shown. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics. The time series in (b) shows the root-mean-square arm cavity mirror motion due to readout noise over one day. Beyond a few hours the motion is greater than the control requirement presented in Section,\ref{sec:ssm-required-control}}
 %     \end{figure}
 
 Although for sensing noise we only consider electronic and shot noise, in the experiment there will be other contributing forms of time-varying offset present upon the \gls{BHD} error signal:
@@ -193,12 +242,18 @@ As such, the estimated rms displacement shown in Figure\,\ref{fig:readout-noise-
  
 \section{\label{sec:mixed-control}Velocity-displacement control}
    
-Light from each counter-propagating mode is incident upon the inter-cavity steering mirror \MINT{}, and as such this is a natural port in which to separate the modes and sense the motion of each arm cavity (see the shaded blue region of Figure\,\ref{fig:simplified-speedmeter-layout}). Using RF modulation, for instance \emph{via} the Pound-Drever-Hall (\gls{PDH}) technique \cite{Drever1983}, it is possible to obtain a displacement error signal for each cavity that, unlike the velocity signal from the \gls{BHD}, has flat response at \gls{DC}, with a similar cavity pole frequency (see Figure\,\ref{fig:pdh-response}). The individual cavity \gls{PDH} signals can be mixed to obtain a measurement of \LMINUS{}, and the frequency dependence of the signal $s_{\textrm{PDH}}$ is, following ref.\,\cite{Kimble2001}, given by:
+Light from each counter-propagating mode is incident upon the inter-cavity steering mirror \MINT{}, and as such this is a natural port in which to separate the modes and sense the motion of each arm cavity (see the shaded blue region of Figure\,\ref{fig:simplified-speedmeter-layout-mixed}). Using RF modulation, for instance \emph{via} the Pound-Drever-Hall (\gls{PDH}) technique \cite{Drever1983}, it is possible to obtain a displacement error signal for each cavity that, unlike the velocity signal from the \gls{BHD}, has flat response at \gls{DC}, with a similar cavity pole frequency (see Figure\,\ref{fig:pdh-response}). The individual cavity \gls{PDH} signals can be mixed to obtain a measurement of \LMINUS{}, and the frequency dependence of the signal $s_{\textrm{PDH}}$ is, following ref.\,\cite{Kimble2001}, given by:
 \begin{equation}
   \label{eq:m9darmpdhresponse}
   s_{\textrm{PDH}} \left( \Omega \right) \propto \sqrt{\frac{\gamma_{\textrm{arm}}}{\left(\Omega^2 + \gamma_{\textrm{arm}}^2 \right)}} L_{\left(-\right)},
 \end{equation}
 ignoring again the effect of losses and constant terms as with Equation \ref{eq:asymdarmbhdresponse}. Note that for $\Omega \ll \gamma_{\textrm{arm}}$, the response is flat as expected for a displacement measurement and as such the PDH readout offers a suitable signal to sense \LMINUS{} at low frequencies.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/50-simplified-speedmeter-layout-mixed.pdf}
+  \caption{\label{fig:simplified-speedmeter-layout-mixed}blah}
+\end{figure}
 
 \begin{figure}
   \centering
@@ -284,12 +339,12 @@ The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in O
   \caption{\label{fig:optimal-filters}Optimal filters to combine the BHD and PDH signals for different values of \MINT{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the BHD signal with respect to the PDH signal before the two are combined, for different \MINT{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the PDH signal. For all values of \MINT{} shown, the optimal combination involves suppressing the BHD signal with respect to the PDH at frequencies below around \SI{1}{\kilo\hertz}; equivalently, the PDH signal must be amplified with respect to the BHD signal in the same band, an example of which is presented in Section\,\ref{sec:combined-filter}.}
 \end{figure}
 
-\section{\label{ssm-control-scheme}Control scheme}  
-The intended control loop schematic for the proof-of-concept experiment is shown in Figure\,\ref{fig:ssm-control-loop}. The ``fiducial'' section is well defined and is based on existing DAQ hardware and software, an implementation of the LIGO control and data system \cite{Bork2010}. The bottom section contains the blocks which have been modelled during the course of this work.
+\section{\label{ssm-control-scheme}Full control scheme}
+The intended control loop schematic for the proof-of-concept experiment is shown in Figure\,\ref{fig:ssm-control-loop-mixed}. The ``fiducial'' section is well defined and is based on existing DAQ hardware and software, an implementation of the LIGO control and data system \cite{Bork2010}. The bottom section contains the blocks which have been modelled during the course of this work.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop.pdf}
-  \caption{\label{fig:ssm-control-loop}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \LMINUS{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant.}
+  \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop-mixed.pdf}
+  \caption{\label{fig:ssm-control-loop-mixed}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \LMINUS{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant.}
 \end{figure}
 
 All blocks shown are frequency dependent matrices with one or more inputs and outputs. The green blocks represent simple filters possessing single inputs and outputs. Each filter multiplies its input by a transfer function in order to calculate its output. The blue blocks represent transfer matrices, which are multiple-input and multiple-output filters. The grey triangles represent dc gain, and are equivalent to simple filters without frequency-dependent response. The undulating orange arrows represent noise injection.
