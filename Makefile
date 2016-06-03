@@ -118,6 +118,10 @@ $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.
 
 $(GFXGENPY)/30-servo-tf.pdf: $(DATAGENMAT)/30-servo-tf.csv
 
+$(GFXGENPY)/50-mirror-tfs.pdf: $(DATAGENMAT)/50-mirror-tfs.csv
+
+$(GFXGENPY)/50-m7-seismic-noise.pdf: $(DATAGENMAT)/50-m7-seismic-noise.csv
+
 $(GFXGENPY)/50-bhd-response.pdf: $(DATA)/50-bhd-response.csv
 
 $(GFXGENPY)/50-pdh-response.pdf: $(DATA)/50-pdh-response.csv
@@ -167,6 +171,12 @@ $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
 $(DATAGENMAT)/30-servo-tf.csv: $(DATASCRMAT)/createWgmServoTf.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWgmServoTf('$(ROOT)/$@', logspace(-2, 5, 1000)); exit;"
 
+$(DATAGENMAT)/50-mirror-tfs.csv: $(DATASCRMAT)/createSsmMirrorTfs.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createSsmMirrorTfs('$(ROOT)/$@', logspace(1, 5, 1000)); exit;"
+
+$(DATAGENMAT)/50-m7-seismic-noise.csv: $(DATASCRMAT)/createM7SeismicNoise.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createM7SeismicNoise('$(ROOT)/$@', logspace(1, 3, 1000), 0.01); exit;"
+
 # data set generated from other data sets
 $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
 
@@ -189,6 +199,7 @@ superclean: clean
 	@rm -f $(PROJECT).pdf
 # remove dynamically generated graphics and data
 	@rm -rf $(GFXGEN)/*
+# FIXME: delete $(DATAGEN) but not from-matlab
 	@rm -rf $(DATAGEN)/*
 # remove dependencies directory
 	@rm -rf $(DEPENDENCIES)
