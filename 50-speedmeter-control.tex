@@ -15,7 +15,7 @@ The \SSM{} interferometer topology can potentially provide enhanced sensitivity 
 
 \note{Some stuff to write about:}
 \begin{itemize}
-  \item Definition of degrees of freedom (see Andreas' thesis, p 31), powers, sidebands, etc...
+  \item powers, sidebands, etc...
   \item Control loop design / noise budget
   \item Inclusion of other noises, like seismic, thermal, electronic, etc. Calculation of noise budget.
   \item Suspension hierarchical gain (handling ESD / coil ranges) (see labbook posts)
@@ -75,10 +75,13 @@ Measurements of the seismic motion present upon the ground outside the vacuum sy
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-m7-seismic-noise.pdf}
-  \caption{\label{fig:m7-seismic-noise}blah... this assumes coupling of 1\%, uses seismic noise propagated to tables from ground, etc.}
+  \caption{\label{fig:m7-seismic-noise}blah... this assumes coupling of 1\%, uses seismic noise propagated to tables from ground, etc. The sensitivity requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made.}
 \end{figure}
 
 From the results in Figures \ref{fig:ssm-mirror-tfs} and \ref{fig:m7-seismic-noise} it can be concluded that there is only one significant degree of freedom to control in the interferometer in order to meet the sensitivity requirement above \SI{100}{\hertz}, where the measurement of reduced radiation pressure noise will be made. It should be noted that the desired \gls{BHD} homodyne angle depends on the path length \MELEVEN{} to \MSIXTEEN{}. This is an auxiliary control loop not considered part of the main longitudinal control strategy, and will be the subject of future work.
+
+\subsection{Sideband frequency}
+The eventual choice of sideband frequency, used to control cavity lengths using techniques such as \gls{PDH} (see Section\,\ref{sec:pdh}), will depend on a number of factors both physical and technical. For the purpose of control simulations, however, the only requirement is that the sideband frequency is not resonant within the arm cavities, in order to act as a discriminant to allow for the control of the arm cavity lengths. In practice, this means the frequency offset from the carrier must be greater than the cavity's \gls{FWHM} (see Section\,\ref{sec:cavity-fom}). For control simulations the sideband frequency was chosen to be \SI{15}{\mega\hertz}.
 
 \subsection{\label{sec:velocity-control}Simple control strategy}
 Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optical layout with the addition of a basic control loop. The main beam splitter (BS) splits the input field towards the two triangular arm cavities where they form counter-propagating modes. One mode from each arm cavity is coupled into the other via the inter-cavity mirror \MINT{}, and the other modes recombine at the main beam splitter. Here, and for the rest of this chapter, we will consider only the cavity mirrors, the beam splitter and \MINT{}, defined as shown in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}.
@@ -174,7 +177,9 @@ The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in t
 The op-amp noise drift produces an offset upon the \gls{BHD} error signal which is to be fed back to the cavity mirror actuators, and thus op-amp noise directly contributes to cavity mirror displacement noise, affecting the experiment's sensitivity to the arm cavity differential mode. Since the signal measured at the \gls{BHD} represents cavity mirror velocity, it must necessarily drop below the noise at low frequencies where the velocity tends to zero.
 
 \subsection{Technical noise}
-The conversion of analogue signals to digital for use by \gls{CDS} involves the use of \glspl{ADC}. Noise in the \gls{ADC} arises from quantisation error $\epsilon_{\text{ADC}}$, which is the mismatch between the underlying signal input and the level determined by the \gls{ADC} \cite{Allen1997}. An \gls{ADC}'s job is to take an analogue signal of some voltage and convert it into a corresponding binary word proportional to that input. Most \glspl{ADC} work by splitting the input signal into copies and comparing each copy against an increasing threshold voltage. Initially ignoring additional technical complexity, we can imagine the thresholds of the \gls{ADC} to represent bits of a binary word. The first threshold will check if the input is above or below \SI{1}{\volt}, and output a corresponding high or low signal at that bit location. Subsequent thresholds check for \SI{2}{\volt}, \SI{4}{\volt} and so on. With this simple picture the most obvious flaw is that this system can only determine integer voltage levels, and so the quantisation error is \SI{0.5}{\volt}. In reality, however, input signals are stationary random processes and oscillate between thresholds; in effect they are self-dithered. By averaging over successive cycles, the \gls{ADC} can make a better approximation of the underlying signal, reducing the quantisation error to the interval $\epsilon_{\text{ADC}} \in \left( \frac{-\Delta}{2}, \frac{\Delta}{2} \right]$, where $\Delta$ is the smallest representable voltage level of the \gls{ADC}:
+
+\subsubsection{Analogue to digital converters}
+The conversion of analogue signals to digital for use by \gls{CDS} involves the use of \glspl{ADC}. Noise in the \gls{ADC} arises from quantisation error $\epsilon_{\text{ADC}}$, which is the mismatch between the underlying signal input and the level determined by the \gls{ADC} \cite{Allen1997}. An \gls{ADC}'s job is to take an analogue signal of some voltage and convert it into a corresponding binary word proportional to that input. The fastest \glspl{ADC} work by splitting the input signal into copies and comparing each copy against an increasing threshold voltage\footnote{This is called a ``parallel'' \gls{ADC}, though there exist many other forms such as ``successive approximation'', ``voltage-to-frequency'', ``integration'' and ``delta-sigma''. A good overview is given in \cite{Horowitz2015}.}. Initially ignoring additional technical complexity, we can imagine the thresholds of the \gls{ADC} to represent bits of a binary word. The first threshold will check if the input is above or below \SI{1}{\volt}, and output a corresponding high or low signal at that bit location. Subsequent thresholds check for \SI{2}{\volt}, \SI{4}{\volt} and so on. With this simple picture the most obvious flaw is that this system can only determine integer voltage levels, and so the quantisation error is \SI{0.5}{\volt}. In reality, however, input signals are stationary random processes and oscillate between thresholds; in effect they are self-dithered. By averaging over successive cycles, the \gls{ADC} can make a better approximation of the underlying signal, reducing the quantisation error to the interval $\epsilon_{\text{ADC}} \in \left( \frac{-\Delta}{2}, \frac{\Delta}{2} \right]$, where $\Delta$ is the smallest representable voltage level of the \gls{ADC}:
 \begin{equation}
   \begin{split}
     \Delta &= \frac{V_{\text{max}} - V_{\text{min}}}{2^{b}} \\
@@ -188,6 +193,7 @@ Quantisation noise depends on the noise produced by the components that make up 
 \end{equation}
 where $f_{N}$ is the Nyquist frequency. This noise floor is flat across much of the bandwidth of \gls{CDS}, as it is determined by the noise of op-amps chosen for low noise in the audio band.
 
+\subsubsection{Digital to analogue converters}
 From the digital to the analogue domain, the same process happens in reverse with \glspl{DAC}. This time, quantisation noise arises directly from the inability of the \gls{DAC} to faithfully reconstruct the digital signal without adding noise. With the \gls{CDS} system, the \glspl{ADC} and \glspl{DAC} are well matched and both possess the same noise floor.
 
 \subsubsection{Whitening and dewhitening filters}
@@ -211,6 +217,8 @@ With \gls{CDS}, the sample rate is \SI{65536}{\hertz}, and so the Nyquist freque
 \note{TF of AA/AI filters}
 
 \subsubsection{Suspension gain hierarchy}
+
+\note{Discuss violin modes too}
 
 \subsubsection{Interferometer compensation}
 
