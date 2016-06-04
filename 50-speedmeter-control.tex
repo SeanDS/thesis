@@ -65,7 +65,7 @@ It is obvious that the arm cavities of the \SSM{} must be held resonant in order
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-mirror-tfs.pdf}
-  \caption{\label{fig:ssm-mirror-tfs}blah}
+  \caption[Transfer functions from various mirrors in the \SSMEXPT{} to the balanced homodyne port]{\label{fig:ssm-mirror-tfs}blah}
 \end{figure}
 
 While \MINT{} can be ruled out as a degree of freedom, the effect of \MSIX{} and \MSEVEN{} is less clear cut. To assess the impact the motion from these mirrors has on \LMINUS{} sensitivity, a calculation of the effect of seismic noise from \MSEVEN{} to the \gls{BHD} can be made. \MSIX{} need not be considered here for three reasons: the transfer function is almost identical to that of \MSEVEN{} and so we need only calculate one, the beam splitter optic will be heavier than that of \MSEVEN{} and so will couple less seismic noise, and the suspension design\textemdash a work in progress at the time of writing\textemdash is intended to have better isolation than that of \MSEVEN{}'s auxiliary suspension.
@@ -75,7 +75,7 @@ Measurements of the seismic motion present upon the ground outside the vacuum sy
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-m7-seismic-noise.pdf}
-  \caption{\label{fig:m7-seismic-noise}blah... this assumes coupling of 1\%, uses seismic noise propagated to tables from ground, etc. The sensitivity requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made.}
+  \caption[Effective \LMINUS{} seismic noise contribution from \MSEVEN{}]{\label{fig:m7-seismic-noise}blah... this assumes coupling of 1\%, uses seismic noise propagated to tables from ground, etc. The sensitivity requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made.}
 \end{figure}
 
 From the results in Figures \ref{fig:ssm-mirror-tfs} and \ref{fig:m7-seismic-noise} it can be concluded that there is only one significant degree of freedom to control in the interferometer in order to meet the sensitivity requirement above \SI{100}{\hertz}, where the measurement of reduced radiation pressure noise will be made. It should be noted that the desired \gls{BHD} homodyne angle depends on the path length \MELEVEN{} to \MSIXTEEN{}. This is an auxiliary control loop not considered part of the main longitudinal control strategy, and will be the subject of future work.
@@ -89,7 +89,7 @@ Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optic
 \begin{figure}
   \centering
   \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/50-simplified-speedmeter-layout-velocity.pdf}
-  \caption{\label{fig:simplified-speedmeter-layout-velocity}blah}
+  \caption[Simplified layout of the \SSMEXPT{} including a basic velocity feedback loop]{\label{fig:simplified-speedmeter-layout-velocity}blah}
 \end{figure}
 
 As shown in Section\,\ref{sec:ssm-dofs}, each arm cavity in the \SSM{} is an independent degree of freedom and so changes to \LMINUS{} lead to frequency-dependent signals at the output port. Motion of an arm cavity mirror imparts signal sidebands upon the counter-propagating modes. These modes have different optical path lengths to the beam splitter and so the signal at the output port contains the superposition of signals representing the mirror's displacement from different points in time, which is analogous to velocity. At dc frequencies the two modes at the output port contain the same displacement information and the velocity signal is therefore zero (for a more complete description of the \SSM{}'s behaviour, see, for example, Section\,IIb of \cite{Chen2003}). Motion of \MINT{} and BS imprints common phase changes on both counter-propagating modes and are not considered degrees of freedom for signals sensed at the output port.
@@ -110,7 +110,7 @@ Other terms in the response function dependent upon mirror mass, laser power and
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-bhd-response.pdf}
-  \caption{\label{fig:bhd-response}blah}
+  \caption[The frequency response of the differential arm cavity degree of freedom to the balanced homodyne readout]{\label{fig:bhd-response}blah}
 \end{figure}
 
 In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravitational waves, the positions of the cavity mirrors are controlled using \emph{linear inverting feedback}, where an error signal is extracted and applied through a control law to cavity mirror actuators. In the experiment, voice coils and plate capacitor electrostatic drives (\glspl{ESD}) \cite{Wittel2015} are used to actuate on the position of the end test masses within each cavity. This feedback maintains the interferometer close to its operating point within the bandwidth of the controller. In order to achieve the required stability, the relative position of the cavity mirrors must be controlled to within \SI{3.5e-13}{\meter} rms (see Section,\ref{sec:ssm-required-control}).
@@ -140,7 +140,7 @@ The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-tikz/50-bhd-electronics.pdf}
-  \caption{\label{fig:bhd-electronics}blah}
+  \caption[Electronic schematic for the balanced homodyne readout]{\label{fig:bhd-electronics}blah}
 \end{figure}
 
 Op-amps used for control in audio-band interferometry typically possess a noise power spectrum inversely proportional to frequency (so-called \emph{flicker noise} \cite[Section\,11.2.3]{Gray2009}) in the low audio band. As the \gls{BHD} error signal is dependent upon the time derivative of the mirror positions, however, there will necessarily be frequencies at which the op-amp noise will dominate the \gls{BHD} error signal. This makes control of slow drifts of the arm cavity mirror positions impossible with the velocity readout, despite the op-amp being well-chosen for a measurement band above \SI{100}{\hertz}. This control problem with relation to the proof-of-concept experiment will be quantified in the following subsections.
@@ -157,7 +157,7 @@ To measure the effect of a suitable op-amp's noise at low frequency, the output 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-tikz/50-bhd-noise-electronics.pdf}
-  \caption{\label{fig:bhd-noise-electronics}blah}
+  \caption[Electronic schematic for the measurement of noise from the balanced homodyne readout]{\label{fig:bhd-noise-electronics}blah}
 \end{figure}
 
 The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in the measured op-amp noise over the course of \SI{16}{} days. An open channel on the DAQ was measured concurrently. A Fourier transform of the measured op-amp noise time series (Figure\,\ref{fig:op-amp-noise-spectrum}) shows a combination of flicker noise and an additional slope possibly due to resistor current noise below around \SI{1}{\hertz} \cite{Seifert2009}. DAQ noise dominates above \SI{4}{\hertz}. The ``Model (total)'' spectral density in Figure\,\ref{fig:op-amp-noise-spectrum} show the contributions to the measurements from the first op-amp $\textrm{N}_{1}$'s current and voltage noise and the Johnson-Nyquist noise of its transimpedance resistor $\textrm{R}_{\textrm{T}}$. This spectral density additionally contains the measured open channel noise summed in quadrature to show the agreement it has with the measurements down to around \SI{1}{\hertz}.
@@ -165,13 +165,13 @@ The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in t
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-time-series.pdf}
-  \caption{\label{fig:op-amp-noise-time-series}blah}
+  \caption[Time series of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-time-series}blah}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-spectrum.pdf}
-  \caption{\label{fig:op-amp-noise-spectrum}blah}
+  \caption[Spectral density of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-spectrum}blah}
 \end{figure}
 
 The op-amp noise drift produces an offset upon the \gls{BHD} error signal which is to be fed back to the cavity mirror actuators, and thus op-amp noise directly contributes to cavity mirror displacement noise, affecting the experiment's sensitivity to the arm cavity differential mode. Since the signal measured at the \gls{BHD} represents cavity mirror velocity, it must necessarily drop below the noise at low frequencies where the velocity tends to zero.
@@ -230,7 +230,7 @@ A control loop schematic using the calculations, filters and servos presented in
 
 \begin{figure}
   \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop-velocity.pdf}
-  \caption{\label{fig:ssm-control-loop-velocity}Simple \SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller, shown in the grey box. Within the controller, the error signal representing \LMINUS{} is fed through a series of filters and sent to the test mass actuators, with the addition of \gls{DAC} noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant. \note{ADD AI FILTERS}}
+  \caption[Modelled \SSMEXPT{} control loop using velocity feedback]{\label{fig:ssm-control-loop-velocity}Simple \SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller, shown in the grey box. Within the controller, the error signal representing \LMINUS{} is fed through a series of filters and sent to the test mass actuators, with the addition of \gls{DAC} noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant. \note{ADD AI FILTERS}}
 \end{figure}
 
 \subsection{Noise projection}
@@ -246,13 +246,13 @@ The noise projection for \LMINUS{}, calculated using the numerical optomechanica
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-velocity.pdf}
-  \caption{\label{fig:readout-noise-velocity}blah}
+  \caption[Noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity}blah}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-velocity-rms.pdf}
-  \caption{\label{fig:readout-noise-velocity-rms}blah}
+  \caption[Root-mean-square noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity-rms}blah}
 \end{figure}
 
 %       \caption{Noise associated with the velocity readout scheme. The spectral density in (a) shows the noise associated with the readout of the signal representing \LMINUS{} using the BHD. The significant noise sources associated with sensing and feedback are shown. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics. The time series in (b) shows the root-mean-square arm cavity mirror motion due to readout noise over one day. Beyond a few hours the motion is greater than the control requirement presented in Section,\ref{sec:ssm-required-control}}
@@ -279,13 +279,13 @@ ignoring again the effect of losses and constant terms as with Equation \ref{eq:
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/50-simplified-speedmeter-layout-mixed.pdf}
-  \caption{\label{fig:simplified-speedmeter-layout-mixed}blah}
+  \caption[Simplified layout of the \SSMEXPT{} including both displacement and velocity feedback paths]{\label{fig:simplified-speedmeter-layout-mixed}blah}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-pdh-response.pdf}
-  \caption{\label{fig:pdh-response}blah}
+  \caption[Frequency response of the differential arm cavity degree of freedom to the Pound-Drever-Hall readout]{\label{fig:pdh-response}blah}
 \end{figure}
 
 \subsection{\label{sec:combined-filter}Combined filter}
@@ -308,13 +308,13 @@ By considering the response and noise characteristics of the \gls{BHD} and \gls{
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-mixed.pdf}
-  \caption{\label{fig:readout-noise-mixed}blah}
+  \caption[Noise projection for \LMINUS{} using both displacement and velocity feedback]{\label{fig:readout-noise-mixed}blah}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-mixed-rms.pdf}
-  \caption{\label{fig:readout-noise-mixed-rms}blah}
+  \caption[Root-mean-square noise projection for \LMINUS{} using both displacement and velocity feedback]{\label{fig:readout-noise-mixed-rms}blah}
 \end{figure}
 
 %       \caption{Combined filter readout noise. The spectral density in (a) shows the noise due to sensing and control using a combination of velocity and displacement readout schemes. The total noise in the velocity-only scheme is shown for reference. The mixing of displacement information into the feedback signal at low frequencies leads to greatly reduced displacement noise. The time series in (b) shows the root-mean-square differential displacement the combined filter causes. The combined filter provides a displacement reference at low frequencies and allows control of the \ssm{} for significantly longer periods than with only a velocity readout.}
@@ -363,7 +363,7 @@ The reflectivity of \MINT{} is implicit in both the field-to-field and mode-to-f
 The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in Optickle by default, and so some modifications to the code were necessary (see Appendix\,\ref{sec:optickle-field-tfs}). The effect of \MINT{}'s reflectivity on $\alpha_{\textrm{opt}}$ is shown in Figure\,\ref{fig:optimal-filters}. Note that, because it is calculated with precomputed spectral densities and not tested for stability, the filter predicted by Equation\,\ref{eq:optimal-filter} is not necessarily realisable. A causal Wiener filter has previously been calculated for single-readout interferometers \cite{MuellerEbhardt2009, Miao2010}, but a similar calculation for more than one readout has not yet been investigated. While Equation\,\ref{eq:optimal-filter} enables the lowest noise spectral density for the measurement of the motion of the differential mode of the \SSM{}, in the case of the proof-of-concept experiment simply combining the \gls{BHD} and \gls{PDH} signals with \gls{DC} gain, as suggested in Section\,\ref{sec:combined-filter}, is close to optimal. The difference in response gradients above the cavity pole frequency prevents the \gls{PDH} signal from contaminating the \gls{QND} effect in the intended measurement band. The calculation presented in this section, however, is a general solution for any system with multiple readouts for a single variable and may prove useful for future gravitational wave detectors utilising \gls{QND} techniques.
 \begin{figure}
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-optimal-filters.pdf}
-  \caption{\label{fig:optimal-filters}Optimal filters to combine the BHD and PDH signals for different values of \MINT{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the BHD signal with respect to the PDH signal before the two are combined, for different \MINT{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the PDH signal. For all values of \MINT{} shown, the optimal combination involves suppressing the BHD signal with respect to the PDH at frequencies below around \SI{1}{\kilo\hertz}; equivalently, the PDH signal must be amplified with respect to the BHD signal in the same band, an example of which is presented in Section\,\ref{sec:combined-filter}.}
+  \caption[Optimal filters to combine the balanced homodyne and Pound-Drever-Hall signals for different values of \MINT{} reflectivity]{\label{fig:optimal-filters}Optimal filters to combine the BHD and PDH signals for different values of \MINT{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the BHD signal with respect to the PDH signal before the two are combined, for different \MINT{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the PDH signal. For all values of \MINT{} shown, the optimal combination involves suppressing the BHD signal with respect to the PDH at frequencies below around \SI{1}{\kilo\hertz}; equivalently, the PDH signal must be amplified with respect to the BHD signal in the same band, an example of which is presented in Section\,\ref{sec:combined-filter}.}
 \end{figure}
 
 \section{\label{ssm-control-scheme}Full control scheme}
@@ -371,7 +371,7 @@ The intended control loop schematic for the proof-of-concept experiment is shown
 
 \begin{figure}
   \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop-mixed.pdf}
-  \caption{\label{fig:ssm-control-loop-mixed}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \LMINUS{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant.}
+  \caption[Modelled \SSMEXPT{} control loop using both displacement and velocity feedback]{\label{fig:ssm-control-loop-mixed}\SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller. Within the controller, the interferometer readouts are combined into an error signal representing \LMINUS{}. The error signal is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant.}
 \end{figure}
 
 All blocks shown are frequency dependent matrices with one or more inputs and outputs. The green blocks represent simple filters possessing single inputs and outputs. Each filter multiplies its input by a transfer function in order to calculate its output. The blue blocks represent transfer matrices, which are multiple-input and multiple-output filters. The grey triangles represent dc gain, and are equivalent to simple filters without frequency-dependent response. The undulating orange arrows represent noise injection.
@@ -403,7 +403,7 @@ Each correction signal is passed through a gain hierarchy to split the feedback 
 
 \begin{figure}
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-etm-suspension-tfs.pdf}
-  \caption{\label{fig:suspension-crossover}Simulated proof-of-principle \SSM{} \gls{ETM} suspension open loop transfer functions showing the difference in gain between the two test mass actuators. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The \gls{ESD} actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. Second order low-pass notch filters are present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
+  \caption[Simulated end test mass suspension open loop transfer functions]{\label{fig:suspension-crossover}Simulated proof-of-principle \SSM{} \gls{ETM} suspension open loop transfer functions showing the difference in gain between the two test mass actuators. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The \gls{ESD} actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. Second order low-pass notch filters are present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
 \end{figure}
 
 \subsubsection{ETM suspension gain heirarchy}
@@ -419,7 +419,7 @@ The open loop gain of the control system is shown in Figure\,\ref{fig:open-loop-
 
 \begin{figure}
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-controller-open-loop-gain.pdf}
-  \caption{\label{fig:open-loop-gain}Simulated \SSM{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
+  \caption[Simulated controller open loop gain]{\label{fig:open-loop-gain}Simulated \SSM{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
   % phase margin calculated with script graphics/scripts/open-loop-gain/phaseMargin.py
 \end{figure}
 
@@ -462,7 +462,7 @@ In order to show that quantum noise is reduced with respect to an equivalent Mic
 
 \begin{figure}
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-speedmeter-noise-budget.pdf}
-  \caption{\label{fig:noise-budget}\SSM{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the PDH readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band.}
+  \caption[Control noise budget for the \SSMEXPT{}]{\label{fig:noise-budget}\SSM{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the PDH readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band.}
 \end{figure}
 
 The sensitivity between \SI{100}{\hertz} and \SI{700}{\hertz}, shaded in \checkme{blue}, is the quantum noise limited measurement band. This band is constrained from below by test mass suspension mechanical mode cross-couplings (not shown) and from above by the first violin mode of the ETM suspensions. Suspension thermal noise is the second highest noise source present in this band and is at most a factor of \SI{2.3}{} below quantum noise, allowing a careful direct measurement of quantum radiation pressure noise to be made in this region. The contribution to the quantum noise from the PDH feedback is far below the limiting quantum noise, showing that the use of the displacement readout as part of the combined filter presented in Section\,\ref{sec:combined-filter} does not significantly affect the sensitivity of the \SSM{} in the desired band.

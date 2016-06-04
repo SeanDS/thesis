@@ -27,7 +27,7 @@ As described in Chapter\,\ref{c:speedmeter-control}, the \gls{ESD} is best emplo
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-esd-experiment-control-loop.pdf}
-  \caption{\label{fig:esd-ansys}ESD experiment control loop.}
+  \caption[Control loop for the electrostatic drive experiment]{\label{fig:esd-ansys}ESD experiment control loop.}
 \end{figure}
 
 \section{Actuator requirements}
@@ -49,7 +49,7 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT{
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-ansys.pdf}
-  \caption{\label{fig:esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
+  \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
 \end{figure}
 
 \subsection{Power supply}
@@ -74,7 +74,7 @@ The second modification made to the amplifier circuit was the addition of a safe
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-paschen.pdf}
-  \caption{\label{fig:esd-paschen}The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \gls{ESD} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
+  \caption[Minimum breakdown voltage between the two plates of the electrostatic drive for different separations]{\label{fig:esd-paschen}The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The effect is a lot more complicated for real systems, where different plate geometries will have different relationships, but the steep slope at lower pressures shown here indicates that the apparatus used in the \gls{ESD} experiment will very likely avoid any problems with arcing as long as a suitable pressure-based interlock is utilised in the design of the electronics.}
 \end{figure}
 
 To prevent the possibility of arcing, a cut-off function was added to the circuit to prevent high voltage output unless a voltage above \SI{5}{\volt} is applied across terminals on the enclosure (see Figure\,\ref{fig:amplifier-interlock}). This threshold was chosen based on the monitor output voltage provided by a pressure gauge attached to the vacuum system. The monitor output varies logarithmically from \SI{0}{} to \SI{10}{\volt} for pressures between standard atmosphere and ultra-high vacuum. A voltage above \SI{5}{\volt} indicates a pressure below \SI{e-5}{\milli\bar}.
@@ -84,7 +84,7 @@ To prevent the possibility of arcing, a cut-off function was added to the circui
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-amplifier-interlock.pdf}
-  \caption{\label{fig:amplifier-interlock}HV amplifier pressure interlock circuit. An op-amp (N8A) compares the voltage from a fixed \SI{5}{\volt} reference against an externally supplied voltage (``in'') intended to be connected to a pressure gauge. When the external voltage is lower than \SI{5}{\volt} (indicating suitably high vacuum), the op-amp's output is negative and transistor T14 is not open. In this scenario the current from the +\SI{15}{\volt} supply can flow through optoisolators N7, N9, N12 and N13 to provide the supply rails for the PA98s. When the external voltage is higher than \SI{5}{\volt} (indicating a pressure above the safe limit), the op-amp's output is positive. As the op-amp's output is fed back to the \emph{positive} input, the op-amp quickly reaches its positive supply rail, \SI{15}{\volt}. This operates T14 which opens a low-resistance path to ground for the current that would otherwise operate the optoisolators, effectively turning off the PA98s' supply rails.}
+  \caption[High voltage amplifier pressure interlock circuit]{\label{fig:amplifier-interlock}HV amplifier pressure interlock circuit. An op-amp (N8A) compares the voltage from a fixed \SI{5}{\volt} reference against an externally supplied voltage (``in'') intended to be connected to a pressure gauge. When the external voltage is lower than \SI{5}{\volt} (indicating suitably high vacuum), the op-amp's output is negative and transistor T14 is not open. In this scenario the current from the +\SI{15}{\volt} supply can flow through optoisolators N7, N9, N12 and N13 to provide the supply rails for the PA98s. When the external voltage is higher than \SI{5}{\volt} (indicating a pressure above the safe limit), the op-amp's output is positive. As the op-amp's output is fed back to the \emph{positive} input, the op-amp quickly reaches its positive supply rail, \SI{15}{\volt}. This operates T14 which opens a low-resistance path to ground for the current that would otherwise operate the optoisolators, effectively turning off the PA98s' supply rails.}
 \end{figure}
 
 \subsection{\label{sec:signal-and-noise-paths}Signal and noise paths}
@@ -144,51 +144,51 @@ The presence of stray capacitance at the inputs and outputs of these additional 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-amplifier-signal-path.pdf}
-  \caption{\label{fig:hv-amp-signal-path}Signal path. \note{Differential receiving, switchable 10dB dewhiteners, test points, clamp diodes, amplifier with appropriate power resistors, voltage divider for monitor}}
+  \caption[High voltage amplifier signal schematic]{\label{fig:hv-amp-signal-path}Signal path. \note{Differential receiving, switchable 10dB dewhiteners, test points, clamp diodes, amplifier with appropriate power resistors, voltage divider for monitor}}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-amplifier-soft-start.pdf}
-  \caption{\label{fig:hv-amp-soft-start}Soft-start. \note{Mostly from Andreas' design. Optoisolators, optocouplers, choke, 1.5KE voltage clamp, charger circuit.}}
+  \caption[High voltage amplifier soft-start schematic]{\label{fig:hv-amp-soft-start}Soft-start. \note{Mostly from Andreas' design. Optoisolators, optocouplers, choke, 1.5KE voltage clamp, charger circuit.}}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/60-hv-amplifier-interlock.pdf}
-  \caption{\label{fig:hv-amp-interlock}Interlock. Four temperature sensors in TO-220 packages for easy attachment to metal. Positive feedback trip switch. CMOS switches (interlock one pulled to 15V). Bypass jumpers. AND gate. 1M resistor to clamp voltage to a ground reference.}
+  \caption[High voltage amplifier interlock schematic]{\label{fig:hv-amp-interlock}Interlock. Four temperature sensors in TO-220 packages for easy attachment to metal. Positive feedback trip switch. CMOS switches (interlock one pulled to 15V). Bypass jumpers. AND gate. 1M resistor to clamp voltage to a ground reference.}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/60-hv-amp-top.pdf}
-  \caption{\label{fig:hv-amp-top}Top view of the high voltage amplifier printed circuit board. In the lower left corner there are IDC connectors for the signal and control inputs and the monitor outputs. These connect via ribbon cables to the inside of the amplifier enclosure's front panel. Various other sockets are present in the lower half and upper centre of the board for high and low voltage inputs and outputs. The eight PA95 amplifier ICs are situated near the top of the board, and some space is left at the top of the board to allow these amplifiers to be attached to heat sinks. The copper layer immediately below the heat sink locations is isolated from the board's main ground plane to prevent the heat sinks from shorting the board's ground to earth. The bottom view is shown in Figure\,\ref{fig:hv-amp-bottom}.}
+  \caption[High voltage amplifier board layout (top)]{\label{fig:hv-amp-top}Top view of the high voltage amplifier printed circuit board. In the lower left corner there are IDC connectors for the signal and control inputs and the monitor outputs. These connect via ribbon cables to the inside of the amplifier enclosure's front panel. Various other sockets are present in the lower half and upper centre of the board for high and low voltage inputs and outputs. The eight PA95 amplifier ICs are situated near the top of the board, and some space is left at the top of the board to allow these amplifiers to be attached to heat sinks. The copper layer immediately below the heat sink locations is isolated from the board's main ground plane to prevent the heat sinks from shorting the board's ground to earth. The bottom view is shown in Figure\,\ref{fig:hv-amp-bottom}.}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/60-hv-amp-bottom.pdf}
-  \caption{\label{fig:hv-amp-bottom}Bottom view of the high voltage amplifier printed circuit board. The lower right corner of the board contains the ``soft start'' circuitry to charge the high voltage capacitors on the board, and the high voltage supply rails are routed from here to the top of the board where they are fed to each of the eight PA95 ICs. The remaining tracks on the bottom are predominantly used for board signal routing. The top view is shown in Figure\,\ref{fig:hv-amp-top}.}
+  \caption[High voltage amplifier board layout (bottom)]{\label{fig:hv-amp-bottom}Bottom view of the high voltage amplifier printed circuit board. The lower right corner of the board contains the ``soft start'' circuitry to charge the high voltage capacitors on the board, and the high voltage supply rails are routed from here to the top of the board where they are fed to each of the eight PA95 ICs. The remaining tracks on the bottom are predominantly used for board signal routing. The top view is shown in Figure\,\ref{fig:hv-amp-top}.}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-new-amplifier-dewhitening.pdf}
-  \caption{Dewhitening, simulated with LISO.}
+  \caption[Simulated dewhitening filter frequency response]{Dewhitening, simulated with LISO.}
   \label{fig:new-amplifier-dewhitening}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-new-amplifier-tfs.pdf}
-  \caption{Second amplifier transfer functions. The expected performance of the dewhitening filter is shown in \checkme{green} alongside the transfer functions of each channel. The curves agree closely, showing that the implemented filter operates as expected. The mismatch at high frequency is caused by the anti-aliasing filters implemented in CDS, which aggressively filter signals above \checkme{a few \SI{}{\kilo\hertz}}.}
+  \caption[Frequency response of the high voltage amplifier]{Second amplifier transfer functions. The expected performance of the dewhitening filter is shown in \checkme{green} alongside the transfer functions of each channel. The curves agree closely, showing that the implemented filter operates as expected. The mismatch at high frequency is caused by the anti-aliasing filters implemented in CDS, which aggressively filter signals above \checkme{a few \SI{}{\kilo\hertz}}.}
   \label{fig:new-amplifier-tfs}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-new-amplifier-coherence.pdf}
-  \caption{Second amplifier channel coherence.}
+  \caption[High voltage amplifier cross-channel coherence]{Second amplifier channel coherence.}
   \label{fig:new-amplifier-coherence}
 \end{figure}
 
