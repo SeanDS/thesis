@@ -12,7 +12,7 @@ In order to calculate a response function for a set of optics, it is necessary t
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
-\section{Limiting noise sources in detectors}
+\section{Limiting noise sources in current detectors}
 Quantum noise, thermal noise (since if you push QN low enough, you run into thermal), possibly mention others (Newtonian noise - why ET will be under ground, etc.)
 
 PUT ALIGO NOISE BUDGET HERE
@@ -111,9 +111,86 @@ Typically the time evolution of a particular signal is the only data an experime
 
 \subsection{Thermal noise}
 
+\subsubsection{Coating thermal noise}
+In the conceptual design for the first generation of gravitational wave detectors such as GEO-600 \cite{Willke2002} the designers were not aware that thermal noise associated with the reflective coatings on mirrors would play a significant role in the sensitivity of the interferometers. For a long time it was known that thermal noise would contribute to the sensitivity of the detectors, particularly from the bulk material forming the test masses, but it soon became clear as the detectors were being commissioned that thermal noise arising from the reflective mirror coatings would dominate the thermal noise associated with the test masses in the frequency band of interest despite forming only a tiny fraction of the test masses by volume. Investigations conducted by Harry \etal{} \cite{Harry2002, Harry2007}, among others, concluded that mechanical loss present in the dielectric coatings on the test masses led to Brownian noise creating a limit to the sensitivity of detectors across a wide range of frequencies. Contributions from thermoelastic noise, arising from the thermal expansion coefficient of the materials of the coatings \cite{Braginsky1999a}, and thermorefractive noise, arising from the change in refractive index caused by such expansion \cite{Braginsky2000a}, produce further noise contributions which will become more important as coatings with improved thermal noise contributions are developed.
+
+Over the past two decades, efforts have been made to both quantify and reduce coating thermal noise. Particular interest is being paid to the study of coatings for cryogenically cooled mirrors, such as
+the sapphire (\ce{Al_2O_3}) test masses to be used in the Japanese detector \gls{KAGRA} \cite{Somiya2012}. A loss peak in the mirror material silica, for detectors until recently ubiquitous, occurs at low temperature. This makes the material unsuitable for cryogenic use, as mechanical loss will couple into the light within the interferometer and make its way to the detection port. Other materials such as sapphire do not feature this loss peak and provide lower thermal noise than silica at room temperature for a given mirror design. Coating noise is also proportional to temperature, so cryogenically cooled mirrors can offer better performance. Additionally, crystalline coatings made from compounds such as \ce{AlGaAs} can offer future detectors a coating thermal noise reduction of up to 3 over current state of the art \cite{Cole2013} if technical challenges in their manufacturing can be overcome.
+
+A mirror topology which avoids the use of many alternating coating layers can potentially offer an improvement in noise performance. Mirrors employing grating structures can resonantly reflect light with less coating material than similarly performing dielectric mirrors \cite{Mashev1985}, though at the expense of additional technical complexity in their utility in gravitational wave detectors \cite{Leavey2015}.
+
+\subsubsection{Suspension thermal noise}
+blah
+
 \subsection{Quantum noise}
+A major concern for designers of metrological experiments is that of quantum noise. These are signals which appear in instruments uncorrelated with the signals intended to be measured. As such, the presence of quantum noise in an instrument will degrade the precision to which an intended measurement can be made.
+
+One of the results of quantum mechanics is that two non-commuting observables cannot be simultaneously known to full precision. For two operators $\hat{O}_+$ and $\hat{O}_-$, there exists an error $\epsilon$:
+\begin{equation}
+ \left[ \hat{O}_+, \hat{O}_- \right] = \epsilon.
+\end{equation}
+This result means that the observables contain correlated components, and as such they cannot be considered entirely separate entities. Measuring one form automatically influences the other, leading to the well-known \emph{Heisenberg Uncertainty Principle}:
+\begin{equation}
+ \left| \Delta \hat{O}_+ \right| \cdot \left| \Delta \hat{O}_- \right| \geq
+\frac{1}{2} \left| \epsilon \right|.
+\end{equation}
+For interferometry there are two pairs of operators of particular importance, namely the position and momentum operators, $x$ and $p_x$, and the photon number and phase operators, $n$ and $\phi$, respectively. The canonical commutation relation between $x$ and $p_x$ is given as:
+\begin{equation}
+ | \Delta x\left( t \right) | \cdot |\Delta p\left( t \right) | \geq
+\frac{\hbar}{2},
+ \label{eq:heisenburguncertainty}
+\end{equation}
+where $\hbar$ is the reduced Planck constant. Consider a position measurement of a free mirror of mass $m$ being oscillated by a signal of frequency $f$. If a measurement is made at time $t$ and then again at time $t + \tau$, where $\tau = \frac{1}{\pi f}$, the uncertainty on the latter can be expressed in terms of the uncertainty in momentum of the mirror multiplied by the time difference:
+\begin{equation}
+ \Delta x \left( t + \tau \right) = \Delta x \left( t \right) + \Delta p_x
+\left( t \right) \frac{\tau}{m}.
+ \label{eq:heisenburgtime}
+\end{equation}
+This result shows that the momentum at time $t$ influences the position at a later time. Since momentum is position scaled by velocity, this leads to a minimum value on which $x \left( t \right)$ can take:
+\begin{equation}
+ \Delta x \left( t \right) \geq \sqrt{\frac{\hbar \tau}{2m}}.
+\end{equation}
+This shows that even with an otherwise unperturbed mirror, the momentum imparted by the measurement at time $t$ influences the later measurement at $t + \tau$ in such a way that it adds noise. If the wavefunction representing the measurement is known too accurately, then the wavefunction representing the mirror will narrow enough to make position estimation a process with high
+uncertainty.
+
+Equation\,\ref{eq:heisenburguncertainty} expresses that the smaller the error on the position of an observable in a quantum mechanical system, the greater the error on the momentum; and vice-versa.
+
+In current and next-generation gravitational wave detectors, the quantum noise sources considered are \emph{shot} noise and \emph{radiation pressure} noise. The former effect arises from counting statistics in the signal readout methods used in the interferometers. Lasers do not produce entirely equally-spaced photons, and photodiodes have a finite sampling rate. Naturally, each sample period will not necessarily count the same number of photons as its neighbours, even when average power levels remain constant. This represents a noise source that is present at all frequencies. Radiation pressure noise, on the other hand, arises from the effect of momentum transfer between photons and reflective surfaces within interferometers, and this is illustrated by Equation\,\ref{eq:heisenburgtime}. Upon reflection, a photon imparts momentum to mirrors, and this moves the mirrors such that the next photons to hit them undergo a different optical path length to the initial photon. This, like shot noise, represents a noise source across all frequencies.
+
+\subsubsection{Quantum noise at loss points}
+Sources of loss in an interferometer introduce uncorrelated vacuum\textendash photons created and annihilated spontaneously\textendash which propagates through the interferometer to the output port where it is sensed by the readout as shot noise and radiation pressure noise. Open ports, present for example as non-unity reflectivity in a mirror, are sources of loss where vacuum fluctuations may enter an interferometer.
 
 \subsubsection{\label{sec:sql}The Standard Quantum Limit}
+The \emph{standard quantum limit} (\gls{SQL}) is a manifestation of the Heisenberg Uncertainty Principle in interferometry. It is the point at which the quadrature sum of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power level there exists a single frequency at which the \gls{SQL} can be reached, since shot and radiation pressure noise scale inversely to one another with frequency. The \gls{SQL} is commonly plotted across a given frequency range, where it forms a line which can only be crossed with special \emph{sub-\gls{SQL}} techniques.
+
+For a given classical interferometer, that is to say, an interferometer lacking special readout techniques aimed at reducing quantum noise sources, it can be shown \cite{Braginsky1996} that the spectral density follows the relation:
+\begin{equation}
+ S_h = \frac{h^{2}_{SQL}}{2} \left( \frac{1}{\kappa} + \kappa \right)
+ \label{eq:classicalifospectrum}.
+\end{equation}
+In above equation, $\kappa$ is defined as the \emph{opto-mechanical coupling constant}:
+\begin{equation}
+ \kappa = \frac{I_0}{I_{SQL}} \frac{2 \gamma^4}{\Omega^2 \left( \gamma^2 +
+\Omega^2 \right)},
+ \label{eq:optomechanicalcoupling}
+\end{equation}
+with $I_0$ the laser power, $I_{SQL}$ the laser power required to reach the \gls{SQL}, $\gamma$ the cavity half-bandwidth, and $\Omega$ the gravitational wave frequency. The interferometer's opto-mechanical coupling constant arises from fluctuations in pressure exerted by light on the mirrors due to shot noise. $I_{SQL}$ can be itself defined as:
+\begin{equation}
+ I_{SQL} = \frac{m L^2 \gamma^4}{4 \omega_0},
+\end{equation}
+with $m$ the mirror mass, $L$ the arm length and $\omega_0$ the light's angular frequency.
+
+Equation\,\ref{eq:classicalifospectrum} can be minimised by setting $I_0 = I_{SQL}$ in Equation~\ref{eq:optomechanicalcoupling}. This yields the \gls{SQL}:
+\begin{equation}
+ h^{2}_{SQL} = \frac{8 \hbar}{m \Omega^2 L^2}.
+ \label{eq:strainsql}
+\end{equation}
+
+An important distinction to make here is that the \gls{SQL} is defined for \emph{uncorrelated} shot and radiation pressure noise. Techniques exist in theory and practice to reduce overall noise by producing correlations between the two effects such as squeezing and variational readout, so-called \emph{quantum non-demolition} interferometry.
+
+Equation\,\ref{eq:strainsql} tells us that the \gls{SQL} can be reduced with heavier mirrors and longer arms. In gravitational wave observatories, however, the cost and technical requirements mean that other techniques to reduce the \gls{SQL} are being considered.
+
+Various methods exist to achieve sensitivity in an interferometer beyond the \gls{SQL}. One such approach is to use \emph{DC readout} and \emph{squeezing}, a combination currently implemented in the detector GEO-HF \cite{Willke2006, Affeldt2014}.
 
 \subsection{Other fundamental noise}
 Gravity gradient, seismic, etc...
@@ -165,5 +242,10 @@ Although not strictly a noise source, parametric instabilities are nevertheless 
 PUT ET NOISE BUDGET HERE
 
 \subsection{Surpassing the Standard Quantum Limit}
+\note{Various techniques exist...}
+
+\subsubsection{Squeezing}
+The use of \emph{squeezing} is an attempt to instead introduce vacuum with \emph{correlated} noise. By choosing a suitable \emph{readout quadrature}, it is possible to avoid quantum noise impinging upon observables, instead moving the noise terms into the orthogonal, unobserved quadrature. Squeezing is particularly favourable in combination with DC readout, since it is not necessary to squeeze additional \gls{RF} sidebands in addition to the carrier light.
+
 \subsubsection{Quantum non-demolition}
 Give general overview of technique, then explain the Sagnac speedmeter in more detail.
