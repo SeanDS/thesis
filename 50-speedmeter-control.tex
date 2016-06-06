@@ -67,9 +67,9 @@ It is obvious that the arm cavities of the \SSM{} must be held resonant in order
   \caption[Transfer functions from various mirrors in the \SSMEXPT{} to the balanced homodyne port]{\label{fig:ssm-mirror-tfs}Transfer functions from various mirrors in the \SSMEXPT{} to the balanced homodyne port. The \LMINUS{} degree of freedom, represented here as the differential motion of one ETM per arm cavity, has the strongest response as intended. The main beam splitter, \MSIX{}, and the steering mirror for cavity A, \MSEVEN{}, have response approximately one one-hundredth that of \LMINUS{}. Other mirrors, such as \MINT{}, have significantly lower coupling.}
 \end{figure}
 
-While \MINT{} can be ruled out as a degree of freedom, the effect of \MSIX{} and \MSEVEN{} is less clear cut. To assess the impact the motion from these mirrors has on \LMINUS{} sensitivity, a calculation of the effect of seismic noise from \MSEVEN{} to the \gls{BHD} can be made. \MSIX{} need not be considered here for three reasons: the transfer function is almost identical to that of \MSEVEN{} and so we need only calculate one, the beam splitter optic will be heavier than that of \MSEVEN{} and so will couple less seismic noise, and the suspension design\textemdash a work in progress at the time of writing\textemdash is intended to have better isolation than that of \MSEVEN{}'s auxiliary suspension.
+While the motion of \MINT{} can be ruled out as a degree of freedom, the effect of \MSIX{} and \MSEVEN{} is less clear cut. To assess the impact the motion from these mirrors has on \LMINUS{} sensitivity, a calculation of the effect of seismic noise from \MSEVEN{} to the \gls{BHD} can be made. \MSIX{} need not be considered here for three reasons: the transfer function is almost identical to that of \MSEVEN{} and so we need only calculate one, the beam splitter optic will be heavier than that of \MSEVEN{} and so will couple less seismic noise, and the suspension design\textemdash a work in progress at the time of writing\textemdash is intended to have better isolation than that of \MSEVEN{}'s auxiliary suspension.
 
-Measurements of the seismic motion present upon the ground outside the vacuum system can be propagated through a model of passive seismic isolation within the vacuum system to obtain the effective seismic motion of the tables upon which the suspensions sit. The seismic motion of \MSEVEN{} can then be calculated by multiplying this spectrum with the transfer function of the auxiliary suspension from the table to the test mass, taken from a state-space model. This seismic noise can be projected into an effective differential arm cavity motion displacement spectral density by multiplying it by the ratio of the transfer functions of \MSEVEN{} and \LMINUS{}\footnote{This is the same as multiplying the motion of \MSEVEN{} by its transfer function to the \gls{BHD} port to yield a signal in \SI{}{\watt\per\sqrthz}, and dividing by the transfer function from \LMINUS{} to the \gls{BHD} to yield an effective motion in terms of \LMINUS{}.}. This can be compared with the requirement for sensitivity of the \gls{BHD} to \LMINUS{}. Figure\,\ref{fig:m7-seismic-noise} shows that \MSEVEN{} will not introduce significant noise above \SI{100}{\hertz}, assuming a vertical to longitudinal coupling level of 1\%. From this result we can also conclude that \MSIX{} will most likely not present a problem, as this mirror is heavier than \MSEVEN{} and will likely use a suspension design with greater seismic isolation.
+Measurements of the seismic motion present upon the ground outside the vacuum system can be propagated through a model of the passive seismic isolation within the vacuum system to obtain the effective seismic motion of the tables upon which the suspensions sit. The seismic motion of \MSEVEN{} can then be calculated by multiplying this spectrum with the transfer function of the auxiliary suspension from the table to the test mass, taken from a state-space model. This seismic noise can be projected into an effective differential arm cavity motion displacement spectral density by multiplying it by the ratio of the transfer functions of \MSEVEN{} and \LMINUS{}\footnote{This is the same as multiplying the motion of \MSEVEN{} by its transfer function to the \gls{BHD} port to yield a signal in \SI{}{\watt\per\sqrthz}, and dividing by the transfer function from \LMINUS{} to the \gls{BHD} to yield an effective motion in terms of \LMINUS{}.}. This can be compared with the requirement for sensitivity of the \gls{BHD} to \LMINUS{}. Figure\,\ref{fig:m7-seismic-noise} shows that \MSEVEN{} will not introduce significant noise above \SI{100}{\hertz}, assuming a vertical to longitudinal coupling level of 1\%. From this result we can also conclude that \MSIX{} will most likely not present a problem, for the reasons explained earlier.
 
 \begin{figure}
   \centering
@@ -77,13 +77,13 @@ Measurements of the seismic motion present upon the ground outside the vacuum sy
   \caption[Effective \LMINUS{} seismic noise contribution from \MSEVEN{}]{\label{fig:m7-seismic-noise}Effective \LMINUS{} seismic noise contribution from \MSEVEN{}. This is calculated by taking a seismic noise spectral density for the laboratory near the vacuum system and propagating it through damping and suspension models to obtain the motion of the \MSEVEN{} test mass. From this point, the response on the \gls{BHD} can be calculated from the transfer function shown in Figure\,\ref{fig:ssm-mirror-tfs}, and this in turn can be expressed in units of differential arm cavity motion by dividing by the response of \LMINUS{} to the \gls{BHD}. The requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made, and this figure shows that seismic motion of \MSEVEN{} will not represent a significant problem to the sensitivity of the experiment in the desired band. The results from \MSEVEN{} apply to the main beam splitter, \MSIX{}, where it is expected the heavier test mass will reduce the effect of seismic noise even further.}
 \end{figure}
 
-From the results in Figures \ref{fig:ssm-mirror-tfs} and \ref{fig:m7-seismic-noise} it can be concluded that there is only one significant degree of freedom to control in the interferometer in order to meet the sensitivity requirement above \SI{100}{\hertz}, where the measurement of reduced radiation pressure noise will be made. It should be noted that the desired \gls{BHD} homodyne angle depends on the path length \MELEVEN{} to \MSIXTEEN{}. This is an auxiliary control loop not considered part of the main longitudinal control strategy, and will be the subject of future work.
+From the results in Figures \ref{fig:ssm-mirror-tfs} and \ref{fig:m7-seismic-noise} it can be concluded that there is only one significant degree of freedom to control in the interferometer in order to meet the sensitivity requirement above \SI{100}{\hertz}, where the measurement of reduced radiation pressure noise will be made. It should, however, be noted that the desired \gls{BHD} homodyne angle depends on the path length \MELEVEN{} to \MSIXTEEN{}. This is an auxiliary control loop not considered part of the main longitudinal control strategy, and will be the subject of future work.
 
 \subsection{Sideband frequency}
 The eventual choice of sideband frequency, used to control cavity lengths using techniques such as \gls{PDH} (see Section\,\ref{sec:pdh}), will depend on a number of factors both physical and technical. For the purpose of control simulations, however, the only requirement is that the sideband frequency is not resonant within the arm cavities, in order to act as a discriminant to allow for the control of the arm cavity lengths. In practice, this means the frequency offset from the carrier must be greater than the cavity's \gls{FWHM} (see Section\,\ref{sec:cavity-fom}). For control simulations the sideband frequency was chosen to be \SI{15}{\mega\hertz}.
 
 \subsection{\label{sec:velocity-control}Simple control strategy}
-Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optical layout with the addition of a basic control loop. The main beam splitter (BS) splits the input field towards the two triangular arm cavities where they form counter-propagating modes. One mode from each arm cavity is coupled into the other via the inter-cavity mirror \MINT{}, and the other modes recombine at the main beam splitter. Here, and for the rest of this chapter, we will consider only the cavity mirrors, the beam splitter and \MINT{}, defined as shown in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}.
+Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optical layout of the \SSMEXPT{} with the addition of a basic control loop. The main beam splitter (BS) splits the input field towards the two triangular arm cavities where they form counter-propagating modes. One mode from each arm cavity is coupled into the other via the inter-cavity mirror \MINT{}, and the other modes recombine at the main beam splitter. Here, and for the rest of this chapter, we will consider only the cavity mirrors, the beam splitter and \MINT{}, defined as shown in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}.
 
 \begin{figure}
   \centering
@@ -91,9 +91,9 @@ Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optic
   \caption[Simplified layout of the \SSMEXPT{} including a basic velocity feedback loop]{\label{fig:simplified-speedmeter-layout-velocity}Simplified \SSM{} layout including extraction of the BHD signal sensitive to the arm cavity differential mode, \LMINUS{}, and the sensing and feedback paths. Light from the input optics (not shown) is incident upon the main beam splitter. The triangular arm cavities are shown in the shaded grey area, and mirror \MINT{} couples light between them. The shaded green area shows the BHD extracting the signal from the main beam splitter's output port (see Section\,\ref{sec:bhd}). The sensing and feedback signal paths are described in detail in Section\,\ref{sec:velocity-control}.}
 \end{figure}
 
-As shown in Section\,\ref{sec:ssm-dofs}, each arm cavity in the \SSM{} is an independent degree of freedom and so changes to \LMINUS{} lead to frequency-dependent signals at the output port. Motion of an arm cavity mirror imparts signal sidebands upon the counter-propagating modes. These modes have different optical path lengths to the beam splitter and so the signal at the output port contains the superposition of signals representing the mirror's displacement from different points in time, which is analogous to velocity. At dc frequencies the two modes at the output port contain the same displacement information and the velocity signal is therefore zero (for a more complete description of the \SSM{}'s behaviour, see, for example, Section\,IIb of \cite{Chen2003}). Motion of \MINT{} and BS imprints common phase changes on both counter-propagating modes and are not considered degrees of freedom for signals sensed at the output port.
+As shown in Section\,\ref{sec:ssm-dofs}, the differential arm cavity length \LMINUS{} is an independent degree of freedom and so frequency-dependent changes lead to frequency-dependent signals at the output port. Motion of an arm cavity mirror imparts signal sidebands upon the counter-propagating modes. These modes have different optical path lengths to the beam splitter and so the signal at the output port contains the superposition of signals representing the mirror's displacement from different points in time, which is analogous to velocity. At dc frequencies the two modes at the output port contain the same displacement information and the velocity signal is therefore zero (for a more complete description of the \SSM{}'s behaviour, see, for example, Section\,IIb of \cite{Chen2003}). Motion of \MINT{} and BS imprints common phase changes on both counter-propagating modes and are not considered degrees of freedom for signals sensed at the output port.
 
-The error signal (\emph{readout}) representing \LMINUS{} is sensed at the main beam splitter's output port by means of a balanced homodyne detector (\gls{BHD}, see Section\,\ref{sec:bhd}) \cite{Steinlechner2015}, as shown in the shaded green area in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}. The frequency dependence of the phase quadrature signal at the output port $s_{\textrm{BHD}}$ is given by the following relationship, ignoring the effect of losses (a full treatment of the effect of loss is given in ref.\,\cite{Danilishin2015}):
+The error signal (\emph{readout}) representing \LMINUS{} is sensed at the main beam splitter's output port by means of a balanced homodyne detector (\gls{BHD}, see Section\,\ref{sec:bhd}) \cite{Steinlechner2015}, as shown in the shaded \checkme{green} area in Figure\,\ref{fig:simplified-speedmeter-layout-velocity}. The frequency dependence of the phase quadrature signal at the output port $s_{\textrm{BHD}}$ is given by the following relationship, ignoring the effect of losses\footnote{A full treatment of the effect of loss is given in ref.\,\cite{Danilishin2015}.}:
 \begin{equation}
   \label{eq:asymdarmbhdresponse}
   s_{\textrm{BHD}} \left( \Omega \right) \propto \frac{\Omega}{ \left(\Omega^2 + \gamma_{\textrm{arm}}^2 \right)} L_{\left(-\right)},
@@ -112,7 +112,7 @@ Other terms in the response function dependent upon mirror mass, laser power and
   \caption[The frequency response of the differential arm cavity degree of freedom to the balanced homodyne readout]{\label{fig:bhd-response}The frequency response of the BHD to \LMINUS{}, simulated numerically with \emph{Optickle}. As the BHD is sensitive to the \SSM{}'s velocity, the signal is proportional to frequency below the cavity pole, and thus zero at dc.}
 \end{figure}
 
-In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravitational waves, the positions of the cavity mirrors are controlled using \emph{linear inverting feedback}, where an error signal is extracted and applied through a control law to cavity mirror actuators. In the experiment, voice coils and plate capacitor electrostatic drives (\glspl{ESD}) \cite{Wittel2015} are used to actuate on the position of the end test masses within each cavity. This feedback maintains the interferometer close to its operating point within the bandwidth of the controller. In order to achieve the required stability, the relative position of the cavity mirrors must be controlled to within \SI{3.5e-13}{\meter} rms (see Section,\ref{sec:ssm-required-control}).
+In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravitational waves, the positions of the cavity mirrors are controlled using \emph{linear inverting feedback}, where an error signal is extracted and applied through a control law to cavity mirror actuators. In the experiment, voice coils and plate capacitor electrostatic drives (\glspl{ESD}, see \cite{Wittel2015} and Chapter\,\ref{c:esd-concept}) are used to actuate on the position of the end test masses within each cavity. This feedback maintains the interferometer close to its operating point within the bandwidth of the controller.
    
 % For phase noise calculation, see p56 of Lisa Barsotti's thesis
 % Or p53 of Rana's thesis
@@ -120,19 +120,21 @@ In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravi
 
 \subsection{\label{sec:ssm-required-control}Required controller precision}
 
-The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \SSM{}. The dark fringe condition is only met when there is no interferometer noise, however the slope of the fringe near the minimum is shallow within about 1\%. A thorough analysis of the required control precision has been derived for the case of a \DRFPMI{} with \gls{DC} readout \cite{Vajente2011} but to the author's knowledge not for a \SSM{} with \gls{BHD} readout. The broad behaviour is expected to be the same. Assuming that the frequency fluctuations $\Delta f$ fall within \SI{1}{\percent} of the arm cavity full-width half-maxima, we can derive  requirement to ensure that technical noise sources do not couple strongly to the gravitational wave channel.
+In order to achieve the required stability, the relative position of the cavity mirrors must be held close to the top of the interference fringe formed by the resonant light. The noise present within the interferometer, however, produces an unintended \emph{dark-fringe offset} at the output port of the \SSM{}. The dark fringe condition is only met when there is no interferometer noise, though the slope of the fringe near the minimum is shallow within about 1\% of the fringe's \gls{FWHM}. A thorough analysis of the required control precision has been derived for the case of a \DRFPMI{} with \gls{DC} readout \cite{Vajente2011} but to the author's knowledge this has not been repeated for a \SSM{} with \gls{BHD} readout. As most technical noise sources in the \SSM{} have similar output port couplings to that of a \MI{}, the requirement is expected to be similar. Assuming that the frequency fluctuations $\Delta f$ fall within \SI{1}{\percent} of the arm cavity \gls{FWHM}, we can derive a requirement to ensure that technical noise sources do not couple strongly to the gravitational wave channel.
 
 Using the parameters listed in Table\,\ref{tab:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
 \begin{equation}
   \frac{\Delta L_{\left(-\right)}}{L_{\textrm{RT}}} = \frac{\Delta f}{f_{0}},
 \end{equation}
-with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the requirement for the \SSM{} is that the residual motion of the mirrors must be less than \SI{3.5e-13}{\meter}.
+with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the requirement for the \SSMEXPT{} is that the residual displacement of the mirrors due to noise must be less than \SI{3.5e-13}{\meter}.
 
-As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The controller should therefore have a large factor of safety in terms of the gain it is able to apply to the system to hold it at the operating point.
+As shown in ref. \cite{Danilishin2015}, asymmetries in the main beam splitter introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The controller should therefore have a large factor of safety in terms of the gain it is able to apply to the system to hold it at the operating point.
 
 \subsection{\label{sec:bhd}Balanced homodyne detection}
      
-The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter. A local oscillator is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter. The difference current is converted to a voltage by an op-amp with transimpedance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}). The transimpedance resistor was set to \SI{10}{\kilo\ohm} to balance the op-amp's current and voltage noise contributions to its output. An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band.
+The \gls{BHD} at the \SSMEXPT{}'s output port consists of two high quantum-efficiency photodetectors sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter. A local oscillator is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter, itself incident at another port of the \gls{BHD}'s beam splitter. The difference current is converted to a voltage by an op-amp with transimpedance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}). The transimpedance resistor was set to \SI{10}{\kilo\ohm} to balance the op-amp's current and voltage noise contributions at its output.
+
+An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band.
 
 \begin{figure}
   \centering
@@ -140,10 +142,10 @@ The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the
   \caption[Electronic schematic for the balanced homodyne readout]{\label{fig:bhd-electronics}Simplified electronic schematic for the BHD readout. The difference current from two matched, high quantum efficiency photodiodes is amplified via a transimpedance op-amp stage, with this signal representing the differential motion of the arm cavity mirrors (see Equation\,\ref{eq:asymdarmbhdresponse}).}
 \end{figure}
 
-Op-amps used for control in audio-band interferometry typically possess a noise power spectrum inversely proportional to frequency (so-called \emph{flicker noise} \cite[Section\,11.2.3]{Gray2009}) in the low audio band. As the \gls{BHD} error signal is dependent upon the time derivative of the mirror positions, however, there will necessarily be frequencies at which the op-amp noise will dominate the \gls{BHD} error signal. This makes control of slow drifts of the arm cavity mirror positions impossible with the velocity readout, despite the op-amp being well-chosen for a measurement band above \SI{100}{\hertz}. This control problem with relation to the proof-of-concept experiment will be quantified in the following subsections.
+Op-amps used for control in audio-band interferometry typically possess a noise power spectrum inversely proportional to frequency (so-called \emph{flicker noise} \cite[Section\,11.2.3]{Gray2009}) in the low audio band. As the \gls{BHD} error signal is dependent upon the time derivative of the mirror positions, however, there will necessarily be frequencies at which the op-amp noise will dominate the \gls{BHD} error signal. This makes control of slow drifts of the arm cavity mirror positions impossible with the velocity readout, despite the op-amp being well-chosen for a measurement band above \SI{100}{\hertz}. This control problem with relation to the \SSMEXPT{} will be quantified in the following subsections.
 
 \subsection{\label{sec:op-amp-noise}Op-amp noise}
-To measure the effect of a suitable op-amp's noise at low frequency, the output from an applicable BHD circuit was investigated. The circuit shown in Figure\,\ref{fig:bhd-noise-electronics} was housed within a dark enclosure to minimise photocurrent, with one of the two op-amps within a Texas Instruments\textsuperscript{\textregistered} OPA2227 integrated circuit being used to amplify the noise from the other by a factor of \SI{100}{}, to a level detectable by the DAQ. This op-amp is suitable for the BHD circuit shown in Figure\,\ref{fig:bhd-electronics} given the intended measurement band around a few hundreds of \SI{}{\hertz} \cite{Graef2014}.
+To measure the effect of a suitable op-amp's noise at low frequencies, the output from an applicable \gls{BHD} circuit was investigated. The circuit shown in Figure\,\ref{fig:bhd-noise-electronics} was housed within a dark enclosure to minimise photocurrent, with one of the two op-amps within a Texas Instruments\textsuperscript{\textregistered} OPA2227 integrated circuit being used to amplify the noise from the other by a factor of \SI{100}{}. This amplification step is necessary in order to allow the desired op-amp noise to be measured above the noise of the \gls{CDS} analogue-to-digital converters used to record the data. The OPA2227 op-amp is a low-noise precision amplifier designed for audio applications, and is thus suitable for the \gls{BHD} readout in the \SSMEXPT{} depicted in Figure\,\ref{fig:bhd-electronics} given the intended measurement band around a few hundreds of \SI{}{\hertz}.
 
 \begin{figure}
   \centering
@@ -151,7 +153,7 @@ To measure the effect of a suitable op-amp's noise at low frequency, the output 
   \caption[Electronic schematic for the measurement of noise from the balanced homodyne readout]{\label{fig:bhd-noise-electronics}Electronic schematic for the measurement of noise from the BHD readout circuit shown in Figure\,\ref{fig:bhd-electronics}. The output from the transimpedance op-amp is multiplied by a factor of \num{100} by an identical op-amp. The level of multiplication was chosen to allow this noise to exceed the noise of the ADCs on CDS.}
 \end{figure}
 
-The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in the measured op-amp noise over the course of \SI{16}{} days. An open channel on the DAQ was measured concurrently. A Fourier transform of the measured op-amp noise time series (Figure\,\ref{fig:op-amp-noise-spectrum}) shows a combination of flicker noise and an additional slope possibly due to resistor current noise below around \SI{1}{\hertz} \cite{Seifert2009}. DAQ noise dominates above \SI{4}{\hertz}. The ``Model (total)'' spectral density in Figure\,\ref{fig:op-amp-noise-spectrum} show the contributions to the measurements from the first op-amp $\textrm{N}_{1}$'s current and voltage noise and the Johnson-Nyquist noise of its transimpedance resistor $\textrm{R}_{\textrm{T}}$. This spectral density additionally contains the measured open channel noise summed in quadrature to show the agreement it has with the measurements down to around \SI{1}{\hertz}.
+The noise measurements were recorded for a period of \SI{16}{} days alongside an open DAQ input channel used to quantify some of the measurement noise. The time series is shown in Figure\,\ref{fig:op-amp-noise-time-series}, where a drift over the course of the measurements is apparent. A Fourier transform of the measured op-amp noise time series (Figure\,\ref{fig:op-amp-noise-spectrum}) shows a combination of flicker noise and an additional slope possibly due to resistor current noise below around \SI{1}{\hertz} \cite{Seifert2009}. DAQ noise dominates above \SI{4}{\hertz}. The ``Model (total)'' spectral density in Figure\,\ref{fig:op-amp-noise-spectrum} show the contributions to the measurements from the first op-amp $\textrm{N}_{1}$'s current and voltage noise and the Johnson-Nyquist noise of its transimpedance resistor $\textrm{R}_{\textrm{T}}$. This spectral density additionally contains the measured open channel noise summed in quadrature to show the agreement it has with the measurements down to around \SI{1}{\hertz}.
 
 \begin{figure}
   \centering
@@ -170,7 +172,7 @@ The op-amp noise drift produces an offset upon the \gls{BHD} error signal which 
 \subsection{Technical noise}
 
 \subsubsection{Analogue to digital converters}
-The conversion of analogue signals to digital for use by \gls{CDS} involves the use of \glspl{ADC}. Noise in the \gls{ADC} arises from quantisation error $\epsilon_{\text{ADC}}$, which is the mismatch between the underlying signal input and the level determined by the \gls{ADC} \cite{Allen1997}. An \gls{ADC}'s job is to take an analogue signal of some voltage and convert it into a corresponding binary word proportional to that input. The fastest \glspl{ADC} work by splitting the input signal into copies and comparing each copy against an increasing threshold voltage\footnote{This is called a ``parallel'' \gls{ADC}, though there exist many other forms such as ``successive approximation'', ``voltage-to-frequency'', ``integration'' and ``delta-sigma''. A good overview is given in \cite{Horowitz2015}.}. Initially ignoring additional technical complexity, we can imagine the thresholds of the \gls{ADC} to represent bits of a binary word. The first threshold will check if the input is above or below \SI{1}{\volt}, and output a corresponding high or low signal at that bit location. Subsequent thresholds check for \SI{2}{\volt}, \SI{4}{\volt} and so on. With this simple picture the most obvious flaw is that this system can only determine integer voltage levels, and so the quantisation error is \SI{0.5}{\volt}. In reality, however, input signals are stationary random processes and oscillate between thresholds; in effect they are self-dithered. By averaging over successive cycles, the \gls{ADC} can make a better approximation of the underlying signal, reducing the quantisation error to the interval $\epsilon_{\text{ADC}} \in \left( \frac{-\Delta}{2}, \frac{\Delta}{2} \right]$, where $\Delta$ is the smallest representable voltage level of the \gls{ADC}:
+The conversion of analogue signals to digital by \gls{CDS} for control and acquisition purposes involves the use of \glspl{ADC}. Noise in an \gls{ADC} arises from \emph{quantisation error} $\epsilon_{\text{ADC}}$, which is the mismatch between the underlying signal input and the level determined by the \gls{ADC} \cite{Allen1997}. An \gls{ADC}'s job is to take an analogue signal of some voltage and convert it into a corresponding binary word proportional to that input. The fastest \glspl{ADC} work by splitting the input signal into copies and comparing each copy against an increasing threshold voltage\footnote{This is called a ``parallel'' \gls{ADC}, though there exist many other forms such as ``successive approximation'', ``voltage-to-frequency'', ``integration'' and ``delta-sigma''. A good overview is given in \cite{Horowitz2015}.}. Initially ignoring additional technical complexity, we can imagine the thresholds of the \gls{ADC} to represent bits of a binary word. The first threshold will check if the input is above or below \SI{1}{\volt}, and output a corresponding high or low signal at that bit location. Subsequent thresholds check for \SI{2}{\volt}, \SI{4}{\volt} and so on. With this simple picture the most obvious flaw is that this system can only determine integer voltage levels, and so the quantisation error is \SI{0.5}{\volt}. In reality, however, input signals are typically stationary random processes and oscillate between thresholds; in effect they are self-dithered. By averaging over successive cycles, the \gls{ADC} can make a better approximation of the underlying signal, reducing the quantisation error to the interval $\epsilon_{\text{ADC}} \in \left( \frac{-\Delta}{2}, \frac{\Delta}{2} \right]$ \cite{Allen1997}, where $\Delta$ is the smallest representable voltage level of an \gls{ADC} of $b$ bits:
 \begin{equation}
   \begin{split}
     \Delta &= \frac{V_{\text{max}} - V_{\text{min}}}{2^{b}} \\
@@ -178,14 +180,16 @@ The conversion of analogue signals to digital for use by \gls{CDS} involves the 
   \end{split}
 \end{equation}
 
-Quantisation noise depends on the noise produced by the components that make up an \gls{ADC}'s threshold sensors. In the case of \gls{CDS}, the effective number of bits\footnote{One might decide to purchase an \gls{ADC} based merely upon its number of bits, but this is not a good guide for determining its sensitivity. A 24-bit \gls{ADC} is no better than a 16-bit \gls{ADC} if the first 8 bits are noise. A more useful figure of merit is the \gls{ENOB}.} (\gls{ENOB}) is $b = 13.9$, corresponding to a noise level of \SI{1.8e-6}{\volt\per\sqrthz} using the relation:
+Quantisation noise depends on the noise produced by the components that make up an \gls{ADC}'s threshold sensors, with each contributing noise from its electronics to the output. In the case of \gls{CDS}, the effective number of bits\footnote{One might decide to purchase an \gls{ADC} based merely upon its number of bits, but this is not a good guide for determining its sensitivity. A 24-bit \gls{ADC} is no better than a 16-bit \gls{ADC} if the first 8 bits are noise. A more useful figure of merit is the \gls{ENOB}.} (\gls{ENOB}) is $b = 13.9$, corresponding to a noise level of \SI{1.8e-6}{\volt\per\sqrthz} using the relation:
 \begin{equation}
   \epsilon_{\text{ADC}} = \frac{V_{\text{range}}}{2^b \sqrt{12 f_{N}}},
 \end{equation}
 where $f_{N}$ is the Nyquist frequency. This noise floor is flat across much of the bandwidth of \gls{CDS}, as it is determined by the noise of op-amps chosen for low noise in the audio band.
 
 \subsubsection{Digital to analogue converters}
-From the digital to the analogue domain, the same process happens in reverse with \glspl{DAC}. This time, quantisation noise arises directly from the inability of the \gls{DAC} to faithfully reconstruct the digital signal without adding noise. With the \gls{CDS} system, the \glspl{ADC} and \glspl{DAC} are well matched and both possess the same noise floor.
+From the digital to the analogue domain, the same process happens in reverse with \glspl{DAC}. This time, quantisation noise arises directly from the inability of the \gls{DAC} to faithfully reconstruct the digital signal without adding noise, which is effectively a series of summed voltage thresholds in a similar arrangement to that of an \gls{ADC}. With the \gls{CDS} system, the \glspl{ADC} and \glspl{DAC} are well matched and both possess the same noise floor.
+
+\subsection{Sensing and actuation dynamic range considerations}
 
 \subsubsection{Whitening and dewhitening filters}
 The signals sensed by the interferometer's photodetectors contain large components at low frequencies arising from seismic noise, and small components at higher frequencies where the measurement of radiation pressure and shot noise can be made. The \gls{ADC}'s input range of \SI{\pm10}{\volt} and its noise \SI{1.8e-6}{\volt\per\sqrthz} lead to a dynamic range $\text{D}$ of:
@@ -195,9 +199,19 @@ The signals sensed by the interferometer's photodetectors contain large componen
              &= \SI{134.9}{\deci\bel}.
   \end{split}
 \end{equation}
-Well chosen signal amplification should result in an \gls{RMS} signal of less than $\frac{1}{10} V_{\text{max}}$, giving headroom to the sensors for larger, less frequent noise transients to be detected without clipping while still allowing small signal detection. As the signal from the interferometer is shaped approximately inversely to frequency, signals at \SI{1}{\kilo\hertz} are typically many orders of magnitude smaller than those of seismic noise at a few \SI{}{\hertz}. This means that signals of the level of quantum noise are sometimes lost in the noise from the \glspl{ADC} and \glspl{DAC}. To avoid this problem, a technique called \emph{whitening} can be used. This involves applying a filter to the desired input or output signal in order to increase certain frequency components of a signal.
+Well chosen signal amplification should result in an \gls{RMS} signal of less than $\frac{1}{10} V_{\text{max}}$, giving headroom to the sensors for larger, less frequent noise transients to be detected without clipping while still allowing small signal detection. As the signal from the interferometer is shaped \checkme{approximately inversely to frequency}, signals in the \SI{}{\kilo\hertz} band are typically many orders of magnitude smaller than those of seismic noise at a few \SI{}{\hertz}, meaning that signals at the level of quantum noise are sometimes lost in the noise from the \glspl{ADC} and \glspl{DAC}. To avoid this problem, a technique called \emph{whitening} can be used. This involves applying a filter to the desired input or output signal in order to increase certain frequency components of a signal.
 
-\note{discuss whitening/dewhitening requirements}
+The effect of whitening is shown in Figure\,\ref{fig:whitening} for a hypothetical signal and sensor. In the left case, the signal's dynamic range is greater than that of the sensor, and so the sensor is unable to measure the signal with fidelity. At higher frequencies, the signal is below the level of the sensor's noise and as such the sensor measures no signal there. Most noise sources in gravitational wave interferometry have, however, some inverse frequency dependence at the main interferometer readout such that the signal content at higher frequencies is smaller than the signal content at lower frequencies. By applying a whitening filter at higher frequencies, the small signal content there can be enhanced to a level at which it can be detected by the sensor above its noise. This effectively reduces the dynamic range of the signal. This is shown in the right case. The original signal can be recovered digitally by the application of an inverse whitening filter.
+
+The use of whitening can lead to extra noise at higher frequencies, where the continually decaying signal becomes lower than the electronic noise of any real whitening filter arising from the op-amps and resistors. Care must be taken in the design of whitening filters, with components chosen fit for the intended measurement band.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/50-whitening.pdf}
+  \caption[The effect of whitening on a signal]{\label{fig:whitening}The effect of whitening on a signal. In the left diagram, the signal's range is greater than that of the sensor. The sensor will in this circumstance be insensitive to signals at frequencies greater than around \SI{80}{\hertz}, assuming that the signal continues to decrease inversely to frequency (as is typical for noise sources in gravitational wave interferometry), instead reading only the noise of the sensor (at $\text{SNR} = 0$). In the right diagram, the signal has had a whitening filter applied to it to increase the signal's magnitude at higher frequencies and thus make it detectable within the dynamic range of the sensor. The underlying, unwhitened signal can be recovered digitally by the application of the inverse whitening filter.}
+\end{figure}
+
+\note{In the \SSMEXPT{}, the whitening required is...}
 
 \subsubsection{Aliasing and imaging}
 
@@ -215,7 +229,9 @@ With \gls{CDS}, the sample rate is \SI{65536}{\hertz}, and so the Nyquist freque
 
 \subsubsection{Loop gain}
 
-\subsection{Control loop with velocity sensing}
+\section{Velocity control}
+
+\subsection{Control loop}
 
 A control loop schematic using the calculations, filters and servos presented in this section is shown in Figure\,\ref{fig:ssm-control-loop-velocity}. The items contained within the grey box are implemented in software as part of the LIGO control and data system \cite{Bork2010}. The lower section contains the blocks which exist in the analogue domain.
 
@@ -354,7 +370,51 @@ The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in O
   \caption[Optimal filters to combine the balanced homodyne and Pound-Drever-Hall signals for different values of \MINT{} reflectivity]{\label{fig:optimal-filters}Optimal filters to combine the BHD and PDH signals for different values of \MINT{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the BHD signal with respect to the PDH signal before the two are combined, for different \MINT{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the PDH signal. For all values of \MINT{} shown, the optimal combination involves suppressing the BHD signal with respect to the PDH at frequencies below around \SI{1}{\kilo\hertz}; equivalently, the PDH signal must be amplified with respect to the BHD signal in the same band, an example of which is presented in Section\,\ref{sec:combined-filter}.}
 \end{figure}
 
-\section{\label{ssm-control-scheme}Full control scheme}
+\subsection{\label{sec:noise-budget}Noise budget}
+
+In order to show that quantum noise is reduced with respect to an equivalent Michelson interferometer, the design of the proof-of-concept \SSM{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique, each anticipated significant source of noise has been estimated and projected into differential mode displacement-equivalent noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The projection requires that the characteristics of the length sensing and control loop be well defined. A detailed description of the interferometer's optomechanics, signal extraction, control law and suspension and actuator dynamics is provided in Section,\ref{ssm-control-scheme}, while the computed noise budget for the differential mode is presented in Figure\,\ref{fig:noise-budget}.
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-speedmeter-noise-budget.pdf}
+  \caption[Control noise budget for the \SSMEXPT{}]{\label{fig:noise-budget}\SSM{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the PDH readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band.}
+\end{figure}
+
+The sensitivity between \SI{100}{\hertz} and \SI{700}{\hertz}, shaded in \checkme{blue}, is the quantum noise limited measurement band. This band is constrained from below by test mass suspension mechanical mode cross-couplings (not shown) and from above by the first violin mode of the ETM suspensions. Suspension thermal noise is the second highest noise source present in this band and is at most a factor of \SI{2.3}{} below quantum noise, allowing a careful direct measurement of quantum radiation pressure noise to be made in this region. The contribution to the quantum noise from the PDH feedback is far below the limiting quantum noise, showing that the use of the displacement readout as part of the combined filter presented in Section\,\ref{sec:combined-filter} does not significantly affect the sensitivity of the \SSM{} in the desired band.
+
+\section{\label{app:parameters}Experimental parameters}
+The parameters used in the simulations presented in this work are shown in Table\,\ref{tab:parameters}. Unless otherwise stated, the mirrors specified in the figures and simulations are assumed to have unity reflectivity. All listed transmissivities represent power, no substrate loss is assumed for any optic and all simulations have been performed using the plane-wave approximation.
+% FWHM, finesse etc. calculations from Finesse simulation for SSM with the 'maxtem 0' and 'trace 2' commands.
+
+\begin{table}
+  \centering
+  \begin{tabular}{ll}
+    \textbf{Parameter}   & \textbf{Fiducial value} \\
+    Laser wavelength $\lambda_{0}$        & \SI{1064}{\nano\meter} \\
+    Input power             & \SI{1.8}{\watt} \\
+    Round-trip cavity length $L_{\textrm{RT}}$ & \SI{2.83}{\meter} \\
+    \MINT{} transmissivity & \SI{e4}{} ppm \\
+    ITM transmissivity      & \SI{700}{} ppm                 \\
+    Arm cavity \gls{FWHM} & \SI{12.2}{\kilo\hertz} \\
+    Arm cavity finesse      & \SI{8663}{} \\
+    BHD quantum efficiency  & \SI{0.95}{\ampere\per\watt} \\
+    PDH quantum efficiency  & \SI{0.80}{\ampere\per\watt} \\
+    \RT{}                   & \SI{10}{\kilo\ohm} \\
+    PDH demodulation gain   & \SI{21}{\decibel} \\
+    ADC/DAC quantisation noise  & \SI{1.8}{\micro\volt\per\sqrthz} \\
+    ETM mass                & \SI{113}{\gram} \\
+    ETM fibres              & \SI{4}{} \\
+    ETM fibre diameter      & \SI{40}{\micro\meter} \\
+    ETM fibre length        & \SI{200}{\milli\meter} \\
+    ITM mass                & \SI{0.86}{\gram} \\
+    ITM fibres              & \SI{2}{} \\
+    ITM fibre diameter      & \SI{10}{\micro\meter} \\
+    ITM fibre length        & \SI{100}{\milli\meter} \\
+    Suspension vertical-to-horizontal coupling & \SI{0.01}{} \\
+  \end{tabular}
+  \caption{\label{tab:parameters}Experimental parameters. The properties for the suspensions and test masses are given in order for the reader to be able to reproduce the suspension thermal noise spectral density presented in Figure\,\ref{fig:noise-budget}.}
+\end{table}
+
+\section{\label{ssm-control-scheme}IMPLEMENT IN 5.2 Full control scheme}
 The intended control loop schematic for the proof-of-concept experiment is shown in Figure\,\ref{fig:ssm-control-loop-mixed}. The ``fiducial'' section is well defined and is based on existing DAQ hardware and software, an implementation of the LIGO control and data system \cite{Bork2010}. The bottom section contains the blocks which have been modelled during the course of this work.
 
 \begin{figure}
@@ -410,50 +470,6 @@ The open loop gain of the control system is shown in Figure\,\ref{fig:open-loop-
   \caption[Simulated controller open loop gain]{\label{fig:open-loop-gain}Simulated \SSM{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
   % phase margin calculated with script graphics/scripts/open-loop-gain/phaseMargin.py
 \end{figure}
-
-\section{\label{app:parameters}Experimental parameters}
-The parameters used in the simulations presented in this work are shown in Table\,\ref{tab:parameters}. Unless otherwise stated, the mirrors specified in the figures and simulations are assumed to have unity reflectivity. All listed transmissivities represent power, no substrate loss is assumed for any optic and all simulations have been performed using the plane-wave approximation.
-% FWHM, finesse etc. calculations from Finesse simulation for SSM with the 'maxtem 0' and 'trace 2' commands.
-
-\begin{table}
-  \centering
-  \begin{tabular}{ll}
-    \textbf{Parameter}   & \textbf{Fiducial value} \\
-    Laser wavelength $\lambda_{0}$        & \SI{1064}{\nano\meter} \\
-    Input power             & \SI{1.8}{\watt} \\
-    Round-trip cavity length $L_{\textrm{RT}}$ & \SI{2.83}{\meter} \\
-    \MINT{} transmissivity & \SI{e4}{} ppm \\
-    ITM transmissivity      & \SI{700}{} ppm                 \\
-    Arm cavity \gls{FWHM} & \SI{12.2}{\kilo\hertz} \\
-    Arm cavity finesse      & \SI{8663}{} \\
-    BHD quantum efficiency  & \SI{0.95}{\ampere\per\watt} \\
-    PDH quantum efficiency  & \SI{0.80}{\ampere\per\watt} \\
-    \RT{}                   & \SI{10}{\kilo\ohm} \\
-    PDH demodulation gain   & \SI{21}{\decibel} \\
-    ADC/DAC quantisation noise  & \SI{1.8}{\micro\volt\per\sqrthz} \\
-    ETM mass                & \SI{113}{\gram} \\
-    ETM fibres              & \SI{4}{} \\
-    ETM fibre diameter      & \SI{40}{\micro\meter} \\
-    ETM fibre length        & \SI{200}{\milli\meter} \\
-    ITM mass                & \SI{0.86}{\gram} \\
-    ITM fibres              & \SI{2}{} \\
-    ITM fibre diameter      & \SI{10}{\micro\meter} \\
-    ITM fibre length        & \SI{100}{\milli\meter} \\
-    Suspension vertical-to-horizontal coupling & \SI{0.01}{} \\
-  \end{tabular}
-  \caption{\label{tab:parameters}Experimental parameters. The properties for the suspensions and test masses are given in order for the reader to be able to reproduce the suspension thermal noise spectral density presented in Figure\,\ref{fig:noise-budget}.}
-\end{table}
-
-\section{\label{sec:noise-budget}Noise budget}
-
-In order to show that quantum noise is reduced with respect to an equivalent Michelson interferometer, the design of the proof-of-concept \SSM{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique, each anticipated significant source of noise has been estimated and projected into differential mode displacement-equivalent noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The projection requires that the characteristics of the length sensing and control loop be well defined. A detailed description of the interferometer's optomechanics, signal extraction, control law and suspension and actuator dynamics is provided in Section,\ref{ssm-control-scheme}, while the computed noise budget for the differential mode is presented in Figure\,\ref{fig:noise-budget}.
-
-\begin{figure}
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-speedmeter-noise-budget.pdf}
-  \caption[Control noise budget for the \SSMEXPT{}]{\label{fig:noise-budget}\SSM{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the PDH readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band.}
-\end{figure}
-
-The sensitivity between \SI{100}{\hertz} and \SI{700}{\hertz}, shaded in \checkme{blue}, is the quantum noise limited measurement band. This band is constrained from below by test mass suspension mechanical mode cross-couplings (not shown) and from above by the first violin mode of the ETM suspensions. Suspension thermal noise is the second highest noise source present in this band and is at most a factor of \SI{2.3}{} below quantum noise, allowing a careful direct measurement of quantum radiation pressure noise to be made in this region. The contribution to the quantum noise from the PDH feedback is far below the limiting quantum noise, showing that the use of the displacement readout as part of the combined filter presented in Section\,\ref{sec:combined-filter} does not significantly affect the sensitivity of the \SSM{} in the desired band.
 
 \section{\label{sec:summary}Summary}
 
