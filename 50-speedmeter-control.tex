@@ -26,7 +26,6 @@ The \SSM{} interferometer topology can potentially provide enhanced sensitivity 
     \begin{itemize}
       \item Set transimpedance so that signals are ~1 V...?
     \end{itemize}
-  \item Mixing displacement and velocity signals
   \item CDS overall gain setting
     \begin{itemize}
       \item Set overall gain to not max the actuators on the suspensions, and provide ~1 V on the input to CDS
@@ -65,7 +64,7 @@ It is obvious that the arm cavities of the \SSM{} must be held resonant in order
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-mirror-tfs.pdf}
-  \caption[Transfer functions from various mirrors in the \SSMEXPT{} to the balanced homodyne port]{\label{fig:ssm-mirror-tfs}blah}
+  \caption[Transfer functions from various mirrors in the \SSMEXPT{} to the balanced homodyne port]{\label{fig:ssm-mirror-tfs}Transfer functions from various mirrors in the \SSMEXPT{} to the balanced homodyne port. The \LMINUS{} degree of freedom, represented here as the differential motion of one ETM per arm cavity, has the strongest response as intended. The main beam splitter, \MSIX{}, and the steering mirror for cavity A, \MSEVEN{}, have response approximately one one-hundredth that of \LMINUS{}. Other mirrors, such as \MINT{}, have significantly lower coupling.}
 \end{figure}
 
 While \MINT{} can be ruled out as a degree of freedom, the effect of \MSIX{} and \MSEVEN{} is less clear cut. To assess the impact the motion from these mirrors has on \LMINUS{} sensitivity, a calculation of the effect of seismic noise from \MSEVEN{} to the \gls{BHD} can be made. \MSIX{} need not be considered here for three reasons: the transfer function is almost identical to that of \MSEVEN{} and so we need only calculate one, the beam splitter optic will be heavier than that of \MSEVEN{} and so will couple less seismic noise, and the suspension design\textemdash a work in progress at the time of writing\textemdash is intended to have better isolation than that of \MSEVEN{}'s auxiliary suspension.
@@ -75,7 +74,7 @@ Measurements of the seismic motion present upon the ground outside the vacuum sy
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-m7-seismic-noise.pdf}
-  \caption[Effective \LMINUS{} seismic noise contribution from \MSEVEN{}]{\label{fig:m7-seismic-noise}blah... this assumes coupling of 1\%, uses seismic noise propagated to tables from ground, etc. The sensitivity requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made.}
+  \caption[Effective \LMINUS{} seismic noise contribution from \MSEVEN{}]{\label{fig:m7-seismic-noise}Effective \LMINUS{} seismic noise contribution from \MSEVEN{}. This is calculated by taking a seismic noise spectral density for the laboratory near the vacuum system and propagating it through damping and suspension models to obtain the motion of the \MSEVEN{} test mass. From this point, the response on the \gls{BHD} can be calculated from the transfer function shown in Figure\,\ref{fig:ssm-mirror-tfs}, and this in turn can be expressed in units of differential arm cavity motion by dividing by the response of \LMINUS{} to the \gls{BHD}. The requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made, and this figure shows that seismic motion of \MSEVEN{} will not represent a significant problem to the sensitivity of the experiment in the desired band. The results from \MSEVEN{} apply to the main beam splitter, \MSIX{}, where it is expected the heavier test mass will reduce the effect of seismic noise even further.}
 \end{figure}
 
 From the results in Figures \ref{fig:ssm-mirror-tfs} and \ref{fig:m7-seismic-noise} it can be concluded that there is only one significant degree of freedom to control in the interferometer in order to meet the sensitivity requirement above \SI{100}{\hertz}, where the measurement of reduced radiation pressure noise will be made. It should be noted that the desired \gls{BHD} homodyne angle depends on the path length \MELEVEN{} to \MSIXTEEN{}. This is an auxiliary control loop not considered part of the main longitudinal control strategy, and will be the subject of future work.
@@ -89,7 +88,7 @@ Figure\,\ref{fig:simplified-speedmeter-layout-velocity} shows a simplified optic
 \begin{figure}
   \centering
   \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/50-simplified-speedmeter-layout-velocity.pdf}
-  \caption[Simplified layout of the \SSMEXPT{} including a basic velocity feedback loop]{\label{fig:simplified-speedmeter-layout-velocity}blah}
+  \caption[Simplified layout of the \SSMEXPT{} including a basic velocity feedback loop]{\label{fig:simplified-speedmeter-layout-velocity}Simplified \SSM{} layout including extraction of the BHD signal sensitive to the arm cavity differential mode, \LMINUS{}, and the sensing and feedback paths. Light from the input optics (not shown) is incident upon the main beam splitter. The triangular arm cavities are shown in the shaded grey area, and mirror \MINT{} couples light between them. The shaded green area shows the BHD extracting the signal from the main beam splitter's output port (see Section\,\ref{sec:bhd}). The sensing and feedback signal paths are described in detail in Section\,\ref{sec:velocity-control}.}
 \end{figure}
 
 As shown in Section\,\ref{sec:ssm-dofs}, each arm cavity in the \SSM{} is an independent degree of freedom and so changes to \LMINUS{} lead to frequency-dependent signals at the output port. Motion of an arm cavity mirror imparts signal sidebands upon the counter-propagating modes. These modes have different optical path lengths to the beam splitter and so the signal at the output port contains the superposition of signals representing the mirror's displacement from different points in time, which is analogous to velocity. At dc frequencies the two modes at the output port contain the same displacement information and the velocity signal is therefore zero (for a more complete description of the \SSM{}'s behaviour, see, for example, Section\,IIb of \cite{Chen2003}). Motion of \MINT{} and BS imprints common phase changes on both counter-propagating modes and are not considered degrees of freedom for signals sensed at the output port.
@@ -110,7 +109,7 @@ Other terms in the response function dependent upon mirror mass, laser power and
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-bhd-response.pdf}
-  \caption[The frequency response of the differential arm cavity degree of freedom to the balanced homodyne readout]{\label{fig:bhd-response}blah}
+  \caption[The frequency response of the differential arm cavity degree of freedom to the balanced homodyne readout]{\label{fig:bhd-response}The frequency response of the BHD to \LMINUS{}, simulated numerically with \emph{Optickle}. As the BHD is sensitive to the \SSM{}'s velocity, the signal is proportional to frequency below the cavity pole, and thus zero at dc.}
 \end{figure}
 
 In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravitational waves, the positions of the cavity mirrors are controlled using \emph{linear inverting feedback}, where an error signal is extracted and applied through a control law to cavity mirror actuators. In the experiment, voice coils and plate capacitor electrostatic drives (\glspl{ESD}) \cite{Wittel2015} are used to actuate on the position of the end test masses within each cavity. This feedback maintains the interferometer close to its operating point within the bandwidth of the controller. In order to achieve the required stability, the relative position of the cavity mirrors must be controlled to within \SI{3.5e-13}{\meter} rms (see Section,\ref{sec:ssm-required-control}).
@@ -121,43 +120,35 @@ In order to maintain peak \gls{BHD} sensitivity to \LMINUS{} and therefore gravi
 
 \subsection{\label{sec:ssm-required-control}Required controller precision}
 
-The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \SSM{}. Using the parameters listed in Appendix\,\ref{app:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
+The noise present within the interferometer will produce an unintended \emph{dark-fringe offset} at the output port of the \SSM{}. The dark fringe condition is only met when there is no interferometer noise, however the slope of the fringe near the minimum is shallow within about 1\%. A thorough analysis of the required control precision has been derived for the case of a \DRFPMI{} with \gls{DC} readout \cite{Vajente2011} but to the author's knowledge not for a \SSM{} with \gls{BHD} readout. The broad behaviour is expected to be the same. Assuming that the frequency fluctuations $\Delta f$ fall within \SI{1}{\percent} of the arm cavity full-width half-maxima, we can derive  requirement to ensure that technical noise sources do not couple strongly to the gravitational wave channel.
 
+Using the parameters listed in Table\,\ref{tab:parameters} with the relation linking laser frequency fluctuations $\Delta f$ and cavity length fluctuations $\Delta L_{\left(-\right)}$,
 \begin{equation}
   \frac{\Delta L_{\left(-\right)}}{L_{\textrm{RT}}} = \frac{\Delta f}{f_{0}},
 \end{equation}
-with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the requirement for the \SSM{} is that the residual motion of the mirrors must be less than \SI{3.5e-13}{\meter}. This uses the assumption that the frequency fluctuations $\Delta f$ fall within \SI{1}{\percent} of the arm cavity full-width half-maxima\textemdash a common heuristic method used to ensure that technical noise sources do not couple strongly to the gravitational wave channel.
+with $f_{0} = \frac{c_{0}}{\lambda_{0}}$ representing the laser frequency, the requirement for the \SSM{} is that the residual motion of the mirrors must be less than \SI{3.5e-13}{\meter}.
 
-As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The above requirement, however, is sufficient to highlight the problem of velocity-only control as shown in Section\,\ref{sec:velocity-control}.
+As shown in ref. \cite{Danilishin2015}, main beam splitter asymmetries introduce common arm cavity mode coupling at the output port, which leads to further unintended dark fringe offset, and so the real requirement is likely to be more stringent. The controller should therefore have a large factor of safety in terms of the gain it is able to apply to the system to hold it at the operating point.
 
-%     \caption{\ssm{} optical layout and extraction of the BHD signal sensitive to the arm cavity differential mode. Figure\,(a) contains a simplified layout of the experiment. Light from the input optics (not shown) is incident upon the main beam splitter. The shaded green area shows the BHD extracting the signal from the main beam splitter's output port (see Section\,\ref{sec:bhd}). The triangular arm cavities are shown in the shaded grey area, and mirror \MINT{} couples light between them. Two additional photodetectors (shaded blue area) are present behind \MINT{} for individual arm cavity signal extraction. The sensing and feedback signal paths are described in detail in Sections\,\ref{sec:velocity-control} and \ref{sec:mixed-control}. Figure\,(b) contains the frequency response of the BHD to \LINUS{}, simulated numerically with \emph{Optickle}. Figure\,(c) contains a simplified version of the intended balanced homodyne detector readout electronics. The difference current from two matched, high quantum efficiency photodetectors is amplified via a transimpedance op-amp stage, with this signal representing the differential velocity of the arm cavity mirrors (see Equation\,\ref{eq:asymdarmbhdresponse}).}
-%   \end{figure}
-% 
 \subsection{\label{sec:bhd}Balanced homodyne detection}
      
-The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter. A local oscillator is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter. The difference current is converted to a voltage by an op-amp with transimpadance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}) \note{explain why this transimpedance was chosen}. An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band.
+The \gls{BHD} consists of two high quantum-efficiency photodetectors sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter. A local oscillator is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter. The difference current is converted to a voltage by an op-amp with transimpedance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}). The transimpedance resistor was set to \SI{10}{\kilo\ohm} to balance the op-amp's current and voltage noise contributions to its output. An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-tikz/50-bhd-electronics.pdf}
-  \caption[Electronic schematic for the balanced homodyne readout]{\label{fig:bhd-electronics}blah}
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-tikz/50-bhd-electronics.pdf}
+  \caption[Electronic schematic for the balanced homodyne readout]{\label{fig:bhd-electronics}Simplified electronic schematic for the BHD readout. The difference current from two matched, high quantum efficiency photodiodes is amplified via a transimpedance op-amp stage, with this signal representing the differential motion of the arm cavity mirrors (see Equation\,\ref{eq:asymdarmbhdresponse}).}
 \end{figure}
 
 Op-amps used for control in audio-band interferometry typically possess a noise power spectrum inversely proportional to frequency (so-called \emph{flicker noise} \cite[Section\,11.2.3]{Gray2009}) in the low audio band. As the \gls{BHD} error signal is dependent upon the time derivative of the mirror positions, however, there will necessarily be frequencies at which the op-amp noise will dominate the \gls{BHD} error signal. This makes control of slow drifts of the arm cavity mirror positions impossible with the velocity readout, despite the op-amp being well-chosen for a measurement band above \SI{100}{\hertz}. This control problem with relation to the proof-of-concept experiment will be quantified in the following subsections.
 
 \subsection{\label{sec:op-amp-noise}Op-amp noise}
-     
-%       \subfigure[]{\includegraphics[width=\columnwidth]{graphics/dynamic/op-amp-noise-time-series.pdf}\label{fig:op-amp-noise-time-series}}
-%       \subfigure[]{\includegraphics[width=\columnwidth]{graphics/dynamic/op-amp-noise-spectrum.pdf}\label{fig:op-amp-noise-spectrum}}
-%       \caption{Balanced homodyne detector op-amp noise measurements. The electronic schematic is shown in (a). The time series over a period of 16 days is shown in (b) for the op-amp noise at $\textrm{N}_{\textrm{1}}$ (blue) along with the DAQ noise for an empty channel (green). Temperature measurements (black) are shown on the second (right) vertical axis. A drift in the op-amp noise of around \SI{7}{\milli\volt} is visible in the first week. The spectral density in (c) shows the data in (b) plotted in the frequency domain using a Fourier transform with windows of \SI{e4}{\second}. The op-amp and DAQ noise spectra are shown along with modelled op-amp and resistor noise sources projected into the same measurement point. The op-amp noise resembles the modelled total noise (red) at frequencies above \SI{1}{\hertz}.}
-%     \end{figure}
-
 To measure the effect of a suitable op-amp's noise at low frequency, the output from an applicable BHD circuit was investigated. The circuit shown in Figure\,\ref{fig:bhd-noise-electronics} was housed within a dark enclosure to minimise photocurrent, with one of the two op-amps within a Texas Instruments\textsuperscript{\textregistered} OPA2227 integrated circuit being used to amplify the noise from the other by a factor of \SI{100}{}, to a level detectable by the DAQ. This op-amp is suitable for the BHD circuit shown in Figure\,\ref{fig:bhd-electronics} given the intended measurement band around a few hundreds of \SI{}{\hertz} \cite{Graef2014}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-tikz/50-bhd-noise-electronics.pdf}
-  \caption[Electronic schematic for the measurement of noise from the balanced homodyne readout]{\label{fig:bhd-noise-electronics}blah}
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-tikz/50-bhd-noise-electronics.pdf}
+  \caption[Electronic schematic for the measurement of noise from the balanced homodyne readout]{\label{fig:bhd-noise-electronics}Electronic schematic for the measurement of noise from the BHD readout circuit shown in Figure\,\ref{fig:bhd-electronics}. The output from the transimpedance op-amp is multiplied by a factor of \num{100} by an identical op-amp. The level of multiplication was chosen to allow this noise to exceed the noise of the ADCs on CDS.}
 \end{figure}
 
 The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in the measured op-amp noise over the course of \SI{16}{} days. An open channel on the DAQ was measured concurrently. A Fourier transform of the measured op-amp noise time series (Figure\,\ref{fig:op-amp-noise-spectrum}) shows a combination of flicker noise and an additional slope possibly due to resistor current noise below around \SI{1}{\hertz} \cite{Seifert2009}. DAQ noise dominates above \SI{4}{\hertz}. The ``Model (total)'' spectral density in Figure\,\ref{fig:op-amp-noise-spectrum} show the contributions to the measurements from the first op-amp $\textrm{N}_{1}$'s current and voltage noise and the Johnson-Nyquist noise of its transimpedance resistor $\textrm{R}_{\textrm{T}}$. This spectral density additionally contains the measured open channel noise summed in quadrature to show the agreement it has with the measurements down to around \SI{1}{\hertz}.
@@ -165,13 +156,13 @@ The time series in Figure\,\ref{fig:op-amp-noise-time-series} shows a drift in t
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-time-series.pdf}
-  \caption[Time series of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-time-series}blah}
+  \caption[Time series of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-time-series}Time series of the noise measured from the BHD noise circuit shown in Figure\,\ref{fig:bhd-noise-electronics}. The op-amp noise (\checkme{blue}) drifts from \num{0} to a level of approximately \SI{-7.3}{\milli\volt} over the 16 days of measurements. Simultaneously, a DAQ channel was measured without an input connected (\checkme{blue}) in order to act as a null stream. The temperature was also measured by a sensor within the same housing as the noise circuit (\checkme{orange}), showing a drift of around \SI{0.5}{\celsius}.}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-spectrum.pdf}
-  \caption[Spectral density of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-spectrum}blah}
+  \caption[Spectral density of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-spectrum}Spectral density of the noise measured from the BHD readout electronics. The op-amp noise spectrum (\checkme{blue}) shows the data in Figure\,\ref{fig:op-amp-noise-time-series} plotted in the frequency domain using a Fourier transform with \SI{e4}{\second} windows. The DAQ noise spectra is also given (\checkme{blue}) along with modelled op-amp and resistor noise sources projected into the same measurement point (\checkme{green and orange}). The most significant contribution to the output is from the first op-amp, as per design, though the noise model, which considers input voltage and current noise, departs from the measurements at lower frequencies.}
 \end{figure}
 
 The op-amp noise drift produces an offset upon the \gls{BHD} error signal which is to be fed back to the cavity mirror actuators, and thus op-amp noise directly contributes to cavity mirror displacement noise, affecting the experiment's sensitivity to the arm cavity differential mode. Since the signal measured at the \gls{BHD} represents cavity mirror velocity, it must necessarily drop below the noise at low frequencies where the velocity tends to zero.
@@ -246,17 +237,14 @@ The noise projection for \LMINUS{}, calculated using the numerical optomechanica
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-velocity.pdf}
-  \caption[Noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity}blah}
+  \caption[Noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity}Spectral density showing the noise associated with the readout of \LMINUS{} at the BHD. The significant noise sources associated with sensing shown (shot, op-amp and ADC noise). The noise directly actuating upon the test masses, such as seismic, are given the designation ``feedback''. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics.}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-velocity-rms.pdf}
-  \caption[Root-mean-square noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity-rms}blah}
+  \caption[Root-mean-square noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity-rms}Root-mean-square noise projection for \LMINUS{} using velocity feedback. The requirement is exceeded beyond a few hours, after which the noise due to the BHD readout is enough for the cavities to drift beyond the displacement requirement and lose sensitivity.}
 \end{figure}
-
-%       \caption{Noise associated with the velocity readout scheme. The spectral density in (a) shows the noise associated with the readout of the signal representing \LMINUS{} using the BHD. The significant noise sources associated with sensing and feedback are shown. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and the assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Below \SI{20}{\milli\hertz} the dominating readout noise is due to the op-amp electronics. The time series in (b) shows the root-mean-square arm cavity mirror motion due to readout noise over one day. Beyond a few hours the motion is greater than the control requirement presented in Section,\ref{sec:ssm-required-control}}
-%     \end{figure}
 
 Although for sensing noise we only consider electronic and shot noise, in the experiment there will be other contributing forms of time-varying offset present upon the \gls{BHD} error signal:
 \begin{itemize}
