@@ -16,35 +16,38 @@ data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '5
 # load data
 data = np.genfromtxt(data_path, delimiter=',', skip_header=1, dtype=complex)
 
-colours = lf.Colours()
-
+# figure
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 
-# make two y-axes
-ax1 = plt.gca()
-ax2 = ax1.twinx()
+ax1 = fig.add_subplot(211)
+ax2 = fig.add_subplot(212, sharex=ax1)
 
-plot1 = ax1.loglog(data[:, 0], np.absolute(data[:, 1]), color=colours.next(), alpha=lf.ALPHA_LINE_A)
-plot2 = ax2.semilogx(data[:, 0], np.unwrap(np.angle(data[:, 1])) * 180 / np.pi, color=colours.next(), alpha=lf.ALPHA_LINE_A)
+# colour wheel
+colours = lf.Colours()
+
+colour_a = colours.next()
+colour_b = colours.next()
+
+# plot magnitude
+ax1.loglog(data[:, 0], np.absolute(data[:, 1]), color=colour_a, alpha=lf.ALPHA_LINE_A)
+
+# plot phase
+ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 ax1.grid(True)
+ax2.grid(True)
 
 ax1.set_xlim((1e-1, 1e5))
-ax2.set_xlim((1e-1, 1e5))
-
 ax1.set_ylim((1e6, 1e11))
-ax2.set_ylim((-360, 90))
-
-leg = ax2.legend(plot1+plot2, ['Magnitude', 'Phase'], loc='upper left')
-#leg.get_frame().set_alpha(0.75)
+ax2.set_ylim((-200, 200))
 
 # set labels
-ax1.set_xlabel(r'Frequency [$\mathrm{Hz}$]')
-ax1.set_ylabel(r'Response [$\mathrm{W} / \mathrm{m}$]')#, color=ax1colour)
+ax1.set_ylabel('Response [W/m]')
+ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')#, color=ax2colour)
 
 # set phase ticks
-ax2.set_yticks([-360, -270, -180, -90, 0, 90])
+ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 
 plt.tight_layout()
 

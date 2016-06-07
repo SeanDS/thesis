@@ -126,6 +126,8 @@ $(GFXGENPY)/50-bhd-response.pdf: $(DATA)/50-bhd-response.csv
 
 $(GFXGENPY)/50-pdh-response.pdf: $(DATA)/50-pdh-response.csv
 
+$(GFXGENPY)/50-aa-ai-filter-tfs.pdf: $(DATAGENMAT)/50-aa-ai-filter-tfs.csv
+
 $(GFXGENPY)/50-op-amp-noise-time-series.pdf: $(DATA)/50-op-amp-noise-time-series-reduced.csv $(DATA)/50-op-amp-null-time-series-reduced.csv $(DATA)/50-op-amp-temperature-time-series-reduced.csv
 
 $(GFXGENPY)/50-op-amp-noise-spectrum.pdf: $(DATA)/50-op-amp-noise-spectrum-reduced.csv $(DATA)/50-op-amp-null-spectrum-reduced.csv
@@ -176,6 +178,9 @@ $(DATAGENMAT)/50-mirror-tfs.csv: $(DATASCRMAT)/createSsmMirrorTfs.m
 
 $(DATAGENMAT)/50-m7-seismic-noise.csv: $(DATASCRMAT)/createM7SeismicNoise.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createM7SeismicNoise('$(ROOT)/$@', logspace(1, 3, 1000), 0.01); exit;"
+
+$(DATAGENMAT)/50-aa-ai-filter-tfs.csv: $(DATASCRMAT)/createAaAiFilterTfs.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createAaAiFilterTfs('$(ROOT)/$@', logspace(0, 5, 1000)); exit;"
 
 # data set generated from other data sets
 $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat

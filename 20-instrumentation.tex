@@ -99,20 +99,6 @@ This result shows that the optimal operating point in terms of SNR is at the poi
 
 % Section 1.3.1 of Gabriele Vajente's thesis covers this in more detail.
 
-\subsubsection{Root mean square amplitude}
-
-\subsubsection{Spectral density}
-In gravitational wave interferometry, a lot of thought and planning typically goes in to the design of the apparatus in order to minimise noise \emph{transients}\textemdash pulses of unwanted noise with finite energy\textemdash such as a door slam\footnote{And, of course, some forms of gravitational wave signal; though it is not the intention of experimentalists to minimise the effect of this particular source.}. Such transients have finite energy over a finite time, and can be entirely characterised\textemdash within measurement error\textemdash by a Fourier transform of the time series in which the event occurred. With sufficient isolation from unwanted transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes, with energy approaching infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of the power present within each frequency of a signal in the steady state. This distribution can then be integrated back into a finite, steady state power.
-
-Typically the time evolution of a particular signal is the only data an experimentalist has at their disposal in order to characterise a signal in terms of its spectral density. A true representation of the power spectral density requires, like the measurement of energy spectral density, infinite time. A compromise can be made, however, in order to estimate the power spectral density from a set of Fourier transforms of the time series. By averaging Fourier transforms of various subsets of the data $\left[ t, t + \Delta t \right]$, a power spectral density can be approximated for a particular frequency range, determined by the bounds established by the inverse of the longest and shortest subsets of the time series transformed. While this compromise is typically reasonable in most cases, and indeed essential for any finite measurement, it is unable to exclude the possibility that part of the power spectral density is formed from signal content in frequencies outwith the measured range. Longer time series measurements allow for more averaging of frequency bands, and thus a better approximation to the true power spectral density.
-
-\subsubsection{Bandlimiting}
-\note{Nyquist-Shannon sampling theorem, https://en.wikipedia.org/wiki/Bandlimiting}
-
-\subsubsection{Spectral densities and root-mean-square figures}
-\note{Explain where spectral densities come from, i.e. FFTs of time series}
-\note{Explain calculation of rms noise from spectral density}
-
 \subsection{Thermal noise}
 
 \subsubsection{Coating thermal noise}
@@ -123,8 +109,10 @@ the sapphire (\ce{Al_2O_3}) test masses to be used in the Japanese detector \gls
 
 A mirror topology which avoids the use of many alternating coating layers can potentially offer an improvement in noise performance. Mirrors employing grating structures can resonantly reflect light with less coating material than similarly performing dielectric mirrors \cite{Mashev1985}, though at the expense of additional technical complexity in their utility in gravitational wave detectors \cite{Leavey2015}.
 
-\subsubsection{Suspension thermal noise}
+\subsubsection{\label{sec:sus-thermal-noise}Suspension thermal noise}
 blah
+
+\note{Mention violin modes here}
 
 \subsection{Quantum noise}
 A major concern for designers of metrological experiments is that of quantum noise. These are signals which appear in instruments uncorrelated with the signals intended to be measured. As such, the presence of quantum noise in an instrument will degrade the precision to which an intended measurement can be made.
@@ -227,7 +215,26 @@ with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The po
 \subsubsection{Laser intensity noise}
 \note{describe RIN, etc...}
 
-\subsubsection{Parametric instabilities}
+\section{Control considerations}
+
+\subsection{Root mean square amplitude}
+
+\subsection{Spectral density}
+In gravitational wave interferometry, a lot of thought and planning typically goes in to the design of the apparatus in order to minimise noise \emph{transients}\textemdash pulses of unwanted noise with finite energy\textemdash such as a door slam\footnote{And, of course, some forms of gravitational wave signal; though it is not the intention of experimentalists to minimise the effect of this particular source.}. Such transients have finite energy over a finite time, and can be entirely characterised\textemdash within measurement error\textemdash by a Fourier transform of the time series in which the event occurred. With sufficient isolation from unwanted transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes, with energy approaching infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of the power present within each frequency of a signal in the steady state. This distribution can then be integrated back into a finite, steady state power.
+
+Typically the time evolution of a particular signal is the only data an experimentalist has at their disposal in order to characterise a signal in terms of its spectral density. A true representation of the power spectral density requires, like the measurement of energy spectral density, infinite time. A compromise can be made, however, in order to estimate the power spectral density from a set of Fourier transforms of the time series. By averaging Fourier transforms of various subsets of the data $\left[ t, t + \Delta t \right]$, a power spectral density can be approximated for a particular frequency range, determined by the bounds established by the inverse of the longest and shortest subsets of the time series transformed. While this compromise is typically reasonable in most cases, and indeed essential for any finite measurement, it is unable to exclude the possibility that part of the power spectral density is formed from signal content in frequencies outwith the measured range. Longer time series measurements allow for more averaging of frequency bands, and thus a better approximation to the true power spectral density.
+
+\subsection{Bandlimiting}
+\note{Nyquist-Shannon sampling theorem, https://en.wikipedia.org/wiki/Bandlimiting}
+
+\subsection{\label{sec:gain-phase-margin}Stable loops}
+\note{Discuss briefly the stability requirement for the unity gain frequency - leads to oscillation. See Freise thesis for some useful content.}
+
+\subsection{Spectral densities and root-mean-square figures}
+\note{Explain where spectral densities come from, i.e. FFTs of time series}
+\note{Explain calculation of rms noise from spectral density}
+
+\subsection{Parametric instabilities}
 \note{see DCC P1500163}
 Although not strictly a noise source, parametric instabilities are nevertheless a significant control problem...
 
