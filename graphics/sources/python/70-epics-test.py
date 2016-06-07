@@ -39,9 +39,6 @@ colours = lf.Colours()
 # plot
 ax.plot(data_local[:, 0], data_local[:, 1], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 
-# get rid of next colour
-colours.next()
-
 ax.plot(data_remote[:, 0], data_remote[:, 1], '--', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 
 ax.set_xlabel('Time [s]')

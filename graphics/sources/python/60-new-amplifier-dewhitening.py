@@ -34,12 +34,12 @@ colour_a = colours.next()
 colour_b = colours.next()
 
 # plot magnitude
-ax1.loglog(data_single[:, 0], data_single[:, 1], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data_dual[:, 0], data_dual[:, 1], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_single[:, 0], data_single[:, 1], color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_dual[:, 0], data_dual[:, 1], color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 # plot phase
-ax2.semilogx(data_single[:, 0], data_single[:, 2], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data_dual[:, 0], data_dual[:, 2], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_single[:, 0], data_single[:, 2], color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_dual[:, 0], data_dual[:, 2], color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Frequency [Hz]')
@@ -55,9 +55,7 @@ ax2.set_ylabel(u'Phase [°]')
 ax1.grid(True)
 ax2.grid(True)
 
-# override legend padding
-#with plt.rc_context({'legend.borderaxespad': 1}):
-#  ax1.legend(['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='upper right')
+ax1.legend(['Single 10dB dewhitener', 'Dual 10db dewhiteners'], loc='lower left')
 
 plt.tight_layout()
 

@@ -24,9 +24,7 @@ ax2 = fig.add_subplot(212, sharex=ax1)
 # colour wheel
 colours = lf.Colours()
 colour_a = colours.next()
-colours.next()
 colour_b = colours.next()
-colours.next()
 colour_c = colours.next()
 
 # plot magnitude
@@ -48,7 +46,6 @@ ax2.set_ylabel(u'Phase [°]')
 ax1.set_ylim([1e-5, 2])
 #ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
 
-#with plt.rc_context({'legend.borderaxespad': 1}):
 ax1.legend(['Anti-aliasing filter', 'Anti-imaging filter', 'Sample frequency'], loc='lower left')
 
 # set y-labels for phase

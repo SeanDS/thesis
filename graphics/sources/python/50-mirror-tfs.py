@@ -44,16 +44,16 @@ colour_f = colours.next()
 # 'M7 to PDH_A', 'M7 to PDH_B', 'M9 to PDH_A', 'M9 to PDH_B'};
 
 # plot magnitude
-ax1.loglog(data[:, 0], np.absolute(data[:, 3]), '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data[:, 0], np.absolute(data[:, 4]), '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data[:, 0], np.absolute(data[:, 5]), '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data[:, 0], np.absolute(data[:, 6]), '--', color=colour_f, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data[:, 0], np.absolute(data[:, 3]), '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data[:, 0], np.absolute(data[:, 4]), '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data[:, 0], np.absolute(data[:, 5]), '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data[:, 0], np.absolute(data[:, 6]), '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
 # plot phase
-ax2.semilogx(data[:, 0], np.angle(data[:, 3]) * 180 / np.pi, '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data[:, 0], np.angle(data[:, 4]) * 180 / np.pi, '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data[:, 0], np.angle(data[:, 5]) * 180 / np.pi, '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data[:, 0], np.angle(data[:, 6]) * 180 / np.pi, '--', color=colour_f, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data[:, 0], np.angle(data[:, 3]) * 180 / np.pi, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data[:, 0], np.angle(data[:, 4]) * 180 / np.pi, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data[:, 0], np.angle(data[:, 5]) * 180 / np.pi, '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data[:, 0], np.angle(data[:, 6]) * 180 / np.pi, '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Frequency [Hz]')

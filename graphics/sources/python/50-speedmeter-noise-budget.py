@@ -51,7 +51,7 @@ colour_b = colours.next()
 colour_c = colours.next()
 colour_d = colours.next()
 colour_e = colours.next()
-colour_f = 'black'
+colour_f = colours.shades['black']
 
 ax1.loglog(f, data[:, 2], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(f, data[:, 3], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)

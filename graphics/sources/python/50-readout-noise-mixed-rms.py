@@ -36,15 +36,14 @@ total_mixed_rms = rms.calculate_rms(f, total_mixed)
 
 colours = lf.Colours()
 
-fig = plt.figure(figsize=lf.FIG_SIZE_A)
+fig = plt.figure(figsize=lf.FIG_SIZE_B)
 ax = plt.gca()
 
-ax.loglog(t, total_mixed_rms, color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax.loglog(t, total_velocity_rms, color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax.loglog(t, total_mixed_rms, color=colours.shades['black'], alpha=lf.ALPHA_LINE_A)
+ax.loglog(t, total_velocity_rms, '--', color=colours.shades['black'], alpha=lf.ALPHA_LINE_A)
 ax.hlines(3.5e-13, t.min(), t.max(), colors=colours.next(), linestyles='dashed', zorder=-1, alpha=lf.ALPHA_LINE_A)
 
-leg = ax.legend(['Total rms (combined)', 'Total rms (velocity)', 'Requirement'], bbox_to_anchor=(0.505, 0.8))
-#leg.get_frame().set_alpha(0.75)
+leg = ax.legend(['Total rms (combined)', 'Total rms (velocity)', 'Requirement'], loc='upper left')
 
 plt.xticks([1, 60, 3600, 86400], ['1 second', '1 minute', '1 hour', '1 day'])
 plt.minorticks_off()
@@ -54,7 +53,7 @@ plt.grid(True)
 ax.set_xlim((1, 86400))
 ax.set_ylim((1e-15, 1e-12))
 ax.set_xlabel('Readout period')
-ax.set_ylabel(r'Displacement [$\mathrm{m}$]')
+ax.set_ylabel('Displacement [m]')
 
 plt.tight_layout()
 

@@ -26,7 +26,6 @@ ax2 = fig.add_subplot(212, sharex=ax1)
 colours = lf.Colours()
 
 colour_a = colours.next()
-colour_b = colours.next()
 
 # plot magnitude
 ax1.loglog(data[:, 0], np.absolute(data[:, 1]), color=colour_a, alpha=lf.ALPHA_LINE_A)

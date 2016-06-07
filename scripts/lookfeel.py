@@ -15,6 +15,9 @@ FIG_SIZE_A_SM = (FIG_SIZE_A[0], FIG_SIZE_A[1] / 1.41)
 # faller fig size (for Bode-style plots)
 FIG_SIZE_A_TALL = (FIG_SIZE_A[0], FIG_SIZE_A[1] * 1.41)
 
+# shallow figure for simple plots
+FIG_SIZE_B = (10, 3.5)
+
 # default line transparency
 ALPHA_LINE_A = 0.8
 
@@ -36,7 +39,7 @@ default_settings = {
     'font.size': 20,
     'grid.alpha': 0.5,
     'grid.linestyle': ':',
-    'legend.borderaxespad': 2,
+    'legend.borderaxespad': 1,
     'legend.fancybox': True,
     'legend.fontsize': 16,
     'legend.framealpha': 0.9,
@@ -65,11 +68,19 @@ class Colours(object):
     
     # plot colour scheme
     # http://www.randalolson.com/2014/06/28/how-to-make-beautiful-data-visualizations-in-python-with-matplotlib/
-    colours = [(31, 119, 180), (174, 199, 232), (255, 127, 14), (255, 187, 120),    
-                (44, 160, 44), (152, 223, 138), (214, 39, 40), (255, 152, 150),    
-                (148, 103, 189), (197, 176, 213), (140, 86, 75), (196, 156, 148),    
-                (227, 119, 194), (247, 182, 210), (127, 127, 127), (199, 199, 199),    
-                (188, 189, 34), (219, 219, 141), (23, 190, 207), (158, 218, 229)]
+    # arrangement is list of lists containing a colour and a lighter variety
+    colours = [[(31, 119, 180), (174, 199, 232)], # blue
+                [(255, 127, 14), (255, 187, 120)], # orange
+                [(44, 160, 44), (152, 223, 138)], # green
+                [(214, 39, 40), (255, 152, 150)], # red
+                [(148, 103, 189), (197, 176, 213)], # purple
+                [(140, 86, 75), (196, 156, 148)], # mauve/brown
+                [(227, 119, 194), (247, 182, 210)], # lilac
+                [(127, 127, 127), (199, 199, 199)], # grey
+                [(188, 189, 34), (219, 219, 141)], # lime green
+                [(23, 190, 207), (158, 218, 229)]] # turquois
+    
+    shades = {'black': (0, 0, 0), 'grey': (127, 127, 127)}
     
     def __init__(self):
         self.current_index = 0
@@ -77,24 +88,39 @@ class Colours(object):
         
         # scale to range [0, 1] for matplotlib
         for i in range(len(self.colours)):
-            r, g, b = self.colours[i]
-            self.colours[i] = (r / 255, g / 255, b / 255)
+            for j in range(len(self.colours[i])):
+                r, g, b = self.colours[i][j]
+                self.colours[i][j] = (r / 255, g / 255, b / 255)
     
     def __iter__(self):
         return self
     
     def next(self):
+        """Gets the next colour in the chain"""
+        
         if self.current_index > self.end_index:
             raise StopIteration
         else:
             self.current_index += 1
             
-            return self.colours[self.current_index - 1]
+            return self.colours[self.current_index - 1][0]
     
     def current(self):
         """Returns current colour"""
         
-        return self.colours[self.current_index]
+        return self.colours[self.current_index - 1][0]
+    
+    def alternate(self, colour):
+        """Returns the lighter or darker variety of the specified colour"""
+        
+        for colour_set in self.colours:
+            if colour in colour_set:
+                if colour is colour_set[0]:
+                    index = 1
+                else:
+                    index = 0
+                
+                return colour_set[index]
 
 def scale_fonts(factor):
     factor = float(factor)

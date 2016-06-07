@@ -20,7 +20,7 @@ colours = lf.Colours()
 colour_a = colours.next()
 colour_b = colours.next()
 colour_c = colours.next()
-colour_d = 'black'
+colour_d = colours.shades['black']
 
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 

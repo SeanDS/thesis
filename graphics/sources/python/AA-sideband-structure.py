@@ -33,7 +33,6 @@ colours = lf.Colours()
 # get colours
 c1 = colours.next() # carrier
 c2 = colours.next() # phase modulation sidebands
-colours.next()
 c3 = colours.next() # amplitude modulation sidebands
 
 # arrow arguments
