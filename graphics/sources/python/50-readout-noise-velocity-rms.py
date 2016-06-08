@@ -39,7 +39,7 @@ ax = plt.gca()
 ax.loglog(t, total_velocity_rms, color=colours.shades['black'], alpha=lf.ALPHA_LINE_A)
 ax.hlines(3.5e-13, t.min(), t.max(), colors=colours.next(), linestyles='dashed', zorder=-1, alpha=lf.ALPHA_LINE_A)
 
-leg = ax.legend(['Total rms', 'Requirement'], loc='upper left')
+leg = ax.legend(['Total rms', 'Requirement'], loc='lower right')
 
 plt.xticks([1, 60, 3600, 86400], ['1 second', '1 minute', '1 hour', '1 day'])
 plt.minorticks_off()

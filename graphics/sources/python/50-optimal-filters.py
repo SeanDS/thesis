@@ -45,7 +45,7 @@ ax2.semilogx(f, np.unwrap(np.angle(data[:, 2])) * 180 / np.pi, '-', color=colour
 ax2.semilogx(f, np.unwrap(np.angle(data[:, 3])) * 180 / np.pi, '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(f, np.unwrap(np.angle(pdh)) * 180 / np.pi, '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
-leg = ax1.legend([r'BHD, $R_{M_I}$ = 99.00%', r'BHD, $R_{M_I}$ = 99.90%', r'BHD, $R_{M_I}$ = 99.99%', 'PDH'], loc='lower right')
+leg = ax1.legend([r'BHD, $R_{M_9}$ = 99.00%', r'BHD, $R_{M_9}$ = 99.90%', r'BHD, $R_{M_9}$ = 99.99%', 'PDH'], loc='lower right')
 
 ax1.grid(True)
 ax2.grid(True)

@@ -16,7 +16,7 @@
    height="210mm"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    version="1.0"
    sodipodi:docname="50-simplified-speedmeter-layout-mixed.svg"
    style="enable-background:new"
@@ -31,17 +31,17 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8858845"
-     inkscape:cx="536.62215"
-     inkscape:cy="282.42668"
+     inkscape:zoom="1.4429423"
+     inkscape:cx="453.53707"
+     inkscape:cy="316.97988"
      inkscape:document-units="px"
      inkscape:current-layer="layer4"
      width="1052.3622px"
      height="744.09449px"
-     inkscape:window-width="1680"
-     inkscape:window-height="1030"
-     inkscape:window-x="-2"
-     inkscape:window-y="-3"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="-4"
+     inkscape:window-y="0"
      showgrid="false"
      showguides="true"
      gridanglex="8.4666669mm"
@@ -1661,227 +1661,6 @@
     </g>
     <g
        style="display:inline;enable-background:new"
-       id="g3317"
-       transform="translate(-4.707084,28.848854)">
-      <text
-         sodipodi:linespacing="125%"
-         id="text7794-3-0-6-9-62"
-         y="-118.42249"
-         x="799.83856"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         xml:space="preserve"><tspan
-           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan7798-7-2-3-2-7"
-           y="-118.42249"
-           x="799.83856"
-           sodipodi:role="line">M</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text7794-3-2-2-5-5"
-         y="-122.42249"
-         x="811.43097"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         xml:space="preserve"><tspan
-           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:sub;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan7798-7-24-7-7-1"
-           y="-122.42249"
-           x="811.43097"
-           sodipodi:role="line">B</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text7794-3-2-5-2-6-4"
-         y="-119.15465"
-         x="811.22198"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         xml:space="preserve"><tspan
-           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:super;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan7798-7-24-0-2-2-9"
-           y="-119.15465"
-           x="811.22198"
-           sodipodi:role="line">3</tspan></text>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="786.85339"
-       y="-35.020885"
-       id="text7794-3-0-6-9-62-6"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="786.85339"
-         y="-35.020885"
-         id="tspan7798-7-2-3-2-7-9"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="798.4458"
-       y="-39.020885"
-       id="text7794-3-2-2-5-5-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="798.4458"
-         y="-39.020885"
-         id="tspan7798-7-24-7-7-1-6"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:sub;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">B</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="798.23682"
-       y="-35.753048"
-       id="text7794-3-2-5-2-6-4-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="798.23682"
-         y="-35.753048"
-         id="tspan7798-7-24-0-2-2-9-0"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:super;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="630.28961"
-       y="-80.27253"
-       id="text7794-3-0-6-9-62-6-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="630.28961"
-         y="-80.27253"
-         id="tspan7798-7-2-3-2-7-9-0"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-       x="641.88202"
-       y="-84.272514"
-       id="text7794-3-2-2-5-5-1-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="641.88202"
-         y="-84.272514"
-         id="tspan7798-7-24-7-7-1-6-9"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:sub;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">B</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-       x="641.3175"
-       y="-81.004692"
-       id="text7794-3-2-5-2-6-4-4-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="641.3175"
-         y="-81.004692"
-         id="tspan7798-7-24-0-2-2-9-0-7"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:super;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="797.02045"
-       y="18.615128"
-       id="text7794-3-0-6-9-62-2"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="797.02045"
-         y="18.615128"
-         id="tspan7798-7-2-3-2-7-5"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="809.3277"
-       y="14.615128"
-       id="text7794-3-2-2-5-5-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="809.3277"
-         y="14.615128"
-         id="tspan7798-7-24-7-7-1-5"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:sub;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">A</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="808.40387"
-       y="17.88298"
-       id="text7794-3-2-5-2-6-4-48"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="808.40387"
-         y="17.88298"
-         id="tspan7798-7-24-0-2-2-9-4"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:super;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="782.32397"
-       y="83.231804"
-       id="text7794-3-0-6-9-62-2-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="782.32397"
-         y="83.231804"
-         id="tspan7798-7-2-3-2-7-5-0"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="794.63123"
-       y="79.231804"
-       id="text7794-3-2-2-5-5-0-2"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="794.63123"
-         y="79.231804"
-         id="tspan7798-7-24-7-7-1-5-1"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:sub;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">A</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="793.7074"
-       y="82.499657"
-       id="text7794-3-2-5-2-6-4-48-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="793.7074"
-         y="82.499657"
-         id="tspan7798-7-24-0-2-2-9-4-6"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:super;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="629.69965"
-       y="41.899433"
-       id="text7794-3-0-6-9-62-2-4-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="629.69965"
-         y="41.899433"
-         id="tspan7798-7-2-3-2-7-5-0-2"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="642.0069"
-       y="37.899433"
-       id="text7794-3-2-2-5-5-0-2-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="642.0069"
-         y="37.899433"
-         id="tspan7798-7-24-7-7-1-5-1-0"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:sub;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">A</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="640.72754"
-       y="41.167286"
-       id="text7794-3-2-5-2-6-4-48-7-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="640.72754"
-         y="41.167286"
-         id="tspan7798-7-24-0-2-2-9-4-6-2"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;baseline-shift:super;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">1</tspan></text>
-    <g
-       style="display:inline;enable-background:new"
        id="g8915-1-7-9"
        transform="matrix(0.5625,0,0,0.5625,284.03216,-148.86366)">
       <text
@@ -2055,6 +1834,285 @@
          y="-232.93488"
          style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
          id="tspan26925">and DAQ</tspan></text>
+    <g
+       id="g4630"
+       transform="translate(68.609814,-31.186279)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-62-6-9-8"
+         y="70.663635"
+         x="565.64594"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-7-9-0-6"
+           y="70.663635"
+           x="565.64594"
+           sodipodi:role="line">M</tspan></text>
+      <g
+         id="g4582">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+           x="578.26331"
+           y="71.181702"
+           id="text7794-3-2-2-5-5-1-7-4"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="578.26331"
+             y="71.181702"
+             id="tspan7798-7-24-7-7-1-6-9-4"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:sub;text-anchor:middle">A</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+           x="576.00085"
+           y="69.151825"
+           id="text7794-3-2-5-2-6-4-4-8-9"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="576.00085"
+             y="69.151825"
+             id="tspan7798-7-24-0-2-2-9-0-7-0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:super;text-anchor:middle">1</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g4621"
+       transform="translate(39.50262,2.0790853)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-62-6-9-8-2"
+         y="-84.100342"
+         x="592.36975"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-7-9-0-6-5"
+           y="-84.100342"
+           x="592.36975"
+           sodipodi:role="line">M</tspan></text>
+      <g
+         id="g4582-3"
+         style="display:inline;enable-background:new"
+         transform="translate(26.72382,-154.76398)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+           x="578.26331"
+           y="71.181702"
+           id="text7794-3-2-2-5-5-1-7-4-0"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="578.26331"
+             y="71.181702"
+             id="tspan7798-7-24-7-7-1-6-9-4-8"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:sub;text-anchor:middle">B</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+           x="576.00085"
+           y="69.151825"
+           id="text7794-3-2-5-2-6-4-4-8-9-7"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="576.00085"
+             y="69.151825"
+             id="tspan7798-7-24-0-2-2-9-0-7-0-3"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:super;text-anchor:middle">1</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g4661"
+       transform="translate(-20.826917,-24.01221)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-62-6-9-8-0"
+         y="104.74991"
+         x="811.71326"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-7-9-0-6-1"
+           y="104.74991"
+           x="811.71326"
+           sodipodi:role="line">M</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-2-5-5-1-7-4-9"
+         y="105.26797"
+         x="824.33063"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:sub;text-anchor:middle"
+           id="tspan7798-7-24-7-7-1-6-9-4-6"
+           y="105.26797"
+           x="824.33063"
+           sodipodi:role="line">A</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-5-2-6-4-4-8-9-4"
+         y="103.23809"
+         x="822.7962"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:super;text-anchor:middle"
+           id="tspan7798-7-24-0-2-2-9-0-7-0-0"
+           y="103.23809"
+           x="822.7962"
+           sodipodi:role="line">2</tspan></text>
+    </g>
+    <g
+       id="g4691"
+       transform="translate(-65.421021,4.6554285)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-62-6-9-8-7"
+         y="9.5409136"
+         x="864.11255"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-7-9-0-6-54"
+           y="9.5409136"
+           x="864.11255"
+           sodipodi:role="line">M</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-2-5-5-1-7-4-5"
+         y="10.058971"
+         x="876.72992"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:sub;text-anchor:middle"
+           id="tspan7798-7-24-7-7-1-6-9-4-68"
+           y="10.058971"
+           x="876.72992"
+           sodipodi:role="line">A</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-5-2-6-4-4-8-9-3"
+         y="8.0290947"
+         x="875.15649"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:super;text-anchor:middle"
+           id="tspan7798-7-24-0-2-2-9-0-7-0-6"
+           y="8.0290947"
+           x="875.15649"
+           sodipodi:role="line">3</tspan></text>
+    </g>
+    <g
+       id="g4721"
+       transform="translate(-82.327577,7.5956991)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-62-6-9-8-9"
+         y="-46.569252"
+         x="870.97321"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-7-9-0-6-547"
+           y="-46.569252"
+           x="870.97321"
+           sodipodi:role="line">M</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-2-5-5-1-7-4-1"
+         y="-46.051189"
+         x="883.59058"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:sub;text-anchor:middle"
+           id="tspan7798-7-24-7-7-1-6-9-4-7"
+           y="-46.051189"
+           x="883.59058"
+           sodipodi:role="line">B</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-5-2-6-4-4-8-9-1"
+         y="-48.081066"
+         x="883.15906"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:super;text-anchor:middle"
+           id="tspan7798-7-24-0-2-2-9-0-7-0-5"
+           y="-48.081066"
+           x="883.15906"
+           sodipodi:role="line">2</tspan></text>
+    </g>
+    <g
+       id="g4768"
+       transform="translate(-71.301562,-16.661533)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-62-6-9-8-9-6"
+         y="-97.0439"
+         x="871.06726"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-7-9-0-6-547-7"
+           y="-97.0439"
+           x="871.06726"
+           sodipodi:role="line">M</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-2-5-5-1-7-4-1-2"
+         y="-96.525841"
+         x="883.68463"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:sub;text-anchor:middle"
+           id="tspan7798-7-24-7-7-1-6-9-4-7-6"
+           y="-96.525841"
+           x="883.68463"
+           sodipodi:role="line">B</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-5-2-6-4-4-8-9-1-0"
+         y="-98.555717"
+         x="883.21411"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;baseline-shift:super;text-anchor:middle"
+           id="tspan7798-7-24-0-2-2-9-0-7-0-5-2"
+           y="-98.555717"
+           x="883.21411"
+           sodipodi:role="line">3</tspan></text>
+    </g>
+    <g
+       style="display:inline;enable-background:new"
+       id="g8915-5"
+       transform="translate(51.893197,-145.85902)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-0-6-9-6-0"
+         y="120.15862"
+         x="446.55936"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
+           id="tspan7798-7-2-3-2-6-6"
+           y="120.15862"
+           x="446.55936"
+           sodipodi:role="line">M<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4831">7</tspan></tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text7794-3-2-2-5-8-1"
+         y="116.15862"
+         x="458.29825"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.00018311px;font-family:serif;-inkscape-font-specification:serif;text-align:center;baseline-shift:sub;text-anchor:middle"
+           id="tspan7798-7-24-7-7-9-4"
+           y="116.15862"
+           x="458.29825"
+           sodipodi:role="line" /></text>
+    </g>
   </g>
   <g
      inkscape:label="Background"

@@ -36,7 +36,7 @@ ax1.loglog(data[:, 0], np.absolute(data[:, 2]), color=colour_b, alpha=lf.ALPHA_L
 ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data[:, 0], np.angle(data[:, 2]) * 180 / np.pi, color=colour_b, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Magnitude [m/N/sqrt(Hz)]')
+ax1.set_ylabel('Response w.r.t.\ncoil at dc')
 ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')
 

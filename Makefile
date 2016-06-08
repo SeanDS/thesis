@@ -124,7 +124,7 @@ $(GFXGENPY)/50-m7-seismic-noise.pdf: $(DATAGENMAT)/50-m7-seismic-noise.csv
 
 $(GFXGENPY)/50-bhd-response.pdf: $(DATA)/50-bhd-response.csv
 
-$(GFXGENPY)/50-pdh-response.pdf: $(DATA)/50-pdh-response.csv
+$(GFXGENPY)/50-pdh-response.pdf: $(DATA)/50-pdh-response.csv $(DATA)/50-bhd-response.csv
 
 $(GFXGENPY)/50-aa-ai-filter-tfs.pdf: $(DATAGENMAT)/50-aa-ai-filter-tfs.csv
 
