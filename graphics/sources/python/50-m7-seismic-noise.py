@@ -37,7 +37,7 @@ colour_b = colours.next()
 ax1.loglog(data[:, 0], data[:, 1], '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data[:, 0], data[:, 2], '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Displacement [m / sqrt(Hz)]')
+ax1.set_ylabel(r'Effective $L_{(-)}$ displacement noise [m / sqrt(Hz)]')
 ax1.set_xlabel('Frequency [Hz]')
 
 ax1.set_ylim([1e-22, 1e-12])

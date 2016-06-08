@@ -96,7 +96,7 @@ ax.loglog(f[::select], total[::select], color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax.loglog(f[::select], opa_noise_1[::select], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 ax.loglog(f[::select], johnson_noise_1[::select], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
 
-leg = plt.legend(['Op-amp noise', 'DAQ noise', 'Model (total)', 'Model ($N_1$)', 'Model ($R_T$)'])
+leg = plt.legend(['Op-amp noise', 'ADC noise', 'Model (total)', r'Model ($N_1$)', r'Model ($R_T$)'])
 
 plt.grid(True)
 

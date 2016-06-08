@@ -42,7 +42,7 @@ ax1.set_ylim((1e6, 1e11))
 ax2.set_ylim((-200, 200))
 
 # set labels
-ax1.set_ylabel('Response [W/m]')
+ax1.set_ylabel('Response to BHD\nreadout [W / m]')
 ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')#, color=ax2colour)
 

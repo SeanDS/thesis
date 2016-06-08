@@ -63,7 +63,7 @@ plt1 = ax1.plot(data_noise[::select, 0], data_noise[::select, 1], color=colour_a
 plt2 = ax1.plot(data_null[::select, 0], data_null[::select, 1], color=colour_b, alpha=lf.ALPHA_LINE_A)
 plt3 = ax2.plot(data_temperature[::select_temperature, 0], temperature_avg[::select_temperature], color=colour_c, alpha=lf.ALPHA_LINE_A)
 
-leg = ax2.legend(plt1 + plt2 + plt3, ['Op-amp noise', 'DAQ noise', 'Temperature'], bbox_to_anchor=(0.4, 0.9))
+leg = ax2.legend(plt1 + plt2 + plt3, ['Op-amp noise', 'ADC noise', 'Temperature'], bbox_to_anchor=(0.32, 0.9))
 #leg.get_frame().set_alpha(0.75)
 
 ax1.grid(True)

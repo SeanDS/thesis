@@ -55,7 +55,7 @@ ax2.semilogx(data[:, 0], np.angle(data[:, 4]) * 180 / np.pi, '-', color=colour_b
 ax2.semilogx(data[:, 0], np.angle(data[:, 5]) * 180 / np.pi, '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data[:, 0], np.angle(data[:, 6]) * 180 / np.pi, '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Magnitude')
+ax1.set_ylabel('Response to BHD\nreadout [W / m]')
 ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')
 
@@ -73,7 +73,7 @@ ax2.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend([r'$L_{(-)}$ to BHD', r'$M_6$ to BHD', r'$M_7$ to BHD', r'$M_{I}$ to BHD'], loc='lower left')
+ax1.legend([r'$L_{(-)}$', r'$M_6$', r'$M_7$', r'$M_9$'], loc='lower left')
 
 plt.tight_layout()
 
