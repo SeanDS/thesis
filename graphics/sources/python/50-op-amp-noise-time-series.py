@@ -40,6 +40,10 @@ temp_scale = 10e-3 # V / degree, from LM35 datasheet
 data_temperature[:, 1] *= 20 / 65536 # counts to volts
 data_temperature[:, 1] = avg_temp_degrees + (data_temperature[:, 1] - data_temperature[:, 1].mean()) / temp_scale # volts to degrees
 
+# average the temperature data to reduce the noise
+n_moving_avg = 256
+temperature_avg = np.convolve(data_temperature[:, 1], np.ones((n_moving_avg,)) / n_moving_avg, mode='same')
+
 colours = lf.Colours()
 colour_a = colours.next()
 colour_b = colours.next()
@@ -52,20 +56,21 @@ ax1 = plt.gca()
 ax2 = ax1.twinx()
 
 # select only one in five values to plot
-select = 5
+select = 20
+select_temperature = 20
 
 plt1 = ax1.plot(data_noise[::select, 0], data_noise[::select, 1], color=colour_a, alpha=lf.ALPHA_LINE_A)
 plt2 = ax1.plot(data_null[::select, 0], data_null[::select, 1], color=colour_b, alpha=lf.ALPHA_LINE_A)
-plt3 = ax2.plot(data_temperature[::select, 0], data_temperature[::select, 1], color=colour_c, alpha=lf.ALPHA_LINE_A)
+plt3 = ax2.plot(data_temperature[::select_temperature, 0], temperature_avg[::select_temperature], color=colour_c, alpha=lf.ALPHA_LINE_A)
 
-leg = ax2.legend(plt1 + plt2 + plt3, ['Op-amp noise', 'DAQ noise', 'Temperature'], fancybox=True, bbox_to_anchor=(0.4, 0.9))
+leg = ax2.legend(plt1 + plt2 + plt3, ['Op-amp noise', 'DAQ noise', 'Temperature'], bbox_to_anchor=(0.4, 0.9))
 #leg.get_frame().set_alpha(0.75)
 
 ax1.grid(True)
 
 # labels
-ax1.set_xlabel(r'Time [$\mathrm{days}$]')
-ax1.set_ylabel(r'Voltage [$\mathrm{mV}$]')
+ax1.set_xlabel('Time [days]')
+ax1.set_ylabel('Voltage [mV]')
 ax2.set_ylabel(u'Temperature [°C]')
 
 # limits

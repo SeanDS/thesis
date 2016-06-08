@@ -40,19 +40,22 @@ ax1.set_ylabel('Magnitude [m/N/sqrt(Hz)]')
 ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')
 
-#ax1.set_xlim([1e0, 1e4])
+ax1.set_xlim([1e-1, 1e4])
 #ax1.set_ylim([1e-2, 1e1])
 #ax2.set_ylim([-180, 180])
 
+# set y-labels for magnitude
+ax1.set_yticks([1e-24, 1e-20, 1e-16, 1e-12, 1e-8, 1e-4, 1e0])
+
 # set y-labels for phase
-#ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
+ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 
 ax1.grid(True)
 ax2.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend(['ESD', 'Coil'], loc='upper right')
+ax1.legend(['ESD', 'Coil'], loc='lower left')
 
 plt.tight_layout()
 

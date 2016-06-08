@@ -13,46 +13,7 @@
 
 The \SSM{} interferometer topology can potentially provide enhanced sensitivity to gravitational waves in the audio-band compared to equivalent Michelson interferometers. A challenge with the \SSM{} interferometer arises from the intrinsic lack of sensitivity at low frequencies where the velocity-proportional signal is smaller than the noise associated with the sensing of the signal. Using as an example the on-going proof-of-concept \SSM{} experiment in Glasgow, we quantify the problem and present a solution involving the extraction of a small displacement-proportional signal. This displacement signal can be combined with the existing velocity signal to enhance low frequency sensitivity, and we derive optimal filters to accomplish this for different signal strengths. We show that the extraction of the displacement signal for low frequency control purposes can be performed without reducing significantly the quantum non-demolition character of this type of interferometer.
 
-\note{Some stuff to write about:}
-\begin{itemize}
-  \item powers, sidebands, etc...
-  \item Control loop design / noise budget
-  \item Inclusion of other noises, like seismic, thermal, electronic, etc. Calculation of noise budget.
-  \item Suspension hierarchical gain (handling ESD / coil ranges) (see labbook posts)
-     \begin{itemize}
-        \item Crossover at ~200 Hz, show calculation of how high a frequency we need to control the arms to keep the power in there (see labbook)
-     \end{itemize}
-  \item Photodetector transimpedance
-    \begin{itemize}
-      \item Set transimpedance so that signals are ~1 V...?
-    \end{itemize}
-  \item CDS overall gain setting
-    \begin{itemize}
-      \item Set overall gain to not max the actuators on the suspensions, and provide ~1 V on the input to CDS
-    \end{itemize}
-  \item Whitening/dewhitening design (see labbook posts)
-    \begin{itemize}
-      \item ADC input noise and effective number of bits (see labbook, Borja's email from 2015-08-28)
-      \item Set input voltage to CDS to be ~1/10th range, i.e. 1 V.
-      \item Make sure input noise from ADCs is 1/10th below the signal at all frequencies (i.e. contributes 1\% to signal)
-    \end{itemize}
-  \item Dark noise measurements of op-amp over long timescales (explain additional low frequency noise)
-  \item Note in ``outlook'' section on how we might verify how effective the optimal filter is compared to naive addition or a ``bad'' filter. Perhaps make a TF from an open port? Choose an optimally bad filter?
-  \item Quantisation noise paper also talks about maximum ADC input voltage being less than total rms signal - cite it in the relevant part
-\end{itemize}
-
-%\section{Long term drift of velocity readout}
-
-%\section{Suspension model and control}
-%ETMs are the main important ones... we assume worst case seismic noise coupling here, ignore ITM seismic noise and TFs...
-
-%\section{Full control loop}
-
-%\section{Performance}
-
-%\subsection{Stability with and without sensor blending}
-
-The presence of arm cavities within the proof-of-concept \SSM{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers, and this aspect will be addressed in this chapter. In Section\,\ref{sec:velocity-control} we describe in more detail the proof-of-concept \SSM{} experiment and its control requirements. We then describe a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the control challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, and in Section\,\ref{sec:noise-budget} we present a noise budget of the \SSM{} using the alternative control strategy. A summary is provided in Section\,\ref{sec:summary}.
+The presence of arm cavities within the \SSMEXPT{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers, and this aspect will be addressed in this chapter. In Section\,\ref{sec:velocity-control} we describe in more detail the \SSMEXPT{} and its control requirements. We then describe a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the control challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, and in Section\,\ref{sec:noise-budget} we present a noise budget for the \SSM{} using the alternative control strategy. A summary is provided in Section\,\ref{sec:summary}.
 
 \note{Section\,\ref{c:speedmeter-intro} introduced the motivation behind the \SSMEXPT{}...}
 
@@ -199,7 +160,7 @@ The signals sensed by the interferometer's photodetectors contain large componen
              &= \SI{134.9}{\deci\bel}.
   \end{split}
 \end{equation}
-Well chosen signal amplification should result in an \gls{RMS} signal of less than $\frac{1}{10} V_{\text{max}}$, giving headroom to the sensors for larger, less frequent noise transients to be detected without clipping while still allowing small signal detection. As the signal from the interferometer is shaped \checkme{approximately inversely to frequency}, signals in the \SI{}{\kilo\hertz} band are typically many orders of magnitude smaller than those of seismic noise at a few \SI{}{\hertz}, meaning that signals at the level of quantum noise are sometimes lost in the noise from the \glspl{ADC} and \glspl{DAC}. To avoid this problem, a technique called \emph{whitening} can be used. This involves applying a filter to the desired input or output signal in order to increase certain frequency components of a signal.
+As the signal from the interferometer is shaped \checkme{approximately inversely to frequency}, signals in the \SI{}{\kilo\hertz} band are typically many orders of magnitude smaller than those of seismic noise at a few \SI{}{\hertz}, meaning that signals at the level of quantum noise are sometimes lost in the noise from the \glspl{ADC} and \glspl{DAC}. To avoid this problem, a technique called \emph{whitening} can be used. This involves applying a filter to the desired input or output signal in order to increase certain frequency components of a signal.
 
 The effect of whitening is shown in Figure\,\ref{fig:whitening} for a hypothetical signal and sensor. In the left case, the signal's dynamic range is greater than that of the sensor, and so the sensor is unable to measure the signal with fidelity. At higher frequencies, the signal is below the level of the sensor's noise and as such the sensor measures no signal there. Most noise sources in gravitational wave interferometry have, however, some inverse frequency dependence at the main interferometer readout such that the signal content at higher frequencies is smaller than the signal content at lower frequencies. By applying a whitening filter at higher frequencies, the small signal content there can be enhanced to a level at which it can be detected by the sensor above its noise. This effectively reduces the dynamic range of the signal. This is shown in the right case. The original signal can be recovered digitally by the application of an inverse whitening filter.
 
@@ -290,7 +251,7 @@ A control loop schematic using the calculations, filters and servos presented in
 
 \begin{figure}
   \includegraphics[width=\textwidth]{graphics/generated/from-svg/50-speedmeter-control-loop-velocity.pdf}
-  \caption[Modelled \SSMEXPT{} control loop using velocity feedback]{\label{fig:ssm-control-loop-velocity}Simple \SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller, shown in the grey box. Within the controller, the error signal representing \LMINUS{} is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant. The grey box at the top denotes the noise, servo and gain blocks associated with CDS. \note{ADD AI FILTERS}}
+  \caption[Modelled \SSMEXPT{} control loop using velocity feedback]{\label{fig:ssm-control-loop-velocity}Simple \SSM{} control loop model. The interferometer plant produces signals representing the probes in the interferometer, and sensing noise is added before the signals are sent to the digital controller, shown in the grey box. Within the controller, the error signal representing \LMINUS{} is fed through a series of filters and sent to the test mass actuators, with the addition of DAC noise. The suspension blocks transform the feedback signals into test mass displacements, and seismic, coating Brownian and suspension thermal noise is injected at the input to the interferometer plant. The grey box at the top denotes the noise, servo and gain blocks associated with CDS.}
 \end{figure}
 
 \subsection{\label{sec:noise-projection}Noise projection with velocity feedback}
@@ -482,8 +443,10 @@ The parameters used in the simulations presented in this work are shown in Table
   \caption{\label{tab:parameters}Experimental parameters. The properties for the suspensions and test masses are given in order for the reader to be able to reproduce the suspension thermal noise spectral density presented in Figure\,\ref{fig:noise-budget}.}
 \end{table}
 
-\section{\label{sec:summary}Summary}
+\section{\label{sec:summary}Summary and Outlook}
 
 We have demonstrated that positional drifts of the cavity mirrors in the proof-of-concept \SSM{} at low frequencies due to sensing noise lead to an inability to control the cavity mirrors over time scales longer than a few hours. We have shown that this drift can be suppressed by taking a small amount of light from the path between the arm cavities to provide a displacement readout, and that this does not significantly affect the sensitivity of the main, velocity readout. A combination of the displacement and velocity readouts provides a suitable error signal for the control of the arm cavity differential mode at all relevant frequencies without spoiling the quantum non-demolition effect at higher frequencies, facilitating measurements with arbitrary integration time and allowing the \SSM{} to reach its design sensitivity.
+
+The effect that the mixing of displacement and velocity information should have on the interferometer's stability should be quite straightforward to measure. As shown in Figure\,\ref{fig:readout-noise-mixed-rms}, the drift from the lack of an error signal at low frequencies in the velocity-only case will cause the interferometer to lose its sensitivity after a short period of time. To enable measurement integration times longer than a few hours\textemdash which will be necessary to obtain well defined measurements of radiation pressure noise to meet the experiment's goals and indeed for future gravitational wave observatories to conduct science runs of months in duration\textemdash the displacement-proportional signals will have to be fed back at frequencies below the measurement band. A simple comparison of the two cases should have a contrasting effect.
 
 Since the main readout of any interferometer primarily sensitive to velocity will encounter the problem of vanishing signal in the presence of flat or increasing sensing noise at low frequencies, we believe the solution presented in this work is applicable to any audio-band speed-meter.
