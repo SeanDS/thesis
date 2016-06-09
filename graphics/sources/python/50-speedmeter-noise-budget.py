@@ -59,6 +59,8 @@ ax1.loglog(f, data[:, 4], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(f, pdh, ':', color=colour_d, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(f, data[:, 16], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(f, data[:, 1], color=colour_f, alpha=lf.ALPHA_LINE_A, lw=lf.LW_THICK)
+# UGF
+ax1.vlines(350, 1e-30, 1e20, colors=colour_f, linestyles='dashed', zorder=-1, alpha=lf.ALPHA_LINE_A)
 
 # frequencies to fill
 fill_indices = np.where(np.logical_and(f >= 100, f <= 700))
@@ -66,7 +68,7 @@ fill_indices = np.where(np.logical_and(f >= 100, f <= 700))
 # fill low frequency region, using same colour as shaded blue region of layout
 ax1.fill_between(f[fill_indices], 1, data[fill_indices[0], 1], facecolor='#008cff', alpha=0.5)
 
-leg = ax1.legend(['Coating', 'Electronic', 'Quantum (total)', 'Quantum (PDH)', 'Suspension', 'Total'], loc='upper right')
+leg = ax1.legend(['Coating', 'Electronic', 'Quantum (total)', 'Quantum (PDH)', 'Suspension', 'Total', 'Controller unity gain frequency'], loc='upper right')
 
 plt.grid(True)
 

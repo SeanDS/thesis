@@ -27,16 +27,19 @@ colours = lf.Colours()
 
 colour_a = colours.next()
 colour_b = colours.next()
+colour_c = colours.next()
 
 # plot magnitude
 ax1.loglog(data[:, 0], np.absolute(data[:, 1]), color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data[:, 0], np.absolute(data[:, 2]), color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.vlines(18, 1e-30, 1e3, colors=colour_c, linestyles='dashed', zorder=2)
 
 # plot phase
 ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data[:, 0], np.angle(data[:, 2]) * 180 / np.pi, color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax2.vlines(18, -200, 200, colors=colour_c, linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Response w.r.t.\ncoil at dc')
+ax1.set_ylabel('Closed loop\ntransfer function')
 ax2.set_xlabel('Frequency [Hz]')
 ax2.set_ylabel(u'Phase [°]')
 
@@ -55,7 +58,7 @@ ax2.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend(['ESD', 'Coil'], loc='lower left')
+ax1.legend(['ESD', 'Coil', 'Crossover frequency'], loc='lower left')
 
 plt.tight_layout()
 

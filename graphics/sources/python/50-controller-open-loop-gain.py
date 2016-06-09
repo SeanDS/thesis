@@ -30,11 +30,13 @@ colour_b = colours.shades['black']
 
 # plot magnitude
 ax1.loglog(data[:, 0], np.absolute(data[:, 1]), color=colour_a, alpha=lf.ALPHA_LINE_A)
-# add unity gain line (horizontal)
-ax1.hlines(1, np.min(data[:, 0]), np.max(data[:, 0]), colors=colour_b, linestyles='dashed', zorder=2)
+# add unity gain line
+ax1.vlines(350, 1e-14, 1e10, colors=colour_b, linestyles='dashed', zorder=2)
 
 # plot phase
 ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
+# add unity gain line
+ax2.vlines(350, -200, 200, colors=colour_b, linestyles='dashed', zorder=2)
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Frequency [Hz]')

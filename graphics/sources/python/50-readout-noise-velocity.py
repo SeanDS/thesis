@@ -32,7 +32,7 @@ d3 = ax.loglog(data_sensing[:, 0], data_sensing[:, 12], '--', color=colours.next
 d4 = ax.loglog(data_feedback[:, 0], data_feedback[:, 1], '--', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 d5 = ax.loglog(data_sensing[:, 0], total_velocity, color=colours.shades['black'], lw=lf.LW_THICK, zorder=-1, alpha=lf.ALPHA_LINE_A)
 
-leg = ax.legend(d1+d2+d3+d4+d5, ['Shot', 'Op-amp', 'ADC', 'Feedback', 'Total'])
+leg = ax.legend(d1+d2+d3+d4+d5, ['Shot', 'Op-amp', 'ADC', 'Displacement (suppressed)', 'Total'])
 
 plt.grid(True)
 
