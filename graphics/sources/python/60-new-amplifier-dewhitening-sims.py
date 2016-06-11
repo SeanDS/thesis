@@ -11,8 +11,8 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data paths
-data_path_single = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-new-amplifier-single-dewhitening.csv')
-data_path_dual = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-new-amplifier-dual-dewhitening.csv')
+data_path_single = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-new-amplifier-single-dewhitening-sim.csv')
+data_path_dual = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-new-amplifier-dual-dewhitening-sim.csv')
 
 # data delimiter
 delimiter = ','
