@@ -64,10 +64,10 @@ ax2.set_ylabel(u'Phase [°]')
 
 ax1.set_xlim([1e0, 1e6])
 #ax1.set_ylim([1e-2, 1e1])
-#ax2.set_ylim([-180, 180])
+ax2.set_ylim([-200, 200])
 
 # set y-labels for phase
-#ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
+ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 
 ax1.grid(True)
 ax2.grid(True)
