@@ -119,39 +119,47 @@ blah
 \note{Mention violin modes here}
 
 \subsection{Quantum noise}
-A major concern for designers of metrological experiments is that of quantum noise. These are signals which appear in instruments uncorrelated with the signals intended to be measured. As such, the presence of quantum noise in an instrument will degrade the precision to which an intended measurement can be made.
+% previously from chapter 4
+Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light power to determine displacement.} It has been known since the time of John von Neumann \note{CITE!} that the use of certain observables can avoid the limit set by the uncertainty principle.
+
+
+
+A major concern for designers of metrological experiments is that of quantum noise. These are unwanted signals which appear in instruments uncorrelated with the signals intended to be measured. As such, the presence of quantum noise in an instrument degrades the precision to which the intended measurement can be made.
 
 One of the results of quantum mechanics is that two non-commuting observables cannot be simultaneously known to full precision. For two operators $\hat{O}_+$ and $\hat{O}_-$, there exists an error $\epsilon$:
 \begin{equation}
- \left[ \hat{O}_+, \hat{O}_- \right] = \epsilon.
+ \left[ \hat{O}_+, \hat{O}_- \right] = \epsilon,
 \end{equation}
-This result means that the observables contain correlated components, and as such they cannot be considered entirely separate entities. Measuring one form automatically influences the other, leading to the well-known \emph{Heisenberg Uncertainty Principle}:
+and this means that the observables contain correlated components and as such cannot be considered entirely separate entities. Measuring one form automatically influences the other, leading to the well-known \emph{Heisenberg Uncertainty Principle}:
 \begin{equation}
  \left| \Delta \hat{O}_+ \right| \cdot \left| \Delta \hat{O}_- \right| \geq
 \frac{1}{2} \left| \epsilon \right|.
 \end{equation}
-For interferometry there are two pairs of operators of particular importance, namely the position and momentum operators, $x$ and $p_x$, and the photon number and phase operators, $n$ and $\phi$, respectively. The canonical commutation relation between $x$ and $p_x$ is given as:
+In the field of gravitational wave interferometry there are two pairs of operators of particular importance, namely the position and momentum operators, $x$ and $p_x$, and the photon number and phase operators, $n$ and $\phi$, respectively. The canonical commutation relation between $x$ and $p_x$ is given as:
 \begin{equation}
  | \Delta x\left( t \right) | \cdot |\Delta p\left( t \right) | \geq
 \frac{\hbar}{2},
  \label{eq:heisenburguncertainty}
 \end{equation}
-where $\hbar$ is the reduced Planck constant. Consider a position measurement of a free mirror of mass $m$ being oscillated by a signal of frequency $f$. If a measurement is made at time $t$ and then again at time $t + \tau$, where $\tau = \frac{1}{\pi f}$, the uncertainty on the latter can be expressed in terms of the uncertainty in momentum of the mirror multiplied by the time difference:
+where $\hbar$ is the reduced Planck constant and $\Delta$ signifies the observable's uncertainty. Consider a position measurement of a free mirror of mass $m$ being perturbed by a signal of frequency $f$. If a measurement is made at time $t$ and then again at time $t + \tau$, where $\tau = \frac{1}{\pi f}$, the uncertainty on the latter can be expressed in terms of the uncertainty in momentum of the mirror multiplied by the time difference:
 \begin{equation}
  \Delta x \left( t + \tau \right) = \Delta x \left( t \right) + \Delta p_x
 \left( t \right) \frac{\tau}{m}.
  \label{eq:heisenburgtime}
 \end{equation}
-This result shows that the momentum at time $t$ influences the position at a later time. Since momentum is position scaled by velocity, this leads to a minimum value on which $x \left( t \right)$ can take:
+This result shows that the momentum of the mirror at time $t$ influences the position of the mirror at a later time. Since momentum is position scaled by velocity, this leads to a minimum value on which $x \left( t \right)$ can take:
 \begin{equation}
  \Delta x \left( t \right) \geq \sqrt{\frac{\hbar \tau}{2m}}.
 \end{equation}
-This shows that even with an otherwise unperturbed mirror, the momentum imparted by the measurement at time $t$ influences the later measurement at $t + \tau$ in such a way that it adds noise. If the wavefunction representing the measurement is known too accurately, then the wavefunction representing the mirror will narrow enough to make position estimation a process with high
-uncertainty.
+The key result to highlight here is that, even with an otherwise unperturbed mirror, the momentum imparted by the measurement at time $t$ influences the later measurement at $t + \tau$ in such a way that it adds uncertainty. Or, put another way, Equation\,\ref{eq:heisenburguncertainty} expresses that the smaller the error on the position of an observable in a quantum mechanical system, the greater the error on the momentum; and vice-versa. The same result holds for $n$ and $\phi$.
 
-Equation\,\ref{eq:heisenburguncertainty} expresses that the smaller the error on the position of an observable in a quantum mechanical system, the greater the error on the momentum; and vice-versa.
+Quantum shot noise and quantum radiation pressure noise limit the sensitivity of classical interferometers. The former effect arises from counting statistics: lasers, despite producing a constant average number of photons, do not produce equally-spaced photons; the finite sampling rate of photodetectors leads to a fluctuation in the output signal corresponding to the fluctuation of the laser's output. Each sample the photodetector takes will yield a fluctuating power reading even when the average incident power is constant. Radiation pressure noise arises from the effect of momentum transfer between photons and reflective surfaces within interferometers, as shown by Equation\,\ref{eq:heisenburgtime}. Upon reflection, a photon imparts momentum \note{how much?} to the mirror, and the next photon to hit the mirror undergoes a different optical path length to the initial photon.
 
-In current and next-generation gravitational wave detectors, the quantum noise sources considered are \emph{shot} noise and \emph{radiation pressure} noise. The former effect arises from counting statistics in the signal readout methods used in the interferometers. Lasers do not produce entirely equally-spaced photons, and photodiodes have a finite sampling rate. Naturally, each sample period will not necessarily count the same number of photons as its neighbours, even when average power levels remain constant. This represents a noise source that is present at all frequencies. Radiation pressure noise, on the other hand, arises from the effect of momentum transfer between photons and reflective surfaces within interferometers, and this is illustrated by Equation\,\ref{eq:heisenburgtime}. Upon reflection, a photon imparts momentum to mirrors, and this moves the mirrors such that the next photons to hit them undergo a different optical path length to the initial photon. This, like shot noise, represents a noise source across all frequencies.
+Shot noise is present with equal power at all frequencies as it arises from spontaneous pair production in vacuum.
+
+The upward trend in shot noise seen in the sensitivity curve in Figure xxx arises from the cavity dynamics of the system. The white shot noise is sampled less as the cavity storage time....
+
+Radiation pressure noise
 
 \subsubsection{Quantum noise at loss points}
 Sources of loss in an interferometer introduce uncorrelated vacuum\textendash photons created and annihilated spontaneously\textendash which propagates through the interferometer to the output port where it is sensed by the readout as shot noise and radiation pressure noise. Open ports, present for example as non-unity reflectivity in a mirror, are sources of loss where vacuum fluctuations may enter an interferometer.
