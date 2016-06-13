@@ -104,6 +104,8 @@ $(GFXGENTIKZ)/%.pdf: $(GFXSRCTIKZ)/%.tex
 
 # ===== Extra dependencies for plot scripts =====
 
+$(GFXGENPY)/20-aligo-noise-budget.pdf: $(DATA)/20-aligo-noise-budget.csv
+
 $(GFXGENPY)/30-coating-vs-grating-noise.pdf: $(DATA)/30-coating-vs-grating-noise.csv
 
 $(GFXGENPY)/30-individual-factors.pdf: $(DATA)/30-individual-factors.csv
@@ -152,11 +154,13 @@ $(GFXGENPY)/50-speedmeter-noise-budget.pdf: $(DATA)/50-speedmeter-noise-budget.c
 
 $(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
-$(GFXGENPY)/60-new-amplifier-tfs.pdf: $(DATA)/60-new-amplifier-tfs-channel-a.txt $(DATA)/60-new-amplifier-tfs-channel-b.txt $(DATA)/60-new-amplifier-tfs-channel-c.txt $(DATA)/60-new-amplifier-tfs-channel-d.txt $(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv
+$(GFXGENPY)/60-new-amplifier-dewhitened-tfs.pdf: $(DATA)/60-new-amplifier-dewhitened-tfs-channel-a.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-b.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-c.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-d.txt $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
+
+$(GFXGENPY)/60-new-amplifier-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
 
 $(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-channel-a.txt $(DATA)/60-new-amplifier-coherence-channel-b.txt $(DATA)/60-new-amplifier-coherence-channel-c.txt $(DATA)/60-new-amplifier-coherence-channel-d.txt
 
-$(GFXGENPY)/60-new-amplifier-dewhitening.pdf: $(DATAGENMAT)/60-new-amplifier-single-dewhitening.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv
+$(GFXGENPY)/60-new-amplifier-dewhitening-sims.pdf: $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
 
 $(GFXGENPY)/70-epics-test.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
 
@@ -190,10 +194,10 @@ $(DATAGENMAT)/50-whitening-filter-tfs.csv: $(DATASCRMAT)/createWhiteningFilterTf
 # data set generated from other data sets
 $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
 
-$(DATAGENMAT)/60-new-amplifier-single-dewhitening.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierSingleDewhitening.fil
+$(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierSingleDewhitening.fil
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierSingleDewhitening.fil'); exit;"
 
-$(DATAGENMAT)/60-new-amplifier-dual-dewhitening.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierDualDewhitening.fil
+$(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierDualDewhitening.fil
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierDualDewhitening.fil'); exit;"
 
 # ===== Misc =====

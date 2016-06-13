@@ -68,9 +68,42 @@ By default, Optickle will only output the signal and noise on \emph{probes} defi
 
 In order to calculate the cross-correlation spectral density required for the calculation of the optimal filter in Section\,\ref{sec:optimal-filter}, the complex field and drive transfer matrices, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, must be extracted from Optickle indirectly. Optickle's calculation of the quantum noise at each probe within the interferometer uses field-to-field and drive-to-field matrices, but because the quantum noise and drive excitations are not necessarily unity, these matrices are not transfer matrices. In order to obtain $\mathbf{M}^{\textrm{ff}}$ the code which computes the quantum noise at each probe has to be modified to instead inject quantum noise at open ports with unity amplitude. Similarly, $\mathbf{R}$ can be computed by setting the drive amplitudes to unity. The modified source code is publicly available \cite{controlspaperdata}.
 
+\subsection{Functions: tickle, tickle2, sweepLinear}
+\note{Explain difference}
+
 \section{\label{sec:simulinknb-sim}SimulinkNb}
 \cite{SimulinkNb}
 
-\section{Reflection phase convention}
+\section{Similarities and differences between Optickle and Finesse}
+
+\subsection{Reflection phase convention}
 \label{a:reflection-phase}
 \note{Difference between Optickle and Finesse sign conventions for transmission and reflection. See footnote 1 on p2 of T1100110 for more details.}
+
+\subsection{Conversion of phase to length tuning}
+\note{And vice versa}
+\note{Mirror tunings in degrees become metres in Optickle, see ET files for details}
+
+\subsection{Compound optics}
+\note{Optickle allows AR surface reflectivity to be defined, and substrate loss. Finesse can do this with compound optics, beam splitters separated by a space with certain refractive index.}
+
+\subsubsection{Homodyne angle scaling}
+\note{List empirical equation linking homodyne angle to A.O.I. in Optickle...}
+
+\subsection{Definition of mechanical transfer functions}
+\note{Look at ET response functions with suspensions - the definition of TFs is different}
+
+\subsection{Resonant condition in triangular cavities in Optickle}
+\note{See Optickle mailing list, answers from Matt Evans and Nick Smith}
+
+\section{Common pitfalls}
+
+\subsection{Obtaining transfer functions}
+\note{Make sure suspensions are switched off, either by commenting out the line in Finesse or using zpk() in Optickle, or using tickle2()}
+
+\subsection{Higher order modes}
+This only applies to Finesse. While Optickle can simulate TEM 1,0 modes, it requires a conscious effort to run tickle01() instead of tickle().
+\note{maxtem off is different from maxtem 0}
+
+\subsection{Differences between simulation tools and theory}
+\note{Reduced mass vs actual mass, S.D.'s use of reduced mass is different to Optickle and Finesse which use real mass everywhere}
