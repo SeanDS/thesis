@@ -108,7 +108,7 @@ The $\Delta x$ term in Equation\,\ref{eq:mich-p-out} is a combination of a stati
 \end{equation}
 we find that maximum SNR is achieved for static tunings 
 \begin{equation}
-  \Delta x = 0 \text{ mod } \lambda.
+  \Delta x \text{ mod } \lambda = 0.
 \end{equation}
 This result shows that the optimal operating point in terms of SNR is at the point where the light from the two arms interferes destructively. While any multiple of $\lambda$ will satisfy the SNR condition as defined, in reality we have not considered laser noise coupling. The more matched the arm lengths are, the lower the laser noise couples to the output port. In reality there are also mismatches in the reflectivities of the mirrors in the arms: this creates an asymmetry called a \emph{contrast defect} which leads to additional shot noise at the output port.
 
@@ -118,7 +118,7 @@ This result shows that the optimal operating point in terms of SNR is at the poi
 
 \subsection{Thermal noise}
 
-Thermal noise arises from loss in materials used to reflect and focus light and to suspend test masses, where photons in thermal states are allowed to enter the interferometer and propagate to the sensors.
+Thermal noise arises from loss in materials used to reflect and focus light and to suspend test masses, where photons in the thermal state are allowed to enter the interferometer and propagate to the sensors.
 
 \subsubsection{\label{sec:coating-thermal-noise}Coating thermal noise}
 In the conceptual design for the first generation of gravitational wave detectors such as GEO-600 \cite{Willke2002} the designers were not aware that thermal noise associated with the reflective coatings on mirrors would play a significant role in the sensitivity of the interferometers. For a long time it was known that thermal noise would contribute to the sensitivity of the detectors, particularly from the bulk material forming the test masses, but it soon became clear as the detectors were being commissioned that thermal noise arising from the reflective mirror coatings would dominate the thermal noise associated with the test masses in the frequency band of interest despite forming only a tiny fraction of the test masses by volume. Investigations conducted by Harry \etal{} \cite{Harry2002, Harry2007}, among others, concluded that mechanical loss present in the dielectric coatings on the test masses led to Brownian noise creating a limit to the sensitivity of detectors across a wide range of frequencies. Contributions from thermoelastic noise, arising from the thermal expansion coefficient of the materials of the coatings \cite{Braginsky1999a}, and thermorefractive noise, arising from the change in refractive index caused by such expansion \cite{Braginsky2000a}, produce further noise contributions which will become more important as coatings with improved thermal noise contributions are developed.
@@ -186,7 +186,7 @@ and so the power in the beam at a given interval is then:
       &= hfn.
   \end{split}
 \end{equation}
-The measurement of power is simply the energy multiplied by its Hermitian conjugate, i.e. $P = E^{\dag}E$, and so we can recover the original energy of the light from the measurement of power:
+The measurement of power is simply the energy multiplied by its complex conjugate, i.e. $P = E^{\ast}E$, and so we can recover the original energy of the light from the measurement of power:
 \begin{equation}
   \left| E \right| = \sqrt{hfn}.
 \end{equation}
@@ -271,7 +271,7 @@ Equation\,\ref{eq:classicalifospectrum} can be minimised by setting $I_0 = I_{SQ
   h_{SQL} = \sqrt{\frac{8 \hbar}{m \Omega^2 L^2}}.
 \end{equation}
 
-The \gls{SQL} is defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror dynamics via $\kappa$. By making a more precise measurement, i.e. one involving more photons carrying information of the mirror motion, we see a smaller shot noise spectral density whilst we see a larger radiation pressure noise spectral density. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
+The \gls{SQL} is defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror dynamics via $\kappa$. By making a more precise measurement, i.e. one involving more photons carrying information of the mirror motion, we see a smaller shot noise spectral density whilst we see a larger radiation pressure noise spectral density \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
 
 \begin{figure}
   \centering
@@ -285,6 +285,8 @@ An important distinction to make here is that the \gls{SQL} is defined for \emph
 
 \subsubsection{Seismic noise}
 \note{Microseism, rms motion, etc.}
+\note{Rana's thesis has some numbers for microseism etc.}
+\note{From event instrument companion paper: These active platforms are used to reduce the very large displacements produced by tidal motion, due to the sun and the moon, and micro seismic activity. Tidal forces can produce displacements up to 100 um over a multi-kilometer baseline on time scales of hours; the micro seismic activity is driven by the ocean swell near the shore, and the resulting ground motion can be as large as several um at frequencies around 0.15 Hz - even far inland.}
 
 \subsubsection{Gravity-gradient noise}
 \note{See Hild 2011 for some basic info, and Jan's living review}
@@ -331,9 +333,11 @@ with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The po
 \subsection{Root mean square amplitude}
 
 \subsection{Spectral density}
-In gravitational wave interferometry, a lot of thought and planning typically goes in to the design of the apparatus in order to minimise noise \emph{transients}\textemdash pulses of unwanted noise with finite energy\textemdash such as a door slam\footnote{And, of course, some forms of gravitational wave signal; though it is not the intention of experimentalists to minimise the effect of this particular source.}. Such transients have finite energy over a finite time, and can be entirely characterised\textemdash within measurement error\textemdash by a Fourier transform of the time series in which the event occurred. With sufficient isolation from unwanted transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes, with energy approaching infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of the power present within each frequency of a signal in the steady state. This distribution can then be integrated back into a finite, steady state power.
+In gravitational wave interferometry, a lot of thought and planning typically goes in to the design of the apparatus in order to minimise noise \emph{transients}\textemdash pulses of unwanted noise with finite energy\textemdash such as a door slam\footnote{And, of course, some forms of gravitational wave signal; though it is not the intention of experimentalists to minimise the effect of this particular source. Detectors utilise a series of \emph{vetoes} to eliminate Earth-bound noise sources with the intention that only signals of astrophysical origin are sent for analysis.}. Such transients have finite energy over a finite time, and can be entirely characterised\textemdash within measurement error\textemdash by a Fourier transform of the time series in which the event occurred. With sufficient isolation from unwanted transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes, with energy approaching infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of the power present within each frequency of a signal in the steady state. This distribution can then be integrated back into a finite, steady state power.
 
 Typically the time evolution of a particular signal is the only data an experimentalist has at their disposal in order to characterise a signal in terms of its spectral density. A true representation of the power spectral density requires, like the measurement of energy spectral density, infinite time. A compromise can be made, however, in order to estimate the power spectral density from a set of Fourier transforms of the time series. By averaging Fourier transforms of various subsets of the data $\left[ t, t + \Delta t \right]$, a power spectral density can be approximated for a particular frequency range, determined by the bounds established by the inverse of the longest and shortest subsets of the time series transformed. While this compromise is typically reasonable in most cases, and indeed essential for any finite measurement, it is unable to exclude the possibility that part of the power spectral density is formed from signal content in frequencies outwith the measured range. Longer time series measurements allow for more averaging of frequency bands, and thus a better approximation to the true power spectral density.
+
+\note{See p6 of speemdeter/wp-content/uploads/sites/3/2015/09/Dissertation.pdf}
 
 \subsection{Bandlimiting}
 \note{Nyquist-Shannon sampling theorem, https://en.wikipedia.org/wiki/Bandlimiting}
@@ -371,6 +375,8 @@ LIGO CE citation: P1600143 (not yet published), also Dwyer et al, \cite{Dwyer201
 
 
 \subsubsection{\label{sec:squeezing}Squeezing}
+\note{\cite{Caves1981} appears to be the first paper that introduces squeezing}
+
 The use of \emph{squeezing} is an attempt to instead introduce vacuum with \emph{correlated} noise. By choosing a suitable \emph{readout quadrature}, it is possible to avoid quantum noise impinging upon observables, instead moving the noise terms into the orthogonal, unobserved quadrature. Squeezing is particularly favourable in combination with DC readout, since it is not necessary to squeeze additional \gls{RF} sidebands in addition to the carrier light.
 
 The squeezing angle can be altered so as to be optimal for each given frequency through the use of a \emph{filter cavity}.
