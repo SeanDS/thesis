@@ -80,7 +80,7 @@ class Colours(object):
                 [(188, 189, 34), (219, 219, 141)], # lime green
                 [(23, 190, 207), (158, 218, 229)]] # turquois
     
-    shades = {'black': (0, 0, 0), 'grey': (127, 127, 127)}
+    shades = {'black': (0, 0, 0), 'grey': (127, 127, 127), 'lightgrey': (199, 199, 199)}
     
     def __init__(self):
         self.current_index = 0
@@ -91,6 +91,10 @@ class Colours(object):
             for j in range(len(self.colours[i])):
                 r, g, b = self.colours[i][j]
                 self.colours[i][j] = (r / 255, g / 255, b / 255)
+        
+        for shade in self.shades:
+            r, g, b = self.shades[shade]
+            self.shades[shade] = (r / 255, g / 255, b / 255)
     
     def __iter__(self):
         return self

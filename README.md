@@ -4,6 +4,19 @@ Modified version of [Glasgow Thesis Template](https://github.com/sdstrowes/Glasg
 
 Follows the University of Glasgow style guide, as outlined in [this document](http://www.gla.ac.uk/services/library/enlighten/theses/thesispreparationguidelines.pdf).
 
+### Dependencies ###
+Incomplete list:
+
+ * pdflatex
+ * circuitikz
+ * python
+ * python-numpy
+ * python-scipy
+ * python-matplotlib
+ * python-mpltoolkits.basemap
+ * gnumake
+ * inkscape
+
 ### Instructions ###
 Add `/scripts` to your `PYTHONPATH`. In BASH:
 
