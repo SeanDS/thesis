@@ -11,6 +11,13 @@ In order to calculate a response function for a set of optics, it is necessary t
 
 \note{Reference the appendix on interferometry fields etc.}
 
+\note{Describe use of laser frequency to measure length}
+\begin{equation}
+  \label{eq:freq-to-length}
+  \frac{\Delta f}{f} = \frac{\Delta L}{L}
+\end{equation}
+
+
 \subsection{Operating point}
 In precision measurement, typically an experimentalist can only infer the quantity of an underlying amplitude from a measured power. A simple example is the measurement of mirror displacement in a simple Michelson interferometer \emph{via} the photocurrent output of the photodetector. The wave is composed of the electric and magnetic fields, $E$ and $B$, respectively, each of which can be expressed as a travelling wave:
 \begin{align}
@@ -46,6 +53,8 @@ where we assume that the path length difference caused by the transient is evenl
 using the fact that $P_{\text{in}} = A_{\text{in}}^2$. This shows that the signal from the arm length motion is encoded in the phase of the signal witnessed by the photodetector at the output port.
 
 Getting access to the phase information encoded within the light is more difficult than making a simple measurement of power. Sections \note{WGM PDH, controls BHD and ET DC readout} describe techniques to access this information given different noise and signal constraints.
+
+\note{Explain dark fringe offset}
 
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
@@ -211,44 +220,45 @@ As quantum noise arises from vacuum noise\textemdash spontaneous creation and an
 The detrimental effect of counting statistics due to phase uncertainty is mitigated by an increase in the classical light power within the interferometer. As the noise entering the interferometer is a function of loss and is, to first order, not dependent upon laser power, higher input light power leads to an increase in signal with respect to noise and so the effect that the noise has on the output is diminished.
 
 \subsubsection{Quantum radiation pressure noise}
-Despite being massless, photons impart momentum to mirrors upon reflection proportional to their wavelength. The strongest effect this has on an interferometer is in the \emph{\gls{DC} radiation pressure} effect, which arises from the classical light power circulating within the interferometer. In a classical interferometer this radiation pressure effect expands the arm cavity length \checkme{proportionally to the light power}, with the equilibrium point being defined by the equivalence of the radiation pressure force to the mirror's restoring force. The operating point of the interferometer can be reached with simple control.
+Despite being massless, photons impart momentum to mirrors upon reflection proportional to their wavelength. The strongest effect this has on an interferometer is in the \emph{\gls{DC} radiation pressure} effect, which arises from the classical light power circulating within the interferometer. In a classical interferometer this radiation pressure effect expands the arm cavity length \checkme{proportionally to the light power}, with the equilibrium point being defined by the equivalence of the radiation pressure force to the mirror's restoring force.
 
-\emph{Quantum} radiation pressure, on the other hand, arises from the momentum imparted onto mirrors within the interferometer by vacuum noise injected at loss points within the interferometer. As with quantum shot noise this effect is related to the input power of the interferometer, $P$, but this time the input power facilitates the phase fluctuations that become transformed into displacement noise via the dynamics of the mirror. The mirror dynamics govern the back-action due to the imparted momentum, and because vacuum noise is white the energy imparted to the mirror is the same at all frequencies and the effect of radiation pressure therefore follows an inverse frequency relation.
+\emph{Quantum} radiation pressure, on the other hand, arises from the momentum imparted onto mirrors within the interferometer by virtual photons present within the interferometer from the laser and loss points, as shown in Section\,\ref{sec:noise-via-loss}. As with quantum shot noise this effect is related to the input power of the interferometer, $P$, but this time the input power facilitates the phase fluctuations that become transformed into displacement noise via the dynamics of the mirror. The mirror dynamics govern the displacement noise due to back-action. The spectrum of noise from virtual photons is white, and so the energy imparted to the mirror is the same at all frequencies and therefore the effect of radiation pressure follows an inverse frequency relation.
 
-The radiation pressure noise power spectral density is:
-
-\note{Blah}
+The radiation pressure noise power spectral density is given as \cite{Danilishin2012}:
+\begin{equation}
+  \label{eq:rp-noise-psd}
+  S_{\text{rp}} = \frac{\hbar P \omega_0}{c^2 m^2 \omega^4},
+\end{equation}
+with reduced mirror mass $m$ and angular frequency of oscillation $\omega = 2 \pi f$. The displacement spectral density, which is $\sqrt{S_{\text{rp}}}$, shows the noise is proportional to $\frac{1}{f^2}$ as expected from a free mass.
 
 \subsubsection{\label{sec:sql}The Standard Quantum Limit}
-\note{See p60 onwards of Stefan D's Living Review}
-\note{Equation 150 of living review: minimum noise allowed by Q.M., i.e. Heisenberg}
+Note that Equation\,\ref{eq:rp-noise-psd} is proportional to power whilst Equation\,\ref{eq:shot-noise-psd} is inversely proportional to power. This creates a lower bound on the sensitivity of a classical interferometer though a manifestation of the Heisenberg Uncertainty Principle, termed the \emph{standard quantum limit} (\gls{SQL}).
 
-The \emph{standard quantum limit} (\gls{SQL}) is a manifestation of the Heisenberg Uncertainty Principle in interferometry. It is the point at which the quadrature sum of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached, since shot and radiation pressure noise scale inversely to one another with frequency. The \gls{SQL} is commonly plotted across a given frequency range, where it forms a line which can only be crossed with special \emph{sub-\gls{SQL}} techniques.
+The \gls{SQL} is the point at which the quadrature sum of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit proportional to $\frac{1}{f^2}$ which can only be crossed with special, \emph{sub}-\gls{SQL} techniques. In terms of strain, the \gls{SQL} is defined for a \MI{} as \cite{Braginsky1996}:
+\begin{equation}
+  \label{eq:strainsql}
+  h_{SQL} = \sqrt{\frac{8 \hbar}{m \Omega^2 L^2}},
+\end{equation}
+where $L$ represents the \MI{}'s arm length.
 
-For a given classical \MI{}, that is to say, a \MI{} lacking special readout techniques aimed at reducing quantum noise sources, it can be shown \cite{Braginsky1996} that the spectral density follows the relation:
+The spectrum of a \MI{} is defined as:
 \begin{equation}
   \label{eq:classicalifospectrum}
-  S_h = \frac{h^{2}_{SQL}}{2} \left( \frac{1}{\kappa} + \kappa \right).
+  S_h = \frac{h^{2}_{SQL}}{2} \left( \frac{1}{\kappa} + \kappa \right),
 \end{equation}
-In above equation, $\kappa$ is defined as the \emph{opto-mechanical coupling constant}:
+where the \gls{SQL} is reached only at a single frequency. The term $\kappa$ is defined as the \emph{opto-mechanical coupling constant}:
 \begin{equation}
  \kappa = \frac{I_0}{I_{SQL}} \frac{2 \gamma^4}{\Omega^2 \left( \gamma^2 +
 \Omega^2 \right)},
  \label{eq:optomechanicalcoupling}
 \end{equation}
-with $I_0$ the laser power, $I_{SQL}$ the laser power required to reach the \gls{SQL}, $\gamma$ the cavity half-bandwidth, and $\Omega$ the gravitational wave frequency. The interferometer's opto-mechanical coupling constant arises from fluctuations in pressure exerted by light on the mirrors due to shot noise. $I_{SQL}$ can be itself defined as:
+with $I_0$ the laser power at the beam splitter, $I_{SQL}$ the laser power required to reach the \gls{SQL}, $\gamma$ the cavity half-bandwidth, and $\Omega$ the gravitational wave frequency. $I_{SQL}$ can be itself defined as:
 \begin{equation}
  I_{SQL} = \frac{m L^2 \gamma^4}{4 \omega_0},
 \end{equation}
 with $m$ the mirror mass, $L$ the arm length and $\omega_0$ the light's angular frequency.
 
-Equation\,\ref{eq:classicalifospectrum} can be minimised by setting $I_0 = I_{SQL}$ in Equation~\ref{eq:optomechanicalcoupling}. This yields the \gls{SQL}:
-\begin{equation}
-  \label{eq:strainsql}
-  h_{SQL} = \sqrt{\frac{8 \hbar}{m \Omega^2 L^2}}.
-\end{equation}
-
-The \gls{SQL} is defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror dynamics via $\kappa$. By making a more precise measurement, i.e. one involving more photons carrying information of the mirror motion, we see a smaller shot noise spectral density whilst we see a larger radiation pressure noise spectral density \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
+The \gls{SQL} is defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror mass, light power, arm length and cavity bandwidth. By making a more precise measurement, i.e. one involving more photons carrying information of the mirror motion, we see a smaller shot noise spectral density (we reduce $\Delta n$) whilst we see a larger radiation pressure noise spectral density (we increase $\Delta \phi$) \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
 
 \begin{figure}
   \centering
@@ -256,7 +266,7 @@ The \gls{SQL} is defined at all frequencies, while the spectral density of a qua
   \caption[Standard quantum limit and the quantum noise with various input powers]{\label{fig:sql-vs-input-power}The \gls{SQL} for a Michelson interferometer with arms of length \SI{1}{\kilo\meter}, mirrors with reduced mass \SI{50}{\kilo\gram} and optimal frequency \SI{100}{\hertz}, along with quantum noise limited sensitivity curves for three different input powers. The higher the input power, the higher the strain sensitivity can be pushed, but at the expense of higher radiation pressure noise and thus higher optimal frequency for a given interferometer configuration. Quantum non-demolition techniques can be used to surpass the \gls{SQL} (see Section\,\ref{sec:sub-sql-techniques}).}
 \end{figure}
 
-An important distinction to make here is that the \gls{SQL} is defined for \emph{uncorrelated} shot and radiation pressure noise. Techniques exist in theory and practice to reduce overall noise by producing correlations between the two effects such as squeezing and variational readout, so-called \emph{quantum non-demolition} interferometry. \note{See sections...}
+An important distinction to make here is that the \gls{SQL} is defined for \emph{uncorrelated} shot and radiation pressure noise. Techniques exist in theory and practice to reduce overall noise by producing correlations between the two effects with so-called \emph{quantum non-demolition} interferometry. \note{See sections...}
 
 \subsection{Other fundamental noise}
 
@@ -268,31 +278,24 @@ Changes in the density of the ground near the test masses created by seismic noi
 
 \subsection{Technical noise}
 
-\subsubsection{Laser frequency noise}
-A perfect laser provides output at a single, well defined frequency, or in other words, it has an infinitely narrow linewidth. In reality, such lasers do not exist and instead the output contains spectral impurities. As the laser wavelength is the ``metre stick'' by which we make measurements of length in interferometers, it is very important to ensure that the laser's wavelength, and therefore frequency, is well defined. A well designed laser will get an experimentalist part of the way there, but in most cavity experiments a frequency stabilisation control loop involving optics and electronics is necessary.
+\subsubsection{Laser frequency and intensity noise}
+A perfect laser provides output at a single, well defined frequency, or in other words, it has an infinitely narrow linewidth. In reality, such lasers do not exist and instead the output contains spectral impurities. As the laser wavelength is the ``metre stick'' by which we make measurements of length in interferometers, it is very important to ensure that the laser's wavelength, and therefore frequency, is well defined. Frequency stabilisation control loops involving optics and electronics are usually necessary in high precision interferometric experiments.
 
-Apart from its linewidth, it is possible to represent a laser's frequency noise in terms of its noise spectral density, measurable via some heterodyne technique with a standard spectrum analyser. The effect of laser frequency noise is for a beat signal $V \left( t \right)$ to occur due to overlapping sinusoidal waves:
+Laser frequency noise affects the phase of the output light by creating a beat between waves with different frequencies, created via thermal effects in the laser material. This can be expressed as a time-varying shift $\phi \left( t \right)$ in the underlying wave's phase. This phase transforms into frequency noise via the relation $\Delta f = \frac{1}{2 \pi} \frac{d \phi}{dt}$.
+
+The spectral density of frequency noise can be calculated from the autocorrelation between a frequency fluctuation at time $t$ and another at time $t + \Delta t$, but a simpler method is to realise that the laser is used to measure the cavity length by relating its change in frequency to the change in length via Equation\,\ref{eq:freq-to-length}. Multiplying the relative frequency noise by the dark fringe offset $\delta l$ \note{make sure this is defined earlier} gives a first order estimate of the displacement noise created by fluctuations in the laser. Mathematically:
 \begin{equation}
-  V \left( t \right) = V_0 \left( t \right) \sin \left[ 2 \pi f_0 + \phi \left( t \right) \right],
-\end{equation}
-where $V_0 \left( t \right)$ is the beat amplitude and $\phi \left( t \right)$ is the phase difference at time $t$. We can rewrite this in terms of frequency $f \left( t \right)$,
-\begin{equation}
-  \begin{split}
-    f \left( t \right) &= f_0 + \frac{1}{2 \pi} \frac{\text{d} \phi \left( t \right)}{\text{d} t} \\
-                       &= f_0 + \Delta f \left( t \right),
-  \end{split}
-\end{equation}
-with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The power spectral density arises from the autocorrelation between a frequency fluctuation at time $t$ and another at time $t + \Delta t$, which can be expressed in the form:
-\begin{equation}
-  S_{\Delta f} \left( f \right) = 2 \int^{\infty}_{0} \langle \Delta f \left( t \right) \Delta f \left( t + \Delta t \right) \rangle \text{e}^{\left( -\text{i2}\pi f \Delta t \right) \text{d}\Delta t}
+  \label{eq:laser-freq-noise}
+  x_{\text{freq. noise}} = \delta l \frac{\Delta f}{f}.
 \end{equation}
 
+The laser's intensity fluctuates due to similar mechanisms. Thermally driven misalignments within the laser can lead to scattering and the production of higher order modes, which reduce the intensity of the fundamental mode. This has a similar effect on the output as frequency noise, coupling relative intensity noise $\frac{\Delta P}{P}$ directly to the output via $\delta l$:
+\begin{equation}
+  \label{eq:laser-int-noise}
+  x_{\text{int. noise}} = \delta l \frac{\Delta P}{P}.
+\end{equation}
 
-
-\note{See Neil's thesis p14, https://arran.physics.gla.ac.uk/wp/speedmeter/2016/03/24/update-on-linear-cavity-work, Optics Communications 201 (2002) 391-397, and Applied Optics 49, issue 25, 4801-4807, 2010}
-
-\subsubsection{Laser intensity noise}
-\note{describe RIN, etc...}
+Equations \ref{eq:laser-freq-noise} and \ref{eq:laser-int-noise} show that the level to which the dark fringe condition is satisfied determines the laser noise witnessed at the output. This is because of the cancellation at the beam splitter from noise in the two arms. Laser noise propagates to the beam splitter, where it is split between the arms. As this noise was created at the same time, the noise entering each arm is the same, and so when the light returns to the beam splitter this noise is cancelled. The dark fringe offset is created through a mismatch between the arm lengths, leading to an imperfect cancellation of this noise and therefore coupling to the output.
 
 \subsubsection{Johnson-Nyquist noise}
 As discussed in Section\,\ref{sec:noise-via-loss}, Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt\per\sqrthz} by the equation:
