@@ -27,7 +27,11 @@ Quantum noise, thermal noise (since if you push QN low enough, you run into ther
 Gravitational wave interferometry is ultimately a matter of signals and noise. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. The measurement of any signal necessarily entails the measurement of some noise, and so it does not make sense to talk about signal without talking about noise.
 
 \subsubsection{\label{eq:noise-via-loss}Noise via loss}
-The fluctuation dissipation theorem developed in the early \nth{20} Century showed in a general sense that fluctuations arise from loss. In fluids, Brownian motion is created from the thermal fluctuations of molecules within the fluid hitting and perturbing the position of suspended particles (characterised by the fluid's \emph{diffusivity}). Black body radiation arises from thermal fluctuation of electrons in matter leading to the production of electromagnetic radiation (characterised by the \emph{absorptance} of the matter). In resistors, the thermal fluctuation of electrons leads to a noise voltage (characterised by the resistance) termed Johnson-Nyquist noise.
+The fluctuation dissipation theorem developed in the early \nth{20} Century showed in a general sense that fluctuations arise from loss, with the fluctuation power:
+\begin{equation}
+  S_{\text{fluc}} \propto \frac{T}{Q},
+\end{equation}
+where $T$ is temperature and $Q$ is the mechanical quality factor, relating to the loss of the material. In fluids, Brownian motion is created from the thermal fluctuations of molecules within the fluid hitting and perturbing the position of suspended particles (characterised by the fluid's \emph{diffusivity}). Black body radiation arises from thermal fluctuation of electrons in matter leading to the production of electromagnetic radiation (characterised by the \emph{absorptance} of the matter). In resistors, the thermal fluctuation of electrons leads to a noise voltage (characterised by the resistance) termed Johnson-Nyquist noise.
 
 In interferometry, noise is able to enter at points of photon loss such as open ports created by mirrors with non-unity reflectivity. More subtle points of entry arise from loss within mirror substrates and coatings, friction in actuators such as coils (arising both from Joule heating and in the rearrangement of magnetic domains) and scattering from residual gas in the vacuum system.
 
