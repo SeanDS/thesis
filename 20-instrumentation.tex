@@ -27,8 +27,9 @@ Quantum noise, thermal noise (since if you push QN low enough, you run into ther
 Gravitational wave interferometry is ultimately a matter of signals and noise. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. The measurement of any signal necessarily entails the measurement of some noise, and so it does not make sense to talk about signal without talking about noise.
 
 \subsubsection{\label{eq:noise-via-loss}Noise via loss}
-\note{See snippets for fluc. diss. theorem}
-Noise is able to enter the interferometer via open ports. Somewhat obvious points of entry are mirrors with non-unity reflectivity and stray light hitting photodetectors. More subtle points of entry are loss points within mirror substrates and coatings, friction in actuators such as coils (arising both from Joule heating and in the rearrangement of magnetic domains) and scattering from residual gas in the vacuum system.
+The fluctuation dissipation theorem developed in the early \nth{20} Century showed in a general sense that fluctuations arise from loss. In fluids, Brownian motion is created from the thermal fluctuations of molecules within the fluid hitting and perturbing the position of suspended particles (characterised by the fluid's \emph{diffusivity}). Black body radiation arises from thermal fluctuation of electrons in matter leading to the production of electromagnetic radiation (characterised by the \emph{absorptance} of the matter). In resistors, the thermal fluctuation of electrons leads to a noise voltage (characterised by the resistance) termed Johnson-Nyquist noise.
+
+In interferometry, noise is able to enter at points of photon loss such as open ports created by mirrors with non-unity reflectivity. More subtle points of entry arise from loss within mirror substrates and coatings, friction in actuators such as coils (arising both from Joule heating and in the rearrangement of magnetic domains) and scattering from residual gas in the vacuum system.
 
 The effect of noise on the interferometer can be calculated by quantifying the magnitude of noise entering at the loss point and propagating this noise as if it were signal through the interferometer. The noise at a photodetector is therefore the sum of noise propagated from each point of loss. The way in which some forms of noise enters a \DRFPMI{} and propagates to the output port is shown in Figure\,\ref{fig:modelling-noise}.
 
@@ -323,7 +324,11 @@ with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The po
 \note{describe RIN, etc...}
 
 \subsubsection{Johnson-Nyquist noise}
-\note{Just quote the equation, explain it is due to thermal effects. Or, go into more detail about how it relates to the fluc. diss. theorem.}
+As discussed in Section\,\ref{eq:noise-via-loss}, Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt\per\sqrthz} by the equation:
+\begin{equation}
+  v_{\text{n}} = \sqrt{4 k_B T R},
+\end{equation}
+where $v_{\text{n}}$ is the noise voltage and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
 
 \section{Control considerations}
 
@@ -345,10 +350,6 @@ Typically the time evolution of a particular signal is the only data an experime
 \subsection{Spectral densities and root-mean-square figures}
 \note{Explain where spectral densities come from, i.e. FFTs of time series}
 \note{Explain calculation of rms noise from spectral density}
-
-\subsection{Parametric instabilities}
-\note{see DCC P1500163}
-Although not strictly a noise source, parametric instabilities are nevertheless a significant control problem...
 
 \section{Overview of current efforts}
 * aLIGO, aVirgo, KAGRA, GEO
