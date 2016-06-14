@@ -50,30 +50,38 @@ Getting access to the phase information encoded within the light is more difficu
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
-\section{Limiting noise sources in current detectors}
+\section{Measurement noise in gravitational wave interferometry}
+Measurement precision is ultimately a matter of \emph{signals} and \emph{noise}. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. In reality the measurement of any signal necessarily entails the measurement of some noise.
+
 Gravitational wave observatories are limited by a plethora of noise sources both fundamental and technical. In order to understand how to mitigate sources of noise in interferometers, it is necessary to understand how they arise and utilise techniques to mitigate them. The initial generation of detectors was limited by a range of different noise sources, and the knowledge gained from the first science runs fed in to the design of the second generation of detectors.
 
-The noise budget for \ALIGO{} is shown in Figure\,\ref{fig:aligo-noise-budget}. At its most sensitive frequency, \ALIGO{} is limited by quantum and thermal noise, whilst at low frequencies the motion of the ground from seismic sources lets the limit. Careful design involving specially selected materials and techniques has reduced thermal noise arising from the mirror coatings and suspensions and technical noise associated with electronics and facilities. Quantum noise sets the fundamental limit given the available light power and mirror masses utilised in \ALIGO{} and \AVIRGO{}. In order to improve the sensitivity beyond the limit set by quantum noise, approaches that involve changing the nature of the quantum interactions within the interferometer have to be implemented, some of which is discussed in Section\,\ref{sec:sub-sql-techniques} and throughout the main body of this work.
+The creation of \emph{noise budgets} from theoretical descriptions of sources is a useful way to examine how they influence the sensitivity of an experiment. The noise budget for \ALIGO{} is shown in Figure\,\ref{fig:aligo-noise-budget}. At its most sensitive frequencies, \ALIGO{} is limited by quantum and thermal noise, whilst at lower frequencies the motion of the ground from seismic sources sets the limit. Careful design involving specially selected materials and techniques has reduced thermal noise arising from the mirror coatings and suspensions and technical noise associated with electronics and facilities. Quantum noise sets the fundamental limit given the available light power and mirror masses utilised in \ALIGO{} and \AVIRGO{}, and in order to improve the sensitivity beyond the limit set by quantum noise, approaches that involve changing the nature of the quantum interactions within the interferometer have to be implemented. Individual noise sources are discussed throughout the rest of this chapter.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-aligo-noise-budget.pdf}
-  \caption[Advanced LIGO noise budget]{\label{fig:aligo-noise-budget}Advanced LIGO noise budget.}
+  \caption[Advanced LIGO noise budget]{\label{fig:aligo-noise-budget}Advanced LIGO noise budget. Greater sensitivity to gravitational waves is achieved by having lower residual strain noise. The strain noise limit is shown in \checkme{black}, which is the incoherent sum of the noise sources from other effects. All of the noise sources shown have some frequency dependence, and optimal sensitivity in a detector is reached by designing the experiment in such a way as to minimise the noise sources in the frequency band of interest. The creation of budgets like this from theoretical descriptions of noise sources is a useful way in which to understand how they affect the sensitivity.}
 \end{figure}
 
-\subsection{Measurement noise in gravitational wave interferometry}
-Gravitational wave interferometry is ultimately a matter of signals and noise. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. The measurement of any signal necessarily entails the measurement of some noise, and so it does not make sense to talk about signal without talking about noise.
+\subsection{\label{sec:noise-via-loss}Noise arising from loss and uncertainty}
+Quantum mechanics shows that the universe contains a continuous spectrum of quantum fluctuations at all frequencies. Virtual photons are constantly being created and annihilated everywhere, albeit with an average energy of zero, producing the measurement uncertainty required by quantum laws. An interferometer's cavities create local filters of this quantum spectrum which allow a certain subset of vacuum modes to circulate. Virtual photons are able to enter the interferometer via its loss points, just as virtual photons created within the interferometer are allowed to leave. In this way, non-unity reflectivity of optics, scattering and other photon loss effects within an interferometer lead to the intrusion of vacuum noise.
 
-\subsubsection{\label{eq:noise-via-loss}Noise via loss}
-The fluctuation dissipation theorem developed in the early \nth{20} Century showed in a general sense that fluctuations arise from loss, with the fluctuation power:
+In lasers, a pumped electromagnetic field creates a coherent state which can be propagated through an interferometer to pick up phase shift due to passing gravitational waves. This typically involves pumping the field into the \emph{coherent} state, in which the average laser amplitude is well defined, and noise arises from the presence of virtual photons in the pumped field leading to an uncertainty in the number of photons output from the laser.
+
+In materials, phonons \checkme{arising from thermal energy uncertainty} have a similar effect to vacuum fluctuations and lead to thermal noise.
+
+In general, the noise arising from fluctuations is quantified by the fluctuation dissipation theorem developed in the early \nth{20} Century, which shows that the noise spectral density due to fluctuations:
 \begin{equation}
   S_{\text{fluc}} \propto \frac{T}{Q},
 \end{equation}
-where $T$ is temperature and $Q$ is the mechanical quality factor, relating to the loss of the material. In fluids, Brownian motion is created from the thermal fluctuations of molecules within the fluid hitting and perturbing the position of suspended particles (characterised by the fluid's \emph{diffusivity}). Black body radiation arises from thermal fluctuation of electrons in matter leading to the production of electromagnetic radiation (characterised by the \emph{absorptance} of the matter). In resistors, the thermal fluctuation of electrons leads to a noise voltage (characterised by the resistance) termed Johnson-Nyquist noise.
+is related not only to the temperature $T$, but also to the quality factor $Q$ relating to the loss of the material. Other examples of noise from fluctuations are, for example:
+\begin{itemize}
+  \item Brownian motion in fluids, where the position of particles suspended in fluid is randomly perturbed due to thermal fluctuations of the molecules forming the liquid;
+  \item black body radiation, arising from thermal fluctuation of electrons in matter leading to the production of electromagnetic radiation;
+  \item and Johnson-Nyquist noise caused by the creation of noise voltage due to thermal fluctuation of electrons in resistors.
+\end{itemize}
 
-In interferometry, noise is able to enter at points of photon loss such as open ports created by mirrors with non-unity reflectivity. More subtle points of entry arise from loss within mirror substrates and coatings, friction in actuators such as coils (arising both from Joule heating and in the rearrangement of magnetic domains) and scattering from residual gas in the vacuum system.
-
-The effect of noise on the interferometer can be calculated by quantifying the magnitude of noise entering at the loss point and propagating this noise as if it were signal through the interferometer. The noise at a photodetector is therefore the sum of noise propagated from each point of loss. The way in which some forms of noise enters a \DRFPMI{} and propagates to the output port is shown in Figure\,\ref{fig:modelling-noise}.
+The effect of noise on the interferometer can be calculated by quantifying the magnitude of noise entering at the loss point and propagating this noise as if it were signal to the sensor. The noise at a photodetector is therefore the sum of noise propagated from each point of loss. The way in which some forms of noise enters a \DRFPMI{} and propagates to the output port is shown in Figure\,\ref{fig:modelling-noise}.
 
 \begin{figure}
   \centering
@@ -81,19 +89,7 @@ The effect of noise on the interferometer can be calculated by quantifying the m
   \caption[Modelling noise]{\label{fig:modelling-noise}Blah}
 \end{figure}
 
-\subsubsection{\label{sec:snr}Signal to noise ratio}
-Signal cannot be measured below the noise present on a photodetector. Maximum sensitivity can be achieved by maximising the ratio of signal power, $S$, to noise power, $N$, in the frequency band of interest. This is the \emph{signal-to-noise} ratio (SNR),
-\begin{equation}
-  \text{SNR} = \frac{S}{N}.
-\end{equation}
-In engineering circles the standard representation of signal to noise is in units of \emph{decibels} (\SI{}{\deci\bel}), defined for signal power as:
-\begin{equation}
-  \text{SNR}_{\SI{}{\deci\bel}} = 10 \log_{10} \left( \frac{s}{n} \right).
-\end{equation}
-As this representation is logarithmic, it is a useful for expressing both small and large signals. It is borrowed from engineering circles, and is particularly popular in discussions of electronic filtering.
-
 \subsection{Thermal noise}
-
 Thermal noise arises from loss in materials used to reflect and focus light and to suspend test masses, where photons in the thermal state are allowed to enter the interferometer and propagate to the sensors.
 
 \subsubsection{\label{sec:coating-thermal-noise}Coating thermal noise}
@@ -120,7 +116,7 @@ At higher frequencies, suspension \emph{violin modes} have a significant influen
 % previously from chapter 4
 Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light power to determine displacement.} limits its sensitivity.
 
-It has been known since the time of John von Neumann \note{CITE!} that the use of certain observables can avoid the limit set by the uncertainty principle. One of the results of quantum theory is that two non-commuting observables cannot be simultaneously known to full precision. For two operators $\hat{O}_+$ and $\hat{O}_-$, there exists an error $\epsilon$:
+One of the results of quantum theory is that two non-commuting observables cannot be simultaneously known to full precision. For two operators $\hat{O}_+$ and $\hat{O}_-$, there exists an error $\epsilon$:
 \begin{equation}
  \left[ \hat{O}_+, \hat{O}_- \right] = \epsilon,
 \end{equation}
@@ -205,7 +201,7 @@ From the last line in Equation\,\ref{eq:phase-uncertainty} we can recover a resu
 The reason for the $=$ in Equation\,\ref{eq:photon-phase-hup-min} is that an assumption has been made in Equation\,\ref{eq:std-dev-amp} that the energy uncertainty is made from equal parts amplitude and phase uncertainty. This is called a \emph{coherent state} and this approximates what a standard laser will output\footnote{Actually, lasers are typically quite incoherent on their own, and experimentalists must first ``mode clean'' the light to remove unwanted incoherent states. Special mode-cleaning cavities are implemented in most experiments to perform this task.}. Equation\,\ref{eq:photon-phase-hup} contains a $\geq$ and is therefore a general equation representing all states, including \emph{squeezed} states, which will be discussed in Section\,\ref{sec:squeezing}.
 
 \subsubsection{Quantum shot noise}
-As described in Section\,\ref{eq:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter. When this noise is measured by a photodetector it is termed \emph{quantum shot noise}, and it arises directly from the phase uncertainty derived in Section\,\ref{sec:operator-uncertainty}. We change representation from discrete pulses to a continuous measurement made by a laser by representing $n$ in Equation\,\ref{eq:photon-phase-hup-min} as a light power $P$ via the relation $n = \frac{P \Delta t}{\hbar \omega_0}$, where $\omega_0$ is the laser's angular frequency. The displacement-equivalent shot noise power spectral density then arises from the phase uncertainty:
+As described in Section\,\ref{sec:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter. When this noise is measured by a photodetector it is termed \emph{quantum shot noise}, and it arises directly from the phase uncertainty derived in Section\,\ref{sec:operator-uncertainty}. We change representation from discrete pulses to a continuous measurement made by a laser by representing $n$ in Equation\,\ref{eq:photon-phase-hup-min} as a light power $P$ via the relation $n = \frac{P \Delta t}{\hbar \omega_0}$, where $\omega_0$ is the laser's angular frequency. The displacement-equivalent shot noise power spectral density then arises from the phase uncertainty:
 \begin{equation}
   \label{eq:shot-noise-psd}
   S_{\text{shot}} = \frac{\hbar c^2}{P \omega_0}.
@@ -299,13 +295,24 @@ with $\Delta f \left( t \right)$ the instantaneous frequency fluctuation. The po
 \note{describe RIN, etc...}
 
 \subsubsection{Johnson-Nyquist noise}
-As discussed in Section\,\ref{eq:noise-via-loss}, Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt\per\sqrthz} by the equation:
+As discussed in Section\,\ref{sec:noise-via-loss}, Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt\per\sqrthz} by the equation:
 \begin{equation}
   v_{\text{n}} = \sqrt{4 k_B T R},
 \end{equation}
 where $v_{\text{n}}$ is the noise voltage and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
 
 \section{Control considerations}
+
+\subsection{\label{sec:snr}Signal to noise ratio}
+Signal cannot be measured below the noise present on a photodetector. Maximum sensitivity can be achieved by maximising the ratio of signal power, $S$, to noise power, $N$, in the frequency band of interest. This is the \emph{signal-to-noise} ratio (SNR),
+\begin{equation}
+  \text{SNR} = \frac{S}{N}.
+\end{equation}
+When discussing controls, the standard representation of signal to noise is in units of \emph{decibels} (\SI{}{\deci\bel}), defined for signal power as:
+\begin{equation}
+  \text{SNR}_{\SI{}{\deci\bel}} = 10 \log_{10} \left( \frac{s}{n} \right).
+\end{equation}
+As this representation is logarithmic, it is a useful for expressing both small and large signals.
 
 \subsection{Root mean square amplitude}
 
