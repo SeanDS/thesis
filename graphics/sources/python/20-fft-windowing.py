@@ -40,7 +40,7 @@ ax1.set_ylim([1e-20, 1])
 ax1.set_xlabel('Frequency (Hz)')
 ax1.set_ylabel(r'Power ($\mathrm{Amplitude}^2$ / Hz)')
 
-ax1.legend(['PSD estimate (windowed)', 'PSD estimate (unwindowed)', 'Signal frequency'], loc='upper left')
+ax1.legend(['PSD estimate (Hanning window)', 'PSD estimate (flat window)', 'Signal frequency'], loc='lower left')
 
 plt.grid(True)
 

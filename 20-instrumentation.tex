@@ -272,7 +272,7 @@ An important distinction to make here is that the \gls{SQL} is defined for \emph
 
 \subsection{Other fundamental noise}
 
-\subsubsection{Seismic noise}
+\subsubsection{\label{sec:seismic-noise}Seismic noise}
 The Earth's surface vibrates with a large amplitude and slow frequency \cite{ET2011}. At around \SI{10}{\micro\hertz} tidal forces due to the gravitational interaction between the Earth and Moon dominate the spectrum, producing displacements of up to \SI{100}{\micro\meter} \cite{Adhikari2004}. At around \SI{0.15}{\hertz} the swell of the ocean can be measured almost anywhere on the Earth, even far from coasts. These effects combine to produce a large amount of seismic noise at low frequencies which must be filtered. As this noise is large in amplitude, it is able to move test masses in laser cavities far enough that they no longer fulfil the resonant condition and lose light power. In almost all audio-band interferometric experiments a large degree of isolation must be utilised to mitigate seismic noise. In Advanced \gls{LIGO}, active platforms are used to damp this motion, sitting atop passive damping materials. The test masses are suspended from many pendulum stages to isolate higher frequencies such that by \SI{10}{\hertz} the ground motion is suppressed by \checkme{10 orders of magnitude}.
 
 \subsubsection{Gravity-gradient noise}
@@ -350,9 +350,9 @@ Remembering that photodetectors measure power (Section\,\ref{sec:operating-point
 which for the photodetector would have units \SI{}{\watt\per\sqrthz}.
 
 \subsubsection{Estimation of spectral density}
-Equation\,\ref{eq:psd} gives the formal definition of the power spectral density but not a practical means to measure it. To estimate the frequency components of a measured photodetector signal, we employ \emph{spectral density estimation} techniques. The standard in experimental interferometry is Welch's method \cite{Welch1967}, which splits a measured time series into a series of segments which can overlap with adjacent segments before calculating individual Fourier transforms on each segment. The resulting Fourier transforms are recombined to produce the spectral density estimate.
+Equation\,\ref{eq:psd} gives the formal definition of the power spectral density but not a practical means to measure it. To estimate the frequency components of a measured photodetector signal, we employ \emph{spectral density estimation} techniques. The standard in experimental interferometry is Welch's method \cite{Welch1967}, which splits a measured time series into a series of segments which can overlap with adjacent segments before calculating Fourier transforms on each individual segment. The resulting Fourier transforms are recombined to produce the spectral density estimate.
 
-The segment period determines the lowest frequency resolved by the calculation. For instance, a segment length of \SI{1000}{\second} would result in frequency resolution down to $\frac{1}{1000} = SI{e-3}{\hertz}$. Segmentation can be used to trade frequency bandwidth for resolution. Instead of taking a segment equal to the signal's period, and therefore achieving resolution at the lowest possible frequencies, segments of shorter duration can be combined to produce better resolution but only at higher frequencies.
+The segment period determines the lowest frequency resolved by the calculation. For instance, a segment length of \SI{1000}{\second} would result in frequency resolution down to $\frac{1}{1000} = \SI{e-3}{\hertz}$. Segmentation can be used to trade bandwidth for resolution. Instead of taking a segment equal to the signal's period, and therefore achieving resolution at the lowest possible frequencies, segments of shorter duration can be combined to produce better resolution but only at higher frequencies.
 
 Once a segment is created, the resulting Fourier transform is applied to the time series with the assumption that the end cycles back to the start. If the data is noisy, or if the period is not an integer number of wavelengths of all of frequency components, then this creates discontinuities which lead to unphysical frequency domain content (\emph{spectral leakage}). A \emph{window function} can be applied to emphasise the signal in the middle of the segment at the expense of that of the edges. The window function typically used in the field is the Hanning window. The effect of windowing is shown in Figure\,\ref{fig:fft-windowing}. A sine wave of frequency \SI{2499}{\hertz} and unity amplitude is recorded for a period of \SI{1}{\second}, sampled at a frequency of \SI{10}{\kilo\hertz}. The signal frequency is intentionally chosen to avoid an integer multiple of the sample frequency, which would remove the discontinuities at the edge of each segment. The power spectral density has been estimated using Welch's method, with both Hanning windows and flat (\emph{boxcar}) windows. The estimate for the noise floor in each case is drastically different because of the effect of segment discontinuities.
 % good windowing description: http://www.ni.com/white-paper/4844/en/
@@ -364,17 +364,23 @@ Once a segment is created, the resulting Fourier transform is applied to the tim
 \end{figure}
 
 \subsection{\label{sec:rms-amplitude}Root mean square amplitude}
-A real actuator or sensor has finite range, and the sum of the signal spectral density on each component must be within this range. The signal in the time domain represents the \emph{root-mean-square} (\gls{RMS}) value of the signal, which is equal to the sum of the frequency components. The \gls{RMS} representation is a useful form for the calculation of required actuator and sensor dynamic range.
+A real actuator or sensor has finite range, and the sum of the signal spectral density must be within this range to avoid clipping. The signal in the time domain represents the \emph{root-mean-square} (\gls{RMS}) value of the signal, which is equal to the sum of the frequency components. The \gls{RMS} representation is a useful form for the calculation of required actuator and sensor dynamic range (see, for example, Chapter\,\ref{c:speedmeter-control}).
 
 The following equation converts a power spectral density defined up to $f_{\text{max}}$ to an equivalent \gls{RMS} value:
 \begin{equation}
   \label{eq:spectral-density-to-rms}
   x_{\text{rms}}^2 = \int^{f_{\text{max}}}_{0} S_{xx} \left( f \right) df.
 \end{equation}
-The \gls{RMS} representation of a spectral density is sometimes quoted with the lower integral limit in Equation\,\ref{eq:spectral-density-to-rms} set to \SI{1}{\hertz}, and such a figure can be quoted as being the signal ``in a \SI{1}{\hertz} band''.
+The \gls{RMS} representation of a spectral density is sometimes quoted with the lower integral limit in Equation\,\ref{eq:spectral-density-to-rms} set to \SI{1}{\hertz}, and as such this value represents the signal ``in a \SI{1}{\hertz} band''.
+
+It is advisable to avoid pushing the \gls{RMS} signal applied to a sensor or actuator too close to its limit. Stationary random noise follows a well defined mean but can contain infrequent, larger noise transients allowed by Gaussian statistics. In such a case the instantaneous signal on a sensor or actuator might be greater than the \gls{RMS}. A good rule of thumb is to keep the \gls{RMS} signal expected at a sensor or actuator a factor of about \num{10} below its range to account for such events.
 
 \subsection{Bandlimiting}
-\note{Nyquist-Shannon sampling theorem, https://en.wikipedia.org/wiki/Bandlimiting}
+As discussed in Section\,\ref{sec:rms-amplitude}, actuators and sensors have finite range. When designing a control system for an interferometer, or indeed any plant, the decision must be made between magnitude of the corrective feedback at some frequencies of interest, and the bandwidth over which the plant is to be controlled. For example, a ground-based interferometer typically oscillates with greatest amplitude at frequencies below \SI{1}{\hertz} due to seismic noise, as discussed in Section\,\ref{sec:seismic-noise}. Meanwhile, the shot noise at higher frequencies is small enough such that the test masses do not move away from the operating point. Ideally, the finite actuator range on the test masses should be used to correct for displacements at low frequencies, where it is needed to keep the interferometer at the operating point. To achieve this, the control loop must implement \emph{bandlimiting} to prevent feedback at high frequencies and enhance feedback at low frequencies.
+
+\note{Make a plot of the control ``energy'' as the area under the curve, and show how this area can be used for small control over a wide band or large control over a small band}
+
+The implementation of control systems for audio-band interferometers is a complex topic which will be discussed in greater detail throughout this work.
 
 \subsection{\label{sec:gain-phase-margin}Stable loops}
 \note{Discuss briefly the stability requirement for the unity gain frequency - leads to oscillation. See Freise thesis for some useful content.}
