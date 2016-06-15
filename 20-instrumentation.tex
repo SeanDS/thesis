@@ -18,7 +18,7 @@ In order to calculate a response function for a set of optics, it is necessary t
 \end{equation}
 
 
-\subsection{Operating point}
+\subsection{\label{sec:operating-point}Operating point}
 In precision measurement, typically an experimentalist can only infer the quantity of an underlying amplitude from a measured power. A simple example is the measurement of mirror displacement in a simple Michelson interferometer \emph{via} the photocurrent output of the photodetector. The wave is composed of the electric and magnetic fields, $E$ and $B$, respectively, each of which can be expressed as a travelling wave:
 \begin{align}
   E &= E_0 \text{e}^{\text{i} \left( kx - \omega t \right)}, \\
@@ -59,7 +59,7 @@ Getting access to the phase information encoded within the light is more difficu
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
-\section{Measurement noise in gravitational wave interferometry}
+\section{\label{sec:ifo-noise}Measurement noise in gravitational wave interferometry}
 Measurement precision is ultimately a matter of \emph{signals} and \emph{noise}. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. In reality the measurement of any signal necessarily entails the measurement of some noise.
 
 Gravitational wave observatories are limited by a plethora of noise sources both fundamental and technical. In order to understand how to mitigate sources of noise in interferometers, it is necessary to understand how they arise and utilise techniques to mitigate them. The initial generation of detectors was limited by a range of different noise sources, and the knowledge gained from the first science runs fed in to the design of the second generation of detectors.
@@ -101,6 +101,8 @@ The effect of noise on the interferometer can be calculated by quantifying the m
 \subsection{Thermal noise}
 Thermal noise arises from loss in materials used to reflect and focus light and to suspend test masses, where photons in the thermal state are allowed to enter the interferometer and propagate to the sensors.
 
+Thermal noise arises from a material's \emph{loss angle}, which is the imaginary part of the Young's modulus, relating applied stress to the strain of the material. The material with a high loss angle results in an applied stress creating an associated strain at a different time, and during this time the wave can accumulate noise via thermal fluctuations of the material. Thermal noise in gravitational wave detectors arises mainly from the test mass optical coatings and suspensions.
+
 \subsubsection{\label{sec:coating-thermal-noise}Coating thermal noise}
 In the conceptual design for the first generation of gravitational wave detectors such as GEO-600 \cite{Willke2002} the designers were not aware that thermal noise associated with the reflective coatings on mirrors would play a significant role in the sensitivity of the interferometers. For a long time it was known that thermal noise would contribute to the sensitivity of the detectors, particularly from the bulk material forming the test masses, but it soon became clear as the detectors were being commissioned that thermal noise arising from the reflective mirror coatings would dominate the thermal noise associated with the test masses in the frequency band of interest despite forming only a tiny fraction of the test masses by volume. Investigations conducted by Harry \etal{} \cite{Harry2002, Harry2007}, among others, concluded that mechanical loss present in the dielectric coatings on the test masses led to Brownian noise creating a limit to the sensitivity of detectors across a wide range of frequencies. Contributions from thermoelastic noise, arising from the thermal expansion coefficient of the materials of the coatings \cite{Braginsky1999a}, and thermorefractive noise, arising from the change in refractive index caused by such expansion \cite{Braginsky2000a}, produce further noise contributions which will become more important as coatings with improved thermal noise contributions are developed.
 
@@ -110,9 +112,9 @@ The dominant contribution to coating noise in gravitational wave detectors comes
 \begin{equation}
   S_{\text{x, coating}} = \frac{2 k_B T}{\pi^{3/2} f} \frac{1}{w Y} \left( \phi_{\text{sub}} + \frac{1}{\sqrt{\pi}} \frac{d}{w} \left( \frac{Y'}{Y} \phi_{\text{para}} + \frac{Y}{Y'} \phi_{\text{perp}} \right) \right),
 \end{equation}
-with $k_B$ Boltzmann's constant, temperature $T$, frequency $f$, beam size $w$, Young's moduli $Y$, \emph{loss angle} (\checkme{imaginary part of the Young's modulus}) $\phi$ and coating thickness $d$. The Young's moduli and loss angles are split into components representing the substrate and coatings, and the measurement and interaction between these components is an active area of research. Figure\,\ref{fig:aligo-noise-budget} shows coating Brownian noise jointly dominating the noise at frequencies around \SI{70}{\hertz}.
+with $k_B$ Boltzmann's constant, temperature $T$, frequency $f$, beam size $w$, Young's moduli $Y$, loss angle $\phi$ and coating thickness $d$. The Young's moduli and loss angles are split into components representing the substrate and coatings, and the measurement and interaction between these components is an active area of research. Figure\,\ref{fig:aligo-noise-budget} shows coating Brownian noise jointly dominating the noise at frequencies around \SI{70}{\hertz}.
 
-A mirror topology which avoids the use of many alternating coating layers can potentially offer an improvement in noise performance. Mirrors employing grating structures can resonantly reflect light with less coating material than similarly performing dielectric mirrors \cite{Mashev1985}, though at the expense of additional technical complexity in their utility in gravitational wave detectors \cite{Leavey2015}
+A mirror topology which avoids the use of many alternating coating layers can potentially offer an improvement in noise performance. Mirrors employing grating structures can resonantly reflect light with less coating material than similarly performing dielectric mirrors \cite{Mashev1985}, though at the expense of additional technical complexity in their utility in gravitational wave detectors \cite{Leavey2015}. Chapter\,\ref{c:waveguides} discusses a form of grating mirror for use in interferometers.
 
 \subsubsection{\label{sec:sus-thermal-noise}Suspension thermal noise}
 The test masses in audio-band gravitational wave detectors are suspended from pendulum systems, and current generation observatories (with the notable exception of \KAGRA{}) all utilise fused silica (\ce{SiO2}) fibres, a technique pioneered in \GEO{}. The reason for the use of this material is that the thermal noise present within the metal steel loops used previously was high enough to impart significant motion to the test mass in the gravitational wave channel, with the noise becoming dominant at frequencies around \SI{100}{\hertz} where the interferometer would otherwise be most sensitive \cite{Hammond2012}. Due to its high quality factor, fused silica has reduced mechanical loss and therefore lower noise. Figure\,\ref{fig:aligo-noise-budget} shows that suspension thermal noise is no longer a dominant noise source, unlike in \ILIGO{} \note{make sure initial ligo is defined somewhere}.
@@ -305,36 +307,77 @@ As discussed in Section\,\ref{sec:noise-via-loss}, Johnson-Nyquist noise arises 
 where $v_{\text{n}}$ is the noise voltage and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
 
 \section{Control considerations}
+Control is an essential aspect of gravitational wave interferometry, with the noise sources described in Section\,\ref{sec:ifo-noise} combining to push the test masses away from the operating point.
 
 \subsection{\label{sec:snr}Signal to noise ratio}
-Signal cannot be measured below the noise present on a photodetector. Maximum sensitivity can be achieved by maximising the ratio of signal power, $S$, to noise power, $N$, in the frequency band of interest. This is the \emph{signal-to-noise} ratio (SNR),
+Signal cannot be measured below the noise present on a photodetector. Maximum sensitivity can be achieved by maximising the ratio of signal power, $S$, to noise power, $N$, in the frequency band of interest. This is expressed as the \emph{signal-to-noise} ratio (SNR),
 \begin{equation}
   \text{SNR} = \frac{S}{N}.
 \end{equation}
 When discussing controls, the standard representation of signal to noise is in units of \emph{decibels} (\SI{}{\deci\bel}), defined for signal power as:
 \begin{equation}
-  \text{SNR}_{\SI{}{\deci\bel}} = 10 \log_{10} \left( \frac{s}{n} \right).
+  \text{SNR}_{\SI{}{\deci\bel}} = 10 \log_{10} \left( \frac{S}{N} \right).
 \end{equation}
-As this representation is logarithmic, it is a useful for expressing both small and large signals.
+As this representation is logarithmic, it is a useful for expressing both small and large signals and is therefore suitable for the presentation of noise sources across many orders of magnitude, as with interferometry.
 
-\subsection{Root mean square amplitude}
+\note{Define SNR for signal amplitude?}
 
-\subsection{Spectral density}
-In gravitational wave interferometry, a lot of thought and planning typically goes in to the design of the apparatus in order to minimise noise \emph{transients}\textemdash pulses of unwanted noise with finite energy\textemdash such as a door slam\footnote{And, of course, some forms of gravitational wave signal; though it is not the intention of experimentalists to minimise the effect of this particular source. Detectors utilise a series of \emph{vetoes} to eliminate Earth-bound noise sources with the intention that only signals of astrophysical origin are sent for analysis.}. Such transients have finite energy over a finite time, and can be entirely characterised\textemdash within measurement error\textemdash by a Fourier transform of the time series in which the event occurred. With sufficient isolation from unwanted transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes, with energy approaching infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of the power present within each frequency of a signal in the steady state. This distribution can then be integrated back into a finite, steady state power.
+\subsection{\label{sec:freq-resp-signals}Frequency representation of signals and noise}
+\subsubsection{\label{sec:fourier-transform}Fourier transform}
+A Fourier transform represents a time-varying signal in terms of its frequency components, i.e. as a series of sinusoidal waves of different frequency and amplitude. The Fourier transform $x \left( f \right)$ of $x \left( t \right)$ can be defined as:
+\begin{equation}
+  \label{eq:fourier-transform}
+  x \left( f \right) = \int^{\infty}_{-\infty} x \left( t \right) \text{e}^{-2i \pi f t} dt.
+\end{equation}
+Noise transients that appear in a detector have finite energy over a finite time, and can be entirely characterised by a Fourier transform of the time series in which the event occurred. Other forms of noise, however, cannot be represented in this way.
 
-Typically the time evolution of a particular signal is the only data an experimentalist has at their disposal in order to characterise a signal in terms of its spectral density. A true representation of the power spectral density requires, like the measurement of energy spectral density, infinite time. A compromise can be made, however, in order to estimate the power spectral density from a set of Fourier transforms of the time series. By averaging Fourier transforms of various subsets of the data $\left[ t, t + \Delta t \right]$, a power spectral density can be approximated for a particular frequency range, determined by the bounds established by the inverse of the longest and shortest subsets of the time series transformed. While this compromise is typically reasonable in most cases, and indeed essential for any finite measurement, it is unable to exclude the possibility that part of the power spectral density is formed from signal content in frequencies outwith the measured range. Longer time series measurements allow for more averaging of frequency bands, and thus a better approximation to the true power spectral density.
+\subsubsection{Spectral density}
+Apart from noise transients, the remaining noise sources within the interferometer tend to arise from stationary, random processes. This means that the noise source's \emph{autocorrelation}\textemdash its self-similarity over time\textemdash is zero for all times greater than zero. The energy of this noise approaches infinity as measurement time approaches infinity. In this circumstance, the Fourier transform of the underlying time-domain signal, as shown in Section\,\ref{sec:fourier-transform}, does not strictly exist. An alternative representation of a noise process is to represent the amount of work it performs per unit time: its power. The \emph{power spectral density} is a representation of the power present within each frequency of a signal in the steady state.
 
-\note{See p6 of speemdeter/wp-content/uploads/sites/3/2015/09/Dissertation.pdf}
+The infinite time Fourier transform in Equation\,\ref{eq:fourier-transform} can be truncated to instead represent the frequency components within a certain window:
+\begin{equation}
+  x \left( f \right) \approx \frac{1}{\sqrt{T}} \int^{T}_{0} x \left( t \right) \text{e}^{-2i \pi f t} dt,
+\end{equation}
+and the power spectrum of the signal measured by a photodetector is then:
+\begin{equation}
+  \label{eq:psd}
+  S_{xx} = \frac{1}{T} \int^{T}_{0} x \left( f \right)^2 dt.
+\end{equation}
+Remembering that photodetectors measure power (Section\,\ref{sec:operating-point}), this means that the photodetector's power spectrum would have units of \SI{}{\watt^2\per\hertz}. At the operating point, the photodetector's power is arranged in such a way as to be a linear with cavity mirror displacement, and so a more useful unit is the \emph{amplitude spectral density} $A \left( f \right)$, which is simply the square root:
+\begin{equation}
+  A \left( f \right) = \sqrt{S_{xx} \left( f \right)},
+\end{equation}
+which for the photodetector would have units \SI{}{\watt\per\sqrthz}.
+
+\subsubsection{Estimation of spectral density}
+Equation\,\ref{eq:psd} gives the formal definition of the power spectral density but not a practical means to measure it. To estimate the frequency components of a measured photodetector signal, we employ \emph{spectral density estimation} techniques. The standard in experimental interferometry is Welch's method \cite{Welch1967}, which splits a measured time series into a series of segments which can overlap with adjacent segments before calculating individual Fourier transforms on each segment. The resulting Fourier transforms are recombined to produce the spectral density estimate.
+
+The segment period determines the lowest frequency resolved by the calculation. For instance, a segment length of \SI{1000}{\second} would result in frequency resolution down to $\frac{1}{1000} = SI{e-3}{\hertz}$. Segmentation can be used to trade frequency bandwidth for resolution. Instead of taking a segment equal to the signal's period, and therefore achieving resolution at the lowest possible frequencies, segments of shorter duration can be combined to produce better resolution but only at higher frequencies.
+
+Once a segment is created, the resulting Fourier transform is applied to the time series with the assumption that the end cycles back to the start. If the data is noisy, or if the period is not an integer number of wavelengths of all of frequency components, then this creates discontinuities which lead to unphysical frequency domain content (\emph{spectral leakage}). A \emph{window function} can be applied to emphasise the signal in the middle of the segment at the expense of that of the edges. The window function typically used in the field is the Hanning window. The effect of windowing is shown in Figure\,\ref{fig:fft-windowing}. A sine wave of frequency \SI{2499}{\hertz} and unity amplitude is recorded for a period of \SI{1}{\second}, sampled at a frequency of \SI{10}{\kilo\hertz}. The signal frequency is intentionally chosen to avoid an integer multiple of the sample frequency, which would remove the discontinuities at the edge of each segment. The power spectral density has been estimated using Welch's method, with both Hanning windows and flat (\emph{boxcar}) windows. The estimate for the noise floor in each case is drastically different because of the effect of segment discontinuities.
+% good windowing description: http://www.ni.com/white-paper/4844/en/
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-fft-windowing.pdf}
+  \caption[The effect of windowing on a power spectral density estimate]{\label{fig:fft-windowing}The effect of windowing on a power spectral density estimate. The underlying signal time series is a sine wave of frequency \SI{2499}{\hertz}, and the sample rate is \SI{10}{\kilo\hertz}. The power spectral density estimates have been made using both Hanning windows, which de-emphasise the start and end of each segment to suppress discontinuities, and a flat window which performs no relative scaling of the data points. Both methods recover the signal's frequency, but in the former case the noise floor is greatly reduced.}
+\end{figure}
+
+\subsection{\label{sec:rms-amplitude}Root mean square amplitude}
+A real actuator or sensor has finite range, and the sum of the signal spectral density on each component must be within this range. The signal in the time domain represents the \emph{root-mean-square} (\gls{RMS}) value of the signal, which is equal to the sum of the frequency components. The \gls{RMS} representation is a useful form for the calculation of required actuator and sensor dynamic range.
+
+The following equation converts a power spectral density defined up to $f_{\text{max}}$ to an equivalent \gls{RMS} value:
+\begin{equation}
+  \label{eq:spectral-density-to-rms}
+  x_{\text{rms}}^2 = \int^{f_{\text{max}}}_{0} S_{xx} \left( f \right) df.
+\end{equation}
+The \gls{RMS} representation of a spectral density is sometimes quoted with the lower integral limit in Equation\,\ref{eq:spectral-density-to-rms} set to \SI{1}{\hertz}, and such a figure can be quoted as being the signal ``in a \SI{1}{\hertz} band''.
 
 \subsection{Bandlimiting}
 \note{Nyquist-Shannon sampling theorem, https://en.wikipedia.org/wiki/Bandlimiting}
 
 \subsection{\label{sec:gain-phase-margin}Stable loops}
 \note{Discuss briefly the stability requirement for the unity gain frequency - leads to oscillation. See Freise thesis for some useful content.}
-
-\subsection{Spectral densities and root-mean-square figures}
-\note{Explain where spectral densities come from, i.e. FFTs of time series}
-\note{Explain calculation of rms noise from spectral density}
 
 \section{Overview of current efforts}
 * aLIGO, aVirgo, KAGRA, GEO
