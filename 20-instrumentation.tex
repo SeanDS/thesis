@@ -4,7 +4,6 @@
 \note{Signal extraction cavity vs signal recycling cavity?}
 
 \section{Interferometer foundations}
-
 The effect that an interferometer has on a means of readout (e.g. a photodetector) as some variable is modulated is termed the \emph{response}. The most important response to consider in gravitational wave interferometry is the arm cavity differential degree of freedom's response to the beam splitter's output port. The response varies as a function of frequency depending on the interferometer topology and its light storage time. For instance, in a Michelson interferometer the dARM response is typically flat for frequencies below the arm cavity pole, and decaying \checkme{at a rate proportional to frequency} above. At higher frequencies, less light can be stored as the cavity cannot build up sufficient light power due to mirror loss and round-trip time. This effect is shown in \note{Figure XXX} for different end test mass reflectivities and in \note{Figure XXX} for different arm cavity lengths.
 
 In order to calculate a response function for a set of optics, it is necessary to understand the propagation of a light field through vacuum and through optics.
@@ -16,7 +15,6 @@ In order to calculate a response function for a set of optics, it is necessary t
   \label{eq:freq-to-length}
   \frac{\Delta f}{f} = \frac{\Delta L}{L}
 \end{equation}
-
 
 \subsection{\label{sec:operating-point}Operating point}
 In precision measurement, typically an experimentalist can only infer the quantity of an underlying amplitude from a measured power. A simple example is the measurement of mirror displacement in a simple Michelson interferometer \emph{via} the photocurrent output of the photodetector. The wave is composed of the electric and magnetic fields, $E$ and $B$, respectively, each of which can be expressed as a travelling wave:
@@ -131,7 +129,7 @@ As \KAGRA{} will be a cryogenic detector, it does not gain the same noise benefi
 
 At higher frequencies, suspension \emph{violin modes} have a significant influence on the measured noise \cite{Robertson2002}. A violin mode with high quality factor can resonantly enhance noise such that it dominates all other sources in a narrow band at frequencies starting around \SI{1}{\kilo\hertz}\footnote{Figure\,\ref{fig:aligo-noise-budget} appears to show that violin modes are not dominant, however the narrow linewidth of the noise is such that the resolution is insufficient to show the effect.}. This is reduced through the use of heavier test masses, which push the violin mode frequencies higher, away from the detection band, and via the use of special monitoring and damping techniques \cite{Sorazu2010} \note{reference to Advanced LIGO controls paper or document regarding damping of modes?}.
 
-\subsection{Quantum noise}
+\subsection{Quantum noise and the Standard Quantum Limit}
 % previously from chapter 4
 Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light power to determine displacement.} limits its sensitivity.
 
@@ -314,36 +312,14 @@ As discussed in Section\,\ref{sec:noise-via-loss}, Johnson-Nyquist noise arises 
 \end{equation}
 where $v_{\text{n}}$ is the noise voltage and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
 
-\section{Overview of current efforts}
-* aLIGO, aVirgo, KAGRA, GEO
-* Space based detectors: reference Section\,\ref{sec:gw-interferometry} that arm length of 750 km is impractical on ground, and how this is not impractical in space.
-* Sensitivity curves for all?
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{graphics/generated/from-python/20-detector-network.pdf}
-  \caption[Worldwide detector network]{Worldwide detector network. \GEO{}, \LHO{} and \LLO{} are operational, whilst \VIRGO{} and \KAGRA{} are being commissioned and \INDIGO{} is under construction. The locations of the \ET{} and \LIGOCE{} are as yet undecided.}
-\end{figure}
-
-\section{The future of gravitational wave interferometry}
-
-\subsection{Planned detector upgrades and new facilities}
-* Worldwide network of interferometric detectors
-* Plans to build/upgrade more (KAGRA, ET, LIGO Voyager, LIGO CE, etc.)
-* Space based detectors
-
-PUT ET NOISE BUDGET HERE
-
-LIGO CE citation: P1600143 (not yet published), also Dwyer et al, \cite{Dwyer2015}
-
-\subsection{\label{sec:sub-sql-techniques}Surpassing the Standard Quantum Limit}
+\section{\label{sec:sub-sql-techniques}Surpassing the Standard Quantum Limit}
 Predictions for the population of sources within the range of the advanced detectors show that it is most beneficial to improve the sensitivity at low frequencies \note{need source: perhaps CE or ET-LF designs?}. The strain sensitivity of a \MI{} at low frequencies can be increased through the use of heavier masses, as shown by Equation\,\ref{eq:strainsql}, with the strain sensitivity scaling proportionally to $\sqrt{m}$. The use of mirrors larger and heavier than for example the \SI{40}{\kilo\gram} mirrors used in \ALIGO{} is a considerable technical challenge. The availability of test mass material of suitable quality in such dimensions is not clear, as is the ability for the suspension systems to isolate noise from such large masses.
 
 To improve sensitivity at higher frequencies, Equation\,\ref{eq:shot-noise-psd} shows that laser power can be increased. As with heavier mirrors, this presents technical challenges in laser stability \cite{Hildebrandt2007}, the control of \emph{parametric instabilities} \cite{Evans2015} and the thermal effects associated with absorption in materials \cite{Steinlechner2016}.
 
 To bypass the problems associated with the use of heavier mirrors and more powerful lasers, a number of techniques have been proposed in the literature to increase the sensitivity of interferometers beyond the \gls{SQL} through the use of \emph{quantum non-demolition} (\gls{QND}) techniques \cite{Braginsky1995}. These include the modification of the optics of the interferometer \cite{Kimble2001}, such as through the use of \emph{squeezed} light injection \cite{Caves1981}, variational readout \cite{Vyatchanin1995, Vyatchanin1996} or \SM{}s \cite{Braginsky1990}; and the creation of new light-mirror interactions to increase the response of the interferometer to differential arm motion \cite{Chen2011}.
 
-\subsubsection{\label{sec:squeezing}Squeezing}
+\subsection{\label{sec:squeezing}Squeezing}
 The use of squeezing is an attempt to replace the normally uncorrelated vacuum noise entering the interferometer at the output port with \emph{correlated} noise. By choosing a suitable readout \emph{quadrature}, it is possible to remove some of the quantum noise impinging upon the signal, instead moving the noise terms into the orthogonal, unobserved readout quadrature. Squeezing is particularly favourable in combination with \gls{DC} readout, \note{why?}, a combination currently implemented in \GEOHF{} \cite{Willke2006, Affeldt2014}.
 
 To achieve broadband reduction of quantum noise with squeezing, it is necessary to inject the squeezed light via filter cavities to provide a frequency-dependent phase shift to the vacuum field \cite{Kimble2001}. In this case the squeezed light is particularly susceptible to loss in the filter cavities, as they affect the squeezed light before it can interact with the test masses \cite{Kwee2014}.
@@ -351,19 +327,26 @@ To achieve broadband reduction of quantum noise with squeezing, it is necessary 
 Squeezing has been demonstrated in \GEOHF{} with high duty cycle \cite{Grote2013} and is a planned upgrade for \ALIGO{} in the near future \cite{Miller2015}. The conceptual design for the \ET{} proposes \SI{10}{\deci\bel} squeezing for both the low-frequency and high-frequency detector designs, and \SI{5}{\deci\bel} squeezing is proposed for \LIGOCE{}.
 % 5 dB reported by Dwyer et al and 10 dB reported by P1600143
 
-\subsubsection{Variational readout}
+\subsection{Variational readout}
 Instead of modifying the input noise at the output port of the interferometer with frequency-dependent squeezing, variational readout achieves broadband sub-\gls{SQL} sensitivity through the use of a homodyne detector \note{make sure this is defined somewhere} with frequency-dependent homodyne angle. The frequency dependence can be achieved in a similar way to squeezing: the output light can be passed through filter cavities in a similar way to squeezed input.
 
 Variational readout can in theory be combined with squeezing either with a fixed squeezing angle \cite{Buonanno2004} or through a complicated frequency dependence of both squeezing and homodyne phase filter cavities \cite{Harms2003}. The use of homodyne readout in gravitational wave detectors, however, is not considered mature enough for upgrades to existing or future facilities, primarily due to the stability requirements for the local oscillator field \cite{Steinlechner2015}.
 
-\subsubsection{Light-mirror interactions}
+\subsection{Light-mirror interactions}
 \emph{Optical springs} \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, \emph{optical inertia} \cite{Khalili2011, Voronchev2012} and \emph{intracavity schemes} \cite{Braginsky1997, Khalili2002, Danilishin2006} have been proposed for use in gravitational wave detectors to improve sensitivity beyond the \gls{SQL} through the creation of interactions between the mechanical rigidity of suspended mirrors and the optical rigidity created by radiation pressure.
 
 The creation of optical springs requires complicated control arrangements. The use of two optical springs to remove the instabilities created by a single spring can relax some of the control requirements but full studies of the effect of noise and the sensitivity on this type of interferometer are not at a stage to be able to predict their use in future detectors.
 
-\subsubsection{Modification of the interferometer design}
+\subsection{Modification of the interferometer design}
 First proposed in 1990 \cite{Braginsky1990}, the measurement of the speed of test masses instead of displacement can lead to a reduction in quantum noise. Proposals for experiments to measure speed were made later and involved the use of an additional optical cavity at the output port of a \MI{} \cite{Braginsky2000, Purdue2002}, termed a \emph{sloshing} cavity, which forms an interaction between the main interferometer and the additional cavity that samples the test mass displacements multiple times in a way that resembles speed.
 
 In 2003, Chen realised that the Sagnac interferometer contained the necessary characteristics of a \SM{} \cite{Chen2003}, and estimated the sensitivity that such an interferometer might achieve with the Sagnac's corner mirrors replaced with triangular arm cavities to enhance sensitivity. This work was later expanded to include the effect of losses \cite{Danilishin2004}, with a full derivation of the effect of asymmetries in the interferometer coming later \cite{Danilishin2015}.
 
 The \SSM{} is being considered as a potential upgrade for the \ET{} beyond its initial configuration \cite{Wang2013, Huttner2016}, albeit possibly following a polarising topology with linear arm cavities \cite{Danilishin2004} due to the effect of back-scattering in triangular arm cavities \note{do we have a reference for this back-scattering effect?}.
+
+\section{The future of gravitational wave interferometry}
+Plans are in place for upgrades to \ALIGO{} after the science run in 2016, where the implementation of a squeezer will be made. In the medium term, the interferometer will be adapted to run with cryogenic optics and to provide sensitivity at lower frequencies. The \ALIGO{} and \AVIRGO{} detectors already push their current facilities to their limits, however, and so in the long term the goal is to build new facilities with significantly improved sensitivity. A conceptual design study was completed in 2011 for a new European facility in a triangular, \SI{10}{\kilo\meter} arm configuration, named the \ET{}, and similar studies for a new \SI{40}{\kilo\meter} \LIGO{} facility are ongoing. These facilities are planned for the late-2020s to early-2030s, and their arrival will compliment the anticipated \gls{ELISA} mission.
+
+\note{PUT ET NOISE BUDGET HERE? Or maybe best left to chapter 8}
+
+LIGO CE citation: P1600143 (not yet published), also Dwyer et al, \cite{Dwyer2015}
