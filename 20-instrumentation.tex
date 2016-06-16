@@ -375,7 +375,25 @@ The \gls{RMS} representation of a spectral density is sometimes quoted with the 
 
 It is advisable to avoid pushing the \gls{RMS} signal applied to a sensor or actuator too close to its limit. Stationary random noise follows a well defined mean but can contain infrequent, larger noise transients allowed by Gaussian statistics. In such a case the instantaneous signal on a sensor or actuator might be greater than the \gls{RMS}. A good rule of thumb is to keep the \gls{RMS} signal expected at a sensor or actuator a factor of about \num{10} below its range to account for such events.
 
-\subsection{Control bandwidth}
+\subsection{Control loops}
+A control loop can be used to sense the error in an interferometer from its operating point, and feed back signals to the actuators to correct it. We can in general split a control loop into two distinct parts: the \emph{plant} $G$, which is the device under control, and the \emph{controller} $H$, which is the device that senses the plant's error and generates the corrective feedback. Noise entering the loop between the plant and the controller's input (the \emph{error point}) is termed \emph{sensing} noise, and noise entering between the controller's output and the plant (the \emph{feedback point}) is called \emph{feedback} noise, or, in terms of interferometer test masses, \emph{displacement} noise. Figure\,\ref{fig:control-loop} shows this scenario.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/20-control-loop.pdf}
+  \caption[A basic control loop]{\label{fig:control-loop}A basic control loop. The plant contains the dynamics of the device to be controlled, such as an interferometer. The set position determines the desired point at which the plant should be held, and the error point shows the real position of the plant. The controller generates a corrective signal from the error signal input, and this is the feedback point. Noise enters the system at both the sensing and feedback points.}
+\end{figure}
+
+The controller cannot measure errors below its sensing noise and so sensing noise is not suppressed by the control loop.
+
+\subsubsection{Control loop figures of merit}
+A functioning control loop will suppress feedback noise by a level determined by the \emph{open-loop gain}, defined as the product of $G$ and $H$. This can be calculated by breaking the loop and taking a transfer function between the broken edges, and it shows the combined effect the the system under control, its actuators and sensors have on their inputs at their outputs.
+
+The \emph{closed-loop gain} is the effect that the control loop has on the system when negative feedback is being applied. If the controller is able to sense errors and fully correct them, then the closed-loop gain is unity. The frequency domain representation of the closed-loop gain is useful to visualise at which frequencies the gain from the controller is not being applied: closed-loop gain higher than \num{1} shows that the system is not controlling the error point  by matching it with equal magnitude and opposite sign, but rather following it. The closed-loop gain becomes particularly useful when comparing the effect of gain hierarchy, where multiple actuators are used to correct a single error point, as shown in Section\,\ref{sec:sus-gain-hierarchy}.
+
+The neither the open- nor closed-loop gain figures show the explicit effect the controller has on the plant, which in the case of an interferometer would be the positions of the test masses. The \emph{out-of-loop gain} provides this information, and is equal to the error point of the plant when the control loop is enabled. This figure is what is typically plotted in noise budgets such as the one shown in Figure\,\ref{fig:aligo-noise-budget}.
+
+\subsubsection{Control bandwidth}
 As discussed in Section\,\ref{sec:rms-amplitude}, actuators and sensors have finite range. When designing a control system for an interferometer, or indeed any plant, the decision must be made between magnitude of the corrective feedback at some frequencies of interest, and the bandwidth over which the plant is to be controlled. For example, a ground-based interferometer typically oscillates with greatest amplitude at frequencies below \SI{1}{\hertz} due to seismic noise, as discussed in Section\,\ref{sec:seismic-noise}. Meanwhile, the shot noise at higher frequencies is small enough such that the test masses do not move away from the operating point. Ideally, the finite actuator range on the test masses should be used to correct for displacements at low frequencies, where it is needed to keep the interferometer at the operating point. To achieve this, the control loop must limit the bandwidth to prevent feedback at high frequencies and enhance feedback at low frequencies. Figure\,\ref{fig:bandwidth} shows the effect that two control servos have given the same ability (e.g. actuator range). By shaping the controller to increase the low frequency gain, the maximum frequency at which feedback is provided (the unity gain frequency \note{make sure this is defined somewhere}) is necessarily reduced. The only way to enhance feedback effort whilst retaining bandwidth is to enhance the range of the actuators and/or sensors.
 
 \begin{figure}
@@ -384,10 +402,10 @@ As discussed in Section\,\ref{sec:rms-amplitude}, actuators and sensors have fin
   \caption[Limiting a servo to enhance gain in a certain band]{\label{fig:bandwidth}Limiting a servo to enhance gain in a certain band. The figure shows the loop gain of two servos, each consisting of a simple low pass filter. The area under each transfer function is equal, and this represents the ability of the controller to make corrections to the system (for example, the range of an actuator). To enhance the gain by a factor of \num{10} at \gls{DC}, the unity gain frequency has to be reduced by the same factor, meaning that the system will be controlled over a smaller bandwidth but with greater effort.}
 \end{figure}
 
-The implementation of control systems for audio-band interferometers is a complex topic which will be discussed in greater detail throughout this work.
+\subsubsection{\label{sec:gain-phase-margin}Stable loops}
+The stability of a control loop is determined by the controller's ability to generate a corrective signal that is opposite in sign to the disturbance. The interaction between the controller and the plant and its actuators and sensors can in some circumstances create situations where the feedback signal has the same sign as the error signal. If the feedback is of similar magnitude to the error signal, or greater, then this situation leads to positive feedback which makes the system uncontrollable, or \emph{unstable}. In terms of magnitude and phase, this means that any points of unity gain in the transfer function's magnitude must not be coupled with a corresponding phase of \SI{-180}{\degree}. To allow for some uncertainty in the system dynamics, a good rule of thumb in the implementation of the control system is to allow for a \emph{phase margin} of around \SI{35}{\degree} \cite{Freise2003}, meaning that the phase at each unity gain point should not be lower than \SI{-155}{\degree}.
 
-\subsection{\label{sec:gain-phase-margin}Stable loops}
-\note{Discuss briefly the stability requirement for the unity gain frequency - leads to oscillation. See Freise thesis for some useful content.}
+The implementation of control systems for audio-band interferometers is a complex topic which will be discussed in greater detail throughout this work.
 
 \section{Overview of current efforts}
 * aLIGO, aVirgo, KAGRA, GEO
@@ -402,19 +420,12 @@ The implementation of control systems for audio-band interferometers is a comple
 
 \section{The future of gravitational wave interferometry}
 
-\subsection{Planned upgrades and new facilities}
-* Worldwide network of interferometric detectors
-* Plans to build/upgrade more (KAGRA, ET, LIGO Voyager, LIGO CE, etc.)
-* Space based detectors
-
-PUT ET NOISE BUDGET HERE
-
-LIGO CE citation: P1600143 (not yet published), also Dwyer et al, \cite{Dwyer2015}
-
 \subsection{\label{sec:sub-sql-techniques}Surpassing the Standard Quantum Limit}
-\note{Various techniques exist...}
+Predictions for the population of sources within the range of the advanced detectors show that it is most beneficial to improve the sensitivity at low frequencies \note{need source: perhaps CE or ET-LF designs?}. The strain sensitivity of a \MI{} at low frequencies can be increased through the use of heavier masses, as shown by Equation\,\ref{eq:strainsql}, with the strain sensitivity scaling proportionally to $\sqrt{m}$. The use of mirrors larger and heavier than for example the \SI{40}{\kilo\gram} mirrors used in \ALIGO{} is a considerable technical challenge. The availability of test mass material of suitable quality in such dimensions is not clear, as is the ability for the suspension systems to isolate noise from such large masses.
 
+To improve sensitivity at higher frequencies, Equation\,\ref{eq:shot-noise-psd} shows that laser power can be increased. As with heavier mirrors, this presents technical challenges in laser stability \cite{Hildebrandt2007}, the control of \emph{parametric instabilities} \cite{Evans2015} and the thermal effects associated with absorption in materials \cite{Steinlechner2016}.
 
+To bypass the problems associated with the use of heavier mirrors and more powerful lasers, a number of techniques have been proposed in the literature to increase the sensitivity of interferometers beyond the \gls{SQL} through the use of \emph{quantum non-demolition} (\gls{QND}) techniques \cite{Braginsky1995}. These include the modification of the optics of the interferometer \cite{Kimble2001}, such as through the use of \emph{squeezed} light injection \cite{Caves1981}, variational readout \cite{Vyatchanin1995, Vyatchanin1996} or speed-meters \cite{Braginsky1990, Braginsky2000, Chen2003, Danilishin2004}; and the creation of new light-mirror interactions to increase the response of the interferometer to differential arm motion \cite{Chen2011} such as through the use of \emph{optical springs} \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, \emph{optical inertia} \cite{Khalili2011, Voronchev2012} or \emph{intracavity schemes} \cite{Braginsky1997, Khalili2002, Danilishin2006}.
 
 \subsubsection{\label{sec:squeezing}Squeezing}
 \note{\cite{Caves1981} appears to be the first paper that introduces squeezing}
@@ -437,3 +448,12 @@ This can be combined with squeezing \cite{Kimble2001}.
 
 \subsubsection{Modification of the interferometer design}
 \note{Give general overview of measurement of speed, then explain the Sagnac speedmeter in more detail. See KLMTV and its references.}
+
+\subsection{Planned upgrades and new facilities}
+* Worldwide network of interferometric detectors
+* Plans to build/upgrade more (KAGRA, ET, LIGO Voyager, LIGO CE, etc.)
+* Space based detectors
+
+PUT ET NOISE BUDGET HERE
+
+LIGO CE citation: P1600143 (not yet published), also Dwyer et al, \cite{Dwyer2015}
