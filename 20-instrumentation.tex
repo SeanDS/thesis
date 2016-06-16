@@ -415,41 +415,12 @@ The implementation of control systems for audio-band interferometers is a comple
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{graphics/generated/from-python/20-detector-network.pdf}
-  \caption[Worldwide detector network]{Worldwide detector network. \GEO{}, \LHO{} and \LLO{} are operational, whilst \VIRGO{} and \KAGRA{} are being commissioned and \INDIGO{} is under construction. The locations of \THEET{} and \LIGOCE{} are as yet undecided.}
+  \caption[Worldwide detector network]{Worldwide detector network. \GEO{}, \LHO{} and \LLO{} are operational, whilst \VIRGO{} and \KAGRA{} are being commissioned and \INDIGO{} is under construction. The locations of the \ET{} and \LIGOCE{} are as yet undecided.}
 \end{figure}
 
 \section{The future of gravitational wave interferometry}
 
-\subsection{\label{sec:sub-sql-techniques}Surpassing the Standard Quantum Limit}
-Predictions for the population of sources within the range of the advanced detectors show that it is most beneficial to improve the sensitivity at low frequencies \note{need source: perhaps CE or ET-LF designs?}. The strain sensitivity of a \MI{} at low frequencies can be increased through the use of heavier masses, as shown by Equation\,\ref{eq:strainsql}, with the strain sensitivity scaling proportionally to $\sqrt{m}$. The use of mirrors larger and heavier than for example the \SI{40}{\kilo\gram} mirrors used in \ALIGO{} is a considerable technical challenge. The availability of test mass material of suitable quality in such dimensions is not clear, as is the ability for the suspension systems to isolate noise from such large masses.
-
-To improve sensitivity at higher frequencies, Equation\,\ref{eq:shot-noise-psd} shows that laser power can be increased. As with heavier mirrors, this presents technical challenges in laser stability \cite{Hildebrandt2007}, the control of \emph{parametric instabilities} \cite{Evans2015} and the thermal effects associated with absorption in materials \cite{Steinlechner2016}.
-
-To bypass the problems associated with the use of heavier mirrors and more powerful lasers, a number of techniques have been proposed in the literature to increase the sensitivity of interferometers beyond the \gls{SQL} through the use of \emph{quantum non-demolition} (\gls{QND}) techniques \cite{Braginsky1995}. These include the modification of the optics of the interferometer \cite{Kimble2001}, such as through the use of \emph{squeezed} light injection \cite{Caves1981}, variational readout \cite{Vyatchanin1995, Vyatchanin1996} or speed-meters \cite{Braginsky1990, Braginsky2000, Chen2003, Danilishin2004}; and the creation of new light-mirror interactions to increase the response of the interferometer to differential arm motion \cite{Chen2011} such as through the use of \emph{optical springs} \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, \emph{optical inertia} \cite{Khalili2011, Voronchev2012} or \emph{intracavity schemes} \cite{Braginsky1997, Khalili2002, Danilishin2006}.
-
-\subsubsection{\label{sec:squeezing}Squeezing}
-\note{\cite{Caves1981} appears to be the first paper that introduces squeezing}
-
-The use of \emph{squeezing} is an attempt to instead introduce vacuum with \emph{correlated} noise. By choosing a suitable \emph{readout quadrature}, it is possible to avoid quantum noise impinging upon observables, instead moving the noise terms into the orthogonal, unobserved quadrature. Squeezing is particularly favourable in combination with DC readout, since it is not necessary to squeeze additional \gls{RF} sidebands in addition to the carrier light.
-
-The squeezing angle can be altered so as to be optimal for each given frequency through the use of a \emph{filter cavity}.
-
-One such approach is to use \emph{DC readout} and \emph{squeezing}, a combination currently implemented in the detector GEO-HF \cite{Willke2006, Affeldt2014}.
-
-Squeezing has been employed at GEO... will be employed at aLIGO+, LIGO Voyager, C.E., ET...
-
-\subsubsection{Variational output}
-Use of frequency dependent homodyne angle...
-
-This can be combined with squeezing \cite{Kimble2001}.
-
-\subsubsection{Local readout and optical springs}
-\note{Reference work from John and Neil}
-
-\subsubsection{Modification of the interferometer design}
-\note{Give general overview of measurement of speed, then explain the Sagnac speedmeter in more detail. See KLMTV and its references.}
-
-\subsection{Planned upgrades and new facilities}
+\subsection{Planned detector upgrades and new facilities}
 * Worldwide network of interferometric detectors
 * Plans to build/upgrade more (KAGRA, ET, LIGO Voyager, LIGO CE, etc.)
 * Space based detectors
@@ -457,3 +428,36 @@ This can be combined with squeezing \cite{Kimble2001}.
 PUT ET NOISE BUDGET HERE
 
 LIGO CE citation: P1600143 (not yet published), also Dwyer et al, \cite{Dwyer2015}
+
+\subsection{\label{sec:sub-sql-techniques}Surpassing the Standard Quantum Limit}
+Predictions for the population of sources within the range of the advanced detectors show that it is most beneficial to improve the sensitivity at low frequencies \note{need source: perhaps CE or ET-LF designs?}. The strain sensitivity of a \MI{} at low frequencies can be increased through the use of heavier masses, as shown by Equation\,\ref{eq:strainsql}, with the strain sensitivity scaling proportionally to $\sqrt{m}$. The use of mirrors larger and heavier than for example the \SI{40}{\kilo\gram} mirrors used in \ALIGO{} is a considerable technical challenge. The availability of test mass material of suitable quality in such dimensions is not clear, as is the ability for the suspension systems to isolate noise from such large masses.
+
+To improve sensitivity at higher frequencies, Equation\,\ref{eq:shot-noise-psd} shows that laser power can be increased. As with heavier mirrors, this presents technical challenges in laser stability \cite{Hildebrandt2007}, the control of \emph{parametric instabilities} \cite{Evans2015} and the thermal effects associated with absorption in materials \cite{Steinlechner2016}.
+
+To bypass the problems associated with the use of heavier mirrors and more powerful lasers, a number of techniques have been proposed in the literature to increase the sensitivity of interferometers beyond the \gls{SQL} through the use of \emph{quantum non-demolition} (\gls{QND}) techniques \cite{Braginsky1995}. These include the modification of the optics of the interferometer \cite{Kimble2001}, such as through the use of \emph{squeezed} light injection \cite{Caves1981}, variational readout \cite{Vyatchanin1995, Vyatchanin1996} or speed-meters \cite{Braginsky1990, Braginsky2000, Chen2003, Danilishin2004}; and the creation of new light-mirror interactions to increase the response of the interferometer to differential arm motion \cite{Chen2011}.
+
+\subsubsection{\label{sec:squeezing}Squeezing}
+The use of squeezing is an attempt to replace the normally uncorrelated vacuum noise entering the interferometer at the output port with \emph{correlated} noise. By choosing a suitable readout \emph{quadrature}, it is possible to remove some of the quantum noise impinging upon the signal, instead moving the noise terms into the orthogonal, unobserved readout quadrature. Squeezing is particularly favourable in combination with \gls{DC} readout, \note{why?}, a combination currently implemented in \GEOHF{} \cite{Willke2006, Affeldt2014}.
+
+The effect squeezing has on the quantum noise spectral density of a \MI{} can be described in terms of a modification to Equation\,\ref{eq:classicalifospectrum} by a factor xxx...:
+\note{equation}
+
+To achieve broadband reduction of quantum noise with squeezing, it is necessary to inject the squeezed light via filter cavities to provide a frequency-dependent phase shift to the vacuum field \cite{Kimble2001}. In this case the squeezed light is particularly susceptible to loss in the filter cavities, as they affect the squeezed light before it can interact with the test masses \cite{Kwee2014}.
+
+Squeezing has been demonstrated in \GEOHF{} with high duty cycle \cite{Grote2013} and is a planned upgrade for \ALIGO{} in the near future \cite{Miller2015}. The conceptual design for the \ET{} proposes \SI{10}{\deci\bel} squeezing for both the low-frequency and high-frequency detector designs, and \SI{5}{\deci\bel} squeezing is proposed for \LIGOCE{}.
+% 5 dB reported by Dwyer et al and 10 dB reported by P1600143
+
+\subsubsection{Variational readout}
+Instead of modifying the input noise at the output port of the interferometer with frequency-dependent squeezing, variational readout achieves broadband sub-\gls{SQL} sensitivity through the use of a homodyne detector \note{make sure this is defined somewhere} with frequency-dependent homodyne angle. The frequency dependence can be achieved in a similar way to squeezing: the output light can be passed through filter cavities in a similar way to squeezed input.
+
+Variational readout can in theory be combined with squeezing either with a fixed squeezing angle \cite{Buonanno2004} or through a complicated frequency dependence of both squeezing and homodyne phase filter cavities \cite{Harms2003}. The use of homodyne readout in gravitational wave detectors, however, is not considered mature enough for upgrades to existing or future facilities, primarily due to the stability requirements for the local oscillator field \cite{Steinlechner2015}.
+
+\subsubsection{Light-mirror interactions}
+\emph{Optical springs} \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, \emph{optical inertia} \cite{Khalili2011, Voronchev2012} and \emph{intracavity schemes} \cite{Braginsky1997, Khalili2002, Danilishin2006} have been proposed for use in gravitational wave detectors to improve sensitivity beyond the \gls{SQL} through the creation of interactions between the mechanical rigidity of suspended mirrors and the optical rigidity created by radiation pressure.
+
+One example is through \emph{optical bars} which couple the motion of heavy mirrors, providing the \gls{SQL} limit, to a light mirror for which a local measurement can be performed \cite{Braginsky1997}. This effectively reduces the back-action applied to the mirror by the measurement photons, but can in principle preserve the sub-\gls{SQL} behaviour of the heavy mirror.
+
+The complicated control requirements for this type of interferometer are such that these techniques are not currently considered for future detectors.
+
+\subsubsection{Modification of the interferometer design}
+\note{Give general overview of measurement of speed, then explain the Sagnac speedmeter in more detail. See KLMTV and its references.}
