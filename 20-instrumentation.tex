@@ -56,6 +56,14 @@ Getting access to the phase information encoded within the light is more difficu
 
 \note{Explain dark fringe offset}
 
+\subsection{Readout}
+
+\subsubsection{Heterodyne readout}
+
+\subsubsection{Homodyne readout}
+
+\subsubsection{DC readout}
+
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
@@ -434,13 +442,10 @@ Predictions for the population of sources within the range of the advanced detec
 
 To improve sensitivity at higher frequencies, Equation\,\ref{eq:shot-noise-psd} shows that laser power can be increased. As with heavier mirrors, this presents technical challenges in laser stability \cite{Hildebrandt2007}, the control of \emph{parametric instabilities} \cite{Evans2015} and the thermal effects associated with absorption in materials \cite{Steinlechner2016}.
 
-To bypass the problems associated with the use of heavier mirrors and more powerful lasers, a number of techniques have been proposed in the literature to increase the sensitivity of interferometers beyond the \gls{SQL} through the use of \emph{quantum non-demolition} (\gls{QND}) techniques \cite{Braginsky1995}. These include the modification of the optics of the interferometer \cite{Kimble2001}, such as through the use of \emph{squeezed} light injection \cite{Caves1981}, variational readout \cite{Vyatchanin1995, Vyatchanin1996} or speed-meters \cite{Braginsky1990, Braginsky2000, Chen2003, Danilishin2004}; and the creation of new light-mirror interactions to increase the response of the interferometer to differential arm motion \cite{Chen2011}.
+To bypass the problems associated with the use of heavier mirrors and more powerful lasers, a number of techniques have been proposed in the literature to increase the sensitivity of interferometers beyond the \gls{SQL} through the use of \emph{quantum non-demolition} (\gls{QND}) techniques \cite{Braginsky1995}. These include the modification of the optics of the interferometer \cite{Kimble2001}, such as through the use of \emph{squeezed} light injection \cite{Caves1981}, variational readout \cite{Vyatchanin1995, Vyatchanin1996} or \SM{}s \cite{Braginsky1990}; and the creation of new light-mirror interactions to increase the response of the interferometer to differential arm motion \cite{Chen2011}.
 
 \subsubsection{\label{sec:squeezing}Squeezing}
 The use of squeezing is an attempt to replace the normally uncorrelated vacuum noise entering the interferometer at the output port with \emph{correlated} noise. By choosing a suitable readout \emph{quadrature}, it is possible to remove some of the quantum noise impinging upon the signal, instead moving the noise terms into the orthogonal, unobserved readout quadrature. Squeezing is particularly favourable in combination with \gls{DC} readout, \note{why?}, a combination currently implemented in \GEOHF{} \cite{Willke2006, Affeldt2014}.
-
-The effect squeezing has on the quantum noise spectral density of a \MI{} can be described in terms of a modification to Equation\,\ref{eq:classicalifospectrum} by a factor xxx...:
-\note{equation}
 
 To achieve broadband reduction of quantum noise with squeezing, it is necessary to inject the squeezed light via filter cavities to provide a frequency-dependent phase shift to the vacuum field \cite{Kimble2001}. In this case the squeezed light is particularly susceptible to loss in the filter cavities, as they affect the squeezed light before it can interact with the test masses \cite{Kwee2014}.
 
@@ -455,9 +460,11 @@ Variational readout can in theory be combined with squeezing either with a fixed
 \subsubsection{Light-mirror interactions}
 \emph{Optical springs} \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, \emph{optical inertia} \cite{Khalili2011, Voronchev2012} and \emph{intracavity schemes} \cite{Braginsky1997, Khalili2002, Danilishin2006} have been proposed for use in gravitational wave detectors to improve sensitivity beyond the \gls{SQL} through the creation of interactions between the mechanical rigidity of suspended mirrors and the optical rigidity created by radiation pressure.
 
-One example is through \emph{optical bars} which couple the motion of heavy mirrors, providing the \gls{SQL} limit, to a light mirror for which a local measurement can be performed \cite{Braginsky1997}. This effectively reduces the back-action applied to the mirror by the measurement photons, but can in principle preserve the sub-\gls{SQL} behaviour of the heavy mirror.
-
-The complicated control requirements for this type of interferometer are such that these techniques are not currently considered for future detectors.
+The creation of optical springs requires complicated control arrangements. The use of two optical springs to remove the instabilities created by a single spring can relax some of the control requirements but full studies of the effect of noise and the sensitivity on this type of interferometer are not at a stage to be able to predict their use in future detectors.
 
 \subsubsection{Modification of the interferometer design}
-\note{Give general overview of measurement of speed, then explain the Sagnac speedmeter in more detail. See KLMTV and its references.}
+First proposed in 1990 \cite{Braginsky1990}, the measurement of the speed of test masses instead of displacement can lead to a reduction in quantum noise. Proposals for experiments to measure speed were made later and involved the use of an additional optical cavity at the output port of a \MI{} \cite{Braginsky2000, Purdue2002}, termed a \emph{sloshing} cavity, which forms an interaction between the main interferometer and the additional cavity that samples the test mass displacements multiple times in a way that resembles speed.
+
+In 2003, Chen realised that the Sagnac interferometer contained the necessary characteristics of a \SM{} \cite{Chen2003}, and estimated the sensitivity that such an interferometer might achieve with the Sagnac's corner mirrors replaced with triangular arm cavities to enhance sensitivity. This work was later expanded to include the effect of losses \cite{Danilishin2004}, with a full derivation of the effect of asymmetries in the interferometer coming later \cite{Danilishin2015}.
+
+The \SSM{} is being considered as a potential upgrade for the \ET{} beyond its initial configuration \cite{Wang2013, Huttner2016}, albeit possibly following a polarising topology with linear arm cavities \cite{Danilishin2004} due to the effect of back-scattering in triangular arm cavities \note{do we have a reference for this back-scattering effect?}.
