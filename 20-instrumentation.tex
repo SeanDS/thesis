@@ -56,11 +56,15 @@ Getting access to the phase information encoded within the light is more difficu
 
 \subsection{Readout}
 
+\note{Give overview but leave homodyne vs DC readout to later}
+
 \subsubsection{Heterodyne readout}
 
 \subsubsection{Homodyne readout}
 
-\subsubsection{DC readout}
+\note{Explain DC readout is a type of homodyne}
+
+\note{Explain why homodyne readout is not to be used in future detectors over DC readout: because the LO comes from the reflected IFO light, which although some has been filtered by the IFO, it also contains laser light that has noise on it (cite Sebastian's paper, Corbitt PRL paper on parity). DC readout is great because it filters the light by the arm cavities.}
 
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
