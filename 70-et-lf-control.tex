@@ -44,8 +44,39 @@
 See Bryan's paper for sidebands on sidebands in the context of the Caltech prototype for aLIGO, to describe the use of beats between sidebands: https://iopscience.iop.org/article/10.1088/0264-9381/23/18/010/pdf
 
 \section{The Einstein Telescope Facility}
+In \checkme{2011} a group of scientists primarily based in Europe completed a design study to examine the requirements for a gravitational wave observatory that pushes the \MI{} topology to its limits, while keeping any newly built facility generic enough to allow for the implementation of new topologies as the state of the art evolves. In this study they laid out the expected improvements in technologies to mitigate technical noise sources currently challenging the sensitivity of the third generation of detectors, with a number of practical differences to existing facilities.
+
+The proposed \ET{} facility composes six interferometers split between the three corners of a triangle with length \SI{10}{\kilo\meter} long. The idea is to exploit the geometry to implement \MI{} with \SI{10}{\kilo\meter} at the three vertices of the triangle to benefit from the colocation of multiple interferometers. The extended arm length over existing facilities provides less susceptibility to displacement noise sources by a factor of \cite{Dwyer2015, aligocosmic2016},
+\begin{equation}
+  \frac{h_{\SI{10}{\kilo\meter}}}{h_{\SI{4}{\kilo\meter}}} = \sqrt{\frac{\SI{10}{\kilo\meter}}{\SI{4}{\kilo\meter}}} \approx 1.58,
+\end{equation}
+translating into an increase in the observable volume by around $3.95$, assuming that displacement noise sources stay at the same magnitude.
+
+Seismic noise limits the sensitivity of current generation detectors below \SI{10}{\hertz}, and there are astrophysical advantages to being able to achieve good sensitivity at these frequencies \cite{Sathyaprakash2012}. The majority of spinning neutron stars discovered via optical techniques have had orbital frequencies $f$ below \SI{10}{\hertz}. With enhanced low frequency sensitivity, \gls{ET} would have greater sensitivity to such ``chirp'' signals, and as these signals increase in frequency with time proportional to $\frac{1}{f^{8/5}}$ the ability to see them above the noise from an earlier time would assist in being able to characterise the source parameters. Signals at \SI{2}{\hertz} stay in \ETLF{}'s sensitive band for hours instead of milliseconds as witnessed for instance with GW150914 \cite{ET2011} \note{cite detection paper}. Having extra time to observe chirps also provides the possibility to track the signal evolution with corresponding changes in the signal recycling cavity tuning \cite{Simakov2014}.
+
+\subsection{New facility}
+Seismic noise in current detectors limits the sensitivity at low frequencies, and creates challenging control requirements due to the \gls{RMS} motion of the mirrors due to the motion of the ground. The interferometer beam tubes will be underground \note{how far?} to mitigate seismic noise coupling.
+
+The suspension systems for the main test masses are based on those of the superattenuator in \AVIRGO{}. The \checkme{\SI{17}{\meter}} long pendulum stage \note{which stage?} pushes the longitudinal resonant frequency down to \checkme{\SI{0.1}{\hertz}}, providing good attenuation of seismic noise above \SI{2}{\hertz}.
+
+\subsection{Xylophone configuration}
+To provide maximum astrophysical reach the facility is intended to provide sensitivity across an unprecedented bandwidth, from around \SI{2}{\hertz} to \SI{10}{\kilo\hertz}\textemdash a bandwidth significantly larger than that of existing detectors. It was realised that the most technically feasible option would be to implement a number of colocated, moderate bandwidth detectors, each optimised to provide good sensitivity in a certain band \cite{Hild2010}, an idea first proposed for \ALIGO{} \cite{Conforto2004}. In the \emph{ET-C xylophone} configuration \cite{Hild2010}, a low power, cryogenic interferometer optimises sensitivity to reduce radiation pressure noise at the expense of shot noise, whilst a high power interferometer optimises high frequency sensitivity through the reduction of shot noise.
+
+\subsection{Colocated detectors}
+
+\subsubsection{Antenna pattern}
+As the configuration is arranged into a triangle with the interferometers at each of the three vertices, the combined readout signals from each of the interferometers can be combined in such a way as to achieve optimal sensitivity in all directions.
+
+\subsubsection{Null streams}
+The use of three separate xylophone interferometers sensing the
+
+The facility will have a triangle of tunnels, each \SI{10}{\kilo\meter} long, with each of the six interferometers inhabiting two of the three;
+
+Each corner of the triangle will contain one low and one high frequency interferometer in a pair to allow for 
+
 
 \subsection{ET-LF}
+The low frequency detector consists of a \DRFPMI{} configuration with a detuned signal recycling cavity. This detuning allows for enhanced sensitivity at the signal recycling cavity pole, where... \cite{Buonanno2001}. Signal recycling was an evolution on the \PRFPMI{} \cite{Meers1988, Strain1991, Heinzel1998} and was later shown to work in a full-scale gravitational wave detector when it was demonstrated in \GEO{} \cite{Heinzel2002, Grote2004}.
 
 \subsection{ET-HF}
 
@@ -89,8 +120,28 @@ This result shows that the optimal operating point in terms of SNR is at the poi
 
 \note{Discuss that we need to model both tuned and detuned ET-LF states, as the locking will have to start with tuned}
 
+\note{From Demonstration and comparison of tuned and detuned signal recycling in a large-scale gravitational wave detector: The asymmetry of the RF control sidebands at the dark port causes a strong amplitude modulation of the light on the main photo detector at precisely the modulation frequency. This amplitude modulation is many orders of magnitude larger than that caused by potential gravitational wave signals and can lead to saturation in the main photodetector [5].}
+
+The ability for a detuned signal recycling to shift the most sensitive frequency has been demonstrated in \GEO{} between \SI{350}{\hertz} and \SI{1}{\kilo\hertz} \cite{Hild2006, Hild2007}. \ETLF{} plans to detune the signal recycling cavity to \checkme{\SI{25}{\hertz}}, which has never been demonstrated. With tuned signal recycling, the \gls{RF} sidebands used for control of the differential arm cavity mode are present within the signal recycling cavity due to the Schnupp asymmetry, and these sidebands have equal amplitude.
+
 \section{Control of an interferometer with multiple degrees of freedom}
 \note{Control matrix...}
+
+\subsection{Differential arm cavity length}
+\checkme{Should be held at the dark fringe by means of differential feedback to the end test masses...}
+
+\subsection{Power recycling cavity length}
+The power recycling cavity should be resonant for the input light in order to optimally recycle light reflected from the beam splitter back towards the laser. The power recycling cavity length can be defined in terms of the average distance between the power recycling mirror and the two \glspl{ITM}:
+
+equation...
+
+\subsection{Michelson length}
+The length between the \glspl{ITM} and the beam splitter should be held constant to keep the amount of carrier and sideband power in the signal recycling cavity stable, which avoids the need for complicated time-varying control signals. This is kept constant by feeding back to the position of the beam splitter or with differential actuation upon to the \glspl{ITM}.
+
+\note{Lots of useful info in Heinzel 2002}
+
+\subsection{Signal recycling cavity length}
+The signal recycling length determines the bandwidth of the signal extraction and therefore needs controlled in order to keep the signal to noise stable...
 
 \section{Modelling ET-LF}
 \note{See email sent to Andreas about outcomes of ASPERA. Basically, we had to model the interferometer controls and higher order modes, so we did it simultaneously with two tools. Discuss how this was achieved, via a shared parameter set, etc.}
@@ -128,6 +179,15 @@ It was decided that the best approach to combine the benefits of the two tools w
 \note{Assume optimal worst contribution of noise to ETMs...}
 
 \section{Outlook}
+
+\subsection{Going from tuned to detuned operation}
+Transition from tuned to detuned signal recycling involves a technique which maintains control of the interferometer as it transitions from having a resonant signal recycling cavity to a detuned one. When dual recycling was first demonstrated in suspended optics in the Garching prototype, it involved a frequency offset applied to the \gls{RF} modulation sidebands \cite{Freise2000}.
+
+The acquisition of detuned signal recycling science mode in \GEO{} was a challenging control problem due to the high reflectivity of the signal recycling mirror, which made the slope of the signal recycling cavity error signal steep. The control involved a complicated sequence of events \cite{Grote2004}. This was made easier when a signal recycling mirror with lower reflectivity was installed, lowering the cavity finesse and thus making the error signal flatter. In \ETLF{} it is expected that the signal recycling cavity finesse will be too high to allow for a simple transition scheme. Instead, investigations are underway to model the impact that single control sidebands added to the input light or subcarriers added to the squeezing injection port have on the controllability of the signal recycling cavity at arbitrary detunings.
+
+The transmissivity of the signal recycling mirror in \ETLF{} allows for a reasonably wide capture range as the signal recycling mirror swings through the resonant condition and so tuned signal recycling is straightforward to control given the prior experience from the advanced detectors... however...
+
+Future work will address the problem of transitioning \ETLF{} from tuned to detuned operation.
 
 \subsection{Future upgrades to ET}
 \note{SSM, Stefan D's idea for triangular speed meter, etc...}
