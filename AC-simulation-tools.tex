@@ -1,11 +1,19 @@
 \chapter{\label{a:simulation-tools}Simulation tools}
 How to build simulations in both tools...
-
-\note{Mention about difference in homodyne angles between Optickle and Finesse - empirical formula on speedmeter labbook post from end of 2015/early 2016}
+Here we describe the tools primarily used in this thesis...
 
 \note{Describe how the SSM models were matched. Look at the code to see what's different.}
 
 \note{Describe weird empirical equation that sets the homodyne angle in terms of the angle of incidence etc. in the Optickle model}
+
+\section{\label{sec:finesse-sim}Finesse}
+Finesse is an extensive tool for simulating complex optical environments in terms of their transverse electromagnetic (\gls{TEM}) modes. It was developed originally for use in \GEO{} \cite{Freise2004} but has since been used for checks and tests in the design and commissioning of the advanced detectors \cite{Mueller2015, Kumeta2015}. Finesse's syntax allows for a number of different outputs to be generated for given excitations, for instance the transfer function from a set of optics to a set of sensors given an arbitrary excitation. Finesse's strengths are its speed of computation, its support for arbitrary numbers of paraxial modes and its stable, well tested code base.
+
+\section{\label{sec:optickle-sim}Optickle}
+Optickle is a tool primarily designed for the design of \ALIGO{}. It is implemented in \MATLAB{} and is primarily intended to simulate plane wave behaviour of interferometers however it also contains extensions to its code base for first order modes necessary to simulate misalignment effects. The output from Optickle is a series of matrices representing the transfer functions from optical degrees of freedom to sensors placed within the system, and the quantum noise upon those sensors.
+
+\section{\label{sec:simulinknb-sim}SimulinkNb}
+SimulinkNb is a set of tools for \MATLAB{} Simulink \cite{SimulinkNb}, which is a dynamic systems modelling tool with an extensive graphical user interface. It is commonly used to simulate control loops, and SimulinkNb integrates into it Optickle plants. With a preprepared Optickle environment, SimulinkNb is able to convert this into a Simulink object which \MATLAB{} can then reduce to a set of linear coefficients, in the same way a set of electronic filters can be reduced to poles and zeros. With these computed coefficients, transfer functions can be calculated around the control loop with the full interferometer response taken into account, which is useful in order to model the effect of feedback and actuators on an interferometer like in the work presented in Chapter\,\ref{c:speedmeter-control}.
 
 \section{Modelling an interferometer}
 The analytical calculation of the behaviour of interferometers beyond all but the most trivial examples is a complicated process and has to be performed with a particular configuration in mind. For example, adding or removing an optic from an analytical model of an interferometer may involve the addition of many new terms to the equations describing the main readout signals. Models for \DRFPMI{}s have been available for a number of years \note{cite Ken's analytical model paper} but cannot be easily modified to account for optics beyond the ones considered in the model and the equations representing the readout signals have only been developed for the most important ports of the interferometer. In order to be able to calculate the signals present at any optic or field within an interferometer, the most useful approach for an experimentalist is to use a numerical simulation tool.
@@ -94,23 +102,7 @@ With the steady-state field amplitudes, the signals produced by the interferomet
 The operation of calculating the probe signals from the field amplitudes in the interferometer can be repeated for arbitrary frequencies of excitation to produce a three-dimensional drive-to-probe transfer matrix. This represents the transfer function from each optic's degree of freedom to each probe. As such, the signal from a particular set of mirror movements can be constructed via a linear combination of the transfer functions representing the degrees of freedom of individual optics. The differential arm degree of freedom transfer function for a \MI{} to its asymmetric port, for instance, can be calculated by extracting the transfer function of each end test mass to a probe situated at the asymmetric port and taking the difference of the two \note{, as shown in Equation x in Section y.}
 
 \subsection{Probe quantum noise}
-...
-
-\section{\label{sec:finesse-sim}Finesse}
-
-\section{\label{sec:optickle-sim}Optickle}
-Optickle is a tool primarily designed to produce a series of matrices as outputs, implemented in \MATLAB{}. The majority of Optickle's functionality can be categorised into a few sets of routines:
-
-\begin{itemize}
-  \item defining parameters and matrices for various types of optic, including the field, reaction and noise transfer matrices;
-  \item defining manipulations of sets of matrices to produce transfer functions and noise spectral densities for optics and sensors within the system.
-\end{itemize}
-
-Once an optical system has been defined by the user, a call to the \lstinline!tickle! function results in a number of operations being performed:
-\begin{itemize}
-  \item the construction of matrices mapping the drives of an optic to the fields in the interferometer, and each field to each other field;
-  \item the constructi
-\end{itemize}
+The quantum noise calculations are similar in Finesse and Optickle, as they are both based on the work of Corbitt \note{cite}, which fundamentally derives from the two-photon formalism by Caves and Schumaker \cite{Caves1985, Schumaker1985}. Quantum noise is calculated using this technique by propagating two photons through the interferometer from each point of noise entry, in much the same way as signals are propagated. One photon represents the amplitude quadrature and the other represents the phase quadrature, and so appropriate quantum noise limited signals can be properly derived for any readout quadrature.
 
 \section{\label{sec:optickle-field-tfs}Calculation of field transfer matrices}
 By default, Optickle will only output the signal and noise on \emph{probes} defined within the system, where a probe is analogous to a photodetector with unity quantum efficiency. A probe signal is a superposition of the field amplitudes in a given location within the interferometer, where the exact linear combination of field amplitudes is determined by the type of probe. In the process of determining a probe signal, the quadrature sum of the field amplitudes immediately in front of the probe is computed, and the phase information contained within these fields is lost in this process. Similarly, transfer functions from drives to probes are provided, but not transfer functions from drives to fields.
@@ -120,10 +112,7 @@ In order to calculate the cross-correlation spectral density required for the ca
 \subsection{Functions: tickle, tickle2, sweepLinear}
 \note{Explain difference}
 
-\section{\label{sec:simulinknb-sim}SimulinkNb}
-\cite{SimulinkNb}
-
-\section{Similarities and differences between Optickle and Finesse}
+\section{Similarities and differences between Finesse and Optickle}
 
 \subsection{Ports and spaces}
 \note{In Finesse, ports are bidirectional and the asterisk denotes which way a PD should look. In Optickle, ports are unidirectional. Describe addLink and space syntax?}
@@ -131,6 +120,7 @@ In order to calculate the cross-correlation spectral density required for the ca
 \subsection{Reflection phase convention}
 \label{a:reflection-phase}
 \note{Difference between Optickle and Finesse sign conventions for transmission and reflection. See footnote 1 on p2 of T1100110 for more details.}
+\note{Also see ``engineering'' vs ``physicist'' convention in Tobin's thesis}
 
 \subsection{Conversion of phase to length tuning}
 \note{And vice versa}
