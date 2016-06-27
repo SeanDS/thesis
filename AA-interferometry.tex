@@ -113,7 +113,11 @@ As the resonance condition requires only an integer multiple of $\pi$, it is cle
   \caption[Resonant enhancement of input light in a cavity]{\label{fig:cavity-fsr}Resonant enhancement of input light in a cavity. When the length offset from zero is an integer number of half-wavelengths, the cavity enhances the input power many times over. When the offset is between integer half-wavelengths, it is anti-resonant and the cavity power is much smaller than the input power. In this example, the mirror properties are $r_1 = 0.99$, $r_2 = 1$, $t = \sqrt{1 - r_1^2}$ and the cavity's macroscopic length is \SI{10}{\meter}.}
 \end{figure}
 
-The frequency offset between successive resonant peaks is termed the \emph{free spectral range} (\gls{FSR}). This figure of merit provides some idea of the bandwidth a control system may need to be able to hold a cavity resonant.
+The frequency offset between successive resonant peaks is termed the \emph{free spectral range} (\gls{FSR}). This figure of merit provides some idea of the bandwidth a control system may need to be able to hold a cavity resonant, and it can be defined in terms of the speed of light $c$ and the cavity length $L$:
+\begin{equation}
+  \label{eq:fsr}
+  \text{FSR} = \frac{c}{2L}.
+\end{equation}
 
 Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maximum} (\gls{FWHM}), or \emph{linewidth}, which represents the width of a resonant peak at half of its maximum power, in units of frequency. As the width of the resonant peak is a function of mirror reflectivity, the \gls{FWHM} is defined:
 \begin{equation}
