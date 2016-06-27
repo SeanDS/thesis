@@ -170,13 +170,73 @@ Optickle facilitates the modelling of control loops in a number of ways. The pri
 \subsection{Combined modelling effort}
 It was decided that the best approach to combine the benefits of the two tools would be to develop identical models with both Finesse and Optickle...
 
-\subsection{Recycling cavity lengths and RF sidebands}
-\note{Defined sideband frequencies...}
+\subsection{Optimal input coupling}
+As discussed in Section\,\ref{sec:power-recycling}, placing a power recycling mirror in an \MI{} creates an additional cavity between the input light and the arms. The intention of the power recycling mirror is to minimise the light reflected back towards the laser, and in order to do this the cavity it creates should be \emph{impedance matched} (see, for example, Section\,5.1 of \cite{Freise2010}). The transmissivity of the mirror determines the impedance matching, and it can be determined using knowledge of the light lost within the interferometer. The design study defines the loss per optic to be \SI{35}{\ppm}, and the transmissivity of the \glspl{ETM} is \SI{6}{\ppm}; both contribute to the impedance matching. Figure\,\ref{fig:reflected-power-vs-prm-trans} shows the light power leaving the power recycling mirror heading back towards the laser. The minimum reflected power corresponds to a power recycling mirror transmissivity of \num{0.046}, which is comparable to that of the \glspl{ITM}.
 
-\note{Discuss how we chose to follow Advanced LIGO as much as possible, but had to define some as-yet undefined parameters first}
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-reflected-power-vs-prm-transmissivity.pdf}
+  \caption[Reflected power from \ETLF{} as a function of power recycling mirror transmissivity]{\label{fig:reflected-power-vs-prm-trans}Reflected power from \ETLF{} as a function of power recycling mirror transmissivity. For optimal coupling of the input laser light to the interferometer, the transmissivity of the power recycling mirror must be set to balance the input light with the total loss from the interferometer. For \ETLF{} with loss as per the design study, this transmissivity should be \num{0.046}.}
+\end{figure}
 
-\subsection{Schnupp asymmetry}
-\note{Schnupp modulation generalises the PDH technique to Michelsons, with the asymmetry letting sidebands into the output port...}
+\subsection{Decoupled control sidebands}
+\ETLF{} will require at least two \gls{RF} sideband frequencies in order to control the common mode arm, power and signal recycling and Michelson cavity lengths. These frequencies must be chosen to be outside an integer multiple of the free spectral range (\gls{FSR}) of the arm cavities in order to prevent them from entering the arm cavities and getting resonantly enhanced by the high arm cavity finesse, and should ideally be \gls{RF} to benefit from the noise advantages presented in Section\,\ref{sec:pdh}. An upper limit of \SI{100}{\mega\hertz} is reasonable, as such high frequency demodulations are difficult to implement in photodetector electronics.
+
+As described in Section\,\ref{sec:laser-noise}, laser frequency noise in a \MI{} is best suppressed when the arm lengths are well matched. In a \DRFPMI{}, however, the arm lengths must be slightly mismatched to allow for the control sidebands to enter the signal recycling cavity and therefore provide an error signal for the signal recycling cavity length. This is called the \emph{Schnupp asymmetry}, which comes from the Schnupp \emph{modulation} scheme developed for \MI{}s as an evolution upon the Pound-Drever-Hall technique in \FP{} cavities \note{cite something}.
+
+For a Schnupp asymmetry $L_{\text{asy}}$, the two arms have length $L + \frac{L_{\text{asy}}}{2}$ and $L - \frac{L_{\text{asy}}}{2}$ where the nominal length is $L$. This mismatch is ideally as small as possible, to allow for the greatest suppression of laser noise, but large enough to allow for sufficient sideband power in the desired recycling cavities.
+
+The choice can be made as to whether both sidebands should be resonant in both recycling cavities, or to have one cavity without a sideband resonance, and this is governed by the Schnupp asymmetry $L_{\text{asy}}$. A small offset of a few \SI{}{\centi\meter} between the Michelson arm lengths allows for the coupling of both sidebands into both recycling cavities, whilst a larger offset of a few tens of \SI{}{\centi\meter} prevents one sideband from entering the signal recycling cavity. \note{why?} Both methods of control are possible, with the former being implemented in \KAGRA{} and the latter in \ALIGO{} \note{reference for KAGRA? ALIGO reference is the design document}. We choose to follow the \ALIGO{} approach so that we can optimise one sideband frequency ($f_1$) to be anti-resonant in the signal recycling cavity, to provide a maximum decoupling between the recycling cavity error signals to assist with the challenging control of the detuned signal recycling cavity.
+
+The design study defined the arm lengths (\SI{10}{\kilo\meter}) and the approximate length of both recycling cavities (\SI{310}{\meter}). It did not concern itself, however, with control issues, and so we have freedom to choose the control sideband frequencies and Schnupp asymmetry within the context of the defined parameters.
+
+\subsubsection{Sideband frequencies and recycling cavity lengths}
+
+In \ETLF{} the arm cavity \gls{FSR} is given by Equation\,\ref{eq:fsr} to be \SI{14.99}{\kilo\hertz} for the \SI{10}{\kilo\meter} arms. The \SI{310}{\meter} recycling cavity lengths are have \gls{FSR} \SI{483.5}{\kilo\hertz}. We therefore want to find a frequency $f_2$ which approximately satisfies:
+\begin{equation}
+  \label{eq:src-fsr}
+  \begin{split}
+    L_{\text{SRC}} &= A \frac{c_0}{2 f_2} \\
+                   &\neq B \frac{c_0}{2 f_1},
+  \end{split}
+\end{equation}
+where $A$ and $B$ are positive integers. We must also ensure that the sidebands are resonant within the power recycling cavity. As the arm cavities at the operating point reflect the light back towards the power recycling cavity, the resonant condition is instead a half-integer multiple of the power recycling cavity \gls{FSR}, i.e.:
+\begin{equation}
+  \label{eq:prc-fsr}
+  L_{\text{PRC}} = \left(C + \frac{1}{2} \right) \frac{c_0}{2 f_1},
+\end{equation}
+for positive integer $C$.
+
+Note the discrepancy between two of the constraints: the power and signal recycling cavities cannot both be simultaneously resonant and anti-resonant to $f_1$ and $f_2$ given that $f_2 = 5 f_1$. To resolve this discrepancy we move the signal recycling cavity length from \SI{310}{\meter} to \checkme{\SI{311.585}{\meter}}.
+
+In addition to optimising the control sideband frequencies using Equations \ref{eq:src-fsr} and \ref{eq:prc-fsr}, we must prevent the sidebands from entering into the arm cavities. As an integer multiple of the arm cavity \gls{FSR} would allow optimal coupling of the sidebands into the arm cavities, one might assume that an odd half-integer multiple would be optimally anti-resonant; however, in this scenario the lower higher-order control sidebands, necessarily created by the phase modulation upon the \gls{EOM} (see Appendix\,\ref{eq:field-phase-bessel}), would become resonant, and so we choose to offset the sideband frequency slightly from the anti-resonant condition. We therefore stipulate two further requirements:
+\begin{equation}
+  \label{eq:arm-fsr}
+  \begin{split}
+    L_{\text{Arm}} &= \left(D + \frac{1}{2} \right) \frac{c_0}{2 f_1} \\
+                   &= \left(D + \frac{1}{2} \right) \frac{c_0}{2 f_2},
+  \end{split}
+\end{equation}
+for positive integer $D$.
+
+For \ETLF{} we chose the first sideband frequency $f_1$ to be \SI{11363101}{\hertz} which satisfies Equations \ref{eq:src-fsr}, \ref{eq:prc-fsr} and \ref{eq:arm-fsr}. We can then choose the second sideband to be an integer multiple of the first in order to allow both to be resonant within the power recycling cavity. We chose the second sideband frequency to be $f_2 = 5f_1 = \SI{56815505}{\hertz}$.
+
+\subsubsection{Schnupp asymmetry}
+Figure\,\ref{fig:sideband-cavity-powers} shows the power of each sideband field in the recycling cavities of \ETLF{} given the Schnupp asymmetry and recycling cavity lengths, for both tuned and detuned signal recycling. The optimal Schnupp asymmetry is different for each case due to the asymmetric sidebands in detuned operation. Since the Schnupp asymmetry is a macroscopic length, it is not easily adjusted during operation, and so we choose an asymmetry, \SI{0.08}{\meter}, that gives good separation between the recycling cavities in the detuned state since it will be \ETLF{}'s primary mode of operation.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-cavity-powers-tuned.pdf}
+    \caption[Power of the control sidebands in the cavities of \ETLF{} with tuned signal recycling]{\label{fig:sideband-cavity-powers-tuned}Tuned signal recycling.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{.49\textwidth}
+    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-cavity-powers-detuned.pdf}
+    \caption[Power of the control sidebands in the cavities of \ETLF{} with tuned signal recycling]{\label{fig:sideband-cavity-powers-detuned}Detuned signal recycling.}
+  \end{subfigure}
+  \caption[Power of the control sidebands in the cavities of \ETLF{}]{\label{fig:sideband-cavity-powers}Power of the control sidebands in the cavities of \ETLF{} during tuned and detuned operation. A small offset, called the \emph{Schnupp asymmetry}, is intentionally introduced to the Michelson length in order to allow the sidebands $f_1$ and $f_2$ to couple to the signal recycling cavity for the purposes of control. Here, $f_2$ is resonant but $f_1$ is not, and so there are discriminating signals for the power and signal recycling cavity. The optimal Schnupp asymmetry is one which provides the best decoupling of sideband error signals representing the lengths of the power and signal recycling cavities. The power is a good estimate for what the relative sensitivity of the sidebands in the recycling cavities will be.}
+\end{figure}
 
 \subsection{DARM offset}
 \note{See p5 of VIR-0449D-11 (2011), Advanced Virgo steady state length sensing and control simulation, for description of why DARM offset is better than MICH}

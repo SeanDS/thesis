@@ -18,6 +18,9 @@ FIG_SIZE_A_TALL = (FIG_SIZE_A[0], FIG_SIZE_A[1] * 1.41)
 # shallow figure for simple plots
 FIG_SIZE_B = (10, 3.5)
 
+# half-width figure for side-by-side
+FIG_SIZE_C = (5, 7)
+
 # default line transparency
 ALPHA_LINE_A = 0.8
 

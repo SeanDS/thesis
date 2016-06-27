@@ -162,11 +162,11 @@ $(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-c
 
 $(GFXGENPY)/60-new-amplifier-dewhitening-sims.pdf: $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
 
-$(GFXGENPY)/70-epics-test.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
+$(GFXGENPY)/70-reflected-power-vs-prm-transmissivity.pdf: $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv
 
-$(GFXGENPY)/70-epics-test-stars.pdf: $(DATA)/70-epics-test-local.csv $(DATA)/70-epics-test-remote.csv
+$(GFXGENPY)/70-sideband-cavity-powers-tuned.pdf: $(DATAGENMAT)/70-cavity-powers-vs-schnupp.csv
 
-$(GFXGENPY)/70-epics-aliasing.pdf: $(DATA)/70-epics-aliasing-local.csv $(DATA)/70-epics-aliasing-remote.csv
+$(GFXGENPY)/70-sideband-cavity-powers-detuned.pdf: $(DATAGENMAT)/70-cavity-powers-vs-schnupp.csv
 
 # ===== Data dependencies =====
 
@@ -199,6 +199,12 @@ $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv: $(DATASCRMAT)/createW
 
 $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierDualDewhitening.fil
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierDualDewhitening.fil'); exit;"
+
+$(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv: $(DATASCRMAT)/createEtLfReflectedPowerVsPowerRecyclingTrans.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfReflectedPowerVsPowerRecyclingTrans('$(ROOT)/$@', linspace(0, 1, 1000)); exit;"
+
+$(DATAGENMAT)/70-cavity-powers-vs-schnupp.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSchnupp.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSchnupp('$(ROOT)/$@', linspace(0, 0.5, 100)); exit;"
 
 # ===== Misc =====
 
