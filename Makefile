@@ -164,9 +164,19 @@ $(GFXGENPY)/60-new-amplifier-dewhitening-sims.pdf: $(DATAGENMAT)/60-new-amplifie
 
 $(GFXGENPY)/70-reflected-power-vs-prm-transmissivity.pdf: $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv
 
-$(GFXGENPY)/70-sideband-cavity-powers-tuned.pdf: $(DATAGENMAT)/70-cavity-powers-vs-schnupp.csv
+$(GFXGENPY)/70-sideband-powers-vs-srcl-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-srcl-tuned.csv
 
-$(GFXGENPY)/70-sideband-cavity-powers-detuned.pdf: $(DATAGENMAT)/70-cavity-powers-vs-schnupp.csv
+$(GFXGENPY)/70-sideband-powers-vs-srcl-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-srcl-detuned.csv
+
+$(GFXGENPY)/70-sideband-powers-vs-schnupp-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-schnupp-tuned.csv
+
+$(GFXGENPY)/70-sideband-powers-vs-schnupp-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv
+
+$(GFXGENPY)/70-sideband-powers-vs-second-sideband-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-second-sideband-tuned.csv
+
+$(GFXGENPY)/70-sideband-powers-vs-darm-offset-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-darm-offset-tuned.csv
+
+$(GFXGENPY)/70-sideband-powers-vs-darm-offset-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-darm-offset-detuned.csv
 
 # ===== Data dependencies =====
 
@@ -203,8 +213,26 @@ $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/createWhi
 $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv: $(DATASCRMAT)/createEtLfReflectedPowerVsPowerRecyclingTrans.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfReflectedPowerVsPowerRecyclingTrans('$(ROOT)/$@', linspace(0, 1, 1000)); exit;"
 
-$(DATAGENMAT)/70-cavity-powers-vs-schnupp.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSchnupp.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSchnupp('$(ROOT)/$@', linspace(0, 0.5, 100)); exit;"
+$(DATAGENMAT)/70-sideband-powers-vs-srcl-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSrclTuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSrclTuned('$(ROOT)/$@', linspace(1, 20, 1000)); exit;"
+
+$(DATAGENMAT)/70-sideband-powers-vs-srcl-detuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSrclDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSrclDetuned('$(ROOT)/$@', linspace(1, 20, 1000)); exit;"
+
+$(DATAGENMAT)/70-sideband-powers-vs-schnupp-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSchnuppTuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSchnuppTuned('$(ROOT)/$@', linspace(0, 0.5, 1000)); exit;"
+
+$(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSchnuppDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSchnuppDetuned('$(ROOT)/$@', linspace(0, 0.5, 1000)); exit;"
+
+$(DATAGENMAT)/70-sideband-powers-vs-second-sideband-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSecondSidebandTuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSecondSidebandTuned('$(ROOT)/$@', linspace(56.7e6, 57.3e6, 1000)); exit;"
+
+$(DATAGENMAT)/70-sideband-powers-vs-darm-offset-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsDarmOffsetTuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsDarmOffsetTuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
+
+$(DATAGENMAT)/70-sideband-powers-vs-darm-offset-detuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsDarmOffsetDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsDarmOffsetDetuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
 
 # ===== Misc =====
 

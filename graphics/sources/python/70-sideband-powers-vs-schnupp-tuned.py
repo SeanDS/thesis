@@ -11,7 +11,7 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data paths
-data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '70-cavity-powers-vs-schnupp.csv')
+data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '70-sideband-powers-vs-schnupp-tuned.csv')
 
 # number of headers
 n_headers = 1
@@ -30,11 +30,16 @@ ax1 = fig.gca()
 # colour wheel
 colours = lf.Colours()
 
+colour_a = colours.next()
+colour_b = colours.next()
+colour_c = colours.next()
+colour_d = colours.next()
+
 # plot
-ax1.semilogy(data[:, 0], data[:, 17], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.semilogy(data[:, 0], data[:, 18], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.semilogy(data[:, 0], data[:, 21], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.semilogy(data[:, 0], data[:, 22], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(data[:, 0], data[:, 4], '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(data[:, 0], data[:, 13], '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(data[:, 0], data[:, 2], '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(data[:, 0], data[:, 11], '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for Schnupp length
 ax1.vlines(0.08, 1e-6, 1e1, colors=colours.next(), linestyles='dashed', zorder=2)
