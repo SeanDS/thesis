@@ -90,7 +90,7 @@ The sensitivity of \ETHF{} is shown in Figure\,XXX (same plot as ET-LF)
 
 % Section 1.3.1 of Gabriele Vajente's thesis covers this in more detail.
 
-\subsection{Control challenges with the \ET{}}
+\subsection{\label{sec:et-lf-control-challenges}Control challenges with the \ET{}}
 Both \ETLF{} and \ETHF{} will present new challenges to the control of large-scale \DRFPMI{}s.
 
 \ETLF{} employs a detuned signal recycling cavity to increase the sensitivity of the interferometer at low frequencies, and this introduces control challenges. The ability for a detuned signal recycling to shift the most sensitive frequency has been demonstrated in \GEO{} between \SI{200}{\hertz} and \SI{1}{\kilo\hertz} \cite{Hild2006}. \ETLF{} plans to detune the signal recycling cavity to around \SI{25}{\hertz}, which has never before been demonstrated in suspended audio-band detectors. With tuned signal recycling, the \gls{RF} sidebands used for control of the differential arm cavity mode are present within the signal recycling cavity with equal amplitude. In detuned operation, the sidebands no longer have equal amplitude and so some of the interferometer's noise couplings that otherwise cancel at the output in the tuned case no longer cancel \cite{Hild2007}. The phase modulation of the control sidebands (created by an \gls{EOM} on the input path) also gets partially converted to amplitude modulation by the detuning, and this can lead to issues with the dynamic range of the photodetector to be used to sense the readout \cite{Grote2007}. Finally, the asymmetric sidebands create additional zero crossings in the error signal from the signal recycling cavity which for the tuned case do not appear. Often the control of a detuned signal recycling cavity involves locking to the zero crossing of a sideband instead of the carrier, but for low detunings the slope of the sideband error signal is very shallow and it is therefore difficult to distinguish small changes in cavity length from noise.
@@ -134,7 +134,7 @@ This result shows that the optimal operating point in terms of \gls{SNR} is at t
 \subsubsection{The dc readout technique}
 The \gls{DC} readout technique is a form of homodyne readout (see Section\,\ref{sec:homodyne-readout}) that involves a compromise between the best sensitivity and the technical complexity. The operating point is kept close to the dark fringe to optimise shot noise, but a slight offset is introduced between the differential round trip phase of the arms in order to allow some of the carrier light to enter the readout port where it acts as a homodyne local oscillator to the signal sidebands. In practice, this detuning \textemdash of the order \SI{}{\pico\meter} at the arm cavities in \ALIGO{}\textemdash is sufficiently small to allow the required sensitivities to be reached. This provides improved sensitivity over heterodyne techniques \cite{Fricke2012}, and in squeezed interferometers such as \ETLF{} and \ETHF{} it avoids the need to inject squeezing at \gls{RF} sideband frequencies in addition to the carrier frequency.
 
-\subsection{Degrees of freedom of the \DRFPMI{}}
+\subsection{\label{sec:dofs-of-drfpmi}Degrees of freedom of the \DRFPMI{}}
 As \ETLF{} and \ETHF{} will employ \gls{DC} readout, there is no local oscillator phase or alignment to control (see Section\,\ref{sec:homodyne-readout}). The degrees of freedom that must be controlled in order to reach the design sensitivity are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths. These are defined in the following sections.
 
 \subsubsection{Differential arm cavity length}
@@ -275,7 +275,9 @@ As described in Section\,\ref{sec:homodyne-readout}, \gls{DC} readout at the out
 
 For our simulations, we do not assume any asymmetries and so we can intentionally introduce a dark fringe offset with an offset in the \gls{MICH} or \gls{DARM} degrees of freedom. While a \gls{DARM} offset has the disadvantage that it involves the creation of an optical spring due to the high light power in the arms, it has favourable noise couplings compared to a \gls{MICH} offset \cite{Vajente2011}.
 
-Figure\,\ref{fig:sideband-powers-vs-darm-offset-detuned} shows the power at the output port and in the arm cavities as a function of \gls{DARM} offset in the detuned configuration. For an offset of \SI{12}{\pico\meter}, the power at the output can be set to around \SI{25}{\milli\watt} with a difference of about 3\% in the power in the arms. Figure\,\ref{fig:sideband-powers-vs-darm-offset-tuned} shows the same effect for the tuned configuration, where a detuning of around \SI{3}{\pico\meter} produces approximately the same power. The tuned case requires a smaller offset because of the larger effective transmissivity of the signal recycling cavity.
+Figure\,\ref{fig:sideband-powers-vs-darm-offset-detuned} shows the power at the output port and in the arm cavities as a function of \gls{DARM} offset in the detuned configuration. For an offset of \SI{12}{\pico\meter}, the power at the output can be set to around \SI{25}{\milli\watt} with a difference of about 3\% in the power in the arms. Standard photodetectors used in \ALIGO{} and \AVIRGO{} can usually handle around \SI{100}{\milli\watt} but in \ETLF{} the \gls{DARM} offset required to reach this figure would reduce the power in the Y arm cavity significantly, affecting sensitivity.
+
+Figure\,\ref{fig:sideband-powers-vs-darm-offset-tuned} shows the power at the output port for the tuned configuration, where a \gls{DARM} offset of around \SI{3}{\pico\meter} produces approximately the same power as in the detuned case. The tuned case requires a smaller offset because of the larger effective transmissivity of the signal recycling cavity. \note{Fix this to make it reach the same power as detuned}
 
 \begin{figure}
   \centering
@@ -295,21 +297,73 @@ Figure\,\ref{fig:sideband-powers-vs-darm-offset-detuned} shows the power at the 
 
 \section{Conceptual control scheme}
 
-\note{Put the control matrices here: show the slopes of the error signals for tuned and detuned operation}
+To estimate a control scheme for \ETLF{}, we must decide upon the ports at which we will sense signals from the interferometer and calculate the response of its degrees of freedom to these sensors.
 
 \subsection{Readout ports}
-Figure xx shows some available readout ports for \ETLF{} where the sidebands and carrier may be measured for the purposes of control:
+\note{Figure xx} shows some available readout ports for \ETLF{} where the sidebands and carrier may be measured for the purposes of control:
 \begin{itemize}
   \item \textbf{REFL} (\emph{reflected}) senses the light reflected from the interferometer back towards the input laser.
   \item \textbf{POP} (\emph{pick off \gls{PRCL}}) senses the light in the power recycling cavity. Although the diagram shows a beam splitter, in reality this will probably be obtained via a secondary mirror reflection (such as the anti-reflective coating on the power recycling mirror).
   \item \textbf{AS} (\emph{asymmetric}) senses the light at the output port of the \DRFPMI{}.
 \end{itemize}
 
+For the purposes of the control simulations, each readout port contains photodetectors demodulating the signals at \gls{DC}, $\pm f_1$ (\SI{\pm11}{\mega\hertz}), $\pm f_2$ (\SI{\pm57}{\mega\hertz}), $-f_1 - f_2$ (\SI{-68}{\mega\hertz}), $-f_1 + f_2$ (\SI{-45}{\mega\hertz}), $f_2 - f_1$ (\SI{45}{\mega\hertz}) and $f_2 + f_1$ (\SI{68}{\mega\hertz}). There are therefore \num{9} classical light fields propagated through the interferometer. The power in each field within each relevant space or cavity of the interferometer is shown in Tables\,\ref{tab:et-lf-detuned-dc-powers} and \ref{tab:et-lf-tuned-dc-powers} for detuned and tuned operation, respectively.
+
+\begin{table}
+  \centering
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l|ccccccccc|c}
+      & \textbf{\SI{-68}{\mega\hertz}} & \textbf{\SI{-57}{\mega\hertz}} & \textbf{\SI{-45}{\mega\hertz}} & \textbf{\SI{-11}{\mega\hertz}} & \textbf{Carrier} & \textbf{\SI{11}{\mega\hertz}} & \textbf{\SI{45}{\mega\hertz}} & \textbf{\SI{57}{\mega\hertz}} & \textbf{\SI{68}{\mega\hertz}} & \textbf{Total} \\
+      \hline
+      Input & 0 & 0 & 0 & 0 & \SI{3}{\watt} & 0 & 0 & 0 & 0 & \\
+      After modulators & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{3}{\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \\
+      Power recycling cavity & \SI{1}{\milli\watt} & \SI{521}{\milli\watt} & \SI{1}{\milli\watt} & \SI{410}{\milli\watt} & \SI{65}{\watt} & \SI{407}{\milli\watt} & \SI{1}{\milli\watt} & \SI{34}{\milli\watt} & \SI{1}{\milli\watt} & \\
+      Michelson cavity & \SI{1}{\milli\watt} & \SI{228}{\milli\watt} & \SI{1}{\milli\watt} & \SI{208}{\milli\watt} & \SI{33}{\watt} & \SI{204}{\milli\watt} & \SI{1}{\milli\watt} & \SI{27}{\milli\watt} & \SI{1}{\milli\watt} & \\
+      Arm cavity X & \SI{1}{\nano\watt} & \SI{557}{\micro\watt} & \SI{1}{\nano\watt} & \SI{9}{\milli\watt} & \SI{18}{\kilo\watt} & \SI{8.8}{\milli\watt} & \SI{1}{\nano\watt} & \SI{65}{\micro\watt} & \SI{1}{\nano\watt} & \\
+      Arm cavity Y & \SI{1}{\nano\watt} & \SI{772}{\micro\watt} & \SI{1}{\nano\watt} & \SI{8.7}{\milli\watt} & \SI{18}{\kilo\watt} & \SI{8.8}{\milli\watt} & \SI{1}{\nano\watt} & \SI{68}{\micro\watt} & \SI{1}{\nano\watt} & \\
+      Signal recycling cavity & \SI{1}{\nano\watt} & \SI{3.8}{\milli\watt} & \SI{1}{\nano\watt} & \SI{69}{\micro\watt} & \SI{15}{\milli\watt} & \SI{41}{\micro\watt} & \SI{1}{\nano\watt} & \SI{26}{\milli\watt} & \SI{1}{\nano\watt} & \\
+      Output & \SI{1}{\nano\watt} & \SI{756}{\micro\watt} & \SI{1}{\nano\watt} & \SI{14}{\micro\watt} & \SI{3}{\milli\watt} & \SI{8.3}{\micro\watt} & \SI{1}{\nano\watt} & \SI{5.1}{\milli\watt} & \SI{1}{\nano\watt} & \\
+    \end{tabular}
+  }
+  \caption{\label{tab:et-lf-detuned-dc-powers}Powers in various parts of \ETLF{} in the detuned configuration. The input light is passed through \glspl{EOM} which impart control sidebands at two pairs of frequencies offset from the carrier. As the arm cavity \gls{FSR} is \checkme{higher} than that of the control sideband frequencies, the sideband light power in the arms is vastly smaller than the carrier power.}
+\end{table}
+
+\begin{table}
+  \centering
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l|ccccccccc|c}
+      & \textbf{\SI{-68}{\mega\hertz}} & \textbf{\SI{-57}{\mega\hertz}} & \textbf{\SI{-46}{\mega\hertz}} & \textbf{\SI{-11}{\mega\hertz}} & \textbf{Carrier} & \textbf{\SI{11}{\mega\hertz}} & \textbf{\SI{46}{\mega\hertz}} & \textbf{\SI{57}{\mega\hertz}} & \textbf{\SI{68}{\mega\hertz}} & \textbf{Total} \\
+      \hline
+      Input & 0 & 0 & 0 & 0 & \SI{3}{\watt} & 0 & 0 & 0 & 0 & \SI{3}{\watt} \\
+      After modulators & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{3}{\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{3}{\watt} \\
+      Power recycling cavity & \SI{2.2}{\micro\watt} & \SI{105}{\micro\watt} & \SI{2.1}{\micro\watt} & \SI{398}{\milli\watt} & \SI{64}{\watt} & \SI{398}{\milli\watt} & \SI{2.1}{\micro\watt} & \SI{105}{\micro\watt} & \SI{2.2}{\micro\watt} & \\
+      Michelson cavity & \SI{1}{\micro\watt} & \SI{85}{\micro\watt} & \SI{1}{\micro\watt} & \SI{190}{\milli\watt} & \SI{32}{\watt} & \SI{190}{\milli\watt} & \SI{1}{\micro\watt} & \SI{85}{\micro\watt} & \SI{1}{\micro\watt} & \\
+      Arm cavity X & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \SI{8.2}{\milli\watt} & \SI{18}{\kilo\watt} & \SI{8.2}{\milli\watt} & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \\
+      Arm cavity Y & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \SI{9.1}{\milli\watt} & \SI{18}{\kilo\watt} & \SI{9.1}{\milli\watt} & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \\
+      Signal recycling cavity & \SI{10}{\nano\watt} & \SI{80}{\micro\watt} & \SI{10}{\nano\watt} & \SI{304}{\micro\watt} & \SI{192}{\milli\watt} & \SI{304}{\micro\watt} & \SI{10}{\nano\watt} & \SI{80}{\micro\watt} & \SI{10}{\nano\watt} & \\
+      Output & \SI{1}{\nano\watt} & \SI{16}{\micro\watt} & \SI{1}{\nano\watt} & \SI{61}{\micro\watt} & \SI{38}{\milli\watt} & \SI{61}{\micro\watt} & \SI{1}{\nano\watt} & \SI{16}{\micro\watt} & \SI{1}{\nano\watt} & \\
+    \end{tabular}
+  }
+  \caption{\label{tab:et-lf-tuned-dc-powers}Powers in various parts of \ETLF{} in the tuned configuration. Note that the control sideband frequencies involving $f_2$ are different from those in the detuned case. In this case, the power in the upper and lower sidebands is identical everywhere because they have there are no detuned cavities to separate their resonant conditions (see Section\,\ref{sec:et-lf-control-challenges}). The light incident upon the interferometer from the \glspl{EOM} has the same power, but the power in the rest of the interferometer changes due to the different coupling between the interferometer's cavities.}
+\end{table}
 
 \subsection{Driving coefficients}
-\note{Describe how DARM etc. is fed back to each mirror}
+In order to calculate the response of each degree of freedom as defined in Section\,\ref{sec:dofs-of-drfpmi}, we must define the mirrors that we will actuate upon to create this motion. \gls{CARM} and \gls{DARM} are defined in terms of the motion of the \glspl{ETM}, with the difference between the two degrees of freedom being whether the motion of the two \gls{ETM} is in-phase or out-of-phase, respectively. The \gls{PRCL} and \gls{SRCL} degrees of freedom are defined as motion of the power and signal recycling mirrors, respectively. \gls{MICH} is a little more tricky, as simply moving the \glspl{ITM} results in a signal arising from the arms. We can either move both the \gls{ITM} and \gls{ETM} in each arm together, and differentially between the two cavities, or we can move the beam splitter and the recycling mirrors differentially. We choose the latter option. In this case, the beam splitter must be moved by a smaller amount than the recycling mirrors to account for its non-zero angle of incidence. The driving coefficients are shown in Table\,\ref{tab:et-lf-driving-coefficients}.
 
-\subsection{Control matrix}
+\begin{table}
+  \centering
+  \begin{tabular}{lccccccc}
+    \textbf{Degree of freedom} & \textbf{\gls{ITM} X} & \textbf{\gls{ETM} X} & \textbf{\gls{ITM} Y} & \textbf{\gls{ETM} Y} & \textbf{\gls{BS}} & \textbf{\gls{PRM}} & \textbf{\gls{SRM}} \\
+    \gls{CARM} & \num{0} & \num{0.5} & \num{0} & \num{0.5} & \num{0} & \num{0} & \num{0} \\
+    \gls{DARM} & \num{0} & \num{0.5} & \num{0} & \num{-0.5} & \num{0} & \num{0} & \num{0} \\
+    \gls{MICH} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0.15} & \num{-0.5} & \num{0.5} \\
+    \gls{PRCL} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0} & \num{1} & \num{0} \\
+    \gls{SRCL} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0} & \num{1} \\
+  \end{tabular}
+  \caption{\label{tab:et-lf-driving-coefficients}blah...}
+\end{table}
+
+\subsection{Control matrices}
 
 \subsubsection{Detuned configuration}
 \note{Describe the wedge product}
