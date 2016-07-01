@@ -228,11 +228,11 @@ $(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv: $(DATASCRMAT)/createEtL
 $(DATAGENMAT)/70-sideband-powers-vs-second-sideband-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSecondSidebandTuned.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSecondSidebandTuned('$(ROOT)/$@', linspace(56.7e6, 57.3e6, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-darm-offset-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsDarmOffsetTuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsDarmOffsetTuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
+$(DATAGENMAT)/70-total-power-vs-darm-offset-tuned.csv: $(DATASCRMAT)/createEtLfTotalPowerVsDarmOffsetTuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfTotalPowerVsDarmOffsetTuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-darm-offset-detuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsDarmOffsetDetuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsDarmOffsetDetuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
+$(DATAGENMAT)/70-total-power-vs-darm-offset-detuned.csv: $(DATASCRMAT)/createEtLfTotalPowerVsDarmOffsetDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfTotalPowerVsDarmOffsetDetuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
 
 # ===== Misc =====
 

@@ -11,7 +11,7 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data paths
-data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '70-sideband-powers-vs-darm-offset-detuned.csv')
+data_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '70-total-power-vs-darm-offset-detuned.csv')
 
 # number of headers
 n_headers = 1
@@ -35,7 +35,7 @@ darm_offset = 12e-12
 colour_line = colours.next()
 
 # plot
-ax1.semilogy(data[:, 0] * 1e12, data[:, 5], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(data[:, 0] * 1e12, data[:, 28], '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 
 # vertical line for DARM offset
 ax1.vlines(darm_offset * 1e12, 1e-8, 1e1, colors=colour_line, linestyles='dashed', zorder=2)
@@ -51,7 +51,7 @@ ax2.set_xlabel('DARM offset (pm)')
 ax2.set_ylabel('Power (kW)')
 
 ax1.set_xlim([-1e2, 1e2])
-ax1.set_ylim([1e-7, 1e0])
+ax1.set_ylim([1e-5, 1e0])
 ax2.set_ylim([16, 19])
 
 ax1.grid(True)

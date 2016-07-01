@@ -4,10 +4,10 @@
 % Sean Leavey
 % June 2016
 
-function createEtLfCavityPowersVsDarmOffsetDetuned(filename, darm_offsets)
+function createEtLfTotalPowerVsDarmOffsetDetuned(filename, darm_offsets)
     % add SSM Optickle tools to path
     addpath(genpath([getenv('ETGIT'), 'projects/sean-thesis']));
 
     % export data
-    export_sideband_powers_vs_darm_offset(filename, darm_offsets, 'tuning', 'detuned', 'python', true);
+    export_total_power_vs_darm_offset(filename, darm_offsets, 'tuning', 'detuned', 'python', true);
 end

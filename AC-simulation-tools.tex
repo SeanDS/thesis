@@ -140,8 +140,13 @@ In order to calculate the cross-correlation spectral density required for the ca
 
 \section{Common pitfalls}
 
-\subsection{Obtaining transfer functions}
+\subsection{\label{sec:sims-obtaining-tfs}Obtaining transfer functions and error signals}
 \note{Make sure suspensions are switched off, either by commenting out the line in Finesse or using zpk() in Optickle, or using tickle2()}
+
+\note{Mention how error signals are different from mirror response}
+
+\subsubsection{Ensuring the interferometer is at the operating point}
+\note{For Finesse, use put* to add to the position of the optics and not just overwrite it. For Optickle, use setPosOffset to set the position of the optic before calling tickle, and for sweepLinear bear in mind that the zero position corresponds to an absolute position of zero and not an offset around the operating point.}
 
 \subsection{Higher order modes}
 This only applies to Finesse. While Optickle can simulate TEM 1,0 modes, it requires a conscious effort to run tickle01() instead of tickle().
