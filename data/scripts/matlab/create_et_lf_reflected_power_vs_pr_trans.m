@@ -4,9 +4,12 @@
 % Sean Leavey
 % June 2016
 
-function createEtLfReflectedPowerVsPowerRecyclingTrans(filename, transmissivities)
-    % add SSM Optickle tools to path
-    addpath(genpath([getenv('ETGIT'), 'projects/sean-thesis']));
+function create_et_lf_reflected_power_vs_pr_trans(filename, transmissivities)
+    % this script's directory
+    directory = fileparts(mfilename('fullpath'));
+
+    % add ET scripts to path
+    addpath(genpath([directory, '/et-lf']));
 
     % export data
     export_reflected_power_vs_prm_trans(filename, transmissivities, 'python', true);

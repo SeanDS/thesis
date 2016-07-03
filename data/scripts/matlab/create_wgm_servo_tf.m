@@ -2,7 +2,7 @@
 % and output the result as a CSV file.
 %
 % Sean Leavey and Bryan Barr
-function createWgmServoTf(savePath, f)
+function create_wgm_servo_tf(save_path, f)
     %% PZT electronics
     
     g = 1 / 4.5e-7;  % PZT path gain after multiplier
@@ -80,7 +80,7 @@ function createWgmServoTf(savePath, f)
     hTemp = squeeze(freqresp(prescale(temp, range), f, 'Hz'));
 
     % output to file
-    csvwrite(savePath, [f', abs(hPzt), angle(hPzt) * 180 / pi, abs(hTemp), angle(hTemp) * 180 / pi]);
+    csvwrite(save_path, [f', abs(hPzt), angle(hPzt) * 180 / pi, abs(hTemp), angle(hTemp) * 180 / pi]);
 end
 
 function [a, b, c, d] = lowpass(fcut, dcGain)

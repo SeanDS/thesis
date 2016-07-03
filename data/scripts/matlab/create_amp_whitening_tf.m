@@ -7,7 +7,7 @@
 % Make sure the environment variable "LISO_DIR" is set, pointing to the
 % directory that LISO is installed in.
 
-function createWhiteningTf(savePath, modelPath)
+function create_amp_whitening_tf(save_path, modelPath)
     % add Elektrotickle directory to path
     addpath(genpath(getenv('ELEKTROTICKLE_DIR')));
 
@@ -25,5 +25,5 @@ function createWhiteningTf(savePath, modelPath)
     tf = sigAC(nOutputNode, :);
 
     %% Export
-    csvwrite(savePath, [f; abs(tf); angle(tf) * 180 / pi]');
+    csvwrite(save_path, [f; abs(tf); angle(tf) * 180 / pi]');
 end

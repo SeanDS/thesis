@@ -4,7 +4,7 @@
 % Sean Leavey
 % June 2016
 
-function createAaAiFilterTfs(filename, f)
+function create_aa_ai_filter_tfs(filename, f)
     % add SSM Optickle models path
     addpath(genpath([getenv('SSMSVN'), 'IfoSimulations/Optickle/models/servos']));
     

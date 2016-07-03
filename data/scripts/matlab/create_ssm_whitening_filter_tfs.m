@@ -4,7 +4,7 @@
 % Sean Leavey
 % June 2016
 
-function createWhiteningFilterTfs(filename, f)
+function create_ssm_whitening_filter_tfs(filename, f)
     % add SSM Optickle models path
     addpath(genpath([getenv('SSMSVN'), 'IfoSimulations/Optickle/models/servos']));
     

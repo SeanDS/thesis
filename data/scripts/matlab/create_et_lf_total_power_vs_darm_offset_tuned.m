@@ -4,9 +4,12 @@
 % Sean Leavey
 % June 2016
 
-function createEtLfTotalPowerVsDarmOffsetTuned(filename, darm_offsets)
-    % add SSM Optickle tools to path
-    addpath(genpath([getenv('ETGIT'), 'projects/sean-thesis']));
+function create_et_lf_total_power_vs_darm_offset_tuned(filename, darm_offsets)
+    % this script's directory
+    directory = fileparts(mfilename('fullpath'));
+
+    % add ET scripts to path
+    addpath(genpath([directory, '/et-lf']));
 
     % export data
     export_total_power_vs_darm_offset(filename, darm_offsets, 'tuning', 'tuned', 'python', true);

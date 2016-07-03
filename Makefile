@@ -186,53 +186,53 @@ $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
 
 # ===== Extra data dependencies =====
 
-$(DATAGENMAT)/30-servo-tf.csv: $(DATASCRMAT)/createWgmServoTf.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWgmServoTf('$(ROOT)/$@', logspace(-2, 5, 1000)); exit;"
+$(DATAGENMAT)/30-servo-tf.csv: $(DATASCRMAT)/create_wgm_servo_tf.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_wgm_servo_tf('$(ROOT)/$@', logspace(-2, 5, 1000)); exit;"
 
-$(DATAGENMAT)/50-mirror-tfs.csv: $(DATASCRMAT)/createSsmMirrorTfs.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createSsmMirrorTfs('$(ROOT)/$@', logspace(1, 5, 1000)); exit;"
+$(DATAGENMAT)/50-mirror-tfs.csv: $(DATASCRMAT)/create_ssm_mirror_tfs.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_mirror_tfs('$(ROOT)/$@', logspace(1, 5, 1000)); exit;"
 
-$(DATAGENMAT)/50-m7-seismic-noise.csv: $(DATASCRMAT)/createM7SeismicNoise.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createM7SeismicNoise('$(ROOT)/$@', logspace(1, 3, 1000), 0.01); exit;"
+$(DATAGENMAT)/50-m7-seismic-noise.csv: $(DATASCRMAT)/create_ssm_m7_seismic_noise.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_m7_seismic_noise('$(ROOT)/$@', logspace(1, 3, 1000), 0.01); exit;"
 
-$(DATAGENMAT)/50-aa-ai-filter-tfs.csv: $(DATASCRMAT)/createAaAiFilterTfs.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createAaAiFilterTfs('$(ROOT)/$@', logspace(0, 5, 1000)); exit;"
+$(DATAGENMAT)/50-aa-ai-filter-tfs.csv: $(DATASCRMAT)/create_aa_ai_filter_tfs.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_aa_ai_filter_tfs('$(ROOT)/$@', logspace(0, 5, 1000)); exit;"
 
-$(DATAGENMAT)/50-whitening-filter-tfs.csv: $(DATASCRMAT)/createWhiteningFilterTfs.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningFilterTfs('$(ROOT)/$@', logspace(-1, 4, 1000)); exit;"
+$(DATAGENMAT)/50-whitening-filter-tfs.csv: $(DATASCRMAT)/create_ssm_whitening_filter_tfs.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_whitening_filter_tfs('$(ROOT)/$@', logspace(-1, 4, 1000)); exit;"
 
 # data set generated from other data sets
 $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
 
-$(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierSingleDewhitening.fil
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierSingleDewhitening.fil'); exit;"
+$(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_single_dewhitening.fil
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'amp_single_dewhitening.fil'); exit;"
 
-$(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/createWhiteningTf.m $(DATASCRMAT)/newAmplifierDualDewhitening.fil
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'newAmplifierDualDewhitening.fil'); exit;"
+$(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_dual_dewhitening.fil
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'amp_dual_dewhitening.fil'); exit;"
 
-$(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv: $(DATASCRMAT)/createEtLfReflectedPowerVsPowerRecyclingTrans.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfReflectedPowerVsPowerRecyclingTrans('$(ROOT)/$@', linspace(0, 1, 1000)); exit;"
+$(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv: $(DATASCRMAT)/create_et_lf_reflected_power_vs_pr_trans.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_reflected_power_vs_pr_trans('$(ROOT)/$@', linspace(0, 1, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-srcl-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSrclTuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSrclTuned('$(ROOT)/$@', linspace(1, 20, 1000)); exit;"
+$(DATAGENMAT)/70-sideband-powers-vs-srcl-tuned.csv: $(DATASCRMAT)/create_et_lf_cavity_powers_vs_srcl_tuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_cavity_powers_vs_srcl_tuned('$(ROOT)/$@', linspace(1, 20, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-srcl-detuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSrclDetuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSrclDetuned('$(ROOT)/$@', linspace(1, 20, 1000)); exit;"
+$(DATAGENMAT)/70-sideband-powers-vs-srcl-detuned.csv: $(DATASCRMAT)/create_et_lf_cavity_powers_vs_srcl_detuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_cavity_powers_vs_srcl_detuned('$(ROOT)/$@', linspace(1, 20, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-schnupp-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSchnuppTuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSchnuppTuned('$(ROOT)/$@', linspace(0, 0.5, 1000)); exit;"
+$(DATAGENMAT)/70-sideband-powers-vs-schnupp-tuned.csv: $(DATASCRMAT)/create_et_lf_cavity_powers_vs_schnupp_tuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_cavity_powers_vs_schnupp_tuned('$(ROOT)/$@', linspace(0, 0.5, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSchnuppDetuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSchnuppDetuned('$(ROOT)/$@', linspace(0, 0.5, 1000)); exit;"
+$(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv: $(DATASCRMAT)/create_et_lf_cavity_powers_vs_schnupp_detuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_cavity_powers_vs_schnupp_detuned('$(ROOT)/$@', linspace(0, 0.5, 1000)); exit;"
 
-$(DATAGENMAT)/70-sideband-powers-vs-second-sideband-tuned.csv: $(DATASCRMAT)/createEtLfCavityPowersVsSecondSidebandTuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfCavityPowersVsSecondSidebandTuned('$(ROOT)/$@', linspace(56.7e6, 57.3e6, 1000)); exit;"
+$(DATAGENMAT)/70-sideband-powers-vs-second-sideband-tuned.csv: $(DATASCRMAT)/create_et_lf_cavity_powers_vs_second_sideband_tuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_cavity_powers_vs_second_sideband_tuned('$(ROOT)/$@', linspace(56.7e6, 57.3e6, 1000)); exit;"
 
-$(DATAGENMAT)/70-total-power-vs-darm-offset-tuned.csv: $(DATASCRMAT)/createEtLfTotalPowerVsDarmOffsetTuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfTotalPowerVsDarmOffsetTuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
+$(DATAGENMAT)/70-total-power-vs-darm-offset-tuned.csv: $(DATASCRMAT)/create_et_lf_total_power_vs_darm_offset_tuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_total_power_vs_darm_offset_tuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
 
-$(DATAGENMAT)/70-total-power-vs-darm-offset-detuned.csv: $(DATASCRMAT)/createEtLfTotalPowerVsDarmOffsetDetuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfTotalPowerVsDarmOffsetDetuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
+$(DATAGENMAT)/70-total-power-vs-darm-offset-detuned.csv: $(DATASCRMAT)/create_et_lf_total_power_vs_darm_offset_detuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_total_power_vs_darm_offset_detuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
 
 # ===== Misc =====
 

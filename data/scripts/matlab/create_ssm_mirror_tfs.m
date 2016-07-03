@@ -4,7 +4,7 @@
 % Sean Leavey
 % May 2016
 
-function createSsmMirrorTfs(filename, f)
+function create_ssm_mirror_tfs(filename, f)
     % add SSM Optickle tools to path
     addpath(genpath([getenv('SSMSVN'), 'IfoSimulations/Optickle/projects/transfer-functions']));
 

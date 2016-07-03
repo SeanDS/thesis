@@ -5,9 +5,12 @@
 % Sean Leavey
 % June 2016
 
-function createEtLfCavityPowersVsSrclTuned(filename, lengths)
-    % add SSM Optickle tools to path
-    addpath(genpath([getenv('ETGIT'), 'projects/sean-thesis']));
+function create_et_lf_cavity_powers_vs_srcl_tuned(filename, lengths)
+    % this script's directory
+    directory = fileparts(mfilename('fullpath'));
+
+    % add ET scripts to path
+    addpath(genpath([directory, '/et-lf']));
 
     % export data
     export_sideband_powers_vs_src_length(filename, lengths, 'tuning', 'tuned', 'python', true);
