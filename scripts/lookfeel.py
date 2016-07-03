@@ -21,6 +21,9 @@ FIG_SIZE_B = (10, 3.5)
 # half-width figure for side-by-side
 FIG_SIZE_C = (5, 7)
 
+# big figure for full page
+FIG_SIZE_D = (10, 14)
+
 # default line transparency
 ALPHA_LINE_A = 0.8
 
