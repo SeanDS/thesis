@@ -178,6 +178,8 @@ $(GFXGENPY)/70-sideband-powers-vs-darm-offset-tuned.pdf: $(DATAGENMAT)/70-sideba
 
 $(GFXGENPY)/70-sideband-powers-vs-darm-offset-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-darm-offset-detuned.csv
 
+$(GFXGENPY)/70-sweeps-detuned.pdf: $(DATAGENMAT)/70-sweep-carm-detuned.csv $(DATAGENMAT)/70-sweep-darm-detuned.csv $(DATAGENMAT)/70-sweep-mich-detuned.csv $(DATAGENMAT)/70-sweep-prcl-detuned.csv
+
 # ===== Data dependencies =====
 
 $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
@@ -233,6 +235,18 @@ $(DATAGENMAT)/70-total-power-vs-darm-offset-tuned.csv: $(DATASCRMAT)/create_et_l
 
 $(DATAGENMAT)/70-total-power-vs-darm-offset-detuned.csv: $(DATASCRMAT)/create_et_lf_total_power_vs_darm_offset_detuned.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_total_power_vs_darm_offset_detuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
+
+$(DATAGENMAT)/70-sweep-carm-detuned.csv: $(DATASCRMAT)/createEtLfSweepCarmDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfSweepCarmDetuned('$(ROOT)/$@', 1e-10, 1000); exit;"
+	
+$(DATAGENMAT)/70-sweep-darm-detuned.csv: $(DATASCRMAT)/createEtLfSweepDarmDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfSweepDarmDetuned('$(ROOT)/$@', 1e-10, 1000); exit;"
+	
+$(DATAGENMAT)/70-sweep-mich-detuned.csv: $(DATASCRMAT)/createEtLfSweepMichDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfSweepMichDetuned('$(ROOT)/$@', 2e-8, 1000); exit;"
+
+$(DATAGENMAT)/70-sweep-prcl-detuned.csv: $(DATASCRMAT)/createEtLfSweepPrclDetuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); createEtLfSweepPrclDetuned('$(ROOT)/$@', 2e-8, 1000); exit;"
 
 # ===== Misc =====
 
