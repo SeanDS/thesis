@@ -11,7 +11,7 @@ directory = fileparts(mfilename('fullpath'));
 addpath(genpath([directory, '/../']));
 
 % frequency to calculate sensing matrix at
-f = 25;
+f = 1e-4;
 
 % parameters
 par = par_et_lf();

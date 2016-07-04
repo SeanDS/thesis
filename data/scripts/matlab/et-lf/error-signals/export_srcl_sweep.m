@@ -1,4 +1,4 @@
-function export_prcl_sweep(filename, range, points, varargin)
+function export_srcl_sweep(filename, range, points, varargin)
     %% Paths
     
     % this script's directory
@@ -9,12 +9,12 @@ function export_prcl_sweep(filename, range, points, varargin)
     
     %% Sweeps
     
-    sensorA = 'POP_11_I';
-    sensorB = 'POP_11_Q';
+    sensorA = 'REFL_68_I';
+    sensorB = 'REFL_68_Q';
 
     % readouts chosen from the control matrix
-    [positionsA, signalsA] = get_error_signal_sweep('PRCL', sensorA, range, points, varargin{:});
-    [         ~, signalsB] = get_error_signal_sweep('PRCL', sensorB, range, points, varargin{:});
+    [positionsA, signalsA] = get_error_signal_sweep('SRCL', sensorA, range, points, varargin{:});
+    [         ~, signalsB] = get_error_signal_sweep('SRCL', sensorB, range, points, varargin{:});
     
     %% Export
     

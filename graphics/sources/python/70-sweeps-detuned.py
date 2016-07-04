@@ -30,11 +30,6 @@ data_mich = np.genfromtxt(data_path_mich, delimiter=delimiter, skip_header=n_hea
 data_prcl = np.genfromtxt(data_path_prcl, delimiter=delimiter, skip_header=n_headers)
 data_srcl = np.genfromtxt(data_path_srcl, delimiter=delimiter, skip_header=n_headers)
 
-darm_offset = 12e-12
-
-# add half the DARM offset to the data to fix it to zero (Optickle zero is about the operating point)
-data_darm[:, 0] += darm_offset / 2
-
 # figure
 fig = plt.figure(figsize=lf.FIG_SIZE_D)
 
@@ -48,9 +43,8 @@ ax5 = fig.add_subplot(325)
 colours = lf.Colours()
 
 colour_a = colours.next()
-colour_b = colours.next()
-colour_c = colours.next()
-colour_line = colours.next()
+colour_line_1 = colours.next()
+colour_line_2 = colours.next()
 
 ###
 # CARM
@@ -69,7 +63,7 @@ data_carm_combined = data_carm[:, 1] * np.sin(np.radians(carm_angle)) + data_car
 ax1.plot(data_carm[:, 0] * x_scale_factor_carm, data_carm_combined * y_scale_factor_carm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax1.vlines(0, -1 * y_scale_factor_carm, 1 * y_scale_factor_carm, colors=colour_line, linestyles='dashed', zorder=2)
+ax1.vlines(0, -1 * y_scale_factor_carm, 1 * y_scale_factor_carm, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax1.set_ylabel('Power (mW)')
 ax1.set_xlabel('Offset (pm)')
@@ -81,10 +75,16 @@ ax1.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend([r'CARM to $\mathrm{REFL}_{\mathrm{11}}$', 'Operating point'], loc='lower left', framealpha=0.8)
+ax1.legend([r'CARM to $\mathrm{REFL}_{\mathrm{11}}$', 'Operating point'], loc='upper left', framealpha=0.8)
 
 ###
 # DARM
+
+# the DARM offset
+darm_offset = 12e-12
+
+# add half the DARM offset to the data to fix it to zero (Optickle zero is about the operating point)
+data_darm[:, 0] += darm_offset / 2
 
 # m -> pm
 x_scale_factor_darm = 1e12
@@ -96,7 +96,7 @@ y_scale_factor_darm = 1e3
 ax2.plot(data_darm[:, 0] * x_scale_factor_darm, data_darm[:, 1] * y_scale_factor_darm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax2.vlines(darm_offset * x_scale_factor_darm, 1e-3 * y_scale_factor_darm, 1e1 * y_scale_factor_darm, colors=colour_line, linestyles='dashed', zorder=2)
+ax2.vlines(darm_offset * x_scale_factor_darm, 1e-3 * y_scale_factor_darm, 1e1 * y_scale_factor_darm, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax2.set_ylabel('Power (mW)')
 ax2.set_xlabel('Offset (pm)')
@@ -113,39 +113,29 @@ ax2.legend([r'DARM to $\mathrm{AS}_{\mathrm{DC}}$', 'Operating point'], loc='upp
 ###
 # MICH
 
-# m -> pm
-x_scale_factor_mich = 1e12
+# m -> nm
+x_scale_factor_mich = 1e9
 
 # W -> mW
 y_scale_factor_mich = 1e3
 
-# combine I and Q
-mich_angle = -55 # eyeball
-prcl_angle = 55 # eyeball, opposite sign due to driving matrix sign
-srcl_angle = 55 # eyeball, opposite sign due to driving matrix sign
-data_mich_combined = data_mich[:, 1] * np.sin(np.radians(mich_angle)) + data_mich[:, 2] * np.cos(np.radians(mich_angle))
-data_prcl_combined = data_mich[:, 3] * np.sin(np.radians(prcl_angle)) + data_mich[:, 4] * np.cos(np.radians(prcl_angle))
-data_srcl_combined = data_mich[:, 5] * np.sin(np.radians(srcl_angle)) + data_mich[:, 6] * np.cos(np.radians(srcl_angle))
-
 # plot
-ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_mich_combined * y_scale_factor_mich, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_prcl_combined * y_scale_factor_mich, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
-ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_srcl_combined * y_scale_factor_mich, '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_mich[:, 2] * y_scale_factor_mich, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax3.vlines(0, -1 * y_scale_factor_mich, 1 * y_scale_factor_mich, colors=colour_line, linestyles='dashed', zorder=2)
+ax3.vlines(0, -1 * y_scale_factor_mich, 1 * y_scale_factor_mich, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax3.set_ylabel('Power (mW)')
-ax3.set_xlabel('Offset (pm)')
+ax3.set_xlabel('Offset (nm)')
 
-ax3.set_xlim([-0.5e-9 * x_scale_factor_mich, 0.5e-9 * x_scale_factor_mich])
-ax3.set_ylim([-30e-3 * y_scale_factor_mich, 30e-3 * y_scale_factor_mich])
+ax3.set_xlim([-5e-8 * x_scale_factor_mich, 5e-8 * x_scale_factor_mich])
+ax3.set_ylim([-0.7e-3 * y_scale_factor_mich, 0.5e-3 * y_scale_factor_mich])
 
 ax3.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax3.legend([r'MICH to $\mathrm{REFL}_{\mathrm{57}}$', r'PRCL to $\mathrm{REFL}_{\mathrm{57}}$', r'SRCL to $\mathrm{REFL}_{\mathrm{57}}$', 'Operating point'], loc='upper left', framealpha=0.8)
+ax3.legend([r'MICH to $\mathrm{POP}_{\mathrm{57}}$', 'Operating point'], loc='upper left', framealpha=0.8)
 
 ###
 # PRCL
@@ -156,21 +146,11 @@ x_scale_factor_prcl = 1e9
 # W -> mW
 y_scale_factor_prcl = 1e3
 
-# combine I and Q
-prcl_angle = -50 # eyeball
-mich_angle = 50 # eyeball, opposite sign due to driving matrix sign
-srcl_angle = -50 # eyeball
-data_prcl_combined = data_prcl[:, 1] * np.sin(np.radians(prcl_angle)) + data_prcl[:, 2] * np.cos(np.radians(prcl_angle))
-data_mich_combined = data_prcl[:, 3] * np.sin(np.radians(mich_angle)) + data_prcl[:, 4] * np.cos(np.radians(mich_angle))
-data_srcl_combined = data_prcl[:, 5] * np.sin(np.radians(srcl_angle)) + data_prcl[:, 6] * np.cos(np.radians(srcl_angle))
-
 # plot
-ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_prcl_combined * y_scale_factor_prcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_mich_combined * y_scale_factor_prcl, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
-ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_srcl_combined * y_scale_factor_prcl, '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_prcl[:, 1] * y_scale_factor_prcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax4.vlines(0, -1 * y_scale_factor_prcl, 1 * y_scale_factor_prcl, colors=colour_line, linestyles='dashed', zorder=2)
+ax4.vlines(0, -1 * y_scale_factor_prcl, 1 * y_scale_factor_prcl, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax4.set_ylabel('Power (mW)')
 ax4.set_xlabel('Offset (nm)')
@@ -182,10 +162,19 @@ ax4.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax4.legend([r'PRCL to $\mathrm{POP}_{\mathrm{11}}$', r'MICH to $\mathrm{POP}_{\mathrm{11}}$', r'SRCL to $\mathrm{POP}_{\mathrm{11}}$', 'Operating point'], loc='upper left', framealpha=0.8)
+ax4.legend([r'PRCL to $\mathrm{POP}_{\mathrm{11}}$', 'Operating point'], loc='upper right', framealpha=0.8)
 
 ###
 # SRCL
+
+# SRM mirror offset
+srm_offset = 4.65e-07
+
+# SRCL signal offset
+srcl_sig_offset = 4.2e-3
+
+# add the SRM offset so that the operating point is shown around its real offset (Optickle operating point is by definition zero)
+data_srcl[:, 0] += srm_offset
 
 # m -> pm
 x_scale_factor_srcl = 1e9
@@ -193,33 +182,26 @@ x_scale_factor_srcl = 1e9
 # W -> mW
 y_scale_factor_srcl = 1e3
 
-# combine I and Q
-srcl_angle = -50 # eyeball
-mich_angle = 50 # eyeball, opposite sign due to driving matrix sign
-prcl_angle = -50 # eyeball
-data_srcl_combined = data_srcl[:, 1] * np.sin(np.radians(srcl_angle)) + data_srcl[:, 2] * np.cos(np.radians(srcl_angle))
-data_mich_combined = data_srcl[:, 3] * np.sin(np.radians(mich_angle)) + data_srcl[:, 4] * np.cos(np.radians(mich_angle))
-data_prcl_combined = data_srcl[:, 5] * np.sin(np.radians(prcl_angle)) + data_srcl[:, 6] * np.cos(np.radians(prcl_angle))
-
 # plot
-ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_srcl_combined * y_scale_factor_srcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_mich_combined * y_scale_factor_srcl, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
-ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_prcl_combined * y_scale_factor_srcl, '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
+ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_srcl[:, 2] * y_scale_factor_srcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax5.vlines(0, -1 * y_scale_factor_srcl, 1 * y_scale_factor_srcl, colors=colour_line, linestyles='dashed', zorder=2)
+ax5.vlines(srm_offset * x_scale_factor_srcl, -1 * y_scale_factor_srcl, 1 * y_scale_factor_srcl, colors=colour_line_1, linestyles='dashed', zorder=2)
+
+# horizontal line for offset
+ax5.hlines(srcl_sig_offset * y_scale_factor_srcl, -1e-6 * x_scale_factor_srcl, 1e-6 * x_scale_factor_srcl, colors=colour_line_2, linestyles='dashed', zorder=2)
 
 ax5.set_ylabel('Power (mW)')
 ax5.set_xlabel('Offset (nm)')
 
-ax5.set_xlim([-1e-8 * x_scale_factor_srcl, 1e-8 * x_scale_factor_srcl])
-ax5.set_ylim([-20e-3 * y_scale_factor_srcl, 20e-3 * y_scale_factor_srcl])
+ax5.set_xlim([(srm_offset + -1e-8) * x_scale_factor_srcl, (srm_offset + 1e-8) * x_scale_factor_srcl])
+ax5.set_ylim([0 * y_scale_factor_srcl, 7e-3 * y_scale_factor_srcl])
 
 ax5.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax5.legend([r'SRCL to $\mathrm{REFL}_{\mathrm{45}}$', r'MICH to $\mathrm{REFL}_{\mathrm{45}}$', r'PRCL to $\mathrm{REFL}_{\mathrm{45}}$', 'Operating point'], loc='upper left', framealpha=0.8)
+ax5.legend([r'SRCL to $\mathrm{REFL}_{\mathrm{68}}$', 'Operating point', 'Signal offset'], loc='lower left', framealpha=0.8)
 
 ###
 

@@ -237,19 +237,19 @@ $(DATAGENMAT)/70-total-power-vs-darm-offset-detuned.csv: $(DATASCRMAT)/create_et
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_total_power_vs_darm_offset_detuned('$(ROOT)/$@', linspace(-1e-10, 1e-10, 1000)); exit;"
 
 $(DATAGENMAT)/70-sweep-carm-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_carm_detuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_carm_detuned('$(ROOT)/$@', 1e-10, 1000); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_carm_detuned('$(ROOT)/$@', 1e-10, 250); exit;"
 	
 $(DATAGENMAT)/70-sweep-darm-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_darm_detuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_darm_detuned('$(ROOT)/$@', 1e-10, 1000); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_darm_detuned('$(ROOT)/$@', 1e-10, 250); exit;"
 	
 $(DATAGENMAT)/70-sweep-mich-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_mich_detuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_mich_detuned('$(ROOT)/$@', 2e-8, 1000); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_mich_detuned('$(ROOT)/$@', 2e-7, 250); exit;"
 
 $(DATAGENMAT)/70-sweep-prcl-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_prcl_detuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_prcl_detuned('$(ROOT)/$@', 2e-8, 1000); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_prcl_detuned('$(ROOT)/$@', 2e-8, 250); exit;"
 
 $(DATAGENMAT)/70-sweep-srcl-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_srcl_detuned.m
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_srcl_detuned('$(ROOT)/$@', 2e-8, 1000); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_srcl_detuned('$(ROOT)/$@', 2e-8, 250); exit;"
 
 # ===== Misc =====
 

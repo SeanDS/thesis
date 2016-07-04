@@ -16,9 +16,9 @@ function opt = get_opt_at_operating_point(varargin)
     %% Set demodulation phases
     
     % phases read from combined I and Q sensing matrix
-    demod_carm = -71.71;
-    demod_mich = 80.5; % offset appears for slightly different phase
-    demod_prcl = -14.33;
+    demod_carm = -0.01;
+    demod_mich = 80.5; % an offset appears for slightly different phase
+    demod_prcl = -36.40;
     demod_srcl = -168.18;
     
     % CARM
