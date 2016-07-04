@@ -185,6 +185,12 @@ The \gls{DC} readout technique is a form of homodyne readout (see Section\,\ref{
 \subsection{\label{sec:dofs-of-drfpmi}Degrees of freedom of the \DRFPMI{}}
 As \ETLF{} and \ETHF{} will employ \gls{DC} readout, there is no local oscillator phase or alignment to control (see Section\,\ref{sec:homodyne-readout}). The degrees of freedom that must be controlled in order to reach the design sensitivity are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths. These are defined in the following sections.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-darm-schnupp-offsets.pdf}
+  \caption[Differential arm and Schnupp offsets in a \DRFPMI{}]{\label{fig:darm-schnupp-offsets}\note{Make this a generic diagram of ETLF with the ports and readouts defined: output port in particular, as it is mentioned in text}}
+\end{figure}
+
 \subsubsection{Differential arm cavity length}
 \checkme{Should be held at the dark fringe by means of differential feedback to the end test masses...}
 
@@ -201,23 +207,13 @@ The length between the \glspl{ITM} and the beam splitter should be held constant
 \subsubsection{Signal recycling cavity length}
 The signal recycling length, along with the signal recycling mirror transmissivity, determines the bandwidth of the signal extraction and therefore needs controlled in order to keep the signal to noise stable...
 
-\subsection{Sensing matrices for an interferometer's degrees of freedom}
-\note{ideally diagonal, in practice not - the job of the designer is to make them as decoupled as possible. feedback paths can be used to suppress cross-couplings.}
-
-\section{Modelling effort for the \ET{} interferometers}
-\note{See email sent to Andreas about outcomes of ASPERA. Basically, we had to model the interferometer controls and higher order modes, so we did it simultaneously with two tools. Discuss how this was achieved, via a shared parameter set, etc. Say that we started with ET-LF, but the framework is developed for both...}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-darm-schnupp-offsets.pdf}
-  \caption[Differential arm and Schnupp offsets in a \DRFPMI{}]{\label{fig:darm-schnupp-offsets}\note{Make this a generic diagram of ETLF with the ports and readouts defined: output port in particular, as it is mentioned in text}}
-\end{figure}
-
-\section{Control of ET-HF}
+\section{Sensing and control of the ET interferometers}
 \ETHF{} can to some extent be seen as a version of \ALIGO{} and \AVIRGO{} that pushes the state of the art of high power, heavy mirror, room temperature detectors, and so it may be possible to adapt much of the advance detectors' strategies for both longitudinal and angular control. Some aspects such as the use of LG33 modes and the presence of parametric instabilities, however, require extensive research to understand the implications they may have on control, and so much work remains to be done before a technical design for the \ET{} facility will be ready. This chapter will primarily discuss the longitudinal control of \ETLF{}, focusing in particular on the challenges arising from the large detuning of its signal recycling cavity.
 
-\section{Control of ET-LF}
-For the control of \ETLF{} we loosely follow the approach taken in \ALIGO{} \cite{Abbott2010} and \AVIRGO{} \cite{Vajente2008}, given that these represent the most sensitive \DRFPMI{}s built to date. The least constrained parameters are defined first, such as the control sideband frequencies, and parameters which depend on previously defined parameters are determined sequentially. Given the constraints from the design study, we begin with the transmissivity of the power recycling mirror and the frequency of the control sidebands, and then use these to define auxiliary lengths within the interferometer and finally calculate the arm cavity offset required for the \gls{DC} readout to work. With these parameters set, we can calculate the error signals present at various points within the interferometer and determine a control matrix to show the best ports to use for each degree of freedom.
+\section{Sensing scheme for ET-LF}
+One of the open questions for \ETLF{} is whether the interferometer can be controlled at the frequencies at which it will be most sensitive, as the signal recycling cavity detuning of \SI{25}{\hertz} is much lower frequency than any detuning previously attempted in a ground-based gravitational wave detector. This section will introduce a conceptual sensing scheme loosely based on the approaches taken in \ALIGO and \AVIRGO{}.
+
+For the readout scheme we loosely follow the approach taken in \ALIGO{} \cite{Abbott2010} and \AVIRGO{} \cite{Vajente2008}, given that these represent the most sensitive \DRFPMI{}s built to date. The least constrained parameters are defined first, such as the control sideband frequencies, and parameters which depend on previously defined parameters are determined sequentially. Given the constraints from the design study, we begin with the transmissivity of the power recycling mirror and the frequency of the control sidebands, and then use these to define auxiliary lengths within the interferometer and finally calculate the arm cavity offset required for the \gls{DC} readout to work. With these parameters set, we can calculate the error signals present at various points within the interferometer and determine a control matrix to show the best ports to use for each degree of freedom.
 
 \subsection{Optimal input coupling}
 As discussed in Section\,\ref{sec:power-recycling}, placing a power recycling mirror in an \MI{} creates an additional cavity between the input light and the arms. The intention of the power recycling mirror is to minimise the light reflected back towards the laser, and in order to do this the cavity it creates should be \emph{impedance matched} (see, for example, Section\,5.1 of \cite{Freise2010}). The transmissivity of the mirror determines the impedance matching, and it can be determined using knowledge of the light lost within the interferometer. The design study defines the loss per optic to be \SI{35}{\ppm}, and the transmissivity of the \glspl{ETM} is \SI{6}{\ppm}; both contribute to the impedance matching. Figure\,\ref{fig:reflected-power-vs-prm-trans} shows the light power leaving the power recycling mirror heading back towards the laser. The minimum reflected power corresponds to a power recycling mirror transmissivity of \num{0.046}, which is comparable to that of the \glspl{ITM}.
@@ -272,80 +268,40 @@ for positive integer $D$.
 For \ETLF{} we chose the first sideband frequency $f_1$ to be \SI{11363101}{\hertz} which satisfies Equations \ref{eq:src-fsr}, \ref{eq:prc-fsr} ($C = 23$) and \ref{eq:arm-fsr}. We can then choose the second sideband to be an integer multiple of the first in order to allow both to be resonant within the power recycling cavity. We chose the second sideband frequency to be $f_2 = 5f_1 = \SI{56815505}{\hertz}$, which is a high enough multiple of $f_1$ that we can investigate the use of different beats between $f_1$ and $f_2$ for control purposes (see Section\,\ref{sec:etlf-readout-ports}). We also assume a modulation depth of \num{0.1} for $f_1$ and $f_2$ to minimise higher order modulation sidebands while keeping a reasonable amount of light power in the sidebands.
 
 \subsubsection{Schnupp asymmetry}
-Figure\,\ref{fig:sideband-powers-vs-schnupp} shows the power of each sideband field in the recycling cavities of \ETLF{} given the Schnupp asymmetry and recycling cavity lengths, for both tuned and detuned signal recycling. The optimal Schnupp asymmetry is different for each case due to the asymmetric sidebands in detuned operation. Since the Schnupp asymmetry is a macroscopic length, it is not easily adjusted during operation, and so we choose an asymmetry, \SI{0.08}{\meter}, that gives good separation between the recycling cavities in the detuned state since it will be \ETLF{}'s primary mode of operation.
+Figure\,\ref{fig:sideband-powers-vs-schnupp-detuned} shows the power of each sideband field in the recycling cavities of \ETLF{} given the Schnupp asymmetry and recycling cavity lengths with detuned signal recycling. Since the Schnupp asymmetry is a macroscopic length, it is not easily adjusted during operation, and so it is necessary to set this length in the design phase. Here we choose a Schnupp asymmetry that attempts to maximise the difference in power in the signal recycling cavity between the two sideband frequencies in detuned operation. This is around \SI{0.08}{\meter}.
 
 \begin{figure}
   \centering
-  \begin{subfigure}{.49\textwidth}
-    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-schnupp-tuned.pdf}
-    \caption[Power of the control sidebands in the cavities of \ETLF{} with tuned signal recycling]{\label{fig:sideband-powers-vs-schnupp-tuned}Tuned signal recycling.}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{.49\textwidth}
-    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-schnupp-detuned.pdf}
-    \caption[Power of the control sidebands in the cavities of \ETLF{} with tuned signal recycling]{\label{fig:sideband-powers-vs-schnupp-detuned}Detuned signal recycling.}
-  \end{subfigure}
-  \caption[Power of the control sidebands in the cavities of \ETLF{}]{\label{fig:sideband-powers-vs-schnupp}Power of the control sidebands in the cavities of \ETLF{} during tuned and detuned operation. A small offset, called the \emph{Schnupp asymmetry}, is intentionally introduced to the Michelson length in order to allow the sidebands $f_1$ and $f_2$ to couple to the signal recycling cavity for the purposes of control. Here, $f_2$ is resonant but $f_1$ is not, and so there are discriminating signals for the power and signal recycling cavity. The optimal Schnupp asymmetry is one which provides the best decoupling of sideband error signals representing the lengths of the power and signal recycling cavities. The power is a good estimate for what the relative sensitivity of the sidebands in the recycling cavities will be.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-schnupp-detuned.pdf}
+  \caption[Power of the control sidebands in the cavities of \ETLF{} in the detuned configuration]{\label{fig:sideband-powers-vs-schnupp-detuned}Power of the control sidebands in the cavities of \ETLF{} during detuned operation. A small offset, called the \emph{Schnupp asymmetry}, is intentionally introduced to the Michelson length in order to allow the sidebands $f_1$ and $f_2$ to couple to the signal recycling cavity for the purposes of control. Here, $f_2$ is resonant but $f_1$ is not, and so there are discriminating signals for the power and signal recycling cavity. The optimal Schnupp asymmetry is one which provides the best decoupling of sideband error signals representing the lengths of the power and signal recycling cavities. The power is a good estimate for what the relative sensitivity of the sidebands in the recycling cavities will be.}
 \end{figure}
 
 \subsubsection{Optimisation of the signal recycling cavity length}
-
-\paragraph{Detuned operation}
-Note the discrepancy between two of the control sideband frequency constraints: the power and signal recycling cavities cannot both be simultaneously resonant and anti-resonant to $f_1$ and $f_2$ given that $f_2 = 5 f_1$. To resolve this discrepancy we can scan the length of the signal recycling cavity in order to find where the next \gls{FSR} is encountered for $f_2$, and this is shown in Figure\,\ref{fig:sideband-powers-srcl}. From Figure\,\ref{fig:sideband-powers-srcl-detuned}, we can see that changing the signal recycling cavity length from \SI{310}{\meter} to \SI{311.585}{\meter} results in the desired sideband resonance condition for the upper $f_2$ sideband. The power of $f_2$ in the power recycling cavity drops as the lower and upper sidebands get critically coupled into the signal recycling cavity. As the detuning in \ETLF{} is so large, the signal recycling cavity is not resonant for both the upper and lower $f_2$ sidebands and so the control of the power recycling cavity must be achieved before that of the signal recycling cavity to minimise the signal content in $f_2$ arising from the former.
+Note the discrepancy between two of the control sideband frequency constraints: the power and signal recycling cavities cannot both be simultaneously resonant and anti-resonant to $f_1$ and $f_2$ given that $f_2 = 5 f_1$. To resolve this discrepancy we can scan the length of the signal recycling cavity in order to find where the next \gls{FSR} is encountered for $f_2$, and this is shown in Figure\,\ref{fig:sideband-powers-srcl-detuned}. We can see that changing the signal recycling cavity length from \SI{310}{\meter} to \SI{311.585}{\meter} results in the desired sideband resonance condition for the upper $f_2$ sideband. The power of $f_2$ in the power recycling cavity drops as the lower and upper sidebands get critically coupled into the signal recycling cavity. As the detuning in \ETLF{} is so large, the signal recycling cavity is not resonant for both the upper and lower $f_2$ sidebands and so the control of the power recycling cavity must be achieved before that of the signal recycling cavity to minimise the signal content in $f_2$ arising from the former.
 
 In the signal recycling cavity, $f_2$ provides an error signal for the length that is \num{650} times larger than the equivalent for $f_1$. Meanwhile, $f_1$ provides an error signal for the power recycling cavity that is a factor of \num{13} larger than that of $f_2$. If this difference proves not to be high enough, it can be increased at the expense of the difference between the two in the signal recycling cavity by scaling the modulation depths of $f_1$ and $f_2$.
 
-\paragraph{Tuned operation}
-The equivalent powers in the tuned configuration is shown in Figure\,\ref{fig:sideband-powers-srcl-tuned}. Here, we see that the chosen signal recycling cavity length is not optimal, with a length of \SI{312.8}{\meter} seeming more appropriate. This length is far above the limit of the actuators that one can reasonably expect on the suspension platforms, and so this cannot easily be changed after commissioning; we must investigate another method to separate the error signals in the tuned configuration. Figure\,\ref{fig:sideband-powers-vs-f2-tuned} shows the effect that changing the frequency of $f_2$ has on the powers within the cavities, and we see that moving $f_2$ from \SI{56.815}{\mega\hertz} to \SI{57.008}{\mega\hertz} obtains a more appropriate decoupling. Note that the power in $f_1$ is still larger than the power in $f_2$ in the tuned case, even at this new frequency. As described in Section\,\ref{sec:decoupled-sidebands}, we can investigate the use of beats between sidebands to retrieve appropriate error signals and so this is not necessarily a problem.
-
 \begin{figure}
   \centering
-  \begin{subfigure}{.49\textwidth}
-    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-srcl-detuned.pdf}
-    \caption[Power of the control sidebands in the signal recycling cavity as a function of length of \ETLF{} in the detuned configuration]{\label{fig:sideband-powers-srcl-detuned}Sideband powers for detuned signal recycling.}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{.49\textwidth}
-    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-srcl-tuned.pdf}
-    \caption[Power of the control sidebands in the signal recycling cavity as a function of length of \ETLF{} in the tuned configuration]{\label{fig:sideband-powers-srcl-tuned}Sideband powers for tuned signal recycling.}
-  \end{subfigure}
-  \caption[Power of the control sidebands in the signal recycling cavity as a function of length of \ETLF{}]{\label{fig:sideband-powers-srcl}Blah.}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-second-sideband-tuned.pdf}
-  \caption[Power of the control sidebands in the signal recycling cavity as a function of the second sideband frequency of \ETLF{} in the tuned configuration]{\label{fig:sideband-powers-vs-f2-tuned}Power of the control sidebands in the signal recycling cavity as a function of the second sideband frequency of \ETLF{} in the tuned configuration. This shows only the power in the lower sidebands, because for the tuned configuration the upper and lower sideband signals are identical.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-srcl-detuned.pdf}
+  \caption[Power of the control sidebands in the signal recycling cavity as a function of length of \ETLF{} in the detuned configuration]{\label{fig:sideband-powers-srcl-detuned}Sideband powers for detuned signal recycling.}
 \end{figure}
 
 \subsection{Dark fringe offset}
 As described in Section\,\ref{sec:homodyne-readout}, \gls{DC} readout at the output port of a \DRFPMI{} requires carrier light to be present to act as a local oscillator (phase reference) for the signal sidebands. In a perfectly controlled interferometer there is no classical light at the output port and so this offset must be introduced by differentially detuning the interferometer's arms by a small amount to create the appropriate dark fringe offset. In practice, asymmetries which create differential detuning are already present in the arms, for example arising from mismatched arm cavity finesse or asymmetric beam splitter reflectivity.
 
-For our simulations, we do not assume any asymmetries and so we can intentionally introduce a dark fringe offset with an offset in the \gls{MICH} or \gls{DARM} degrees of freedom. While a \gls{DARM} offset has the disadvantage that it involves the creation of an optical spring due to the high light power in the arms, it has favourable noise couplings compared to a \gls{MICH} offset \cite{Vajente2011}.
+For our simulations, we do not assume any asymmetries and so we can intentionally introduce a dark fringe offset with an offset in the \gls{MICH} or \gls{DARM} degrees of freedom. While a \gls{DARM} offset has the disadvantage that it involves the creation of an optical spring due to the high light power in the arms \cite{Heidmann2011}, it has favourable noise couplings compared to a \gls{MICH} offset \cite{Vajente2011}.
 
-Figure\,\ref{fig:total-power-vs-darm-offset-detuned} shows the power at the output port and in the arm cavities as a function of \gls{DARM} offset in the detuned configuration. For an offset of \SI{12}{\pico\meter}, the power at the output can be set to around \SI{10}{\milli\watt} with a difference of about 3\% in the power in the arms. Standard photodetectors used in \ALIGO{} and \AVIRGO{} can usually handle around \SI{100}{\milli\watt} but in \ETLF{} the \gls{DARM} offset required to reach this figure would reduce the power in the Y arm cavity significantly, affecting sensitivity.
-
-Figure\,\ref{fig:total-power-vs-darm-offset-tuned} shows the power at the output port for the tuned configuration, where a \gls{DARM} offset of around \SI{1.6}{\pico\meter} produces approximately the same power as in the detuned case. The tuned case requires a smaller offset because of the larger effective transmissivity of the signal recycling cavity.
+Figure\,\ref{fig:total-power-vs-darm-offset-detuned} shows the power at the output port and in the arm cavities as a function of \gls{DARM} offset in the detuned configuration. For an offset of \SI{12}{\pico\meter}, the power at the output can be set to around \SI{10}{\milli\watt} with a difference of about 3\% in the power in the arms. Standard photodetectors used in \ALIGO{} and \AVIRGO{} can usually handle around \SI{100}{\milli\watt} but in \ETLF{} the \gls{DARM} offset required to reach this figure would reduce the power in the Y arm cavity significantly, affecting sensitivity. The optical spring in this case occurs at a frequency of around \checkme{\SI{0.02}{\hertz}}, which is \checkme{well} outside the sensitive band.
 
 \begin{figure}
   \centering
-  \begin{subfigure}{.49\textwidth}
-    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-total-power-vs-darm-offset-detuned.pdf}
-    \caption[Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity offset]{\label{fig:total-power-vs-darm-offset-detuned}Detuned.}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{.49\textwidth}
-    \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-total-power-vs-darm-offset-tuned.pdf}
-    \caption[Carrier power at the output port of \ETLF{} in tuned configuration as a function of differential arm cavity offset]{\label{fig:total-power-vs-darm-offset-tuned}blah.}
-  \end{subfigure}
-  \caption[Carrier power at the output port of \ETLF{} as a function of differential arm cavity offset]{\label{fig:total-power-vs-darm-offset}Tuned.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-total-power-vs-darm-offset-detuned.pdf}
+  \caption[Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity offset]{\label{fig:total-power-vs-darm-offset-detuned}Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity length (\gls{DARM}) offset. In \gls{DC} readout, as with any readout scheme, a steeper error signal slope results in better sensitivity to small changes in position. The differential arm detuning required to allow carrier light to enter the dark port for \gls{DC} readout involves an increase or decrease in the microscopic length of each arm cavity, and this changes the circulating power. The compromise must be made between maximising the slope while maintaining reasonably balanced arm cavities to prevent optical springs from entering the sensitive band and additional noise coupling.}
 \end{figure}
 
-\note{This creates an optical spring: see ``Optomechanical issues in the gravitational wave detector Advanced VIRGO'' - S.D. talked about this - it occurs at 0.2 Hz or so?}
-
 \subsection{Power in each light field}
-
-The power in each field within each relevant space or cavity of the interferometer is shown in Tables\,\ref{tab:et-lf-detuned-dc-powers} and \ref{tab:et-lf-tuned-dc-powers} for detuned and tuned operation, respectively.
+The power in each field within each relevant space or cavity of the interferometer is shown in Tables\,\ref{tab:et-lf-detuned-dc-powers} for the detuned interferometer.
 
 \begin{table}
   \centering
@@ -366,29 +322,6 @@ The power in each field within each relevant space or cavity of the interferomet
   \caption{\label{tab:et-lf-detuned-dc-powers}Powers in various parts of \ETLF{} in the detuned configuration. The input light is passed through \glspl{EOM} which impart control sidebands at two pairs of frequencies offset from the carrier. As the arm cavity \gls{FSR} is \checkme{higher} than that of the control sideband frequencies, the sideband light power in the arms is vastly smaller than the carrier power.}
 \end{table}
 
-\begin{table}
-  \centering
-  \resizebox{16cm}{!}{%
-    \begin{tabular}{r|ccccccccc|c}
-      & \textbf{\SI{-68}{\mega\hertz}} & \textbf{\SI{-57}{\mega\hertz}} & \textbf{\SI{-46}{\mega\hertz}} & \textbf{\SI{-11}{\mega\hertz}} & \textbf{Carrier} & \textbf{\SI{11}{\mega\hertz}} & \textbf{\SI{46}{\mega\hertz}} & \textbf{\SI{57}{\mega\hertz}} & \textbf{\SI{68}{\mega\hertz}} & \textbf{Total} \\
-      \hline
-      Input & 0 & 0 & 0 & 0 & \SI{3}{\watt} & 0 & 0 & 0 & 0 & \SI{3}{\watt} \\
-      After modulators & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{3}{\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{7.4}{\milli\watt} & \SI{19}{\micro\watt} & \SI{3}{\watt} \\
-      Power recycling cavity & \SI{2.2}{\micro\watt} & \SI{105}{\micro\watt} & \SI{2.1}{\micro\watt} & \SI{398}{\milli\watt} & \SI{65}{\watt} & \SI{398}{\milli\watt} & \SI{2.1}{\micro\watt} & \SI{105}{\micro\watt} & \SI{2.2}{\micro\watt} & \SI{66}{\watt} \\
-      Michelson cavity & \SI{1}{\micro\watt} & \SI{85}{\micro\watt} & \SI{1}{\micro\watt} & \SI{190}{\milli\watt} & \SI{32}{\watt} & \SI{190}{\milli\watt} & \SI{1}{\micro\watt} & \SI{85}{\micro\watt} & \SI{1}{\micro\watt} & \SI{33}{\watt} \\
-      Arm cavity X & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \SI{8.2}{\milli\watt} & \SI{18}{\kilo\watt} & \SI{8.2}{\milli\watt} & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \SI{18}{\kilo\watt} \\
-      Arm cavity Y & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \SI{9.1}{\milli\watt} & \SI{18}{\kilo\watt} & \SI{9.1}{\milli\watt} & \SI{10}{\nano\watt} & \SI{1}{\micro\watt} & \SI{10}{\nano\watt} & \SI{18}{\kilo\watt} \\
-      Signal recycling cavity & \SI{10}{\nano\watt} & \SI{80}{\micro\watt} & \SI{10}{\nano\watt} & \SI{304}{\micro\watt} & \SI{192}{\milli\watt} & \SI{304}{\micro\watt} & \SI{10}{\nano\watt} & \SI{80}{\micro\watt} & \SI{10}{\nano\watt} & \SI{54}{\milli\watt} \\
-      Output & \SI{1}{\nano\watt} & \SI{16}{\micro\watt} & \SI{1}{\nano\watt} & \SI{61}{\micro\watt} & \SI{11}{\milli\watt} & \SI{61}{\micro\watt} & \SI{1}{\nano\watt} & \SI{16}{\micro\watt} & \SI{1}{\nano\watt} & \SI{11}{\milli\watt} \\
-    \end{tabular}
-  }
-  \caption{\label{tab:et-lf-tuned-dc-powers}Powers in various parts of \ETLF{} in the tuned configuration. Note that the control sideband frequencies involving $f_2$ are different from those in the detuned case. In this case, the power in the upper and lower sidebands is identical everywhere because they have there are no detuned cavities to separate their resonant conditions (see Section\,\ref{sec:et-lf-control-challenges}). The light incident upon the interferometer from the \glspl{EOM} has the same power, but the power in the rest of the interferometer changes due to the different coupling between the interferometer's cavities.}
-\end{table}
-
-\section{Conceptual control scheme}
-
-To estimate a control scheme for \ETLF{}, we must decide upon the ports at which we will sense signals from the interferometer and calculate the response of its degrees of freedom to these sensors.
-
 \subsection{\label{sec:etlf-readout-ports}Readout ports}
 \note{Figure xx} shows some available readout ports for \ETLF{} where the sidebands and carrier may be measured for the purposes of control:
 \begin{itemize}
@@ -403,16 +336,16 @@ For the purposes of the control simulations, each readout port contains photodet
   \centering
   {\renewcommand{\arraystretch}{1.2} % for extra vertical spacing between rows
     \begin{tabular}{r|ccc}
-      \textbf{Frequency} & \textbf{Output port} & \textbf{Power recycling cavity pick-off} & \textbf{Reflected light pick-off} \\
+      \textbf{Frequency offset} & \textbf{Output port} & \textbf{Power recycling cavity pick-off} & \textbf{Reflected light pick-off} \\
       \hline
-      \gls{DC} & \ASDC{} & \POPDC{} & \REFLDC{} \\
+      \num{0} & \ASDC{} & \textemdash & \textemdash \\
       $f_1$    & \ASFIRSTI{}, \ASFIRSTQ{} & \POPFIRSTI{}, \POPFIRSTQ{} & \REFLFIRSTI{}, \REFLFIRSTQ{} \\
       $f_2$    & \ASSECONDI{}, \ASSECONDQ{} & \POPSECONDI{}, \POPSECONDQ{} & \REFLSECONDI{}, \REFLSECONDQ{} \\
-      $f_1 + f_2$ & \ASSUMI{}, \ASSUMQ{} & \POPSUMI{}, \POPSUMQ{} & \REFLSUMI{}, \REFLSUMQ{} \\
-      $f_2 - f_1$ & \ASDIFFI{}, \ASDIFFQ{} & \POPDIFFI{}, \POPDIFFQ{} & \REFLDIFFI{}, \REFLDIFFQ{}
+      $f_2 - f_1$ & \ASDIFFI{}, \ASDIFFQ{} & \POPDIFFI{}, \POPDIFFQ{} & \REFLDIFFI{}, \REFLDIFFQ{} \\
+      $f_1 + f_2$ & \ASSUMI{}, \ASSUMQ{} & \POPSUMI{}, \POPSUMQ{} & \REFLSUMI{}, \REFLSUMQ{}
     \end{tabular}
   }
-  \caption{\label{tab:et-lf-probes}blah...}
+  \caption[Probes that sense the light fields propagating within \ETLF{}]{\label{tab:et-lf-probes}Probes that sense the light fields propagating within \ETLF{} with respect to the carrier frequency. The carrier is sensed by \ASDC{} at the interferometer's output port, which is the light that propagates through the signal recycling mirror. The control sidebands, and the beats between the sidebands, are sensed at the same port demodulated at each relevant frequency, along with similar readouts sensing a small transmission of light through a folding mirror in the power recycling cavity (\POP{}) and the light reflected from the interferometer (\REFL{}).}
 \end{table}
 
 \subsection{Driving coefficients}
@@ -429,7 +362,7 @@ In order to calculate the response of each degree of freedom as defined in Secti
     \gls{PRCL} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0} & \num{1} & \num{0} \\
     \gls{SRCL} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0} & \num{0} & \num{1} \\
   \end{tabular}
-  \caption{\label{tab:et-lf-driving-coefficients}blah...}
+  \caption[Driving coefficients for each mirror and each degree of freedom of \ETLF{}]{\label{tab:et-lf-driving-coefficients}Driving coefficients for each mirror and each degree of freedom of \ETLF{}. \gls{CARM} and \gls{DARM} involve the driving of the \glspl{ETM} in- and out-of-phase, respectively. \gls{MICH} involves moving the \glspl{ITM} differentially, but to avoid sensing \gls{DARM} effects the \glspl{ETM} must be moved too. In this case, the \glspl{ETM} must be driven with an opposite sign to their respective \glspl{ITM} due to the fact that the mirrors' high-reflective surfaces are in opposite directions. \gls{PRCL} and \gls{SRCL} involve moving the power and signal recycling mirrors, respectively.}
 \end{table}
 
 \subsection{Control signals}
@@ -489,7 +422,9 @@ Error signals corresponding to the suggested readouts for each degree of freedom
 
 Figure\,B shows the \ASDC{} readout, and the slope is zero when the arm cavities are tuned, consistent with Figure\,\ref{fig:total-power-vs-darm-offset-detuned}, showing that some classical carrier light power is required for \gls{DC} readout. Although a higher slope can be found at higher offsets, this results in reduced sensitivity due to a loss in arm power. Figure\,E shows the error signal crossing the operating point at a power of \SI{4.2}{\milli\watt}, showing the requirement for an offset.
 
-This readout scheme is not optimal, and does not consider a number of other possibilities such as the use of secondary reflections arising from the anti-reflective coatings on the beam splitter and \glspl{ITM} or the use of higher order combinations of $f_1$ and $f_2$ such as \emph{3f} signals used in the lock acquisition sequence of \VIRGO{} \cite{Acernese2008} and \ALIGO{} \cite{Staley2014}. It serves, however, as a first concept for the control of \ETLF{} with \SI{25}{\hertz} signal recycling cavity detuning. The next section will discuss some noise implications of \ETLF{}'s low frequency control strategy.
+The parameters used in the proposed control scheme are shown in Table\,\note{XXX} alongside the pre-existing parameters from the design study. This scheme is not optimal, and does not consider a number of other possibilities such as the use of secondary reflections arising from the anti-reflective coatings on the beam splitter and \glspl{ITM} or the use of higher order combinations of $f_1$ and $f_2$ such as \emph{3f} signals used in the lock acquisition sequence of \VIRGO{} \cite{Acernese2008} and \ALIGO{} \cite{Staley2014}. It serves, however, as a first concept for the control of \ETLF{} with \SI{25}{\hertz} signal recycling cavity detuning. The next section will discuss some noise implications of \ETLF{}'s low frequency control strategy.
+
+\note{Put updated parameters in a table here}
 
 \section{Control noise}
 \note{Highlight the dynamic range problem with photodetectors sensing the low frequency motion (poster from Florence), and introduce the basic control loop developed with SimulinkNb - discuss the noises included, the assumptions made, etc. Finish with the list from the poster of what has to be done: further modelling of suspension SPIs, or better sensors, or both, etc...}
@@ -498,11 +433,8 @@ This readout scheme is not optimal, and does not consider a number of other poss
 \note{Take transfer function through S.A. from lowest noise site measured...}
 \note{Assume optimal worst contribution of noise to ETMs...}
 
-\section{Updated parameters for ET-LF}
-\note{Copy table from design study, but with updated values from simulations}
-\note{Italicise the parameters unchanged from the design study?}
-
-\section{Future work}
+\section{Outlook and future work}
+The work presented in this chapter shows that \ETLF{} can in principle be controlled with an \ALIGO{} style scheme, though with increased cross-coupling of degrees of freedom particularly for \gls{MICH} and \gls{SRCL}. Some sensing noise issues remain unaddressed, as have more exotic control schemes such as the use of additional modulation frequencies or subcarriers.
 
 \subsection{Assessing the controllability of the sensing matrix}
 In \ALIGO{} the conceptual control scheme was first tested at the \CALTECHFORTYM{} and it is probable that any technical design for \ETLF{} will require a similar test. At this stage a quantative assessment of the performance that a particular control scheme might provide might take the form of a technique presented by Mantovani and Freise \cite{Mantovani2008} developed for alignment control in \VIRGO{}, but suitable for longitudinal control. This involves the calculation of a \emph{quality parameter} representing the controllability of a given set of sensors and degrees of freedom. This approach only makes sense when $M$ represents the interferometer at its operating point, which means that the residual motion of controlled degrees of freedom does not create a significant cross-coupling. This approach requires hierarchical gain to be applied in a lock acquisition sequence, and will be the subject of future work.

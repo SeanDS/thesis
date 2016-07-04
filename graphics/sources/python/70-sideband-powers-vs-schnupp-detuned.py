@@ -23,7 +23,7 @@ delimiter = ','
 data = np.genfromtxt(data_path, delimiter=delimiter, skip_header=n_headers)
 
 # figure
-fig = plt.figure(figsize=lf.FIG_SIZE_C)
+fig = plt.figure(figsize=lf.FIG_SIZE_A)
 
 ax1 = fig.gca()
 

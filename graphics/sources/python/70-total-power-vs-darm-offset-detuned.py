@@ -23,7 +23,7 @@ delimiter = ','
 data = np.genfromtxt(data_path, delimiter=delimiter, skip_header=n_headers)
 
 # figure
-fig = plt.figure(figsize=lf.FIG_SIZE_C)
+fig = plt.figure(figsize=lf.FIG_SIZE_A)
 
 ax1 = fig.add_subplot(211)
 ax2 = fig.add_subplot(212, sharex=ax1)
@@ -46,9 +46,9 @@ ax2.plot(data[:, 0] * 1e12, data[:, 23] * 1e-3, '-', color=colours.next(), alpha
 # vertical line for DARM offset
 ax2.vlines(darm_offset * 1e12, 1, 30, colors=colour_line, linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Power (W)')
+ax1.set_ylabel('Total power (W)')
 ax2.set_xlabel('DARM offset (pm)')
-ax2.set_ylabel('Power (kW)')
+ax2.set_ylabel('Carrier power (kW)')
 
 ax1.set_xlim([-1e2, 1e2])
 ax1.set_ylim([1e-5, 1e0])
@@ -59,7 +59,7 @@ ax2.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend(['Output', 'ET-LF DARM offset'], loc='lower left', framealpha=0.8)
+ax1.legend(['Output port', 'ET-LF DARM offset'], loc='lower left', framealpha=0.8)
 ax2.legend(['X arm', 'Y arm', 'ET-LF DARM offset'], loc='lower left', framealpha=0.8)
 
 plt.tight_layout()
