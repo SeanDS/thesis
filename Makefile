@@ -162,6 +162,8 @@ $(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-c
 
 $(GFXGENPY)/60-new-amplifier-dewhitening-sims.pdf: $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
 
+$(GFXGENPY)/70-et-d-sensitivity-curves.pdf: $(DATA)/70-et-d-sensitivity-curves.txt
+
 $(GFXGENPY)/70-reflected-power-vs-prm-transmissivity.pdf: $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv
 
 $(GFXGENPY)/70-sideband-powers-vs-srcl-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-srcl-tuned.csv

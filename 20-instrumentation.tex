@@ -70,6 +70,34 @@ Getting access to the phase information encoded within the light is more difficu
 
 \note{Explain why homodyne readout is not to be used in future detectors over DC readout: because the LO comes from the reflected IFO light, which although some has been filtered by the IFO, it also contains laser light that has noise on it (cite Sebastian's paper, Corbitt PRL paper on parity). DC readout is great because it filters the light by the arm cavities.}
 
+In Equation\,\ref{eq:mich-p-out} we see that a static field $\frac{P_{\text{in}}}{2}$ is present upon the photodetector, independent of the arm length change. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer at an operating point commonly referred to as ``half way up the fringe''. Here, the interferometer's mirrors are nominally positioned such that the output signal is oscillating about the midpoint between crest and trough (see Figure\,\ref{fig:optimal-operating-point}). As the gradient is steepest at this point, any small changes to the relative arm length of the Michelson interferometer result in a significant difference in power at the photodetector. This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations.
+
+%% FIXME: change this plot's x-labels to use wavelength, to fit with the conclusion in the text.
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-optimal-operating-point.pdf}
+  \caption[Fringe]{\label{fig:optimal-operating-point}Optimal operating point.}
+\end{figure}
+
+By inspecting Equation\,\ref{eq:mich-p-out}, it is clear to see that there must exist, in cases where there is a signal due to a difference in arm length, a static photodetector power independent of the arm length. This does not contribute any displacement information to the measurement, but does contribute shot noise:
+\begin{equation}
+  P_{\text{shot, out}} = \sqrt{2 h f_0 P_{\text{in}}},
+\end{equation}
+where $h$ is Planck's constant, $f_0$ is the light frequency and $P_{\text{in}} = A_{\text{in}}^2$, the power entering the interferometer at the beam splitter. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \gls{SNR}. The \gls{SNR} is:
+\begin{equation}
+  \text{SNR} = \frac{P_{\text{out}}}{P_{\text{shot, out}}} = \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \left( 1 + \cos \left(k \Delta x \right) \right).
+\end{equation}
+
+The $\Delta x$ term in Equation\,\ref{eq:mich-p-out} is a combination of a static arm length \emph{detuning}\textemdash representing the arm length mismatch required to reach the desired operating point\textemdash and a differential gravitational wave signal $\Delta x_{\text{GW}}$. A suitable choice of $ x_{\text{tune}}$ can remove the majority of the static power present at the output. Setting the slope of the \gls{SNR} with respect to the tuning to zero,
+\begin{equation}
+  \frac{\Delta \text{SNR}}{\Delta x_{\text{GW}}} = -k \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \sin \left(k \Delta x\right) = 0,
+\end{equation}
+we find that maximum \gls{SNR} is achieved for static tunings 
+\begin{equation}
+  \Delta x \text{ mod } \lambda = 0.
+\end{equation}
+This result shows that the optimal operating point in terms of \gls{SNR} is at the point where the light from the two arms interferes destructively. While any multiple of $\lambda$ will satisfy the \gls{SNR} condition as defined, in reality we have not considered laser noise coupling. The more matched the arm lengths are, the lower the laser noise couples to the output port. In reality there are also mismatches in the reflectivities of the mirrors in the arms: this creates an asymmetry called a \emph{contrast defect} which leads to additional shot noise at the output port.
+
 \subsection{Numerical simulation tools}
 Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
 
@@ -293,7 +321,7 @@ As seismic noise is large in amplitude, it is able to move test masses in laser 
 
 Gravitational waves primarily excite the longitudinal degree of freedom of each mirror (along the optical axis), and so a vertical mirror would not create seismic noise in the gravitational wave channel due to vertical seismic noise. Real mirrors, however, contain imperfections in their manufacturing and couple a small amount of vertical motion into the horizontal direction. In addition, the curvature of the Earth over distances like the \SI{4}{\kilo\meter} arms in \ALIGO{} mean that the local gravitational fields at the \glspl{ETM} are not quite aligned to those of the \glspl{ITM}, and so to achieve cavity resonance the operating point requires a slight off-horizontal tilt, which allows seismic noise coupling. In \ALIGO{} the requirement for vertical to horizontal coupling is \num{1e-3}.
 
-\subsubsection{Gravity-gradient noise}
+\subsubsection{\label{sec:gravity-gradient-noise}Gravity-gradient noise}
 Changes in the density of the ground near the test masses created by seismic noise can couple to the gravitational wave channel via \emph{gravity-gradient} noise, also referred to as \emph{Newtonian} noise. Few experiments have successfully been able to decouple this subtle effect from other sources of noise, but it is believed from extensive modelling effort that this noise source will represent a problem particularly for low frequency detectors such as \ETLF{} \cite{ET2011, Hild2011}. Simulations have shown a benefit in locally shaping the profile of the ground near test masses \cite{Harms2014}, potentially creating a benefit for future ground-based detectors, as well as through the subtraction of gravity-gradient noise inferred from a series of auxiliary witness sensors \cite{Harms2015}.
 
 \subsection{Technical noise}

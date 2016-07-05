@@ -59,117 +59,112 @@
 \end{itemize}
 
 \section{The Einstein Telescope Facility}
-In \checkme{2011} a group of scientists primarily based in Europe completed a design study to examine the requirements for a gravitational wave observatory that pushes the \MI{} topology to its limits, while keeping any newly built facility generic enough to allow for the implementation of new topologies as the state of the art evolves. In this study they laid out the expected improvements in technologies to mitigate technical noise sources currently challenging the sensitivity of the third generation of detectors, with a number of practical differences to existing facilities.
+In \checkme{2011} a group of scientists primarily based in Europe completed a design study to examine the requirements for a gravitational wave observatory that pushes the \MI{} topology to its limits, while making any newly built facility generic enough to allow for the implementation of new topologies as the state of the art evolves. In this study they laid out the expected improvements in technologies to mitigate fundamental and technical noise sources currently limiting the sensitivity of the third generation of detectors, with a number of practical differences to existing facilities.
 
-The proposed \ET{} facility composes six interferometers split between the three corners of a triangle with length \SI{10}{\kilo\meter} long. The idea is to exploit the geometry to implement \MI{} with \SI{10}{\kilo\meter} at the three vertices of the triangle to benefit from the colocation of multiple interferometers. The extended arm length over existing facilities provides less susceptibility to displacement noise sources by a factor of \cite{Dwyer2015, aligocosmic2016},
+The proposed \ET{} facility composes six \DRFPMI{}s split between the three corners of a triangle with length \SI{10}{\kilo\meter} long. The idea is to exploit the geometry to implement interferometers with \SI{10}{\kilo\meter} arms meeting at the three vertices to benefit from the colocation of multiple interferometers. The extended arm length over \ALIGO{} provides less susceptibility to displacement noise sources by a factor of \cite{Dwyer2015, aligocosmic2016}:
 \begin{equation}
   \frac{h_{\SI{10}{\kilo\meter}}}{h_{\SI{4}{\kilo\meter}}} = \sqrt{\frac{\SI{10}{\kilo\meter}}{\SI{4}{\kilo\meter}}} \approx 1.58,
 \end{equation}
-translating into an increase in the observable volume by around $3.95$, assuming that displacement noise sources stay at the same magnitude.
+translating into an increase in the observable volume of the universe by around $3.95$, assuming that displacement noise sources stay the same.
 
-Seismic noise limits the sensitivity of current generation detectors below \SI{10}{\hertz}, and there are astrophysical advantages to being able to achieve good sensitivity at these frequencies \cite{Sathyaprakash2012}. The majority of spinning neutron stars discovered via optical techniques have had orbital frequencies $f$ below \SI{10}{\hertz}. With enhanced low frequency sensitivity, \gls{ET} would have greater sensitivity to such ``chirp'' signals, and as these signals increase in frequency with time proportional to $\frac{1}{f^{8/5}}$ the ability to see them above the noise from an earlier time would assist in being able to characterise the source parameters. Signals at \SI{2}{\hertz} stay in \ETLF{}'s sensitive band for hours instead of milliseconds as witnessed for instance with GW150914 \cite{ET2011} \note{cite detection paper}. Having extra time to observe chirps also provides the possibility to track the signal evolution with corresponding changes in the signal recycling cavity tuning \cite{Simakov2014}.
+Seismic noise limits the sensitivity of current generation detectors below \SI{10}{\hertz}, and there are astrophysical advantages to being able to achieve good sensitivity at these frequencies \cite{Sathyaprakash2012}, particularly in the ability to see the inspiral and merger of high mass black hole binary coalescences. The majority of spinning neutron stars discovered via optical techniques have also had orbital frequencies $f$ below \SI{10}{\hertz} where fundamental noise limits the ability for the current generation of detectors to see such signals. Signals at \SI{2}{\hertz} stay in \ETLF{}'s sensitive band for hours instead of milliseconds as witnessed for instance with GW150914 \cite{ET2011} \note{cite detection paper}. Having extra observation time provides the possibility to track the signal evolution with corresponding changes in the signal recycling cavity tuning \cite{Simakov2014}. With greatly enhanced low frequency sensitivity, \gls{ET} would have unprecedented sensitivity to such signals.
 
 \subsection{New facility}
-Seismic noise in current detectors limits the sensitivity at low frequencies, and creates challenging control requirements due to the \gls{RMS} motion of the mirrors due to the motion of the ground. The interferometer beam tubes will be underground \note{how far?} to mitigate seismic noise coupling.
-
-The suspension systems for the main test masses are based on those of the superattenuator in \AVIRGO{}. The \checkme{\SI{17}{\meter}} long pendulum stage \note{which stage?} pushes the longitudinal resonant frequency down to \checkme{\SI{0.1}{\hertz}}, providing good attenuation of seismic noise above \SI{2}{\hertz}.
-
-\subsection{Xylophone configuration}
-To provide maximum astrophysical reach the facility is intended to provide sensitivity across an unprecedented bandwidth, from around \SI{2}{\hertz} to \SI{10}{\kilo\hertz}\textemdash a bandwidth significantly larger than that of existing detectors. It was realised that the most technically feasible option would be to implement a number of colocated, moderate bandwidth detectors, each optimised to provide good sensitivity in a certain band \cite{Hild2010}, an idea first proposed for \ALIGO{} \cite{Conforto2004}. In the \emph{ET-C xylophone} configuration \cite{Hild2010}, a low power, cryogenic interferometer optimises sensitivity to reduce radiation pressure noise at the expense of shot noise, whilst a high power interferometer optimises high frequency sensitivity through the reduction of shot noise.
+As discussed in Section\,\ref{sec:seismic-noise}, seismic noise in current detectors limits the sensitivity at low frequencies and creates challenging control requirements due to the \gls{RMS} mirror motion created by ground vibrations. The \ET{} interferometers' beam tubes will be underground \note{how far?} to mitigate seismic noise coupling. This location also helps to limit the impact of gravity gradient noise, as discussed in Section\,\ref{sec:gravity-gradient-noise}, which is expected to become a problem as seismic noise is mitigated.
 
 \subsection{Colocated detectors}
+There are a number of benefits to having multiple identical interferometers located in the same facility. As the low and high frequency detectors at each vertex will have identical designs, the signal and noise properties across the detectors will be similar and so it should be possible to combine the signals from each interferometer in such a way as to generate a \emph{null stream} that contains noise but not signal \cite{Hewitson2005, Ajith2006}. This will be useful for the characterisation of limiting noise sources and will be particularly beneficial for the new noise sources that may be interrogated due to the increased sensitivity. The arrangement of three detectors in a triangle also allows the facility to be optimally sensitive to gravitational waves from all directions \cite{Winkler1985}, whereas existing single-interferometer detectors are sensitive only to incident signals in the plane of the detector.
 
-\subsubsection{Antenna pattern}
-As the configuration is arranged into a triangle with the interferometers at each of the three vertices, the combined readout signals from each of the interferometers can be combined in such a way as to achieve optimal sensitivity in all directions.
+\subsection{Xylophone configuration}
+To provide maximum astrophysical reach the facility is intended to provide sensitivity across an unprecedented bandwidth, from around \SI{2}{\hertz} to \SI{10}{\kilo\hertz}\textemdash a bandwidth significantly larger than that of existing detectors. It was realised that the most technically feasible option would be to implement a number of colocated detectors, each optimised to provide good sensitivity in either low or high frequencies \cite{Hild2010}, an idea first proposed for \ALIGO{} \cite{Conforto2004}. In the proposed \emph{ET-C xylophone} configuration \cite{Hild2010}, a low power, cryogenic interferometer optimises sensitivity to reduce radiation pressure noise at the expense of shot noise, whilst a high power interferometer optimises high frequency sensitivity through the reduction of shot noise. This design was later updated to the \emph{ET-D xylophone} configuration \cite{Hild2011}, the most up-to-date at the time of writing, which improved upon the design's loss and noise assumptions.
 
-\subsubsection{Null streams}
-The use of three separate xylophone interferometers sensing the
+% data from http://www.et-gw.eu/etsensitivities
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-et-d-sensitivity-curves.pdf}
+  \caption[Sensitivity curves for the Einstein Telescope]{\label{fig:et-d-sensitivity}Sensitivity of the \ET{} detectors, based on the ET-D design \cite{Hild2011}. \ETLF{} is optimised for low frequencies, \ETHF{} is optimised for high frequencies, and the combination yields sensitivity between \SI{2}{\hertz} and \SI{10}{\kilo\hertz}.}
+\end{figure}
 
-The facility will have a triangle of tunnels, each \SI{10}{\kilo\meter} long, with each of the six interferometers inhabiting two of the three;
+\subsubsection{ET-LF}
+The low frequency detector consists of a \DRFPMI{} configuration with a detuned signal recycling cavity. This detuning allows for enhanced sensitivity at the signal recycling cavity pole where the light-mirror dynamics create an optical spring that provides sensitivity below the \gls{SQL} at the spring frequency, as discussed in Section\,\ref{sec:signal-recycling}. The cavities will have \SI{18}{\kilo\watt} of light power, which is considerably lower than that of \ALIGO{} at design sensitivity (approximately \SI{800}{\kilo\watt}), facilitating reduced quantum radiation pressure noise at low frequencies. Cryogenic test masses are to be used to facilitate a reduction in thermal noise, and the wavelength of the carrier will be changed from the standard \SI{1064}{\nano\meter} to \SI{1550}{\nano\meter} to utilise lower noise materials at such temperatures. Two filter cavities to facilitate frequency dependent squeezing for the further suppression of quantum noise are also included.
 
-Each corner of the triangle will contain one low and one high frequency interferometer in a pair to allow for 
+The suspension systems for the main test masses are based on those of the \emph{superattenuator} in \VIRGO{} \cite{Acernese2010}. The \checkme{\SI{17}{\meter}} long pendulum stage \note{which stage?} pushes the longitudinal resonant frequency down from around \SI{1}{\hertz} in existing detectors to \checkme{\SI{0.1}{\hertz}}, providing better attenuation of seismic noise above \SI{2}{\hertz}.
 
-\subsection{ET-LF}
-The low frequency detector consists of a \DRFPMI{} configuration with a detuned signal recycling cavity. This detuning allows for enhanced sensitivity at the signal recycling cavity pole, where the light-mirror dynamics create an optical spring that provides sensitivity below the \gls{SQL} at the spring frequency (see Section\,\ref{sec:signal-recycling}). The cavities will have \SI{18}{\kilo\watt} of light power, which is considerably lower than that of \ALIGO{} at design sensitivity (approximately \SI{800}{\kilo\watt}); cryogenic test masses to facilitate a reduction in thermal noise and frequency dependent squeezing to reduce quantum noise.
+The sensitivity of \ETLF{} is shown in \checkme{blue} in Figure\,\ref{fig:et-d-sensitivity}.
 
-\note{Two filter cavities... p255 design study}
+\subsubsection{ET-HF}
+\ETHF{} takes the designs of \ALIGO{} and \AVIRGO{} and pushes it to its high frequency limit, and adds some new technologies such as LG33 modes \cite{Carbone2013} and frequency dependent squeezing to reduce coating thermal and quantum noise. The combination of greater arm cavity power, heavier test masses, frequency dependent squeezing and improved coatings and materials will increase sensitivity at frequencies above a few hundred \SI{}{\hertz} beyond the current generation by a factor of around \checkme{\num{10}}.
 
-The sensitivity of \ETLF{} is shown in Figure\,XXX
+The sensitivity of \ETHF{} is shown in \checkme{orange} in Figure\,\ref{fig:et-d-sensitivity}.
 
-\subsection{ET-HF}
+\section{\label{sec:et-lf-control-challenges}Control challenges with the \ET{}}
+Both \ETLF{} and \ETHF{} will present new challenges to the control of large-scale \DRFPMI{}s. Although \ETHF{} can to some extent be seen as a larger version of \ALIGO{} and \AVIRGO{}, and it may therefore be possible to adapt much of the advance detectors' strategies for both longitudinal and angular control, some aspects such as the use of LG33 modes and the presence of parametric instabilities \cite{Evans2015} require extensive research to understand the implications they may have on control. \ETLF{} will also use a topology that resembles existing generation detectors, but it pushes the sensitivity at low frequencies further down and this presents additional challenges with sensing and noise. This chapter will discuss the longitudinal control of \ETLF{}, focusing in particular on the challenge of controlling the interferometer in its detuned state.
 
-The sensitivity of \ETHF{} is shown in Figure\,XXX (same plot as ET-LF)
+\ETLF{} employs a detuned signal recycling cavity to increase the sensitivity of the interferometer at low frequencies. The ability for a detuned signal recycling to shift the most sensitive frequency has been demonstrated in \GEO{} between \SI{200}{\hertz} and \SI{1}{\kilo\hertz} \cite{Hild2006}, however the plan for \ETLF{} is to detune the signal recycling cavity to around \SI{25}{\hertz} which has not been demonstrated before in a suspended audio-band detector. With tuned signal recycling, the sidebands used for control of the differential arm cavity mode are present within the signal recycling cavity with equal amplitude. In detuned operation, the sidebands no longer have equal amplitude and some of the interferometer's noise couplings that otherwise cancel at the output in the tuned case no longer cancel \cite{Hild2007}. The phase modulation of the control sidebands, created by an \gls{EOM} on the input path, also gets partially converted to amplitude modulation by the detuning, and this can lead to issues with the dynamic range of any photodetectors used to sense the readout \cite{Grote2007}. Finally, the asymmetric sidebands create additional zero crossings and \gls{DC} offsets in the error signal from the signal recycling cavity which for the tuned case do not appear. Often it can be difficult to find a port at which to sense the motion of the signal recycling cavity decoupled from other cavities, and this effect can be exacerbated by large detunings such as in \ETLF{} where noise cross-couplings can become more significant \cite{Hild2007}.
 
-\note{One filter cavity... p255 design study}
+In the \ET{} design study the discussion for \ETLF{} stopped short of a control scheme. The rest of this chapter will discuss a conceptual approach to the control of \ETLF{} and will highlight the future work that must be undertaken before a technical design for the control of \ETLF{} can be produced.
 
 \section{Longitudinal control of an interferometer with multiple degrees of freedom}
-A successful control scheme for an interferometer must satisfy a number of requirements. When the interferometer is in its uncontrolled state, the control scheme must be able to bring it to the operating point (\emph{lock acquisition}). Once at the operating point, it must be able to keep it there for a long period of time by controlling the impact of noise. Finally, the signal that represents the gravitational wave channel must have low enough noise, and therefore high enough sensitivity, to meet the design goals of the scheme.
+A successful control scheme for an interferometer must satisfy a number of requirements. When the interferometer is in its uncontrolled state, the control scheme must be able to bring it to the operating point where it has the desired response to incident gravitational wave signals in a process called \emph{lock acquisition}. Once at the operating point, it must be robust against small perturbations by controlling the impact of noise and signal nonstationarities. Finally, the signal that represents the gravitational wave channel must have low enough noise, and therefore high enough sensitivity, to meet the design goals of the scheme.
 
 The final lock acquisition scheme is inextricably linked to the technical environment in which the interferometer will operate, and so it is inappropriate to discuss this while \gls{ET}'s technical design is unknown. We will focus our efforts, therefore, on the second and third challenges. The low-noise readout in both \ETLF{} and \ETHF{} will be \gls{DC} readout, which is the standard technique for \GEOHF{} and the advanced detectors \cite{Hild2007, Ward2008, Fricke2012}.
 
-\subsection{Low-noise readout of the gravitational wave channel}
-In Equation\,\ref{eq:mich-p-out} we see that a static field $\frac{P_{\text{in}}}{2}$ is present upon the photodetector, independent of the arm length change. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer at an operating point commonly referred to as ``half way up the fringe''. Here, the interferometer's mirrors are nominally positioned such that the output signal is oscillating about the midpoint between crest and trough (see Figure\,\ref{fig:optimal-operating-point}). As the gradient is steepest at this point, any small changes to the relative arm length of the Michelson interferometer result in a significant difference in power at the photodetector. This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations.
-
-%% FIXME: change this plot's x-labels to use wavelength, to fit with the conclusion in the text.
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-optimal-operating-point.pdf}
-  \caption[Fringe]{\label{fig:optimal-operating-point}Optimal operating point.}
-\end{figure}
-
-By inspecting Equation\,\ref{eq:mich-p-out}, it is clear to see that there must exist, in cases where there is a signal due to a difference in arm length, a static photodetector power independent of the arm length. This does not contribute any displacement information to the measurement, but does contribute shot noise:
-\begin{equation}
-  P_{\text{shot, out}} = \sqrt{2 h f_0 P_{\text{in}}},
-\end{equation}
-where $h$ is Planck's constant, $f_0$ is the light frequency and $P_{\text{in}} = A_{\text{in}}^2$, the power entering the interferometer at the beam splitter. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \gls{SNR}. The \gls{SNR} is:
-\begin{equation}
-  \text{SNR} = \frac{P_{\text{out}}}{P_{\text{shot, out}}} = \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \left( 1 + \cos \left(k \Delta x \right) \right).
-\end{equation}
-
-The $\Delta x$ term in Equation\,\ref{eq:mich-p-out} is a combination of a static arm length \emph{detuning}\textemdash representing the arm length mismatch required to reach the desired operating point\textemdash and a differential gravitational wave signal $\Delta x_{\text{GW}}$. A suitable choice of $ x_{\text{tune}}$ can remove the majority of the static power present at the output. Setting the slope of the \gls{SNR} with respect to the tuning to zero,
-\begin{equation}
-  \frac{\Delta \text{SNR}}{\Delta x_{\text{GW}}} = -k \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \sin \left(k \Delta x\right) = 0,
-\end{equation}
-we find that maximum \gls{SNR} is achieved for static tunings 
-\begin{equation}
-  \Delta x \text{ mod } \lambda = 0.
-\end{equation}
-This result shows that the optimal operating point in terms of \gls{SNR} is at the point where the light from the two arms interferes destructively. While any multiple of $\lambda$ will satisfy the \gls{SNR} condition as defined, in reality we have not considered laser noise coupling. The more matched the arm lengths are, the lower the laser noise couples to the output port. In reality there are also mismatches in the reflectivities of the mirrors in the arms: this creates an asymmetry called a \emph{contrast defect} which leads to additional shot noise at the output port.
-
-\subsubsection{The dc readout technique}
-The \gls{DC} readout technique is a form of homodyne readout (see Section\,\ref{sec:homodyne-readout}) that involves a compromise between the best sensitivity and the technical complexity. The operating point is kept close to the dark fringe to optimise shot noise, but a slight offset is introduced between the differential round trip phase of the arms in order to allow some of the carrier light to enter the readout port where it acts as a homodyne local oscillator to the signal sidebands. In practice, this detuning \textemdash of the order \SI{}{\pico\meter} at the arm cavities in \ALIGO{}\textemdash is sufficiently small to allow the required sensitivities to be reached. This provides improved sensitivity over heterodyne techniques \cite{Fricke2012}, and in squeezed interferometers such as \ETLF{} and \ETHF{} it avoids the need to inject squeezing at \gls{RF} sideband frequencies in addition to the carrier frequency.
+\subsection{The dc readout technique}
+The \gls{DC} readout technique is a form of homodyne readout that involves a compromise between the best sensitivity and technical complexity. The operating point is kept close to the \emph{dark fringe} (see Section\,\ref{sec:operating-point}) to optimise shot noise, but a slight offset is introduced between the differential round trip phase of the arms in order to allow some of the carrier light to enter the readout port where it acts as a homodyne local oscillator to the signal sidebands (see Section\,\ref{sec:homodyne-readout}). In practice, this detuning \textemdash of the order \SI{}{\pico\meter} at the arm cavities in \ALIGO{}\textemdash is sufficiently small to allow the required sensitivities to be reached. This provides improved sensitivity over heterodyne techniques \cite{Fricke2012}, and in squeezed interferometers it avoids the need to inject squeezing at \gls{RF} sideband frequencies in addition to the carrier frequency. Both \ETLF{} and \ETHF{} will utilise \gls{DC} readout to sense the differential motion of the arm cavities in order to sense the effect of gravitational waves.
 
 \subsection{\label{sec:dofs-of-drfpmi}Degrees of freedom of the \DRFPMI{}}
-As \ETLF{} and \ETHF{} will employ \gls{DC} readout, there is no local oscillator phase or alignment to control (see Section\,\ref{sec:homodyne-readout}). The degrees of freedom that must be controlled in order to reach the design sensitivity are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths. These are defined in the following sections.
+The \emph{degrees of freedom} of an interferometer are the non-degenerate ways in which the interferometer's mirrors may move away from the operating point. Each degree of freedom has a different precision requirement, with the most stringent typically being the degree of freedom corresponding to the gravitational wave channel. With \gls{DC} readout there is no local oscillator phase or alignment to control, and so in a \DRFPMI{} the main degrees of freedom to consider are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths. These are defined in the following sections and shown in Figure\,XXX.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-darm-schnupp-offsets.pdf}
-  \caption[Differential arm and Schnupp offsets in a \DRFPMI{}]{\label{fig:darm-schnupp-offsets}\note{Make this a generic diagram of ETLF with the ports and readouts defined: output port in particular, as it is mentioned in text}}
-\end{figure}
+\note{Make a figure of the DOFs!}
+
+The motion of each degree of freedom must be sensed by a detector and fed back to actuators to control the relevant length. This is termed \emph{linear inverting feedback} and the concept of shaping the feedback dynamics is discussed in greater detail in the context of interferometers in, for example, Chapter\,\ref{c:speedmeter-control}.
+
+\subsubsection{Common arm cavity length}
+In-phase changes in the length of the arms of a \MI{} do not primarily couple to the gravitational wave channel, but it is crucial to control this degree of freedom in order to keep it in its most sensitive state. In a \DRFPMI{} this is the state in which the power in the arm cavities is held near maximum. Noise, particularly from the laser's amplitude and frequency fluctuations (see Section\,\ref{sec:laser-noise}) can lead to a loss of light power in the arm cavities and so this degree of freedom must be controlled. Typically the actuator used to control common arm length changes is the laser's frequency, though it is also possible to correct slower, larger drifts with common feedback to the \glspl{ETM}.
+
+We can define the common arm cavity length, \emph{\gls{CARM}}, in terms of the average length of the arms:
+\begin{equation}
+  L_{\text{CARM}} = \frac{L_{\text{X}} + L_{\text{Y}}}{2}.
+\end{equation}
 
 \subsubsection{Differential arm cavity length}
-\checkme{Should be held at the dark fringe by means of differential feedback to the end test masses...}
+Gravitational waves change the length of the arms in a \MI{} differentially and due to the presence of the arm cavities in a \DRFPMI{} the differential arm cavity length represents the degree of freedom the main readout is most sensitive to. This length is ideally held at the dark fringe to maximise sensitivity but for the purposes of control in \ETLF{} it will be contain a small amount of carrier light. The differential arm cavity length signal can be fed back to the \glspl{ETM} differentially to hold the length at the desired operating point.
 
-\subsubsection{Power recycling cavity length}
-The power recycling cavity should be resonant for the input light in order to optimally recycle light reflected from the beam splitter back towards the laser. The power recycling cavity length can be defined in terms of the average distance between the power recycling mirror and the two \glspl{ITM}:
+We define the differential arm cavity length, \emph{\gls{DARM}}, in terms of the average differential length of the arms:
+\begin{equation}
+  L_{\text{CARM}} = \frac{L_{\text{X}} - L_{\text{Y}}}{2}.
+\end{equation}
 
-equation...
+Any arm cavity length change can be expressed in terms of \gls{CARM} and \gls{DARM}.
 
 \subsubsection{Michelson length}
-The length between the \glspl{ITM} and the beam splitter should be held constant to keep the amount of carrier and sideband power in the signal recycling cavity stable, which avoids the need for complicated time-varying control signals. This is kept constant by feeding back to the position of the beam splitter or with differential actuation upon to the \glspl{ITM}.
+The length between the \glspl{ITM} and the beam splitter should be held in the dark fringe condition to correctly couple the common and differential arm cavity modes to the input and output port of the beam splitter, respectively. In a \DRFPMI{} it must also be held constant to keep the amount of carrier and sideband power in the signal recycling cavity stable, which avoids the need for complicated time-varying control signals. This length, \emph{\gls{MICH}}, can be expressed as the differential length between the beam splitter and the \glspl{ITM}:
+\begin{equation}
+  L_{\text{MICH}} = \frac{l_{\text{X}} - l_{\text{Y}}}{2}.
+\end{equation}
 
-\note{Lots of useful info in Heinzel 2002}
+This is kept constant by feeding back to the position of the beam splitter and recycling mirrors or with differential actuation upon to the \glspl{ITM}. Note that the common Michelson mode, $\frac{l_{\text{X}} + l_{\text{Y}}}{2}$, is present but has no impact upon the arm cavity power and so does not need to be controlled.
 
-\subsubsection{Signal recycling cavity length}
-The signal recycling length, along with the signal recycling mirror transmissivity, determines the bandwidth of the signal extraction and therefore needs controlled in order to keep the signal to noise stable...
+\subsubsection{Power and signal recycling cavity lengths}
+The power recycling cavity should be resonant for the input light in order to optimally recycle light reflected from the beam splitter back towards the laser, to allow the arm cavity power with respect to the interferometer's input power to be maximised. The power recycling cavity length, \emph{\gls{PRCL}} can be defined in terms of the average distance between the power recycling mirror and the two \glspl{ITM}:
+\begin{equation}
+  \label{eq:prcl-length}
+  \begin{split}
+    L_{\text{PRCL}} &= l_{\text{P}} + \frac{l_{\text{X}} - l_{\text{Y}}}{2} \\
+		    &= l_{\text{P}} + L_{\text{MICH}}.
+  \end{split}
+\end{equation}
 
-\section{\label{sec:et-lf-control-challenges}Control challenges with the \ET{}}
-Both \ETLF{} and \ETHF{} will present new challenges to the control of large-scale \DRFPMI{}s. \ETHF{} can to some extent be seen as a version of \ALIGO{} and \AVIRGO{} that pushes the state of the art of high power, heavy mirror, room temperature detectors, and so it may be possible to adapt much of the advance detectors' strategies for both longitudinal and angular control. Some aspects such as the use of LG33 modes and the presence of parametric instabilities, however, require extensive research to understand the implications they may have on control, and so much work remains to be done before a technical design for the \ET{} detectors will be ready. \ETLF{} also uses a topology that resembles existing generation detectors, but it pushes the sensitivity at low frequencies further down and this presents additional challenges. This chapter will discuss the longitudinal control of \ETLF{}, focusing in particular on the challenge of controlling the interferometer in its detuned state.
+The signal recycling length, along with the signal recycling mirror transmissivity, determines the bandwidth of the signal extraction and therefore needs controlled in order to keep the interferometer's sensitivity stationary. This length, \emph{\gls{SRCL}}, is defined similarly to \gls{PRCL} in terms of the position of the signal recycling mirror:
+\begin{equation}
+  \label{eq:srcl-length}
+  \begin{split}
+    L_{\text{SRCL}} &= l_{\text{S}} + \frac{l_{\text{X}} - l_{\text{Y}}}{2} \\
+		    &= l_{\text{S}} + L_{\text{MICH}}.
+  \end{split}
+\end{equation}
 
-\ETLF{} employs a detuned signal recycling cavity to increase the sensitivity of the interferometer at low frequencies. The ability for a detuned signal recycling to shift the most sensitive frequency has been demonstrated in \GEO{} between \SI{200}{\hertz} and \SI{1}{\kilo\hertz} \cite{Hild2006}. \ETLF{} plans to detune the signal recycling cavity to around \SI{25}{\hertz}, which has never before been demonstrated in suspended audio-band detectors. With tuned signal recycling, the \gls{RF} sidebands used for control of the differential arm cavity mode are present within the signal recycling cavity with equal amplitude. In detuned operation, the sidebands no longer have equal amplitude and so some of the interferometer's noise couplings that otherwise cancel at the output in the tuned case no longer cancel \cite{Hild2007}. The phase modulation of the control sidebands (created by an \gls{EOM} on the input path) also gets partially converted to amplitude modulation by the detuning, and this can lead to issues with the dynamic range of the photodetector to be used to sense the readout \cite{Grote2007}. Finally, the asymmetric sidebands create additional zero crossings in the error signal from the signal recycling cavity which for the tuned case do not appear. Often the control of a detuned signal recycling cavity involves locking to the zero crossing of a sideband instead of the carrier, but for low detunings it can be difficult to find a port at which to sense the motion of the signal recycling cavity decoupled from other cavities.
-
-The rest of this chapter will discuss a conceptual sensing scheme for \ETLF{} and discuss the future work that must be undertaken before a technical design for the control of \ETLF{} can be completed.
+Control of \gls{PRCL} and \gls{SRCL} can be achieved via corrective feedback to the position of the power and signal recycling mirrors, respectively.
 
 \section{Longitudinal sensing scheme for ET-LF}
 
@@ -195,7 +190,7 @@ For a future technical design study, additional allowance should be made for sca
 As with any actively controlled interferometer, error signals must be extracted from \ETLF{} that can be used to correct perturbations of its mirrors from the interferometer's operating point. In gravitational wave detectors these error signals are usually derived from an extension of the Pound-Drever-Hall scheme discussed in Section\,\ref{sec:pdh}, which was generalised to \MI{}s with the advent of \emph{Schnupp} modulation. In prototype facilities this control method was extended to power- \cite{Regehr1995} and \DRFPMI{}s \cite{Heinzel1998}.
 
 \subsubsection{Gain hierarchy}
-It is not necessary to obtain error signals that contain solely information representing one degree of freedom as long as the individual constituents can be separated after detection. By employing gain hierarchy it can be possible to suppress signal content at a particular readout from another degree of freedom, and this has been demonstrated in \LIGO{} \cite{Fritschel2001}. The most problematic extraneous signal content in signals demodulated at the main sideband modulation frequencies tend to arise from the common and differential arm cavity modes (\gls{CARM} and \gls{DARM}, respectively); however these signals tend to be suppressed in the error signals after these degrees of freedom are controlled. The common mode fluctuations tend to arise from the laser's noise, and because this occurs across the sensitive band of the detector this requires a wide bandwidth servo. Control of \gls{DARM}, and the auxiliary modes representing the power and signal recycling cavity lengths (\gls{PRCL} and \gls{SRCL}, respectively) and the inner Michelson degree of freedom (\gls{MICH}), tends to require a much smaller servo bandwidth. Through the appropriate choice of servo hierarchy the cross-couplings present at each sensor from secondary degrees of freedom can be minimised.
+It is not necessary to obtain error signals that contain solely information representing one degree of freedom as long as the individual constituents can be separated after detection. By employing gain hierarchy it can be possible to suppress signal content at a particular readout from another degree of freedom, and this has been demonstrated in \LIGO{} \cite{Fritschel2001}. The most problematic extraneous signal content in signals demodulated at the main sideband modulation frequencies tend to arise from \gls{CARM} and \gls{DARM}, however these signals tend to be suppressed in the error signals after these degrees of freedom are controlled. Common mode fluctuations arising from laser noise tend to appear across the sensitive band of the detector and so \gls{CARM} control requires a wide bandwidth servo. Control of \gls{DARM}, and the auxiliary modes \gls{PRCL}, \gls{SRCL} and \gls{MICH}, tends to require a much smaller servo bandwidth. Through the appropriate choice of servo hierarchy the cross-couplings present at each sensor from secondary degrees of freedom can be minimised.
 
 \subsubsection{Control sidebands}
 \ETLF{} will require at least two sideband frequencies in order to control the common mode arm (\gls{CARM}), power and signal recycling (\gls{PRCL} and \gls{SRCL}) and Michelson (\gls{MICH}) cavity lengths because it is not possible to decouple the motion of multiple cavities when they are sensed by the same light. Suitably decoupled sideband resonances provide error signals representing the cavities to be controlled, though it is not necessary to use a different frequency for each cavity; indeed it is beneficial from the point of view of quantum shot noise on the sensors to try to find unique combinations of the two sideband frequencies to sense each of the five degrees of freedom.
@@ -238,6 +233,13 @@ For \ETLF{} we chose the first sideband frequency $f_1$ to be \SI{11363101}{\her
 
 \subsubsection{Schnupp asymmetry}
 In a \DRFPMI{} the arm lengths must be slightly mismatched to allow for the control sidebands to enter the signal recycling cavity and therefore provide an error signal for the signal recycling cavity length. This is called the \emph{Schnupp asymmetry}, which comes from the Schnupp \emph{modulation} scheme developed for \MI{}s as an evolution upon the Pound-Drever-Hall technique in \FP{} cavities \note{cite something}. As described in Section\,\ref{sec:laser-noise}, laser frequency noise in a \MI{} is best suppressed when the arm lengths are matched, but the asymmetry introduced in this case is small compared to the length of the arms and so this does not have a significant impact on laser noise suppression.
+
+% THIS FIGURE should be focused on Schnupp and DARM offsets...
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-darm-schnupp-offsets.pdf}
+  \caption[Differential arm and Schnupp offsets in a \DRFPMI{}]{\label{fig:darm-schnupp-offsets}\note{Make this a generic diagram of ETLF with the ports and readouts defined: output port in particular, as it is mentioned in text}}
+\end{figure}
 
 For a Schnupp asymmetry $L_{\text{asy}}$, the two arms have length $L + \frac{L_{\text{asy}}}{2}$ and $L - \frac{L_{\text{asy}}}{2}$ where the nominal length is $L$. This mismatch is ideally as small as possible, to allow for the greatest suppression of laser noise, but large enough to allow for sufficient sideband power in the desired recycling cavities.
 
@@ -354,7 +356,7 @@ As the $I$ and $Q$ probes shown in Table\,\ref{tab:et-lf-probes} represent the s
 \subsubsection{Sensing matrix for ET-LF in detuned configuration}
 The sensing matrix for the detuned configuration given the readout ports defined in Section\,\ref{sec:etlf-readout-ports} is shown in Table\,\ref{tab:et-lf-sensing-matrix-detuned} for \gls{DC}. The suggested readouts for each degree of freedom are highlighted in bold. The gravitational wave signal will primarily affect \gls{DARM}, and this is by design sensed by \ASDC{}, the \gls{DC} readout. The common mode loop can be sensed at \REFLFIRST{} for the purposes of frequency stabilisation and very low frequency seismic noise that imparts common motion on both arms.
 
-The \gls{MICH}, \gls{PRCL} and \gls{SRCL} cavity error signals are difficult to separate due to the cross-coupling of control sidebands via the Schnupp asymmetry and the sideband asymmetry created by the presence of a detuned signal recycling cavity \cite{Hild2007}. As the control system will be implemented in a \LIGO{} \gls{CDS}-style system, it will be possible to create error signals formed from linear combinations of different sensor signals that decouple other degrees of freedom from a particular readout. In Table\,\ref{tab:et-lf-sensing-matrix-detuned}, \gls{PRCL} is dominant over \gls{MICH} and \gls{SRCL} at \POPFIRST{} and represents a good extraction point for the motion of the power recycling cavity. \gls{MICH} couples strongly to a number of ports but alongside strong signals from the other degrees of freedom. Its strongest ports, \ASDC{} and \ASSECOND{}, contain much larger signals from \gls{DARM} which would be difficult to remove electronically. A better readout could be to use \POPSECOND{} with the dominant \gls{PRCL} signal suppressed with careful tuning of the demodulation phase. Residual \gls{PRCL} coupling can be subtracted electronically.
+The \gls{MICH}, \gls{PRCL} and \gls{SRCL} cavity error signals are difficult to separate due to the cross-coupling of control sidebands via the Schnupp asymmetry and the sideband asymmetry created by the presence of a detuned signal recycling cavity \cite{Hild2007}. As the control system will be implemented in a \LIGO{} \gls{CDS}-style system, it will be possible to create error signals formed from linear combinations of different sensor signals that decouple other degrees of freedom from a particular readout. In Table\,\ref{tab:et-lf-sensing-matrix-detuned}, \gls{PRCL} is dominant over \gls{MICH} and \gls{SRCL} at \POPFIRST{} and represents a good extraction point for the motion of the power recycling cavity. \gls{MICH} couples strongly to a number of ports but alongside strong signals from the other degrees of freedom. From Equations \ref{eq:prcl-length} and \ref{eq:srcl-length} we see that \gls{PRCL} and \gls{SRCL} readouts will contain a \gls{MICH} component, and as it is differential motion it is also seen by readouts sensitive to \gls{DARM}. Its strongest ports, \ASDC{} and \ASSECOND{}, contain much larger signals from \gls{DARM} which would be difficult to remove electronically. A better readout could be to use \POPSECOND{} with the dominant \gls{PRCL} signal suppressed with careful tuning of the demodulation phase. Residual \gls{PRCL} coupling can be subtracted electronically.
 
 \gls{SRCL} is difficult to sense with $f_1$ because it is not resonant in the signal recycling cavity, nor $f_2$ because its error signal is dominated by those of \gls{MICH} or \gls{PRCL} at all ports. A possible sensing strategy could utilise the beats between sidebands found at \REFLDIFF{} or \REFLSUM{}, where the contribution from \gls{MICH} and \gls{PRCL} can be suppressed with suitable choice of demodulation phase. All \gls{SRCL} signals contain an offset from zero due to the detuning, since the lower sideband is not resonant when the signal recycling mirror is at its operating point (see Figure\,\ref{fig:sideband-powers-srcl-detuned}). To use \REFLSUM{} for \gls{SRCL} control an offset of \SI{-4.2}{\milli\watt} will be necessary.
 
@@ -425,6 +427,8 @@ Future work will address the problem of transitioning \ETLF{} from tuned to detu
 
 \subsection{Sensing and control of seismic and Newtonian noise}
 \note{Discuss dynamic range issues...}
+
+Theory of the local control of the superattenuator: \cite{Acernese2004}
 
 \subsection{Testing of control concepts}
 A possible test for \GEOHF{} to conduct in the future is to detune its signal recycling cavity to \SI{25}{\hertz} to test the ability to control the interferometer at such an extreme.
