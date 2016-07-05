@@ -8,7 +8,7 @@ function print_dc_powers_tuned()
     addpath(genpath([directory, '/../']));
     
     %% Model
-    opt = get_opt_at_operating_point('tuning', 'tuned', 'fRf2', 57.008e6)
+    opt = get_opt_at_operating_point('tuning', 'tuned', 'fRf2', 57.008e6);
     
     %% DC fields
     

@@ -7,6 +7,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import lookfeel as lf
 
+# ET-LF input power
+input_power = 3 # [W]
+
 # first argument should be save path
 save_path = sys.argv[1]
 
@@ -31,13 +34,15 @@ ax1 = fig.gca()
 colours = lf.Colours()
 
 # plot
-ax1.semilogy(data[:, 0], data[:, 1] / 3, '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(data[:, 0], data[:, 1] / input_power, '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 
 # vertical line for Schnupp length
 ax1.vlines(0.046, 1e-6, 1e1, colors=colours.next(), linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Reflected power /\ninput power')
+ax1.set_ylabel('Ratio')
 ax1.set_xlabel('Power recycling mirror transmissivity')
+
+ax1.legend(['Reflected power / input power', r'$T_{\mathrm{PRM}}$'], loc='lower right')
 
 ax1.set_ylim([1e-4, 1e0])
 

@@ -8,7 +8,7 @@ function print_dc_powers_detuned()
     addpath(genpath([directory, '/../']));
     
     %% Model
-    opt = get_opt_at_operating_point()
+    opt = get_opt_at_operating_point();
     
     %% DC fields
     fDC = opt.tickle();
