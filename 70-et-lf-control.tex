@@ -113,9 +113,13 @@ The final lock acquisition scheme is inextricably linked to the technical enviro
 The \gls{DC} readout technique is a form of homodyne readout that involves a compromise between the best sensitivity and technical complexity. The operating point is kept close to the \emph{dark fringe} (see Section\,\ref{sec:operating-point}) to optimise shot noise, but a slight offset is introduced between the differential round trip phase of the arms in order to allow some of the carrier light to enter the readout port where it acts as a homodyne local oscillator to the signal sidebands (see Section\,\ref{sec:homodyne-readout}). In practice, this detuning \textemdash of the order \SI{}{\pico\meter} at the arm cavities in \ALIGO{}\textemdash is sufficiently small to allow the required sensitivities to be reached. This provides improved sensitivity over heterodyne techniques \cite{Fricke2012}, and in squeezed interferometers it avoids the need to inject squeezing at \gls{RF} sideband frequencies in addition to the carrier frequency. Both \ETLF{} and \ETHF{} will utilise \gls{DC} readout to sense the differential motion of the arm cavities in order to sense the effect of gravitational waves.
 
 \subsection{\label{sec:dofs-of-drfpmi}Degrees of freedom of the \DRFPMI{}}
-The \emph{degrees of freedom} of an interferometer are the non-degenerate ways in which the interferometer's mirrors may move away from the operating point. Each degree of freedom has a different precision requirement, with the most stringent typically being the degree of freedom corresponding to the gravitational wave channel. With \gls{DC} readout there is no local oscillator phase or alignment to control, and so in a \DRFPMI{} the main degrees of freedom to consider are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths. These are defined in the following sections and shown in Figure\,XXX.
+The \emph{degrees of freedom} of an interferometer are the non-degenerate ways in which the interferometer's mirrors may move away from the operating point. Each degree of freedom has a different precision requirement, with the most stringent typically being the degree of freedom corresponding to the gravitational wave channel. With \gls{DC} readout there is no local oscillator phase or alignment to control, and so in a \DRFPMI{} the main degrees of freedom to consider are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths. These are defined in the following sections and the lengths that compose each degree of freedom are shown in Figure\,\ref{fig:et-lf-cavity-lengths}.
 
-\note{Make a figure of the DOFs!}
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-cavity-lengths.pdf}
+  \caption[Cavity lengths in \ETLF{}]{\label{fig:et-lf-cavity-lengths}Cavity lengths in \ETLF{}. The differential and common arm cavity modes compose $L_{\text{X}}$ and $L_{\text{Y}}$, while the auxiliary power and signal recycling and Michelson cavity lengths are composed of a subset of the distances between the beam splitter and each \gls{ITM} and the distances between each recycling mirror and the beam splitter.}
+\end{figure}
 
 The motion of each degree of freedom must be sensed by a detector and fed back to actuators to control the relevant length. This is termed \emph{linear inverting feedback} and the concept of shaping the feedback dynamics is discussed in greater detail in the context of interferometers in, for example, Chapter\,\ref{c:speedmeter-control}.
 
@@ -146,23 +150,25 @@ The length between the \glspl{ITM} and the beam splitter should be held in the d
 This is kept constant by feeding back to the position of the beam splitter and recycling mirrors or with differential actuation upon to the \glspl{ITM}. Note that the common Michelson mode, $\frac{l_{\text{X}} + l_{\text{Y}}}{2}$, is present but has no impact upon the arm cavity power and so does not need to be controlled.
 
 \subsubsection{Power and signal recycling cavity lengths}
-The power recycling cavity should be resonant for the input light in order to optimally recycle light reflected from the beam splitter back towards the laser, to allow the arm cavity power with respect to the interferometer's input power to be maximised. The power recycling cavity length, \emph{\gls{PRCL}} can be defined in terms of the average distance between the power recycling mirror and the two \glspl{ITM}:
+The power recycling cavity should be resonant for the input light in order to optimally recycle light reflected from the beam splitter back towards the laser, to allow the arm cavity power with respect to the interferometer's input power to be maximised. The power recycling cavity length, \emph{\gls{PRCL}} can be defined in terms of the average distance between the power recycling mirror (\gls{PRM}) and the two \glspl{ITM}:
 \begin{equation}
   \label{eq:prcl-length}
   \begin{split}
     L_{\text{PRCL}} &= l_{\text{P}} + \frac{l_{\text{X}} - l_{\text{Y}}}{2} \\
-		    &= l_{\text{P}} + L_{\text{MICH}}.
+		    &= l_{\text{P}} + L_{\text{MICH}},
   \end{split}
 \end{equation}
+where $l_{\text{P}}$ represents the distance between the power recycling mirror and the beam splitter.
 
-The signal recycling length, along with the signal recycling mirror transmissivity, determines the bandwidth of the signal extraction and therefore needs controlled in order to keep the interferometer's sensitivity stationary. This length, \emph{\gls{SRCL}}, is defined similarly to \gls{PRCL} in terms of the position of the signal recycling mirror:
+The signal recycling length, along with the signal recycling mirror (\gls{SRM}) transmissivity, determines the bandwidth of the signal extraction and therefore needs controlled in order to keep the interferometer's sensitivity stationary. This length, \emph{\gls{SRCL}}, is defined similarly to \gls{PRCL} in terms of the position of the signal recycling mirror:
 \begin{equation}
   \label{eq:srcl-length}
   \begin{split}
     L_{\text{SRCL}} &= l_{\text{S}} + \frac{l_{\text{X}} - l_{\text{Y}}}{2} \\
-		    &= l_{\text{S}} + L_{\text{MICH}}.
+		    &= l_{\text{S}} + L_{\text{MICH}},
   \end{split}
 \end{equation}
+where $l_{\text{S}}$ represents the distance between the signal recycling mirror and the beam splitter.
 
 Control of \gls{PRCL} and \gls{SRCL} can be achieved via corrective feedback to the position of the power and signal recycling mirrors, respectively.
 
@@ -183,15 +189,13 @@ The control of a \DRFPMI{} involves the extraction of error signals representing
 This section will discuss the creation and extraction of error signals for each degree of freedom discussed in Section\,\ref{sec:dofs-of-drfpmi}. Given the constraints from the design study, we begin with the transmissivity of the power recycling mirror and the frequency of the control sidebands, and then use these to define auxiliary lengths within the interferometer and finally calculate the arm cavity offset required for the \gls{DC} readout to work.
 
 \subsubsection{Optimal input coupling}
-As discussed in Section\,\ref{sec:power-recycling}, placing a power recycling mirror in an \MI{} creates an additional cavity between the input light and the arms. The intention of the power recycling mirror is to minimise the light reflected back towards the laser, and in order to do this the cavity it creates should be \emph{impedance matched} (see, for example, Section\,5.1 of \cite{Freise2010}). The transmissivity of the power recycling mirror, $T_{\text{PRM}}$, determines the impedance matching and it can be determined using knowledge of the light lost within the interferometer. The design study defines the loss per optic to be \SI{35}{\ppm}, and the transmissivity of the \glspl{ETM} is \SI{6}{\ppm}; both contribute to the impedance matching. Figure\,\ref{fig:reflected-power-vs-prm-trans} shows the ratio of the light power leaving the power recycling mirror heading back towards the laser to the input light power. The minimum reflected power corresponds to a power recycling mirror transmissivity of \num{0.046}, which is comparable to that of \ETLF{}'s \glspl{ITM}.
+As discussed in Section\,\ref{sec:power-recycling}, placing a power recycling mirror in an \MI{} creates an additional cavity between the input light and the arms. The intention of the power recycling mirror is to minimise the light reflected back towards the laser, and in order to do this the cavity it creates should be \emph{impedance matched} (see, for example, Section\,5.1 of \cite{Freise2010}). The transmissivity of the power recycling mirror, $T_{\text{PRM}}$, determines the impedance matching and it can be determined using knowledge of the light lost within the interferometer, and in the \ET{} design study the value for \ETLF{} is suggested to be \SI{4.6}{\percent}. The design study also defines the loss per optic to be \SI{35}{\ppm}, and the transmissivity of the \glspl{ETM} is \SI{6}{\ppm}; both contribute to the impedance matching. Figure\,\ref{fig:reflected-power-vs-prm-trans} shows the ratio of the light power leaving the power recycling mirror heading back towards the laser to the input light power. The minimum reflected power corresponds to a power recycling mirror transmissivity of \SI{4.6}{\percent}, verifying the suggested figure. If the scatter or substrate loss on any optic is changed in the future, this simulation allows the new optimum transmissivity to be calculated.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-reflected-power-vs-prm-transmissivity.pdf}
   \caption[Reflected power from \ETLF{} as a function of power recycling mirror transmissivity]{\label{fig:reflected-power-vs-prm-trans}Reflected power from \ETLF{} as a function of power recycling mirror transmissivity. For optimal coupling of the input laser light to the interferometer, the transmissivity of the power recycling mirror must be set to balance the input light with the total loss from the interferometer. For \ETLF{} with loss as per the design study, this transmissivity should be \num{0.046}.}
 \end{figure}
-
-For a future technical design study, additional allowance should be made for scattering loss and other mechanisms which will affect impedance matching. A slight overestimate of the transmissivity of the power recycling mirror is often beneficial to allow for uncertainty in the manufacturing of optical substrates and coatings.
 
 \subsubsection{\label{sec:multiple-control-sidebands}Multiple control sidebands}
 The control sideband frequencies must be chosen to be outside an integer multiple of the free spectral range (\gls{FSR}, see Appendix\,\ref{sec:cavity-fom}) of the arm cavities in order to prevent them from entering the arm cavities and no longer being able to act as a phase discriminant. They should also ideally be \gls{RF}, at least around \SI{10}{\mega\hertz}, to benefit from the noise advantages discussed in Section\,\ref{sec:pdh}. An upper limit of \SI{100}{\mega\hertz} is reasonable, as higher frequency demodulations are difficult to implement in photodetector electronics.
@@ -241,7 +245,7 @@ In a \DRFPMI{} the arm lengths must be slightly mismatched to allow for the cont
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-darm-schnupp-offsets.pdf}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-schnupp-darm-offsets.pdf}
   \caption[Schnupp asymmetry and differential arm cavity offset in a \DRFPMI{}]{\label{fig:schnupp-darm-offsets}The Schnupp asymmetry and differential arm cavity offset in a \DRFPMI{}. The Schnupp asymmetry allows the control sidebands resonant in the Michelson to leave the beam splitter's output port where they may sense the motion of the signal recycling cavity. This is typically an offset of the order of \SI{}{\centi\meter}. The differential arm cavity (\gls{DARM}) offset is a microscopic detuning of the arm cavities to allow a small amount of light to interfere constructively at the beam splitter in order for it to act as a local oscillator to the signal sidebands at the output port. This detuning is typically of the order of \SI{}{\pico\meter}.}
 \end{figure}
 
@@ -306,12 +310,18 @@ The power in each field within each relevant space or cavity of the interferomet
 \end{table}
 
 \subsection{\label{sec:etlf-readout-ports}Readout ports}
-\note{Figure xx} shows some available readout ports for \ETLF{} where the sidebands and carrier may be measured for the purposes of control:
+Figure\,\ref{fig:dof-readouts} shows some available readout ports for \ETLF{} where the sidebands and carrier may be measured for the purposes of control:
 \begin{itemize}
   \item \textbf{REFL} (\emph{reflected}) senses the light reflected from the interferometer back towards the input laser.
   \item \textbf{POP} (\emph{pick off \gls{PRCL}}) senses the light in the power recycling cavity. Although the diagram shows a beam splitter, in reality this will probably be obtained via a secondary mirror reflection (such as the anti-reflective coating on the power recycling mirror).
   \item \textbf{AS} (\emph{asymmetric}) senses the light at the output port of the \DRFPMI{}.
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-dof-readouts.pdf}
+  \caption[Some available readout ports for sensing and control in \ETLF{}]{\label{fig:dof-readouts}Some available readout ports for sensing motion of the degrees of freedom in \ETLF{}. Sidebands are imparted upon the input laser light at two frequencies before it enters the interferometer. Photodetectors are placed at three points in the interferometer to sense the carrier and these sidebands for the purposes of sensing and control. The most important readout is \AS{}, which strongly senses \gls{DARM}, and this is placed in transmission of the signal recycling mirror. Light reflected back towards the laser is sensed via a Faraday isolator at the \REFL{} port, and a pick-off \textemdash \POP{}\textemdash senses light in the power recycling cavity.}
+\end{figure}
 
 For the purposes of the control simulations, each readout port contains photodetectors demodulating the signals at \gls{DC}, $\pm f_1$ (\SI{\pm11}{\mega\hertz}), $\pm f_2$ (\SI{\pm57}{\mega\hertz}), $-f_1 - f_2$ (\SI{-68}{\mega\hertz}), $-f_1 + f_2$ (\SI{-45}{\mega\hertz}), $f_2 - f_1$ (\SI{45}{\mega\hertz}) and $f_2 + f_1$ (\SI{68}{\mega\hertz}). There are therefore \num{9} classical light fields propagated through the interferometer, and these are shown in Table\,\ref{tab:et-lf-probes}.
 
@@ -400,22 +410,42 @@ Error signals corresponding to the suggested readouts for each degree of freedom
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sweeps-detuned.pdf}
-  \caption[Sweeps through the zero-crossings of the chosen error signals in ET-LF]{\label{fig:sweeps-et-lf}Sweeps...}
+  \caption[Sweeps through the zero-crossings of the chosen error signals in ET-LF]{\label{fig:sweeps-et-lf}Sweeps through the zero-crossings of the chosen error signals in \ETLF{} in the detuned configuration. Each error signal is linear about the operating point, which ensures a simple, bipolar error signal is available for the purposes of controlling each associated degree of freedom. This linearity has a different range for each readout, with \gls{CARM} and \gls{DARM} requiring the greatest precision.}
 \end{figure}
 
 Figure\,B shows the \ASDC{} readout, and the slope is zero when the arm cavities are tuned, consistent with Figure\,\ref{fig:total-power-vs-darm-offset-detuned}, showing that some classical carrier light power is required for \gls{DC} readout. Although a higher slope can be found at higher offsets, this results in reduced sensitivity due to a loss in arm power. Figure\,E shows the error signal crossing the operating point at a power of \SI{4.2}{\milli\watt}, showing the requirement for an offset.
 
-The parameters used in the proposed control scheme are shown in Table\,\note{XXX} alongside the pre-existing parameters from the design study. This scheme is not optimal, and does not consider a number of other possibilities such as the use of secondary reflections arising from the anti-reflective coatings on the beam splitter and \glspl{ITM} or the use of higher order combinations of $f_1$ and $f_2$ such as \emph{3f} signals used in the lock acquisition sequence of \VIRGO{} \cite{Acernese2008} and \ALIGO{} \cite{Staley2014}. It serves, however, as a first concept for the control of \ETLF{} with \SI{25}{\hertz} signal recycling cavity detuning. The next section will discuss some noise implications of \ETLF{}'s low frequency control strategy.
+The parameters used in the proposed control scheme are shown in Table\,\ref{tab:et-lf-updated-parameters} alongside the pre-existing parameters from the design study. This scheme is not optimal, and does not consider a number of other possibilities such as the use of secondary reflections arising from the anti-reflective coatings on the beam splitter and \glspl{ITM} or the use of higher order combinations of $f_1$ and $f_2$ such as \emph{3f} signals used in the lock acquisition sequence of \VIRGO{} \cite{Acernese2008} and \ALIGO{} \cite{Staley2014}. It serves, however, as a first concept for the control of \ETLF{} proving that it can in theory be controlled with \SI{25}{\hertz} signal recycling cavity detuning.
 
-\note{Put updated parameters in a table here}
+\begin{table}
+  \centering
+  \begin{tabular}{r|c|cc}
+    \textbf{Parameter} & \textbf{Symbol in text} & \textbf{Design study value} & \textbf{Updated value} \\
+    \hline
+    Laser wavelength & & \multicolumn{2}{c}{\SI{1550}{\nano\meter}} \\
+    Input power & & \multicolumn{2}{c}{\SI{3}{\watt}} \\
+    Arm power         & & \multicolumn{2}{c}{\SI{18}{\kilo\watt}} \\
+    \gls{ITM} transmissivity & & \multicolumn{2}{c}{\SI{7000}{\ppm}} \\
+    \gls{ETM} transmissivity & & \multicolumn{2}{c}{\SI{6}{\ppm}} \\
+    \gls{PRM} transmissivity & $T_{\text{PRM}}$ & \multicolumn{2}{c}{\SI{4.6}{\percent}} \\
+    \gls{SRM} transmissivity & & \multicolumn{2}{c}{\SI{10}{\percent}} \\
+    Signal recycling detuning & & \multicolumn{2}{c}{\SI{0.6}{\radian}} \\
+    Arm cavity lengths & $L_{\text{X}}$, $L_{\text{Y}}$ & \multicolumn{2}{c}{\SI{10}{\kilo\meter}} \\
+    Power recycling cavity length & $L_{\text{PRCL}}$  & \multicolumn{2}{c}{\SI{310}{\meter}} \\
+    Signal recycling cavity length & $L_{\text{SRCL}}$  & \SI{310}{\meter} & \SI{311.585}{\meter} \\
+    Schnupp asymmetry & $\Delta l_{\text{SCH}}$  & \textemdash & \SI{0.08}{\meter} \\
+    \gls{DARM} offset & $\delta L_{\text{DARM}}$  & \textemdash & \SI{12}{\pico\meter} \\
+    Control sideband frequencies & $f_1$, $f_2$ & \textemdash & \SI{11363101}{\hertz}, \SI{56815505}{\hertz} \\
+    Demodulation frequencies & & \textemdash & $f_1$, $f_2$, $f_2 - f_1$, $f_1 + f_2$
+  \end{tabular}
+  \caption[Updated parameters for \ETLF{} in the detuned configuration following the development of the conceptual sensing scheme]{\label{tab:et-lf-updated-parameters}Updated parameters for \ETLF{} in the detuned configuration following the development of the conceptual sensing scheme in this chapter.}
+\end{table}
 
 \section{Outlook and future work}
-The work presented in this chapter shows that \ETLF{} can in principle be controlled with an \ALIGO{} style scheme, though with increased cross-coupling of degrees of freedom particularly for \gls{MICH} and \gls{SRCL}. Some sensing noise issues remain unaddressed, as have more exotic control schemes such as the use of additional modulation frequencies or \emph{sub-carriers}.
+By utilising an \gls{RF} phase modulation scheme we have shown in this chapter that \ETLF{} can in principle be controlled in its detuned configuration. Due to the detuning the interferometer experiences increased cross-coupling of degrees of freedom particularly for \gls{MICH} and \gls{SRCL} when compared to a scheme for a tuned \DRFPMI{} such as the one used in \ALIGO{}. Sensing and control noise issues remain unaddressed, as have more exotic control schemes such as the use of additional modulation frequencies or \emph{sub-carriers}. This section describes some future work that will be necessary to refine and improve the results presented here towards a comprehensive technical design.
 
-\subsection{Assessing the controllability of the sensing matrix}
-In \ALIGO{} the conceptual control scheme was first tested at the \CALTECHFORTYM{} and it is probable that any technical design for \ETLF{} will require a similar test. At this stage a quantative assessment of the performance that a particular control scheme might provide might take the form of a technique presented by Mantovani and Freise \cite{Mantovani2008} developed for alignment control in \VIRGO{}, but suitable for longitudinal control. This involves the calculation of a \emph{quality parameter} representing the controllability of a given set of sensors and degrees of freedom. This approach only makes sense when $M$ represents the interferometer at its operating point, which means that the residual motion of controlled degrees of freedom does not create a significant cross-coupling. This approach requires hierarchical gain to be applied in a lock acquisition sequence, and will be the subject of future work.
-
-\subsection{Twin signal recycling and control with sub-carriers}
+\subsection{Optimising the sensing matrix}
+In \ALIGO{} the conceptual control scheme was first tested at the \CALTECHFORTYM{} and it is probable that any technical design for \ETLF{} will require a similar test. At this stage a quantitative assessment of the performance that a particular control scheme might provide might take the form of a technique presented by Mantovani and Freise \cite{Mantovani2008} developed for alignment control in \VIRGO{}, but suitable for longitudinal control. This involves the calculation of a \emph{quality parameter} representing the controllability of a given set of sensors and degrees of freedom. This approach only makes sense when $M$ represents the interferometer at its operating point, which means that the residual motion of controlled degrees of freedom does not create a significant cross-coupling. This approach requires hierarchical gain to be simulated as part of a lock acquisition sequence, and so some effort will be required to design some simple control servos.
 
 \subsection{Switching between tuned to detuned operation}
 Transition from tuned to detuned signal recycling operating points and vice versa involves a technique which can maintain control of the interferometer as it transitions between two desired set points. When dual recycling was first demonstrated in suspended optics in the Garching prototype, it involved a varying frequency offset applied to the \gls{RF} modulation sidebands as the tuning was changed \cite{Freise2000}. In \GEO{} the control technique involved a complicated sequence of events \cite{Grote2004} including an uncontrolled ``jump'' between two operating points \cite{Hild2007} to reached tuned mode. In \ETLF{} it is expected that the signal recycling cavity finesse will be too high to allow for a previously demonstrated transition scheme. Instead, investigations are underway to model the impact that single control sidebands added to the input light or subcarriers added to the squeezing injection port have on the controllability of the signal recycling cavity at arbitrary detunings. Another possibility is to adapt the \emph{arm length stabilisation} system developed for the lock acquisition of \ALIGO{} \cite{Mullavey2012, Staley2014}, whereby a second carrier at a different wavelength is used to lock cavities. This takes advantage of the lower finesse of the second carrier's wavelength in the cavities, allowing for a wider locking range. The cavities are first pre-stabilised using this second carrier before the main carrier is brought to resonance.
@@ -429,8 +459,4 @@ Future work will address the problem of transitioning \ETLF{} from tuned to detu
 
 Theory of the local control of the superattenuator: \cite{Acernese2004}
 
-\subsection{Testing of control concepts}
-A possible test for \GEOHF{} to conduct in the future is to detune its signal recycling cavity to \SI{25}{\hertz} to test the ability to control the interferometer at such an extreme.
-
-\subsection{Future upgrades to ET}
-\note{SSM, Stefan D's idea for triangular speed meter, etc...}
+\subsection{Twin signal recycling and control with sub-carriers}

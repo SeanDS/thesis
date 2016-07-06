@@ -13,7 +13,7 @@
    height="210mm"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="70-darm-schnupp-offsets.svg">
+   sodipodi:docname="70-et-lf-readout-ports.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -27,9 +27,9 @@
      inkscape:window-height="1030"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="8.0000004"
-     inkscape:cx="532.64407"
-     inkscape:cy="339.95266"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="494.53069"
+     inkscape:cy="377.38235"
      inkscape:window-x="-2"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
@@ -184,16 +184,6 @@
          style="stop-color:#89A4B6"
          offset="1" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#b-cav-mir-grad-0"
-       id="linearGradient4225"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       x1="350.0874"
-       y1="43.0298"
-       x2="350.0874"
-       y2="14.6831" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#b-cav-mir-grad-0"
@@ -786,16 +776,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#b-cav-mir-grad-0"
-       id="linearGradient5416"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       x1="350.0874"
-       y1="43.0298"
-       x2="350.0874"
-       y2="14.6831" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#b-cav-mir-grad-0"
        id="linearGradient5460"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
@@ -888,16 +868,6 @@
        y1="43.0298"
        x2="350.0874"
        y2="14.6831" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#b-cav-mir-grad-0"
-       id="linearGradient8316"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       x1="350.0874"
-       y1="43.0298"
-       x2="350.0874"
-       y2="14.6831" />
     <marker
        inkscape:stockid="Arrow1Send"
        orient="auto"
@@ -984,16 +954,6 @@
          d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
          id="path7964-5" />
     </marker>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#b-cav-mir-grad-0"
-       id="linearGradient5385"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       x1="350.0874"
-       y1="43.0298"
-       x2="350.0874"
-       y2="14.6831" />
     <marker
        inkscape:stockid="Arrow1Mstart"
        orient="auto"
@@ -1050,98 +1010,73 @@
          d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
          id="path7964-7" />
     </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b-cav-mir-grad-0"
+       id="linearGradient4439"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
+       x1="350.0874"
+       y1="43.0298"
+       x2="350.0874"
+       y2="14.6831" />
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart-36"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4545-0"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         id="path7964-2" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart-20"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4545-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-37"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         id="path7964-59" />
+    </marker>
   </defs>
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 486.96808,193.66079 -50.625,0"
-     id="path5498-57"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 486.96808,179.66079 -50.625,0"
-     id="path5498-5-6"
-     inkscape:connector-curvature="0" />
-  <g
-     id="b-cav-mir"
-     transform="matrix(0,-1,1,0,447.10758,198.99629)"
-     style="opacity:0.3">
-    <linearGradient
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       y2="14.6831"
-       x2="350.0874"
-       y1="43.0298"
-       x1="350.0874"
-       gradientUnits="userSpaceOnUse"
-       id="b-cav-mir-grad">
-      <stop
-         id="stop4224"
-         style="stop-color:#89A4B6"
-         offset="0.0056" />
-      <stop
-         id="stop4226"
-         style="stop-color:#FFFFFF"
-         offset="0.5" />
-      <stop
-         id="stop4228"
-         style="stop-color:#89A4B6"
-         offset="1" />
-    </linearGradient>
-    <rect
-       id="rect4230"
-       height="28.346001"
-       width="9.9209995"
-       y="0.375"
-       x="0.375"
-       style="fill:url(#b-cav-mir-grad);stroke:#000000;stroke-width:0.75" />
-  </g>
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-     d="m 670.67515,347.36584 0,50.625"
-     id="path5498"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 2;stroke-dashoffset:0"
-     d="m 656.67515,347.36584 0,50.625"
-     id="path5498-5"
-     inkscape:connector-curvature="0" />
-  <g
-     id="b-cav-mir-3"
-     transform="translate(665.33965,358.13034)"
-     style="opacity:0.3">
-    <linearGradient
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       y2="14.6831"
-       x2="350.0874"
-       y1="43.0298"
-       x1="350.0874"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient4257">
-      <stop
-         id="stop4259"
-         style="stop-color:#89A4B6"
-         offset="0.0056" />
-      <stop
-         id="stop4261"
-         style="stop-color:#FFFFFF"
-         offset="0.5" />
-      <stop
-         id="stop4263"
-         style="stop-color:#89A4B6"
-         offset="1" />
-    </linearGradient>
-    <rect
-       id="rect4230-6"
-       height="28.346001"
-       width="9.9209995"
-       y="0.375"
-       x="0.375"
-       style="fill:url(#linearGradient5385);stroke:#000000;stroke-width:0.75" />
-  </g>
-  <path
-     style="fill:none;stroke:#ff0000;stroke-width:6.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     d="m 512.16398,372.67832 139.16611,0"
-     id="path4177-47"
-     inkscape:connector-curvature="0" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:6.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 461.65556,184.97502 0,111.76746"
@@ -1200,72 +1135,19 @@
     </g>
   </g>
   <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 486.81249,302.0945 -50.625,0"
-     id="path5498-57-0"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 486.96806,315.66099 -50.625,0"
-     id="path5498-5-6-9"
-     inkscape:connector-curvature="0" />
-  <path
      style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 461.6556,297.50388 0,73.49241"
      id="path4177-47-3-5"
      inkscape:connector-curvature="0" />
-  <g
-     id="b-cav-mir-9"
-     transform="matrix(0,1,-1,0,476.20358,310.32549)"
-     style="opacity:0.3">
-    <linearGradient
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       y2="14.6831"
-       x2="350.0874"
-       y1="43.0298"
-       x1="350.0874"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient4196">
-      <stop
-         id="stop4198"
-         style="stop-color:#89A4B6"
-         offset="0.0056" />
-      <stop
-         id="stop4200"
-         style="stop-color:#FFFFFF"
-         offset="0.5" />
-      <stop
-         id="stop4202"
-         style="stop-color:#89A4B6"
-         offset="1" />
-    </linearGradient>
-    <rect
-       id="rect4230-3"
-       height="28.346001"
-       width="9.9209995"
-       y="0.375"
-       x="0.375"
-       style="fill:url(#linearGradient4225);stroke:#000000;stroke-width:0.75" />
-  </g>
   <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-     d="m 506.81249,397.99084 0,-50.625"
-     id="path5498-57-0-3"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#4b4b4b;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 2;stroke-dashoffset:0"
-     d="m 520.6755,397.99084 0,-50.625"
-     id="path5498-5-6-9-1"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 473.01934,372.67834 59.98772,0"
+     style="fill:none;stroke:#ff0000;stroke-width:2.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 473.12559,372.67834 64.15023,0"
      id="path4177-47-8"
      inkscape:connector-curvature="0" />
   <g
      id="b-cav-mir-3-3"
-     style="opacity:0.3"
-     transform="matrix(-1,0,0,-1,526.011,387.22634)">
+     style="opacity:0.7"
+     transform="matrix(-1,0,0,-1,538.011,387.22634)">
     <linearGradient
        gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
        y2="14.6831"
@@ -1296,8 +1178,8 @@
        style="fill:url(#linearGradient4266);stroke:#000000;stroke-width:0.75" />
   </g>
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 412.33598,371.04246 49.35899,0"
+     style="fill:none;stroke:#ff0000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 402.61065,371.04246 58.79968,0"
      id="path4177-3"
      inkscape:connector-curvature="0" />
   <path
@@ -1308,27 +1190,22 @@
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="364.01566"
-     y="388.10626"
+     x="356"
+     y="373.10748"
      id="text19186-4-2"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
-       x="364.01566"
-       y="388.10626"
-       id="tspan19190-5-49"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Carrier and</tspan><tspan
-       sodipodi:role="line"
-       x="364.01566"
-       y="400.60626"
+       x="356"
+       y="373.10748"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       id="tspan5474">RF sidebands</tspan></text>
+       id="tspan5474">Input</tspan></text>
   <g
      id="g24538"
      transform="matrix(1.25,0,0,-1.25,611.55145,796.27511)" />
   <g
      id="b-cav-mir-3-1"
      style="opacity:0.7"
-     transform="translate(651.33965,358.13034)">
+     transform="translate(649.7459,358.13034)">
     <linearGradient
        gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
        y2="14.6831"
@@ -1356,7 +1233,7 @@
        width="9.9209995"
        y="0.375"
        x="0.375"
-       style="fill:url(#linearGradient5416);stroke:#000000;stroke-width:0.75" />
+       style="fill:url(#linearGradient4439);stroke:#000000;stroke-width:0.75" />
   </g>
   <g
      id="b-cav-mir-0"
@@ -1391,50 +1268,34 @@
        x="0.375"
        style="fill:url(#linearGradient5460);stroke:#000000;stroke-width:0.75" />
   </g>
-  <path
-     style="fill:none;stroke:#ff8b00;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow1Send-3-7-4-7-8-22)"
-     d="m 670.17597,392.3847 -9.49389,0"
-     id="path4177-7-2-4-2-1-9-6"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff8b00;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Send-3-7-4-7-8-22-9)"
-     d="m 481.96773,193.15887 0,-9.49389"
-     id="path4177-7-2-4-2-1-9-6-1"
-     inkscape:connector-curvature="0" />
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="524.50726"
-     y="190.38495"
+     x="494.80878"
+     y="181.96104"
      id="text19186-4-2-9"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
-       x="524.50726"
-       y="190.38495"
-       id="tspan19190-5-49-2"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">DARM offset</tspan><tspan
-       sodipodi:role="line"
-       x="524.50726"
-       y="202.88495"
+       x="494.80878"
+       y="181.96104"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       id="tspan3221">(microscopic)</tspan></text>
+       id="tspan3221">ETM<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3306">X</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="539.64258"
-     y="323.11847"
+     x="532.2641"
+     y="348.09973"
      id="text19186-4-2-9-4"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
-       x="539.64258"
-       y="323.11847"
-       id="tspan19190-5-49-2-4"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Schnupp asymmetry</tspan><tspan
-       sodipodi:role="line"
-       x="539.64258"
-       y="335.61847"
+       x="532.2641"
+       y="348.09973"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       id="tspan3219">(macroscopic)</tspan></text>
+       id="tspan3219">ITM<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan4370">Y</tspan></tspan></text>
   <g
      id="b-cav-mir-9-5"
      transform="matrix(0,1,-1,0,476.04799,296.759)"
@@ -1468,128 +1329,20 @@
        x="0.375"
        style="fill:url(#linearGradient8015);stroke:#000000;stroke-width:0.75" />
   </g>
-  <g
-     id="b-cav-mir-9-5-1"
-     transform="translate(501.47699,358.13034)"
-     style="opacity:0.7">
-    <linearGradient
-       gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
-       y2="14.6831"
-       x2="350.0874"
-       y1="43.0298"
-       x1="350.0874"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient8310">
-      <stop
-         id="stop4198-50-1"
-         style="stop-color:#89A4B6"
-         offset="0.0056" />
-      <stop
-         id="stop4200-4-7"
-         style="stop-color:#FFFFFF"
-         offset="0.5" />
-      <stop
-         id="stop4202-6-2"
-         style="stop-color:#89A4B6"
-         offset="1" />
-    </linearGradient>
-    <rect
-       id="rect4230-3-1-0"
-       height="28.346001"
-       width="9.9209995"
-       y="0.375"
-       x="0.375"
-       style="fill:url(#linearGradient8316);stroke:#000000;stroke-width:0.75" />
-  </g>
-  <path
-     style="fill:none;stroke:#9e0058;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow1Send-3-7-4-7-9-4)"
-     d="m 520.22254,396.99174 -9.42706,0"
-     id="path4177-7-2-4-2-1-3-70"
-     inkscape:connector-curvature="0" />
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="656.67908"
-     y="323.16846"
+     x="654.66998"
+     y="348.09973"
      id="text19186-4-2-9-36"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
-       x="656.67908"
-       y="323.16846"
-       id="tspan19190-5-49-2-7"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">DARM offset</tspan><tspan
-       sodipodi:role="line"
-       x="656.67908"
-       y="335.66846"
+       x="654.66998"
+       y="348.09973"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       id="tspan3221-5">(microscopic)</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="518.2052"
-     y="450.89948"
-     id="text19186-4-2-3"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       x="518.2052"
-       y="450.89948"
-       id="tspan19190-5-49-5"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Static carrier</tspan><tspan
-       sodipodi:role="line"
-       x="518.2052"
-       y="463.39948"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       id="tspan3268">and signal sidebands</tspan></text>
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.99999999, 0.99999999;stroke-dashoffset:0;marker-end:none"
-     d="m 458.62129,307.62985 0,64.91822"
-     id="path4177-5-9"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.99999999, 0.99999999;stroke-dashoffset:0;marker-end:none"
-     d="m 464.6899,307.61098 0,60.01846"
-     id="path4177-5-9-1"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000001, 1.00000001;stroke-dashoffset:0;marker-end:none"
-     d="m 460.2871,384.9492 0,87.02075"
-     id="path4177-5-9-7"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000001, 1.00000001;stroke-dashoffset:0;marker-end:none"
-     d="m 466.35572,380.63419 0,91.94163"
-     id="path4177-5-9-1-0"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000006, 1.00000006;stroke-dashoffset:0;marker-end:none"
-     d="m 458.59432,373.23135 1.94551,12.36398"
-     id="path4177-5-9-7-3"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000006, 1.00000006;stroke-dashoffset:0;marker-end:none"
-     d="m 464.36182,367.68918 1.94581,12.36546"
-     id="path4177-5-9-1-0-6"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.99999998, 0.99999998;stroke-dashoffset:0;marker-end:none"
-     d="m 501.38014,369.64403 -25.4179,0"
-     id="path4177-5-9-6"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.99999997, 0.99999997;stroke-dashoffset:0;marker-end:none"
-     d="m 501.33851,375.71264 -30.59244,0"
-     id="path4177-5-9-1-2"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000003, 1.00000003;stroke-dashoffset:0;marker-end:none"
-     d="m 471.04013,375.71132 -12.58421,-1.98737"
-     id="path4177-5-9-7-3-1"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:none;stroke:#1f77b4;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000008, 1.00000008;stroke-dashoffset:0;marker-end:none"
-     d="M 476.87216,369.65059 464.39413,367.6834"
-     id="path4177-5-9-1-0-6-8"
-     inkscape:connector-curvature="0" />
+       id="tspan3221-5">ETM<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan4366">Y</tspan></tspan></text>
   <g
      id="b-cav-mir-9-8"
      transform="matrix(0,1,-1,0,477.8694,428.42349)"
@@ -1626,7 +1379,7 @@
   <g
      id="b-cav-mir-3-3-6"
      style="opacity:0.7"
-     transform="matrix(-1,0,0,-1,412.3355,385.59049)">
+     transform="matrix(-1,0,0,-1,402.61278,385.59049)">
     <linearGradient
        gradientTransform="matrix(0.35,0,0,1,-117.1952,-14.3086)"
        y2="14.6831"
@@ -1656,6 +1409,101 @@
        x="0.375"
        style="fill:url(#linearGradient4283);stroke:#000000;stroke-width:0.75" />
   </g>
+  <path
+     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+     d="m 432.8453,367.65707 0,-68.88116"
+     id="path5498-57-0-36"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+     d="m 465.63548,402.0945 70.53568,0"
+     id="path5498-57-0-36-6"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+     d="m 432.8453,295.01073 0,-108.1272"
+     id="path5498-57-0-36-2"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+     d="m 539.94632,402.0945 108.04562,0"
+     id="path5498-57-0-36-2-3"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="419.03323"
+     y="243.17738"
+     id="text19186-4-2-2-6"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="419.03323"
+       y="243.17738"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan5474-1-1">L<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan5510-8">X</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="419.10324"
+     y="335.69675"
+     id="text19186-4-2-2-6-1"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="419.10324"
+       y="335.69675"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan5474-1-1-27">l<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan5510-8-0">X</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="500.55692"
+     y="417.59448"
+     id="text19186-4-2-2-6-1-7"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="500.55692"
+       y="417.59448"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan5474-1-1-27-9">l<tspan
+   id="tspan4541"
+   style="font-size:65.00091553%;baseline-shift:sub">Y</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="593.55273"
+     y="417.34448"
+     id="text19186-4-2-2-6-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="593.55273"
+       y="417.34448"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan5474-1-1-9">L<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan5510-8-7">Y</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="494.80878"
+     y="304.39474"
+     id="text19186-4-2-9-3"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="494.80878"
+       y="304.39474"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan3221-6">ITM<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan4396">X</tspan></tspan></text>
+  <path
+     style="fill:none;stroke:#ff0000;stroke-width:6.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 538.00223,372.67834 111.76746,0"
+     id="path4177-47-3-53"
+     inkscape:connector-curvature="0" />
   <g
      id="g3"
      transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,458.77977,387.98531)"
@@ -1685,240 +1533,90 @@
        id="rect10"
        style="fill:url(#b-bsp-grad);stroke:#000000;stroke-width:0.75" />
   </g>
-  <path
-     style="fill:none;stroke:#9e0058;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow1Send-3-7-4-7-9)"
-     d="m 437.97249,315.16741 0,-9.09456"
-     id="path4177-7-2-4-2-1-3"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
-     d="m 432.8453,367.43271 0,-63.54139"
-     id="path5498-57-0-36"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
-     d="m 468.32281,402.0945 36.72869,0"
-     id="path5498-57-0-36-6"
-     inkscape:connector-curvature="0" />
-  <path
-     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
-     d="m 432.8453,300.15822 0,-118.59895"
-     id="path5498-57-0-36-2"
-     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="487.5"
+     y="357.84448"
+     id="text19186-4-2-9-3-5"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="487.5"
+       y="357.84448"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan3221-6-6">BS</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="397.14087"
+     y="349.09448"
+     id="text19186-4-2-9-3-9"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="397.14087"
+       y="349.09448"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan3221-6-1">PRM</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="495.31012"
+     y="437.01898"
+     id="text19186-4-2-9-3-7"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="495.31012"
+       y="437.01898"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan3221-6-0">SRM</tspan></text>
   <path
      style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
-     d="m 508.82361,402.0945 146.02363,0"
-     id="path5498-57-0-36-2-3"
+     d="m 432.8453,426.74006 0,-52.45312"
+     id="path5498-57-0-36-61"
      inkscape:connector-curvature="0" />
-  <g
-     id="g4409"
-     transform="translate(0,1.3097306)">
-    <text
-       sodipodi:linespacing="125%"
-       id="text19186-4-2-2-6"
-       y="243.339"
-       x="391.45392"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       xml:space="preserve"><tspan
-         id="tspan5474-1-1"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         y="243.339"
-         x="391.45392"
-         sodipodi:role="line">L<tspan
-   id="tspan5510-8"
-   style="font-size:65.00091553%;baseline-shift:sub">X</tspan>+</tspan></text>
-    <g
-       transform="translate(0,2.3299629)"
-       id="g4401">
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="413"
-         y="234.80623"
-         id="text19186-4-2-2-6-3"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="413"
-           y="234.80623"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6">δL<tspan
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="425"
+     y="424.09448"
+     id="text19186-4-2-2-6-1-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="425"
+       y="424.09448"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan5474-1-1-27-7">l<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan5545-5">DARM</tspan></tspan></text>
-      <path
-         style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 426.32435,238.68994 -26.70237,0"
-         id="path5498-57-3"
-         inkscape:connector-curvature="0" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="412.90237"
-         y="246.56187"
-         id="text19186-4-2-2-6-3-5"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="412.90237"
-           y="246.56187"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-6">2</tspan></text>
-    </g>
-  </g>
-  <g
-     id="g4481"
-     transform="translate(-0.06780232,19.543893)">
-    <text
-       sodipodi:linespacing="125%"
-       id="text19186-4-2-2-6-1"
-       y="319.90811"
-       x="392.93927"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       xml:space="preserve"><tspan
-         id="tspan5474-1-1-27"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         y="319.90811"
-         x="392.93927"
-         sodipodi:role="line">l<tspan
-   id="tspan5510-8-0"
-   style="font-size:65.00091553%;baseline-shift:sub">X</tspan>+</tspan></text>
-    <g
-       transform="translate(0.15951234,78.89907)"
-       id="g4401-9">
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="413"
-         y="234.80623"
-         id="text19186-4-2-2-6-3-3"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="413"
-           y="234.80623"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-60">Δl<tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4469">SCH</tspan></tspan></text>
-      <path
-         style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 426.32435,238.68994 -26.70237,0"
-         id="path5498-57-3-2"
-         inkscape:connector-curvature="0" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="412.90237"
-         y="246.56187"
-         id="text19186-4-2-2-6-3-5-6"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="412.90237"
-           y="246.56187"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-6-1">2</tspan></text>
-    </g>
-  </g>
-  <g
-     id="g4645">
-    <text
-       sodipodi:linespacing="125%"
-       id="text19186-4-2-2-6-1-7"
-       y="420.8476"
-       x="475.04553"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       xml:space="preserve"><tspan
-         id="tspan5474-1-1-27-9"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         y="420.8476"
-         x="475.04553"
-         sodipodi:role="line">l<tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4541">Y</tspan>-</tspan></text>
-    <g
-       transform="translate(80.984122,179.5292)"
-       id="g4401-9-0">
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="413"
-         y="234.80623"
-         id="text19186-4-2-2-6-3-3-2"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="413"
-           y="234.80623"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-60-3">Δl<tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4469-7">SCH</tspan></tspan></text>
-      <path
-         style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 426.32435,238.68994 -26.70237,0"
-         id="path5498-57-3-2-5"
-         inkscape:connector-curvature="0" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="412.90237"
-         y="246.56187"
-         id="text19186-4-2-2-6-3-5-6-9"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="412.90237"
-           y="246.56187"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-6-1-2">2</tspan></text>
-    </g>
-  </g>
-  <g
-     id="g4667"
-     transform="translate(0.72921367,0)">
-    <text
-       sodipodi:linespacing="125%"
-       id="text19186-4-2-2-6-8"
-       y="420.8476"
-       x="566.82416"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       xml:space="preserve"><tspan
-         id="tspan5474-1-1-9"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-         y="420.8476"
-         x="566.82416"
-         sodipodi:role="line">L<tspan
-   id="tspan5510-8-7"
-   style="font-size:65.00091553%;baseline-shift:sub">Y</tspan>-</tspan></text>
-    <g
-       transform="translate(173.91188,179.5292)"
-       id="g4401-3">
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="413"
-         y="234.80623"
-         id="text19186-4-2-2-6-3-6"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="413"
-           y="234.80623"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-1">δL<tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan5545-5-2">DARM</tspan></tspan></text>
-      <path
-         style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         d="m 426.32435,238.68994 -26.70237,0"
-         id="path5498-57-3-9"
-         inkscape:connector-curvature="0" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-         x="412.90237"
-         y="246.56187"
-         id="text19186-4-2-2-6-3-5-3"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           x="412.90237"
-           y="246.56187"
-           style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-           id="tspan5474-1-1-6-6-19">2</tspan></text>
-    </g>
-  </g>
+   id="tspan4583">S</tspan></tspan></text>
+  <path
+     style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+     d="m 460.87418,402.0945 -56.37361,0"
+     id="path5498-57-0-36-61-2"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="410"
+     y="394.09448"
+     id="text19186-4-2-2-6-1-8-2"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="410"
+       y="394.09448"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan5474-1-1-27-7-8">l<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan4639">P</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="497.40244"
+     y="477.3345"
+     id="text19186-4-2-9-3-5-7"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="497.40244"
+       y="477.3345"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan3221-6-6-3">Output</tspan></text>
 </svg>
