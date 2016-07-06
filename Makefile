@@ -182,6 +182,8 @@ $(GFXGENPY)/70-sideband-powers-vs-darm-offset-detuned.pdf: $(DATAGENMAT)/70-side
 
 $(GFXGENPY)/70-sweeps-detuned.pdf: $(DATAGENMAT)/70-sweep-carm-detuned.csv $(DATAGENMAT)/70-sweep-darm-detuned.csv $(DATAGENMAT)/70-sweep-mich-detuned.csv $(DATAGENMAT)/70-sweep-prcl-detuned.csv $(DATAGENMAT)/70-sweep-srcl-detuned.csv
 
+$(GFXGENPY)/70-et-lf-control-scheme-sensitivity-curve.pdf: $(DATAGENMAT)/70-control-scheme-darm-sensitivity.csv $(DATA)/70-et-d-sensitivity-curve-no-sqz.csv $(DATA)/70-et-lf-control-scheme-curve-finesse.csv
+
 # ===== Data dependencies =====
 
 $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
@@ -252,6 +254,9 @@ $(DATAGENMAT)/70-sweep-prcl-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_prcl_d
 
 $(DATAGENMAT)/70-sweep-srcl-detuned.csv: $(DATASCRMAT)/create_et_lf_sweep_srcl_detuned.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sweep_srcl_detuned('$(ROOT)/$@', 2e-8, 250); exit;"
+
+$(DATAGENMAT)/70-control-scheme-darm-sensitivity.csv: $(DATASCRMAT)/create_et_lf_sensitivity_detuned.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_sensitivity_detuned('$(ROOT)/$@', logspace(0, 3, 1000)); exit;"
 
 # ===== Misc =====
 

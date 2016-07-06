@@ -48,18 +48,8 @@
 \newcommand{\REFLSUM}{$\text{\REFL}_{\num{68}}$}
 \newcommand{\REFLDIFF}{$\text{\REFL}_{\num{45}}$}
 
-\begin{itemize}
-  \item Tobin's talk at G0900745 is really good for explaining DC readout's benefits
-  
-  \item Show plots of sideband powers not entering the cavities
-
-	\begin{itemize}
-	  \item Optical response: with and without mechanical TFs - show the difference it makes to the response at low frequencies, and why it is necessary to turn them off in the case when you're computing a sensing matrix
-	\end{itemize}
-\end{itemize}
-
-\section{The Einstein Telescope Facility}
-In \checkme{2011} a group of scientists primarily based in Europe completed a design study to examine the requirements for a gravitational wave observatory that pushes the \MI{} topology to its limits, while making any newly built facility generic enough to allow for the implementation of new topologies as the state of the art evolves. In this study they laid out the expected improvements in technologies to mitigate fundamental and technical noise sources currently limiting the sensitivity of the third generation of detectors, with a number of practical differences to existing facilities.
+\section{The \ET{} facility}
+In \checkme{2011} a group of scientists primarily based in Europe completed a design study \cite{ET2011} to examine the requirements for a gravitational wave observatory that pushes the \MI{} topology to its limits, while making any newly built facility generic enough to allow for the implementation of new topologies as the state of the art evolves. In this study they laid out the expected improvements in technologies to mitigate fundamental and technical noise sources currently limiting the sensitivity of the third generation of detectors, with a number of practical differences to existing facilities.
 
 The proposed \ET{} facility composes six \DRFPMI{}s split between the three corners of a triangle with length \SI{10}{\kilo\meter} long. The idea is to exploit the geometry to implement interferometers with \SI{10}{\kilo\meter} arms meeting at the three vertices to benefit from the colocation of multiple interferometers. The extended arm length over \ALIGO{} provides less susceptibility to displacement noise sources by a factor of \cite{Dwyer2015, aligocosmic2016}:
 \begin{equation}
@@ -67,7 +57,7 @@ The proposed \ET{} facility composes six \DRFPMI{}s split between the three corn
 \end{equation}
 translating into an increase in the observable volume of the universe by around $3.95$, assuming that displacement noise sources stay the same.
 
-Seismic noise limits the sensitivity of current generation detectors below \SI{10}{\hertz}, and there are astrophysical advantages to being able to achieve good sensitivity at these frequencies \cite{Sathyaprakash2012}, particularly in the ability to see the inspiral and merger of high mass black hole binary coalescences. The majority of spinning neutron stars discovered via optical techniques have also had orbital frequencies $f$ below \SI{10}{\hertz} where fundamental noise limits the ability for the current generation of detectors to see such signals. Signals at \SI{2}{\hertz} stay in \ETLF{}'s sensitive band for hours instead of milliseconds as witnessed for instance with GW150914 \cite{ET2011} \note{cite detection paper}. Having extra observation time provides the possibility to track the signal evolution with corresponding changes in the signal recycling cavity tuning \cite{Heinzel2002, Simakov2014}. With greatly enhanced low frequency sensitivity, \gls{ET} would have unprecedented sensitivity to such signals.
+Seismic noise limits the sensitivity of current generation detectors below \SI{10}{\hertz}, and there are astrophysical advantages to being able to achieve good sensitivity at these frequencies \cite{Sathyaprakash2012}, particularly in the ability to see the inspiral and merger of high mass black hole binary coalescences. The majority of spinning neutron stars discovered via optical techniques have also had orbital frequencies $f$ below \SI{10}{\hertz} where fundamental noise limits the ability for the current generation of detectors to see such signals. Signals at \SI{2}{\hertz} stay in \ETLF{}'s sensitive band for hours instead of milliseconds as witnessed for instance with \GWFIRSTEVENT{} \cite{Abbott2016}. Having extra observation time provides the possibility to track the signal evolution with corresponding changes in the signal recycling cavity tuning \cite{Heinzel2002, Simakov2014}. With greatly enhanced low frequency sensitivity, the \ET{} would have unprecedented sensitivity to such signals.
 
 \subsection{New facility}
 As discussed in Section\,\ref{sec:seismic-noise}, seismic noise in current detectors limits the sensitivity at low frequencies and creates challenging control requirements due to the \gls{RMS} mirror motion created by ground vibrations. The \ET{} interferometers' beam tubes will be underground \note{how far?} to mitigate seismic noise coupling. This location also helps to limit the impact of gravity gradient noise, as discussed in Section\,\ref{sec:gravity-gradient-noise}, which is expected to become a problem as seismic noise is mitigated.
@@ -419,27 +409,38 @@ The parameters used in the proposed control scheme are shown in Table\,\ref{tab:
 
 \begin{table}
   \centering
-  \begin{tabular}{r|c|cc}
-    \textbf{Parameter} & \textbf{Symbol in text} & \textbf{Design study value} & \textbf{Updated value} \\
-    \hline
-    Laser wavelength & & \multicolumn{2}{c}{\SI{1550}{\nano\meter}} \\
-    Input power & & \multicolumn{2}{c}{\SI{3}{\watt}} \\
-    Arm power         & & \multicolumn{2}{c}{\SI{18}{\kilo\watt}} \\
-    \gls{ITM} transmissivity & & \multicolumn{2}{c}{\SI{7000}{\ppm}} \\
-    \gls{ETM} transmissivity & & \multicolumn{2}{c}{\SI{6}{\ppm}} \\
-    \gls{PRM} transmissivity & $T_{\text{PRM}}$ & \multicolumn{2}{c}{\SI{4.6}{\percent}} \\
-    \gls{SRM} transmissivity & & \multicolumn{2}{c}{\SI{10}{\percent}} \\
-    Signal recycling detuning & & \multicolumn{2}{c}{\SI{0.6}{\radian}} \\
-    Arm cavity lengths & $L_{\text{X}}$, $L_{\text{Y}}$ & \multicolumn{2}{c}{\SI{10}{\kilo\meter}} \\
-    Power recycling cavity length & $L_{\text{PRCL}}$  & \multicolumn{2}{c}{\SI{310}{\meter}} \\
-    Signal recycling cavity length & $L_{\text{SRCL}}$  & \SI{310}{\meter} & \SI{311.585}{\meter} \\
-    Schnupp asymmetry & $\Delta l_{\text{SCH}}$  & \textemdash & \SI{0.08}{\meter} \\
-    \gls{DARM} offset & $\delta L_{\text{DARM}}$  & \textemdash & \SI{12}{\pico\meter} \\
-    Control sideband frequencies & $f_1$, $f_2$ & \textemdash & \SI{11363101}{\hertz}, \SI{56815505}{\hertz} \\
-    Demodulation frequencies & & \textemdash & $f_1$, $f_2$, $f_2 - f_1$, $f_1 + f_2$
-  \end{tabular}
+  \resizebox{16cm}{!}{%
+    \begin{tabular}{r|c|cc}
+      \textbf{Parameter} & \textbf{Symbol in text} & \textbf{Design study value} & \textbf{Updated value} \\
+      \hline
+      Laser wavelength & & \multicolumn{2}{c}{\SI{1550}{\nano\meter}} \\
+      Input power & & \multicolumn{2}{c}{\SI{3}{\watt}} \\
+      Arm power         & & \multicolumn{2}{c}{\SI{18}{\kilo\watt}} \\
+      \gls{ITM} transmissivity & & \multicolumn{2}{c}{\SI{7000}{\ppm}} \\
+      \gls{ETM} transmissivity & & \multicolumn{2}{c}{\SI{6}{\ppm}} \\
+      \gls{PRM} transmissivity & $T_{\text{PRM}}$ & \multicolumn{2}{c}{\SI{4.6}{\percent}} \\
+      \gls{SRM} transmissivity & & \multicolumn{2}{c}{\SI{10}{\percent}} \\
+      Signal recycling detuning & & \multicolumn{2}{c}{\SI{0.6}{\radian}} \\
+      Arm cavity lengths & $L_{\text{X}}$, $L_{\text{Y}}$ & \multicolumn{2}{c}{\SI{10}{\kilo\meter}} \\
+      Power recycling cavity length & $L_{\text{PRCL}}$  & \multicolumn{2}{c}{\SI{310}{\meter}} \\
+      Signal recycling cavity length & $L_{\text{SRCL}}$  & \SI{310}{\meter} & \SI{311.585}{\meter} \\
+      Schnupp asymmetry & $\Delta l_{\text{SCH}}$  & \textemdash & \SI{0.08}{\meter} \\
+      \gls{DARM} offset & $\delta L_{\text{DARM}}$  & \textemdash & \SI{12}{\pico\meter} \\
+      Control sideband frequencies & $f_1$, $f_2$ & \textemdash & \SI{11363101}{\hertz}, \SI{56815505}{\hertz} \\
+      Demodulation frequencies & & \textemdash & $f_1$, $f_2$, $f_2 - f_1$, $f_1 + f_2$
+    \end{tabular}
+  }
   \caption[Updated parameters for \ETLF{} in the detuned configuration following the development of the conceptual sensing scheme]{\label{tab:et-lf-updated-parameters}Updated parameters for \ETLF{} in the detuned configuration following the development of the conceptual sensing scheme in this chapter.}
 \end{table}
+
+\subsection{Sensitivity of the scheme}
+The sensitivity for \ETLF{} shown in Figure\,\ref{fig:et-d-sensitivity} assumes that the interferometer contains squeezed vacuum input via two filter cavities in addition to the presence of seismic and other noise, and these features have not been modelled in this work. The ET-D study \cite{Hild2011} contains the quantum noise limited sensitivity of the interferometer in the absence of squeezing, and so a comparison is shown in Figure\,\ref{fig:et-lf-control-scheme-sensitivity} between this curve and the quantum noise limited sensitivity of the \ASDC{} readout in this scheme modelled with Optickle. Also shown is the curve generated with identical parameters in \emph{Finesse} (see Appendix\,\ref{sec:finesse-sim}), with excellent agreement. This shows that the choice of parameters shown in Table\,\ref{tab:et-lf-updated-parameters} do not negatively impact upon the design sensitivity of the interferometer. The difference in sensitivity in the region of the cavity pole (\SI{7}{\hertz}) and the optical spring from the detuned signal recycling cavity (\SI{25}{\hertz}) is probably due to the difference in the way in which quantum noise calculations are implemented between the tools.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-et-lf-control-scheme-sensitivity-curve.pdf}
+  \caption[ET-LF quantum noise limited sensitivity using the conceptual control scheme]{\label{fig:et-lf-control-scheme-sensitivity}\ETLF{} quantum noise limited sensitivity using the conceptual control scheme, with no squeezed light injection. The reference curve from the ET-D study is shown next to the sensitivity calculated with the Optickle model developed in this chapter, and also a Finesse curve generated using identical parameters. The curves broadly agree, showing that the chosen parameters do not negatively impact upon the sensitivity, though a difference in the noise calculations probably creates the slight mismatch in the most sensitive region.}
+\end{figure}
 
 \section{Outlook and future work}
 By utilising an \gls{RF} phase modulation scheme we have shown in this chapter that \ETLF{} can in principle be controlled in its detuned configuration. Due to the detuning the interferometer experiences increased cross-coupling of degrees of freedom particularly for \gls{MICH} and \gls{SRCL} when compared to a scheme for a tuned \DRFPMI{} such as the one used in \ALIGO{}. Sensing and control noise issues remain unaddressed, as have more exotic control schemes such as the use of additional modulation frequencies or \emph{sub-carriers}. This section describes some future work that will be necessary to refine and improve the results presented here towards a comprehensive technical design.
@@ -448,7 +449,7 @@ By utilising an \gls{RF} phase modulation scheme we have shown in this chapter t
 In \ALIGO{} the conceptual control scheme was first tested at the \CALTECHFORTYM{} and it is probable that any technical design for \ETLF{} will require a similar test. At this stage a quantitative assessment of the performance that a particular control scheme might provide might take the form of a technique presented by Mantovani and Freise \cite{Mantovani2008} developed for alignment control in \VIRGO{}, but suitable for longitudinal control. This involves the calculation of a \emph{quality parameter} representing the controllability of a given set of sensors and degrees of freedom. This approach only makes sense when $M$ represents the interferometer at its operating point, which means that the residual motion of controlled degrees of freedom does not create a significant cross-coupling. This approach requires hierarchical gain to be simulated as part of a lock acquisition sequence, and so some effort will be required to design some simple control servos.
 
 \subsection{Switching between tuned to detuned operation}
-Transition from tuned to detuned signal recycling operating points and vice versa involves a technique which can maintain control of the interferometer as it transitions between two desired set points. When dual recycling was first demonstrated in suspended optics in the Garching prototype, it involved a varying frequency offset applied to the \gls{RF} modulation sidebands as the tuning was changed \cite{Freise2000}. In \GEO{} the control technique involved a complicated sequence of events \cite{Grote2004} including an uncontrolled ``jump'' between two operating points \cite{Hild2007} to reached tuned mode. In \ETLF{} it is expected that the signal recycling cavity finesse will be too high to allow for a previously demonstrated transition scheme. Instead, investigations are underway to model the impact that combinations of phase- and amplitude-modulated control sidebands added to the input light or \emph{subcarriers} added to the squeezing injection port have on the controllability of the signal recycling cavity at arbitrary detunings. Another possibility is to adapt the \emph{arm length stabilisation} system developed for the lock acquisition of \ALIGO{} \cite{Mullavey2012, Staley2014}, whereby a second carrier at a different wavelength is used to lock cavities. This takes advantage of the lower finesse of the second carrier's wavelength in the cavities, allowing for a wider locking range. The cavities are first pre-stabilised using this second carrier before the main carrier is brought to resonance.
+Transition from tuned to detuned signal recycling operating points and vice versa involves a technique which can maintain control of the interferometer as it transitions between two desired set points. When dual recycling was first demonstrated in suspended optics in the \GARCHINGPROTOTYPE{}, it involved a varying frequency offset applied to the \gls{RF} modulation sidebands as the tuning was changed \cite{Freise2000}. This control technique was evolved in \GEO{} where a complicated sequence of actions \cite{Grote2004} including an uncontrolled ``jump'' between two operating points \cite{Hild2007} were performed to reached tuned mode from a detuned start point. In \ETLF{} it is expected that the signal recycling cavity finesse will be too high to allow for a previously demonstrated transition scheme, and so investigations are ongoing to model the impact that combinations of phase- and amplitude-modulated control sidebands added to the input light or \emph{subcarriers} added to the squeezing injection port have on the lock acquisition and control of the signal recycling cavity at arbitrary detunings. Another possibility is to adapt the \emph{arm length stabilisation} system developed for the lock acquisition of \ALIGO{} \cite{Mullavey2012, Staley2014}, whereby a second carrier at a different wavelength is used to lock cavities. This takes advantage of the lower finesse of the second carrier's wavelength in the cavities, allowing for a wider locking range. The cavities are first pre-stabilised using this second carrier before the main carrier is brought to resonance.
 
 \subsection{Sensing and control of seismic and gravity gradient noise}
 The \ET{} facility will be located and designed to minimise the impact of seismic noise, but due to the sensitivity requirement for \ETLF{} the microseism must be suppressed from around \num{e-6} to \SI{e-8}{\meter\per\sqrthz} at frequencies between \num{0.1} and \SI{1}{\hertz} to below \SI{e-18}{\meter\per\sqrthz} by \SI{2}{\hertz}. This represents a signal difference of around \num{e10}, and current sensor electronics can typically only provide dynamic range of around $\SI{130}{\deci\bel} \approx \num{3e6}$. To control seismic noise in addition to being able to sense displacements at the required level, a sensor hierarchy will need to be developed.
