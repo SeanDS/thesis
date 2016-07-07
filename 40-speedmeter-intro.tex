@@ -11,25 +11,32 @@
   \item See S.D.'s talk at group meeting 6th July, talking about how speed meters need a pi phase shift between photons hitting the same mirror to cancel R.P. noise. In a Sagnac it is naturally occurring but in a Michelson it requires a sloshing cavity or polarisation optics.
 \end{itemize}
 
-In 1990, Braginsky and Khalili showed that the measurement of momentum, known to be a \emph{quantum non-demolition} (\gls{QND}) observable, offers the ability to surpass the \gls{SQL} in interferometric measurement \cite{Braginsky1990}.
+\subsection{Sensitivity of a position-meter to amplitude and phase fluctuations}
+In an ordinary Michelson position-meter, the mirrors in each arm are sampled by separate light beams which recombine at the beam splitter. Motion of the mirror in the longitudinal direction either shortens or elongates the round-trip phase of the light in each arm, and thus this motion is imprinted upon the \emph{phase} of the light returning to the beam splitter. The phase difference of the two recombining beams at the beam splitter then leads to light at the output port, which can be measured using a heterodyne or homodyne readout as discussed in Section\,\ref{sec:readout}.
 
+The presence of classical light power in the arms leads to a radiation pressure effect which imparts a force upon the test masses. A restoring force on the mirrors, either via a pendulum in a suspended experiment or a mirror mount on a table-top experiment, means that this force is static and the interferometer can be held at the operating point as discussed in Section\,\ref{sec:operating-point} by microscopic \gls{DC} corrections.
 
+The responses of a simple Michelson interferometer and a Michelson interferometer with Fabry-Perot arm cavities are shown in Figure\,\ref{fig:mich-vs-fp-mich-response}. The change in light power at the output port is flat as a function of frequency at all frequencies in the \MI{}, and for the \FPMI{} it is flat up until the pole frequency of the \FP{} cavities, whereupon the response decreases due to the fact that mirror motion is no longer able to be witnessed by the light due to its finite travel time. The addition of arm cavities to the \MI{} results in greater response within the bandwidth of the cavities by a factor approximating the arm cavity finesse (see Appendix\,\ref{sec:cavity-fom}), in this case around \num{600}. Two other noticeable features occur, with the peak appearing at \SI{2}{\hertz} caused by an optical spring due to the detuning applied to the cavities for the purposes of \gls{DC} readout, and the trough at \SI{0.7}{\hertz} due to the mechanical pendulum resonance.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-response.pdf}
+  \caption[Response of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-response}Response of a \MI{} and a \FPMI{}. The \FPMI{} has arm cavities with finesse of around \num{600}, and so the response is increased by around this amount within the bandwidth of the cavities, which is around \SI{250}{\hertz}. The other features in the \FPMI{} are due to cavity mirror mechanics and optomechanics.}
+\end{figure}
 
+If we examine the noise at the output of each interferometer, we see... \note{radiation pressure...}
 
-NEW STUFF
+Since the early 1990s it has been known that the measurement of momentum, known to be a quantum non-demolition (\gls{QND}) observable, offers the ability to surpass the \gls{SQL} in interferometric measurement \cite{Braginsky1990}. Initial suggestions for the conversion of an interferometer into a speed-meter involved the Michelson topology, for instance with the addition of a \emph{sloshing cavity} \cite{Braginsky2000, Purdue2002} at the output port, as shown in Figure\,\ref{fig:sloshing-michelson}.
 
-The Advanced LIGO gravitational wave observatories \cite{aligo2015} made the first detection of gravitational waves from a binary black hole in 2015 \cite{Abbott2016} at the start of their joint observing run. In the coming years Advanced Virgo \cite{avirgo2015} in Italy and KAGRA \cite{kagra2013} in Japan are expected to join the network, opening up a new window through which to observe the universe. These detectors are, fundamentally, Michelson interferometers with the addition of \FP{} arm cavities and other optical modifications \cite{aligo2015, Abbott2016a} to achieve exquisite sensitivity to motion of the test masses. Using the Local Lorenz gauge, an incident gravitational wave can be pictured as a change in length between the cavity mirrors in each arm of the interferometer. The primary degree of freedom a gravitational wave would excite is the differential mode of the cavity lengths, \LMINUS{}, which can be defined in terms of the position of the end test masses (\glspl{ETM}) $x_{\textrm{A}}^{\textrm{ETM}}$ and $x_{\textrm{B}}^{\textrm{ETM}}$ in cavities A and B, respectively, as:
-\begin{equation}
-  \label{eq:darm}
-  \textrm{\LMINUS{}} = \frac{x_{\textrm{A}}^{\textrm{ETM}} - x_{\textrm{B}}^{\textrm{ETM}}}{2}.
-\end{equation}
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-sloshing-michelson.pdf}
+  \caption[Layout of a \MI{} with a sloshing cavity]{\label{fig:sloshing-michelson}Layout of a \MI{} with a sloshing cavity as presented in \cite{Purdue2002}. The light leaving the standard \MI{} is coupled into a sloshing cavity via a beam splitter where it receives a phase shift, and it re-enters the interferometer via the recycling mirror to the left of the sloshing beam splitter. The light incident upon the beam splitter then contains light that has sampled the mirrors at two points in time, leading to a speed-meter effect.}
+\end{figure}
 
-Quantum noise, the combination of quantum radiation pressure noise at low frequencies and quantum shot noise at high frequencies, restricts the ultimate sensitivity of classical Michelson interferometers at what is termed the \emph{Standard Quantum Limit} (\gls{SQL}) \cite{Braginsky1995}. As quantum noise is expected to limit the sensitivity of the aforementioned \emph{second generation} detectors over a wide frequency band, particular effort is being paid to its reduction in proposals for \emph{third-generation} instruments such as the \ET{} facility \cite{Hild2011} and \LIGOCE{} \cite{aligoinst2015}.
-
-Reduction of quantum noise below the SQL in a particular optical configuration involves a so-called \emph{quantum non-demolition} (\gls{QND}) measurement \cite{Braginsky1995}: either the use of quantum correlations in the outgoing light or the enhancement of the test mass dynamics by means of light \cite{Chen2011}. Quantum correlations arise naturally between the otherwise uncorrelated sources of quantum noise due to the interaction between the light and the motional degrees of freedom of the interferometer and can be used to effectively avoid radiation pressure noise contributions to the readout signal. This group of methods includes frequency-dependent squeezing \cite{Kimble2001}, variational readout \cite{Kimble2001, Vyatchanin1995, Vyatchanin1996} and speed meters \cite{Braginsky1990, Braginsky2000, Chen2003, Danilishin2004}. The latter approach implies the use of light-mirror interactions to create new test mass dynamics in order to increase their response to the gravitational wave action. This includes so-called ``optical springs'' \cite{Braginsky1999, Buonanno2002, Corbitt2007, Rehbein2008, Gordon2015}, ``optical inertia'' \cite{Khalili2011, Voronchev2012} and ``intracavity schemes'' \cite{Braginsky1997, Khalili2002, Danilishin2006}.
+It was realised by Chen \cite{Chen2003} that the zero-area \SSM{} is a speed-meter. This topology is arranged such that incident photons sample the same set of mirrors in two directions at two different times, leading to the speed-meter behaviour shown in Equation XXX...
    
-The method on which we focus employs an interferometer topology intrinsically sensitive to a QND observable \cite{Danilishin2012}. The measurement of velocity, itself approximately proportional to the QND observable of the free test mass momentum, is one way in which a reduction in quantum radiation pressure noise can be achieved. A proof-of-concept experiment is under way at the University of Glasgow to demonstrate an audio-band reduction of quantum radiation pressure noise in a \SSM{} topology over an equivalent Michelson design \cite{Graef2014}. This topology is being considered as an alternative to the Einstein Telescope's Michelson interferometer design \cite{MuellerEbhardt2009a, Voronchev2015}. The topology under investigation in the proof-of-concept experiment utilises a zero-area Sagnac interferometer with the addition of arm cavities based on the concept presented in ref.\,\cite{Chen2003}. By design, this interferometer produces a signal at the beam splitter's output port proportional to differential arm cavity mirror \emph{velocity}, in contrast to the \emph{displacement}-proportional signal sensed in the Michelson topology.
+The method on which we focus employs an interferometer topology intrinsically sensitive to a \gls{QND} observable \cite{Danilishin2012}. The measurement of velocity, itself approximately proportional to the \gls{QND} observable of the free test mass momentum, is one way in which a reduction in quantum radiation pressure noise can be achieved. A proof-of-concept experiment is under way at the University of Glasgow to demonstrate an audio-band reduction of quantum radiation pressure noise in a \SSM{} topology over an equivalent Michelson design \cite{Graef2014}. This topology is being considered as an alternative to the \ET{}'s \MI{} design \cite{MuellerEbhardt2009a, Voronchev2015}. The topology under investigation in the proof-of-concept experiment utilises a zero-area Sagnac interferometer with the addition of arm cavities based on the concept presented in ref.\,\cite{Chen2003}. By design, this interferometer produces a signal at the beam splitter's output port proportional to differential arm cavity mirror \emph{velocity}, in contrast to the \emph{displacement}-proportional signal sensed in the Michelson topology.
 
 \subsection{Measurement of speed}
 
@@ -129,3 +136,10 @@ One of the main issues faced by experiments involving numerous interfaces betwee
 
 \section{Modelling the sensitivity of the \SSM{}}
 \note{Optickle and Finesse models, analytical comparison}
+
+\section{Topics of particular focus}
+\note{Introduce the work to be discussed in the controls and ESD chapters.}
+
+\subsection{Control and noise analysis of the Glasgow \SSM{}}
+
+\subsection{Demonstration of a plate-capacitor electrostatic actuator}
