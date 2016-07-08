@@ -122,6 +122,10 @@ $(GFXGENPY)/30-servo-tf.pdf: $(DATAGENMAT)/30-servo-tf.csv
 
 $(GFXGENPY)/40-mich-vs-fp-mich-response.pdf: $(DATAGENMAT)/40-mich-vs-fp-mich-response.csv
 
+$(GFXGENPY)/40-mich-vs-fp-mich-noise.pdf: $(DATAGENMAT)/40-mich-vs-fp-mich-noise.csv
+
+$(GFXGENPY)/40-mich-vs-fp-mich-sensitivity.pdf: $(DATAGENMAT)/40-mich-vs-fp-mich-response.csv $(DATAGENMAT)/40-mich-vs-fp-mich-noise.csv
+
 $(GFXGENPY)/50-mirror-tfs.pdf: $(DATAGENMAT)/50-mirror-tfs.csv
 
 $(GFXGENPY)/50-m7-seismic-noise.pdf: $(DATAGENMAT)/50-m7-seismic-noise.csv
@@ -199,6 +203,9 @@ $(DATAGENMAT)/30-servo-tf.csv: $(DATASCRMAT)/create_wgm_servo_tf.m
 
 $(DATAGENMAT)/40-mich-vs-fp-mich-response.csv: $(DATASCRMAT)/create_mich_vs_fp_mich_response.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_mich_vs_fp_mich_response('$(ROOT)/$@', logspace(-1, 5, 3000)); exit;"
+
+$(DATAGENMAT)/40-mich-vs-fp-mich-noise.csv: $(DATASCRMAT)/create_mich_vs_fp_mich_noise.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_mich_vs_fp_mich_noise('$(ROOT)/$@', logspace(-1, 5, 3000)); exit;"
 
 $(DATAGENMAT)/50-mirror-tfs.csv: $(DATASCRMAT)/create_ssm_mirror_tfs.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_mirror_tfs('$(ROOT)/$@', logspace(1, 5, 1000)); exit;"

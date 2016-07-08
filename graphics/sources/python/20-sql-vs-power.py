@@ -36,7 +36,7 @@ def kappa(f, f_0, m, L, gamma, I):
   f = frequency
   """
   
-  return (2 * (I / I_sql(m, L, gamma, f_0)) * gamma ** 4) / (f ** 2 * (gamma ** 2 * f ** 2))
+  return (2 * (I / I_sql(m, L, gamma, f_0)) * gamma ** 4) / (f ** 2 * (gamma ** 2 + f ** 2))
 
 # strain for power
 def S_h(f, f_0, m, L, gamma, I):
@@ -44,7 +44,7 @@ def S_h(f, f_0, m, L, gamma, I):
   
   return np.sqrt(((S_h_sql(f, m, L) ** 2) / 2) * (1 / k + k))
 
-f = np.logspace(0, 3, 1000)
+f = np.logspace(1, 4, 1000)
 f_0 = 3e8 / 1064e-9
 m = 50
 L = 1000
@@ -72,8 +72,8 @@ labels.append("SQL")
 
 ax1.legend(labels, loc='lower left')
 
-ax1.set_xlabel('Frequency [Hz]')
-ax1.set_ylabel('Strain [1 / sqrt(Hz)]')
+ax1.set_xlabel('Frequency (Hz)')
+ax1.set_ylabel('Strain (1 / sqrt(Hz))')
 ax1.grid(True)
 
 #ax1.set_xlim([-0.75, 0.75])

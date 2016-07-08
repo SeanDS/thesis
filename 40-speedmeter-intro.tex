@@ -11,7 +11,7 @@
   \item See S.D.'s talk at group meeting 6th July, talking about how speed meters need a pi phase shift between photons hitting the same mirror to cancel R.P. noise. In a Sagnac it is naturally occurring but in a Michelson it requires a sloshing cavity or polarisation optics.
 \end{itemize}
 
-\subsection{Sensitivity of a position-meter to amplitude and phase fluctuations}
+\subsection{\label{sec:position-meter-measurement}Sensitivity of a position-meter}
 In an ordinary Michelson position-meter, the mirrors in each arm are sampled by separate light beams which recombine at the beam splitter. Motion of the mirror in the longitudinal direction either shortens or elongates the round-trip phase of the light in each arm, and thus this motion is imprinted upon the \emph{phase} of the light returning to the beam splitter. The phase difference of the two recombining beams at the beam splitter then leads to light at the output port, which can be measured using a heterodyne or homodyne readout as discussed in Section\,\ref{sec:readout}.
 
 The presence of classical light power in the arms leads to a radiation pressure effect which imparts a force upon the test masses. A restoring force on the mirrors, either via a pendulum in a suspended experiment or a mirror mount on a table-top experiment, means that this force is static and the interferometer can be held at the operating point as discussed in Section\,\ref{sec:operating-point} by microscopic \gls{DC} corrections.
@@ -21,11 +21,34 @@ The responses of a simple Michelson interferometer and a Michelson interferomete
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-response.pdf}
-  \caption[Response of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-response}Response of a \MI{} and a \FPMI{}. The \FPMI{} has arm cavities with finesse of around \num{600}, and so the response is increased by around this amount within the bandwidth of the cavities, which is around \SI{250}{\hertz}. The other features in the \FPMI{} are due to cavity mirror mechanics and optomechanics.}
+  \caption[Response of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-response}Response of a \MI{} and a \FPMI{}. The \FPMI{} has arm cavities with finesse of around \num{600}, and so the response is increased by around this amount within the bandwidth of the cavities, which is around \SI{250}{\hertz}. The power at the output port has been matched in both cases by scaling the arm cavity detuning. The other features in the \FPMI{} are due to cavity mirror mechanics and optomechanics.}
 \end{figure}
 
-If we examine the noise at the output of each interferometer, we see... \note{radiation pressure...}
+If we examine the quantum noise at the output of each interferometer, as shown in Figure\,\ref{fig:mich-vs-fp-mich-noise}, we see that the contribution from the \MI{} is white. This is \emph{quantum shot noise} as discussed in Section\,\ref{sec:quantum-shot-noise}, arising from quantum vacuum fluctuations. Without special techniques such as those discussed in Section\,\ref{sec:sub-sql-techniques}, this noise appears in the amplitude and phase of the light in equal proportions. In the \FPMI{} this flat noise still exists above around \SI{40}{\hertz}, but there also exists a low frequency slope proportional to $\frac{1}{f^2}$, for frequency $f$. This is \emph{quantum radiation pressure noise}, arising from the effect of the cavity mirrors' optomechanical conversion of fluctuations in amplitude into phase.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-noise.pdf}
+  \caption[Quantum noise of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-noise}Quantum noise at the output port of a \MI{} and a \FPMI{}.}
+\end{figure}
+
+If the mirrors were infinitely massive, no momentum would be imparted from the incident light and the light would then receive a phase change only from its round trip propagation, and the sensor would see only a noise contribution from shot noise. In the case of a physical mirror, there is some \emph{back-action} imparted by the amplitude of the incident light. Quantum shot noise contains amplitude fluctuations at all frequencies, and this is transformed by the effect of the mirror's mechanical susceptibility into motion due to the back-action force. A mechanical oscillator filters applied force to a greater extent at high frequencies, and so the conversion of amplitude into phase noise is in general a function of frequency and can be expressed in terms of the mirror's \emph{optomechanical coupling factor} $\kappa$ shown in Equation\,\ref{eq:optomechanicalcoupling} and plotted for the \FPMI{} discussed above in Figure\,\ref{fig:fp-mich-optomechanical-coupling}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-optomechanical-coupling.pdf}
+  \caption[Optomechanical coupling factor for a \FPMI{}]{\label{fig:fp-mich-optomechanical-coupling}Optomechanical coupling factor for a \FPMI{} with \SI{40}{\kilo\gram} mirrors, \SI{1064e-9}{\nano\meter} laser light, \SI{20}{\kilo\watt} cavity power, arm length \SI{1}{\kilo\meter} and cavity half-bandwidth \SI{250}{\hertz}, calculated using Equation\,\ref{eq:optomechanicalcoupling}.}
+\end{figure}
+
+In a \FPMI{} with radiation pressure effects, the detector sees not only quantum shot noise but also quantum radiation pressure noise. These two effects combine to produce the quantum noise shown in Figure\,\ref{fig:mich-vs-fp-mich-noise}. The quantum noise limited sensitivity of the interferometer is given by the ratio of the quantum noise at the sensor to the response of the interferometer to that sensor, and so for differential arm cavity motion it is simply the ratio of the curves in Figures \ref{fig:mich-vs-fp-mich-noise} and \ref{fig:mich-vs-fp-mich-response}, shown in Figure\,\ref{fig:mich-vs-fp-mich-sensitivity}. By scaling the mass and laser power it is possible to set the frequency cut-off above and below which the quantum shot noise and quantum radiation pressure noise sources dominate, but as shown in Section\,\ref{sec:sql} the combination of these two sources of quantum noise creates a fundamental limit to the sensitivity of position meters known as the \gls{SQL}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-sensitivity.pdf}
+  \caption[Quantum noise limited sensitivity of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-sensitivity}Quantum noise limited sensitivity of a \MI{} and a \FPMI{}.}
+\end{figure}
+
+\subsection{\label{sec:speed-meter-measurement}Sensitivity of a speed-meter}
 Since the early 1990s it has been known that the measurement of momentum, known to be a quantum non-demolition (\gls{QND}) observable, offers the ability to surpass the \gls{SQL} in interferometric measurement \cite{Braginsky1990}. Initial suggestions for the conversion of an interferometer into a speed-meter involved the Michelson topology, for instance with the addition of a \emph{sloshing cavity} \cite{Braginsky2000, Purdue2002} at the output port, as shown in Figure\,\ref{fig:sloshing-michelson}.
 
 \begin{figure}
@@ -35,13 +58,9 @@ Since the early 1990s it has been known that the measurement of momentum, known 
 \end{figure}
 
 It was realised by Chen \cite{Chen2003} that the zero-area \SSM{} is a speed-meter. This topology is arranged such that incident photons sample the same set of mirrors in two directions at two different times, leading to the speed-meter behaviour shown in Equation XXX...
-   
+
+\section{The \SSMEXPT{}}
 The method on which we focus employs an interferometer topology intrinsically sensitive to a \gls{QND} observable \cite{Danilishin2012}. The measurement of velocity, itself approximately proportional to the \gls{QND} observable of the free test mass momentum, is one way in which a reduction in quantum radiation pressure noise can be achieved. A proof-of-concept experiment is under way at the University of Glasgow to demonstrate an audio-band reduction of quantum radiation pressure noise in a \SSM{} topology over an equivalent Michelson design \cite{Graef2014}. This topology is being considered as an alternative to the \ET{}'s \MI{} design \cite{MuellerEbhardt2009a, Voronchev2015}. The topology under investigation in the proof-of-concept experiment utilises a zero-area Sagnac interferometer with the addition of arm cavities based on the concept presented in ref.\,\cite{Chen2003}. By design, this interferometer produces a signal at the beam splitter's output port proportional to differential arm cavity mirror \emph{velocity}, in contrast to the \emph{displacement}-proportional signal sensed in the Michelson topology.
-
-\subsection{Measurement of speed}
-
-\subsection{Reduced radiation pressure noise over an equivalent \MI{}}
-\note{Show individual response and quantum noise functions for MI and SSM}
 
 \subsection{Loss in \SSM{}s}
 \note{Change in slope of sensitivity in speedmeter at low frequencies. This is due to an imbalanced beam splitter and is described in Stefan Danilishin's asymmetries paper at the end of section 2.5. It shows mathematically why this happens.}

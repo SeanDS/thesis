@@ -254,7 +254,7 @@ From the last line in Equation\,\ref{eq:phase-uncertainty} we can recover a resu
 \end{equation}
 The reason for the $=$ in Equation\,\ref{eq:photon-phase-hup-min} is that an assumption has been made in Equation\,\ref{eq:std-dev-amp} that the energy uncertainty is made from equal parts amplitude and phase uncertainty. This is called a \emph{coherent state} and this approximates what a standard laser will output\footnote{Actually, lasers are typically quite incoherent on their own, and experimentalists must first ``mode clean'' the light to remove unwanted incoherent states. Special mode-cleaning cavities are implemented in most experiments to perform this task.}. Equation\,\ref{eq:photon-phase-hup} contains a $\geq$ and is therefore a general equation representing all states, including \emph{squeezed} states, which will be discussed in Section\,\ref{sec:squeezing}.
 
-\subsubsection{Quantum shot noise}
+\subsubsection{\label{sec:quantum-shot-noise}Quantum shot noise}
 As described in Section\,\ref{sec:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter. When this noise is measured by a photodetector it is termed \emph{quantum shot noise}, and it arises directly from the phase uncertainty derived in Section\,\ref{sec:operator-uncertainty}. We change representation from discrete pulses to a continuous measurement made by a laser by representing $n$ in Equation\,\ref{eq:photon-phase-hup-min} as a light power $P$ via the relation $n = \frac{P \Delta t}{\hbar \omega_0}$, where $\omega_0$ is the laser's angular frequency. The displacement-equivalent shot noise power spectral density then arises from the phase uncertainty:
 \begin{equation}
   \label{eq:shot-noise-psd}
@@ -264,7 +264,7 @@ As quantum noise arises from vacuum noise\textemdash spontaneous creation and an
 
 The detrimental effect of counting statistics due to phase uncertainty is mitigated by an increase in the classical light power within the interferometer. As the noise entering the interferometer is a function of loss and is, to first order, not dependent upon laser power, higher input light power leads to an increase in signal with respect to noise and so the effect that the noise has on the output is diminished.
 
-\subsubsection{Quantum radiation pressure noise}
+\subsubsection{\label{sec:quantum-rp-noise}Quantum radiation pressure noise}
 Despite being massless, photons impart momentum to mirrors upon reflection proportional to their wavelength. The strongest effect this has on an interferometer is in the \emph{\gls{DC} radiation pressure} effect, which arises from the classical light power circulating within the interferometer. In a classical interferometer this radiation pressure effect expands the arm cavity length \checkme{proportionally to the light power}, with the equilibrium point being defined by the equivalence of the radiation pressure force to the mirror's restoring force.
 
 \emph{Quantum} radiation pressure, on the other hand, arises from the momentum imparted onto mirrors within the interferometer by virtual photons present within the interferometer from the laser and loss points, as shown in Section\,\ref{sec:noise-via-loss}. As with quantum shot noise this effect is related to the input power of the interferometer, $P$, but this time the input power facilitates the phase fluctuations that become transformed into displacement noise via the dynamics of the mirror. The mirror dynamics govern the displacement noise due to back-action. The spectrum of noise from virtual photons is white, and so the energy imparted to the mirror is the same at all frequencies and therefore the effect of radiation pressure follows an inverse frequency relation.
@@ -301,7 +301,7 @@ with $I_0$ the laser power at the beam splitter, $I_{SQL}$ the laser power requi
 \begin{equation}
  I_{SQL} = \frac{m L^2 \gamma^4}{4 \omega_0},
 \end{equation}
-with $m$ the mirror mass, $L$ the arm length and $\omega_0$ the light's angular frequency.
+with $m$ the mirror mass, $L$ the arm length and $\omega_0$ the light's angular frequency. The effect of $\kappa$ is described in more detail in Section\,\ref{sec:position-meter-measurement}.
 
 The \gls{SQL} is defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror mass, light power, arm length and cavity bandwidth. By making a more precise measurement, i.e. one involving more photons carrying information of the mirror motion, we see a smaller shot noise spectral density (we reduce $\Delta n$) whilst we see a larger radiation pressure noise spectral density (we increase $\Delta \phi$) \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
 
