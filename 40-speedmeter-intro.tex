@@ -12,40 +12,142 @@
 \end{itemize}
 
 \subsection{\label{sec:position-meter-measurement}Sensitivity of a position-meter}
-In an ordinary Michelson position-meter, the mirrors in each arm are sampled by separate light beams which recombine at the beam splitter. Motion of the mirror in the longitudinal direction either shortens or elongates the round-trip phase of the light in each arm, and thus this motion is imprinted upon the \emph{phase} of the light returning to the beam splitter. The phase difference of the two recombining beams at the beam splitter then leads to light at the output port, which can be measured using a heterodyne or homodyne readout as discussed in Section\,\ref{sec:readout}.
+In an ordinary \FPMI{} position-meter, the mirrors in each arm cavity are sampled by separate light beams which recombine at the beam splitter. Motion of each cavity in the longitudinal direction either shortens or elongates the round-trip phase of the light in each arm, and this motion is thus imprinted upon the \emph{phase} of the light returning to the beam splitter. The phase difference of the two recombining beams at the beam splitter then leads to light at the output port, which can be measured using a heterodyne or homodyne readout as discussed in Section\,\ref{sec:readout}.
 
 The presence of classical light power in the arms leads to a radiation pressure effect which imparts a force upon the test masses. A restoring force on the mirrors, either via a pendulum in a suspended experiment or a mirror mount on a table-top experiment, means that this force is static and the interferometer can be held at the operating point as discussed in Section\,\ref{sec:operating-point} by microscopic \gls{DC} corrections.
 
-The responses of a simple Michelson interferometer and a Michelson interferometer with Fabry-Perot arm cavities are shown in Figure\,\ref{fig:mich-vs-fp-mich-response}. The change in light power at the output port is flat as a function of frequency at all frequencies in the \MI{}, and for the \FPMI{} it is flat up until the pole frequency of the \FP{} cavities, whereupon the response decreases due to the fact that mirror motion is no longer able to be witnessed by the light due to its finite travel time. The addition of arm cavities to the \MI{} results in greater response within the bandwidth of the cavities by a factor approximating the arm cavity finesse (see Appendix\,\ref{sec:cavity-fom}), in this case around \num{600}. Two other noticeable features occur, with the peak appearing at \SI{2}{\hertz} caused by an optical spring due to the detuning applied to the cavities for the purposes of \gls{DC} readout, and the trough at \SI{0.7}{\hertz} due to the mechanical pendulum resonance.
+\subsubsection{Input-output relations}
+The signal that can be detected at the output port of a \FPMI{} can be calculated using \emph{input-output relations} defining the effect that some input signal would have on the output given the dynamics of the interferometer. In order to represent the effect that the interferometer has in terms of its effect on the amplitude and phase of the light, we use the \emph{two-photon formalism} \cite{Caves1985, Schumaker1985} which represents the input and output in terms of its \emph{cosine} and \emph{sine} quadratures, namely:
+\begin{align}
+  \vec{a} &=
+  \begin{pmatrix}
+    a_c \\
+    a_s
+  \end{pmatrix} \\
+  \vec{b} &=
+  \begin{pmatrix}
+    b_c \\
+    b_s
+  \end{pmatrix},
+\end{align}
+where $\vec{a}$ is the input field and $\vec{b}$ is the output field. The output for an interferometer held at the dark fringe can be expressed as:
+\begin{equation}
+  \label{eq:ifo-output-signal}
+  \vec{b} = \vec{R} \frac{h}{h_{\text{SQL}}} + \mathbb{T} \vec{a},
+\end{equation}
+where $\vec{R}$ is the response of the interferometer from unit mirror motion to the output, $\frac{h}{h_{\text{SQL}}}$ is the motion of the mirrors in terms of strain normalised to the \gls{SQL} as discussed in Section\,\ref{sec:sql} and $\mathbb{T}$ represents the transfer function of the input field to the output field.
+
+The response $\vec{R}$ contains the effect that the mirror dynamics have on the readout, governed by the \emph{optomechanical coupling factor} $\kappa$ defined for a \MI{} in Equation\,\ref{eq:optomechanicalcoupling}. This models the effect that an applied force to the mirror has on its position. Mirrors suspended from pendulum systems can be approximated at high frequencies to be a free mass, where the effect on position that an applied force has is diminished proportional to frequency, and in the case of a \FPMI{} this filtering effect scales as $\frac{1}{f^2}$ below the cavity's pole frequency, and $\frac{1}{f^4}$ above it.
+
+The response to differential arm cavity motion, where the gravitational wave signal would appear, is given as:
+\begin{equation}
+  \label{eq:fp-mich-response}
+  \vec{R}_{\left( - \right)} = \text{e}^{\text{i} \beta \left( f \right)} \sqrt{2 \kappa} \vec{H},
+\end{equation}
+where $\beta \left( f \right)$ is the round-trip phase of the light in the arms and $\vec{H}$ represents the quadrature of the readout. The round-trip phase is defined:
+\begin{equation}
+  \beta \left( f \right) = \arctan{\frac{f}{\gamma_{\text{arm}}}},
+\end{equation}
+where $\gamma_{\text{arm}}$ is the \FP{} cavity half-bandwidth (see Appendix\,\ref{sec:cavity-fom}).
+
+In the case of \gls{DC} readout, as discussed in Section\,\ref{sec:homodyne-readout} and used in current generation detectors, the readout angle is represents the phase quadrature:
+\begin{equation}
+  \vec{H} =
+  \begin{pmatrix}
+    0 \\
+    1
+  \end{pmatrix}.
+\end{equation}
+
+We can calculate the signal at the \gls{DC} readout of the \FPMI{}, $O$, as a function of differential arm cavity motion by rearranging Equation\,\ref{eq:ifo-output-signal}:
+\begin{equation}
+  \frac{O \left( f \right)}{h_{\left( - \right)}} = \frac{\text{e}^{\text{i} \beta \left( f \right)} \sqrt{2 \kappa}}{h_{\text{SQL}}}.
+\end{equation}
+This is shown in Figure\,\ref{fig:fp-mich-response} for arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{200}{\hertz}. The units of magnitude are photons \SI{}{\per\sqrthz} strain.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-response.pdf}
-  \caption[Response of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-response}Response of a \MI{} and a \FPMI{}. The \FPMI{} has arm cavities with finesse of around \num{600}, and so the response is increased by around this amount within the bandwidth of the cavities, which is around \SI{250}{\hertz}. The power at the output port has been matched in both cases by scaling the arm cavity detuning. The other features in the \FPMI{} are due to cavity mirror mechanics and optomechanics.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-response.pdf}
+  \caption[Response of a \FPMI{} to differential arm cavity motion]{\label{fig:fp-mich-response}Response of a \FPMI{} to differential arm cavity motion.}
 \end{figure}
 
-If we examine the quantum noise at the output of each interferometer, as shown in Figure\,\ref{fig:mich-vs-fp-mich-noise}, we see that the contribution from the \MI{} is white. This is \emph{quantum shot noise} as discussed in Section\,\ref{sec:quantum-shot-noise}, arising from quantum vacuum fluctuations. Without special techniques such as those discussed in Section\,\ref{sec:sub-sql-techniques}, this noise appears in the amplitude and phase of the light in equal proportions. In the \FPMI{} this flat noise still exists above around \SI{40}{\hertz}, but there also exists a low frequency slope proportional to $\frac{1}{f^2}$, for frequency $f$. This is \emph{quantum radiation pressure noise}, arising from the effect of the cavity mirrors' optomechanical conversion of fluctuations in amplitude into phase.
+The term $\mathbb{T}$ can be further broken down:
+\begin{equation}
+  \mathbb{T} = \text{e}^{2 \text{i} \beta \left( f \right)}
+  \begin{pmatrix}
+    1 & 0 \\
+    -\kappa & 1
+  \end{pmatrix},
+\end{equation}
+and so the optomechanical coupling factor transforms the input $\vec{a}$ in the sine quadrature by the mirror dynamics on its way to the output. The spectral density at the output, $S \left( f \right)$, can be calculated as:
+\begin{equation}
+  S \left( f \right) = \left< \vec{b} \cdot \vec{b}^{\dag} \right>,
+\end{equation}
+and since the signal $h$ in this case is \num{0} this is equal to:
+\begin{equation}
+  S \left( f \right) =
+  \begin{pmatrix}
+    1 & 0 \\
+    -\kappa & 1
+  \end{pmatrix}
+  \vec{a}
+  \begin{pmatrix}
+    1 & -\kappa \\
+    0 & 1
+  \end{pmatrix}.
+\end{equation}
+From this we can calculate the noise spectral density due to vacuum fluctuations at the input. Normal, unsqueezed vacuum has equal noise contributions in the cosine and sine quadratures, and so it is equal to the identity matrix:
+\begin{equation}
+  \vec{a}_{\text{vacuum}} =
+  \begin{pmatrix}
+   1 & 0 \\
+   0 & 1
+  \end{pmatrix}.
+\end{equation}
+The quantum noise spectral density is then:
+\begin{equation}
+  \begin{split}
+    S \left( f \right) &=
+    \begin{pmatrix}
+      1 & 0 \\
+      -\kappa & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & -\kappa \\
+      0 & 1
+    \end{pmatrix} \\
+    &=
+    \begin{pmatrix}
+      1 & -\kappa \\
+      -\kappa & 1 + \kappa^2
+    \end{pmatrix},
+  \end{split}
+\end{equation}
+and the signal read by the \gls{DC} readout is then:
+\begin{equation}
+  \begin{split}
+    S_O \left( f \right) &= \vec{H}^{T} S \left( f \right) \vec{H}
+  \end{split}
+\end{equation}
+
+For \gls{DC} readout, the output noise spectral density is shown in Figure\,\ref{fig:fp-mich-noise}. This is the combination of radiation pressure noise from the mirrors and shot noise on the sensor, and these two effects combine to produce the quantum noise spectral density. At high frequencies, the quantum noise is \SI{1}{\per\sqrthz} (corresponding to $\kappa \approx 0$) which shows that the signal on the sensor is limited by quantum vacuum fluctuations entering the interferometer and propagating to the output with no significant optomechanical interaction. Below the cavity pole, the vacuum fluctuations \checkme{move the mirror by an amount governed by the mirror's optomechanical coupling and so convert coherent cavity light into radiation pressure noise.}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-noise.pdf}
-  \caption[Quantum noise of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-noise}Quantum noise at the output port of a \MI{} and a \FPMI{}.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-noise.pdf}
+  \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port.}
 \end{figure}
 
-If the mirrors were infinitely massive, no momentum would be imparted from the incident light and the light would then receive a phase change only from its round trip propagation, and the sensor would see only a noise contribution from shot noise. In the case of a physical mirror, there is some \emph{back-action} imparted by the amplitude of the incident light. Quantum shot noise contains amplitude fluctuations at all frequencies, and this is transformed by the effect of the mirror's mechanical susceptibility into motion due to the back-action force. A mechanical oscillator filters applied force to a greater extent at high frequencies, and so the conversion of amplitude into phase noise is in general a function of frequency and can be expressed in terms of the mirror's \emph{optomechanical coupling factor} $\kappa$ shown in Equation\,\ref{eq:optomechanicalcoupling} and plotted for the \FPMI{} discussed above in Figure\,\ref{fig:fp-mich-optomechanical-coupling}.
+The quantum noise limited sensitivity of the interferometer is given by the ratio of the quantum noise at the sensor to the response of the interferometer to that sensor, and so for differential arm cavity motion it is simply the ratio of the curve in Figure\,\ref{fig:fp-mich-noise} with that of Figure\,\ref{fig:fp-mich-response}, shown in Figure\,\ref{fig:fp-mich-sensitivity}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-optomechanical-coupling.pdf}
-  \caption[Optomechanical coupling factor for a \FPMI{}]{\label{fig:fp-mich-optomechanical-coupling}Optomechanical coupling factor for a \FPMI{} with \SI{40}{\kilo\gram} mirrors, \SI{1064e-9}{\nano\meter} laser light, \SI{20}{\kilo\watt} cavity power, arm length \SI{1}{\kilo\meter} and cavity half-bandwidth \SI{250}{\hertz}, calculated using Equation\,\ref{eq:optomechanicalcoupling}.}
-\end{figure}
-
-In a \FPMI{} with radiation pressure effects, the detector sees not only quantum shot noise but also quantum radiation pressure noise. These two effects combine to produce the quantum noise shown in Figure\,\ref{fig:mich-vs-fp-mich-noise}. The quantum noise limited sensitivity of the interferometer is given by the ratio of the quantum noise at the sensor to the response of the interferometer to that sensor, and so for differential arm cavity motion it is simply the ratio of the curves in Figures \ref{fig:mich-vs-fp-mich-noise} and \ref{fig:mich-vs-fp-mich-response}, shown in Figure\,\ref{fig:mich-vs-fp-mich-sensitivity}. By scaling the mass and laser power it is possible to set the frequency cut-off above and below which the quantum shot noise and quantum radiation pressure noise sources dominate, but as shown in Section\,\ref{sec:sql} the combination of these two sources of quantum noise creates a fundamental limit to the sensitivity of position meters known as the \gls{SQL}.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-mich-vs-fp-mich-sensitivity.pdf}
-  \caption[Quantum noise limited sensitivity of a Michelson and Fabry-Perot Michelson]{\label{fig:mich-vs-fp-mich-sensitivity}Quantum noise limited sensitivity of a \MI{} and a \FPMI{}.}
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-sensitivity.pdf}
+  \caption[Sensitivity of a \FPMI{} at the output port to differential arm cavity motion]{\label{fig:fp-mich-sensitivity}Sensitivity of a \FPMI{} at the output port to differential arm cavity motion. \note{Orange is the eqn from S.D. something is wrong}}
 \end{figure}
 
 \subsection{\label{sec:speed-meter-measurement}Sensitivity of a speed-meter}
