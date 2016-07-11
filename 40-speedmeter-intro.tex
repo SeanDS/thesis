@@ -61,7 +61,7 @@ In the case of \gls{DC} readout, as discussed in Section\,\ref{sec:homodyne-read
 
 We can calculate the signal at the \gls{DC} readout of the \FPMI{}, $O$, as a function of differential arm cavity motion by rearranging Equation\,\ref{eq:ifo-output-signal}:
 \begin{equation}
-  \frac{O \left( f \right)}{h_{\left( - \right)}} = \frac{\text{e}^{\text{i} \beta \left( f \right)} \sqrt{2 \kappa}}{h_{\text{SQL}}}.
+  \frac{O_{\text{dc}} \left( f \right)}{h_{\left( - \right)}} = \frac{\text{e}^{\text{i} \beta \left( f \right)} \sqrt{2 \kappa}}{h_{\text{SQL}}}.
 \end{equation}
 This is shown in Figure\,\ref{fig:fp-mich-response} for arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{200}{\hertz}. The units of magnitude are photons \SI{}{\per\sqrthz} strain.
 
@@ -96,8 +96,9 @@ and since the signal $h$ in this case is \num{0} this is equal to:
     0 & 1
   \end{pmatrix}.
 \end{equation}
-From this we can calculate the noise spectral density due to vacuum fluctuations at the input. Normal, unsqueezed vacuum has equal noise contributions in the cosine and sine quadratures, and so it is equal to the identity matrix:
+From this we can calculate the noise spectral density due to vacuum fluctuations at the output. Normal, unsqueezed vacuum has equal noise contributions in the cosine and sine quadratures, and so we can set it to the identity matrix:
 \begin{equation}
+  \label{eq:unsqueezed-vacuum-amplitude}
   \vec{a}_{\text{vacuum}} =
   \begin{pmatrix}
    1 & 0 \\
@@ -134,7 +135,7 @@ and the signal read by the \gls{DC} readout is then:
   \end{split}
 \end{equation}
 
-For \gls{DC} readout, the output noise spectral density is shown in Figure\,\ref{fig:fp-mich-noise}. This is the combination of radiation pressure noise from the mirrors and shot noise on the sensor, and these two effects combine to produce the quantum noise spectral density. At high frequencies, the quantum noise is \SI{1}{\per\sqrthz} (corresponding to $\kappa \approx 0$) which shows that the signal on the sensor is limited by quantum vacuum fluctuations entering the interferometer and propagating to the output with no significant optomechanical interaction. Below the cavity pole, the vacuum fluctuations \checkme{move the mirror by an amount governed by the mirror's optomechanical coupling and so convert coherent cavity light into radiation pressure noise.}
+For \gls{DC} readout, the output noise spectral density is shown in Figure\,\ref{fig:fp-mich-noise}. This is the combination of radiation pressure noise from the mirrors and shot noise on the sensor, and these two effects combine to produce the quantum noise spectral density. At high frequencies, the quantum noise is equal to the quantum vacuum noise input from Equation\,\ref{eq:unsqueezed-vacuum-amplitude} (corresponding to $\kappa \approx 0$) which shows that the signal on the sensor is limited by noise propagating to the output with no significant optomechanical interaction. Below the cavity pole, the vacuum fluctuations \checkme{move the mirror by an amount governed by the mirror's optomechanical coupling and so convert coherent cavity light into radiation pressure noise.}
 
 \begin{figure}
   \centering
