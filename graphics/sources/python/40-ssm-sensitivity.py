@@ -23,7 +23,7 @@ def h_sql(m, f, L):
   return np.sqrt((8 * h_bar) / (m * f ** 2 * L ** 2))
 
 # optomechanical coupling constant
-def kappa(f, f_0, m, L, gamma, I_cav):
+def kappa_mich(f, f_0, m, L, gamma, I_cav):
   """optomechanical coupling constant
   
   I = intensity
@@ -37,18 +37,46 @@ def kappa(f, f_0, m, L, gamma, I_cav):
   
   return (2 * I * gamma ** 4) / (f ** 2 * (gamma ** 2 + f ** 2))
 
-def beta(f, gamma):
+def kappa(f, f_0, m, L, gamma, I_cav):
+  """SSM kappa"""
+  
+  km = kappa_mich(f, f_0, m, L, gamma, I_cav)
+  b = beta_mich(f, gamma)
+  
+  return 4 * km * np.sin(b) ** 2
+
+def beta_mich(f, gamma):
   """Round-trip phase of cavity"""
   
   return np.arctan2(f, gamma)
+
+def beta(f, gamma):
+  """SSM beta"""
+  
+  return 2 * beta_mich(f, gamma) + np.pi / 2
 
 def response(f, f_0, m, L, gamma, I):
   """response to DARM"""
   
   return np.exp(1j * beta(f, gamma)) * np.sqrt(2 * kappa(f, f_0, m, L, gamma, I)) / h_sql(m, f, L)
 
-def noise(f, f_0, m, L, gamma, I):
+def response_mich(f, f_0, m, L, gamma, I):
+  return np.exp(1j * beta_mich(f, gamma)) * np.sqrt(2 * kappa_mich(f, f_0, m, L, gamma, I)) / h_sql(m, f, L)
+
+def noise_mich(f, f_0, m, L, gamma, I):
   """noise in phase quadrature"""
+  
+  # phase quadrature readout
+  H = np.array([0, 1])
+  
+  # kappa
+  k = kappa_mich(f, f_0, m, L, gamma, I)
+  
+  # noise spectral density
+  return [np.dot(np.dot(H.T, np.array([[1, -ki], [-ki, 1 + ki**2]])), H) for ki in k]
+
+def noise(f, f_0, m, L, gamma, I):
+  """SSM noise"""
   
   # phase quadrature readout
   H = np.array([0, 1])
@@ -58,6 +86,18 @@ def noise(f, f_0, m, L, gamma, I):
   
   # noise spectral density
   return [np.dot(np.dot(H.T, np.array([[1, -ki], [-ki, 1 + ki**2]])), H) for ki in k]
+
+def sensitivity_mich(f, f_0, m, L, gamma, I):
+  resp = response_mich(f, f_0, m, L, gamma, I)
+  qn = noise_mich(f, f_0, m, L, gamma, I)
+  
+  return np.sqrt(qn / (np.abs(resp) ** 2))
+
+def sensitivity(f, f_0, m, L, gamma, I):
+  resp = response(f, f_0, m, L, gamma, I)
+  qn = noise(f, f_0, m, L, gamma, I)
+  
+  return np.sqrt(qn / (np.abs(resp) ** 2))
 
 # strain sql
 def S_h_sql(f, m, L):
@@ -70,16 +110,6 @@ def S_h_sql(f, m, L):
   
   return np.sqrt(8 * h_bar / (m * f ** 2 * L ** 2))
 
-def sensitivity(f, f_0, m, L, gamma, I):
-  resp = response(f, f_0, m, L, gamma, I)
-  qn = noise(f, f_0, m, L, gamma, I)
-  
-  return np.sqrt(qn / (np.abs(resp) ** 2))
-
-def sensitivity2(f, f_0, m, L, gamma, I):
-  """Alternative sensitivity equation"""
-  return h_sql(m, f, L) ** 2 * (noise(f, f_0, m, L, gamma, I) / (2 * kappa(f, f_0, m, L, gamma, I)))
-
 f = np.logspace(0, 5, 3000)
 c = 299792458
 lambda0 = 1064e-9
@@ -91,6 +121,7 @@ I = 1
 
 # sensitivity
 sens = sensitivity(f, f_0, m, L, gamma, I)
+sens_mich = sensitivity_mich(f, f_0, m, L, gamma, I)
 
 # SQL
 sql = S_h_sql(f, m, L)
@@ -104,20 +135,20 @@ ax1 = fig.gca()
 colours = lf.Colours()
 
 colour_a = colours.next()
-# skip colour so it's the same as the SSM case
-colours.next()
 colour_b = colours.next()
+colour_c = colours.next()
 
 # plot magnitude
 ax1.loglog(f, sens, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(f, sql, '--', color=colour_b, alpha=lf.ALPHA_LINE_A, zorder=-1)
+ax1.loglog(f, sens_mich, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(f, sql, '--', color=colour_c, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
 ax1.grid(True)
 
 #ax1.set_xlim((1e-1, 1e5))
 ax1.set_ylim((1e-24, 1e-18))
 
-ax1.legend(['Michelson', 'SQL'], loc='upper right', framealpha=lf.default_settings['legend.framealpha'])
+ax1.legend(['Sagnac speed-meter', 'Michelson position-meter', 'SQL'], loc='upper right', framealpha=lf.default_settings['legend.framealpha'])
 
 # set labels
 ax1.set_ylabel('Sensitivity (1 / sqrt(Hz))')

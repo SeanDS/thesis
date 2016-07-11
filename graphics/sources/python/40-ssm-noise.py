@@ -23,7 +23,7 @@ def h_sql(m, f, L):
   return np.sqrt((8 * h_bar) / (m * f ** 2 * L ** 2))
 
 # optomechanical coupling constant
-def kappa(f, f_0, m, L, gamma, I_cav):
+def kappa_mich(f, f_0, m, L, gamma, I_cav):
   """optomechanical coupling constant
   
   I = intensity
@@ -37,13 +37,38 @@ def kappa(f, f_0, m, L, gamma, I_cav):
   
   return (2 * I * gamma ** 4) / (f ** 2 * (gamma ** 2 + f ** 2))
 
-def beta(f, gamma):
+def kappa(f, f_0, m, L, gamma, I_cav):
+  """SSM kappa"""
+  
+  km = kappa_mich(f, f_0, m, L, gamma, I_cav)
+  b = beta_mich(f, gamma)
+  
+  return 4 * km * np.sin(b) ** 2
+
+def beta_mich(f, gamma):
   """Round-trip phase of cavity"""
   
   return np.arctan2(f, gamma)
 
-def noise(f, f_0, m, L, gamma, I):
+def beta(f, gamma):
+  """SSM beta"""
+  
+  return 2 * beta_mich(f, gamma) + np.pi / 2
+
+def noise_mich(f, f_0, m, L, gamma, I):
   """noise in phase quadrature"""
+  
+  # phase quadrature readout
+  H = np.array([0, 1])
+  
+  # kappa
+  k = kappa_mich(f, f_0, m, L, gamma, I)
+  
+  # noise spectral density
+  return [np.dot(np.dot(H.T, np.array([[1, -ki], [-ki, 1 + ki**2]])), H) for ki in k]
+
+def noise(f, f_0, m, L, gamma, I):
+  """SSM noise"""
   
   # phase quadrature readout
   H = np.array([0, 1])
@@ -64,6 +89,7 @@ gamma = 250
 I = 1
 
 qn = noise(f, f_0, m, L, gamma, I)
+qn_mich = noise_mich(f, f_0, m, L, gamma, I)
 
 # figure
 fig = plt.figure(figsize=lf.FIG_SIZE_B)
@@ -74,15 +100,15 @@ ax1 = fig.gca()
 colours = lf.Colours()
 
 colour_a = colours.next()
-# skip colour so it's the same as the SSM case
-colours.next()
 colour_b = colours.next()
+colour_c = colours.next()
 
 # plot magnitude
 ax1.loglog(f, qn, color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax1.hlines(1, 1e0, 1e5, colors=colour_b, linestyles='dashed', zorder=2)
+ax1.loglog(f, qn_mich, color=colour_b, alpha=lf.ALPHA_LINE_A, zorder=-1)
+ax1.hlines(1, 1e0, 1e5, colors=colour_c, linestyles='dashed', zorder=2)
 
-ax1.legend(['Michelson position-meter', 'Quantum shot noise'], loc='upper right')
+ax1.legend(['Sagnac speed-meter', 'Michelson position-meter', 'Quantum shot noise'], loc='upper right')
 
 ax1.grid(True)
 
