@@ -74,7 +74,7 @@ def sens(f, f_0, m, L, gamma, I):
 resp = response(f, f_0, m, L, gamma, I)
 qn = noise(f, f_0, m, L, gamma, I)
 
-sensitivity = qn / np.abs(resp)
+sensitivity = np.sqrt(qn / (np.abs(resp) ** 2))
 s2 = np.sqrt(sens(f, f_0, m, L, gamma, I))
 
 # figure
@@ -89,8 +89,8 @@ colour_a = colours.next()
 colour_b = colours.next()
 
 # plot magnitude
-ax1.loglog(f, sensitivity, color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(f, s2, color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(f, sensitivity, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(f, s2, '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 ax1.grid(True)
 
