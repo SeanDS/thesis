@@ -68,14 +68,17 @@ L = 1000
 gamma = 250
 I = 1
 
-def sens(f, f_0, m, L, gamma, I):
+def sensitivity(f, f_0, m, L, gamma, I):
+  resp = response(f, f_0, m, L, gamma, I)
+  qn = noise(f, f_0, m, L, gamma, I)
+  
+  return np.sqrt(qn / (np.abs(resp) ** 2))
+
+def sensitivity2(f, f_0, m, L, gamma, I):
+  """Alternative sensitivity equation"""
   return h_sql(m, f, L) ** 2 * (noise(f, f_0, m, L, gamma, I) / (2 * kappa(f, f_0, m, L, gamma, I)))
 
-resp = response(f, f_0, m, L, gamma, I)
-qn = noise(f, f_0, m, L, gamma, I)
-
-sensitivity = np.sqrt(qn / (np.abs(resp) ** 2))
-s2 = np.sqrt(sens(f, f_0, m, L, gamma, I))
+sens = sensitivity(f, f_0, m, L, gamma, I)
 
 # figure
 fig = plt.figure(figsize=lf.FIG_SIZE_B)
@@ -86,11 +89,9 @@ ax1 = fig.gca()
 colours = lf.Colours()
 
 colour_a = colours.next()
-colour_b = colours.next()
 
 # plot magnitude
-ax1.loglog(f, sensitivity, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(f, s2, '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(f, sens, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 ax1.grid(True)
 
