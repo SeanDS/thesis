@@ -120,6 +120,8 @@ $(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.
 
 $(GFXGENPY)/30-servo-tf.pdf: $(DATAGENMAT)/30-servo-tf.csv
 
+$(GFXGENPY)/40-erc-ssm-qnls.pdf: $(DATAGENMAT)/40-erc-ssm-qnls.csv $(DATAGENMAT)/40-erc-equiv-mich-qnls.csv
+
 $(GFXGENPY)/50-mirror-tfs.pdf: $(DATAGENMAT)/50-mirror-tfs.csv
 
 $(GFXGENPY)/50-m7-seismic-noise.pdf: $(DATAGENMAT)/50-m7-seismic-noise.csv
@@ -194,6 +196,12 @@ $(DATAGENPY)/%.csv: $(DATASCRPY)/%.py
 
 $(DATAGENMAT)/30-servo-tf.csv: $(DATASCRMAT)/create_wgm_servo_tf.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_wgm_servo_tf('$(ROOT)/$@', logspace(-2, 5, 1000)); exit;"
+
+$(DATAGENMAT)/40-erc-ssm-qnls.csv: $(DATASCRMAT)/create_erc_ssm_qnls.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_erc_ssm_qnls('$(ROOT)/$@', logspace(0, 5, 1000)); exit;"
+
+$(DATAGENMAT)/40-erc-equiv-mich-qnls.csv: $(DATASCRMAT)/create_erc_equiv_mich_qnls.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_erc_equiv_mich_qnls('$(ROOT)/$@', logspace(0, 5, 1000)); exit;"
 
 $(DATAGENMAT)/50-mirror-tfs.csv: $(DATASCRMAT)/create_ssm_mirror_tfs.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_mirror_tfs('$(ROOT)/$@', logspace(1, 5, 1000)); exit;"

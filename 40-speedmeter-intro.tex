@@ -171,6 +171,8 @@ this is shown in Figure\,\ref{fig:fp-mich-sensitivity}.
 \subsection{\label{sec:speed-meter-measurement}Sensitivity of a \SM{}}
 Since the early 1990s it has been known that the measurement of momentum, known to be a quantum non-demolition (\gls{QND}) observable, offers the ability to surpass the \gls{SQL} in interferometric measurement \cite{Braginsky1990}. The force applied to test masses by a scheme involving the measurement of momentum does not affect its future value and so momentum can in principle be measured to arbitrary precision. Velocity is an appropriate observable to measure momentum and also approximates a \gls{QND} scheme due to its relation to momentum\footnote{Strictly, velocity is a \gls{QND} observable if the measurement is being made of a free mass \cite{Danilishin2012}. Since the test masses in a suspended interferometer are not free, this is only approximately correct in the frequency band far away from the suspension poles.}. Interferometers that measure velocity are called \emph{\SM{}s}. The principle of operation is as follows. The light from a laser enters the interferometer as it would for a position-meter, and accumulates a phase shift proportional to the propagation and the signal from any gravitational waves or disturbances in the positions of the mirrors. As the light reflects from the test masses within the interferometer it imparts radiation pressure from its light power and the quantum vacuum fluctuations as discussed in Section\,\ref{sec:position-meter-measurement}. Somewhere within the interferometer there must be mechanisms to impart a phase shift equivalent to \SI{180}{\degree} upon the light, and for it to then interact with the same test masses as it did before. Upon propagating through the interferometer a second time, the effect of the radiation pressure from the first pass is suppressed by the opposite sign of the radiation pressure from the second pass. This process is repeated many times due to the finesse of the cavities within the interferometer, though some light escapes to the output where it can be sensed. The cancellation of radiation pressure induced noise in a \SM{} type interferometer is a key benefit for gravitational wave detection.
 
+The \SSM{} topology is being considered as an alternative to the proposed \MI{}s in the \ET{} \cite{MuellerEbhardt2009a, Voronchev2015}, though it represents only one of many different speed-meter topologies \cite{Danilishin2004, Wang2013, Huttner2016, Wade2012}. We consider here two of the most well known types to highlight the significantly different forms in which a \SM{} interferometer can take.
+
 \subsubsection{The Michelson-type \SM{}}
 Initial suggestions for the design of \SM{} type interferometers were focused on Michelson-like topologies, for instance with the addition of a \emph{sloshing cavity} \cite{Braginsky2000, Purdue2002} at the output port of a standard \FPMI{}, as shown in Figure\,\ref{fig:sloshing-michelson}. Here, the phase shift is imparted to the light by the addition of a beam splitter and cavity at the output of the interferometer. The light returning from the additional cavity is either re-injected into the interferometer or transmits through the beam splitter where it reflects from a signal recycling mirror. The light at the output of this interferometer then contains reduced quantum radiation pressure noise.
 
@@ -181,7 +183,7 @@ Initial suggestions for the design of \SM{} type interferometers were focused on
 \end{figure}
 
 \subsubsection{The Sagnac-type \SM{}}
-It was later realised by Chen that the zero-area \SSM{} is a \SM{} \cite{Chen2003}. This topology is arranged such that incident photons enter into two counter-propagating modes which sample the position of the test masses at different intervals. Given two test masses $A$ and $B$, over a time interval of $\Delta t$ each mode $A$ and $B$ will measure phase change arising from motion of the arms smaller than the light propagation time \cite{Chen2003}:
+It was later realised by Chen that the \emph{zero-area Sagnac} is a \SM{} \cite{Chen2003}. This topology is arranged such that incident photons enter into two counter-propagating modes which sample the position of the test masses at different intervals. The Sagnac interferometer was originally developed to measure the rotation of the Earth. To avoid this, the propagation of the light is arranged in this zero-area configuration to cancel this effect. Instead, the interferometer's output contains information of the difference in round-trip phase of the two counter-propagating modes. Given two test masses $A$ and $B$, over a time interval of $\Delta t$ each mode $A$ and $B$ will measure phase change arising from motion of the arms smaller than the light propagation time \cite{Chen2003}:
 \begin{align}
   \delta \phi_{A} &\propto \Delta x_{A} \left( t \right) + \Delta x_{B} \left( t + \Delta t \right) \\
   \delta \phi_{B} &\propto \Delta x_{B} \left( t \right) + \Delta x_{A} \left( t + \Delta t \right),
@@ -194,6 +196,14 @@ where $\Delta x_{A}$ and $\Delta x_{B}$ are the differences in position of test 
   \end{split}
 \end{equation}
 which shows that the signal is proportional to the relative velocity of the test masses. The output port is automatically at the dark fringe for the carrier light as long as the motion of the test masses is slower than the light propagation time. The output is not dark for the signal sidebands, and as they contain components from the test masses sampled at different times the signal is proportional to test mass speed.
+
+The layout of a \SSM{} interferometer can be arranged in different forms, and we show one based on a zero-area Sagnac enhanced with ring cavities as arms in Figure\,\ref{fig:zero-area-ssm}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-zero-area-ssm.pdf}
+  \caption[Layout of a zero-area \SSM{}]{\label{fig:zero-area-ssm}Layout of a zero-area \SSM{}.}
+\end{figure} 
 
 \subsubsection{Input-output relations}
 The same approach to that for a \FPMI{} in Section\,\ref{sec:position-meter-measurement} can be taken to calculate the response and noise of a \SM{}, but with a value of $\kappa$ modified for a speed-meter \cite{Chen2003}:
@@ -234,28 +244,46 @@ The \gls{QND} behaviour of the interferometer arises from the fact that the outp
 
 The degradation in the sensitivity of a \SSM{} due to loss arises from the entry of vacuum fluctuations through the open ports created by loss mechanisms and from factors which result in imperfect cancellation of quantum radiation pressure effects. The optic most susceptible to asymmetries is typically the beam splitter, where coatings cannot be manufactured with better than around \SI{0.1}{\percent} tolerance\footnote{It turns out that the \SSM{} offers an excellent means of measuring a beam splitter's asymmetry.}. Imperfect splitting leads to different power in the counter-propagating modes which leads to optomechanical effects. In the \SSM{} this leads to light that would otherwise have exited at the input port of the interferometer instead exiting at the output port, carrying time-independent signal and therefore damaging the sensitivity. A similar effect arises from imbalances in the transmissivity of optics. This appears on sensitivity curves as an additional $\frac{1}{f}$ slope at low frequencies, like the position-meter behaviour shown in Figure\,\ref{fig:ssm-sensitivity}. The minimisation of loss is therefore critical in the design of a \SSM{} experiment.
 
-\section{The \SSMEXPT{}}
-The method on which we focus employs an interferometer topology intrinsically sensitive to a \gls{QND} observable \cite{Danilishin2012}. The measurement of velocity, itself approximately proportional to the \gls{QND} observable of the free test mass momentum, is one way in which a reduction in quantum radiation pressure noise can be achieved. A proof-of-concept experiment is under way at the University of Glasgow to demonstrate an audio-band reduction of quantum radiation pressure noise in a \SSM{} topology over an equivalent Michelson design \cite{Graef2014}. This topology is being considered as an alternative to the \ET{}'s \MI{} design \cite{MuellerEbhardt2009a, Voronchev2015}. The topology under investigation in the proof-of-concept experiment utilises a zero-area Sagnac interferometer with the addition of arm cavities based on the concept presented in ref.\,\cite{Chen2003}. By design, this interferometer produces a signal at the beam splitter's output port proportional to differential arm cavity mirror \emph{velocity}, in contrast to the \emph{displacement}-proportional signal sensed in the Michelson topology.
+\section{The Glasgow \SSMEXPT{}}
+The Sagnac interferometer has been demonstrated in table-top experiments \cite{Shaddock1998} as well as lab-scale prototypes \cite{Beyersdorf2002} including the \gls{QND} behaviour of the \SSM{} \cite{Eberle2010} but so far this has not been demonstrated in a suspended prototype in the audio band to demonstrate its applicability for ground-based gravitational wave detectors. Here we present a proof-of-principle experiment in Glasgow to test audio-band reduction of quantum radiation pressure noise in a suspended \SSM{} over an equivalent Michelson design \cite{Graef2014}. The \SSM{} is enhanced with the presence of triangular ring cavities to enhance the sensitivity of the interferometer to differential motion of the arms, and balanced homodyne readout will be utilised to sense the quantum correlations present at the otherwise dark output.
 
-\subsection{\label{sec:bhd-intro}Balanced homodyne detection}
-\note{Explain homodyne angle, basic description.}
-
-\section{Implementation}
-
-Some technical challenges in the implementation of the \SM{} are discussed in this chapter. Certain topics involve substantially more scientific endeavour and are thus presented as discrete chapters: the control of the primary degree of freedom of the \SM{}, presented in Chapter X; and a proof-of-principle experiment to demonstrate a new type of actuator, presented in Chapter Y.
-
-\subsection{Experimental design}
-\note{Discuss the experiment layout, power, cavity lengths, etc. Introduce the real sensitivity curves here.}
-
-\subsection{Mechanics}
-\note{Vacuum system requirements, tanks, optical table, suspensions, seismic noise, etc.}
-
-\subsection{Layout}
+The intended optical layout is shown in Figure\,\ref{fig:ssm-layout}. The light is coupled by the main beam splitter \MSIX{} into counter-propagating modes in the \emph{inner Sagnac}, i.e. the cavity formed by the mirrors \MSIX{}, \MSEVEN{}, \MONEA{}, \MTEN{}, \MNINE{}, \MEIGHT{} and \MONEB{}. At \glspl{ITM} \MONEA{} and \MONEB{} the light is partially transmitted into arm cavities $A$ and $B$, respectively, where the light is resonantly enhanced by the highly reflective \glspl{ETM} \MTWOA{} and \MTHREEA{} and \MTWOB{} and \MTHREEB{}. Upon exiting the cavities, the light again propagates through the inner Sagnac where it recombines at \MSIX{}. The light leaving \MSIX{} towards \MFOURTEEN{} contains the signal encoded as quantum correlations on the light, and this is enhanced at \MSIXTEEN{} by the local oscillator provided by the light leaving \MSIX{} towards \MTWELVE{}. The balanced homodyne detectors (\gls{BHD}) \HDA{} and \HDB{} measure the transmitted light, and the difference signal primarily contains information regarding the relative velocity of the arm cavities.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-speedmeter-layout.pdf}
   \caption[\SSMEXPT{} layout]{\label{fig:ssm-layout}\SSMEXPT{} layout.}
+\end{figure}
+
+The interferometer is to be situated within an ultra-high vacuum system formed from two adjoined cylindrical tanks with pumps capable of reaching pressures of \SI{1e-6}{\milli\bar}. Each tank contains a breadboard for the attachment of components, and this breadboard is itself isolated from ground motion by a series of passive damping stacks. The breadboards are rigidly connected via a bridge structure to ensure that residual platform motion is common to all suspended optics. The optics will be suspended from pendulum systems, with the most important test masses suspended from multiple stages to provide additional isolation from seismic noise. The parameters for the optics, laser injection, suspension systems and materials can be found in \cite{Graef2014}, \cite{Danilishin2015} and \cite{Leavey2016} in chronological order.
+
+\subsection{\label{sec:bhd-intro}Balanced homodyne detection}
+\note{Explain homodyne angle, basic description.}
+The readout mechanism for the gravitational wave channel, the differential arm cavity degree of freedom, will be balanced homodyne readout. This choice contrasts to the \emph{de-facto} standard in gravitational wave observatories, \gls{DC} readout, because it is necessary for the measurement of sensitivity below the \gls{SQL} in the presence of imprecisely known loss to be able to alter the homodyne angle of the readout. In \gls{DC} readout, the homodyne angle is fixed by the propagation length between the detuned arm cavities and the output port. Balanced homodyne readout can choose arbitrary homodyne angles through the tuning of the relative phase of the (separate) local oscillator and signal paths.
+
+Balanced homodyne readout involves making a subtraction of two signals measured in this case by \HDA{} and \HDB{}, observing light combined from a local oscillator, $a$, and the signal output of the \SSM{}, $b$. The local oscillator field should not contain signal, and so this will be taken from the light reflected from the interferometer back towards the input, via \MTWELVE{} and \MTHIRTEEN{}. The signal power measured at each photodetector output $c$ and $d$ then contains \cite{Steinlechner2015}:
+\begin{equation}
+  \begin{split}
+    c^{\dag} c &= \frac{1}{2} \left( a^{\dag} a + a^{\dag} b \text{e}^{-\text{i} \phi} + a b^{\dag} \text{e}^{\text{i} \phi} + b^{\dag} b \right) \\
+    d^{\dag} d &= \frac{1}{2} \left( a^{\dag} a + a^{\dag} b \text{e}^{\text{i} \phi} + a b^{\dag} \text{e}^{-\text{i} \phi} + b^{\dag} b \right),
+  \end{split}
+\end{equation}
+where $\phi$ is the homodyne angle. The mixing of the two signals at \MSIXTEEN{} results in the \gls{DC} part of one field beating with the \gls{AC} part of the other field, and so a delicate subtraction of the two photocurrents from \HDA{} and \HDB{}, $I_{\text{BHD}}$, results in only the \gls{AC} parts corresponding to the motion of the test masses amplified by the local oscillator field:
+\begin{equation}
+  \begin{split}
+    I_{\text{BHD}} &= c^{\dag} c - d^{\dag} d \\
+                   &= a^{\dag} b \text{e}^{-\text{i} \phi} + a b^{\dag} \text{e}^{\text{i} \phi}.
+  \end{split}
+\end{equation}
+Laser noise and residual carrier light in the signal path can result in vastly increased noise in this readout scheme and so it is important for the relative intensity noise of the laser to be controlled to a high level and for the use of a beam splitter with balanced reflectivity and transmissivity \cite{Steinlechner2015}.
+
+\subsection{Sensitivity}
+Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \SSMEXPT{} calculated with both Finesse and Optickle (see Appendices \ref{sec:finesse-sim} and \ref{sec:optickle-sim}) is shown in Figure\,\ref{fig:erc-ssm-qnls}. Also shown is an equivalent \MI{} using the same parameters and mirrors as the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match the high frequency sensitivities. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, fairly optimise both interferometers for high frequency sensitivity. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz}, and so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are sufficiently low. A full consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-erc-ssm-qnls.pdf}
+  \caption[Quantum noise limited sensitivity of the \SSMEXPT{}]{\label{fig:erc-ssm-qnls}Quantum noise limited sensitivity of the \SSMEXPT{} calculated with Optickle and Finesse. Also shown is the equivalent \MI{} configuration, calculated with Optickle, and the \gls{SQL} given the effective mass of the interferometer test masses. The shaded \checkme{blue} region shows the intended measurement band, where reduced quantum radiation pressure noise should be visible below the expected noise from the equivalent \MI{}.}
 \end{figure}
 
 \subsection{Sensing and control}
@@ -269,9 +297,10 @@ Some technical challenges in the implementation of the \SM{} are discussed in th
 
 \subsubsection{Frequency stabilisation}
 
-\subsubsection{\label{sec:cds}CDS data acquisition system}
-
+\subsubsection{\label{sec:cds}Data acquisition}
 \note{Introduce CDS with the Bork reference, as it is required for Chapters 5 and 7}
+
+\subsection{Implementation}
 
 \subsubsection{Avoidance of ground loops}
 

@@ -13,7 +13,7 @@
    height="210mm"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="70-et-lf-readout-ports.svg">
+   sodipodi:docname="70-cavity-lengths.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -1281,7 +1281,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3221">ETM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan3306">X</tspan></tspan></text>
+   id="tspan3306">Y</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -1295,7 +1295,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3219">ITM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4370">Y</tspan></tspan></text>
+   id="tspan4370">X</tspan></tspan></text>
   <g
      id="b-cav-mir-9-5"
      transform="matrix(0,1,-1,0,476.04799,296.759)"
@@ -1342,7 +1342,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3221-5">ETM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4366">Y</tspan></tspan></text>
+   id="tspan4366">X</tspan></tspan></text>
   <g
      id="b-cav-mir-9-8"
      transform="matrix(0,1,-1,0,477.8694,428.42349)"
@@ -1442,7 +1442,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan5474-1-1">L<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan5510-8">X</tspan></tspan></text>
+   id="tspan5510-8">Y</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -1456,7 +1456,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan5474-1-1-27">l<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan5510-8-0">X</tspan></tspan></text>
+   id="tspan5510-8-0">Y</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -1470,7 +1470,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan5474-1-1-27-9">l<tspan
    id="tspan4541"
-   style="font-size:65.00091553%;baseline-shift:sub">Y</tspan></tspan></text>
+   style="font-size:65.00091553%;baseline-shift:sub">X</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -1484,7 +1484,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan5474-1-1-9">L<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan5510-8-7">Y</tspan></tspan></text>
+   id="tspan5510-8-7">X</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -1498,7 +1498,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3221-6">ITM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4396">X</tspan></tspan></text>
+   id="tspan4396">Y</tspan></tspan></text>
   <path
      style="fill:none;stroke:#ff0000;stroke-width:6.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 538.00223,372.67834 111.76746,0"

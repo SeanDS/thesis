@@ -29,9 +29,9 @@
      inkscape:window-height="1030"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="11.313709"
-     inkscape:cx="455.61878"
-     inkscape:cy="377.16307"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="480.68005"
+     inkscape:cy="411.73781"
      inkscape:window-x="-2"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
@@ -1978,7 +1978,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3221">ETM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan3306">X</tspan></tspan></text>
+   id="tspan3306">Y</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -1992,7 +1992,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3219">ITM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4370">Y</tspan></tspan></text>
+   id="tspan4370">X</tspan></tspan></text>
   <g
      id="b-cav-mir-9-5"
      transform="matrix(0,1,-1,0,476.04799,296.759)"
@@ -2039,7 +2039,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3221-5">ETM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4366">Y</tspan></tspan></text>
+   id="tspan4366">X</tspan></tspan></text>
   <g
      id="b-cav-mir-3-3-6"
      style="opacity:0.7"
@@ -2086,7 +2086,7 @@
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
        id="tspan3221-6">ITM<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4396">X</tspan></tspan></text>
+   id="tspan4396">Y</tspan></tspan></text>
   <path
      style="fill:none;stroke:#ff0000;stroke-width:6.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 538.00223,372.67834 111.76746,0"

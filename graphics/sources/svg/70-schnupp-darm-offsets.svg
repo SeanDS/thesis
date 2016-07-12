@@ -13,7 +13,7 @@
    height="210mm"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="70-darm-schnupp-offsets.svg">
+   sodipodi:docname="70-schnupp-darm-offsets.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -27,9 +27,9 @@
      inkscape:window-height="1030"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="463.85103"
-     inkscape:cy="323.60481"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="465.37296"
+     inkscape:cy="365.36759"
      inkscape:window-x="-2"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
@@ -1754,7 +1754,7 @@
          x="391.45392"
          sodipodi:role="line">L<tspan
    id="tspan5510-8"
-   style="font-size:65.00091553%;baseline-shift:sub">X</tspan>+</tspan></text>
+   style="font-size:65.00091553%;baseline-shift:sub">Y</tspan>+</tspan></text>
     <g
        transform="translate(0,2.3299629)"
        id="g4401">
@@ -1807,7 +1807,7 @@
          x="392.93927"
          sodipodi:role="line">l<tspan
    id="tspan5510-8-0"
-   style="font-size:65.00091553%;baseline-shift:sub">X</tspan>+</tspan></text>
+   style="font-size:65.00091553%;baseline-shift:sub">Y</tspan>+</tspan></text>
     <g
        transform="translate(0.15951234,78.89907)"
        id="g4401-9">
@@ -1859,7 +1859,7 @@
          x="475.04553"
          sodipodi:role="line">l<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4541">Y</tspan>-</tspan></text>
+   id="tspan4541">X</tspan>-</tspan></text>
     <g
        transform="translate(80.984122,179.5292)"
        id="g4401-9-0">
@@ -1912,7 +1912,7 @@
          x="566.82416"
          sodipodi:role="line">L<tspan
    id="tspan5510-8-7"
-   style="font-size:65.00091553%;baseline-shift:sub">Y</tspan>-</tspan></text>
+   style="font-size:65.00091553%;baseline-shift:sub">X</tspan>-</tspan></text>
     <g
        transform="translate(173.91188,179.5292)"
        id="g4401-3">
