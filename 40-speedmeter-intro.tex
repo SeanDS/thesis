@@ -272,13 +272,14 @@ where $\phi$ is the homodyne angle. The mixing of the two signals at \MSIXTEEN{}
 \begin{equation}
   \begin{split}
     I_{\text{BHD}} &= c^{\dag} c - d^{\dag} d \\
-                   &= a^{\dag} b \text{e}^{-\text{i} \phi} + a b^{\dag} \text{e}^{\text{i} \phi}.
+                   &= a^{\dag} b \text{e}^{\text{i} \phi} - a^{\dag} b \text{e}^{\text{-i} \phi} + a b^{\dag} \text{e}^{\text{i} \phi} - a b^{\dag} \text{e}^{\text{-i} \phi}.
   \end{split}
 \end{equation}
 Laser noise and residual carrier light in the signal path can result in vastly increased noise in this readout scheme and so it is important for the relative intensity noise of the laser to be controlled to a high level and for the use of a beam splitter with balanced reflectivity and transmissivity \cite{Steinlechner2015}.
 
-\subsection{Sensitivity}
-Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \SSMEXPT{} calculated with both Finesse and Optickle (see Appendices \ref{sec:finesse-sim} and \ref{sec:optickle-sim}) is shown in Figure\,\ref{fig:erc-ssm-qnls}. Also shown is an equivalent \MI{} using the same parameters and mirrors as the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match the high frequency sensitivities. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, fairly optimise both interferometers for high frequency sensitivity. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz}, and so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are sufficiently low. A full consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
+\subsection{Quantum noise limited sensitivity of the main readout}
+Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} calculated with both Finesse and Optickle (see Appendices \ref{sec:finesse-sim} and \ref{sec:optickle-sim}) is shown in Figure\,\ref{fig:erc-ssm-qnls}. Also shown is an equivalent \MI{} using the same parameters and mirrors as the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match the high frequency sensitivities. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, fairly optimise both interferometers for high frequency sensitivity. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz}, and so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are sufficiently low. A full consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
+% Homodyne angles for SSM vs MI from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=5648
 
 \begin{figure}
   \centering
@@ -287,75 +288,75 @@ Without including the effect of asymmetric loss, the quantum noise limited sensi
 \end{figure}
 
 \subsection{Sensing and control}
+The main readout of the \SSMEXPT{} is to be the \gls{BHD} at the output port, however in order to control the interferometer a number of other signals will need to be extracted and fed back to actuators to keep the interferometer at the operating point, as described in Section\,\ref{sec:operating-point}. This can be split into two broad categories representing the process used to bring the interferometer to the operating point, \emph{lock acquisition}, and keeping it there, \emph{low-noise} control.
 
-\subsubsection{Longitudinal control}
+The interferometer's test masses will drift from the operating point due to the noise imparted from quantum, seismic, thermal and other noise sources as discussed in Section\,\ref{sec:ifo-foundations} if they are not actively controlled. This control takes the form of longitudinal and angular actuators at each test mass and feedback to the main laser's temperature and frequency. In the \SSMEXPT{} there are a few major control topics that must be solved in order to reach the required sensitivity:
+\begin{enumerate}
+  \item The control of longitudinal drifts in the positions of the test masses, which leads to loss of cavity power and sensitivity;
+  \item The control of angular drifts in the optics, particularly from the triangular arm cavities and especially important for the small \glspl{ITM} where radiation pressure effects will be significant;
+  \item The control of intensity noise on the main laser.
+\end{enumerate}
+The first two topics are tackled through the identification of the degrees of freedom of the interferometer and the selection of appropriate readout ports. The last involves the implementation of an appropriate frequency stabilisation control servo.
 
-\subsubsection{Lock acquisition}
-\note{See Andreas' thesis}
+The process of bringing the interferometer to its operating point is challenging in interferometers with multiple degrees of freedom and typically requires modelling of the interferometer in the time domain to understand the effect that changes to actuator feedback signals, radiation pressure effects and noise couplings have on the system. In the case of the \SSMEXPT{} this is particularly challenging due to the coupling between the arm cavities from the counter-propagating modes. A lock acquisition model has been developed which should in principle be able to deterministically bring the interferometer to the operating point \cite{Glaefke2015}.
 
-\subsubsection{Angular control}
+\subsubsection{\label{sec:cds}Data acquisition and software control}
+The control and data acquisition system developed for \gls{LIGO}, \emph{\gls{CDS}} \cite{Bork2010}, is appropriate for the \SSMEXPT{} and a great deal of effort has already gone in to making this system useful and reliable for the control of complicated experiments. This system takes the form of many \emph{off-the-shelf} components and some custom software to provide the ability to sense and feedback control signals at speeds of up to around \SI{10}{\kilo\hertz}. Extensive software is also available for offline data analysis.
 
-\subsubsection{Frequency stabilisation}
+The translation between the digital \gls{CDS} domain and the analogue domain takes the form of analogue-to-digital and digital-to-analogue converters (\glspl{ADC} and \glspl{DAC}) situated on a \emph{front-end} computer which runs software control modules in real time. A \emph{frame builder} computer communicates with the front end(s) over a fast network in order to build packets of measurements in \gls{GPS}-synchronised intervals.
 
-\subsubsection{\label{sec:cds}Data acquisition}
-\note{Introduce CDS with the Bork reference, as it is required for Chapters 5 and 7}
+\subsection{Suspensions}
+\note{Aux, main suspensions, etc}
 
-\subsection{Implementation}
+\subsection{Actuation}
+Each of the \glspl{ETM} in the experiment will have voice coil actuators on multiple stages in order to provide corrections for low frequency drifts. The test mass stages will not have voice coil actuators to minimise the prevalence of \emph{Barkhausen} \cite{Weiss2008} and electronic noise coupling to the positions of the test masses via the actuators' magnets and driver electronics. The filtering effect from the final pendulum stage means that the voice coil actuators will not be able to effectively correct positions at high frequencies. Instead, \emph{electrostatic drive} (\gls{ESD}) actuators will be placed behind each test mass which are able to provide small forces but with very low noise. These actuators have been demonstrated in \GEO{} \cite{Hewitson2007} and \ALIGO{} \cite{Aston2012} based on a metallic comb arrangement, though in the \SSMEXPT{} a new type of \gls{ESD} will be tested.
 
-\subsubsection{Avoidance of ground loops}
+% you know what? why the hell would anyone care about this section?
+% \subsubsection{Coil drivers}
+% The coil drivers for the auxiliary suspensions have been designed with a simple two-pole low-pass filter circuit. As there will be at least \num{14} suspensions requiring auxiliary coil drivers, some thought has been dedicated to the signalling from \gls{CDS} to the experiment.
+% 
+% Each \gls{CDS} output connector contains four channels and each auxiliary suspension has four coils, so each coil driver supports a single suspension with a single input from \gls{CDS}. These coil drivers are build on Eurocard format printed circuit boards (\glspl{PCB}) with DIN \num{41612} connectors. These cards slot into a custom-built backplane board housed within a standard \checkme{3 height-unit} rack enclosure. On the rear of this enclosure are two 50-way DSUB connectors capable of carrying the signals for up to \num{7} auxiliary coil drivers each.
+% 
+% \note{Put aux coil driver stuff here}
+% \note{Auxiliary coil driver subrack wiring design / motivation / assembly}
+% \note{Backplane board design - talk about rationale, show Eagle diagrams, etc.}
+% 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-octopus-cable.pdf}
+%   \caption[Auxiliary octopus cable schematic]{\label{fig:aux-octopus-cable-wiring}``Octopus'' cable for breaking out a DB50 connector into DB9 connectors to allow signals to be sent to each of the coils on seven auxiliary suspensions.}
+% \end{figure}
+% 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-suspension.pdf}
+%   \caption[Auxiliary suspension coil schematic]{\label{fig:aux-suspension-wiring}Auxiliary suspension coil schematic.}
+% \end{figure}
+% 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-backplane-board.pdf}
+%   \caption[Auxiliary subrack backplane board schematic]{\label{fig:aux-backplane-schematic}Auxiliary coil driver subrack backplane. Auxiliary coil driver cards can be plugged in to this board, which then maps the signals to a DB50 connector which connects to the vacuum feedthrough. This routes four coil signals (five conductors including ground) per coil driver, for seven coil drivers, to one DB50 connector. This can then be connected to the vacuum system, where the auxiliary octopus cable (see Figure XXX) maps these signals to individual auxiliary suspensions.}
+% \end{figure}
+% 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-backplane-interface.pdf}
+%   \caption[Auxiliary subrack backplane interface]{\label{fig:aux-backplane-interface}Auxiliary coil driver subrack backplane interface.}
+% \end{figure}
 
-One of the main issues faced by experiments involving numerous interfaces between digital and analogue devices is the creation of ground loops. Effectively an antenna.
-
-\note{Avoidance of ground loops, interfacing with CDS, in-vacuum wiring: why it needs careful thought, etc}
-\note{Display wiring diagrams in landscape mode, full page}
-
-\note{Generate A4 versions of wiring diagrams for inclusion here.}
-
-\subsubsection{Connectors}
-\note{How we avoided plugging the wrong things in, i.e. why we use DB9/DB15/DB25 etc.}
-\note{Differential sending - take stuff from HV chapter on CMRR?}
-
-\subsubsection{In-vacuum signalling}
-\note{Octopus cables, strain relief housing, etc.}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.75\columnwidth]{graphics/40-db50-housing.png}
-  \caption[In-vacuum DB50 octopus cable housing]{In-vacuum DB50 housing for octopus cable.}
-  \label{fig:db50-housing}
-\end{figure}
-
-\subsubsection{Auxiliary coil drivers}
-\note{Put aux coil driver stuff here}
-\note{Auxiliary coil driver subrack wiring design / motivation / assembly}
-\note{Backplane board design - talk about rationale, show Eagle diagrams, etc.}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-octopus-cable.pdf}
-  \caption[Auxiliary octopus cable schematic]{\label{fig:aux-octopus-cable-wiring}``Octopus'' cable for breaking out a DB50 connector into DB9 connectors to allow signals to be sent to each of the coils on seven auxiliary suspensions.}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-suspension.pdf}
-  \caption[Auxiliary suspension coil schematic]{\label{fig:aux-suspension-wiring}Auxiliary suspension coil schematic.}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-backplane-board.pdf}
-  \caption[Auxiliary subrack backplane board schematic]{\label{fig:aux-backplane-schematic}Auxiliary coil driver subrack backplane. Auxiliary coil driver cards can be plugged in to this board, which then maps the signals to a DB50 connector which connects to the vacuum feedthrough. This routes four coil signals (five conductors including ground) per coil driver, for seven coil drivers, to one DB50 connector. This can then be connected to the vacuum system, where the auxiliary octopus cable (see Figure XXX) maps these signals to individual auxiliary suspensions.}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-backplane-interface.pdf}
-  \caption[Auxiliary subrack backplane interface]{\label{fig:aux-backplane-interface}Auxiliary coil driver subrack backplane interface.}
-\end{figure}
-
-\section{Modelling the sensitivity of the \SSM{}}
-\note{Optickle and Finesse models, analytical comparison}
+% or this one?
+% \subsection{Signalling}
+% 
+% \subsubsection{In-vacuum}
+% \note{Octopus cables, strain relief housing, etc.}
+% 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.75\columnwidth]{graphics/40-db50-housing.png}
+%   \caption[In-vacuum DB50 octopus cable housing]{In-vacuum DB50 housing for octopus cable.}
+%   \label{fig:db50-housing}
+% \end{figure}
 
 \section{Topics of particular focus}
 \note{Introduce the work to be discussed in the controls and ESD chapters.}
