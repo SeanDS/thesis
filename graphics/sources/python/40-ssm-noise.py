@@ -116,7 +116,7 @@ ax1.grid(True)
 ax1.set_ylim((1e-1, 1e10))
 
 # set labels
-ax1.set_ylabel('Noise (1 / sqrt(Hz))')
+ax1.set_ylabel('Noise (1 / Hz)')
 ax1.set_xlabel('Frequency (Hz)')
 
 ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
