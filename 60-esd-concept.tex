@@ -2,23 +2,19 @@
 
 \begin{itemize}
   \item Introduce Holger's paper~\cite{Wittel2015} \etal{}, discuss need for high voltages
+  \item See AEI labbook p187 for discussion of AEI 100 g suspensions and why ESDs might be required. Hints of the equations to derive the response of the ESD to voltage applied across plates.
   \item Actuators usually couple noise, which is why magnets are usually on a stage above the test masses. This necessarily limits range, as any actuation performed by the magnets will be filtered by 1/f
   \item Immunity to seismic noise due to turning points on graph from Holger's paper (see C.G. talk)
-  \item HV power supply design considerations (bleed resistor, voltage requirements, etc.)
-  \item HV power supply current limiting circuit explanation (called ``foldback limiting'', see Horowitz and Hill p694)
-  \item HV power supply heatsink considerations: power produced by MOSFETs at maximum current rating (100 mA, produces 25 W of heat - see datasheets) - chose heatsinks to dissipate this heat and make installation of the board easy (can screw TO-220 casing to L-shaped brackets)
+  \item ESDs are useful in particular for this experiment because the mirror masses are small. Previously considered for GEO but the mirrors are too heavy for it to be effective.
+  \item Test alignment couplings with ESD...
+  \item This experiment will inform the main SSM experiment...
   \item HV amplifier design: pressure and temperature cut-offs (explanation of how it works), input/output signals, choice of connectors, routing of signals for ease of assembly (front panel disconnect, etc.)
   \item Protective earthing (how the removal of the ground supply from the GEO supply will clamp ground to Earth beyond 18 V)
-  \item HV amplifier transfer function, usign both HV output (via voltage divider) and monitor output
-  \item HV amplifier monitor noise measurement
-  \item This experiment will inform the main SSM experiment.
-  \item 10 ohm resistor on output of amplifier design to damp resonant RCL modes: resistor adds loss, so lowers the Q associated with any suspension or cable pickups
-  \item ESDs are useful in particular for this expeirment because the mirror masses are small. Previously considered for GEO but the mirrors are too heavy for it to be effective.
-  \item Immune to EM pickup, possibly, because there are no mirrors on the bottom stages of any suspension.
-  \item See AEI labbook p187 for discussion of AEI 100 g suspensions and why ESDs might be required. Hints of the equations to derive the response of the ESD to voltage applied across plates.
-
-  \item Discuss how Andreas' design (with my modifications) was a first prototype, and we decided to redesign it afterwards because of various problems: requirement for a 5V offset at all times, the heat production (due to quiescent current) of the PA98s, lack of switchable whitening. New design incorporates this stuff, along with significant digital signalling thought, and quad channels. New connector to the vacuum feedthrough, too.
-  \item Discuss digital signalling design: avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc. Mention that we considered EtherCAT for this but decided it was too expensive (needs a dedicated block inside the amplifier box)
+  \item HV amplifier transfer functions
+  \item HV amplifier noise measurement
+  \item Resistor on output of amplifier design to limit current and damp resonant RCL modes: resistor adds loss, so lowers the Q associated with any suspension or cable pickups
+  \item Amplifier incorporates low quiescent current (opposed to PA98) hence heat requirements, voltage range, whitening, cutoffs, soft start, quad channels.
+  \item Discuss digital infrastructure: CDS digital I/O, avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc.
 \end{itemize}
 
 As described in Chapter\,\ref{c:speedmeter-control}, the \gls{ESD} is best employed as a high frequency actuator...
@@ -53,13 +49,11 @@ As this experiment is somewhat a technology demonstration for the main \SSMEXPT{
   \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
 \end{figure}
 
-\subsection{Power supply}
-To avoid the use of costly commercial power supplies, an attempt was made to build a \SI{\pm450}{\volt} supply using a mains transformer. This is documented in Appendix\,\ref{a:hv-power-supply}, though this design was not able to drive reactive loads due to design issues not realised until testing. As the amplifier contains capacitors that charge upon switch-on, this represented a reactive load that caused damage to the sensitive \glspl{MOSFET} present within the power supply. Instead, commercial Delta Elektronika power supplies were acquired.
-
 \subsection{Noise budget}
 \note{The actuator must not add more noise than we already expect from seismic etc...}
 
-\section{\label{sec:hv-amplifier}High voltage amplifier}
+\section{\label{sec:hv-amplifier}High voltage amplifier design}
+\note{Mention power supplies}
 
 A means of controlling the \gls{AC} component of the high voltage (\gls{HV}) supply is necessary to perform frequency-dependent corrections upon the mirror. Although the \gls{ESD}, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This facilitates a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as part of the overall experiment as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
 
@@ -118,7 +112,7 @@ with the resulting number expressed in decibels. Within the amplifier, the signa
 
 The gain of the amplifier can be determined from inspection of the path an input signal takes to the output... \note{discuss how gain arises in circuit}
 
-\section{\label{sec:hv-psu-amp-measurements}Measurements with power supply and amplifier}
+\section{\label{sec:hv-amp-measurements}HV amplifier measurements}
 
 With the power supply connected to the amplifier, the power supply was observed not to work. On closer inspection it was revealed that the \glspl{MOSFET} used to regulate the output voltage were failing irreversibly immediately after switch-on. As this effect was not observed for constant load (see Section\,\ref{sec:hv-psu-tests}), it is thought that it was due to a combination of two characteristics of the system. The amplifier's current draw is initially larger on the positive rail than on the negative rail \checkme{is this the correct way round?}. The presence of inductors (in the form of the mains transformer and the \gls{AC} filtering chokes in both the power supply and amplifier), which due to tolerances can have slightly imbalanced filtering, can lead to the creation of parasitic reverse voltages exceeding each \gls{MOSFET}'s rating. Subsequent examination of power supply designs for amplifier electronics in the literature reveals that it is common practice to build protective circuitry alongside many of the components of the general power supply design shown in Figure\,\ref{fig:hv-power-supply}, to prevent such issues with reactive loads (see, for example, Figure\,9.110 of \cite{Horowitz2015}). As it was impractical to retrofit such protective circuitry into the power supply as designed, the decision was taken to instead purchase commercial \emph{Delta Elektronika ES 150} power supplies for use with the amplifier. The power supply, as designed, may prove more useful to future experiments involving loads with lower reactance.
 
