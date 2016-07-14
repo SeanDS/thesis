@@ -1,4 +1,4 @@
-\chapter{\label{c:esd-concept}Demonstration of a plate capacitor electrostatic actuator with reduced seismic coupling}
+\chapter{\label{c:esd-concept}Techniques for the control of a plate capacitor electrostatic actuator with reduced seismic coupling}
 
 \begin{itemize}
   \item Introduce Holger's paper~\cite{Wittel2015} \etal{}, discuss need for high voltages
@@ -17,9 +17,60 @@
   \item Discuss digital infrastructure: CDS digital I/O, avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc.
 \end{itemize}
 
-As described in Chapter\,\ref{c:speedmeter-control}, the \gls{ESD} is best employed as a high frequency actuator...
+\section{Introduction}
 
-\section{Anticipated control loop}
+\subsection{Electrostatic actuators in suspended interferometers}
+Suspended test masses in interferometers require positional corrections in order for the interferometer to be kept at its operating point. This is typically provided via actuators on the suspension system, and predominantly involves voice coil actuators composing magnets and wound wire. Force noise can be introduced to the test masses by their actuators due to various effects such as electronic noise in the driver circuitry, Barkhausen noise \cite{Weiss2008} and seismic coupling via the actuator attachment point. The first two effects can usually be mitigated with appropriate design and shielding, for example by choosing appropriate electronic components and by making the magnets small and the electromagnetic environment quiet. The third effect is often mitigated by suspending the actuators from a separate suspension behind the test mass called a \emph{reaction} suspension. This provides seismic filtering to the actuators such that the ground motion coupling introduced to the test masses from the actuators is of similar magnitude to the ground motion the test masses would in any case receive with no actuation.
+
+As introduced in Chapter\,\ref{c:speedmeter-control}, electrostatic drives (\glspl{ESD}) are a type of actuator employed in \GEO{} and \ALIGO{} for fast (high frequency) corrections to the interferometer. This actuator creates a force on a dielectric test mass by creating a potential difference between anodes and cathodes applied to the face of the reaction mass. Electromagnetic field gradients are then formed in such a way that the test mass can be pushed or pulled in a particular direction. The \gls{ESD} design used in the aforementioned detectors involves a comb of interlocking anodes and cathodes across which a voltage is applied to create the desired force. Alignment control is achieved through the use of multiple sets of combs on the face of the reaction mass, and the sign of the applied voltage can be controlled to induce torque.
+
+There are a number of problems with this approach to low noise, high frequency actuation. There are obviously cost and technical implications to the use of a reaction suspension system behind each main suspension. The alignment of this second suspension must also be controlled and damped in the presence of displacement noise. With the use of \glspl{ESD}, the gap created between the reaction and test masses may also lead to \emph{squeezed film damping} due to residual gas in the vacuum system. One of the most fundamental considerations in the use of this \gls{ESD} design, however, is that it limits the clear aperture behind the test mass. The beam size on the \glspl{ETM} of \ALIGO{} is around \SI{6}{\centi\meter} and so in this case if the transmitted light were to be measured for the purposes of sensing and control the choice would have to be made between clipping of the beam and a reduction in the space available on the reaction mass for the electrostatic comb structure.
+
+\subsection{Plate capacitor electrostatic drive design}
+Applying a potential difference across metal plates effectively creates a capacitor. The electrostatic energy in the capacitor's field is given by the volume integral of the electric field created by the potential difference multiplied by the permittivity of the volume enclosed by the plates. For the case when the dielectric mirror is partially inside the volume enclosed by the plates, it can be shown that the energy is given by \cite{Margulies1984}:
+\begin{equation}
+  E = \frac{1}{2} w d \left( \Delta \phi / d \right)^2 \left( \epsilon x + \epsilon_0 \left( l - x \right) \right),
+\end{equation}
+where $w$ and $l$ are the plate width and height, respectively, $d$ is the dielectric slab's thickness, $\Delta \phi$ is the potential difference, $\epsilon$ and $\epsilon_0$ are the dielectric and vacuum permittivities and $x$ is the offset of the slab along the axis parallel to the plates.
+
+The electrostatic force the capacitor applies to the dielectric slab in the $x$ direction is given by the gradient of the energy:
+\begin{equation}
+  \begin{split}
+    F \left( x \right) &= \nabla E \left( x \right) \\
+                       &= \left( \epsilon - \epsilon_0 \right) \frac{w \Delta \phi^2}{2 d}.
+  \end{split}
+\end{equation}
+This shows that the force depends on the voltage applied across the plates, the plate geometry and the separation. The force is larger for larger voltage and wider plates with smaller separation.
+
+This parallel plate capacitor \gls{ESD} has potential applications as an actuator for test masses in suspended interferometers. It was shown by Wittel \etal{} \cite{Wittel2015} that the force provided by plate capacitors with dimensions applicable to the \AEIPROTOTYPE{} is around \SI{1.5}{\micro\newton} at \SI{1}{\kilo\volt} corresponding to a displacement of around \SI{0.3}{\micro\meter}. This confirms that the \gls{ESD} is only suitable for small corrections, and because the suspension systems used in suspended interferometers filter ground motion to a greater extent at high frequency, this type of actuation tends to lend itself more to the control of radiation pressure and other displacement effects at frequencies above \SI{50}{\hertz} where seismic motion is typically insignificant.
+
+\subsection{Test of an electrostatic actuator to inform the \SSMEXPT{}}
+The plan for the \SSMEXPT{} is to adopt a plate capacitor design for the actuation of the \glspl{ETM} to take advantage of its benefits. A number of potential issues have been highlighted with this \gls{ESD} design that require a dedicated experiment to test before these actuators can be used in the main \SSMEXPT{}.
+
+The effect of misaligned plates, cross-couplings to yaw etc.
+Effect of plate separation
+Positioning of the test mass between the plates
+Control and noise of high voltage signals
+Signal routing in vacuum
+
+The geometry of the intended experimental apparatus are shown in Table\,\ref{tab:esd-expt-parameters}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{ll}
+    \textbf{Parameter}   & \textbf{Value} \\
+    Mirror diameter      & \SI{30}{\milli\meter} \\
+    Mirror thickness     & \SI{6}{\milli\meter} \\
+    Single plate width   & \SI{30}{\milli\meter} \\
+    Single plate length  & \SI{50}{\milli\meter} \\
+    Nominal plate separation & \SI{40}{\milli\meter} \\
+  \end{tabular}
+  \caption[Plate capacitor and optic parameters for the experiment to test the electrostatic drives for the \SSM{}]{\label{tab:esd-expt-parameters}Plate capacitor and optic parameters for the experiment to test the electrostatic drives for the \SSM{}.}
+\end{table}
+
+\section{Experiment}
+
+\subsection{Anticipated control loop}
 
 \begin{figure}
   \centering
