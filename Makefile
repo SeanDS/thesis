@@ -156,6 +156,10 @@ $(GFXGENPY)/50-speedmeter-noise-budget.pdf: $(DATA)/50-speedmeter-noise-budget.c
 
 $(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
+$(GFXGENPY)/60-ssm-etm-disp-vs-esd-force.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
+
+$(GFXGENPY)/60-ssm-etm-disp-esd-max.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
+
 $(GFXGENPY)/60-new-amplifier-dewhitened-tfs.pdf: $(DATA)/60-new-amplifier-dewhitened-tfs-channel-a.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-b.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-c.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-d.txt $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
 
 $(GFXGENPY)/60-new-amplifier-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
@@ -218,11 +222,14 @@ $(DATAGENMAT)/50-whitening-filter-tfs.csv: $(DATASCRMAT)/create_ssm_whitening_fi
 # data set generated from other data sets
 $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
 
+$(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv: $(DATASCRMAT)/create_ssm_etm_disp_vs_esd_force.m
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_etm_disp_vs_esd_force('$(ROOT)/$@', logspace(-1, 2, 1000)); exit;"
+
 $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_single_dewhitening.fil
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'amp_single_dewhitening.fil'); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_amp_whitening_tf('$(ROOT)/$@', 'amp_single_dewhitening.fil'); exit;"
 
 $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_dual_dewhitening.fil
-	@matlab -nosplash -nodesktop -r "cd $(dir $<); createWhiteningTf('$(ROOT)/$@', 'amp_dual_dewhitening.fil'); exit;"
+	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_amp_whitening_tf('$(ROOT)/$@', 'amp_dual_dewhitening.fil'); exit;"
 
 $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv: $(DATASCRMAT)/create_et_lf_reflected_power_vs_pr_trans.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_et_lf_reflected_power_vs_pr_trans('$(ROOT)/$@', linspace(0, 1, 1000)); exit;"

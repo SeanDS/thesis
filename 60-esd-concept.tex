@@ -1,4 +1,4 @@
-\chapter{\label{c:esd-concept}Techniques for the control of a plate capacitor electrostatic actuator with reduced seismic coupling}
+\chapter{\label{c:esd-concept}Infrastructure for the control of a plate capacitor electrostatic actuator with reduced seismic coupling}
 
 \begin{itemize}
   \item Introduce Holger's paper~\cite{Wittel2015} \etal{}, discuss need for high voltages
@@ -17,7 +17,7 @@
   \item Discuss digital infrastructure: CDS digital I/O, avoiding ground loops, the DB25-37 converter board, pull-up resistors, etc.
 \end{itemize}
 
-\section{Introduction}
+\section{Electrostatic drives as actuators in suspended interferometer experiments}
 
 \subsection{Electrostatic actuators in suspended interferometers}
 Suspended test masses in interferometers require positional corrections in order for the interferometer to be kept at its operating point. This is typically provided via actuators on the suspension system, and predominantly involves voice coil actuators composing magnets and wound wire. Force noise can be introduced to the test masses by their actuators due to various effects such as electronic noise in the driver circuitry, Barkhausen noise \cite{Weiss2008} and seismic coupling via the actuator attachment point. The first two effects can usually be mitigated with appropriate design and shielding, for example by choosing appropriate electronic components and by making the magnets small and the electromagnetic environment quiet. The third effect is often mitigated by suspending the actuators from a separate suspension behind the test mass called a \emph{reaction} suspension. This provides seismic filtering to the actuators such that the ground motion coupling introduced to the test masses from the actuators is of similar magnitude to the ground motion the test masses would in any case receive with no actuation.
@@ -35,6 +35,7 @@ where $w$ and $l$ are the plate width and height, respectively, $d$ is the diele
 
 The electrostatic force the capacitor applies to the dielectric slab in the $x$ direction is given by the gradient of the energy:
 \begin{equation}
+  \label{eq:esd-force}
   \begin{split}
     F \left( x \right) &= \nabla E \left( x \right) \\
                        &= \left( \epsilon - \epsilon_0 \right) \frac{w \Delta \phi^2}{2 d}.
@@ -42,18 +43,50 @@ The electrostatic force the capacitor applies to the dielectric slab in the $x$ 
 \end{equation}
 This shows that the force depends on the voltage applied across the plates, the plate geometry and the separation. The force is larger for larger voltage and wider plates with smaller separation.
 
-This parallel plate capacitor \gls{ESD} has potential applications as an actuator for test masses in suspended interferometers. It was shown by Wittel \etal{} \cite{Wittel2015} that the force provided by plate capacitors with dimensions applicable to the \AEIPROTOTYPE{} is around \SI{1.5}{\micro\newton} at \SI{1}{\kilo\volt} corresponding to a displacement of around \SI{0.3}{\micro\meter}. This confirms that the \gls{ESD} is only suitable for small corrections, and because the suspension systems used in suspended interferometers filter ground motion to a greater extent at high frequency, this type of actuation tends to lend itself more to the control of radiation pressure and other displacement effects at frequencies above \SI{50}{\hertz} where seismic motion is typically insignificant.
+This parallel plate capacitor \gls{ESD} has potential applications as an actuator for test masses in suspended interferometers, and this was suggested in Wittel \etal{} \cite{Wittel2015} where it is shown that the force provided by plate capacitors with dimensions applicable to the \AEIPROTOTYPE{} is around \SI{1.5}{\micro\newton} at \SI{1}{\kilo\volt} corresponding to a displacement of around \SI{0.3}{\micro\meter}. This confirms that the \gls{ESD} is only suitable for small corrections, and because the suspension systems used in suspended interferometers filter ground motion to a greater extent at high frequency, this type of actuation tends to lend itself more to the control of radiation pressure and other displacement effects at frequencies above \SI{50}{\hertz} where seismic motion is typically insignificant.
 
-\subsection{Test of an electrostatic actuator to inform the \SSMEXPT{}}
-The plan for the \SSMEXPT{} is to adopt a plate capacitor design for the actuation of the \glspl{ETM} to take advantage of its benefits. A number of potential issues have been highlighted with this \gls{ESD} design that require a dedicated experiment to test before these actuators can be used in the main \SSMEXPT{}.
+\section{Electrostatic drives for the \SSMEXPT{}}
+The plan for the \SSMEXPT{} is to adopt a plate capacitor design for the actuation of the \glspl{ETM} so that the transmitted beam is available for the purposes of sensing and control and to reduce the number of suspensions required in the limited space within the vacuum enclosure. A number of potential technical issues have been highlighted with this \gls{ESD} design, however; the plate misalignment, plate separation and position of the plates with respect to the test masses will have an influence upon the actuation. The routing of high voltages to the plates inside the vacuum system is also something that requires careful design in order to prevent the actuator electronics from imparting significant noise onto the test masses. 
 
-The effect of misaligned plates, cross-couplings to yaw etc.
-Effect of plate separation
-Positioning of the test mass between the plates
-Control and noise of high voltage signals
-Signal routing in vacuum
+Due to the dimensions of the \SI{100}{\gram} test masses for which the \glspl{ESD} will eventually be used, the plate capacitor parameters shown in Table\,\ref{tab:ssm-esd-parameters} were deemed appropriate. As Equation\,\ref{eq:esd-force} assumes that the dielectric test mass completely fills the region between the plates, it is only an approximation for a round test mass that is offset from the plates to avoid ground motion coupling and friction. A better understanding of the force produced on the test mass by the plates can be found with finite element simulations, and so a basic model of the plates and test mass described in Table\,\ref{tab:ssm-esd-parameters} were produced in order to model the effects. Figure\,\ref{fig:ssm-esd-ansys} shows the force on the test mass in the z-direction, i.e. force in the longitudinal direction, as well as force in the transverse directions, as a function of plate potential difference. For a voltage of \SI{750}{\volt} the \gls{ESD} is able to provide a force of around \SI{-1.48e-6}{\newton}. The behaviour is approximately linear in this region, giving a force gradient of \SI{-3.68}{\nano\newton\per\volt}.
 
-The geometry of the intended experimental apparatus are shown in Table\,\ref{tab:esd-expt-parameters}.
+\begin{table}
+  \centering
+  \begin{tabular}{ll}
+    \textbf{Parameter}   & \textbf{Value} \\
+    Mirror diameter      & \SI{48.6}{\milli\meter} \\
+    Mirror thickness     & \SI{24.5}{\milli\meter} \\
+    Single plate width   & \SI{48.6}{\milli\meter} \\
+    Single plate length  & \SI{50}{\milli\meter} \\
+    Nominal plate separation & \SI{58.6}{\milli\meter} \\
+  \end{tabular}
+  \caption[Plate capacitor and optic parameters for the \SSMEXPT{}]{\label{tab:ssm-esd-parameters}Plate capacitor and optic parameters for the \SSMEXPT{}.}
+\end{table}
+% from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-ansys.pdf}
+  \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:ssm-esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
+\end{figure}
+
+\subsection{Test mass motion}
+From the maximum force of the \gls{ESD} on the \SI{100}{\gram} optics it is possible to calculate the effective motion of the mirror at a given frequency with knowledge of the suspension system. In Chapter\,\ref{c:speedmeter-control} we introduced the \gls{ETM} suspension design. Using the transfer function shown in Figure\,\ref{fig:ssm-etm-disp-vs-esd-force}, the maximum motion the \gls{ESD} can impart to the \gls{ETM} as a function of frequency is shown in Figure\,\ref{fig:ssm-etm-disp-esd-max}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-ssm-etm-disp-vs-esd-force.pdf}
+  \caption[Displacement per unit force from the electrostatic drives on the end test masses]{\label{fig:ssm-etm-disp-vs-esd-force}Displacement per unit force from the \glspl{ESD} on the \glspl{ETM}.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-ssm-etm-disp-esd-max.pdf}
+  \caption[Maximum displacement the electrostatic drive can impart to the end test mass]{\label{fig:ssm-etm-disp-esd-max}Maximum displacement the \gls{ESD} can impart to the \gls{ETM} as a function of frequency.}
+\end{figure}
+
+\section{Experimental test of the electrostatic drive}
+To set requirements on the positioning of the plates, and to build and test the infrastructure for the operation of the \glspl{ESD}, this chapter introduces the design for an experiment to test the new \gls{ESD} design.
 
 \begin{table}
   \centering
@@ -80,25 +113,10 @@ The geometry of the intended experimental apparatus are shown in Table\,\ref{tab
 
 \section{Actuator requirements}
 
-% ESD force gradient, from esd-ansys.pdf figure
-\newcommand{\ESDFORCEGRAD}{\SI{-3.68}{\nano\newton\per\volt}}
-
-% ESD maximum voltage
-\newcommand{\ESDMAXVOLTAGE}{\SI{750}{\volt}}
-
-% ESD maximum force, read from esd-ansys.pdf figure (gradient * voltage doesn't work because there's a non-zero y-intercept)
-\newcommand{\ESDMAXFORCE}{\SI{-1.48e-6}{\micro\newton}}
-
-There are a number of requirements for the power supply for the actuator electronics. Due to the nature of the actuator load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates produce a field that will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT{}'s \glspl{ETM}, the force gradient will be \ESDFORCEGRAD{}, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE{}, leading to a maximum mirror actuation force of \ESDMAXFORCE{}.
+%There are a number of requirements for the power supply for the actuator electronics. Due to the nature of the actuator load--a capacitor formed from parallel plates--the power supply does not need to drive a significant current. On the other hand, the power supply will be modulated by the amplifier and sent to the plates, and the plates produce a field that will actuate directly upon the test masses, and so any noise present upon the power supply output can potentially limit the sensitivity of the experiment. In order to achieve significant actuation, it is also necessary to provide a high voltage supply to the amplifier. Simulations conducted with the finite element modelling package \emph{ANSYS} have found that, for a mirror geometry resembling that of the \SSMEXPT{}'s \glspl{ETM}, the force gradient will be \ESDFORCEGRAD{}, as shown in Figure\,\ref{fig:esd-ansys}. For a sufficient level of force actuation within the voltage isolation limit of our vacuum tank feedthroughs, a maximum feasible voltage across the capacitor appears to be in the region of \ESDMAXVOLTAGE{}, leading to a maximum mirror actuation force of \ESDMAXFORCE{}.
 % ESD volts -> force from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
 
 As this experiment is somewhat a technology demonstration for the main \SSMEXPT{}, it is worth keeping in mind its goals. For this reason, the actuator should provide suitably low output noise and sufficient channels for the purposes of the control of the full experiment. \note{Which means the displacement noise of the actuator should be less than xxx m/sqrt Hz}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-ansys.pdf}
-  \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. \checkme{In practice it is most beneficial to have the mirror centre of mass aligned to the edge of the plates and the plates as close as possible to the mirror without touching.}}
-\end{figure}
 
 \subsection{Noise budget}
 \note{The actuator must not add more noise than we already expect from seismic etc...}
