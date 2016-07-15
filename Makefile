@@ -166,7 +166,7 @@ $(GFXGENPY)/60-new-amplifier-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-
 
 $(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-channel-a.txt $(DATA)/60-new-amplifier-coherence-channel-b.txt $(DATA)/60-new-amplifier-coherence-channel-c.txt $(DATA)/60-new-amplifier-coherence-channel-d.txt
 
-$(GFXGENPY)/60-new-amplifier-dewhitening-sims.pdf: $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
+$(GFXGENPY)/60-hv-amp-dewhitening-sims.pdf: $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
 $(GFXGENPY)/70-et-d-sensitivity-curves.pdf: $(DATA)/70-et-d-sensitivity-curves.txt
 
@@ -225,10 +225,10 @@ $(DATAGENPY)/60-esd-ansys.csv: $(DATA)/60-itm.mat $(DATA)/60-etm.mat
 $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv: $(DATASCRMAT)/create_ssm_etm_disp_vs_esd_force.m
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_ssm_etm_disp_vs_esd_force('$(ROOT)/$@', logspace(-1, 2, 1000)); exit;"
 
-$(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_single_dewhitening.fil
+$(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_single_dewhitening.fil
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_amp_whitening_tf('$(ROOT)/$@', 'amp_single_dewhitening.fil'); exit;"
 
-$(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_dual_dewhitening.fil
+$(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv: $(DATASCRMAT)/create_amp_whitening_tf.m $(DATASCRMAT)/amp_dual_dewhitening.fil
 	@matlab -nosplash -nodesktop -r "cd $(dir $<); create_amp_whitening_tf('$(ROOT)/$@', 'amp_dual_dewhitening.fil'); exit;"
 
 $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv: $(DATASCRMAT)/create_et_lf_reflected_power_vs_pr_trans.m
