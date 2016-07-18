@@ -160,9 +160,9 @@ $(GFXGENPY)/60-ssm-etm-disp-vs-esd-force.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-e
 
 $(GFXGENPY)/60-ssm-etm-disp-esd-max.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
 
-$(GFXGENPY)/60-new-amplifier-dewhitened-tfs.pdf: $(DATA)/60-new-amplifier-dewhitened-tfs-channel-a.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-b.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-c.txt $(DATA)/60-new-amplifier-dewhitened-tfs-channel-d.txt $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
+$(GFXGENPY)/60-hv-amp-dewhitened-tfs.pdf: $(DATA)/60-hv-amp-dewhitened-tfs-channel-one.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-two.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-three.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-four.txt $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
-$(GFXGENPY)/60-new-amplifier-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-new-amplifier-single-dewhitening-sim.csv $(DATAGENMAT)/60-new-amplifier-dual-dewhitening-sim.csv
+$(GFXGENPY)/60-hv-amp-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
 $(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-channel-a.txt $(DATA)/60-new-amplifier-coherence-channel-b.txt $(DATA)/60-new-amplifier-coherence-channel-c.txt $(DATA)/60-new-amplifier-coherence-channel-d.txt
 

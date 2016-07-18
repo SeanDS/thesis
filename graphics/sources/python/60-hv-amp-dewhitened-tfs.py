@@ -11,11 +11,11 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data paths
-data_path_a = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-dewhitened-tfs-channel-a.txt')
-data_path_b = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-dewhitened-tfs-channel-b.txt')
-data_path_c = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-dewhitened-tfs-channel-c.txt')
-data_path_d = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-dewhitened-tfs-channel-d.txt')
-data_path_dual = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-new-amplifier-dual-dewhitening-sim.csv')
+data_path_a = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-dewhitened-tfs-channel-one.txt')
+data_path_b = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-dewhitened-tfs-channel-two.txt')
+data_path_c = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-dewhitened-tfs-channel-three.txt')
+data_path_d = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-dewhitened-tfs-channel-four.txt')
+data_path_dual = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'generated', 'from-matlab', '60-hv-amp-dual-dewhitening-sim.csv')
 
 # number of headers
 n_headers = 13
