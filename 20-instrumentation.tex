@@ -50,27 +50,9 @@ where we assume that the path length difference caused by the transient is evenl
 \end{equation}
 using the fact that $P_{\text{in}} = A_{\text{in}}^2$. This shows that the signal from the arm length motion is encoded in the phase of the signal witnessed by the photodetector at the output port.
 
-Getting access to the phase information encoded within the light is more difficult than making a simple measurement of power. Sections \note{WGM PDH, controls BHD and ET DC readout} describe techniques to access this information given different noise and signal constraints.
+Getting access to the phase information encoded within the light is more difficult than making a simple measurement of power. Various techniques are available that provide access this information given different noise and signal constraints, some of which are explained in the next section.
 
-\note{Explain dark fringe offset}
-
-\subsection{\label{sec:readout}Readout}
-% chapter 4 points here
-
-\note{Give overview but leave homodyne vs DC readout to later}
-
-\subsubsection{Heterodyne readout}
-
-\subsubsection{\label{sec:homodyne-readout}Homodyne readout}
-
-\note{Explain DC readout is a type of homodyne. Also explain that you don't need to control the LO path or the alignment in this case - cite \cite{Fricke2012}.}
-
-\note{Heterodyne suffers from cyclostationary shot noise and homodyne doesn't - results in sensitivity improvement of sqrt(1.5) - cite \cite{Niebauer1991}}
-
-\note{From Tobin: A homodyne readout system differs from a heterodyne system by using a local oscillator at the same (optical) frequency as the field being measured.}
-
-\note{Explain why homodyne readout is not to be used in future detectors over DC readout: because the LO comes from the reflected IFO light, which although some has been filtered by the IFO, it also contains laser light that has noise on it (cite Sebastian's paper, Corbitt PRL paper on parity). DC readout is great because it filters the light by the arm cavities.}
-
+\subsubsection{Optimal operating point}
 In Equation\,\ref{eq:mich-p-out} we see that a static field $\frac{P_{\text{in}}}{2}$ is present upon the photodetector, independent of the arm length change. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer at an operating point commonly referred to as ``half way up the fringe''. Here, the interferometer's mirrors are nominally positioned such that the output signal is oscillating about the midpoint between crest and trough (see Figure\,\ref{fig:optimal-operating-point}). As the gradient is steepest at this point, any small changes to the relative arm length of the Michelson interferometer result in a significant difference in power at the photodetector. This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations.
 
 %% FIXME: change this plot's x-labels to use wavelength, to fit with the conclusion in the text.
@@ -80,16 +62,16 @@ In Equation\,\ref{eq:mich-p-out} we see that a static field $\frac{P_{\text{in}}
   \caption[Fringe]{\label{fig:optimal-operating-point}Optimal operating point.}
 \end{figure}
 
-By inspecting Equation\,\ref{eq:mich-p-out}, it is clear to see that there must exist, in cases where there is a signal due to a difference in arm length, a static photodetector power independent of the arm length. This does not contribute any displacement information to the measurement, but does contribute shot noise:
+By inspecting Equation\,\ref{eq:mich-p-out}, it is clear to see that there must exist, in cases where there is a signal due to a difference in arm length, a static photodetector power independent of the arm length. This does not contribute any displacement information to the measurement, but does contribute \emph{shot noise}:
 \begin{equation}
   P_{\text{shot, out}} = \sqrt{2 h f_0 P_{\text{in}}},
 \end{equation}
-where $h$ is Planck's constant, $f_0$ is the light frequency and $P_{\text{in}} = A_{\text{in}}^2$, the power entering the interferometer at the beam splitter. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \gls{SNR}. The \gls{SNR} is:
+where $h$ is Planck's constant, $f_0$ is the light frequency and $P_{\text{in}} = A_{\text{in}}^2$, the power entering the interferometer at the beam splitter. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \emph{signal-to-noise ratio} (\gls{SNR}). The \gls{SNR} is:
 \begin{equation}
   \text{SNR} = \frac{P_{\text{out}}}{P_{\text{shot, out}}} = \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \left( 1 + \cos \left(k \Delta x \right) \right).
 \end{equation}
 
-The $\Delta x$ term in Equation\,\ref{eq:mich-p-out} is a combination of a static arm length \emph{detuning}\textemdash representing the arm length mismatch required to reach the desired operating point\textemdash and a differential gravitational wave signal $\Delta x_{\text{GW}}$. A suitable choice of $ x_{\text{tune}}$ can remove the majority of the static power present at the output. Setting the slope of the \gls{SNR} with respect to the tuning to zero,
+The $\Delta x$ term in Equation\,\ref{eq:mich-p-out} is a combination of a static arm length \emph{detuning} $x_{\text{tune}}$\textemdash representing the arm length mismatch required to reach the desired operating point\textemdash and a differential gravitational wave signal $\Delta x_{\text{GW}}$. A suitable choice of $x_{\text{tune}}$ can remove the majority of the static power present at the output. Setting the slope of the \gls{SNR} with respect to the tuning to zero,
 \begin{equation}
   \frac{\Delta \text{SNR}}{\Delta x_{\text{GW}}} = -k \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \sin \left(k \Delta x\right) = 0,
 \end{equation}
@@ -97,10 +79,34 @@ we find that maximum \gls{SNR} is achieved for static tunings
 \begin{equation}
   \Delta x \text{ mod } \lambda = 0.
 \end{equation}
-This result shows that the optimal operating point in terms of \gls{SNR} is at the point where the light from the two arms interferes destructively. While any multiple of $\lambda$ will satisfy the \gls{SNR} condition as defined, in reality we have not considered laser noise coupling. The more matched the arm lengths are, the lower the laser noise couples to the output port. In reality there are also mismatches in the reflectivities of the mirrors in the arms: this creates an asymmetry called a \emph{contrast defect} which leads to additional shot noise at the output port.
+It turns out that the reduced signal in the case of the operating point being at the \emph{dark fringe}, where light from the two arms interferes destructively, is more than compensated for by the lack of shot noise such that the overall sensitivity is better. Furthermore, while any multiple of $\lambda$ will satisfy the \gls{SNR} condition as defined, in reality we have not considered laser noise coupling; the more matched the arm lengths are, the lower the laser noise couples to the output port. In reality there are also mismatches in the reflectivities of the mirrors in the arms: this creates an asymmetry called a \emph{contrast defect} which leads to additional shot noise at the output port. Noise which is not coherently cancelled at the beam splitter combines with any intentional offset applied to the relative phase between the arms to create the \emph{dark fringe offset}.
+
+\subsection{\label{sec:readout}Readout}
+% chapter 4 points here
+
+Test mass displacement information is encoded in a particular quadrature of the output light. In the case of heavy mirrors and low laser power this information is primarily contained within the phase quadrature, and when significant optomechanical interactions are present either with lighter mirrors or higher laser power the information can be encoded within a linear combination of the phase and amplitude quadratures. The way in which this information is extracted is called the \emph{readout}.
+
+Various techniques exist to extract the signal from light, each with strengths and weaknesses. \emph{Heterodyne} readout involves the use of a second light frequency used as a \emph{local oscillator} (phase reference) for the primary light frequency that is resonant within the interferometer. This was one of the first techniques used to control laser interferometric gravitational wave detectors \cite{Willke2002}, but due to the presence of cyclostationary noise \cite{Niebauer1991} and challenges related to the creation of a stable local oscillator frequency this has since been superseded for the most sensitive readouts by \emph{homodyne} techniques. Homodyne readout involves the use of the carrier frequency as both a signal field and local oscillator, and this leads to some cancellation of noise sources common to the carrier at the expense of additional technical complexity. These techniques are discussed in greater detail in the following subsections.
+
+\subsubsection{Heterodyne readout}
+When light with multiple frequency components is incident upon a photodetector the resulting electrical signal shows the \emph{beat signal} between the two components. Assuming that a photodetector has an incident electric field amplitude composed of two frequency components, we get \cite{Freise2010}:
+\begin{equation}
+  A = A_0 \cos \left( \omega_1 t \right) + A_0 \cos \left( \omega_2 t \right),
+\end{equation}
+where $A_0$ is the (identical) maximum field amplitude, $\omega_1$ and $\omega_2$ are the two frequencies and $t$ is time. The photodetector measures the power of the field, $P$:
+\begin{equation}
+  \label{eq:photodetector-beat-power}
+  P = A^2 = A_0^2 \left( \cos^2 \left( \omega_1 t \right) + \cos^2 \left( \omega_2 t \right) + \cos \left( \left( \omega_1 + \omega_2 \right) t \right) + \cos \left( \left( \omega_1 - \omega_2 \right) t \right) \right).
+\end{equation}
+If the difference frequency $\omega_1 - \omega_2$ in Equation\,\ref{eq:photodetector-beat-power} is small, it can be measured by the photodetector. Most heterodyne techniques involve the frequency modulation of a single carrier, which creates sidebands that beat with the carrier at the photodetector. If the interferometer can be arranged in such a way that the sidebands and carrier are not simultaneously resonant at the test masses to be measured, then the beat signal will contain signal proportional to the test masses.
+
+\subsubsection{\label{sec:homodyne-readout}Homodyne readout}
+One way in which to picture homodyne readout is as a heterodyne readout with $\omega_1 = \omega_2$. It is possible to create a homodyne local oscillator by using a second laser with identical frequency to the first, though it is usually beneficial to use the same laser to benefit from coherent noise cancellation.
+
+The first large scale application of homodyne readout in gravitational wave detectors was \emph{\gls{DC} readout} \cite{Frick2012}, where a detuning (\emph{\gls{DC} offset}) is intentionally created within the interferometer's arms to allow for some of the carrier light to appear at the output port where it acts as a local oscillator to the rest of the carrier that contains the gravitational wave signal. This technique has the benefit that the local oscillator is filtered by the interferometer which suppresses certain types of noise, but it involves the intentional creation of a classical light field at the output port. \emph{Balanced homodyne detection}, however, involves the picking off of a fraction of the interferometer's input for use as a local oscillator. In this case, signal encoded in the light leaving the interferometer can be mixed with the local oscillator without the need for a \gls{DC} offset.
 
 \subsection{Numerical simulation tools}
-Recall the reflection term $r$ we ignored earlier. Light propagating within an interferometer will collect reflection and transmission terms from each mirror it encounters. A photodetector placed at a port of the interferometer will then see light with amplitude and phase information representing the path it has taken through the interferometer. We have shown this effect in a trivial example involving a \FP{} cavity with one input, but the same mathematics can be used to represent any interferometer. For anything beyond the simplest of examples, we typically employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} (not to be confused with \emph{cavity} finesse) and Optickle \cite{Evans2012} being popular choices within the field of gravitational wave interferometry.
+Light propagating within an interferometer will collect signal terms in reflection from and transmission through each encountered mirror. While in certain circumstances the analytical calculation of the effect of each mirror in an interferometer is trivial, such as with the basic \FP{} interferometer described in Appendix\,\ref{sec:simple-cavities}, the algebra representing more complex interferometers quickly becomes extremely cumbersome. For anything beyond the simplest of examples, it is usually beneficial to employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} and Optickle \cite{Evans2012} being popular choices within the field. These tools are discussed in greater detail in Appendix\,\ref{a:simulation-tools}.
 
 \section{\label{sec:ifo-noise}Measurement noise in gravitational wave interferometry}
 Measurement precision is ultimately a matter of \emph{signals} and \emph{noise}. The term ``signal'' simply refers to a wanted pattern of oscillations representing a particular variable of interest. ``Noise'', on the other hand, is unwanted oscillations that appear at the signal measurement device. In reality the measurement of any signal necessarily entails the measurement of some noise.
