@@ -104,6 +104,8 @@ $(GFXGENTIKZ)/%.pdf: $(GFXSRCTIKZ)/%.tex
 
 # ===== Extra dependencies for plot scripts =====
 
+$(GFXGENPY)/10-gw150914.pdf: $(DATA)/10-gw150914-h1.txt $(DATA)/10-gw150914-l1.txt $(DATA)/10-gw150914-h1-numerical.txt $(DATA)/10-gw150914-l1-numerical.txt
+
 $(GFXGENPY)/20-aligo-noise-budget.pdf: $(DATA)/20-aligo-noise-budget.csv
 
 $(GFXGENPY)/30-coating-vs-grating-noise.pdf: $(DATA)/30-coating-vs-grating-noise.csv
