@@ -61,7 +61,7 @@ ax1.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend([r'PRC $-f_1$', r'PRC $+f_1$', r'SRC $-f_1$', r'SRC $+f_1$', r'PRC $-f_2$', r'PRC $+f_2$', r'SRC $-f_2$', r'SRC $+f_2$', r'ET-LF $L_{\mathrm{SRC}}$'], loc='lower right', framealpha=0.8)
+ax1.legend([r'PRC $-f_1$', r'PRC $+f_1$', r'SRC $-f_1$', r'SRC $+f_1$', r'PRC $-f_2$', r'PRC $+f_2$', r'SRC $-f_2$', r'SRC $+f_2$', r'ET-LF $L_{\mathrm{SRC}}$'], loc='lower right', framealpha=lf.default_settings['legend.framealpha'])
 
 plt.tight_layout()
 

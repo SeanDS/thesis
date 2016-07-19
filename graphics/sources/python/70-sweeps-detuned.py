@@ -201,7 +201,7 @@ ax5.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax5.legend([r'SRCL to $\mathrm{REFL}_{\mathrm{68}}$', 'Operating point', 'Signal offset'], loc='lower left', framealpha=0.8)
+ax5.legend([r'SRCL to $\mathrm{REFL}_{\mathrm{68}}$', 'Operating point', 'Signal offset'], loc='lower left', framealpha=lf.default_settings['legend.framealpha'])
 
 ###
 

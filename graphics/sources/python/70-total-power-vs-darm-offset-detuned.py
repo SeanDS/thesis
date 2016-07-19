@@ -59,8 +59,8 @@ ax2.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend(['Output port', 'ET-LF DARM offset'], loc='lower left', framealpha=0.8)
-ax2.legend(['X arm', 'Y arm', 'ET-LF DARM offset'], loc='lower left', framealpha=0.8)
+ax1.legend(['Output port', 'ET-LF DARM offset'], loc='lower left', framealpha=lf.default_settings['legend.framealpha'])
+ax2.legend(['X arm', 'Y arm', 'ET-LF DARM offset'], loc='lower left', framealpha=lf.default_settings['legend.framealpha'])
 
 plt.tight_layout()
 
