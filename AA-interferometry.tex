@@ -181,25 +181,10 @@ The sideband structure created by amplitude and phase modulation is shown in Fig
   \label{fig:sideband-structure}
 \end{figure}
 
-\note{https://dsp.stackexchange.com/questions/2284/why-are-sidebands-generated-in-am-and-fm}
-
 \section{Signal detection}
 When signals are measured by a photodetector, only amplitude modulation can be detected directly. Although the field impinging upon the photodetector contains phase modulation, the photodetector's stray capacitance acts as a filter to remove this effect from the output signal; in essence, the photodetector only sees the time averaged field. A piezoelectric transducer modulating a laser crystal can be readily witnessed on a photodetector, but to access mirror motion encoded as phase modulation, special techniques are required.
 
 In general, phase modulation measurement techniques fall into two broad categories: \emph{heterodyne} detection, and \emph{homodyne} detection. With heterodyne detection, one or more laser frequencies are used in addition to the carrier which have different properties such that they follow a different path to the detector. At the detector, a comparison can be made between the paths taken by the heterodyne fields, where the difference in amplitude and phase can offer insight into the motion of the interferometer's optics. In homodyne detection, the carrier is itself used as a reference, by mixing some light from one part of the interferometer with light from another. If this is conducted in a particular way, it can be a powerful technique to measure phase modulation without requiring carefully controlled heterodyne fields.
 
-\note{Both heterodyne and homodyne techniques will be discussed in greater detail later on...}
-
-\note{See Danzmann's talk again, from ``Why do we need arm cavities'' in snippets}
-
-%\subsubsection{Heterodyne detection}
-%Add RF sidebands that don't resonate, schnupp asymmetry, etc...
-
-%\subsubsection{Homodyne detection}
-%pick off a bit of carrier light with a DARM offset...
-
-\section{Cavity response}
-\note{Define the cavity pole frequency as half the FWHM from earlier}
-
-\section{Numerical simulation tools}
-Light propagating within an interferometer will collect signal terms in reflection from and transmission through each encountered mirror. While in certain circumstances the analytical calculation of the effect of each mirror in an interferometer is trivial, such as with the basic \FP{} interferometer described in Section\,\ref{sec:simple-cavities}, the algebra representing more complex interferometers quickly becomes extremely cumbersome. For anything beyond the simplest of examples, it is usually beneficial to employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers, with the packages Finesse \cite{Freise2004} and Optickle \cite{Evans2012} being popular choices. These tools are discussed in greater detail in Appendix\,\ref{a:simulation-tools}.
+\section{Simulating interferometer response}
+Light propagating within an interferometer will collect signal terms in reflection from and transmission through each encountered mirror, and the way in which the signal depends on the motion of the mirrors is termed the \emph{response}. While in certain circumstances the analytical calculation of a particular response is straightforward, such as with the basic \FP{} interferometer described in Section\,\ref{sec:simple-cavities}, the algebra representing more complex interferometers quickly becomes extremely cumbersome. For anything beyond the simplest of examples, it is usually beneficial to employ numerical simulation tools to perform the tedious calculations involved in obtaining the output signals from interferometers as optics are perturbed, with the packages Finesse \cite{Freise2004} and Optickle \cite{Evans2012} being popular choices. These tools are discussed in greater detail in Appendix\,\ref{a:simulation-tools}.
