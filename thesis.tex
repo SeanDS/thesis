@@ -21,7 +21,7 @@
 % Bibliography
 
 % import package and set some options
-\usepackage[minnames=1,maxnames=5,style=numeric-comp,sorting=none,backend=bibtex]{biblatex}
+\usepackage[minnames=1,maxnames=5,style=numeric-comp,sorting=none,url=false,backend=bibtex]{biblatex}
 
 % set path to database
 \bibliography{bibliography.bib}
@@ -246,18 +246,19 @@
 
 \cleardoublepage
 
-\input{"00-abstract.tex"}
-%\addcontentsline{toc}{chapter}{Abstract}
-
-\cleardoublepage
-\vspace*{1.75in}
-\begin{flushright} Dedication.\end{flushright}
-
-
 %\pagenumbering{roman}
 %\setcounter{page}{1}
 
-% -----------------------------------------------------------------------------
+% import glossary terms
+\input{"00-definitions.tex"} 
+
+\newpage
+
+\addcontentsline{toc}{chapter}{}
+
+\input{"00-abstract.tex"}
+\addcontentsline{toc}{section}{Abstract}
+
 \newpage
 
 \vspace*{2.75in}
@@ -266,23 +267,14 @@
 \begin{center}
   \includegraphics[width=2in]{graphics/generated/from-svg/00-cc-by-nc-sa.pdf}
 \end{center}
+\addcontentsline{toc}{section}{Licence}
 
 \newpage
-
-% -----------------------------------------------------------------------------
-
-% import glossary terms
-\input{"00-definitions.tex"} 
-
-% -----------------------------------------------------------------------------
-\newpage
-%\thispagestyle{empty}
-
-\addcontentsline{toc}{chapter}{Preliminaries}
 
 % change contents title to lower case
 \renewcommand{\contentsname}{Table of contents}
 \tableofcontents
+\addcontentsline{toc}{section}{Table of contents}
 
 \listoftables
 \addcontentsline{toc}{section}{List of tables}
@@ -290,19 +282,18 @@
 \listoffigures
 \addcontentsline{toc}{section}{List of figures}
 
-\printglossaries
-\addcontentsline{toc}{section}{List of acronyms and symbols}
-
-% -----------------------------------------------------------------------------
 \cleardoublepage
+\section*{\label{c:intro:credits}Credits}
+\input{"00-credits.tex"}
+\addcontentsline{toc}{section}{Credits}
+
+\cleardoublepage
+\vspace*{1.75in}
+\begin{flushright} Dedication.\end{flushright}
+\addcontentsline{toc}{section}{Dedication}
 
 % Number chapter boomarks
 \bookmarksetup{numbered}
-
-\section*{\label{c:intro:credits}Credits}
-\addcontentsline{toc}{section}{Credits}
-
-\input{"00-credits.tex"}
 
 % main chapters
 \mainmatter
@@ -322,6 +313,10 @@
 
 % end
 \backmatter
+
+% glossary
+\printglossaries
+\addcontentsline{toc}{chapter}{Acronyms}
 
 % bibliography
 \addcontentsline{toc}{chapter}{Bibliography}
