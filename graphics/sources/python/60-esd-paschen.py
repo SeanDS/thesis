@@ -49,8 +49,11 @@ ax1.hlines(750, p.min() * 1e-2, p.max() * 1e2, colors=colours.next(), linestyles
 # vertical line representing atmospheric pressure
 ax1.vlines(1e3, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2)
 
-ax1.set_xlabel('Pressure [mbar]')
-ax1.set_ylabel('Breakdown Voltage [V]')
+# vertical line representing operating pressure
+ax1.vlines(1e-4, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2)
+
+ax1.set_xlabel('Pressure (mbar)')
+ax1.set_ylabel('Breakdown voltage (V)')
 
 # create legend strings
 legend_strings = ['{0:02.2f} mm separation'.format(float(d[i]) * 1e3) for i in range(len(d))]
@@ -59,10 +62,11 @@ legend_strings = ['{0:02.2f} mm separation'.format(float(d[i]) * 1e3) for i in r
 legend_strings = list(legend_strings)
 
 # add extra legend entry for lines
-legend_strings.append('Maximum HV output')
+legend_strings.append('Max HV output')
 legend_strings.append('Atmospheric pressure')
+legend_strings.append('Max operating pressure')
 
-ax1.legend(legend_strings, loc='upper left')
+ax1.legend(legend_strings, loc='upper left', framealpha=lf.default_settings['legend.framealpha'])
 
 ax1.grid(True)
 

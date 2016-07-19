@@ -47,16 +47,16 @@ ax1.loglog(data_measurements[:, 0], data_measurements[:, 1], '--', color=colour_
 ax1.loglog(data_measurements[:, 0], data_measurements[:, 3], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_measurements[:, 0], data_measurements[:, 5], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_measurements[:, 0], data_measurements[:, 7], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data_single_sim[:, 0], filter_adjust * data_single_sim[:, 1], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data_dual_sim[:, 0], filter_adjust * data_dual_sim[:, 1], '--', color=colour_f, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_single_sim[:, 0], filter_adjust * data_single_sim[:, 1], '-', color=colour_e, alpha=lf.ALPHA_LINE_A, zorder=-1)
+ax1.loglog(data_dual_sim[:, 0], filter_adjust * data_dual_sim[:, 1], '-', color=colour_f, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
 # plot phase
 ax2.semilogx(data_measurements[:, 0], data_measurements[:, 2], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_measurements[:, 0], data_measurements[:, 4], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_measurements[:, 0], data_measurements[:, 6], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_measurements[:, 0], data_measurements[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data_single_sim[:, 0], data_single_sim[:, 2], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data_dual_sim[:, 0], data_dual_sim[:, 2], '--', color=colour_f, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_single_sim[:, 0], data_single_sim[:, 2], '-', color=colour_e, alpha=lf.ALPHA_LINE_A, zorder=-1)
+ax2.semilogx(data_dual_sim[:, 0], data_dual_sim[:, 2], '-', color=colour_f, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Frequency [Hz]')

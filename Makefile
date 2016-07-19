@@ -164,7 +164,7 @@ $(GFXGENPY)/60-hv-amp-dewhitened-tfs.pdf: $(DATA)/60-hv-amp-dewhitened-tfs-chann
 
 $(GFXGENPY)/60-hv-amp-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
-$(GFXGENPY)/60-new-amplifier-coherence.pdf: $(DATA)/60-new-amplifier-coherence-channel-a.txt $(DATA)/60-new-amplifier-coherence-channel-b.txt $(DATA)/60-new-amplifier-coherence-channel-c.txt $(DATA)/60-new-amplifier-coherence-channel-d.txt
+$(GFXGENPY)/60-hv-amp-coherence.pdf: $(DATA)/60-hv-amp-coherence-channel-one.txt $(DATA)/60-hv-amp-coherence-channel-two.txt $(DATA)/60-hv-amp-coherence-channel-three.txt $(DATA)/60-hv-amp-coherence-channel-four.txt
 
 $(GFXGENPY)/60-hv-amp-dewhitening-sims.pdf: $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 

@@ -53,18 +53,18 @@ ax1.loglog(data_a[:, 0], data_a[:, 1], '--', color=colour_a, alpha=lf.ALPHA_LINE
 ax1.loglog(data_b[:, 0], data_b[:, 3], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_c[:, 0], data_c[:, 5], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data_d[:, 0], data_d[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data_dual[:, 0], filter_adjust * data_dual[:, 1], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
+ax1.loglog(data_dual[:, 0], filter_adjust * data_dual[:, 1], '-', color=colour_e, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
 # plot phase
 ax2.semilogx(data_a[:, 0], data_a[:, 2], '--', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_b[:, 0], data_b[:, 4], '--', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_c[:, 0], data_c[:, 6], '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data_d[:, 0], data_d[:, 8], '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data_dual[:, 0], data_dual[:, 2], '--', color=colour_e, alpha=lf.ALPHA_LINE_A)
+ax2.semilogx(data_dual[:, 0], data_dual[:, 2], '-', color=colour_e, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Frequency [Hz]')
-ax2.set_ylabel(u'Phase [°]')
+ax2.set_xlabel('Frequency (Hz)')
+ax2.set_ylabel(u'Phase (°)')
 
 ax1.set_xlim([1e0, 1e4])
 ax1.set_ylim([1e-2, 1e1])

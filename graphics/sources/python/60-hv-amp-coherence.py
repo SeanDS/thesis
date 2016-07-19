@@ -11,10 +11,10 @@ import lookfeel as lf
 save_path = sys.argv[1]
 
 # data paths
-data_path_a = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-coherence-channel-a.txt')
-data_path_b = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-coherence-channel-b.txt')
-data_path_c = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-coherence-channel-c.txt')
-data_path_d = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-new-amplifier-coherence-channel-d.txt')
+data_path_a = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-coherence-channel-one.txt')
+data_path_b = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-coherence-channel-two.txt')
+data_path_c = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-coherence-channel-three.txt')
+data_path_d = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', '60-hv-amp-coherence-channel-four.txt')
 
 # number of headers
 n_headers = 13
@@ -44,6 +44,12 @@ colour_b = colours.next()
 colour_c = colours.next()
 colour_d = colours.next()
 
+# divide frequencies by 1000 to convert to kHz
+data_a[:, 0] /= 1000
+data_b[:, 0] /= 1000
+data_c[:, 0] /= 1000
+data_d[:, 0] /= 1000
+
 # selector, to choose only every nth data point
 x_select = 10
 
@@ -72,12 +78,12 @@ with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 3}):
 #with plt.rc_context({'legend.borderaxispad': 0}):
 fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='right')
 
-ax3.set_xlabel('Frequency [Hz]')
-ax4.set_xlabel('Frequency [Hz]')
+ax3.set_xlabel('Frequency (kHz)')
+ax4.set_xlabel('Frequency (kHz)')
 ax1.set_ylabel('Coherence')
 ax3.set_ylabel('Coherence')
 
-ax1.set_xlim([1e0, 1e4])
+ax1.set_xlim([0, 10])
 ax1.set_ylim([0, 1.1])
 
 ax1.grid(True)
