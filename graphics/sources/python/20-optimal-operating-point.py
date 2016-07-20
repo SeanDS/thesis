@@ -16,7 +16,7 @@ dx = np.linspace(-lambda0/2, lambda0/2, 1000)
 
 A = np.power(A0, 2) / 2 * (1 + np.exp(-2j * (k * dx + np.pi/2)))
 
-fig = plt.figure(figsize=lf.FIG_SIZE_A)
+fig = plt.figure(figsize=lf.FIG_SIZE_B)
 
 ax1 = plt.gca()
 
@@ -28,12 +28,12 @@ ax1.plot(dx, A, color=colours.next(), alpha=lf.ALPHA_LINE_A)
 ax1.plot(dx, -0.25-1/(lambda0/6)*dx, '--', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 ax1.hlines(0, dx.min(), dx.max(), colors=colours.next(), alpha=lf.ALPHA_LINE_A, linestyles='dashed')
 
-ax1.set_xlabel('x [m]')
-ax1.set_ylabel('Power [arb. units]')
+ax1.set_xlabel(r'x mod $\lambda$ (m)')
+ax1.set_ylabel('Normalised\nphotodetector power')
 
-ax1.legend(['Measured power', 'Best response', 'Best SNR'], loc="upper right")
+ax1.legend(['Measured power', 'Best response', 'Best SNR'], loc='lower right', framealpha=lf.default_settings['legend.framealpha'])
 
-plt.xticks([-lambda0/4, 0, lambda0/4], [r'$\frac{-\pi}{2}$', r'$0$', r'$\frac{\pi}{2}$'])
+plt.xticks([-lambda0/4, 0, lambda0/4], [r'$\frac{-\lambda}{4}$', r'$0$', r'$\frac{\lambda}{4}$'])
 ax1.set_xlim([-lambda0/4, lambda0/4])
 ax1.set_ylim([-0.05, 1])
 
