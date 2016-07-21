@@ -41,7 +41,7 @@ Remembering that photodetectors measure power (Section\,\ref{sec:operating-point
 \end{equation}
 which for the photodetector would have units \SI{}{\watt\per\sqrthz}.
 
-\subsection{Estimation of spectral density}
+\subsection{\label{sec:windowing}Estimation of spectral density}
 Equation\,\ref{eq:psd} gives the formal definition of the power spectral density but not a practical means to measure it. To estimate the frequency components of a measured photodetector signal, we employ \emph{spectral density estimation} techniques. The standard in experimental interferometry is Welch's method \cite{Welch1967}, which splits a measured time series into a series of segments which can overlap with adjacent segments before calculating Fourier transforms on each individual segment. The resulting Fourier transforms are recombined to produce the spectral density estimate.
 
 The segment period determines the lowest frequency resolved by the calculation. For instance, a segment length of \SI{1000}{\second} would result in frequency resolution down to $\frac{1}{1000} = \SI{e-3}{\hertz}$. Segmentation can be used to trade bandwidth for resolution. Instead of taking a segment equal to the signal's period, and therefore achieving resolution at the lowest possible frequencies, segments of shorter duration can be combined to produce better resolution but only at higher frequencies.

@@ -170,6 +170,8 @@ $(GFXGENPY)/60-hv-amp-coherence.pdf: $(DATA)/60-hv-amp-coherence-channel-one.txt
 
 $(GFXGENPY)/60-hv-amp-dewhitening-sims.pdf: $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
+$(GFXGENPY)/60-hv-amp-output-noise.pdf: $(DATA)/60-hv-amp-output-noise.csv
+
 $(GFXGENPY)/70-et-d-sensitivity-curves.pdf: $(DATA)/70-et-d-sensitivity-curves.txt
 
 $(GFXGENPY)/70-reflected-power-vs-prm-transmissivity.pdf: $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv
