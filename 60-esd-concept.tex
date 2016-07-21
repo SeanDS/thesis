@@ -253,7 +253,7 @@ The channels should be isolated from one another such that a signal injected at 
 \end{figure}
 
 \subsubsection{Output noise}
-The noise at the output of the \gls{HV} amplifier is shown in Figure\,\ref{fig:hv-amp-output-noise}. This was calculated via the \gls{HV} amplifier's monitor, with the measurements projected into effective \gls{HV} noise by multiplying the signal by the inverse of the monitor pick-off fraction, \num{100}. To measure the noise at frequencies comparable to the \SSMEXPT{}'s cavity bandwidth a Stanford Research SR785 spectrum analyser was used; as shown in Figure\,\ref{fig:aa-ai-filter-tfs} the \gls{CDS} \glspl{AA} filters reduce its output significantly above \SI{9}{\kilo\hertz} and so they are not practical for this measurement.
+The noise at the output of the \gls{HV} amplifier is shown in Figure\,\ref{fig:hv-amp-output-noise}. This was calculated via the \gls{HV} amplifier's monitor, with the measurements projected into effective \gls{HV} noise by multiplying the signal by the inverse of the monitor pick-off fraction, \num{100}. To measure the noise at frequencies comparable to the \SSMEXPT{}'s cavity bandwidth a Stanford Research SR785 spectrum analyser was used; as shown in Figure\,\ref{fig:aa-ai-filter-tfs} the anti-imaging filters significantly reduce the output from \gls{CDS} above \SI{9}{\kilo\hertz} and so they are not practical for this measurement.
 
 The following measurements were made:
 \begin{itemize}
@@ -272,9 +272,11 @@ The projected \gls{HV} noise is different in the case of zero or full \gls{DC} o
   \label{fig:hv-amp-output-noise}
 \end{figure}
 
-The effective displacement noise the \gls{HV} amplifier would produce on the \gls{ETM} suspensions can be calculated following the same process used to create the maximum \gls{ETM} displacement shown in Figure\,\ref{fig:ssm-etm-disp-esd-max}. Assuming that the force-voltage gradient is \SI{-3.68}{\nano\newton\per\volt} at \SI{750}{\volt} as shown in Figure\,\ref{fig:ssm-esd-ansys}, we can calculate the gradient for voltages approximating the noise. The noise voltage at \SI{100}{\hertz} is around \SI{30}{\micro\volt}. The displacement noise at \SI{100}{\hertz} where the measurement of quantum radiation pressure noise may be made is then given by the product of the \gls{ESD}'s force per volt, the \gls{ETM} suspension's displacement per unit force and the noise voltage.
-
-CHECK THIS We can use the force per volt given by the fit shown in Figure\,\ref{fig:ssm-esd-ansys} modified by the square of the voltage difference, i.e. $\SI{3.68}{\nano\newton\per\volt} \left( \frac{\SI{30}{\micro\volt}}{\SI{750}{\volt}} \right)^2 = \SI{6e-24}{\newton\per\volt}$. The displacement at \SI{100}{\hertz} is around \SI{10}{\micro\meter\per\newton} and so the effective displacement is almost \SI{e-30}{\meter\per\sqrthz}, which is far below the noise budget for the \SSMEXPT{} shown in Figure\,\ref{fig:noise-budget}.
+The effective displacement noise the \gls{HV} amplifier would produce on the \gls{ETM} suspensions can be calculated using a simple argument. At a frequency within the measurement band of the \SSMEXPT{}, \SI{100}{\hertz}, the projected voltage noise from the \gls{HV} amplifier is around \SI{30}{\micro\volt\per\sqrthz}. We know that the force depends on the square of the potential difference, and rearranging Equation\,\ref{eq:esd-force},
+\begin{equation}
+  \frac{F \left( \SI{750}{\volt} \right)}{\left( \SI{750}{\volt} \right)^2} = \frac{F \left( \SI{30}{\micro\volt} \right)}{\left( \SI{30}{\micro\volt} \right)^2},
+\end{equation}
+we can calculate the force noise on the \gls{ETM} at \SI{100}{\hertz} to be of the order $F \left( \SI{30}{\micro\volt} \right) = \SI{e-21}{\newton\per\sqrthz}$. The displacement noise is then, using Figure\,\ref{fig:ssm-etm-disp-vs-esd-force}, around \SI{e-26}{\meter\per\sqrthz}. This is eight orders of magnitude below the requirement shown in Figure\,\ref{fig:noise-budget} and shows that electronic noise from the \gls{HV} amplifier will not present a problem to the sensitivity of the experiment.
 
 % No data yet
 % \section{Experimental test of the electrostatic drive}
