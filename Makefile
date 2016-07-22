@@ -158,8 +158,6 @@ $(GFXGENPY)/50-speedmeter-noise-budget.pdf: $(DATA)/50-speedmeter-noise-budget.c
 
 $(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
 
-$(GFXGENPY)/60-ssm-etm-disp-vs-esd-force.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
-
 $(GFXGENPY)/60-ssm-etm-disp-esd-max.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
 
 $(GFXGENPY)/60-hv-amp-dewhitened-tfs.pdf: $(DATA)/60-hv-amp-dewhitened-tfs-channel-one.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-two.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-three.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-four.txt $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
@@ -171,6 +169,8 @@ $(GFXGENPY)/60-hv-amp-coherence.pdf: $(DATA)/60-hv-amp-coherence-channel-one.txt
 $(GFXGENPY)/60-hv-amp-dewhitening-sims.pdf: $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
 $(GFXGENPY)/60-hv-amp-output-noise.pdf: $(DATA)/60-hv-amp-output-noise.csv
+
+$(GFXGENPY)/60-hv-amp-output-displacement-noise.pdf: $(DATA)/60-hv-amp-output-noise.csv $(DATA)/50-speedmeter-noise-budget.csv
 
 $(GFXGENPY)/70-et-d-sensitivity-curves.pdf: $(DATA)/70-et-d-sensitivity-curves.txt
 

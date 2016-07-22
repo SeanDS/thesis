@@ -39,7 +39,7 @@ displacement = np.absolute(data[:, 1]) * max_force
 # plot magnitude
 ax1.loglog(data[:, 0], displacement, color=colour_a, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Displacement \n(m / sqrt(Hz))')
+ax1.set_ylabel('Displacement (m)')
 ax1.set_xlabel('Frequency (Hz)')
 
 ax1.grid(True)
