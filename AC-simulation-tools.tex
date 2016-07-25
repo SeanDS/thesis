@@ -1,26 +1,19 @@
-\chapter{\label{a:simulation-tools}Simulation tools}
-How to build simulations in both tools...
-Here we describe the tools primarily used in this thesis...
+\chapter{\label{a:simulation-tools}Interferometer modelling}
+This appendix describes the process of modelling an interferometer in terms of its optical response and noise and introduces the two numerical simulation tools used throughout this thesis, Finesse and Optickle, introduced in Section\,\ref{sec:numerical-software}. Section\,\ref{sec:ifo-modelling} gives an introduction into how these tools work, and Section\,\ref{sec:optickle-field-tfs} describes modifications made to Optickle in order to calculate a particular type of noise amplitude.
 
-\note{Describe how the SSM models were matched. Look at the code to see what's different.}
+\section{\label{sec:numerical-software}Software}
+\subsection{\label{sec:finesse-sim}Finesse}
+Finesse is an extensive tool for simulating complex optical environments in terms of their transverse electromagnetic (\gls{TEM}) modes. It was developed originally for use in \GEO{} \cite{Freise2004} but has since been used for checks and tests in the design and commissioning of the advanced detectors \cite{Mueller2015, Kumeta2015}. Finesse's syntax allows for a number of different outputs to be generated for given excitations, for instance the transfer function from a set of optics to a set of sensors given an arbitrary excitation. Finesse's strengths are its numerous supported optical components, speed of computation, and support for arbitrary numbers of paraxial modes.
 
-\note{Describe weird empirical equation that sets the homodyne angle in terms of the angle of incidence etc. in the Optickle model}
+\subsection{\label{sec:optickle-sim}Optickle}
+Optickle was originally created for the design of \ALIGO{} but has been extended to support a feature set capable of simulating arbitrary interferometers. It is implemented in \MATLAB{} and is primarily intended to simulate plane wave behaviour of interferometers however it also contains extensions to its code base for first order modes necessary to simulate misalignment effects. The output from Optickle is a series of matrices representing the transfer functions from optical degrees of freedom to sensors placed within the system, and the quantum noise upon those sensors.
 
-\section{\label{sec:finesse-sim}Finesse}
-Finesse is an extensive tool for simulating complex optical environments in terms of their transverse electromagnetic (\gls{TEM}) modes. It was developed originally for use in \GEO{} \cite{Freise2004} but has since been used for checks and tests in the design and commissioning of the advanced detectors \cite{Mueller2015, Kumeta2015}. Finesse's syntax allows for a number of different outputs to be generated for given excitations, for instance the transfer function from a set of optics to a set of sensors given an arbitrary excitation. Finesse's strengths are its speed of computation, its support for arbitrary numbers of paraxial modes and its stable, well tested code base.
+\section{\label{sec:ifo-modelling}Modelling an interferometer}
+The analytical calculation of the behaviour of interferometers beyond all but the most trivial examples is a complicated process and has to be performed with a particular configuration in mind. For example, adding or removing an optic from an analytical model of an interferometer may involve the addition of many new terms to the equations describing the main readout signals. Models for \DRFPMI{}s have been available for a number of years \cite{Strain2003, Mueller2003, Mason2003} but cannot be easily modified to account for optics beyond the ones considered in the model and the equations representing the readout signals have only been developed for the most important ports of the interferometer. In order to be able to calculate the signals present at any optic or probe within an interferometer, the most straightforward approach for an experimentalist is to use a numerical simulation tool.
 
-\section{\label{sec:optickle-sim}Optickle}
-Optickle is a tool primarily designed for the design of \ALIGO{}. It is implemented in \MATLAB{} and is primarily intended to simulate plane wave behaviour of interferometers however it also contains extensions to its code base for first order modes necessary to simulate misalignment effects. The output from Optickle is a series of matrices representing the transfer functions from optical degrees of freedom to sensors placed within the system, and the quantum noise upon those sensors.
+Both Finesse and Optickle use broadly the same approach to compute results based on a technique used to model electronic circuits as for example with \gls{LISO}, where the interferometer is described by an often large set of simultaneous equations. The tools take advantage of decades of development of numerical linear algebra tools to quickly solve these systems, with the results typically available in seconds.
 
-\section{\label{sec:simulinknb-sim}SimulinkNb}
-SimulinkNb\footnote{Available at the time of writing at \url{https://github.com/cwipf/SimulinkNb}.} is a set of tools for \SIMULINK{}, which is a dynamic systems modelling tool with an extensive graphical user interface. It is commonly used to simulate control loops, and SimulinkNb integrates into it Optickle plants. With a preprepared Optickle environment, SimulinkNb is able to convert this into a Simulink object which \MATLAB{} can then reduce to a set of linear coefficients, in the same way a set of electronic filters can be reduced to poles and zeros. With these computed coefficients, transfer functions can be calculated around the control loop with the full interferometer response taken into account, which is useful in order to model the effect of feedback and actuators on an interferometer like in the work presented in Chapter\,\ref{c:speedmeter-control}.
-
-\section{Modelling an interferometer}
-The analytical calculation of the behaviour of interferometers beyond all but the most trivial examples is a complicated process and has to be performed with a particular configuration in mind. For example, adding or removing an optic from an analytical model of an interferometer may involve the addition of many new terms to the equations describing the main readout signals. Models for \DRFPMI{}s have been available for a number of years \cite{Strain2003, Mueller2003, Mason2003} but cannot be easily modified to account for optics beyond the ones considered in the model and the equations representing the readout signals have only been developed for the most important ports of the interferometer. In order to be able to calculate the signals present at any optic or field within an interferometer, the most useful approach for an experimentalist is to use a numerical simulation tool.
-
-The two tools used most extensively in the field are \emph{Finesse} and \emph{Optickle}. Both tools use broadly the same approach, borrowing a technique used to model electronic circuits as for example with \gls{LISO}, where the interferometer is described via an often large set of simultaneous equations. Taking advantage of decades of development of linear algebra solvers in the field of computing science, these programs can quickly calculate the signals created by an interferometer given a set of conditions.
-
-The primary output from the tools is the calculation of field amplitudes and powers at ports of the interferometer at its operating point given a set of optics connected by spaces. In order to calculate these signals the simulation must map the effect that each optic's degrees of freedom have on the light fields within the interferometer, propagate these fields to each output and then calculate the corresponding electrical signals. These processes are described in more detail below.
+The primary output from the tools is the calculation of field amplitudes or powers at ports of the interferometer at its operating point given a set of connected optics. In order to calculate these signals the simulation must map the effect that each optic's motion has onto the light fields within the interferometer, propagate these fields to each output and then calculate the corresponding electrical signals. These processes are described in more detail below in the context of Optickle, but the approach taken in Finesse is similar.
 
 \subsection{Optics}
 An \emph{optic} refers to any component within the interferometer which has an effect on the light's amplitude, phase or frequency. Apart from mirrors and beam splitters, components such as lasers, \glspl{EOM} and Faraday isolators can all be handled in the same way via matrices which translate inputs to outputs. Such \emph{transfer matrices} define the physical process taking place as the light propagates through the component. For example, the transfer matrix of a simple mirror can be defined as \cite{Freise2010}:
@@ -48,10 +41,19 @@ Using the first mirror in Figure\,\ref{fig:fabry-perot} as an example, the input
   ,
 \end{equation}
 which can be re-expressed as individual transfer functions identical to those shown in Equation\,\ref{eq:fabry-perot-coefficients-1}:
-\begin{align}
-  a_1 &= it a_0 + r a_5 \\
-  a_6 &= r a_0 + it a_5.
-\end{align}
+\begin{equation}
+  \begin{split}
+    a_1 &= it a_0 + r a_5 \\
+    a_6 &= r a_0 + it a_5.
+  \end{split}
+\end{equation}
+
+\subsection{\label{a:reflection-phase}Reflection phase convention}
+To conserve energy, a phase change must be applied to either the reflected or transmitted fields. In Finesse, the convention is such that this phase is added to the transmitted beam in the form of an imaginary coefficient. Optickle uses the convention that the reflection coefficient from the front of a mirror is $-r$, and from the rear it is $r$, and transmission is always $t$. Both conventions are valid, with Finesse's definition closer to the real effect that dielectric coatings would have on the transmitted light, and Optickle's more consistent with an infinitely thin optic.
+
+This difference has no effect on the fidelity of the simulations because only the relative phase between reflected and transmitted fields is important for the calculation of transfer functions, noise and control signals. One practical difference is that in Finesse one arm of a \MI{} must be tuned by \SI{90}{\degree} with respect to the other to achieve cancellation of the carrier at the output port of the beam splitter. In Optickle, due to the reflection phase convention this happens without special tuning.
+
+\subsection{Propagation}
 Propagation through free space is in general defined by Equation\,\ref{eq:field-amplitude}, and in matrix form it is:
 \begin{equation}
   M = \text{e}^{-ikD}
@@ -61,24 +63,24 @@ Propagation through free space is in general defined by Equation\,\ref{eq:field-
   \end{bmatrix}
   ,
 \end{equation}
-for wave vector $k$ and distance $D$. In simulation tools, however, this behaviour is typically different. Interferometers have path lengths of many metres or more, whereas the wavelength of the light being modelled is typically nanometres. The mirrors of a resonant cavity must be separated by an integer number of half-wavelengths, and so the \SI{4}{\kilo\meter} \FP{} cavities of \ALIGO{} would actually have to be defined with length $\num{3759398497}\lambda = \SI{4000.00000081}{\meter}$. To make the creation of interferometer configurations easier, the simulation tools instead take the macroscopic propagation length and round it to the nearest integer number of wavelengths for the carrier, whereupon the phase difference from propagation is zero. To model the effects of non-zero phase propagation, such as a detuned cavity, the optics have additional phase tuning factors present within their transfer matrices. By separating these macroscopic and microscopic phase effects, issues with numerical precision can be avoided.
+for wave vector $k$ and distance $D$. In Finesse and Optickle, however, this behaviour is slightly different. Interferometers have path lengths of many metres, whereas the wavelength of the light being modelled is typically microscopic. For a cavity to be resonant its mirrors must be separated by an integer number of half-wavelengths, and so the \SI{4}{\kilo\meter} \FP{} cavities of \ALIGO{} would actually have to be defined with length $\num{3759398497}\lambda = \SI{4000.00000081}{\meter}$ given its $\SI{1064}{\nano\meter}$ wavelength. To make the creation of interferometer configurations easier, the simulation tools instead take the macroscopic propagation length and round it to the nearest integer number of wavelengths for the carrier, whereupon the phase difference from propagation is zero\footnote{In \emph{most} cases. This is different for certain modes in which Finesse can run, controlled by the \emph{phase} command.}. To model the effects of non-zero phase propagation, such as a detuned cavity, the optics have additional phase tuning factors present within their transfer matrices. By separating these macroscopic and microscopic phase effects, issues with numerical precision can be avoided.
 
 \subsection{Fields}
-As spaces are defined as zero-phase propagation, the light between optics can be modelled with a single amplitude for each mode within the interferometer. Apart from the carrier, any signal or control sidebands present within the interferometer is considered a mode, as well as vacuum fields entering at points of loss as described in Section\,\ref{sec:noise-via-loss}, and so there can be many tens of figures representing the light between any two optics. These can be considered as the interferometer's \emph{degrees of freedom}, and the propagation of each field through the interferometer can be modelled in terms of the two-photon formalism from Caves \note{OR IS IT ONLY NOISE THAT CAVES ADDRESSES?} in order to be able to calculate the effects of conversion between amplitude and phase fluctuations, such as ponderomotive squeezing. A point in the interferometer represented by a field is termed a \emph{field evaluation point}.
+As spaces are defined as zero-phase propagation, the light between optics can be modelled with a single amplitude for each mode within the interferometer. In addition to the carrier, any signal sideband or control sideband present within the interferometer is considered a mode, as well as vacuum fields entering at points of loss as described in Section\,\ref{sec:noise-via-loss}, and so there can be many tens of figures representing the light between any two optics. These can be considered as the interferometer's \emph{degrees of freedom}, and the propagation of each field through the interferometer can be modelled individually. A point in the interferometer represented by a field is termed a \emph{field evaluation point}.
 
 \subsection{Drive and field maps}
 The calculation of signals at photodetectors requires the calculation of the field amplitudes within the interferometer, which can be determined by calculating the steady-state solution of the optical system defined within a matrix mapping each field to each other field.
 
-The process of calculating this \emph{interferometer} matrix starts with the creation of the \emph{field to field} matrix, which maps the transfer function between each of the fields within the interferometer with stationary optics, i.e. without the presence of signal or control sidebands created from moving optics or \glspl{EOM} modulating the light field. This matrix allows the propagation of input light from lasers or vacuum injection to an arbitrary part of the interferometer to be calculated.
+The process of calculating this \emph{interferometer} matrix starts with the creation of the \emph{field to field} matrix, which maps the transfer function between each of the fields within the interferometer with stationary optics without the presence of signal or control sidebands. This matrix allows the propagation of input light from lasers or vacuum injection to an arbitrary part of the interferometer to be calculated.
 
 The effects of the mechanical degrees of freedom of a mirror or the electrical degrees of freedom of for instance an \gls{EOM} on the light can be described by a \emph{drive to field} map. Encompassed within this map are the amplitude and phase effects upon the carrier and sidebands cause by for example the motion of a mirror in the longitudinal direction. Similarly, the \emph{field to drive} map, encompassing the effect of fields on the mechanical degrees of freedom of optics, allows the effect of radiation pressure to be handled properly.
 
-Once the various maps between the light inputs, the mechanical and electrical drives and the optics have been calculated, they can be combined together in the form of a block-diagonal matrix $\mathbf{M}_{\text{AC}}$ representing the transfer functions between the carrier, signal and control sidebands at each evaluation point to each other evaluation point.
+Once the various maps between the light inputs, the mechanical and electrical drives and the optics have been calculated, they can be combined together in the form of a block-diagonal matrix $\mathbf{M}_{\text{AC}}$ representing the transfer functions between the carrier, signal and control sidebands at each field evaluation point to each other field evaluation point.
 
 \subsection{Calculation of field amplitudes}
 The field amplitudes within the interferometer are of course determined by the excitation of the interferometer by external light injection, but in general they are also influenced by the signal sidebands produced by the modulation of optics within the interferometer at non-zero frequencies. The field amplitudes within the interferometer therefore depend not only on the excitation but also on the existing field amplitudes, analogous to feedback systems. In the initial state these fields are zero and so the interferometer's field amplitude vector is simply equal to the excitation vector, i.e. $\vec{v}_{\text{AC}} = \vec{v}_{\text{exc}}$. The stored light will increase until eventually the injected excitation is equal to the light power lost in the interferometer. Once this condition is reached the interferometer is in its steady-state, and the matrix of field equations this represents is the required input to the calculation of readout signals.
 
-The steady state condition can be solved numerically using matrix inversion. As described above, the field amplitudes depend not only on the input but also on the field amplitudes themselves, i.e.
+The steady state condition can be solved numerically using matrix inversion. As described above, the field amplitudes can be described as the current amplitudes plus the input:
 \begin{equation}
   \vec{v}_{\text{AC}} = \mathbf{M}_{\text{AC}} \vec{v}_{\text{AC}} + \vec{v}_{\text{exc}},
 \end{equation}
@@ -99,58 +101,14 @@ With the steady-state field amplitudes, the signals produced by the interferomet
 \end{equation}
 
 \subsection{Calculation of transfer functions}
-The operation of calculating the probe signals from the field amplitudes in the interferometer can be repeated for arbitrary frequencies of excitation to produce a three-dimensional drive-to-probe transfer matrix. This represents the transfer function from each optic's degree of freedom to each probe. As such, the signal from a particular set of mirror movements can be constructed via a linear combination of the transfer functions representing the degrees of freedom of individual optics. The differential arm degree of freedom transfer function for a \MI{} to its asymmetric port, for instance, can be calculated by extracting the transfer function of each end test mass to a probe situated at the asymmetric port and taking the difference of the two \note{, as shown in Equation x in Section y.}
+The operation of calculating the probe signals from the field amplitudes in the interferometer can be repeated for arbitrary frequencies of excitation to produce a three-dimensional drive-to-probe transfer matrix. This represents the transfer function from each optic's degree of freedom to each probe. As such, the signal from a particular set of mirror movements can be constructed via a linear combination of the transfer functions representing the degrees of freedom of individual optics. The differential arm degree of freedom transfer function for a \MI{} to its asymmetric port, for instance, can be calculated by extracting the transfer function of each end test mass to a probe situated at the asymmetric port and taking the difference of the two, as shown in Equation\,\ref{eq:darm-length}.
 
-\subsection{Probe quantum noise}
-The quantum noise calculations are similar in Finesse and Optickle, and they are both based on the work by Corbitt \etal{} \cite{Corbitt2005}, which ultimately derives from the two-photon formalism by Caves and Schumaker \cite{Caves1985, Schumaker1985}. Quantum noise is calculated using this technique by propagating two photons through the interferometer from each point of noise entry, in much the same way as signals are propagated. One photon represents the amplitude quadrature and the other represents the phase quadrature, and so appropriate quantum noise limited signals can be properly derived for any readout quadrature. Optickle implements a simpler, ``one-photon'' calculation involving the propagation of a single complex number representing the amplitude and phase photons (see appendix of \cite{Evans2013}). \note{Finesse also does this? See Daniel's thesis}
+\subsection{Probe quantum noise and sensitivity}
+The quantum noise calculations are similar in Finesse and Optickle, and they are both based on the work by Corbitt \etal{} \cite{Corbitt2005}, which ultimately derives from the two-photon formalism by Caves and Schumaker \cite{Caves1985, Schumaker1985}. Quantum noise is calculated using this technique by propagating two photons through the interferometer from each point of noise entry, in much the same way as signals are propagated. One photon represents the amplitude quadrature and the other represents the phase quadrature, and so appropriate quantum noise limited signals can be properly derived for any readout quadrature. A simpler, ``one-photon'' calculation involving the propagation of a single complex number representing the amplitude and phase photons is used in Optickle and Finesse \cite{Evans2013, Brown2016}.
 
-\section{\label{sec:optickle-field-tfs}Calculation of field transfer matrices}
-By default, Optickle will only output the signal and noise on \emph{probes} defined within the system, where a probe is analogous to a photodetector with unity quantum efficiency. A probe signal is a superposition of the field amplitudes in a given location within the interferometer, where the exact linear combination of field amplitudes is determined by the type of probe. In the process of determining a probe signal, the quadrature sum of the field amplitudes immediately in front of the probe is computed, and the phase information contained within these fields is lost in this process. Similarly, transfer functions from drives to probes are provided, but not transfer functions from drives to fields.
+The sensitivity of a probe within an interferometer model is simply the noise on that probe divided by the relevant transfer function. When only quantum noise is considered, the sensitivity is \emph{quantum noise limited}.
 
-In order to calculate the cross-correlation spectral density required for the calculation of the optimal filter in Section\,\ref{sec:optimal-filter}, the complex field and drive transfer matrices, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, must be extracted from Optickle indirectly. Optickle's calculation of the quantum noise at each probe within the interferometer uses field-to-field and drive-to-field matrices, but because the quantum noise and drive excitations are not necessarily unity, these matrices are not transfer matrices. In order to obtain $\mathbf{M}^{\textrm{ff}}$ the code which computes the quantum noise at each probe has to be modified to instead inject quantum noise at open ports with unity amplitude. Similarly, $\mathbf{R}$ can be computed by setting the drive amplitudes to unity. The modified source code is publicly available \cite{controlspaperdata}.
+\section{\label{sec:optickle-field-tfs}Calculation of field transfer matrices in Optickle}
+In the process of determining a probe signal in Optickle, the quadrature sum of the field amplitudes immediately in front of the probe is computed and the phase information contained within these fields is lost. Similarly, transfer functions from drives to probes are provided, but not transfer functions from drives to fields.
 
-\subsection{Functions: tickle, tickle2, sweepLinear}
-\note{Explain difference}
-
-\section{Similarities and differences between Finesse and Optickle}
-
-\subsection{Ports and spaces}
-\note{In Finesse, ports are bidirectional and the asterisk denotes which way a PD should look. In Optickle, ports are unidirectional. Describe addLink and space syntax?}
-
-\subsection{Reflection phase convention}
-\label{a:reflection-phase}
-\note{Difference between Optickle and Finesse sign conventions for transmission and reflection. See footnote 1 on p2 of T1100110 for more details.}
-\note{Also see ``engineering'' vs ``physicist'' convention in Tobin's thesis}
-
-\subsection{Conversion of phase to length tuning}
-\note{And vice versa}
-\note{Mirror tunings in degrees become metres in Optickle, see ET files for details}
-
-\subsection{Compound optics}
-\note{Optickle allows AR surface reflectivity to be defined, and substrate loss. Finesse can do this with compound optics, beam splitters separated by a space with certain refractive index.}
-
-\subsubsection{Homodyne angle scaling}
-\note{List empirical equation linking homodyne angle to A.O.I. in Optickle...}
-
-\subsection{Definition of mechanical transfer functions}
-\note{Look at ET response functions with suspensions - the definition of TFs is different}
-
-\subsection{Resonant condition in triangular cavities in Optickle}
-\note{See Optickle mailing list, answers from Matt Evans and Nick Smith}
-
-\section{Common pitfalls}
-
-\subsection{\label{sec:sims-obtaining-tfs}Obtaining transfer functions and error signals}
-\note{Make sure suspensions are switched off, either by commenting out the line in Finesse or using zpk() in Optickle, or using tickle2()}
-
-\note{Mention how error signals are different from mirror response}
-
-\subsubsection{Ensuring the interferometer is at the operating point}
-\note{For Finesse, use put* to add to the position of the optics and not just overwrite it. For Optickle, use setPosOffset to set the position of the optic before calling tickle, and for sweepLinear bear in mind that the zero position corresponds to an absolute position of zero and not an offset around the operating point.}
-
-\subsection{Higher order modes}
-This only applies to Finesse. While Optickle can simulate TEM 1,0 modes, it requires a conscious effort to run tickle01() instead of tickle().
-\note{maxtem off is different from maxtem 0}
-
-\subsection{Differences between simulation tools and theory}
-\note{Reduced mass vs actual mass, S.D.'s use of reduced mass is different to Optickle and Finesse which use real mass everywhere}
+In order to calculate the cross-correlation spectral density required for the calculation of the optimal filter in Section\,\ref{sec:optimal-filter}, the complex field and drive transfer matrices, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, must be extracted from Optickle indirectly. Optickle's calculation of the quantum noise at each probe within the interferometer uses field to field and drive to field matrices, but because the quantum noise and drive excitations are not necessarily unity, these matrices are not transfer matrices. In order to obtain $\mathbf{M}^{\textrm{ff}}$ the code which computes the quantum noise at each probe has to be modified to instead inject quantum noise at open ports with unity amplitude. Similarly, $\mathbf{R}$ can be computed by setting the drive amplitudes to unity. The modified source code is publicly available \cite{controlspaperdata}.
