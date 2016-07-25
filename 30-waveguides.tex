@@ -87,40 +87,28 @@ The fabricated \gls{WGM} was used as the input coupler for a \FP{} cavity, held 
 
 A non-zero \gls{WGM} transverse to longitudinal coupling, $\omega_1$, produces a phase shift on the reflected light. This manifests itself as an effective change in cavity length, $\delta l_W$, as the laser light is scanned across its grooves by a rotation of the \gls{ETM}:
 \begin{equation}
-  \delta l_W = \theta \kappa \omega_1,
   \label{eq:wgm-length-change}
+  \delta l_W = \theta \kappa \omega_1,
 \end{equation}
 where $\theta$ is the \gls{ETM}'s rotation angle and $\kappa$ is the cavity's coefficient of \gls{ETM} rotation to transverse \gls{WGM} spot motion.
 
 Additional cavity length changes are also produced \emph{via} two geometrical effects (see Figure\,\ref{fig:mirror-longitudinal-effect}). The first effect, $\delta l_s$, is due to the position of the beam with respect to the centre of the mirror's surface. For a rotation $\theta$, a beam offset from the centre of the mirror by a displacement $y$ will receive a change in (longitudinal) path length of:
 \begin{equation}
-  \begin{split}
-    \delta l_s &= y \tan{\theta} \\
-               &\approx y \theta,
-  \end{split}
   \label{eq:offset-effect}
+  \delta l_s = y \tan{\theta} \approx y \theta,
 \end{equation}
 for small angles. The second effect, $\delta l_d$, is due to the depth $d$ of the mirror, proportional to the rotation angle $\theta$. The position of the centre of the mirror with respect to the zero rotation case, $y_d$, is then:
 \begin{equation}
-  \begin{split}
-    y_d &= \frac{d}{2} \tan{\frac{\theta}{2}} \\
-        &\approx \frac{d}{4} \theta,
-  \end{split}
+  y_d = \frac{d}{2} \tan{\frac{\theta}{2}} \approx \frac{d}{4} \theta,
 \end{equation}
 and the change in path length this causes is:
 \begin{equation}
-  \begin{split}
-    \delta l_d &= y_d \tan{\theta} \\
-               &\approx \frac{d}{4} \theta^2.
-  \end{split}
+  \delta l_d = y_d \tan{\theta} \approx \frac{d}{4} \theta^2.
 \end{equation}
 The total longitudinal effect $\delta l_E$ caused by the rotation of the \gls{ETM} is therefore:
 \begin{equation}
-  \begin{split}
-    \delta l_E &= \delta l_s + \delta l_d \\
-               &\approx y \theta + \frac{d}{4} \theta^2.
-  \end{split}
-\label{eq:etm-length-change}
+  \label{eq:etm-length-change}
+  \delta l_E = \delta l_s + \delta l_d \approx y \theta + \frac{d}{4} \theta^2.
 \end{equation}
 
 \begin{figure}
