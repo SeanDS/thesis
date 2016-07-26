@@ -60,20 +60,6 @@
 \usepackage[super]{nth}
 
 %%%
-% Hyperlinks
-%
-% (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
-
-% import package
-\usepackage{hyperref}
-\hypersetup{
-  colorlinks=true,
-  linkcolor=blue,
-  filecolor=magenta,      
-  urlcolor=cyan
-}
-
-%%%
 % Fix silly LaTeX space/punctuation behaviour with custom commands
 %
 % The command '\xspace' should be added to the end of custom commands which lack arguments, to make LaTeX put a space after the command's output.
@@ -105,6 +91,20 @@
 \usepackage{listings}
 
 %%%
+% Hyperlinks
+%
+% (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
+
+% import package
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan
+}
+
+%%%
 % Custom commands
 
 % command to make plural versions of commands (http://tex.stackexchange.com/questions/259287/how-to-define-a-newcommand-that-expands-into-another-newcommand)
@@ -131,6 +131,7 @@
 
 % gravitational wave events
 \newcommand{\GWFIRSTEVENT}{\gls{GW}150914}
+\newcommand{\GWSECONDEVENT}{\gls{GW}151226}
 
 % gravitational wave detectors
 \newcommand{\GEO}{GEO 600}
