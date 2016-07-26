@@ -23,14 +23,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.50000003"
-     inkscape:cx="1201.4158"
+     inkscape:cx="870.41582"
      inkscape:cy="701.26555"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
-     inkscape:window-x="-4"
+     inkscape:window-width="1366"
+     inkscape:window-height="709"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
@@ -1040,7 +1040,7 @@
          y="-429.02722"
          x="686.63995"
          sodipodi:role="line"
-         style="font-size:22px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">Loop gain</tspan></text>
+         style="font-size:22px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">Overall gain</tspan></text>
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"

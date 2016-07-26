@@ -67,7 +67,7 @@ The \gls{RMS} representation of a spectral density is sometimes quoted with the 
 
 It is advisable to avoid pushing the \gls{RMS} signal applied to a sensor or actuator too close to its limit. Stationary random noise follows a well defined mean but can contain infrequent, larger noise transients allowed by Gaussian statistics. In such a case the instantaneous signal on a sensor or actuator might be greater than the \gls{RMS}. A good rule of thumb is to keep the \gls{RMS} signal expected at a sensor or actuator a factor of about \num{10} below its range to account for such events.
 
-\section{Control loops}
+\section{\label{sec:control-loops}Control loops}
 A control loop can be used to sense the error in an interferometer from its operating point, and feed back signals to the actuators to correct it. We can in general split a control loop into two distinct parts: the \emph{plant} $G$, which is the device under control, and the \emph{controller} $H$, which is the device that senses the plant's error and generates the corrective feedback. Noise entering the loop between the plant and the controller's input (the \emph{error point}) is termed \emph{sensing} noise, and noise entering between the controller's output and the plant (the \emph{feedback point}) is called \emph{feedback} noise, or, in terms of interferometer test masses, \emph{displacement} noise. Figure\,\ref{fig:control-loop} shows this scenario.
 
 \begin{figure}
