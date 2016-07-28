@@ -11,8 +11,8 @@
    width="297mm"
    height="210mm"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="michelson.svg">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="10-michelson.svg">
   <metadata
      id="metadata16">
     <rdf:RDF>
@@ -58,16 +58,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1260"
-     inkscape:window-height="753"
+     inkscape:window-width="1680"
+     inkscape:window-height="1030"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="22.627417"
-     inkscape:cx="467.91318"
-     inkscape:cy="364.16593"
-     inkscape:window-x="550"
-     inkscape:window-y="185"
-     inkscape:window-maximized="0"
+     inkscape:zoom="2"
+     inkscape:cx="443.09719"
+     inkscape:cy="321.05506"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
      inkscape:current-layer="b-bsp"
      units="mm" />
   <g
@@ -143,7 +143,7 @@
      inkscape:connector-curvature="0" />
   <g
      id="c-laser1"
-     transform="translate(299.625,347.99049)">
+     transform="matrix(0.59885343,0,0,0.59885343,327.3526,357.23772)">
     <rect
        id="rect4166"
        height="12.756"
@@ -212,21 +212,21 @@
        width="56.695"
        y="13.131"
        x="5"
-       style="fill:url(#c-laser1-grad);stroke:#000000;stroke-width:0.75" />
+       style="fill:url(#c-laser1-grad);stroke:#000000;stroke-width:1.25239325" />
     <rect
        id="rect4193"
        height="39.686001"
        width="4.2519999"
        y="3.2090001"
        x="0.75"
-       style="stroke:#000000;stroke-width:0.75" />
+       style="stroke:#000000;stroke-width:1.25239325" />
     <rect
        id="rect4195"
        height="45.354"
        width="56.695"
        y="0.375"
        x="5"
-       style="fill:none;stroke:#000000;stroke-width:0.75" />
+       style="fill:none;stroke:#000000;stroke-width:1.25239325" />
   </g>
   <path
      style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -319,4 +319,57 @@
          id="rect4300" />
     </g>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="469.45032"
+     y="436.66519"
+     id="text4393-5-5-5"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5"
+       x="469.45032"
+       y="436.66519"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Output</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="388.83969"
+     y="359.82449"
+     id="text4393-5-5-5-3"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5-6"
+       x="388.83969"
+       y="359.82449"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Input</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="323.27328"
+     y="346.23425"
+     id="text4393-5-5-5-3-7"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5-6-5"
+       x="323.27328"
+       y="346.23425"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Laser</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     x="512.75067"
+     y="328.20303"
+     id="text4393-5-5-5-3-3"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5-6-56"
+       x="512.75067"
+       y="328.20303"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Beam</tspan><tspan
+       sodipodi:role="line"
+       x="512.75067"
+       y="353.20303"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       id="tspan3496">splitter</tspan></text>
 </svg>

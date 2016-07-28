@@ -1,13 +1,13 @@
-\chapter{Sensitivity and noise in gravitational wave detectors}
+\chapter{Sensitivity and noise in gravitational wave interferometers}
 \label{c:instrumentation}
 
-To achieve maximum sensitivity in an interferometric gravitational wave detector to a particular type of signal the parameters of the optics, cavity lengths and light fields must be considered alongside the behaviours of the signals and noise and the controllability of the resultant design. This chapter describes some of the considerations to be made in the design of gravitational wave detectors to provide the basis on which the rest of this thesis will build. Section\,\ref{sec:ifo-foundations} details the state in which an interferometer must be brought in order to be sensitive to gravitational waves and the means of keeping it there; Section\,\ref{sec:ifo-noise} introduces the limiting noise sources in ground-based gravitational wave detectors and the physical processes at play; and Section\,\ref{sec:sub-sql-techniques} introduces concepts in order to reduce the most challenging noise source arising from the quantum nature of light.
+To achieve maximum sensitivity in an interferometric gravitational wave detector to a particular type of signal the parameters of the optics, arm lengths and light fields must be considered alongside the behaviours of the signals and noise and the controllability of the resultant design. This chapter describes some of the considerations to be made in the design of detectors to provide the basis on which the rest of this thesis will build. Section\,\ref{sec:ifo-foundations} details the state in which an interferometer must be brought in order to be sensitive to gravitational waves and the means of keeping it there; Section\,\ref{sec:ifo-noise} introduces the limiting noise sources in ground-based gravitational wave detectors and the physical processes at play; Section\,\ref{sec:ifo-response} discusses ways to improve the sensitivity of interferometers in the frequency bands of interest; and Section\,\ref{sec:sub-sql-techniques} introduces concepts in order to reduce the most challenging noise source arising from the quantum nature of light.
 
 \section{\label{sec:ifo-foundations}Interferometer foundations}
-The effect that the output light from an interferometer has on a sensor (e.g. a photodetector) as some variable is modulated is termed its \emph{response}. The most important response to consider in gravitational wave interferometry from an astrophysical perspective is that of the differential motion of the interferometer arms (\gls{DARM}) to the sensor at the output port. The response varies as a function of frequency depending on the interferometer dynamics, and in a \FPMI{} the \gls{DARM} response is typically flat for frequencies below the arm cavity pole and decaying at a rate proportional to frequency above. At higher frequencies less light is available to carry signal as the cavities cannot build up sufficient power due to the average round-trip time of the propagating photons.
+The effect that the output light from an interferometer has on a sensor (e.g. a photodetector) as some variable is modulated is termed its \emph{response}. As discussed in Chapter\,\ref{c:gw-detection} the most important response to consider in gravitational wave interferometry from an astrophysical perspective is that of the differential motion of the arms (\gls{DARM}) to the sensor at the output port. The response has a dependence on the input light power but it varies as a function of frequency due to the presence of additional \emph{cavities} used to enhance or suppress the response in a given frequency band.
 
 \subsection{Measurement of interferometer length fluctuations}
-Typically the underlying amplitude of a particular signal can only be inferred from a measured power. A simple example is the measurement of mirror displacement in a simple Michelson interferometer \emph{via} the photocurrent output of the photodetector. The wave is composed of the electric and magnetic fields, $E$ and $B$, respectively, each of which can be expressed as a travelling wave:
+Typically the underlying amplitude of a particular signal can only be inferred from a measured power. A simple example is the measurement of mirror displacement in a simple Michelson interferometer \emph{via} the photocurrent output of the photodetector. A light wave is composed of the electric and magnetic fields, $E$ and $B$, respectively, each of which can be expressed as a travelling wave:
 \begin{align}
   E &= E_0 \text{e}^{\text{i} \left( kx - \omega t \right)} + E_0^{\ast} \text{e}^{\text{-i} \left( kx - \omega t \right)}, \\
   B &= B_0 \text{e}^{\text{i} \left( kx - \omega t \right)} + B_0^{\ast} \text{e}^{\text{-i} \left( kx - \omega t \right)},
@@ -16,7 +16,7 @@ where $E_0$ and $B_0$ are the initial field amplitudes, $k = \frac{2 \pi}{\lambd
 \begin{equation}
   S = \frac{1}{2} \epsilon_0 \left( \left| E \right| ^2 + c_0^2 \left| B \right|^2 \right).
 \end{equation}
-As the $E$ and $B$ fields are orthogonal, their sum at any point in time and space remains constant in the absence of loss. We can therefore state that the wave's intensity is proportional to the square of an ``amplitude'' $A$, expressing the combination of $E$ and $B$:
+We can therefore state that the power measured by a detector is proportional to the square of the underlying ``amplitude'' of the light $A$, expressing the combination of $E$ and $B$:
 \begin{equation}
   S \propto A^2.
 \end{equation}
@@ -26,11 +26,11 @@ Leaving the beam splitter towards the end of each arm, each wave in the Michelso
 \end{equation}
 where $A_{\text{in}}$ represents the field at the beam splitter's input.
 
-A difference in path length between the arms $\Delta x$ leads to a difference in round-trip phase between light returning to the beam splitter. With light of constant amplitude injected into the interferometer, and assuming that the light round-trip time is much quicker than a transient causing a change to the arm lengths, we can look at the superposition of returning light at the beam splitter to determine the change in path length. At the beam splitter's output port, the field superposition becomes:
+A difference in path length between the arms $\Delta x$ leads to a difference in round-trip phase between light returning to the beam splitter, as shown in Equation\,\ref{eq:gw-phase-change}. With light of constant amplitude injected into the interferometer, and assuming that the light round-trip time is much quicker than a transient causing a change to the arm lengths, we can look at the superposition of returning light at the beam splitter to determine the change in path length. At the beam splitter's output port, the field becomes:
 \begin{equation}
   A_{\text{out}} = \frac{A_{\text{in}}}{2} \text{e}^{\text{i} \left( k \left( x + \frac{\Delta x}{2} \right) - \omega t \right)} + \frac{A_{\text{in}}}{2} \text{e}^{\text{i} \left( k \left( x - \frac{\Delta x}{2} \right) - \omega t \right)},
 \end{equation}
-where we assume that the path length difference caused by the transient is evenly distributed, differentially, between the two arms, like a gravitational wave. The power measured by a photodetector, $P_{\text{out}}$, is then the field multiplied by its complex conjugate:
+where we assume that the path length difference caused by the transient is evenly distributed, differentially, between the two arms. The power measured by a photodetector, $P_{\text{out}}$, is then the field multiplied by its complex conjugate:
 \begin{equation}
   \label{eq:mich-p-out}
   \begin{split}
@@ -38,7 +38,7 @@ where we assume that the path length difference caused by the transient is evenl
                    &= \frac{P_{\text{in}}}{2} \left( 1 + \cos \left( k \Delta x \right) \right),
   \end{split}
 \end{equation}
-using the fact that $P_{\text{in}} = A_{\text{in}}^2$. This shows that the signal from the arm length motion is encoded in the phase of the signal witnessed by the photodetector at the output port. Getting access to this phase information is more difficult than making a simple measurement of power. Various techniques are available that provide access this information given different noise and signal constraints, some of which are explained in the next section.
+using the fact that $P_{\text{in}} = A_{\text{in}}^2$. This shows that the signal from the change in arm length is encoded in the power of the light present at the output port.
 
 \subsection{\label{sec:operating-point}Optimal operating point}
 In Equation\,\ref{eq:mich-p-out} we see that a static field $\frac{P_{\text{in}}}{2}$ is present upon the photodetector, independent of the arm length change, when $\cos \left( k \Delta x \right) \neq 1$. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer in the state commonly referred to as ``half way up the fringe''. Here, the interferometer's arms are nominally tuned \SI{45}{\degree} out of phase such that the output signal oscillates about the midpoint between crest and trough of the superposition waveform at the output (see Figure\,\ref{fig:optimal-operating-point}). As the gradient is steepest at this point, any small changes to the relative arm length of the Michelson interferometer result in a significant difference in power at the photodetector.
@@ -163,7 +163,7 @@ As \KAGRA{} will be a cryogenic detector, it does not gain the same noise benefi
 
 At higher frequencies, suspension \emph{violin modes} have a significant influence on the measured noise \cite{Robertson2002}. A violin mode with high quality factor can resonantly enhance noise such that it dominates all other sources in a narrow band at frequencies starting around \SI{1}{\kilo\hertz}\footnote{Figure\,\ref{fig:aligo-noise-budget} appears to show that violin modes are not dominant, however the narrow linewidth of the noise is such that the resolution is insufficient to show the effect.}. This is reduced through the use of heavier test masses, which push the violin mode frequencies higher, away from the detection band, and with special monitoring techniques \cite{Sorazu2010}.
 
-\subsection{Quantum noise and the Standard Quantum Limit}
+\subsection{\label{sec:quantum-noise}Quantum noise and the Standard Quantum Limit}
 Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light power to determine displacement.} limits its sensitivity. One of the results of quantum theory is that two non-commuting observables cannot be simultaneously known to full precision. For two operators $\hat{O}_+$ and $\hat{O}_-$, there exists an error $\epsilon$:
 \begin{equation}
  \left[ \hat{O}_+, \hat{O}_- \right] = \epsilon;
@@ -356,6 +356,39 @@ As discussed in Section\,\ref{sec:noise-via-loss}, Johnson-Nyquist noise arises 
   v_{\text{n}} = \sqrt{4 k_B T R},
 \end{equation}
 where $v_{\text{n}}$ is the noise voltage and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
+
+\section{\label{sec:ifo-response}Sensitivity of \MI{}s}
+The photons in the arms of the \MI{} accumulate the phase shift created by incident gravitational waves as shown in Equation\,\ref{eq:gw-phase-change} and the signal at the output port is proportional to the power in the arms, and so greater input power leads to greater response at the output, given the caveats regarding quantum noise as discussed in Section\,\ref{sec:quantum-noise}.
+
+The simple \MI{} topology introduces a number of issues for audio band detection of gravitational waves. As shown in Section\,\ref{sec:gw-interferometry}, the arm length to provide optimal modulation upon the light field from a passing gravitational wave can be many hundreds of \SI{}{\kilo\meter} for audio band signals. Furthermore, given the standard wavelength $\lambda_0 = \SI{1064}{\nano\meter}$ for which low noise lasers exist, and a gravitational wave strain $h_0 = \num{e-21}$ similar to that of \GWFIRSTEVENT{}, using Equation\,\ref{eq:gw-phase-change} the modulation index will be of the order $\frac{\omega_0}{\omega_g} \approx \num{e12}$ and so the phase of the light will have to be measured at the output port to a precision of around $h_0 \frac{\omega_0}{\omega_g} \approx \SI{e-9}{\radian}$ which is a very difficult feat. The common mode light which exits the beam splitter back towards the input laser must also be rejected, for example by a Faraday isolator, in order for the light not to re-enter the interferometer having picked up signal from the motion of the input optics, and so it is not available to carry the signal from gravitational waves. Improvements to the \MI{} design have been made over the past decades in order to address each of these concerns.
+
+\subsection{\label{sec:fabry-perot-cavities}\FP{} arm cavities}
+One way to simultaneously reduce the phase measurement requirement and the \emph{effective} arm length is to use \FP{} cavities. \FP{} cavities increase a photon's effective path length by reflecting it many times between two partially transmitting mirrors. By placing \FP{} cavities in the arms of a \MI{}, as shown in Figure\,\ref{fig:fpmi}, the response can be enhanced in a particular frequency band defined by the cavity parameters. The effect of the cavity on the sensitivity can be characterised by the \emph{finesse} as discussed in Appendix\,\ref{sec:cavity-fom}. Increased cavity finesse leads to a greater number of stored photons over a given period, allowing for greater response to incident gravitational waves, but over a narrower bandwidth than the simple \MI{}. The reflectivity of the mirrors in \FP{} cavities must be chosen to allow for sufficient sensitivity in the desired band; the objective is not simply to maximise the light storage time.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/20-fabry-perot-michelson.pdf}
+  \caption[\FPMI{}]{\label{fig:fpmi}\FPMI{} topology.}
+\end{figure}
+
+The arm cavities within a \FPMI{} must be held at the operating point just as with a \MI{} to maintain maximum sensitivity. Angular misalignments allow higher order modes of the light field to resonate which can complicate the longitudinal control of the interferometer and can introduce additional noise coupling from mirror surface defects.
+
+\subsection{\label{sec:power-recycling}Power recycling}
+As shown in Section\,\ref{sec:operating-point} gravitational wave interferometers are typically held at the dark fringe where the carrier light is rejected by the beam splitter back towards the input laser. It is typical to place a Faraday isolator in the input path to prevent the interferometer from sampling the positions of the input optics used to steer the laser light towards the beam splitter, and so this light is dumped. Once lost this light is not available to sample the positions of the test masses.
+
+To compensate for interferometer light lost towards the input port it is possible to increase the input laser power, but in general appropriate input lasers are already used at the maximum output power that satisfies an experiment's laser noise requirement, and this doesn't solve the underlying loss mechanism: some light will still be dumped by the Faraday isolator. Another approach is to place a \emph{power recycling mirror} at the input to the interferometer which reflects the returning light back into the interferometer by forming a cavity between the recycling mirror and the arms, effectively increasing the power stored there. Used in combination with \FP{} arm cavities this technique can achieve enhanced sensitivity over the standard \MI{}. The power recycling mirror can be calibrated to enhance the carrier power in a band wider than the intended detector bandwidth, and the \FP{} mirrors can be calibrated to set the detector bandwidth. The \emph{first generation} \ILIGO{} and \IVIRGO{} detectors were \PRFPMI{}s.
+
+\subsection{\label{sec:signal-recycling}Signal recycling}
+Signal recycling is a similar application to power recycling, whereby an additional mirror is placed within the interferometer to selectively enhance light in a particular frequency band \cite{Meers1988}. In this case the \emph{signal recycling mirror} is placed at the output port of the beam splitter to create an additional cavity between the output and the arms. This can be calibrated to enhance the signal power at the expense of the bandwidth of the arms. The signal recycling mirror's transmissivity can be set to determine the frequency range over which this enhancement occurs, and the position of the signal recycling mirror can be tuned to focus this enhancement in either a narrow or broad frequency band \cite{Buonanno2001}.
+
+\subsection{Dual recycling with \FP{} arm cavities}
+The natural combination of power and signal recycling with the \FPMI{} leads to the \emph{\DRFPMI{}} shown in Figure\,\ref{fig:drfpmi}. This is the topology that provides the greatest sensitivity in a given band of interest, either broadband or narrowband depending on the tuning of the signal recycling cavity, for a given laser power, arm length and mirror mass; it is therefore the topology employed in current generation detectors. The use of \emph{dual recycling} was initially demonstrated in both table-top and suspended prototype experiments \cite{Strain1991, Heinzel1998, Freise2000}, and later a full-scale dual-recycled \MI{} detector was demonstrated at \GEO{} \cite{Heinzel2002, Grote2004}. The \ALIGO{} interferometers were the first fully implement the \DRFPMI{} topology in detectors capable of sensing gravitational waves.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/20-dual-recycled-fabry-perot-michelson.pdf}
+  \caption[\DRFPMI{}]{\label{fig:drfpmi}Dual-recycled \FPMI{}.}
+\end{figure}
 
 \section{\label{sec:sub-sql-techniques}Surpassing the Standard Quantum Limit}
 Predictions for the population of sources within the range of the advanced detectors show that it is most beneficial to improve the sensitivity at low frequencies \note{need source: perhaps CE or ET-LF designs?}. The strain sensitivity of a \MI{} at low frequencies can be increased through the use of heavier masses as shown by Equation\,\ref{eq:strainsql}, with the strain sensitivity scaling proportionally to $\sqrt{m}$. The use of mirrors larger and heavier than the \SI{40}{\kilo\gram} mirrors used in \ALIGO{} is a considerable technical challenge. The availability of test mass material of suitable quality in such dimensions is not clear, as is the ability for the suspension systems to isolate noise from such large masses.
