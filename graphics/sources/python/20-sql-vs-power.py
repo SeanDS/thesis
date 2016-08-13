@@ -48,7 +48,7 @@ f = np.logspace(1, 4, 1000)
 f_0 = 3e8 / 1064e-9
 m = 50
 L = 1000
-gamma = 200 * np.pi # 100 Hz
+gamma = 100 * 2 * np.pi
 powers = [1, 1e3, 1e6]
 labels = ['1 W', '1 kW', '1 MW']
 
