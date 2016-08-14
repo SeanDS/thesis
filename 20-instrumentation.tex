@@ -79,12 +79,12 @@ There are two types of readout technique. \emph{Heterodyne} readout involves the
 \subsubsection{Heterodyne readout}
 When light with multiple frequency components is incident upon a photodetector the resulting electrical signal shows the \emph{beat signal} between the two components. Assuming that a photodetector has an incident electric field amplitude composed of two frequency components, we get \cite{Freise2010}:
 \begin{equation}
-  A = A_0 \cos \left( \omega_1 t \right) + A_0 \cos \left( \omega_2 t \right),
+  E' = E'_0 \cos \left( \omega_1 t \right) + E'_0 \cos \left( \omega_2 t \right),
 \end{equation}
-where $A_0$ is the (identical) maximum field amplitude, $\omega_1$ and $\omega_2$ are the two frequencies and $t$ is time. The photodetector measures the power of the field, $P$:
+where $\omega_1$ and $\omega_2$ are the two frequencies and $t$ is time. The photodetector measures the power of the field, $P$:
 \begin{equation}
   \label{eq:photodetector-beat-power}
-  P = A^2 = A_0^2 \left( \cos^2 \left( \omega_1 t \right) + \cos^2 \left( \omega_2 t \right) + \cos \left( \left( \omega_1 + \omega_2 \right) t \right) + \cos \left( \left( \omega_1 - \omega_2 \right) t \right) \right).
+  P = {E'}^2 = {E'}_0^2 \left( \cos^2 \left( \omega_1 t \right) + \cos^2 \left( \omega_2 t \right) + \cos \left( \left( \omega_1 + \omega_2 \right) t \right) + \cos \left( \left( \omega_1 - \omega_2 \right) t \right) \right).
 \end{equation}
 If the difference frequency $\omega_1 - \omega_2$ in Equation\,\ref{eq:photodetector-beat-power} is small, it can be measured by the photodetector. Most heterodyne techniques involve the frequency modulation of a single carrier which creates a series of sidebands offset in frequency from the carrier that beat together at the photodetector. Different resonant conditions for the sidebands with respect to the carrier allow some to act as phase discriminants for others, and with suitable \emph{demodulation} at the photodetector these can be used to sense displacement in the interferometer arms.
 
