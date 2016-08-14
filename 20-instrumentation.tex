@@ -7,68 +7,70 @@ To achieve maximum sensitivity in an interferometric gravitational wave detector
 The effect that the output light from an interferometer has on a sensor (e.g. a photodetector) as some variable is modulated is termed its \emph{response}. As discussed in Chapter\,\ref{c:gw-detection} the most important response to consider in gravitational wave interferometry from an astrophysical perspective is that of the differential motion of the arms (\gls{DARM}) to the sensor at the output port. The response has a dependence on the input light power but it varies as a function of frequency due to the presence of additional \emph{cavities} used to enhance or suppress the response in a given frequency band.
 
 \subsection{Measurement of interferometer length fluctuations}
-Typically the underlying amplitude of a particular signal can only be inferred from a measured power. A simple example is the measurement of mirror displacement in a simple Michelson interferometer \emph{via} the photocurrent output of the photodetector. A light wave is composed of the electric and magnetic fields, $E$ and $B$, respectively, each of which can be expressed as a travelling wave:
-\begin{align}
-  E &= E_0 \text{e}^{\text{i} \left( kx - \omega t \right)} + E_0^{\ast} \text{e}^{\text{-i} \left( kx - \omega t \right)}, \\
-  B &= B_0 \text{e}^{\text{i} \left( kx - \omega t \right)} + B_0^{\ast} \text{e}^{\text{-i} \left( kx - \omega t \right)},
-\end{align}
-where $E_0$ and $B_0$ are the maximum field amplitudes, $k = \frac{2 \pi}{\lambda}$ is the wave vector, $x$ is the displacement, $\omega$ is the angular frequency and $t$ is time. The intensity $S$ is the product of the two, with the magnetic field weighted by the permittivity of free space $\epsilon_0$ and speed of light in vacuum $c_0$ \checkme{check this is consistent with Living Review p31}:
+The propagation of an electromagnetic wave can be represented by its complex-valued electric field amplitude $E$ in time and space:
 \begin{equation}
-  S = \frac{1}{2} \epsilon_0 \left( \left| E \right| ^2 + c_0^2 \left| B \right|^2 \right).
+  \label{eq:em-propagation}
+  E = E_0 \text{e}^{\text{i} \left( \omega t - kx \right)},
 \end{equation}
-We can therefore state that the power measured by a detector is proportional to the square of the underlying ``amplitude'' of the light $A$, expressing the combination of $E$ and $B$:
-\begin{equation}
-  S \propto A^2.
-\end{equation}
-Leaving the beam splitter towards the end of each arm, each wave in the Michelson interferometer propagates with amplitude
-\begin{equation}
-  A = A_{\text{in}} \text{e}^{\text{i} \left( kx - \omega t \right)},
-\end{equation}
-where $A_{\text{in}}$ represents the field at the beam splitter's input.
+where $\omega$ is the wave's angular frequency, $i$ is the imaginary unit, $t$ is time, $k = \frac{2 \pi}{\lambda}$ is the wave number and $x$ is the coordinate in the direction in which $E$ is measured. An arbitrary phase offset defined with respect to some point is contained within the complex-valued maximum field amplitude, $E_0$.
 
-A difference in path length between the arms $\Delta x$ leads to a difference in round-trip phase between light returning to the beam splitter, as shown in Equation\,\ref{eq:gw-phase-change}. With light of constant amplitude injected into the interferometer, and assuming that the light round-trip time is much quicker than a transient causing a change to the arm lengths, we can look at the superposition of returning light at the beam splitter to determine the change in path length. At the beam splitter's output port, the field becomes:
+Typically the underlying amplitude of a particular interferometer signal can only be inferred from the light power measured by a sensor. A simple example is the measurement of mirror displacement in a \MI{} \emph{via} the photocurrent output of the photodetector. The measured power $P$ in this case would be:
 \begin{equation}
-  A_{\text{out}} = \frac{A_{\text{in}}}{2} \text{e}^{\text{i} \left( k \left( x + \frac{\Delta x}{2} \right) - \omega t \right)} + \frac{A_{\text{in}}}{2} \text{e}^{\text{i} \left( k \left( x - \frac{\Delta x}{2} \right) - \omega t \right)},
+  P = E^{\ast} E.
 \end{equation}
-where we assume that the path length difference caused by the transient is evenly distributed, differentially, between the two arms. The power measured by a photodetector, $P_{\text{out}}$, is then the field multiplied by its complex conjugate:
+Equation\,\ref{eq:em-propagation} can be simplified to a sinusoidal function with real maximum field amplitude $E'_0$ and phase offset $\phi$:
 \begin{equation}
-  \label{eq:mich-p-out}
+  \label{eq:em-propagation-real}
+  E' = E'_0 \cos \left( \omega t - kx + \phi \right),
+\end{equation}
+and in this way we can express the measured power as the square of the real field amplitude, i.e. $P = E'^2$.
+
+Assuming that laser light with amplitude described by Equation\,\ref{eq:em-propagation-real} is incident upon the beam splitter shown in the \MI{} in Figure\,\ref{fig:mi}, the light returning to the beam splitter having reflected from the north and east arms, $n$ and $e$, respectively, would be:
+\begin{align}
+  E'_n &= -\frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2kL_n \right) \\
+  E'_e &= \frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2kL_e \right)
+\end{align}
+where we employ a particular reflection phase convention such that a negative coefficient is gained on the light reflected from one side of the beam splitter, to conserve energy (see Appendix\,\ref{a:reflection-phase}). We can also express $L_n$ and $L_e$ in terms of the average arm length $L = \frac{L_n + L_e}{2}$ and differential length $\delta L = L_n - L_e$:
+\begin{align}
+  E'_n &= -\frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2k \left( L + \frac{\delta L}{2} \right) \right) \\
+  E'_e &= \frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2k \left( L - \frac{\delta L}{2} \right) \right).
+\end{align}
+
+The superpositions of the light from the arms leaving the beam splitter towards the input laser, $E'_{\text{input}}$, and the light leaving at the output port, $E'_{\text{output}}$, are then:
+\begin{equation}
   \begin{split}
-    P_{\text{out}} &\propto \langle A_{\text{out}}^*A_{\text{out}} \rangle \\
-                   &= \frac{P_{\text{in}}}{2} \left( 1 + \cos \left( k \Delta x \right) \right),
+    E'_{\text{input}} &= \frac{E'_{e} - E'_{n}}{\sqrt{2}} \\
+                      &= E'_0 \cos \left( \omega t - 2kL \right) \cos \left( 2k \frac{\delta L}{2} \right)
   \end{split}
 \end{equation}
-using the fact that $P_{\text{in}} = A_{\text{in}}^2$. This shows that the signal from the change in arm length is encoded in the power of the light present at the output port.
+\begin{equation}
+  \begin{split}
+    E'_{\text{output}} &= \frac{E'_{e} + E'_{n}}{\sqrt{2}} \\
+                       &= -E'_0 \sin \left( \omega t - 2kL \right) \sin \left( 2k \frac{\delta L}{2} \right).
+  \end{split}
+\end{equation}
+A real photodetector is not quick enough to measure changes in intensity at the frequency of the light. Instead, it sees the time averaged square of the field. The photodetector power at the output as a function of $\delta L$, $P_{\text{output}}$, is:
+\begin{equation}
+  \label{eq:mich-p-out}
+  P_{\text{output}} \left( \delta L \right) = \frac{P_0}{2} \left( 1 - \cos \left( k \delta L \right) \right),
+\end{equation}
+where $P_0$ is the power of the incident laser light, showing that the signal from the differential arm length is encoded in the power of the light present at the output port. Note that implicit in this derivation is the assumption that the arms are both perfectly reflective. When the optics within the interferometer have different reflectivity, the calculation becomes more complicated and it is then more practical to use a simulation tool, as discussed in Appendix\,\ref{a:simulation-tools}.
 
 \subsection{\label{sec:operating-point}Optimal operating point}
-In Equation\,\ref{eq:mich-p-out} we see that a static field $\frac{P_{\text{in}}}{2}$ is present upon the photodetector, independent of the arm length change, when $\cos \left( k \Delta x \right) \neq 1$. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer in the state commonly referred to as ``half way up the fringe''. Here, the interferometer's arms are nominally tuned \SI{45}{\degree} out of phase such that the output signal oscillates about the midpoint between crest and trough of the superposition waveform at the output (see Figure\,\ref{fig:optimal-operating-point}). As the gradient is steepest at this point, any small changes to the relative arm length of the Michelson interferometer result in a significant difference in power at the photodetector.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/20-optimal-operating-point.pdf}
-  \caption[Optimal operating point of a \MI{}]{\label{fig:optimal-operating-point}Optimal operating point of a \MI{}. The power on the photodetector changes as the arm length is modulated due to the interference of the light returning from the arms at the beam splitter. The best response can be found when the interferometer is nominally held at the point half-way up the fringe, but the best sensitivity is found when the interferometer is held at the point of minimum photodetector power.}
-\end{figure}
-
-This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations. While this light power does not contribute displacement information, it does contribute \emph{shot noise}:
+The phase change created by the difference in the lengths of the arms shown in Equation\,\ref{eq:mich-p-out} as $k \delta L$ can be expressed as a combination of a \emph{static} tuning $\alpha$ and the phase change created by incident gravitational waves, $\delta \phi_{\text{GW}}$, i.e.:
 \begin{equation}
-  P_{\text{shot, out}} = \sqrt{2 h f_0 P_{\text{in}}},
-\end{equation}
-where $h$ is Planck's constant and $f_0$ is the light frequency. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \emph{signal-to-noise ratio} (\gls{SNR}). The \gls{SNR} in the presence of shot noise is:
-\begin{equation}
-  \text{SNR} = \frac{P_{\text{out}}}{P_{\text{shot, out}}} = \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \left( 1 + \cos \left(k \Delta x \right) \right).
+  k \delta L = \alpha + \delta \phi_{\text{GW}}.
 \end{equation}
 
-The $\Delta x$ term in Equation\,\ref{eq:mich-p-out} can be seen as a combination of a static arm length \emph{detuning} $x_{\text{tune}}$\textemdash representing the arm length mismatch required to reach the desired operating point\textemdash and a differential gravitational wave signal $\Delta x_{\text{GW}}$. A suitable choice of $x_{\text{tune}}$ can remove the majority of the static power present at the output. Setting the slope of the \gls{SNR} with respect to the tuning to zero,
+The static tuning $\alpha$ is the differential arm phase at which the interferometer is nominally held. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer in the state commonly referred to as ``half way up the fringe''. Here, the interferometer's arms are nominally tuned \SI{45}{\degree} out of phase such that the output signal oscillates about the midpoint between crest and trough of the superposition waveform at the output. As the gradient is steepest at this point (as specified by Equation\,\ref{eq:mich-p-out}), any small changes to the relative arm length of the \MI{} result in a significant difference in power at the photodetector. This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations. The static light power at this operating point contributes significant \emph{shot noise} at the output, $P_{\text{shot, out}}$, given by:
 \begin{equation}
-  \frac{\Delta \text{SNR}}{\Delta x} = -k \sqrt{\frac{P_{\text{in}}}{4 h f_0}} \sin \left(k \Delta x\right) = 0,
+  P_{\text{shot, out}} = \sqrt{2 h f_0 P_0},
 \end{equation}
-we find that maximum \gls{SNR} is achieved when $\sin \left( k \Delta x \right) = 0$, i.e. for static tunings $\Delta x \text{mod} \lambda = 0$.
-
-It turns out that the reduced signal in the case of the operating point being at the \emph{dark fringe}, where light from the two arms interferes destructively, is more than compensated for by the lack of shot noise such that the overall sensitivity is better. Furthermore, while any multiple of $\lambda$ will satisfy the \gls{SNR} condition as defined, in reality we have not considered laser noise coupling; the more matched the arm lengths are, the lower the laser noise couples to the output port. In reality there are also mismatches in the reflectivities of the mirrors in the arms: this creates an asymmetry called a \emph{contrast defect} which leads to additional shot noise at the output port. Noise which is not coherently cancelled at the beam splitter combines with any intentional offset applied to the relative phase between the arms to create the \emph{dark fringe offset}.
+where $h$ is Planck's constant and $f_0$ is the light frequency. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \emph{signal-to-noise ratio} (\gls{SNR}). It turns out that the reduced signal in the case of the operating point close to the \emph{dark fringe}, where light from the two arms interferes destructively, is more than compensated for by the lack of shot noise such that the overall sensitivity is better. Interferometer operation near the dark fringe is the basis of \emph{\gls{DC} readout}, described in the next section, which is the standard measurement technique for all current generation detectors.
 
 \subsection{\label{sec:readout}Readout}
 % chapter 4 points here
-Note that the light power at the output shown in Equation\,\ref{eq:mich-p-out} in the cosine of the change in arm length is symmetrical and so displacements $\pm \Delta x$ yield identical changes in light power. As the interferometer must be held at the dark fringe in order to maximise sensitivity, a controller would require a \emph{bipolar} error signal providing a different response for motion in a different direction. The purpose of the \emph{readout} technique is to facilitate a bipolar error signal.
+Note that the light power at the output shown in Equation\,\ref{eq:mich-p-out} in the cosine of the change in arm length is symmetrical and so displacements $\pm \delta L$ yield identical changes in light power. As the interferometer must be held at the dark fringe in order to maximise sensitivity, a controller would require a \emph{bipolar} error signal providing a different response for motion in a different direction. The purpose of the \emph{readout} technique is to facilitate a bipolar error signal.
 
 Another benefit certain types of readout can provide is access to the displacement information in a particular \emph{quadrature} of the output light. Signal (and noise) can in general be encoded in both the amplitude and phase of the light, representing the light's quadratures. When the ratio between optical power and mirror mass is high this information is primarily contained within the phase quadrature, and when significant optomechanical interactions are present either with lighter mirrors or higher laser power the information can be encoded as a linear combination of the phase and amplitude quadratures. Some readout techniques provide access to an arbitrary readout quadrature where the signal can be maximised with respect to the noise, while others have a quadrature fixed by the interferometer parameters.
 
