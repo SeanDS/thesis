@@ -261,14 +261,16 @@ Balanced homodyne readout involves making a subtraction of two signals measured 
     d^{\dag} d &= \frac{1}{2} \left( a^{\dag} a + a^{\dag} b \text{e}^{\text{i} \phi} + a b^{\dag} \text{e}^{-\text{i} \phi} + b^{\dag} b \right),
   \end{split}
 \end{equation}
-where $\phi$ is the homodyne angle. The mixing of the two signals at \MSIXTEEN{} results in the \gls{DC} part of one field beating with the \gls{AC} part of the other field, and so as long as the homodyne beam splitter is balanced a delicate subtraction of the two photocurrents from \HDA{} and \HDB{} results in only the \gls{AC} parts corresponding to the motion of the test masses amplified by the local oscillator field. The balanced homodyne photocurrent, $I_{\text{BHD}}$, is then:
+where $\phi$ is the homodyne angle. The mixing of the two signals at \MSIXTEEN{} results in the \gls{DC} part of one field beating with the \gls{AC} part of the other field. Subtracting the signals on the two balanced homodyne photodetectors yields a photocurrent, $I_{\text{BHD}}$:
 \begin{equation}
   \begin{split}
     I_{\text{BHD}} &= c^{\dag} c - d^{\dag} d \\
-                   &= a^{\dag} b \text{e}^{\text{i} \phi} - a^{\dag} b \text{e}^{\text{-i} \phi} + a b^{\dag} \text{e}^{\text{i} \phi} - a b^{\dag} \text{e}^{\text{-i} \phi},
+                   &= a^{\dag} b \text{e}^{-\text{i} \phi} - a^{\dag} b \text{e}^{\text{i} \phi} + a b^{\dag} \text{e}^{\text{i} \phi} - a b^{\dag} \text{e}^{-\text{i} \phi},
   \end{split}
 \end{equation}
-which contains only terms proportional to the phase of the light at the output port, representing the motion of the mirrors, amplified by the local oscillator. In the presence of imbalanced beam splitting the laser noise and residual carrier light in the signal path results in additional noise photocurrent and so it is important to use a beam splitter with balanced reflectivity and transmissivity and for the intensity noise of the laser to be controlled to a high degree \cite{Steinlechner2015}.
+where we assume that the signal and local oscillator are split equally between the two detectors by the balanced homodyne beam splitter. This shows that, as long as the beam splitter has matched transmissivity and reflectivity, a delicate subtraction of the two photocurrents from \HDA{} and \HDB{} results in an error signal containing only the \gls{AC} parts of the signal corresponding to the motion of the test masses amplified by the local oscillator field.
+
+In the presence of imbalanced beam splitting the laser noise and residual carrier light in the signal path results in additional noise photocurrent and so it is important to use a beam splitter with balanced reflectivity and transmissivity and for the intensity noise of the laser to be controlled to a high degree \cite{Steinlechner2015}.
 
 \subsubsection{Quantum noise limited sensitivity of the main readout}
 Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} is shown in Figure\,\ref{fig:erc-ssm-qnls}, calculated with both Finesse and Optickle (see Appendices \ref{sec:finesse-sim} and \ref{sec:optickle-sim}). Also shown is the sensitivity of an equivalent \MI{} using the same parameters as for the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match its high frequency sensitivity. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, \checkme{to optimise both interferometers for high frequency sensitivity fairly}. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz} so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are kept sufficiently low. A comprehensive consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
