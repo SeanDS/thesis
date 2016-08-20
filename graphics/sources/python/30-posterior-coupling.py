@@ -68,7 +68,7 @@ ax.grid(True)
 ax.xaxis.set_major_formatter(FixedOrderFormatter(-5))
 #ax.yaxis.set_major_formatter(FixedOrderFormatter(3))
 ax.set_ylabel('Normalised probability density')
-ax.set_xlabel('Transverse to longitudinal coupling [m / m]')
+ax.set_xlabel('Transverse to longitudinal coupling (m / m)')
 ax.set_ylim([0, 1])
 ax.set_xlim([0, max(data[:, 0])])
 

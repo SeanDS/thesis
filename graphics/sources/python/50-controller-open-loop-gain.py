@@ -39,8 +39,8 @@ ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alp
 ax2.vlines(350, -200, 200, colors=colour_b, linestyles='dashed', zorder=2)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Frequency [Hz]')
-ax2.set_ylabel(u'Phase [°]')
+ax2.set_xlabel('Frequency (Hz)')
+ax2.set_ylabel(u'Phase (°)')
 
 ax1.legend(['Open loop gain', 'Unity gain'], loc='lower left')
 

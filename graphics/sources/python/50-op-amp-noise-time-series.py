@@ -69,9 +69,9 @@ leg = ax2.legend(plt1 + plt2 + plt3, ['Op-amp noise', 'ADC noise', 'Temperature'
 ax1.grid(True)
 
 # labels
-ax1.set_xlabel('Time [days]')
-ax1.set_ylabel('Voltage [mV]')
-ax2.set_ylabel(u'Temperature [°C]')
+ax1.set_xlabel('Time (days)')
+ax1.set_ylabel('Voltage (mV)')
+ax2.set_ylabel(u'Temperature (°C)')
 
 # limits
 ax1.set_xlim((0, 16))

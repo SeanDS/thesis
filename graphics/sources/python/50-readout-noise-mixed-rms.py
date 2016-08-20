@@ -53,7 +53,7 @@ plt.grid(True)
 ax.set_xlim((1, 86400))
 ax.set_ylim((1e-15, 1e-12))
 ax.set_xlabel('Readout period')
-ax.set_ylabel('Displacement [m]')
+ax.set_ylabel('Displacement (m)')
 
 plt.tight_layout()
 

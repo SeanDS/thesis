@@ -41,8 +41,8 @@ ax.plot(data_local[:, 0], data_local[:, 1], '.', color=colours.next(), alpha=lf.
 
 ax.plot(data_remote[:, 0], data_remote[:, 1], '.', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 
-ax.set_xlabel('Time [s]')
-ax.set_ylabel('Signal [arbitrary units]')
+ax.set_xlabel('Time (s)')
+ax.set_ylabel('Signal (arbitrary units)')
 
 ax.legend(['Recorded locally', 'Recorded by frame builder'], loc='lower right')
 

@@ -47,9 +47,9 @@ ax2.set_ylim((-200, 200))
 ax1.legend(['BHD', 'PDH'], loc='upper left')
 
 # set labels
-ax1.set_ylabel(r'$L_{(-)}$ response [W / m]')
-ax2.set_xlabel('Frequency [Hz]')
-ax2.set_ylabel(u'Phase [°]')
+ax1.set_ylabel(r'$L_{(-)}$ response (W / m)')
+ax2.set_xlabel('Frequency (Hz)')
+ax2.set_ylabel(u'Phase (°)')
 
 # set phase ticks
 ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])

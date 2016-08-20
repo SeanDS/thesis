@@ -44,8 +44,8 @@ ax.grid(True)
 
 ax.set_xlim((1e-5, 1e1))
 ax.set_ylim((1e-19, 1e-9))
-ax.set_xlabel(r'Frequency [$\mathrm{Hz}$]')
-ax.set_ylabel(r'Displacement equivalent noise [$\mathrm{m} / \sqrt{\mathrm{Hz}}$]')
+ax.set_xlabel(r'Frequency (Hz)')
+ax.set_ylabel(r'Displacement equivalent noise (m / sqrt(Hz))')
 
 plt.tight_layout()
 

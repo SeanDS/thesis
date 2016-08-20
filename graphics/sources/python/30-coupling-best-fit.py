@@ -40,7 +40,7 @@ ax1.semilogy(
 ax1.errorbar(x=real[0, :], y=real[1, :] / rotation, xerr=xerror, fmt=None, lw=1.5, zorder=3, ecolor=colour_e)
 
 ax1.grid(True)
-ax1.set_ylabel('Cavity length change [m / rad]')
+ax1.set_ylabel('Cavity length change (m / rad)')
 legend1 = ax1.legend(['Model, 1:27600', 'Model, 1:17000', 'Model, no coupling', 'Measurements'], loc='lower left')
 ax1.set_xlim([-0.0225, 0.0225])
 
@@ -56,8 +56,8 @@ yerrors = [-3.2303,0.1721,-0.0342,0.0254,-2.0603,0.2178,-0.0336,0.0283,3.2726,0.
 
 ax2.errorbar(x=real[0, :], y=real[2, :], xerr=xerror, yerr=yerrors, fmt=None, lw=1.5, zorder=3, ecolor=colour_e)
 ax2.grid(True)
-ax2.set_xlabel('Spot position on ETM [m]')
-ax2.set_ylabel(u'Phase [\xb0]')
+ax2.set_xlabel('Spot position on ETM (m)')
+ax2.set_ylabel(u'Phase (\xb0)')
 ax2.set_ylim([-20, 200])
 
 fig.tight_layout()

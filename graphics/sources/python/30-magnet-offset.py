@@ -48,8 +48,8 @@ with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
 ax.set_xlim([-6.5, 6.5])
 #ax.set_ylim([-0.5, 0.2])
 ax.grid(True)
-ax.set_xlabel('Displacement relative to regression\'s\nposition of maximum force [mm]')
-ax.set_ylabel('Force relative to regression\nmaximum [%]')
+ax.set_xlabel('Displacement relative to regression\'s\nposition of maximum force (mm)')
+ax.set_ylabel('Force relative to regression\nmaximum (%)')
 ax.legend(['Measurements', 'Quadratic fit'], loc='lower left')
 
 fig.tight_layout()
