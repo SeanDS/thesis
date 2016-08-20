@@ -22,14 +22,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.50000005"
-     inkscape:cx="946.71393"
-     inkscape:cy="708.12081"
+     inkscape:zoom="0.70710685"
+     inkscape:cx="460.53951"
+     inkscape:cy="1044.0346"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1366"
-     inkscape:window-height="709"
+     inkscape:window-height="703"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -939,6 +939,62 @@
          style="fill:#ffaa00;fill-rule:evenodd;stroke:#ffaa00;stroke-width:0.625;stroke-linejoin:round"
          id="path6731-24-3" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Sstart-367"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart">
+      <path
+         transform="matrix(0.3,0,0,0.3,-0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path3857-53"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4767"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart">
+      <path
+         transform="matrix(0.3,0,0,0.3,-0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path4769"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4771"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart">
+      <path
+         transform="matrix(0.3,0,0,0.3,-0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path4773"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4775"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart">
+      <path
+         transform="matrix(0.3,0,0,0.3,-0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path4777"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <metadata
      id="metadata7">
@@ -966,42 +1022,6 @@
        y="-162.688"
        ry="45.999996"
        rx="46.000008" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-6"
-       d="m 1827.4525,615.66033 169.2222,-0.0242 0.01,-592.224536 -128.6724,-0.0202"
-       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-6-5"
-       d="m 1827.497,559.4112 142.0651,0.0946 0.072,-471.29313 -101.4972,-0.0871"
-       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-6-50"
-       d="m 1827.4438,379.28755 89.8248,0.0775 0.01,-419.486566 -49.2625,-0.1452"
-       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-6-5-1"
-       d="m 1827.5739,436.81828 116.2906,-0.28676 0.072,-541.64683 -75.8612,-0.087"
-       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
@@ -1107,7 +1127,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-67-0-6-1-4-8-28"
-       d="m 433.83348,-63.570006 -64.70468,0"
+       d="m 433.83348,-63.570006 -138.20467,0"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
     <path
        inkscape:export-ydpi="90"
@@ -1143,7 +1163,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-67-0-6-1-4-8-28-3"
-       d="m 433.83348,14.523624 -64.70468,0"
+       d="m 433.83348,14.523624 -138.20467,0"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
     <path
        inkscape:export-ydpi="90"
@@ -1210,14 +1230,14 @@
        inkscape:export-filename="/tmp/ssm.png"
        sodipodi:linespacing="125%"
        id="text7745-5-8-47-4-5-0-8-8-60-3"
-       y="-111.68995"
-       x="369.34973"
+       y="-59.459801"
+       x="317.1196"
        style="font-style:normal;font-weight:normal;font-size:22px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
-         y="-111.68995"
-         x="369.34973"
+         y="-59.459801"
+         x="317.1196"
          sodipodi:role="line"
          id="tspan3568-2-7-8-3">AA filter</tspan></text>
     <path
@@ -1227,7 +1247,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-67-0-6-1-4-8-28-8"
-       d="m 433.83348,86.895324 -64.70468,0"
+       d="m 433.83348,86.895324 -138.20467,0"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart)" />
     <path
        inkscape:export-ydpi="90"
@@ -1361,7 +1381,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-6-0"
-       d="m 296.99252,412.64363 -90.97001,-0.0242 -0.01,-475.708736 106.93023,0"
+       d="m 296.99252,412.64363 -90.97001,-0.0242 -0.01,-475.708736 32.93024,0"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#marker13265)" />
     <path
        inkscape:export-ydpi="90"
@@ -1370,7 +1390,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-6-5-9"
-       d="m 297.03884,501.94636 -118.36816,-0.14917 -0.072,-487.109086 134.10647,0.1048"
+       d="m 297.03884,501.94636 -118.36816,-0.14917 -0.072,-487.109086 60.10648,0.1048"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#marker13265-0)" />
     <path
        inkscape:export-ydpi="90"
@@ -1379,7 +1399,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-6-50-3"
-       d="m 297.32236,556.99062 -146.68965,-0.10999 -0.01,-470.015616 162.17684,0.3548"
+       d="m 297.32236,556.99062 -146.68965,-0.10999 -0.01,-470.015616 88.17685,0.3548"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#marker13265-0)" />
     <path
        inkscape:export-ydpi="90"
@@ -1565,7 +1585,7 @@
        sodipodi:nodetypes="cccccc"
        inkscape:connector-curvature="0"
        id="rect2985-8-46-1-4-7-3-1-8-0-3"
-       d="m 318.41791,14.509214 0,-13.99887994 50.472,0 0,27.99775994 -50.472,0 0,-13.99888"
+       d="m 244.41792,14.509214 0,-13.99887994 50.472,0 0,27.99775994 -50.472,0 0,-13.99888"
        style="fill:#00941b;fill-opacity:0.49803922;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-opacity:1" />
     <path
        inkscape:export-ydpi="90"
@@ -1574,7 +1594,7 @@
        sodipodi:nodetypes="cccccc"
        inkscape:connector-curvature="0"
        id="rect2985-8-46-1-4-7-3-1-8-2"
-       d="m 318.41791,-63.584406 0,-13.9989 50.472,0 0,27.9977 -50.472,0 0,-13.9988"
+       d="m 244.41792,-63.584406 0,-13.9989 50.472,0 0,27.9977 -50.472,0 0,-13.9988"
        style="fill:#00941b;fill-opacity:0.49803922;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-opacity:1" />
     <path
        inkscape:export-ydpi="90"
@@ -1583,24 +1603,8 @@
        sodipodi:nodetypes="cccccc"
        inkscape:connector-curvature="0"
        id="rect2985-8-46-1-4-7-3-1-8-0-8-4"
-       d="m 318.41791,86.880914 0,-13.9989 50.472,0 0,27.997796 -50.472,0 0,-13.998896"
+       d="m 244.41792,86.880914 0,-13.9989 50.472,0 0,27.997796 -50.472,0 0,-13.998896"
        style="fill:#00941b;fill-opacity:0.49803922;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-opacity:1" />
-    <text
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:linespacing="125%"
-       id="text7745-5-8-47-4-5-0-8-0-5-3"
-       y="-54.286995"
-       x="311.70984"
-       style="font-style:normal;font-weight:normal;font-size:22px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
-         style="font-size:22px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
-         y="-54.286995"
-         x="311.70984"
-         sodipodi:role="line"
-         id="tspan3568-2-8-6-3">ADC noise</tspan></text>
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
@@ -1619,33 +1623,53 @@
        id="path3821-3-5-7-7-8-1-6-6-8-1-3-2-1"
        d="m 589.01617,14.5695 56.85581,0.08 -0.059,14.0196"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow2Send)" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:nodetypes="cccccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-67-0-67-2-3-3"
-       d="m 263.21862,-57.212406 0.0249,3.3391 c 0,4.6845 -1.09443,4.9141 -1.09443,4.9141 -10.23901,5.4361 0,11.1467 0,11.1467 9.76279,5.1832 0,11.1466 0,11.1466 -10.52033,5.5854 0,11.1466 0,11.1466"
-       style="fill:none;stroke:#ffaa00;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2SstartI-29)" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:nodetypes="cccccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-67-0-67-2-3-6-3"
-       d="m 263.21862,20.575614 0.0249,3.33906 c 0,4.68454 -1.09443,4.91416 -1.09443,4.91416 -10.23901,5.43609 0,11.14665 0,11.14665 9.76279,5.18324 0,11.14664 0,11.14664 -10.52033,5.58543 0,11.14663 0,11.14663"
-       style="fill:none;stroke:#ffaa00;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2SstartI-29)" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:nodetypes="cccccc"
-       inkscape:connector-curvature="0"
-       id="path3821-3-5-7-67-0-67-2-3-6-2-5"
-       d="m 263.21862,92.853584 0.0249,3.33906 c 0,4.684536 -1.09443,4.914156 -1.09443,4.914156 -10.23902,5.43608 0,11.14664 0,11.14664 9.76279,5.18324 0,11.14664 0,11.14664 -10.52034,5.58543 0,11.14663 0,11.14663"
-       style="fill:none;stroke:#ffaa00;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2SstartI-29)" />
+    <g
+       id="g5218"
+       transform="translate(100,0)">
+      <text
+         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:22px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+         x="311.70984"
+         y="-54.286995"
+         id="text7745-5-8-47-4-5-0-8-0-5-3"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/tmp/ssm.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           id="tspan3568-2-8-6-3"
+           sodipodi:role="line"
+           x="311.70984"
+           y="-54.286995"
+           style="font-size:22px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">ADC noise</tspan></text>
+      <path
+         style="fill:none;stroke:#ffaa00;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2SstartI-29)"
+         d="m 263.21862,-57.212406 0.0249,3.3391 c 0,4.6845 -1.09443,4.9141 -1.09443,4.9141 -10.23901,5.4361 0,11.1467 0,11.1467 9.76279,5.1832 0,11.1466 0,11.1466 -10.52033,5.5854 0,11.1466 0,11.1466"
+         id="path3821-3-5-7-67-0-67-2-3-3"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc"
+         inkscape:export-filename="/tmp/ssm.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="fill:none;stroke:#ffaa00;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2SstartI-29)"
+         d="m 263.21862,20.575614 0.0249,3.33906 c 0,4.68454 -1.09443,4.91416 -1.09443,4.91416 -10.23901,5.43609 0,11.14665 0,11.14665 9.76279,5.18324 0,11.14664 0,11.14664 -10.52033,5.58543 0,11.14663 0,11.14663"
+         id="path3821-3-5-7-67-0-67-2-3-6-3"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc"
+         inkscape:export-filename="/tmp/ssm.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="fill:none;stroke:#ffaa00;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2SstartI-29)"
+         d="m 263.21862,92.853584 0.0249,3.33906 c 0,4.684536 -1.09443,4.914156 -1.09443,4.914156 -10.23902,5.43608 0,11.14664 0,11.14664 9.76279,5.18324 0,11.14664 0,11.14664 -10.52034,5.58543 0,11.14663 0,11.14663"
+         id="path3821-3-5-7-67-0-67-2-3-6-2-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc"
+         inkscape:export-filename="/tmp/ssm.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3167,5 +3191,41 @@
          x="1768.6918"
          sodipodi:role="line"
          id="tspan3568-2-7-4-06-8">Dewhitening</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path3821-3-5-7-6-56"
+       d="m 1827.5299,436.40377 137.3373,-0.0242 0.2039,-413.224549 -97.4835,-0.0202"
+       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-367)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path3821-3-5-7-6-5-2"
+       d="m 1827.6569,380.07985 110.7718,0.0946 0.072,-292.218349 -70.7885,-0.0871"
+       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-367)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path3821-3-5-7-6-50-9"
+       d="m 1827.4269,558.96847 164.0342,0.015 0.01,-599.361557 -123.8797,-0.1452"
+       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-367)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/sean/Desktop/Speedmeter Control Loop.png"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path3821-3-5-7-6-5-1-1"
+       d="m 1827.4854,615.5617 191.5716,-0.28676 0.072,-720.64682 -151.4784,-0.087"
+       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-367)" />
   </g>
 </svg>

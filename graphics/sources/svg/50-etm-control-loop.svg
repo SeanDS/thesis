@@ -22,14 +22,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="810.83194"
-     inkscape:cy="886.97778"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="870.86951"
+     inkscape:cy="882.8835"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1366"
-     inkscape:window-height="709"
+     inkscape:window-height="703"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1158,7 +1158,7 @@
        sodipodi:nodetypes="cccccc"
        inkscape:connector-curvature="0"
        id="rect2985-8-46-1-4-7-3-1-8-2-9-1-8"
-       d="m 942.35502,329.92033 0,-13.9989 50.472,0 0,27.9977 -50.472,0 0,-13.9988"
+       d="m 942.35502,-90.101077 0,-13.998903 50.472,0 0,27.997703 -50.472,0 0,-13.9988"
        style="fill:#00941b;fill-opacity:0.49803922;stroke:#000000;stroke-width:3.00000024;stroke-miterlimit:4;stroke-opacity:1" />
     <path
        inkscape:export-ydpi="90"
@@ -1167,7 +1167,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-6-0-4"
-       d="m 770.00972,104.3212 -63.4658,0.024 -0.01,225.75214 230.231,0"
+       d="m 770.00972,104.3212 -63.4658,0.024 -0.01,-194.269267 230.231,0"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#marker13265-7)" />
     <rect
        style="fill:none;fill-opacity:0.5"
@@ -1193,16 +1193,16 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-6-0-4-4"
-       d="m 991.85372,329.53404 229.88968,-0.024 0.01,-244.836621 -63.2541,0"
+       d="m 991.85372,-90.487367 229.88968,-0.024 0.01,175.184786 -63.2541,0"
        style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#marker13265-7-0)" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:nodetypes="cc"
+       sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-67-0-67-7-9-6-2-5-0-6-6-4-3-3-9"
-       d="m 1064.639,136.52002 155.9585,0"
+       d="m 1064.6624,136.52002 157.1118,0 -0.021,-52.249997"
        style="fill:none;stroke:#000000;stroke-width:2.99999928;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-2-6)" />
     <path
        inkscape:export-ydpi="90"
@@ -1260,14 +1260,14 @@
        inkscape:export-filename="/tmp/ssm.png"
        sodipodi:linespacing="125%"
        id="text7745-5-8-47-4-5-0-9-5-3-2"
-       y="-396.29593"
-       x="967.21149"
+       y="-687.2959"
+       x="676.21149"
        style="font-style:normal;font-weight:normal;font-size:22px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
-         y="-396.29593"
-         x="967.21149"
+         y="-687.2959"
+         x="676.21149"
          sodipodi:role="line"
          id="tspan14305-7-1">Overall servo</tspan></text>
   </g>
