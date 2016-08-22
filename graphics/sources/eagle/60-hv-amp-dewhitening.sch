@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="91" name="Nets" color="34" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="33" fill="1" visible="yes" active="yes"/>
@@ -6843,12 +6843,22 @@ Nets connected to this symbol are automatically renamed with 'GND'</description>
 <plain>
 </plain>
 <instances>
-<instance part="R17" gate="A" x="162.56" y="355.6"/>
-<instance part="R25" gate="A" x="180.34" y="363.22"/>
-<instance part="C5" gate="A" x="185.42" y="373.38"/>
+<instance part="R17" gate="A" x="162.56" y="355.6" smashed="yes">
+<attribute name="VALUE" x="162.56" y="358.14" size="1.524" layer="96" font="vector" align="center"/>
+</instance>
+<instance part="R25" gate="A" x="180.34" y="363.22" smashed="yes">
+<attribute name="VALUE" x="180.34" y="365.76" size="1.524" layer="96" font="vector" align="center"/>
+</instance>
+<instance part="C5" gate="A" x="185.42" y="373.38" smashed="yes">
+<attribute name="VALUE" x="185.42" y="378.46" size="1.524" layer="96" font="vector" align="top-center"/>
+</instance>
 <instance part="$6" gate="A" x="172.72" y="350.52" rot="R270"/>
-<instance part="N1" gate="B" x="180.34" y="353.06"/>
-<instance part="R21" gate="A" x="177.8" y="373.38"/>
+<instance part="N1" gate="B" x="180.34" y="353.06" smashed="yes">
+<attribute name="VALUE" x="181.61" y="347.98" size="1.524" layer="96" font="vector"/>
+</instance>
+<instance part="R21" gate="A" x="177.8" y="373.38" smashed="yes">
+<attribute name="VALUE" x="177.8" y="375.92" size="1.524" layer="96" font="vector" align="center"/>
+</instance>
 </instances>
 <busses>
 </busses>

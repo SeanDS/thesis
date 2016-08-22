@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="91" name="Nets" color="34" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="33" fill="1" visible="yes" active="yes"/>
@@ -15102,8 +15102,8 @@ Standard IC package, 6 pins</description>
 <instance part="$48" gate="A" x="27.94" y="43.18" rot="R270"/>
 <instance part="$52" gate="A" x="66.04" y="93.98"/>
 <instance part="$51" gate="A" x="60.96" y="58.42" rot="R180"/>
-<instance part="C25" gate="A" x="55.88" y="22.86" smashed="yes">
-<attribute name="VALUE" x="59.69" y="19.3675" size="1.524" layer="96" rot="R180"/>
+<instance part="C25" gate="A" x="71.12" y="22.86" smashed="yes">
+<attribute name="VALUE" x="77.47" y="19.3675" size="1.524" layer="96" rot="R180"/>
 </instance>
 <instance part="C26" gate="A" x="71.12" y="134.62" smashed="yes">
 <attribute name="VALUE" x="67.31" y="136.8425" size="1.524" layer="96"/>
@@ -15137,8 +15137,8 @@ Standard IC package, 6 pins</description>
 <instance part="R114" gate="A" x="58.42" y="142.24" smashed="yes" rot="MR180">
 <attribute name="VALUE" x="50.6412" y="145.5738" size="1.524" layer="96" rot="MR180"/>
 </instance>
-<instance part="R119" gate="A" x="68.58" y="15.24" smashed="yes" rot="R180">
-<attribute name="VALUE" x="76.3588" y="13.4938" size="1.524" layer="96" rot="R180"/>
+<instance part="R119" gate="A" x="58.42" y="15.24" smashed="yes" rot="R180">
+<attribute name="VALUE" x="66.1988" y="13.4938" size="1.524" layer="96" rot="R180"/>
 </instance>
 <instance part="$62" gate="G$1" x="154.94" y="121.92" rot="R270"/>
 <instance part="$63" gate="G$1" x="154.94" y="35.56" rot="R90"/>
@@ -15197,7 +15197,7 @@ Standard IC package, 6 pins</description>
 <instance part="D30" gate="A" x="83.82" y="35.56" smashed="yes" rot="R180"/>
 <instance part="$53" gate="A" x="83.82" y="86.36" rot="R270"/>
 <instance part="$54" gate="A" x="83.82" y="71.12" rot="R270"/>
-<instance part="D28" gate="A" x="68.58" y="22.86" smashed="yes" rot="R180"/>
+<instance part="D28" gate="A" x="58.42" y="22.86" smashed="yes" rot="R180"/>
 <instance part="D27" gate="A" x="58.42" y="134.62" smashed="yes"/>
 <instance part="F1" gate="A" x="43.18" y="96.52" smashed="yes" rot="R90">
 <attribute name="VALUE" x="45.085" y="96.52" size="1.524" layer="96" font="vector" rot="R90" align="top-center"/>
@@ -15285,26 +15285,6 @@ Standard IC package, 6 pins</description>
 <pinref part="N29" gate="A" pin="OUT"/>
 </segment>
 </net>
-<net name="N$96" class="1">
-<segment>
-<wire x1="55.88" y1="45.72" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="35.56" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="30.48" x2="58.42" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="45.72" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="30.48" x2="50.8" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="22.86" x2="53.34" y2="22.86" width="0.1524" layer="91"/>
-<junction x="50.8" y="35.56"/>
-<junction x="50.8" y="30.48"/>
-<pinref part="N28" gate="A" pin="MT1"/>
-<pinref part="R117" gate="A" pin="2"/>
-<pinref part="R118" gate="A" pin="1"/>
-<pinref part="C25" gate="A" pin="1"/>
-<pinref part="N26" gate="A" pin="OUT2"/>
-<wire x1="43.18" y1="38.1" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$97" class="0">
 <segment>
 <pinref part="R123" gate="A" pin="1"/>
@@ -15338,25 +15318,21 @@ Standard IC package, 6 pins</description>
 </net>
 <net name="N$116" class="1">
 <segment>
-<wire x1="73.66" y1="15.24" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="35.56" x2="76.2" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="35.56" x2="81.28" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="35.56" x2="76.2" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="30.48" x2="68.58" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="45.72" x2="76.2" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="15.24" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="22.86" x2="76.2" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="22.86" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
 <junction x="76.2" y="35.56"/>
-<junction x="76.2" y="30.48"/>
-<junction x="76.2" y="22.86"/>
-<pinref part="R119" gate="A" pin="1"/>
 <pinref part="N28" gate="A" pin="MT2"/>
 <pinref part="R117" gate="A" pin="1"/>
 <pinref part="R118" gate="A" pin="2"/>
 <pinref part="D30" gate="A" pin="C"/>
-<pinref part="D28" gate="A" pin="A"/>
+<pinref part="C25" gate="A" pin="2"/>
+<wire x1="73.66" y1="22.86" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="22.86" x2="76.2" y2="30.48" width="0.1524" layer="91"/>
+<junction x="76.2" y="30.48"/>
 </segment>
 </net>
 <net name="N$123" class="0">
@@ -15396,18 +15372,6 @@ Standard IC package, 6 pins</description>
 <pinref part="R114" gate="A" pin="2"/>
 <pinref part="C26" gate="A" pin="1"/>
 <pinref part="D27" gate="A" pin="C"/>
-</segment>
-</net>
-<net name="N$139" class="1">
-<segment>
-<wire x1="63.5" y1="15.24" x2="60.96" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="22.86" x2="60.96" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="22.86" x2="66.04" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="15.24" x2="60.96" y2="22.86" width="0.1524" layer="91"/>
-<junction x="60.96" y="22.86"/>
-<pinref part="R119" gate="A" pin="2"/>
-<pinref part="C25" gate="A" pin="2"/>
-<pinref part="D28" gate="A" pin="C"/>
 </segment>
 </net>
 <net name="N$56" class="1">
@@ -15600,6 +15564,42 @@ Standard IC package, 6 pins</description>
 <pinref part="R113" gate="A" pin="2"/>
 <pinref part="N25" gate="A" pin="A"/>
 <wire x1="27.94" y1="114.3" x2="30.48" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$96" class="1">
+<segment>
+<wire x1="53.34" y1="15.24" x2="50.8" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="22.86" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="15.24" x2="50.8" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="R119" gate="A" pin="2"/>
+<pinref part="D28" gate="A" pin="C"/>
+<wire x1="55.88" y1="45.72" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="35.56" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="30.48" x2="58.42" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="45.72" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
+<junction x="50.8" y="35.56"/>
+<pinref part="N28" gate="A" pin="MT1"/>
+<pinref part="R117" gate="A" pin="2"/>
+<pinref part="R118" gate="A" pin="1"/>
+<pinref part="N26" gate="A" pin="OUT2"/>
+<wire x1="43.18" y1="38.1" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="22.86" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
+<junction x="50.8" y="22.86"/>
+<junction x="50.8" y="30.48"/>
+</segment>
+</net>
+<net name="N$1" class="1">
+<segment>
+<pinref part="D28" gate="A" pin="A"/>
+<wire x1="60.96" y1="22.86" x2="66.04" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="15.24" x2="66.04" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="15.24" x2="66.04" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="R119" gate="A" pin="1"/>
+<pinref part="C25" gate="A" pin="1"/>
+<wire x1="66.04" y1="22.86" x2="68.58" y2="22.86" width="0.1524" layer="91"/>
+<junction x="66.04" y="22.86"/>
 </segment>
 </net>
 </nets>

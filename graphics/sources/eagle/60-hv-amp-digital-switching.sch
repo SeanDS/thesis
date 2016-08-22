@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="91" name="Nets" color="34" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="33" fill="1" visible="yes" active="yes"/>
@@ -5878,19 +5878,27 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <text x="160.02" y="66.04" size="2.54" layer="97" font="vector" align="center">HV AMPLIFIER</text>
 </plain>
 <instances>
-<instance part="N1" gate="A" x="43.18" y="35.56"/>
-<instance part="T1" gate="A" x="93.98" y="27.94"/>
+<instance part="N1" gate="A" x="43.18" y="35.56" smashed="yes">
+<attribute name="VALUE" x="40.64" y="39.37" size="1.524" layer="96" font="vector"/>
+</instance>
+<instance part="T1" gate="A" x="93.98" y="27.94" smashed="yes"/>
 <instance part="R1" gate="A" x="76.2" y="35.56"/>
 <instance part="R2" gate="A" x="91.44" y="20.32"/>
-<instance part="D1" gate="A" x="104.14" y="27.94" rot="R90"/>
-<instance part="N3" gate="A" x="60.96" y="38.1"/>
+<instance part="D1" gate="A" x="104.14" y="27.94" smashed="yes" rot="R90">
+<attribute name="VALUE" x="107.6325" y="26.035" size="1.524" layer="96" font="vector" rot="R90"/>
+</instance>
+<instance part="N3" gate="A" x="60.96" y="38.1" smashed="yes"/>
 <instance part="X1" gate="A" x="50.8" y="45.72"/>
-<instance part="D2" gate="A" x="142.24" y="27.94" rot="R90"/>
-<instance part="D3" gate="A" x="142.24" y="43.18" rot="R90"/>
+<instance part="D2" gate="A" x="142.24" y="27.94" smashed="yes" rot="R90">
+<attribute name="VALUE" x="145.7325" y="26.035" size="1.524" layer="96" font="vector" rot="R90"/>
+</instance>
+<instance part="D3" gate="A" x="142.24" y="43.18" smashed="yes" rot="R90">
+<attribute name="VALUE" x="145.7325" y="41.275" size="1.524" layer="96" font="vector" rot="R90"/>
+</instance>
 <instance part="$1" gate="A" x="142.24" y="15.24"/>
 <instance part="R3" gate="A" x="149.86" y="43.18" rot="R90"/>
 <instance part="X2" gate="A" x="142.24" y="55.88"/>
-<instance part="N2" gate="A" x="160.02" y="35.56" rot="MR90"/>
+<instance part="N2" gate="A" x="160.02" y="35.56" smashed="yes" rot="MR90"/>
 </instances>
 <busses>
 </busses>
