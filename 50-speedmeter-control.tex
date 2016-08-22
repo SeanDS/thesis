@@ -110,8 +110,9 @@ The circuit's output noise was recorded for a period of \SI{16}{} days alongside
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-time-series.pdf}
-  \caption[Time series of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-time-series}Time series of the output from the BHD noise measurement circuit shown in Figure\,\ref{fig:bhd-noise-electronics}. The op-amp noise (\checkme{blue}) drifts from \num{0} to a level of approximately \SI{-7.3}{\milli\volt} over the 16 days of measurements. Simultaneously, a CDS channel was measured without an input connected (\checkme{orange}) in order to act as a null stream. The temperature was also measured by a sensor within the same housing as the noise circuit (\checkme{green}), showing a drift of around \SI{0.5}{\celsius}.}
+  \caption[Time series of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-time-series}Time series of the output from the BHD noise measurement circuit shown in Figure\,\ref{fig:bhd-noise-electronics}. The op-amp noise (\checkme{blue}) drifts from \num{0} to a level of approximately \SI{-7.3}{\milli\volt} over the 16 days of measurements. Simultaneously, a \gls{CDS} channel was measured without an input connected (\checkme{orange}) such that the input impedance was that of the channel's line receiver, \SI{34}{\mega\ohm}, in order to act as a null stream. The temperature was also measured by a sensor within the same housing as the noise circuit (\checkme{green}), showing a drift of around \SI{0.5}{\celsius}.}
 \end{figure}
+% input resistance based on THS4131 datasheet
 
 \begin{figure}
   \centering
