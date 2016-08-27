@@ -118,13 +118,11 @@ The development of quantum theory showed that the universe contains a continuous
 
 In lasers, a pumped electromagnetic field creates a state which can be used as the input light for an interferometer. This typically involves pumping the field into the \emph{coherent} state in which the average laser amplitude and phase quadratures are well defined, and noise arises from the presence of virtual photons with arbitrary amplitude and phase in the pumped field leading to an uncertainty in the number of photons output from the laser.
 
-In materials, phonons \checkme{arising from thermal energy uncertainty} have a similar effect to vacuum fluctuations and lead to thermal noise.
-
-In general, the noise arising from fluctuations is quantified by the fluctuation dissipation theorem developed in the early \nth{20} Century, which shows that the noise spectral density due to fluctuations,
+Noise in interferometers does not arise solely from the quantum vacuum, however. In general, noise was shown by Callen and Welton to arise from loss processes quantified by their \emph{fluctuation dissipation theorem} developed in the early \nth{20} Century \cite{Callen1951}, which showed that the noise spectral density due to fluctuations,
 \begin{equation}
   S_{\text{fluc}} \propto \frac{T}{Q},
 \end{equation}
-is related not only to the temperature $T$, but also to the quality factor $Q$ relating to the loss of the material.
+is related not only to the temperature $T$, but also to the quality factor $Q$ related to the loss of the material.
 
 The effect of noise on the interferometer can be calculated by quantifying the magnitude of noise entering at the loss point and propagating this noise to the signal detection point where it can potentially mask the signal. The noise at a photodetector is therefore the sum of noise propagated from each point of loss to the readout point. The way in which some forms of noise can enter a \MI{} and propagate to the output port is shown in Figure\,\ref{fig:modelling-noise}.
 
@@ -137,7 +135,7 @@ The effect of noise on the interferometer can be calculated by quantifying the m
 \subsection{Thermal noise}
 Thermal noise arises from loss in materials used to reflect and focus light and to suspend test masses, where photons given a phase change due to thermal excitations are allowed to enter the interferometer and propagate to the sensors.
 
-Thermal noise arises from a material's \emph{loss angle}, which is the imaginary part of the Young's modulus relating applied stress to the corresponding strain of the material. Material with a high loss angle results in an applied stress creating an associated strain at a different time, and during this time the incident light can accumulate noise via thermal fluctuations of the material. The most significant thermal noise contributions in gravitational wave detectors arises from the test mass optical coatings and suspensions.
+Thermal noise arises from a material's \emph{loss angle}, which is the imaginary part of the Young's modulus relating applied stress to the corresponding strain of the material. Material with a high loss angle results in an applied stress creating an associated strain at a different time, and during this time the incident light can accumulate noise via thermal fluctuations of the material. The most significant thermal noise contributions in gravitational wave detectors arise from the test mass optical coatings and suspensions.
 
 \subsubsection{\label{sec:coating-thermal-noise}Coating thermal noise}
 In the conceptual design for the first generation of gravitational wave detectors such as GEO-600 \cite{Willke2002} the designers were not aware that thermal noise associated with the reflective coatings on mirrors would play a significant role in the sensitivity of the interferometers. For a long time it was known that thermal noise would contribute to the sensitivity of the detectors, particularly from the bulk material forming the test masses, but it soon became clear as the detectors were being commissioned that thermal noise arising from the reflective mirror coatings would dominate the thermal noise associated with the test masses in the frequency band of interest despite forming only a tiny fraction of the test masses by volume. Investigations conducted by Harry \etal{} \cite{Harry2002, Harry2007}, among others, concluded that mechanical loss present in the numerous dielectric coating stacks on the test masses required for high reflectivity led to Brownian noise creating a limit to the sensitivity of detectors across a wide range of frequencies. Contributions from thermoelastic noise, arising from the thermal expansion coefficient of the materials of the coatings \cite{Braginsky1999a}, and thermorefractive noise, arising from the change in refractive index caused by fluctuations in the material's temperature \cite{Braginsky2000a}, produce further noise contributions which will become more important as coatings with improved Brownian noise contributions are developed.
@@ -272,15 +270,13 @@ The radiation pressure noise power spectral density is given as \cite{Danilishin
 with reduced mirror mass $m$ and angular frequency of oscillation $\omega = 2 \pi f$. The displacement spectral density, which is $\sqrt{S_{\text{rp}}}$, shows the noise is proportional to $\frac{1}{f^2}$ as expected from a free mass.
 
 \subsubsection{\label{sec:sql}The Standard Quantum Limit}
-Note that Equation\,\ref{eq:rp-noise-psd} is proportional to power whilst Equation\,\ref{eq:shot-noise-psd} is inversely proportional to power. This creates a lower bound on the sensitivity of a classical interferometer though a manifestation of the Heisenberg Uncertainty Principle, termed the \emph{standard quantum limit} (\gls{SQL}).
+Note that Equation\,\ref{eq:rp-noise-psd} is proportional to power whilst Equation\,\ref{eq:shot-noise-psd} is inversely proportional to power. This implies the existence of a lower bound on the achievable sensitivity at a given observation frequency $f$ in the case of uncorrelated shot and radiation pressure noise sources. This bound, known as the \emph{standard quantum limit} (\gls{SQL}) \cite{Braginsky1967}, is a direct consequence of the Heisenberg Uncertainty Principle in a continuous measurement of a test mass.
 
-The \gls{SQL} is the point at which the quadrature sum of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit with amplitude spectral density proportional to $\frac{1}{f}$ which can only be surpassed with special, \emph{sub}-\gls{SQL} techniques. The presence of cavities in the arms of a \MI{} (formed by placing an additional, partially reflecting mirror in each arm) can enhance the power available to be able to reach the \gls{SQL}. In terms of strain, the \gls{SQL} is defined for a \MI{} with arm cavities as \cite{Braginsky1996}:
+The \gls{SQL} is the point at which the sum power spectral density of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit with amplitude spectral density proportional to $\frac{1}{f}$ which can only be surpassed with special, \emph{sub}-\gls{SQL} techniques. The presence of cavities in the arms of a \MI{} (formed by placing an additional, partially reflecting mirror in each arm) can enhance the power available to be able to reach the \gls{SQL}. In terms of strain, the \gls{SQL} is defined for two free test masses separated by a distance $L$ as \cite{Braginsky1996}:
 \begin{equation}
   \label{eq:strainsql}
-  h_{SQL} = \sqrt{\frac{8 \hbar}{m \omega^2 L^2}},
+  h_{SQL} = \sqrt{\frac{8 \hbar}{m \omega^2 L^2}}.
 \end{equation}
-where $L$ represents the \MI{}'s arm length.
-
 The power spectral density for a \MI{} with arm cavities is defined as:
 \begin{equation}
   \label{eq:classicalifospectrum}
@@ -298,7 +294,7 @@ with $I_0$ the laser power at the test masses, $I_{SQL}$ the laser power require
 \end{equation}
 with $m$ the mirror mass, $L$ the arm length and $\omega_0$ the light's angular frequency. The effect of $\kappa$ is described in more detail in Section\,\ref{sec:position-meter-measurement}.
 
-The \gls{SQL} is a locus defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror mass, light power, arm length and cavity bandwidth. By injecting more photons into the interferometer to carry more information regarding the motion of the mirrors, we see a smaller shot noise spectral density (we reduce $\Delta n$) whilst we see a larger radiation pressure noise spectral density (we increase $\Delta \phi$) \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
+The \gls{SQL} is a locus defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror mass, light power, arm length and cavity bandwidth. By injecting more photons into the interferometer to carry more information regarding the motion of the mirrors, we see a smaller shot noise spectral density (we reduce $\Delta \phi$) whilst we see a larger radiation pressure noise spectral density (we increase $\Delta n$) \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
 
 \begin{figure}
   \centering
@@ -306,7 +302,7 @@ The \gls{SQL} is a locus defined at all frequencies, while the spectral density 
   \caption[Standard quantum limit and the quantum noise with various input powers]{\label{fig:sql-vs-input-power}The \gls{SQL} for a Michelson interferometer with arm cavities of length \SI{1}{\kilo\meter}, mirrors with reduced mass \SI{50}{\kilo\gram} and optimal frequency \SI{100}{\hertz}, along with quantum noise limited sensitivity curves for three different intracavity powers. The higher the intracavity power, the higher the strain sensitivity can be pushed, but at the expense of higher radiation pressure noise and thus higher optimal frequency for a given interferometer configuration. Quantum non-demolition techniques can be used to surpass the \gls{SQL} (see Section\,\ref{sec:sub-sql-techniques}).}
 \end{figure}
 
-An important distinction to make here is that the \gls{SQL} is defined for \emph{uncorrelated} shot and radiation pressure noise. Techniques exist in theory and practice to reduce overall noise by producing correlations between the two effects with so-called \emph{quantum non-demolition} interferometry, and this is discussed in greater detail in Section\,\ref{sec:sub-sql-techniques} and Chapter\,\ref{c:speedmeter-intro}.
+An important distinction to make here is that the \gls{SQL} is defined for \emph{uncorrelated} shot and radiation pressure noise. Techniques exist in theory and practice to reduce overall noise by producing correlations between the two noise components with so-called \emph{quantum non-demolition} interferometry, and this is discussed in greater detail in Section\,\ref{sec:sub-sql-techniques} and Chapter\,\ref{c:speedmeter-intro}.
 
 \subsection{Other fundamental noise}
 
