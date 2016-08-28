@@ -27,9 +27,9 @@
      inkscape:window-height="1030"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="521.33545"
-     inkscape:cy="450.04714"
+     inkscape:zoom="4.0000002"
+     inkscape:cx="463.08442"
+     inkscape:cy="360.26429"
      inkscape:window-x="-2"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
@@ -1205,6 +1205,23 @@
        id="linearGradient17961"
        xlink:href="#b-cav-mir-grad-0-3"
        inkscape:collect="always" />
+    <radialGradient
+       id="e-pd1-grad-3"
+       cx="8.8794003"
+       cy="7.4608998"
+       r="17.067101"
+       fx="8.8794003"
+       fy="7.4608998"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         style="stop-color:#FEDE58"
+         id="stop4294-6" />
+      <stop
+         offset="0.6854"
+         style="stop-color:#BA0000"
+         id="stop4296-7" />
+    </radialGradient>
   </defs>
   <path
      style="fill:none;stroke:#ff0000;stroke-width:0.50000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.99999997, 0.99999997;stroke-dashoffset:0;marker-end:none"
@@ -1567,43 +1584,6 @@
        id="rect10"
        style="fill:url(#b-bsp-grad);stroke:#000000;stroke-width:0.75" />
   </g>
-  <g
-     id="g4314"
-     transform="translate(49.56771,-36.653003)">
-    <g
-       transform="matrix(0,1,-1,0,423.4971,490.9807)"
-       id="e-pd1">
-      <radialGradient
-         id="e-pd1-grad"
-         cx="8.8794003"
-         cy="7.4608998"
-         r="17.067101"
-         fx="8.8794003"
-         fy="7.4608998"
-         gradientUnits="userSpaceOnUse">
-        <stop
-           offset="0"
-           style="stop-color:#FEDE58"
-           id="stop4294" />
-        <stop
-           offset="0.6854"
-           style="stop-color:#BA0000"
-           id="stop4296" />
-      </radialGradient>
-      <path
-         style="fill:url(#e-pd1-grad);stroke:#000000;stroke-width:0.75"
-         inkscape:connector-curvature="0"
-         d="m 6.044,1.792 c -0.986,0 -1.936,0.148 -2.835,0.417 l 0,19.01 c 0.899,0.268 1.849,0.416 2.835,0.416 5.479,0 9.921,-4.441 9.921,-9.921 0,-5.48 -4.442,-9.922 -9.921,-9.922 z"
-         id="path4298" />
-      <rect
-         style="stroke:#000000;stroke-width:0.75"
-         x="0.375"
-         y="0.375"
-         width="2.835"
-         height="22.677999"
-         id="rect4300" />
-    </g>
-  </g>
   <path
      style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.00000001, 1.00000001;stroke-dashoffset:0"
      d="m 463.23279,417.46026 -12.10331,1.82491"
@@ -1705,5 +1685,42 @@
        y="0.375"
        x="0.375"
        style="fill:url(#linearGradient17961);stroke:#000000;stroke-width:0.75" />
+  </g>
+  <g
+     id="g4314-5"
+     transform="matrix(0.36776521,0,0,0.35856321,309.91131,278.52062)">
+    <g
+       transform="matrix(0,1,-1,0,423.4971,490.9807)"
+       id="e-pd1-3">
+      <radialGradient
+         id="radialGradient3364"
+         cx="8.8794003"
+         cy="7.4608998"
+         r="17.067101"
+         fx="8.8794003"
+         fy="7.4608998"
+         gradientUnits="userSpaceOnUse">
+        <stop
+           offset="0"
+           style="stop-color:#FEDE58"
+           id="stop3366" />
+        <stop
+           offset="0.6854"
+           style="stop-color:#BA0000"
+           id="stop3368" />
+      </radialGradient>
+      <path
+         style="fill:url(#e-pd1-grad-3);stroke:#000000;stroke-width:2.06534719"
+         inkscape:connector-curvature="0"
+         d="m 6.044,1.792 c -0.986,0 -1.936,0.148 -2.835,0.417 l 0,19.01 c 0.899,0.268 1.849,0.416 2.835,0.416 5.479,0 9.921,-4.441 9.921,-9.921 0,-5.48 -4.442,-9.922 -9.921,-9.922 z"
+         id="path4298-5" />
+      <rect
+         style="stroke:#000000;stroke-width:2.06534719"
+         x="0.375"
+         y="0.375"
+         width="2.835"
+         height="22.677999"
+         id="rect4300-6" />
+    </g>
   </g>
 </svg>
