@@ -120,7 +120,7 @@ ax1.set_ylim((1e-24, 1e-18))
 ax1.legend(['Michelson', 'SQL'], loc='upper right', framealpha=lf.default_settings['legend.framealpha'])
 
 # set labels
-ax1.set_ylabel('Sensitivity (1 / sqrt(Hz))')
+ax1.set_ylabel('Sensitivity\n(1 / sqrt(Hz))')
 ax1.set_xlabel('Frequency (Hz)')
 
 plt.tight_layout()
