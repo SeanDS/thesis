@@ -159,115 +159,35 @@ As \KAGRA{} will be a cryogenic detector, it does not gain the same noise benefi
 At higher frequencies, suspension \emph{violin modes} have a significant influence on the measured noise \cite{Robertson2002}. A violin mode with high quality factor can resonantly enhance noise such that it dominates all other sources in a narrow band at frequencies starting around a few hundred \SI{}{\hertz}\footnote{Figure\,\ref{fig:aligo-noise-budget} appears to show that violin modes are not dominant, however the narrow linewidth of the noise is such that the resolution is insufficient to show the effect.}. This is reduced through the use of heavier test masses, which push the violin mode frequencies higher, away from the detection band, and with special monitoring techniques \cite{Sorazu2010}.
 
 \subsection{\label{sec:quantum-noise}Quantum noise and the Standard Quantum Limit}
-Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light power to determine displacement.} limits its sensitivity. One of the results of quantum theory is that two non-commuting observables cannot be simultaneously known to full precision. For two operators $\hat{O}_+$ and $\hat{O}_-$, there exists an error $\epsilon$:
-\begin{equation}
- \left[ \hat{O}_+, \hat{O}_- \right] = \epsilon;
-\end{equation}
-this means that the observables contain correlated components and as such cannot be considered entirely separate entities. Measuring one observable automatically influences the other, leading to the well-known \emph{Heisenberg Uncertainty Principle}:
-\begin{equation}
- \left| \Delta \hat{O}_+ \right| \cdot \left| \Delta \hat{O}_- \right| \geq
-\frac{1}{2} \left| \epsilon \right|,
-\end{equation}
-where $\Delta$ represents the uncertainty in the given operator, in this case defined as the standard deviation.
+Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light power to determine displacement.} limits its sensitivity.
 
-\subsubsection{\label{sec:operator-uncertainty}Position, momentum, phase and photon number uncertainty}
-
-In the field of gravitational wave interferometry there are two pairs of operators of particular importance, namely the position and momentum operators, $x$ and $p_x$, and the photon number and phase operators, $n$ and $\phi$, respectively. The canonical commutation relation between $x$ and $p_x$ is given as:
-\begin{equation}
- | \Delta x\left( t \right) | \cdot |\Delta p_x\left( t \right) | \geq
-\frac{\hbar}{2},
- \label{eq:heisenburguncertainty}
-\end{equation}
-where $\hbar$ is the reduced Planck constant. Consider a position measurement of a free mirror of mass $m$ being perturbed by a signal of frequency $f$. If a measurement is made at time $t$ and then again at time $t + \Delta t$, the uncertainty on the latter can be expressed in terms of the uncertainty in momentum of the mirror multiplied by the time difference:
-\begin{equation}
- \Delta x \left( t + \Delta t \right) = \Delta x \left( t \right) + \Delta p_x
-\left( t \right) \frac{\Delta t}{m}.
- \label{eq:heisenburgtime}
-\end{equation}
-This result shows that the momentum of the mirror at time $t$ influences the position of the mirror at a later time. Since momentum is position scaled by velocity, this leads to a minimum value on which $x \left( t \right)$ can take:
-\begin{equation}
- \Delta x \left( t \right) \geq \sqrt{\frac{\hbar \Delta t}{2m}}.
-\end{equation}
-The key result to highlight here is that, even with an otherwise unperturbed mirror, the momentum imparted by the measurement at time $t$ influences the later measurement at $t + \Delta t$ in such a way that it adds uncertainty. Or, put another way, Equation\,\ref{eq:heisenburguncertainty} expresses that the smaller the error on the position of an observable in a quantum mechanical system, the greater the error on the momentum; and vice-versa. This will become important for new interferometer topologies considered later in Chapter,\ref{c:speedmeter-intro}.
-
-We typically make position measurements indirectly via the change in phase of photons from a laser. In this case, the most appropriate uncertainty relation to use is the photon number-phase relation:
-\begin{equation}
-  \label{eq:photon-phase-hup}
-  \Delta n \Delta \phi \geq \frac{1}{2}.
-\end{equation}
-Assuming that a photodetector has incident upon it $n$ photons in a given interval, the standard deviation of the number of photons detected per unit time will follow Poisson statistics, i.e. $\Delta n = \sqrt{\bar{n}}$, where $\bar{n}$ is the average photon number calculated by considering many intervals. A single photon has energy $E_P$ given by the standard relation:
-\begin{equation}
-  E_P = hf,
-\end{equation}
-and so the power in the beam at a given interval is then:
-\begin{equation}
-  \begin{split}
-    P &= E_P n \\
-      &= hfn.
-  \end{split}
-\end{equation}
-The measurement of power is simply the energy multiplied by its complex conjugate, i.e. $P = E^{\ast}E$, and so we can recover the original energy of the light from the measurement of power:
-\begin{equation}
-  \left| E \right| = \sqrt{hfn}.
-\end{equation}
-Given that:
-\begin{equation}
-  \frac{\Delta \left| E \right|}{\Delta n} = \frac{d \left| E \right|}{dn},
-\end{equation}
-we can obtain the standard deviation of the measured amplitude:
-\begin{equation}
-  \label{eq:std-dev-amp}
-  \begin{split}
-    \Delta \left| E \right| &= \frac{d \left| E \right|}{dn} \Delta n \\
-                            &= \frac{1}{2} \sqrt{\frac{hf}{n}} \Delta n \\
-                            &= \frac{1}{2} \sqrt{hf} \\
-                            &= \frac{1}{2} \sqrt{E_P}.
-  \end{split}
-\end{equation}
-Note that this variation does not depend on photon number, and is instead defined only in terms of a fundamental constant and the laser frequency. This is the origin of quantum noise, and the lack of dependence on light power justifies the inclusion of arm cavities in gravitational wave detectors as discussed in Section\,\ref{sec:fabry-perot-cavities}.
-
-The effect the amplitude variation has on the phase uncertainty can be calculated by expressing it as the fractional energy uncertainty:
-\begin{equation}
-  \label{eq:phase-uncertainty}
-  \begin{split}
-    \Delta \phi &= \frac{\Delta \left| E \right|}{\left| \bar{E} \right|} \\
-                &= \frac{\sqrt{hf}}{2} \frac{1}{\sqrt{hf \bar{n}}} \\
-                &= \frac{1}{2 \sqrt{\bar{n}}} \\
-                &= \frac{1}{2 \Delta n}.
-  \end{split}
-\end{equation}
-From the last line in Equation\,\ref{eq:phase-uncertainty} we can recover a result resembling that given in Equation\,\ref{eq:photon-phase-hup}:
-\begin{equation}
-  \label{eq:photon-phase-hup-min}
-  \Delta n \Delta \phi = \frac{1}{2}.
-\end{equation}
-The reason for the $=$ in Equation\,\ref{eq:photon-phase-hup-min} is that an assumption has been made in Equation\,\ref{eq:std-dev-amp} that the energy uncertainty is made from equal parts amplitude and phase uncertainty. This is called a \emph{coherent state} and this approximates what a standard laser will output\footnote{Actually, lasers are typically quite incoherent on their own, and experimentalists must first ``mode clean'' the light to remove unwanted incoherent states. Mode-cleaning cavities are implemented in some experiments to perform this task.}, albeit alongside significant classical amplitude and phase fluctuations at lower frequencies. Equation\,\ref{eq:photon-phase-hup} contains a $\geq$ and is therefore a general equation representing all states, including \emph{squeezed} states, which will be discussed in Section\,\ref{sec:squeezing}.
+Classical laser light in the \emph{coherent state}, approximating what a standard laser will output, contains equal parts amplitude and phase uncertainty. The phase fluctuations appearing at the sensor used to measure the output of the interferometer and amplitude fluctuations interacting with the interferometer's test masses create noise at the measurement ports\footnote{A more rigorous derivation of both effects can be found in for example \cite{Danilishin2012}.}. A fundamental limit to the sensitivity of classical interferometers arises from the combination of these two effects; this is described in more detail in Section\,\ref{sec:sql}.
 
 \subsubsection{\label{sec:quantum-shot-noise}Quantum shot noise}
-As described in Section\,\ref{sec:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter. When this noise is measured by a photodetector it is termed \emph{quantum shot noise}, and it arises directly from the phase uncertainty derived in Section\,\ref{sec:operator-uncertainty}. We change representation from discrete pulses to a continuous measurement made by a laser by representing $n$ in Equation\,\ref{eq:photon-phase-hup-min} as a light power $P$ via the relation
-\begin{equation}
-  P = \frac{n \hbar \omega_0}{\Delta t}.
-\end{equation}
-The displacement-equivalent shot noise power spectral density then arises from the phase uncertainty:
+As described in Section\,\ref{sec:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter, and when this noise is measured by a photodetector it appears as \emph{quantum shot noise}. The phase fluctuations upon the light produce a varying photocurrent due to the stochastic arrival of photons at the sensor. The displacement-equivalent power spectral density of shot noise in an interferometer is:
 \begin{equation}
   \label{eq:shot-noise-psd}
-  S_{\text{shot}} = \frac{\hbar c^2}{P \omega_0}.
+  S_{\text{shot}} = \frac{\hbar c^2}{P \omega_0},
 \end{equation}
-As quantum noise arises from vacuum noise\textemdash spontaneous creation and annihilation of photons in the vacuum\textemdash it is a statistical random process and so the shot noise spectral density in Equation\,\ref{eq:shot-noise-psd} has equal power at all frequencies; it is \emph{white} noise.
+for intra-cavity power $P$ and laser angular frequency $\omega_0$. As quantum noise arises from vacuum noise\textemdash spontaneous creation and annihilation of photons in space\textemdash it is a statistical random process and so the shot noise spectral density has equal power at all frequencies; it is \emph{white} noise. In terms of strain equivalent noise we take the square root of the power spectral density and normalise to the arm length $L$:
+\begin{equation}
+  h_{\text{shot}} = \frac{1}{L} \sqrt{\frac{\hbar c^2}{P \omega_0}}.
+\end{equation}
 
-The detrimental effect of counting statistics due to phase uncertainty is mitigated by an increase in the classical light power within the interferometer. As the noise entering the interferometer is a function of loss and is to first order not dependent upon laser power, higher input power leads to an increase in signal with respect to noise and so the sensitivity is increased.
+The detrimental effect on the sensitivity due to phase uncertainty is mitigated by an increase in the classical light power within the interferometer. As the noise entering the interferometer is a function of loss and is to first order not dependent upon laser power, higher input power leads to an increase in signal with respect to noise and so the sensitivity is increased.
 
 \subsubsection{\label{sec:quantum-rp-noise}Quantum radiation pressure noise}
 Despite being massless, photons impart momentum to mirrors upon reflection proportional to their wavelength. The strongest effect this has on an interferometer is via \emph{\gls{DC} radiation pressure}, which arises from the classical light power circulating within the interferometer. In a suspended interferometer this radiation pressure effect extends the microscopic arm cavity length, with the equilibrium point being defined by the equivalence of the radiation pressure force to the suspension's restoring force.
 
-\emph{Quantum} radiation pressure, on the other hand, arises from the momentum imparted onto mirrors within the interferometer by virtual photons present within the interferometer from the laser and loss points, as shown in Section\,\ref{sec:noise-via-loss}. As with quantum shot noise this effect is related to the input power of the interferometer, but in this case the input power facilitates phase fluctuations that become transformed into displacement noise via the dynamics of the mirror. Mirror dynamics govern the displacement noise due to back-action. The spectrum of noise from virtual photons is white so the energy imparted to the mirror is the same at all frequencies and therefore the effect of radiation pressure follows an inverse frequency relation.
-
-The radiation pressure noise power spectral density is given as \cite{Danilishin2012}:
+\emph{Quantum} radiation pressure, on the other hand, arises from the fluctuating momentum imparted onto the test masses by virtual photons present within the interferometer from the laser and loss points. As with quantum shot noise this effect is related to the input power of the interferometer, but in this case the input power facilitates the transformation of vacuum fluctuations into strain noise via the dynamics of the mirror. Amplitude fluctuations upon the light beat with the classical field, creating a force noise. This fluctuating force changes the position of the mirror microscopically via its mechanical susceptibility and this appears as phase noise at the output port. As the spectrum of noise from virtual photons is white the energy imparted to the mirror is the same at all frequencies. The mechanical susceptibility of a free mass is, however, inversely proportional to frequency, and so in terms of strain this noise source is most important at low frequencies. The radiation pressure noise power spectral density is given as:
 \begin{equation}
   \label{eq:rp-noise-psd}
   S_{\text{rp}} = \frac{P \hbar \omega_0}{c^2 m^2 \omega^4},
 \end{equation}
-with reduced mirror mass $m$ and angular frequency of oscillation $\omega = 2 \pi f$. The displacement spectral density, which is $\sqrt{S_{\text{rp}}}$, shows the noise is proportional to $\frac{1}{f^2}$ as expected from a free mass.
+with reduced mirror mass $m$ and angular frequency of mirror oscillation $\omega = 2 \pi f$. The strain noise spectral density shows the noise is proportional to $\frac{1}{f^2}$ as expected from a free mass:
+\begin{equation}
+  h_{\text{rp}} = \frac{1}{L} \sqrt{\frac{P \hbar \omega_0}{c^2 m^2 \omega^4}}.
+\end{equation}
 
 \subsubsection{\label{sec:sql}The Standard Quantum Limit}
 Note that Equation\,\ref{eq:rp-noise-psd} is proportional to power whilst Equation\,\ref{eq:shot-noise-psd} is inversely proportional to power. This implies the existence of a lower bound on the achievable sensitivity at a given observation frequency $f$ in the case of uncorrelated shot and radiation pressure noise sources. This bound, known as the \emph{standard quantum limit} (\gls{SQL}) \cite{Braginsky1967}, is a direct consequence of the Heisenberg Uncertainty Principle in a continuous measurement of a test mass.
@@ -294,7 +214,7 @@ with $I_0$ the laser power at the test masses, $I_{SQL}$ the laser power require
 \end{equation}
 with $m$ the mirror mass, $L$ the arm length and $\omega_0$ the light's angular frequency. The effect of $\kappa$ is described in more detail in Section\,\ref{sec:position-meter-measurement}.
 
-The \gls{SQL} is a locus defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror mass, light power, arm length and cavity bandwidth. By injecting more photons into the interferometer to carry more information regarding the motion of the mirrors, we see a smaller shot noise spectral density (we reduce $\Delta \phi$) whilst we see a larger radiation pressure noise spectral density (we increase $\Delta n$) \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
+The \gls{SQL} is a locus defined at all frequencies, while the spectral density of a quantum noise limited interferometer touches the \gls{SQL} at only one frequency, defined by the mirror mass, light power, arm length and cavity bandwidth. By injecting more photons into the interferometer to carry more information regarding the motion of the mirrors, we see a smaller shot noise spectral density whilst we see a larger radiation pressure noise spectral density \cite{Caves1981}. This situation is illustrated in Figure\,\ref{fig:sql-vs-input-power} for different input powers.
 
 \begin{figure}
   \centering
