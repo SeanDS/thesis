@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="91" name="Nets" color="34" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="33" fill="1" visible="yes" active="yes"/>
@@ -8984,6 +8984,24 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <sheets>
 <sheet>
 <plain>
+<text x="177.8" y="345.44" size="2.54" layer="97" font="vector" align="center">10 dB DEWHITENER</text>
+<text x="248.92" y="342.9" size="2.54" layer="97" font="vector" align="center">10 dB DEWHITENER</text>
+<text x="129.54" y="383.54" size="2.54" layer="97" font="vector" align="center">LINE RECEIVER</text>
+<text x="210.82" y="363.22" size="2.54" layer="97" font="vector" align="center">DEWHITENING
+SWITCH</text>
+<text x="281.94" y="360.68" size="2.54" layer="97" font="vector" align="center">DEWHITENING
+SWITCH</text>
+<text x="218.44" y="327.66" size="2.54" layer="97" font="vector" align="center">POSITIVE HV AMPLIFIER</text>
+<text x="218.44" y="266.7" size="2.54" layer="97" font="vector" align="center">NEGATIVE HV AMPLIFIER</text>
+<text x="149.86" y="269.24" size="2.54" layer="97" font="vector" align="center">INVERTER</text>
+<text x="279.4" y="317.5" size="2.54" layer="97" font="vector" align="center">POSITIVE
+HV OUTPUT</text>
+<text x="279.4" y="241.3" size="2.54" layer="97" font="vector" align="center">NEGATIVE
+HV OUTPUT</text>
+<text x="279.4" y="287.02" size="2.54" layer="97" font="vector" rot="R180" align="center">POSITIVE
+MONITOR OUTPUT</text>
+<text x="279.4" y="271.78" size="2.54" layer="97" font="vector" rot="R180" align="center">NEGATIVE
+MONITOR OUTPUT</text>
 </plain>
 <instances>
 <instance part="R1" gate="A" x="116.84" y="358.14" smashed="yes">
@@ -9022,19 +9040,19 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <attribute name="VALUE" x="185.42" y="378.46" size="1.524" layer="96" font="vector" align="top-center"/>
 </instance>
 <instance part="$6" gate="A" x="172.72" y="350.52" rot="R270"/>
-<instance part="R29" gate="A" x="231.14" y="353.06" smashed="yes">
-<attribute name="VALUE" x="231.14" y="355.6" size="1.524" layer="96" font="vector" align="center"/>
+<instance part="R29" gate="A" x="233.68" y="353.06" smashed="yes">
+<attribute name="VALUE" x="233.68" y="355.6" size="1.524" layer="96" font="vector" align="center"/>
 </instance>
-<instance part="R37" gate="A" x="248.92" y="360.68" smashed="yes">
-<attribute name="VALUE" x="248.92" y="363.22" size="1.524" layer="96" font="vector" align="center"/>
+<instance part="R37" gate="A" x="251.46" y="360.68" smashed="yes">
+<attribute name="VALUE" x="251.46" y="363.22" size="1.524" layer="96" font="vector" align="center"/>
 </instance>
-<instance part="C9" gate="A" x="254" y="370.84" smashed="yes">
-<attribute name="VALUE" x="254" y="375.92" size="1.524" layer="96" font="vector" align="top-center"/>
+<instance part="C9" gate="A" x="256.54" y="370.84" smashed="yes">
+<attribute name="VALUE" x="256.54" y="375.92" size="1.524" layer="96" font="vector" align="top-center"/>
 </instance>
-<instance part="$10" gate="A" x="241.3" y="347.98" rot="R270"/>
+<instance part="$10" gate="A" x="243.84" y="347.98" rot="R270"/>
 <instance part="N1" gate="A" x="134.62" y="355.6" smashed="yes"/>
 <instance part="N1" gate="B" x="180.34" y="353.06" smashed="yes"/>
-<instance part="N1" gate="C" x="248.92" y="350.52" smashed="yes"/>
+<instance part="N1" gate="C" x="251.46" y="350.52" smashed="yes"/>
 <instance part="N1" gate="D" x="149.86" y="251.46" smashed="yes">
 <attribute name="VALUE" x="151.13" y="246.38" size="1.524" layer="96" font="vector"/>
 </instance>
@@ -9103,8 +9121,8 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <instance part="R21" gate="A" x="177.8" y="373.38" smashed="yes">
 <attribute name="VALUE" x="177.8" y="375.92" size="1.524" layer="96" font="vector" align="center"/>
 </instance>
-<instance part="R33" gate="A" x="246.38" y="370.84" smashed="yes">
-<attribute name="VALUE" x="246.38" y="373.38" size="1.524" layer="96" font="vector" align="center"/>
+<instance part="R33" gate="A" x="248.92" y="370.84" smashed="yes">
+<attribute name="VALUE" x="248.92" y="373.38" size="1.524" layer="96" font="vector" align="center"/>
 </instance>
 <instance part="R57" gate="A" x="218.44" y="320.04" smashed="yes">
 <attribute name="VALUE" x="218.44" y="322.58" size="1.524" layer="96" font="vector" align="center"/>
@@ -9113,7 +9131,7 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <attribute name="VALUE" x="218.44" y="261.62" size="1.524" layer="96" font="vector" align="center"/>
 </instance>
 <instance part="N5" gate="A" x="205.74" y="353.06" smashed="yes" rot="MR0"/>
-<instance part="N9" gate="A" x="274.32" y="350.52" smashed="yes" rot="MR0"/>
+<instance part="N9" gate="A" x="276.86" y="350.52" smashed="yes" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -9226,17 +9244,17 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <net name="N$8" class="0">
 <segment>
 <pinref part="R37" gate="A" pin="1"/>
-<wire x1="243.84" y1="360.68" x2="238.76" y2="360.68" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="360.68" x2="238.76" y2="353.06" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="353.06" x2="241.3" y2="353.06" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="360.68" x2="241.3" y2="360.68" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="360.68" x2="241.3" y2="353.06" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="353.06" x2="243.84" y2="353.06" width="0.1524" layer="91"/>
 <pinref part="R29" gate="A" pin="2"/>
-<wire x1="238.76" y1="353.06" x2="236.22" y2="353.06" width="0.1524" layer="91"/>
-<junction x="238.76" y="353.06"/>
+<wire x1="241.3" y1="353.06" x2="238.76" y2="353.06" width="0.1524" layer="91"/>
+<junction x="241.3" y="353.06"/>
 <pinref part="N1" gate="C" pin="IN-"/>
 <pinref part="R33" gate="A" pin="1"/>
-<wire x1="241.3" y1="370.84" x2="238.76" y2="370.84" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="370.84" x2="238.76" y2="360.68" width="0.1524" layer="91"/>
-<junction x="238.76" y="360.68"/>
+<wire x1="243.84" y1="370.84" x2="241.3" y2="370.84" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="370.84" x2="241.3" y2="360.68" width="0.1524" layer="91"/>
+<junction x="241.3" y="360.68"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -9405,18 +9423,18 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 </net>
 <net name="WHITENING_1" class="0">
 <segment>
-<label x="187.96" y="342.9" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-<wire x1="187.96" y1="342.9" x2="205.74" y2="342.9" width="0.1524" layer="91"/>
+<label x="187.96" y="340.36" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="187.96" y1="340.36" x2="205.74" y2="340.36" width="0.1524" layer="91"/>
 <pinref part="N5" gate="A" pin="D"/>
-<wire x1="205.74" y1="342.9" x2="205.74" y2="347.98" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="340.36" x2="205.74" y2="347.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="WHITENING_2" class="0">
 <segment>
-<label x="256.54" y="340.36" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-<wire x1="256.54" y1="340.36" x2="274.32" y2="340.36" width="0.1524" layer="91"/>
+<label x="259.08" y="337.82" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="259.08" y1="337.82" x2="276.86" y2="337.82" width="0.1524" layer="91"/>
 <pinref part="N9" gate="A" pin="D"/>
-<wire x1="274.32" y1="340.36" x2="274.32" y2="345.44" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="337.82" x2="276.86" y2="345.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -9470,10 +9488,10 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <pinref part="R41" gate="A" pin="1"/>
 <wire x1="119.38" y1="254" x2="124.46" y2="254" width="0.1524" layer="91"/>
 <pinref part="N9" gate="A" pin="S1"/>
-<wire x1="281.94" y1="350.52" x2="284.48" y2="350.52" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="350.52" x2="284.48" y2="335.28" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="335.28" x2="119.38" y2="335.28" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="335.28" x2="119.38" y2="312.42" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="350.52" x2="287.02" y2="350.52" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="350.52" x2="287.02" y2="332.74" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="332.74" x2="119.38" y2="332.74" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="332.74" x2="119.38" y2="312.42" width="0.1524" layer="91"/>
 <junction x="119.38" y="312.42"/>
 </segment>
 </net>
@@ -9506,31 +9524,31 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <net name="N$13" class="0">
 <segment>
 <pinref part="R29" gate="A" pin="1"/>
-<wire x1="226.06" y1="353.06" x2="223.52" y2="353.06" width="0.1524" layer="91"/>
-<wire x1="264.16" y1="353.06" x2="264.16" y2="381" width="0.1524" layer="91"/>
-<wire x1="264.16" y1="381" x2="223.52" y2="381" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="381" x2="223.52" y2="353.06" width="0.1524" layer="91"/>
-<junction x="223.52" y="353.06"/>
+<wire x1="228.6" y1="353.06" x2="226.06" y2="353.06" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="353.06" x2="266.7" y2="381" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="381" x2="226.06" y2="381" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="381" x2="226.06" y2="353.06" width="0.1524" layer="91"/>
+<junction x="226.06" y="353.06"/>
 <pinref part="N5" gate="A" pin="S1"/>
-<wire x1="213.36" y1="353.06" x2="223.52" y2="353.06" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="353.06" x2="226.06" y2="353.06" width="0.1524" layer="91"/>
 <pinref part="N9" gate="A" pin="S2A"/>
-<wire x1="264.16" y1="353.06" x2="266.7" y2="353.06" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="353.06" x2="269.24" y2="353.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="R37" gate="A" pin="2"/>
-<wire x1="259.08" y1="360.68" x2="254" y2="360.68" width="0.1524" layer="91"/>
-<wire x1="259.08" y1="360.68" x2="259.08" y2="370.84" width="0.1524" layer="91"/>
-<junction x="259.08" y="360.68"/>
+<wire x1="261.62" y1="360.68" x2="256.54" y2="360.68" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="360.68" x2="261.62" y2="370.84" width="0.1524" layer="91"/>
+<junction x="261.62" y="360.68"/>
 <pinref part="N1" gate="C" pin="OUT"/>
-<wire x1="256.54" y1="350.52" x2="259.08" y2="350.52" width="0.1524" layer="91"/>
-<wire x1="259.08" y1="350.52" x2="259.08" y2="360.68" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="350.52" x2="261.62" y2="350.52" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="350.52" x2="261.62" y2="360.68" width="0.1524" layer="91"/>
 <pinref part="C9" gate="A" pin="2"/>
-<wire x1="256.54" y1="370.84" x2="259.08" y2="370.84" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="370.84" x2="261.62" y2="370.84" width="0.1524" layer="91"/>
 <pinref part="N9" gate="A" pin="S2B"/>
-<wire x1="259.08" y1="350.52" x2="266.7" y2="350.52" width="0.1524" layer="91"/>
-<junction x="259.08" y="350.52"/>
+<wire x1="261.62" y1="350.52" x2="269.24" y2="350.52" width="0.1524" layer="91"/>
+<junction x="261.62" y="350.52"/>
 </segment>
 </net>
 <net name="N$52" class="0">
@@ -9562,4 +9580,10 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>

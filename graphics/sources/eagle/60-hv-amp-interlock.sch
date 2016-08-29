@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="91" name="Nets" color="34" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="33" fill="1" visible="yes" active="yes"/>
@@ -9012,6 +9012,18 @@ ____&lt;br&gt;&lt;br&gt;
 <sheets>
 <sheet>
 <plain>
+<text x="147.32" y="180.34" size="2.54" layer="97" font="vector" align="center-left">TEMPERATURE
+TRIP</text>
+<text x="137.16" y="233.68" size="2.54" layer="97" font="vector" align="center-right">INTERLOCK
+TRIP</text>
+<text x="116.84" y="177.8" size="2.54" layer="97" font="vector" align="center">VOLTAGE
+COMPARATOR</text>
+<text x="198.12" y="215.9" size="2.54" layer="97" font="vector" align="center">CONTROL
+SIGNAL</text>
+<text x="81.28" y="157.48" size="2.54" layer="97" font="vector" align="center">TEMPERATURE
+SENSOR INPUT</text>
+<text x="132.08" y="205.74" size="2.54" layer="97" font="vector" align="center">INTERLOCK
+INPUT</text>
 </plain>
 <instances>
 <instance part="R109" gate="A" x="106.68" y="208.28" smashed="yes">
@@ -9048,19 +9060,19 @@ ____&lt;br&gt;&lt;br&gt;
 <instance part="N23" gate="A" x="142.24" y="187.96" smashed="yes" rot="MR0"/>
 <instance part="$44" gate="A" x="132.08" y="223.52" rot="R270"/>
 <instance part="$46" gate="A" x="154.94" y="248.92"/>
-<instance part="$45" gate="A" x="137.16" y="187.96" rot="R270"/>
+<instance part="$45" gate="A" x="132.08" y="187.96" rot="R270"/>
 <instance part="N24" gate="A" x="198.12" y="205.74" smashed="yes"/>
 <instance part="$47" gate="A" x="154.94" y="213.36"/>
-<instance part="D25" gate="A" x="172.72" y="223.52" smashed="yes"/>
-<instance part="D26" gate="A" x="172.72" y="187.96" smashed="yes"/>
-<instance part="R150" gate="A" x="198.12" y="215.9" smashed="yes" rot="R180">
-<attribute name="VALUE" x="198.12" y="218.44" size="1.524" layer="96" font="vector" rot="R180" align="center"/>
+<instance part="D25" gate="A" x="162.56" y="223.52" smashed="yes"/>
+<instance part="D26" gate="A" x="162.56" y="187.96" smashed="yes"/>
+<instance part="R150" gate="A" x="180.34" y="215.9" smashed="yes" rot="R90">
+<attribute name="VALUE" x="182.88" y="215.9" size="1.524" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
-<instance part="R151" gate="A" x="198.12" y="195.58" smashed="yes" rot="R180">
-<attribute name="VALUE" x="198.12" y="198.12" size="1.524" layer="96" font="vector" rot="R180" align="center"/>
+<instance part="R151" gate="A" x="180.34" y="180.34" smashed="yes" rot="R90">
+<attribute name="VALUE" x="182.88" y="180.34" size="1.524" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
-<instance part="$210" gate="A" x="203.2" y="215.9" rot="R90"/>
-<instance part="$211" gate="A" x="203.2" y="195.58" rot="R90"/>
+<instance part="$210" gate="A" x="180.34" y="210.82"/>
+<instance part="$211" gate="A" x="180.34" y="175.26"/>
 </instances>
 <busses>
 </busses>
@@ -9079,7 +9091,7 @@ ____&lt;br&gt;&lt;br&gt;
 <segment>
 <pinref part="N23" gate="A" pin="S2B"/>
 <pinref part="$45" gate="A" pin="GND"/>
-<wire x1="134.62" y1="187.96" x2="137.16" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="187.96" x2="134.62" y2="187.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="N22" gate="A" pin="S2B"/>
@@ -9132,7 +9144,7 @@ ____&lt;br&gt;&lt;br&gt;
 <pinref part="N22" gate="A" pin="S1"/>
 <wire x1="154.94" y1="223.52" x2="149.86" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="D25" gate="A" pin="A"/>
-<wire x1="154.94" y1="223.52" x2="170.18" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="223.52" x2="160.02" y2="223.52" width="0.1524" layer="91"/>
 <junction x="154.94" y="223.52"/>
 </segment>
 </net>
@@ -9152,7 +9164,7 @@ ____&lt;br&gt;&lt;br&gt;
 <pinref part="N23" gate="A" pin="S1"/>
 <wire x1="149.86" y1="187.96" x2="154.94" y2="187.96" width="0.1524" layer="91"/>
 <pinref part="D26" gate="A" pin="A"/>
-<wire x1="154.94" y1="187.96" x2="170.18" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="187.96" x2="160.02" y2="187.96" width="0.1524" layer="91"/>
 <junction x="154.94" y="187.96"/>
 </segment>
 </net>
@@ -9240,12 +9252,13 @@ ____&lt;br&gt;&lt;br&gt;
 <segment>
 <pinref part="N24" gate="A" pin="I1"/>
 <wire x1="187.96" y1="208.28" x2="193.04" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="215.9" x2="187.96" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="215.9" x2="187.96" y2="208.28" width="0.1524" layer="91"/>
-<pinref part="R150" gate="A" pin="2"/>
-<wire x1="193.04" y1="215.9" x2="187.96" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="223.52" x2="187.96" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="D25" gate="A" pin="C"/>
-<wire x1="187.96" y1="223.52" x2="175.26" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="223.52" x2="180.34" y2="223.52" width="0.1524" layer="91"/>
+<pinref part="R150" gate="A" pin="2"/>
+<wire x1="180.34" y1="223.52" x2="165.1" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="220.98" x2="180.34" y2="223.52" width="0.1524" layer="91"/>
+<junction x="180.34" y="223.52"/>
 </segment>
 </net>
 <net name="N$35" class="0">
@@ -9253,12 +9266,12 @@ ____&lt;br&gt;&lt;br&gt;
 <pinref part="N24" gate="A" pin="I2"/>
 <pinref part="D26" gate="A" pin="C"/>
 <wire x1="187.96" y1="203.2" x2="193.04" y2="203.2" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="187.96" x2="187.96" y2="187.96" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="187.96" x2="187.96" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="195.58" x2="187.96" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="187.96" x2="180.34" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="187.96" x2="187.96" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="187.96" x2="187.96" y2="203.2" width="0.1524" layer="91"/>
 <pinref part="R151" gate="A" pin="2"/>
-<wire x1="193.04" y1="195.58" x2="187.96" y2="195.58" width="0.1524" layer="91"/>
-<junction x="187.96" y="195.58"/>
+<wire x1="180.34" y1="185.42" x2="180.34" y2="187.96" width="0.1524" layer="91"/>
+<junction x="180.34" y="187.96"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -9274,4 +9287,10 @@ ____&lt;br&gt;&lt;br&gt;
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>

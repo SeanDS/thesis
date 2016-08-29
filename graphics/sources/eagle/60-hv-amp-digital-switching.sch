@@ -5874,12 +5874,22 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <sheet>
 <plain>
 <wire x1="121.92" y1="71.12" x2="121.92" y2="10.16" width="0.1524" layer="97" style="longdash"/>
-<text x="76.2" y="66.04" size="2.54" layer="97" font="vector" align="center">DIGITAL OUTPUT CARD</text>
-<text x="160.02" y="66.04" size="2.54" layer="97" font="vector" align="center">HV AMPLIFIER</text>
+<text x="66.04" y="66.04" size="3.81" layer="97" font="vector" align="center">DIGITAL OUTPUT CARD</text>
+<text x="172.72" y="66.04" size="3.81" layer="97" font="vector" align="center">HV AMPLIFIER</text>
+<text x="60.96" y="30.48" size="2.54" layer="97" font="vector" align="center">OPTOCOUPLER</text>
+<text x="35.56" y="43.18" size="2.54" layer="97" font="vector" align="center">INVERTER</text>
+<text x="96.52" y="15.24" size="2.54" layer="97" font="vector" align="center">TRANSISTOR</text>
+<text x="195.58" y="35.56" size="2.54" layer="97" font="vector" align="center">DIGITAL
+SWITCH</text>
+<text x="162.56" y="43.18" size="2.54" layer="97" font="vector" align="center">PULL-UP
+RESISTOR</text>
+<text x="17.78" y="25.4" size="2.54" layer="97" font="vector" align="center">DIGITAL
+CONTROL
+INPUT</text>
 </plain>
 <instances>
-<instance part="N1" gate="A" x="43.18" y="35.56" smashed="yes">
-<attribute name="VALUE" x="40.64" y="39.37" size="1.524" layer="96" font="vector"/>
+<instance part="N1" gate="A" x="35.56" y="35.56" smashed="yes">
+<attribute name="VALUE" x="33.02" y="39.37" size="1.524" layer="96" font="vector"/>
 </instance>
 <instance part="T1" gate="A" x="93.98" y="27.94" smashed="yes"/>
 <instance part="R1" gate="A" x="76.2" y="35.56"/>
@@ -5898,7 +5908,7 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <instance part="$1" gate="A" x="142.24" y="15.24"/>
 <instance part="R3" gate="A" x="149.86" y="43.18" rot="R90"/>
 <instance part="X2" gate="A" x="142.24" y="55.88"/>
-<instance part="N2" gate="A" x="160.02" y="35.56" smashed="yes" rot="MR90"/>
+<instance part="N2" gate="A" x="180.34" y="35.56" smashed="yes" rot="MR90"/>
 </instances>
 <busses>
 </busses>
@@ -5906,15 +5916,15 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <net name="N$1" class="0">
 <segment>
 <pinref part="N1" gate="A" pin="O"/>
-<wire x1="53.34" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="35.56" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="N3" gate="A" pin="C"/>
 </segment>
 </net>
 <net name="DIGITAL_CONTROL" class="0">
 <segment>
 <pinref part="N1" gate="A" pin="I"/>
-<wire x1="38.1" y1="35.56" x2="35.56" y2="35.56" width="0.1524" layer="91"/>
-<label x="35.56" y="35.56" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="30.48" y1="35.56" x2="27.94" y2="35.56" width="0.1524" layer="91"/>
+<label x="27.94" y="35.56" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -5977,7 +5987,7 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <pinref part="R3" gate="A" pin="N$DUMMY@1"/>
 <wire x1="149.86" y1="35.56" x2="149.86" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="N2" gate="A" pin="D"/>
-<wire x1="149.86" y1="35.56" x2="154.94" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="35.56" x2="175.26" y2="35.56" width="0.1524" layer="91"/>
 <junction x="149.86" y="35.56"/>
 </segment>
 </net>
@@ -6010,36 +6020,35 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 <wire x1="142.24" y1="50.8" x2="137.16" y2="50.8" width="0.1524" layer="91"/>
 <label x="137.16" y="50.8" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 <junction x="142.24" y="50.8"/>
-<pinref part="R3" gate="A" pin="N$DUMMY@2"/>
-<wire x1="149.86" y1="50.8" x2="149.86" y2="48.26" width="0.1524" layer="91"/>
-<junction x="149.86" y="50.8"/>
 <wire x1="149.86" y1="50.8" x2="142.24" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="X2" gate="A" pin="1"/>
 <wire x1="142.24" y1="50.8" x2="142.24" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="R3" gate="A" pin="N$DUMMY@2"/>
+<wire x1="149.86" y1="48.26" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="V_OUTPUT" class="0">
 <segment>
 <pinref part="N2" gate="A" pin="S1"/>
-<wire x1="160.02" y1="27.94" x2="160.02" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="20.32" x2="175.26" y2="20.32" width="0.1524" layer="91"/>
-<label x="175.26" y="20.32" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="180.34" y1="27.94" x2="180.34" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="20.32" x2="195.58" y2="20.32" width="0.1524" layer="91"/>
+<label x="195.58" y="20.32" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="WHITENED_INPUT" class="0">
 <segment>
 <pinref part="N2" gate="A" pin="S2B"/>
-<wire x1="160.02" y1="43.18" x2="160.02" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="50.8" x2="175.26" y2="50.8" width="0.1524" layer="91"/>
-<label x="175.26" y="50.8" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="180.34" y1="43.18" x2="180.34" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="50.8" x2="195.58" y2="50.8" width="0.1524" layer="91"/>
+<label x="195.58" y="50.8" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="UNWHITENED_INPUT" class="0">
 <segment>
 <pinref part="N2" gate="A" pin="S2A"/>
-<wire x1="162.56" y1="43.18" x2="162.56" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="48.26" x2="175.26" y2="48.26" width="0.1524" layer="91"/>
-<label x="175.26" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="182.88" y1="43.18" x2="182.88" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="48.26" x2="195.58" y2="48.26" width="0.1524" layer="91"/>
+<label x="195.58" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 </nets>
@@ -6047,4 +6056,10 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
