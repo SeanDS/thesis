@@ -38,3 +38,5 @@
 *.pyc
 *.glsdefs
 *.nlo
+*.s#*
+*.b#*
