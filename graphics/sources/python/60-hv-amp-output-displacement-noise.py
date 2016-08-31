@@ -73,9 +73,19 @@ force_noise = force_with_noise - signal_force
 # displacement noise is the force noise multiplied by the suspension transfer function
 displacement_noise = force_noise * suspension_tf
 
+# sensitivity requirement
+f2 = data_noise_budget[:, 0]
+requirement = data_noise_budget[:, 1]
+
 # plot HV output noise projected into displacement
 ax1.loglog(f, displacement_noise, '-', color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data_noise_budget[:, 0], data_noise_budget[:, 1], '--', color=colours.shades['black'], alpha=lf.ALPHA_LINE_A)
+ax1.loglog(f2, requirement, '--', color=colours.shades['black'], alpha=lf.ALPHA_LINE_A)
+
+# frequencies to fill
+fill_indices = np.where(np.logical_and(f >= 100, f <= 700))
+
+# fill low frequency region, using same colour as shaded blue region of layout
+ax1.fill_between(f2[fill_indices], 1, requirement[fill_indices[0]], facecolor='#008cff', alpha=0.5)
 
 ax1.set_ylabel('Displacement noise (m / sqrt(Hz))')
 ax1.set_xlabel('Frequency (Hz)')
