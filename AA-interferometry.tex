@@ -1,13 +1,11 @@
 \chapter{\label{a:interferometry}Interferometric fundamentals}
 \section{Interferometer fields}
-* Intro to field equations of Fabry-Perot. Perhaps generalise to Michelson? Point reader towards analytical calculation of DRFPMI (Ken Strain paper).
-
-We define the field amplitude of light across dimension $x$ as:
+We can define the field amplitude of light across dimension $x$ as:
 \begin{equation}
   \label{eq:field-amplitude}
   E = E_0 \text{e}^{\text{i} kx},
 \end{equation}
-for initial amplitude $E_0$ and wavenumber $k = \frac{2 \pi}{\lambda}$, where $\lambda$ denotes wavelength. Upon transmission through an optic, the transmitted field is equal to the input field, $E_{\text{in}}$, scaled by the optic's field transmissivity, $t$:
+using the same terms as shown in Equation\,\ref{eq:em-propagation}. Upon transmission through an optic, the transmitted field is equal to the input field, $E_{\text{in}}$, scaled by the optic's field transmissivity, $t$:
 \begin{equation}
   \label{eq:transmitted-field}
   E_{\text{t}} = tE_{\text{in}}.
@@ -17,10 +15,9 @@ The reflected field is similarly scaled by the optic's field reflectivity, $r$:
   \label{eq:reflected-field}
   E_{\text{r}} = \text{i}rE_{\text{in}}.
 \end{equation}
-Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. We choose to apply this phase shift to the reflected field by convention (see Appendix\,\ref{a:reflection-phase}).
+Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. Here we choose to apply this phase shift to the reflected field by convention (see Appendix\,\ref{a:reflection-phase}).
 
 \section{\label{sec:simple-cavities}Simple cavities}
-\note{Make sure this is consistent with PDH description etc. later, i.e. reflected field is E7 or whatever, etc.}
 
 \begin{figure}
   \centering
@@ -79,9 +76,9 @@ With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected fiel
                    &= E_{\text{in}} T.
   \end{split}
 \end{equation}
-The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. This is an important figure of merit for cavities and will be especially important in the later chapters of this work \note{change this to IS important in chapters xxx...}.
+The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. Transfer functions are important figures of merit for cavities and they are used extensively throughout the main body of this work.
 
-The reflected field transfer function $T$ is shown in Figure\,\ref{fig:cavity-tf}. This shows that when the cavity resonance condition is not met, the field incident upon the \gls{ITM} is mainly reflected. Close to resonance, the phase of the incident light and the \gls{ITM} is favourable for transmission, leading to the majority of the light being transmitted into the cavity. The width of the trough is determined by the cavity mirror transmissivities and reflectivities. \note{Define ITM in Figure A.1}
+The reflected field transfer function $T$ is shown in Figure\,\ref{fig:cavity-tf}. This shows that when the cavity resonance condition is not met, the field incident upon the \gls{ITM} is mainly reflected. Close to resonance, the phase of the incident light and the \gls{ITM} is favourable for transmission, leading to the majority of the light being coupled into the cavity. The width of the trough is determined by the cavity mirror transmissivities and reflectivities.
 
 \begin{figure}
   \centering
@@ -92,7 +89,6 @@ The reflected field transfer function $T$ is shown in Figure\,\ref{fig:cavity-tf
 For asymmetric cavities, cavities with non-unity end mirror transmissivity and more complicated arrangements such as compound mirrors, the algebra involved in calculating transfer functions quickly becomes unwieldy and it is beneficial to utilise simulation tools (see Appendix\,\ref{a:simulation-tools}).
 
 \subsection{\label{sec:cavity-fom}Cavity figures of merit}
-\note{Should add something about gamma here, the half-bandwidth of a cavity, for chapter 4}
 Resonance is achieved within a \FP{} cavity by making the microscopic length equivalent to an integer number of half-wavelengths for a given carrier. For this we can look at the ratio of the field in the cavity to the field entering it:
 \begin{equation}
   \frac{a_1}{a_0} = \frac{\text{i} t}{1 - r_1 r_2 \text{e}^{2\text{i}kD}},
@@ -120,9 +116,13 @@ The frequency offset between successive resonant peaks is termed the \emph{free 
   \text{FSR} = \frac{c_0}{2L}.
 \end{equation}
 
-Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maximum} (\gls{FWHM}), or \emph{linewidth}, which represents the width of a resonant peak at half of its maximum power, in units of frequency. As the width of the resonant peak is a function of mirror reflectivity, the \gls{FWHM} is defined:
+Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maximum} (\gls{FWHM}), also known as the \emph{linewidth}, which represents the width of a resonant peak at half of its maximum power, in units of frequency. As the width of the resonant peak is a function of mirror reflectivity, the \gls{FWHM} is defined:
 \begin{equation}
   \text{FWHM} = \frac{c_0}{\pi L} \sin^{-1}{\left( \frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}} \right)}.
+\end{equation}
+Sometimes used in the literature is the \emph{half-bandwidth}, $\gamma$, equivalent to half of the \gls{FWHM}:
+\begin{equation}
+  \gamma = \frac{\text{FWHM}}{2}.
 \end{equation}
 
 The ratio of the \gls{FSR} to the \gls{FWHM} defines the cavity \emph{finesse}, $\mathcal{F}$, defined as:
@@ -133,7 +133,7 @@ which indicates the cavity's ability to store photons. It is closely related to 
 \begin{equation}
 Q = \frac{f_0}{\text{FSR}} \mathcal{F}.
 \end{equation}
-The finesse and quality factor indicate the time it would take for light to escape a resonant cavity in the event that the input light source were to be removed. A more technical use for the finesse figure is to quickly approximate the stored power in a cavity on resonance as a function of the input. \note{Show example of high and low finesse plots}
+The finesse and quality factor indicate the time it would take for light to escape a resonant cavity in the event that the input light source were to be removed. A more technical use for the finesse figure is to quickly approximate the stored power in a cavity on resonance as a function of the input.
 
 \section{\label{sec:signal-sidebands}Signal sidebands}
 The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $r$ in amplitude:
@@ -172,7 +172,7 @@ and we can manipulate this expression to show the presence of exactly one upper 
   E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + \frac{m}{2} \text{e}^{\text{i} \omega t} + \frac{m}{2} \text{e}^{-\text{i} \omega t} \right).
 \end{equation}
 
-The sideband structure created by amplitude and phase modulation is shown in Figure\,\ref{fig:sideband-structure}. This shows the magnitude of the frequency components, with the infinite set of phase modulation sidebands containing the same collective magnitude as the two amplitude modulation sidebands, for identical modulation depth. In reality, the arrows are phasors that rotate in the complex plane at different velocities. The upper sidebands rotate more quickly than the carrier, whilst the lower sidebands rotate more slowly. At any given point, the resultant phase modulation vector has magnitude equivalent to that of the two amplitude modulation sidebands (see Figure XXX).
+The sideband structure created by amplitude and phase modulation is shown in Figure\,\ref{fig:sideband-structure}. This shows the magnitude of the frequency components, with the infinite set of phase modulation sidebands containing the same collective magnitude as the two amplitude modulation sidebands, for identical modulation depth.
 
 \begin{figure}
   \centering
