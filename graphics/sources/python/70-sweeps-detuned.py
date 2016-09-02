@@ -66,7 +66,7 @@ ax1.plot(data_carm[:, 0] * x_scale_factor_carm, data_carm_combined * y_scale_fac
 ax1.vlines(0, -1 * y_scale_factor_carm, 1 * y_scale_factor_carm, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax1.set_ylabel('Power (mW)')
-ax1.set_xlabel('Offset (pm)')
+ax1.set_xlabel('Offset (pm)\n(A)')
 
 ax1.set_xlim([-3e-11 * x_scale_factor_carm, 3e-11 * x_scale_factor_carm])
 ax1.set_ylim([-200e-3 * y_scale_factor_carm, 200e-3 * y_scale_factor_carm])
@@ -99,7 +99,7 @@ ax2.plot(data_darm[:, 0] * x_scale_factor_darm, data_darm[:, 1] * y_scale_factor
 ax2.vlines(darm_offset * x_scale_factor_darm, 1e-3 * y_scale_factor_darm, 1e1 * y_scale_factor_darm, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax2.set_ylabel('Power (mW)')
-ax2.set_xlabel('Offset (pm)')
+ax2.set_xlabel('Offset (pm)\n(B)')
 
 ax2.set_xlim([-3e-11 * x_scale_factor_darm, 3e-11 * x_scale_factor_darm])
 ax2.set_ylim([1e-3 * y_scale_factor_darm, 1e-1 * y_scale_factor_darm])
@@ -126,7 +126,7 @@ ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_mich[:, 2] * y_scale_factor
 ax3.vlines(0, -1 * y_scale_factor_mich, 1 * y_scale_factor_mich, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax3.set_ylabel('Power (mW)')
-ax3.set_xlabel('Offset (nm)')
+ax3.set_xlabel('Offset (nm)\n(C)')
 
 ax3.set_xlim([-5e-8 * x_scale_factor_mich, 5e-8 * x_scale_factor_mich])
 ax3.set_ylim([-0.7e-3 * y_scale_factor_mich, 0.5e-3 * y_scale_factor_mich])
@@ -153,7 +153,7 @@ ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_prcl[:, 1] * y_scale_factor
 ax4.vlines(0, -1 * y_scale_factor_prcl, 1 * y_scale_factor_prcl, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 ax4.set_ylabel('Power (mW)')
-ax4.set_xlabel('Offset (nm)')
+ax4.set_xlabel('Offset (nm)\n(D)')
 
 ax4.set_xlim([-1e-8 * x_scale_factor_prcl, 1e-8 * x_scale_factor_prcl])
 ax4.set_ylim([-0.5e-3 * y_scale_factor_prcl, 0.5e-3 * y_scale_factor_prcl])
@@ -192,7 +192,7 @@ ax5.vlines(srm_offset * x_scale_factor_srcl, -1 * y_scale_factor_srcl, 1 * y_sca
 ax5.hlines(srcl_sig_offset * y_scale_factor_srcl, -1e-6 * x_scale_factor_srcl, 1e-6 * x_scale_factor_srcl, colors=colour_line_2, linestyles='dashed', zorder=2)
 
 ax5.set_ylabel('Power (mW)')
-ax5.set_xlabel('Offset (nm)')
+ax5.set_xlabel('Offset (nm)\n(E)')
 
 ax5.set_xlim([(srm_offset + -1e-8) * x_scale_factor_srcl, (srm_offset + 1e-8) * x_scale_factor_srcl])
 ax5.set_ylim([0 * y_scale_factor_srcl, 7e-3 * y_scale_factor_srcl])
