@@ -267,7 +267,7 @@ The following measurements were made:
 \end{itemize}
 Each of the spectral densities shown were produced using Fourier transforms of the time domain signal (see Appendix\,\ref{sec:fourier-transform}), and to avoid windowing effects as discussed in Appendix\,\ref{sec:windowing} the measurements were made with averages across three bands: \SI{250}{\milli\hertz} to \SI{200}{\hertz} (\num{16} averages), \SI{4}{\hertz} to \SI{3.2}{\kilo\hertz} (\num{64} averages) and \SI{128}{\hertz} to \SI{102.4}{\kilo\hertz} (\num{1024} averages). The measured monitor noise is above the input noise of the spectrum analyser in all cases.
 
-The left y-axis shows the measured monitor noise. The right y-axis shows the noise projected into equivalent noise on the \gls{HV} output. The noise is different in the case of zero (orange) or full (green) \gls{DC} output not because of an input voltage dependency but rather due to the inclusion of the \gls{CDS} \glspl{DAC} in the signal path in the latter case which contribute noise as discussed in Section\,\ref{sec:adcs-and-dacs}.
+The left y-axis shows the measured monitor noise. The right y-axis shows the noise projected into equivalent noise on the \gls{HV} output. The noise is different in the case of zero (orange) or full (green) \gls{DC} output not because of an input voltage dependency but rather due to the inclusion of the \gls{CDS} \glspl{DAC} in the signal path in the latter case which contribute noise as discussed in Section\,\ref{sec:adcs-and-dacs}. Some large amplitude noise is present around \SI{50}{\hertz} and its first harmonic due to pick-up from the electricity mains on the power supply.
 
 \begin{figure}
   \centering
@@ -321,7 +321,7 @@ The \gls{ETM} displacement this would create is then simply the product of the f
 % % claim about voltage output of PA98 comes from figure 8: ``power Response'' on p7 of PA98 datasheet (https://www.apexanalog.com/resources/products/pa98u.pdf)
 
 \section{Outlook}
-For the control of suspended test masses at high frequencies, parallel plate capacitor \glspl{ESD} provide a low noise alternative to voice coils and their geometry can prevent clipping losses suffered by metal comb \glspl{ESD}. It is intended for parallel plate capacitor \glspl{ESD} to be used as the high frequency actuators in the \SSMEXPT{} presented in Chapter\,\ref{c:speedmeter-intro}, and in order to provide actuation at the required level an \gls{HV} signal with suitably high magnitude and low noise must be available. The technical design of an \gls{HV} amplifier was presented which meets the experiment's range and noise requirements.
+For the control of suspended test masses at high frequencies, parallel plate capacitor \glspl{ESD} provide a low noise alternative to voice coils and their geometry can prevent clipping losses suffered by metal comb \glspl{ESD}. It is intended for parallel plate capacitor \glspl{ESD} to be used as the high frequency actuators in the \SSMEXPT{} presented in Chapter\,\ref{c:speedmeter-intro}, and in order to provide actuation at the required level an \gls{HV} signal with suitably high magnitude and low noise must be available. The technical design of an \gls{HV} amplifier was presented which meets the experiment's range and noise requirements, providing output up to \SI{750}{\volt} with noise of around \SI{20}{\micro\volt\per\sqrthz} in the frequency band of interest.
 
 \begin{sidewaysfigure}
   \includegraphics[width=\textwidth]{graphics/60-hv-amp-top.pdf}
