@@ -87,18 +87,23 @@ We can represent these noise sources in terms of common and differential modes a
 \end{align}
 Standard op-amps contain \emph{inverting} and \emph{non-inverting} inputs and the output current is proportional to the difference between the two inputs. This subtraction results in the cancellation of common mode noise at the two inputs, so it makes sense to use op-amps to receive the signals sent from \gls{CDS}. An op-amp's ability to remove common mode noise is expressed as its \emph{common mode rejection ratio} (\gls{CMRR}), defined as the logarithm of the ratio of the amplifier's differential and common mode gains $G_{\left( - \right)}$ and $G_{\left( + \right)}$, respectively:
 \begin{equation}
+  \label{eq:cmrr}
   \text{CMRR} = 20 \log_{10} \left( \frac{G_{\left(-\right)}}{G_{\left(+\right)}} \right),
 \end{equation}
 with the resulting number expressed in decibels.
 
-Injecting channels $A$ and $B$ into an op-amp, we get:
-\begin{align}
-  S_{\text{out}} &= G_{\left(-\right)} \left(A - B\right) + G_{\left(+\right)} \frac{\left(A + B\right)}{2} \\
-                 &= G_{\left(-\right)} \left(2S + n_{\left(-\right)}\right) + G_{\left(+\right)} \frac{n_{\left(+\right)}}{2},
-\end{align}
-and an op-amp with high \gls{CMRR} will result in only differential noise having any significance at the output. Differential noise is kept to a minimum by ensuring that $A$ and $B$ are transmitted through the same shielded cable.
+The output of an op-amp in terms of its differential and common mode gain is \cite{Horowitz2015}:
+\begin{equation}
+  S_{\text{out}} = G_{\left(-\right)} \left(A - B\right) + G_{\left(+\right)} \frac{\left(A + B\right)}{2},
+\end{equation}
+and given the definitions of $A$ and $B$ above, this becomes:
+\begin{equation}
+  \label{eq:op-amp-common-diff}
+  S_{\text{out}} = G_{\left(-\right)} \left(2S + n_{\left(-\right)}\right) + G_{\left(+\right)} \frac{n_{\left(+\right)}}{2}.
+\end{equation}
+Given Equation\,\ref{eq:cmrr}, an op-amp with high \gls{CMRR} implies $G_{\left(-\right)} \gg G_{\left(+\right)}$, and so Equation\,\ref{eq:op-amp-common-diff} shows that an op-amp with high \gls{CMRR} will result in only differential noise having any significance at the output. The unsuppressed differential noise is kept to a minimum by ensuring that $A$ and $B$ are transmitted through the same shielded cable.
 
-A standard low-noise op-amp such as the OPA277 provides \gls{CMRR} of \SI{120}{\deci\bel} at \SI{100}{\hertz}, and configured with $G_{\left(-\right)} = 1$ this would result in $n_{\left(+\right)}$ being suppressed by a factor $10^6$ which should be sufficient for a standard laboratory environment.
+A standard low-noise op-amp such as the OPA277 provides \gls{CMRR} of \SI{120}{\deci\bel} at \SI{100}{\hertz}; this would result in $n_{\left(+\right)}$ being suppressed by a factor $10^6$ which should be sufficient for a standard laboratory environment.
 
 \subsubsection{High voltage output}
 Only the potential difference between the plates of each \gls{ESD} determines its force actuation, not the magnitude of the voltage with respect to ground at any one plate. To suppress the effect of noise from the op-amps used to produce the high voltage signals, however, it is best to create the potential difference $V$ by producing balanced contributions of $\frac{V}{2}$ at the cathode and $\frac{-V}{2}$ at the anode. This is to reduce the effect of current noise, which depends on the output voltage, from the \gls{HV} op-amp used to generate the signal. The noise from identical \gls{HV} op-amps is then suppressed by a factor $\sqrt{2}$ between the plates. This requires two \gls{HV} op-amps per output channel.
@@ -130,10 +135,10 @@ A series of digital outputs from \gls{CDS} can be used to control the \gls{HV} a
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/60-hv-amp-digital-switching.pdf}
-  \caption[Digital signalling between the control and data acquisition system and a channel within the high voltage amplifier]{\label{fig:hv-amp-sigital-switching}Digital signalling between \gls{CDS} and a channel within the \gls{HV} amplifier. The digital control signal operates an optocoupler which allows current to flow from the $V_{\text{HIGH}}$ voltage reference to a transistor which operates the analogue control signal $V_{\text{CONTROL}}$. This signal is used by the \gls{CMOS} switch in the \gls{HV} amplifier to select either the dewhitened or non-dewhitened signals.}
+  \caption[Digital signalling between the control and data acquisition system and a channel within the high voltage amplifier]{\label{fig:hv-amp-sigital-switching}Digital signalling between \gls{CDS} and a channel within the \gls{HV} amplifier. The digital control signal operates an optocoupler which allows current to flow from the $V_{\text{HIGH}}$ voltage reference to a transistor which operates the analogue control signal $V_{\text{CONTROL}}$. This signal is used by the \gls{CMOS} switch in the \gls{HV} amplifier to select either the dewhitened or unfiltered inputs.}
 \end{figure}
 
-The analogue input to the \gls{HV} amplifier for a particular channel is split into two with one passed through the dewhitening filter and the other unperturbed. These two signals form the poles of a \emph{complementary metal-oxide semiconductor} (\gls{CMOS}) switch, chosen for its switching speed, controlled by a threshold signal which connects to one of the digital outputs of the \gls{CDS} card via a shielded transmission line. Due to the \emph{active low} operation of the digital output card the dewhitening filter threshold signal $V_{\text{CONTROL}}$ must nominally be $V_{\text{HIGH}}$ which is achieved through the use of a pull-up resistor. When dewhitening is desired, an output of \num{1} at the optocoupler results in a low-resistance path between the control signal and ground and so the control signal within the amplifier becomes $V_{\text{LOW}}$. A truth table is shown in Table\,\ref{tab:digital-dewhitening-truth-table}.
+The analogue input to the \gls{HV} amplifier for a particular channel is split into two with one passed through the dewhitening filter and the other passed through unfiltered. These two signals, the ``dewhitened'' and ``normal'' inputs, respectively, as shown in Figure\,\ref{fig:hv-amp-sigital-switching}, form the poles of a \emph{complementary metal-oxide semiconductor} (\gls{CMOS}) switch, selected for its rapid switching speed. The analogue output from this switch is either the dewhitened or normal input, as determined by a threshold sensor at the switch control input. If the control voltage is near to \SI{15}{\volt} the output is the dewhitened input, and if it is near to ground the output is the normal input. The switch control input is connected to one of the digital outputs of the \gls{CDS} card via a shielded transmission line, represented by the dashed vertical line. Also transmitted between the circuits are the reference voltages $V_{\text{HIGH}}$ and $V_{\text{LOW}}$, set to \SI{15}{\volt} and ground, respectively. The software on \gls{CDS} determines whether the control voltage is set to $V_{\text{HIGH}}$ or $V_{\text{LOW}}$. Due to the \emph{active low} operation of the digital output card, i.e. that the application of a current to the optocoupler's \gls{LED} (corresponding to a digital control input of \num{1}) results in the control voltage becoming $V_{\text{LOW}}$, the dewhitening filter threshold signal $V_{\text{CONTROL}}$ must be referenced to $V_{\text{HIGH}}$. This is achieved in the \gls{HV} amplifier circuit through the use of a pull-up resistor. When dewhitening is desired, an output of \num{1} at the optocoupler results in a low-resistance path between the control signal and ground and so the control signal within the amplifier becomes $V_{\text{LOW}}$. A truth table for the logic between \gls{CDS} and the \gls{HV} amplifier is shown in Table\,\ref{tab:digital-dewhitening-truth-table}.
 
 \begin{table}
   \centering
@@ -262,12 +267,12 @@ The following measurements were made:
 \end{itemize}
 Each of the spectral densities shown were produced using Fourier transforms of the time domain signal (see Appendix\,\ref{sec:fourier-transform}), and to avoid windowing effects as discussed in Appendix\,\ref{sec:windowing} the measurements were made with averages across three bands: \SI{250}{\milli\hertz} to \SI{200}{\hertz} (\num{16} averages), \SI{4}{\hertz} to \SI{3.2}{\kilo\hertz} (\num{64} averages) and \SI{128}{\hertz} to \SI{102.4}{\kilo\hertz} (\num{1024} averages). The measured monitor noise is above the input noise of the spectrum analyser in all cases.
 
-The projected \gls{HV} channel noise is different in the case of zero or full \gls{DC} output not because of an input voltage dependency but rather due to the inclusion of the \gls{CDS} \glspl{DAC} in the signal path in the latter case which contribute noise as discussed in Section\,\ref{sec:adcs-and-dacs}.
+The left y-axis shows the measured monitor noise. The right y-axis shows the noise projected into equivalent noise on the \gls{HV} output. The noise is different in the case of zero (orange) or full (green) \gls{DC} output not because of an input voltage dependency but rather due to the inclusion of the \gls{CDS} \glspl{DAC} in the signal path in the latter case which contribute noise as discussed in Section\,\ref{sec:adcs-and-dacs}.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-output-noise.pdf}
-  \caption[High voltage amplifier output noise]{\gls{HV} amplifier output noise. The noise of the amplifier was measured using the monitor output of the first channel and the noise shown has been corrected for the monitor pick-off fraction. The \checkme{green} curve shows the noise from the amplifier when the input is at maximum and includes the noise contribution from the \glspl{DAC} on \gls{CDS}. The \checkme{orange} curve shows the noise when \gls{CDS} is not connected. The noise floor of the spectrum analyser used to make these measurements is shown in \checkme{blue}.}
+  \caption[High voltage amplifier output noise]{\gls{HV} amplifier output noise. The noise of the amplifier was measured using the monitor output of the first channel, and this is shown in the green and orange traces using the left y-axis. The output noise projected from the monitor to the \gls{HV} rails is shown on the right y-axis. The green trace represents the noise from the amplifier when the input is at maximum and includes the noise contribution from the \glspl{DAC} on \gls{CDS}. The orange trace shows the output noise when \gls{CDS} is not connected. The noise floor of the SR785 spectrum analyser used to make these measurements is shown in blue.}
   \label{fig:hv-amp-output-noise}
 \end{figure}
 

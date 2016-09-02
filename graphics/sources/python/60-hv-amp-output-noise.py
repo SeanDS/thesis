@@ -29,6 +29,7 @@ data = np.genfromtxt(data_path, delimiter=delimiter, skip_header=n_headers, dtyp
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 
 ax1 = fig.gca()
+ax2 = ax1.twinx()
 
 # colour wheel
 colours = lf.Colours()
@@ -37,12 +38,12 @@ colour_a = colours.next()
 colour_b = colours.next()
 colour_c = colours.next()
 
-# calibrate noise for HV (monitor only measures 1/100th of noise)
-data[:, [2, 3, 6, 7, 10, 11]] *= 100
-
 lf_select = data[:, 0] < 100
 mf_select = np.logical_and(data[:, 4] >= 100, data[:, 4] < 1000)
 hf_select = data[:, 8] >= 1000
+
+# gain applied to monitor signal to get HV
+hv_gain = 100
 
 # plot SR785 noise
 p1 = ax1.loglog(data[lf_select, 0], data[lf_select, 1], '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
@@ -59,11 +60,17 @@ p3 = ax1.loglog(data[lf_select, 0], data[lf_select, 3], '-', color=colour_c, alp
 ax1.loglog(data[mf_select, 4], data[mf_select, 7], '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data[hf_select, 8], data[hf_select, 11], '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Noise (V / sqrt(Hz))')
+ax1.set_ylabel('Measured monitor noise (V / sqrt(Hz))')
 ax1.set_xlabel('Frequency (Hz)')
 
 ax1.set_xlim([1e0, 1e5])
-ax1.set_ylim([1e-9, 1e-3])
+ax1.set_ylim([1e-9, 1e-4])
+
+# this axis doesn't have any data, but set its limits to match ax1 but with x100 (to represent HV noise)
+# need fake plot to make the y-axis scale properly
+ax2.loglog(1e-30, 1e-30)
+ax2.set_ylabel('Projected HV noise (V / sqrt(Hz))')
+ax2.set_ylim([1e-7, 1e-2])
 
 ax1.grid(True)
 
