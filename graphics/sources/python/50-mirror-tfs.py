@@ -34,9 +34,6 @@ colours = lf.Colours()
 colour_a = colours.next()
 colour_b = colours.next()
 colour_c = colours.next()
-colour_d = colours.next()
-colour_e = colours.next()
-colour_f = colours.next()
 
 # {'M2a to BHD', 'M2b to BHD', 'DARM to BHD', ...
 # 'M6 to BHD', 'M7 to BHD', 'M9 to BHD', 'M2a to PDH_A', ...
@@ -47,13 +44,11 @@ colour_f = colours.next()
 ax1.loglog(data[:, 0], np.absolute(data[:, 3]), '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data[:, 0], np.absolute(data[:, 4]), '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data[:, 0], np.absolute(data[:, 5]), '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
-ax1.loglog(data[:, 0], np.absolute(data[:, 6]), '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
 # plot phase
 ax2.semilogx(data[:, 0], np.angle(data[:, 3]) * 180 / np.pi, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data[:, 0], np.angle(data[:, 4]) * 180 / np.pi, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data[:, 0], np.angle(data[:, 5]) * 180 / np.pi, '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
-ax2.semilogx(data[:, 0], np.angle(data[:, 6]) * 180 / np.pi, '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Response to BHD\nreadout (W / m)')
 ax2.set_xlabel('Frequency (Hz)')
@@ -63,7 +58,7 @@ ax2.set_ylabel(u'Phase (°)')
 #ax1.set_ylim([1e-2, 1e1])
 #ax2.set_ylim([-180, 180])
 
-ax1.set_yticks([1e-2, 1e0, 1e2, 1e4, 1e6, 1e8, 1e10, 1e12])
+ax1.set_yticks([1e4, 1e6, 1e8, 1e10, 1e12])
 
 # set y-labels for phase
 ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
@@ -73,7 +68,7 @@ ax2.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend([r'$L_{(-)}$', r'$M_6$', r'$M_7$', r'$M_9$'], loc='lower left')
+ax1.legend([r'$L_{(-)}$', r'$M_6$', r'$M_7$'], loc='upper left', framealpha=lf.default_settings['legend.framealpha'])
 
 plt.tight_layout()
 
