@@ -5886,6 +5886,13 @@ RESISTOR</text>
 <text x="17.78" y="25.4" size="2.54" layer="97" font="vector" align="center">DIGITAL
 CONTROL
 INPUT</text>
+<text x="165.1" y="27.94" size="2.54" layer="97" font="vector" align="center">SWITCH
+CONTROL
+INPUT</text>
+<text x="203.2" y="58.42" size="2.54" layer="97" font="vector" align="center">ANALOGUE
+INPUTS</text>
+<text x="203.2" y="12.7" size="2.54" layer="97" font="vector" align="center">ANALOGUE
+OUTPUT</text>
 </plain>
 <instances>
 <instance part="N1" gate="A" x="35.56" y="35.56" smashed="yes">
@@ -6035,7 +6042,7 @@ INPUT</text>
 <label x="195.58" y="20.32" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
-<net name="WHITENED_INPUT" class="0">
+<net name="DEWHITENED_INPUT" class="0">
 <segment>
 <pinref part="N2" gate="A" pin="S2B"/>
 <wire x1="180.34" y1="43.18" x2="180.34" y2="50.8" width="0.1524" layer="91"/>
@@ -6043,7 +6050,7 @@ INPUT</text>
 <label x="195.58" y="50.8" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
-<net name="UNWHITENED_INPUT" class="0">
+<net name="NORMAL_INPUT" class="0">
 <segment>
 <pinref part="N2" gate="A" pin="S2A"/>
 <wire x1="182.88" y1="43.18" x2="182.88" y2="48.26" width="0.1524" layer="91"/>
