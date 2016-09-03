@@ -1,4 +1,5 @@
 \chapter{\label{c:speedmeter-control}Concept for the longitudinal control of the \SSM{} experiment}
+\chaptermark{Conceptual \SSM{} longitudinal control}
 
 \newcommand{\RT}{$\textrm{R}_{\textrm{T}}$}
 
@@ -90,7 +91,7 @@ As shown in ref. \cite{Danilishin2015}, asymmetries in the main beam splitter in
      
 The \gls{BHD} at the \SSMEXPT{}'s output port consists of two high quantum-efficiency photodiodes sensing the reflected and transmitted fields from the \gls{BHD}'s beam splitter, \MSIXTEEN{}. A local oscillator field is incident upon the \gls{BHD}'s beam splitter to provide gain for the velocity information encoded within the light from the main beam splitter, \MSIX{}, itself incident at the other input port of the \gls{BHD}'s beam splitter. The difference current is converted to a voltage by an op-amp with transimpedance resistor \RT{} before being sent to the data acquisition system (\gls{DAQ}).
 
-An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band\footnote{As the uncorrelated noise sources are added in quadrature, a noise source a factor $\frac{1}{10}$ that of another will contribute approximately $\left(\frac{1}{10}\right)^2 = 1\%$ to the overall noise.}.
+An example circuit for the balanced homodyne detector is shown in Figure\,\ref{fig:bhd-electronics}. The op-amp introduces its own noise to the output, though a well-chosen op-amp will possess noise significantly lower than the signal representing \LMINUS{} in the intended measurement band. In order for an op-amp to contribute less than \SI{1}{\percent} of the uncorrelated noise in the measurement, its noise must be at least a factor of \SI{10}{} below the dominating noise source in the measurement band\footnote{As the uncorrelated noise sources are added in quadrature, a noise source a factor $\frac{1}{10}$ that of another will contribute less than $\left(\frac{1}{10}\right)^2 = 1\%$ to the overall noise.}.
 
 \begin{figure}
   \centering

@@ -1,4 +1,5 @@
-\chapter{\label{c:et-lf-control}Conceptual sensing scheme for the low frequency Einstein Telescope detector}
+\chapter{\label{c:et-lf-control}Conceptual longitudinal sensing scheme for the low frequency Einstein Telescope detector}
+\chaptermark{Conceptual longitudinal sensing scheme for ET-LF}
 
 % sinks
 \newcommand{\AS}{AS}
@@ -97,6 +98,7 @@ As introduced in Section\,\ref{sec:signal-recycling}, signal recycling cavities 
 In the \gls{ET} design study the discussion for \ETLF{} stopped short of a control scheme. The rest of this chapter will discuss a conceptual approach to the control of \ETLF{} and will highlight the future work that must be undertaken before a technical design for the control of \ETLF{} can be produced.
 
 \section{\label{sec:multi-dof-control}Longitudinal control of a \DRFPMI{}}
+\sectionmark{Longitudinal control of a dual-recycled Fabry-Perot Michelson}
 A successful control scheme for an interferometer must satisfy a number of requirements. When the interferometer is in its uncontrolled state, the control scheme must be able to bring it to the \emph{operating point} where it has the desired response to incident gravitational wave signals in a process called \emph{lock acquisition}. Once at the operating point, it must be robust against small perturbations by controlling the impact of noise and signal nonstationarities. Finally, the signal that represents the gravitational wave channel must have low noise, and therefore high sensitivity, to meet the design goals of the scheme.
 
 The lock acquisition scheme is inextricably linked to the technical environment in which the interferometer will operate, and so it is inappropriate to discuss this while \gls{ET}'s technical design is subject to ongoing research. We will focus our efforts, therefore, on the second and third challenges above. Both \ETLF{} and \ETHF{} will utilise \gls{DC} readout to sense the differential motion of the arm cavities in order to sense the effect of gravitational waves.
@@ -464,7 +466,7 @@ The parameters used in the proposed control scheme are shown in Table\,\ref{tab:
 \end{table}
 
 \section{Outlook and future work}
-By utilising an \gls{RF} phase modulation scheme we have shown in this chapter that \ETLF{} can in principle be controlled in its detuned configuration. Control noise issues remain unaddressed, as have more exotic control schemes such as the use of additional modulation frequencies or \emph{sub-carriers}. This section describes some future work that will be necessary to refine and improve the results presented here towards a comprehensive technical design.
+By utilising an \gls{RF} phase modulation scheme we have shown in this chapter that \ETLF{} can in principle be controlled in its detuned configuration. Control noise issues remain unaddressed, as have more exotic control schemes such as the use of additional modulation frequencies or carriers. This section describes some future work that will be necessary to refine and improve the results presented here towards a comprehensive technical design.
 
 \subsection{Optimising the sensing matrix}
 In \ALIGO{} the conceptual control scheme was first tested at the \CALTECHFORTYM{} and it is probable that any technical design for \ETLF{} will require a similar test. At this stage a quantitative assessment of the performance that a particular control scheme might provide might take the form of a technique presented by Mantovani and Freise \cite{Mantovani2008} developed for alignment control in \VIRGO{}, but suitable for longitudinal control. This involves the calculation of a \emph{quality parameter} representing the controllability of a given set of sensors and degrees of freedom. This approach only makes sense when $M$ represents the interferometer at its operating point, which means that the residual motion of controlled degrees of freedom does not create a significant cross-coupling. This approach requires hierarchical gain to be simulated as part of a lock acquisition sequence, and so some effort will be required to design some feedback servos.

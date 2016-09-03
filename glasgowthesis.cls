@@ -85,24 +85,6 @@
 % gets 1.8cm and the body text still fits within guidelines.
 \textheight 24.3cm
 
-%% Page headers
-%\usepackage{fancyhdr}
-% Useful: https://tex.stackexchange.com/questions/29638/header-problem-with-book-class
-
-% enable
-%\pagestyle{fancy}
-
-% override header behaviour to fix overlapping issues
-% https://tex.stackexchange.com/questions/48873/section-title-and-page-number-overlapping-in-heading-fancyhdr
-%\fancyhf{}
-%\fancyhead[LO]{\parbox[t]{0.45\textwidth}{\rightmark}}
-%\fancyhead[RO]{\parbox[t]{0.45\textwidth}{\leftmark}}
-
-% set header padding to prevent long titles overlapping page content (should be adjusted
-% before print)
-%\setlength{\headsep}{0.6in}
-%\setlength{\headheight}{1in}
-
 % Specify section number depth to allow subsubsection headings to be
 % numbered (so that they can be cross-referenced properly).
 \setcounter{secnumdepth}{3}
