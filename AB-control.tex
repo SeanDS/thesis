@@ -12,7 +12,11 @@ When discussing controls, the standard representation of signal to noise is in u
 \end{equation}
 As this representation is logarithmic, it is a useful for expressing both small and large signals and is therefore suitable for the presentation of noise sources across many orders of magnitude, as with interferometry.
 
-\note{Define SNR for signal amplitude?}
+For certain aspects of controls, for example with the expression of gain\textemdash an amplitude and not a power\textemdash the following equation is more suitable:
+\begin{equation}
+  \text{Gain}_{\SI{}{\deci\bel}} = 20 \log_{10} \left( \frac{\text{Output}}{\text{Input}} \right).
+\end{equation}
+The factor \num{20} is present here instead of \num{10} in the case of power quantities due to the lack of a square law dependency in the terms forming the ratio. Whether the expressed quantity in \SI{}{\deci\bel} refers to an amplitude or power must be made clear from the context.
 
 \section{\label{sec:freq-resp-signals}Frequency representation of signals and noise}
 \subsection{\label{sec:fourier-transform}Fourier transform}

@@ -50,7 +50,7 @@
 % List of symbols, definitions, etc.
 
 % import package
-\usepackage[acronym,nomain]{glossaries}
+\usepackage[toc,acronym,nomain]{glossaries}
 
 % make the list
 \makeglossaries
@@ -295,8 +295,8 @@
 
 \cleardoublepage
 \section*{\label{c:intro:credits}Credits}
-\input{"00-credits.tex"}
 \addcontentsline{toc}{section}{Credits}
+\input{"00-credits.tex"}
 
 \cleardoublepage
 \vspace*{1.75in}
@@ -328,10 +328,8 @@
 
 % glossary
 \printglossaries
-\addcontentsline{toc}{chapter}{Acronyms}
 
 % bibliography
-\addcontentsline{toc}{chapter}{Bibliography}
-\printbibliography
+\printbibliography[heading=bibintoc]
 
 \end{document}
