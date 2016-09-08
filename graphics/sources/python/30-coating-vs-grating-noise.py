@@ -29,7 +29,7 @@ with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
 ax1.set_ylim([0, 15e-22])
 ax1.grid(True)
 ax1.set_xlabel('Transmissivity')
-ax1.set_ylabel('Displacement noise (m / sqrt(Hz))')
+ax1.set_ylabel('Displacement equivalent noise (m / sqrt(Hz))')
 legend1 = ax1.legend(['Dielectric coating stack', 'Grating', 'Advanced LIGO ETM'])
 
 fig.tight_layout()
