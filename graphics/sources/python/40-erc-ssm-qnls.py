@@ -53,7 +53,7 @@ ax1.grid(True)
 ax1.set_xlim((1e1, 1e5))
 ax1.set_ylim((1e-21, 1e-13))
 
-ax1.legend(['Finesse Sagnac speed meter', 'Optickle Sagnac speed meter', 'Optickle equivalent Michelson', 'SQL'], loc='upper right')
+ax1.legend(['Finesse Sagnac speed meter', 'Optickle Sagnac speed meter', 'Optickle equivalent Fabry-Perot Michelson', 'SQL'], loc='upper right')
 
 # set labels
 ax1.set_ylabel('Sensitivity (m / sqrt(Hz))')
