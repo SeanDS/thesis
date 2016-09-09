@@ -50,20 +50,21 @@ ax1.semilogx(f, 20 * np.log10(sig), '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax1.semilogx(f, 20 * np.log10(sig * absresp), '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 # noise level
-ax1.hlines(0, 1e0, 1e5, colors=colour_c, linestyles='dashed', zorder=2)
+ax1.hlines(0, 1e-1, 1e5, colors=colour_c, linestyles='dashed', zorder=2)
 
 # filter TF
 p1 = ax2.loglog(f, absresp, '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
 p2 = ax3.semilogx(f, np.angle(response) * 180 / np.pi, '--', color=colour_d, alpha=lf.ALPHA_LINE_A)
+
+with plt.rc_context({'legend.borderaxespad': 0.5}):
+    ax1.legend(['Unwhitened', 'Whitened', 'Sensor noise'], loc='lower left')
+    ax2.legend(p1+p2, ['Magnitude', 'Phase'], loc='upper left')
 
 ax1.set_ylim([-50, 50])
 ax1.set_ylabel('SNR (dB)')
 ax2.set_xlabel('Frequency (Hz)')
 ax2.set_ylabel('Magnitude')
 ax3.set_ylabel(u'Phase (°)')
-
-ax1.legend(['Unwhitened', 'Whitened', 'Sensor noise'], loc='lower left')
-ax2.legend(p1+p2, ['Magnitude', 'Phase'], loc='upper right')
 
 ax1.grid(True)
 ax2.grid(True)
