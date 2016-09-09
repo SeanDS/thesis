@@ -59,6 +59,8 @@ Once a segment is created, the resulting Fourier transform is applied to the tim
   \caption[The effect of windowing on a power spectral density estimate]{\label{fig:fft-windowing}The effect of windowing on a power spectral density estimate. The underlying signal time series is a sine wave of frequency \SI{2499}{\hertz}, and the sample rate is \SI{10}{\kilo\hertz}. The power spectral density estimates have been made using both Hanning windows, which de-emphasise the start and end of each segment to suppress discontinuities, and a flat window which performs no relative scaling of the data points. Both methods recover the signal's frequency, but in the former case the noise floor is greatly reduced.}
 \end{figure}
 
+The \emph{amplitude} spectral density is simply the square root of the power spectral density. This is useful for representing amplitude quantities such as voltages as spectral densities.
+
 \section{\label{sec:rms-amplitude}Root mean square amplitude}
 A real actuator or sensor has finite range, and the sum of the signal spectral density must be within this range to avoid clipping. The signal in the time domain represents the \emph{root-mean-square} (\gls{RMS}) value of the signal, which is equal to the sum of the frequency components. The \gls{RMS} representation is a useful form for the calculation of required actuator and sensor dynamic range (see, for example, Chapter\,\ref{c:speedmeter-control}).
 
