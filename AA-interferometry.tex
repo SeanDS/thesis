@@ -5,26 +5,26 @@ Basic interferometers can be modelled algebraically with only a few simple rules
 We can define the field amplitude of light across dimension $x$ as:
 \begin{equation}
   \label{eq:field-amplitude}
-  E = E_0 \text{e}^{\text{i} kx},
+  E = E_0 \text{e}^{-\text{i} kx},
 \end{equation}
-using the same terms as shown in Equation\,\ref{eq:em-propagation}. Upon transmission through an optic, the transmitted field is equal to the input field, $E_{\text{in}}$, scaled by the optic's field transmissivity, $t$:
-\begin{equation}
-  \label{eq:transmitted-field}
-  E_{\text{t}} = tE_{\text{in}}.
-\end{equation}
-The reflected field is similarly scaled by the optic's field reflectivity, $r$:
+using the same terms as shown in Equation\,\ref{eq:em-propagation}. Upon reflection from an optic, the reflected field is equal to the input field, $E_{\text{in}}$, scaled by the optic's field reflectivity, $r$:
 \begin{equation}
   \label{eq:reflected-field}
-  E_{\text{r}} = \text{i}rE_{\text{in}}.
+  E_{\text{r}} = rE_{\text{in}}.
 \end{equation}
-Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. Here we choose to apply this phase shift to the reflected field by convention (see Appendix\,\ref{a:reflection-phase}).
+The transmitted field is similarly scaled by the optic's field transmissivity, $t$:
+\begin{equation}
+  \label{eq:transmitted-field}
+  E_{\text{t}} = \text{i}tE_{\text{in}}.
+\end{equation}
+Note the presence of complex coefficient $\text{i}$, equivalent to a multiplication by $\text{e}^{\text{i} \frac{\pi}{2}}$. This shows that the phase difference between reflected and transmitted fields is $\frac{\pi}{2}$, which is required for energy conservation. Here we choose to apply this phase shift to the transmitted field, but it is equally valid to apply, for instance, a negative, real coefficient to the reflected field (see Appendix\,\ref{a:reflection-phase}).
 
 \section{\label{sec:simple-cavities}Simple cavities}
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/AA-fabry-perot.pdf}
-  \caption[\FP{} cavity with its mirror input and output coefficients]{\label{fig:fabry-perot}\FP{} cavity with its mirror input and output coefficients. Coefficients $a_1$ and $a_5$ are for the fields incident upon the cavity from either side, whilst $a_4$ and $a_8$ are for the fields leaving the cavity on either side. Coefficients at the outputs of the \FP{} can be calculated from inputs $a_1$ and $a_5$. The mirrors in the cavity are separated by free space through which the fields leaving each mirror's inside surface propagate.}
+  \caption[\FP{} cavity with its mirror input and output coefficients]{\label{fig:fabry-perot}\FP{} cavity with its mirror input and output coefficients. Coefficients $a_0$ and $a_6$ are for the fields entering and leaving the cavity from the side of the \gls{ITM}, whilst $a_3$ represents the field leaving the cavity on the side of the \gls{ETM}. We assume the \gls{ETM} has high reflectivity and so neglect the field entering at the \gls{ETM} for simplicity. Coefficients $a_1$, $a_2$, $a_4$ and $a_5$ denote the circulating field at various points. The mirrors in the cavity are separated by free space through which the fields leaving each mirror's inside surface propagate.}
 \end{figure}
 
 Combining Equations \ref{eq:field-amplitude}, \ref{eq:transmitted-field} and \ref{eq:reflected-field} allows us to determine the field amplitude at different ports of a collection of mirrors. Combinations of mirrors produce \emph{optical cavities}, which possess the property that they can, under certain conditions, accumulate light power. If we take the simplest of examples, the two-mirror \FP{} cavity (see Figure\,\ref{fig:fabry-perot}), we can determine the fields coefficients present at the output nodes of the mirrors to be:
@@ -39,34 +39,34 @@ Combining Equations \ref{eq:field-amplitude}, \ref{eq:transmitted-field} and \re
   \end{split}
 \end{equation}
 
-Similarly, the coefficients at the input nodes within the cavity can be determined from the output nodes of the opposite mirrors and the separation $D$:
+Similarly, the coefficients at the input nodes within the cavity can be determined from the output nodes of the opposite mirrors and the separation $x$:
 \begin{equation}
   \label{eq:fabry-perot-coefficients-2}
   \begin{split}
-    a_2 &= a_1 \text{e}^{\text{i} kD}, \\
-    a_5 &= a_4 \text{e}^{\text{i} kD}, \\
+    a_2 &= a_1 \text{e}^{-\text{i} kx}, \\
+    a_5 &= a_4 \text{e}^{-\text{i} kx}, \\
   \end{split}
 \end{equation}
 
 Note the lack of a field input from the right side of the cavity in Figure\,\ref{fig:fabry-perot}. In general this field is present and has a small effect on the coefficients, but in gravitational wave detectors it is typically small by design. As this additional term adds mathematical complexity but not significant additional clarity, it has been neglected.
 
-The coefficients in Equations \ref{eq:fabry-perot-coefficients-1} and \ref{eq:fabry-perot-coefficients-2} can be used to determine the field amplitude at different points of the interferometer. As there is only one input field in this example, the coefficients can be reduced to depend only on $a_0$, $r_1$ and $r_2$, $t_1$ and $t_2$ and $D$. The light reflected from the \FP{} is an important field to know as this is used in many experiments to assist with interferometer sensing and control. Coefficient $a_6$ determines the reflected field, but this depends on $a_0$ and $a_5$, the latter being one of the coefficients inside the cavity. Coefficient $a_5$ can have terms progressively substituted as follows:
+The coefficients in Equations \ref{eq:fabry-perot-coefficients-1} and \ref{eq:fabry-perot-coefficients-2} can be used to determine the field amplitude at different points of the interferometer. As there is only one input field in this example, the coefficients can be reduced to depend only on $a_0$, $r_1$ and $r_2$, $t_1$ and $t_2$ and $x$. The light reflected from the \FP{} is an important field to know as this is used in many experiments to assist with interferometer sensing and control. Coefficient $a_6$ determines the reflected field, but this depends on $a_0$ and $a_5$, the latter being one of the coefficients inside the cavity. Coefficient $a_5$ can have terms progressively substituted as follows:
 \begin{equation}
   \label{eq:fabry-perot-reflected-coefficient}
   \begin{split}
-    a_5 &= a_4 \text{e}^{\text{i} kD} \\
-        &= a_2 r_2 \text{e}^{\text{i} kD} \\
-        &= a_1 r_2 \text{e}^{\text{2i} kD} \\
-        &= r_2 \left( it_1 a_0 + r_1 a_5 \right) \text{e}^{\text{2i} kD}, \\
+    a_5 &= a_4 \text{e}^{-\text{i} kx} \\
+        &= a_2 r_2 \text{e}^{-\text{i} kx} \\
+        &= a_1 r_2 \text{e}^{-2\text{i} kx} \\
+        &= r_2 \left( it_1 a_0 + r_1 a_5 \right) \text{e}^{-2\text{i} kx}, \\
   \end{split}
 \end{equation}
 where we find that the equation for $a_5$ depends on itself. This shows how the cavity operates: on each subsequent round trip, the cavity field is enhanced with addition field in the form of light transmitting through the first mirror. The field builds up until the amount of light entering the cavity is equal to the amount leaving. We can manipulate Equation\,\ref{eq:fabry-perot-reflected-coefficient} to show this:
 \begin{equation}
-  a_5 = a_0 \frac{it_1 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}},
+  a_5 = a_0 \frac{it_1 r_2 \text{e}^{-2\text{i}kx}}{1 - r_1 r_2 \text{e}^{-2\text{i}kx}},
 \end{equation}
 where it is clear to see that the cavity coefficient depends on the input coefficient $a_0$. The coefficient representing the reflected light from the interferometer is then just $a_5$ scaled by $t_1$, with the addition of the light reflected before entering the cavity:
 \begin{equation}
-  a_6 = a_0 \left( r_1 - \frac{t_1^2 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}} \right).
+  a_6 = a_0 \left( r_1 - \frac{t_1^2 r_2 \text{e}^{-2\text{i}kx}}{1 - r_1 r_2 \text{e}^{-2\text{i}kx}} \right).
 \end{equation}
 
 With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected field amplitude as a function of the input field. The output field as a function of input field $E_{\text{in}}$ is then simply:
@@ -74,13 +74,13 @@ With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected fiel
   \label{eq:fabry-perot-field}
   \begin{split}
     E_{\text{out}} &= a_6 E_{\text{in}} \\
-                   &= E_{\text{in}} \left( r_1 - \frac{t_1^2 r_2 \text{e}^{2ikD}}{1 - r_1 r_2 \text{e}^{2ikD}} \right) \\
-                   &= E_{\text{in}} T.
+                   &= E_{\text{in}} \left( r_1 - \frac{t_1^2 r_2 \text{e}^{-2\text{i}kx}}{1 - r_1 r_2 \text{e}^{-2\text{i}kx}} \right) \\
+                   &= E_{\text{in}} R.
   \end{split}
 \end{equation}
-The term in brackets in Equation\,\ref{eq:fabry-perot-field} is termed the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. Transfer functions are important figures of merit for cavities and they are used extensively throughout the main body of this work.
+The term $R$ is the \emph{transfer function} of the cavity, i.e. the ratio of the output field with respect to the input field. $R$ behaves like the reflectivity of a simple mirror, but with the property that it is frequency dependent. Transfer functions are important figures of merit for cavities and they are used extensively throughout the main body of this work.
 
-The reflected field transfer function $T$ is shown in Figure\,\ref{fig:cavity-tf}. This shows that when the cavity resonance condition is not met, the field incident upon the \gls{ITM} is mainly reflected. Close to resonance, the phase of the incident light and the \gls{ITM} is favourable for transmission, leading to the majority of the light being coupled into the cavity. The width of the trough is determined by the cavity mirror transmissivities and reflectivities.
+The reflected field transfer function $R$ is shown in Figure\,\ref{fig:cavity-tf}. This shows that when the cavity resonance condition is not met, the field incident upon the \gls{ITM} is mainly reflected. Close to resonance, the phase of the incident light and the \gls{ITM} is favourable for transmission, leading to the majority of the light being coupled into the cavity. The width of the trough is determined by the cavity mirror transmissivities and reflectivities.
 
 \begin{figure}
   \centering
@@ -93,18 +93,18 @@ For asymmetric cavities, cavities with non-unity end mirror transmissivity and m
 \subsection{\label{sec:cavity-fom}Cavity figures of merit}
 Resonance is achieved within a \FP{} cavity by making the microscopic length equivalent to an integer number of half-wavelengths for a given carrier. For this we can look at the ratio of the field in the cavity to the field entering it:
 \begin{equation}
-  \frac{a_1}{a_0} = \frac{\text{i} t}{1 - r_1 r_2 \text{e}^{2\text{i}kD}},
+  \frac{a_1}{a_0} = \frac{\text{i} t}{1 - r_1 r_2 \text{e}^{-2\text{i}kx}},
 \end{equation}
 but we see that the denominator contains a complex exponential with maxima in both the sine and cosine quadratures. In reality, we measure the light power with photodetectors, so taking the square of the modulus leads to:
 \begin{equation}
   \begin{split}
-    \left|\frac{a_1}{a_0}\right|^2 &= \frac{t^2}{1-r_1 r_2 \text{e}^{2\text{i}kD} - r_1 r_2 \text{e}^{-2\text{i}kD} + r_1^2 r_2^2} \\
+    \left|\frac{a_1}{a_0}\right|^2 &= \frac{t^2}{1-r_1 r_2 \text{e}^{2\text{i}kx} - r_1 r_2 \text{e}^{-2\text{i}kx} + r_1^2 r_2^2} \\
                                    &= \frac{t^2}{1 - 2 r_1 r_2 \cos{\left( 2kD \right)} + r_1^2 r_2^2},
   \end{split}
 \end{equation}
-which occurs when $kD$ becomes an integer multiple of $\pi$. This means that either the wave number, representing carrier wavelength, or the cavity length can be controlled to achieve cavity resonance. Both of these techniques are used in interferometry, sometimes simultaneously. The wavelength of a laser can usually be trimmed via a piezoelectric transducer or a heating element on the laser crystal. This results in a different output wavelength, which changes the number of wavelengths that can fit inside the cavity length and therefore can be used to achieve resonance for a particular length. The cavity length can be controlled with actuators on the mirrors: typically voice coils and magnets, these have also been implemented in the form of piezoelectric transducers and more exotic devices such as electrostatic drives.
+which occurs when $kD$ becomes an integer multiple of $\pi$. This means that either the wave number, representing carrier wavelength, or the cavity length can be controlled to achieve cavity resonance. Both of these techniques are used in interferometry, sometimes simultaneously.
 
-As the resonance condition requires only an integer multiple of $\pi$, it is clear to see that resonance within the cavity is periodic as a function of laser frequency or length. A plot of the resonance condition as a function of length and frequency is shown in Figure\,\ref{fig:cavity-fsr}. The resonant peaks occur for every half wavelength offset from the nominal length (\SI{10}{\meter}). Conversely, the resonant peaks also occur in terms of frequency offsets from the nominal carrier frequency ($f = \frac{c_0}{\lambda}$). For this cavity, the frequency offset between resonant peaks is approximately \SI{15}{\mega\hertz}. For a much longer cavity, such as that of Advanced LIGO\textemdash \SI{4}{\kilo\meter}\textemdash the frequency offset reduces to approximately \SI{37.5}{\kilo\hertz}. The difference arises from the fact that a change in laser frequency will change the wavelength, and a longer cavity can fit more waves, so a smaller frequency offset is required for the same change in effective length.
+As the resonance condition requires only an integer multiple of $\pi$, it is clear to see that resonance within the cavity is periodic as a function of laser frequency or length. A plot of the resonance condition as a function of length and frequency is shown in Figure\,\ref{fig:cavity-fsr}. The resonant peaks occur for every half wavelength offset from the nominal length (\SI{10}{\meter}). Conversely, the resonant peaks also occur in terms of frequency offsets from the nominal carrier frequency ($f_0 = \frac{c_0}{\lambda}$). For this cavity, the frequency offset between resonant peaks is approximately \SI{15}{\mega\hertz}. For a much longer cavity, such as that of Advanced LIGO\textemdash \SI{4}{\kilo\meter}\textemdash the frequency offset reduces to approximately \SI{37.5}{\kilo\hertz}. The difference arises from the fact that a change in laser frequency will change the wavelength, and a longer cavity can fit more waves, so a smaller frequency offset is required for the same change in effective length.
 
 \begin{figure}
   \centering
@@ -122,12 +122,15 @@ Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maxim
 \begin{equation}
   \text{FWHM} = \frac{c_0}{\pi L} \sin^{-1}{\left( \frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}} \right)}.
 \end{equation}
+For \ALIGO{} the \glspl{ITM} and \glspl{ETM} have (power) reflectivities \SI{1.4}{\percent} and \SI{5}{\ppm}, respectively, and so the \SI{4}{\kilo\meter} arm cavity \gls{FWHM} is around \SI{83}{\hertz}.
+
 Sometimes used in the literature is the \emph{half-bandwidth}, $\gamma$, equivalent to half of the \gls{FWHM}:
 \begin{equation}
-  \gamma = \frac{\text{FWHM}}{2} = \frac{c_{0} T_{\textrm{ITM}}}{4 L_{\textrm{RT}}}.
+  \gamma = \frac{\text{FWHM}}{2} \approx \frac{c_{0} T_{\textrm{ITM}}}{4 L_{\textrm{RT}}}.
 \end{equation}
+In the frequency domain $\gamma$ denotes the cavity's corner frequency, otherwise known as the \emph{pole frequency}. In a \FP{} cavity the response is essentially flat below this frequency, and degrading proportionally to frequency above it.
 
-The ratio of the \gls{FSR} to the \gls{FWHM} defines the cavity \emph{finesse}, $\mathcal{F}$, defined as:
+The ratio of the \gls{FSR} to the \gls{FWHM} defines the cavity \emph{finesse}, $\mathcal{F}$, given as:
 \begin{equation}
   \mathcal{F} = \frac{\text{FSR}}{\text{FWHM}} = \frac{\pi}{2 \sin^{-1}{\frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}}}},
 \end{equation}
@@ -135,49 +138,48 @@ which indicates the cavity's ability to store photons. It is closely related to 
 \begin{equation}
 Q = \frac{f_0}{\text{FSR}} \mathcal{F}.
 \end{equation}
-The finesse and quality factor indicate the time it would take for light to escape a resonant cavity in the event that the input light source were to be removed. A more technical use for the finesse figure is to quickly approximate the stored power in a cavity on resonance as a function of the input.
+The finesse and quality factor indicate the time it would take for light to escape a resonant cavity in the event that the input light source were to be removed. A more practical use for the finesse figure is to quickly approximate the stored power in a cavity on resonance by multiplying it by the input power.
 
 \section{\label{sec:signal-sidebands}Signal sidebands}
-The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $2x$ to get to and from the optic, the field picks up a factor of $\text{e}^{2\text{i}k \left( x + \Delta x \right)}$ in phase and a factor of $r$ in amplitude:
+The field due to motion of a mirror $\Delta x$ at a distance $x$ can be determined by combining Equations \ref{eq:field-amplitude} and \ref{eq:reflected-field}. As the light must travel distance $x$ to get to the optic, the field picks up a factor of $\text{e}^{-\text{i}k \left( x + \Delta x \right)}$ in phase. Upon reflection, it gets a coefficient of $r$ in amplitude:
 \begin{equation}
-  E_{\text{r}} \left( x \right) = r E_0 \text{e}^{2\text{i} k \left( x + \Delta x \right)}.
+  E_{\text{r}} \left( x \right) = r E_0 \text{e}^{-\text{i} k \left( x + \Delta x \right)}.
 \end{equation}
 For clarity, we can express the constant $x$ term as a static phase representing the carrier, separated from $\Delta x$ via the wave number:
 \begin{equation}
   \label{eq:field-amplitude-phase}
-  E_{\text{r}} \left( t \right) = r E_0 \text{e}^{\text{i} \left( 2 \omega_0 t + k \Delta x\right)}.
+  E_{\text{r}} \left( t \right) = r E_0 \text{e}^{-\text{i} \left( \omega_0 t + k \Delta x\right)}.
 \end{equation}
 It is possible to express any particular motion in the form of a series of sinusoidal functions. Expressing mirror motion as a single frequency sinusoid modulating the impinging field, we see:
 \begin{equation}
   \label{eq:field-phase-modulation}
-  E_{\text{r}} \left( t \right) = E_0 \text{e}^{\text{i} \left(\omega_0 t + m \cos{\left( \omega t \right)} \right)},
+  E_{\text{r}} \left( t \right) = r E_0 \text{e}^{-\text{i} \left(\omega_0 t + m \cos{\left( \omega t \right)} \right)},
 \end{equation}
-where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. Note that we have neglected for now the reflection term $r$. With some algebraic manipulation involving Bessel functions, we can express this as \cite{Freise2010}:
+where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. With some algebraic manipulation involving Bessel functions, we can express this as \cite{Freise2010}:
 \begin{equation}
   \label{eq:field-phase-bessel}
-  E \left( t \right) = E_0 \text{e}^{\text{i} \omega_0 t} \sum^{\infty}_{n=-\infty} \text{i}^n J_{n} \left( m \right) \text{e}^{\text{i} n \omega t}.
+  E_{\text{r}} \left( t \right) = r E_0 \text{e}^{-\text{i} \omega_0 t} \sum^{\infty}_{n=-\infty} \text{i}^n J_{n} \left( m \right) \text{e}^{\text{i} n \omega t}.
 \end{equation}
 When $m$ is $0$ all Bessel functions $J_{n}$ are $0$ except the first, which is $1$; this shows that the field contains only the carrier component when there is no external modulation applied by a moving mirror. Conversely, when a non-zero modulation index and signal frequency is present, there exists a sum of sinusoidal functions as a product of the carrier, which we call \emph{signal sidebands}. For small modulation depths $m \ll 1$, Equation\,\ref{eq:field-phase-bessel} can be approximated to:
 \begin{equation}
   \label{eq:field-phase-mod-expanded}
-  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 - \frac{m^2}{4} + \text{i} \frac{m}{2} \left( \text{e}^{-\text{i} \omega t} + \text{e}^{\text{i} \omega t} \right) \right).
+  E_{\text{r}} = E_0 \text{e}^{-\text{i} \omega_0 t} \left( 1 - \frac{m^2}{4} + \text{i} \frac{m}{2} \left( \text{e}^{-\text{i} \omega t} + \text{e}^{\text{i} \omega t} \right) \right).
 \end{equation}
 Here it is clear to see the presence of upper and lower sidebands at frequencies $\omega_0 \pm \omega$.
 
 Amplitude modulation has a similar but not identical effect to phase modulation. Devices such as piezoelectric transducers for trimming laser outputs can perform amplitude modulation on a light field, and the effect can be expressed again in terms of the modulation depth and frequency:
 \begin{equation}
-  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + m \cos{\omega t} \right),
+  E_{\text{r}} = E_0 \text{e}^{-\text{i} \omega_0 t} \left( 1 + m \cos{\omega t} \right),
 \end{equation}
 and we can manipulate this expression to show the presence of exactly one upper and one lower sideband:
 \begin{equation}
   \label{eq:field-amp-mod}
-  E = E_0 \text{e}^{\text{i} \omega_0 t} \left( 1 + \frac{m}{2} \text{e}^{\text{i} \omega t} + \frac{m}{2} \text{e}^{-\text{i} \omega t} \right).
+  E_{\text{r}} = E_0 \text{e}^{-\text{i} \omega_0 t} \left( 1 + \frac{m}{2} \text{e}^{\text{i} \omega t} + \frac{m}{2} \text{e}^{-\text{i} \omega t} \right).
 \end{equation}
-
-The sideband structure created by amplitude and phase modulation is shown in Figure\,\ref{fig:sideband-structure}. This shows the magnitude of the frequency components, with the infinite set of phase modulation sidebands containing the same collective magnitude as the two amplitude modulation sidebands, for identical modulation depth.
+An example of the sideband structure created by amplitude and phase modulation is shown in Figure\,\ref{fig:sideband-structure}.
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/AA-sideband-structure.pdf}
-  \caption[Sideband structure for amplitude and phase modulation]{\label{fig:sideband-structure}Sideband structure for amplitude and phase modulation. The carrier, at frequency $\omega_0$, is present in the centre. Upper and lower sidebands exist offset from the carrier. Amplitude modulation (AM) produces exactly two sidebands, whereas phase modulation (PM) produces infinitely many, though with drastically decreasing amplitude for higher orders. The vertical axis shows the arbitrary power of each sideband in this example, though in this example the modulation depth has been greatly exaggerated over that which would normally be used.}
+  \caption[Sideband structure for amplitude and phase modulation]{\label{fig:sideband-structure}Sideband structure for amplitude and phase modulation. The carrier, at frequency $\omega_0$, is present in the centre. Upper and lower sidebands appear offset from the carrier due to modulation. Amplitude modulation (AM) produces exactly two sidebands, whereas phase modulation (PM) produces infinitely many, though with drastically decreasing amplitude for higher orders. The vertical axis denotes the (arbitrary) power of each sideband, though in this example the modulation depth has been greatly exaggerated over that which would normally be used.}
 \end{figure}

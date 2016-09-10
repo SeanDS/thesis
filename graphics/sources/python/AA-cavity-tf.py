@@ -11,7 +11,7 @@ save_path = sys.argv[1]
 
 # cavity transfer function
 def cavity_transfer_function(lengths, k, r1, r2, t):
-  return (r1 - (t ** 2 * r2 * np.exp(2 * 1j * k * lengths)) / (1 - r1 * r2 * np.exp(2 * 1j * k * lengths)))
+  return (r1 - (t ** 2 * r2 * np.exp(-2 * 1j * k * lengths)) / (1 - r1 * r2 * np.exp(-2 * 1j * k * lengths)))
 
 # mirror properties
 r1 = 0.99
@@ -27,8 +27,11 @@ k = 2 * np.pi / lambda0
 # speed of light
 c = 3e8
 
+# nominal cavity length, just enough wavelengths to almost reach 10m
+nominal_length = lambda0 * 9398496
+
 # lengths vector
-lengths = np.linspace(-0.05 * lambda0, 0.05 * lambda0, 1000)
+lengths = nominal_length + np.linspace(-0.05 * lambda0, 0.05 * lambda0, 1000)
 
 # cavity transfer function
 tf = cavity_transfer_function(lengths, k, r1, r2, t)
@@ -45,22 +48,22 @@ colours = lf.Colours()
 colour_a = colours.next()
 
 # magnitude plot
-ax1.plot(lengths, np.abs(tf), color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax1.plot((lengths - nominal_length) * 1e9, np.abs(tf), color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # phase offset, to avoid wrapping
 phase_offset = 0
 
 # phase plot
-ax2.plot(lengths, phase_offset + np.angle(tf) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
+ax2.plot((lengths - nominal_length) * 1e9, phase_offset + np.angle(tf) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Offset from resonance (m)')
+ax2.set_xlabel('Offset from resonance (nm)')
 ax2.set_ylabel(u'Phase (°)')
 
 ax1.grid(True)
 ax2.grid(True)
 
-ax1.set_xlim([-0.05 * lambda0, 0.05 * lambda0])
+ax1.set_xlim([-0.05 * lambda0 * 1e9, 0.05 * lambda0 * 1e9])
 
 # set y-labels for phase
 ax2.set_yticks([-90, -45, 0, 45, 90])
