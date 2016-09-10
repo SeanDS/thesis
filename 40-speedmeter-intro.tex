@@ -276,13 +276,13 @@ where we assume that the signal and local oscillator are split equally between t
 In the presence of imbalanced beam splitting the laser noise and residual carrier light in the signal path results in additional noise photocurrent and so it is important to use a beam splitter with balanced reflectivity and transmissivity and for the intensity noise of the laser to be controlled to a high degree \cite{Steinlechner2015}.
 
 \subsubsection{Quantum noise limited sensitivity of the main readout}
-Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} is shown in Figure\,\ref{fig:erc-ssm-qnls}, calculated with both Finesse and Optickle (see Appendices \ref{sec:finesse-sim} and \ref{sec:optickle-sim}). Also shown is the sensitivity of an equivalent \FPMI{} using the same parameters as for the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match its high frequency sensitivity. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, to optimise both interferometers for high frequency sensitivity fairly. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz} so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are kept sufficiently low. A comprehensive consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
+Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} is shown in Figure\,\ref{fig:erc-ssm-qnls}, calculated with both \gls{FINESSE} and Optickle (see Appendices \ref{sec:finesse-sim} and \ref{sec:optickle-sim}). Also shown is the sensitivity of an equivalent \FPMI{} using the same parameters as for the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match its high frequency sensitivity. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, to optimise both interferometers for high frequency sensitivity fairly. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz} so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are kept sufficiently low. A comprehensive consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
 % Homodyne angles for SSM vs MI from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=5648
 
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-erc-ssm-qnls.pdf}
-  \caption[Predicted quantum noise limited sensitivity of the \SSMEXPT{}]{\label{fig:erc-ssm-qnls}Predicted quantum noise limited sensitivity of the \SSMEXPT{} calculated with Optickle and Finesse. Also shown is the equivalent \FPMI{} configuration, calculated with Optickle, and the \gls{SQL} given the effective mass of the interferometer test masses. The shaded blue region shows the intended measurement band, where reduced quantum radiation pressure noise should be visible below the expected noise from the equivalent \FPMI{}.}
+  \caption[Predicted quantum noise limited sensitivity of the \SSMEXPT{}]{\label{fig:erc-ssm-qnls}Predicted quantum noise limited sensitivity of the \SSMEXPT{} calculated with Optickle and \gls{FINESSE}. Also shown is the equivalent \FPMI{} configuration, calculated with Optickle, and the \gls{SQL} given the effective mass of the interferometer test masses. The shaded blue region shows the intended measurement band, where reduced quantum radiation pressure noise should be visible below the expected noise from the equivalent \FPMI{}.}
 \end{figure}
 
 \subsection{Suspensions}
@@ -292,53 +292,6 @@ The \emph{auxiliary} optics \MFOUR{}, \MFIVE{}, \MSEVEN{}-\MTEN{} and \MTWELVE{}
 The auxiliary suspensions will have voice coil actuators on their intermediate stages for local alignment control. The \SI{100}{\gram} suspensions will have voice coils on multiple stages in order to provide corrections for low frequency drifts, though the test mass stages will not have voice coils to prevent \emph{Barkhausen} noise \cite{Weiss2008} coupling to the test masses via the actuators' magnets.
 
 The filtering effect from the final pendulum stage means that the voice coil actuators will not be able to effectively correct test mass positions at high frequencies. Instead, \emph{electrostatic drive} (\gls{ESD}) actuators will be placed behind each \gls{ETM} able to produce small corrective forces but without Barkhausen noise. \gls{ESD} actuators have been demonstrated in \GEO{} \cite{Hewitson2007} and \ALIGO{} \cite{Aston2012} based on a metallic comb arrangement, though in the \SSMEXPT{} the intention is to use a new \gls{ESD} design which will be discussed in Chapter\,\ref{c:esd-concept}.
-
-% you know what? why the hell would anyone care about this section?
-% \subsubsection{Coil drivers}
-% The coil drivers for the auxiliary suspensions have been designed with a simple two-pole low-pass filter circuit. As there will be at least \num{14} suspensions requiring auxiliary coil drivers, some thought has been dedicated to the signalling from \gls{CDS} to the experiment.
-% 
-% Each \gls{CDS} output connector contains four channels and each auxiliary suspension has four coils, so each coil driver supports a single suspension with a single input from \gls{CDS}. These coil drivers are build on Eurocard format printed circuit boards (\glspl{PCB}) with DIN \num{41612} connectors. These cards slot into a custom-built backplane board housed within a standard \checkme{3 height-unit} rack enclosure. On the rear of this enclosure are two 50-way DSUB connectors capable of carrying the signals for up to \num{7} auxiliary coil drivers each.
-% 
-% \note{Put aux coil driver stuff here}
-% \note{Auxiliary coil driver subrack wiring design / motivation / assembly}
-% \note{Backplane board design - talk about rationale, show Eagle diagrams, etc.}
-% 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-octopus-cable.pdf}
-%   \caption[Auxiliary octopus cable schematic]{\label{fig:aux-octopus-cable-wiring}``Octopus'' cable for breaking out a DB50 connector into DB9 connectors to allow signals to be sent to each of the coils on seven auxiliary suspensions.}
-% \end{figure}
-% 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-suspension.pdf}
-%   \caption[Auxiliary suspension coil schematic]{\label{fig:aux-suspension-wiring}Auxiliary suspension coil schematic.}
-% \end{figure}
-% 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-backplane-board.pdf}
-%   \caption[Auxiliary subrack backplane board schematic]{\label{fig:aux-backplane-schematic}Auxiliary coil driver subrack backplane. Auxiliary coil driver cards can be plugged in to this board, which then maps the signals to a DB50 connector which connects to the vacuum feedthrough. This routes four coil signals (five conductors including ground) per coil driver, for seven coil drivers, to one DB50 connector. This can then be connected to the vacuum system, where the auxiliary octopus cable (see Figure XXX) maps these signals to individual auxiliary suspensions.}
-% \end{figure}
-% 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-auxiliary-backplane-interface.pdf}
-%   \caption[Auxiliary subrack backplane interface]{\label{fig:aux-backplane-interface}Auxiliary coil driver subrack backplane interface.}
-% \end{figure}
-
-% or this one?
-% \subsection{Signalling}
-% 
-% \subsubsection{In-vacuum}
-% \note{Octopus cables, strain relief housing, etc.}
-% 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.75\columnwidth]{graphics/40-db50-housing.png}
-%   \caption[In-vacuum DB50 octopus cable housing]{In-vacuum DB50 housing for octopus cable.}
-%   \label{fig:db50-housing}
-% \end{figure}
 
 \subsection{\label{sec:ssm-sensing-and-control}Sensing and control}
 While the main readout of the \SSMEXPT{} is to be the \gls{BHD}, in order to control the interferometer a number of other signals from different ports will need to be extracted and fed back to actuators to keep the interferometer at the operating point. The control topics can be split into two broad categories representing the process used to bring the interferometer to the operating point, \emph{lock acquisition}, and keeping it there, \emph{low-noise} control.

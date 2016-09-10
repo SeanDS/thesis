@@ -297,30 +297,6 @@ The \gls{ETM} displacement noise this would create is then simply the product of
   \label{fig:hv-amp-output-displacement-noise}
 \end{figure}
 
-% No data yet
-% \section{Experimental test of the electrostatic drive}
-% To set requirements on the positioning of the plates, and to build and test the infrastructure for the operation of the \glspl{ESD}, this chapter introduces the design for an experiment to test the new \gls{ESD} design.
-% 
-% \begin{table}
-%   \centering
-%   \begin{tabular}{ll}
-%     \textbf{Parameter}   & \textbf{Value} \\
-%     Mirror diameter      & \SI{30}{\milli\meter} \\
-%     Mirror thickness     & \SI{6}{\milli\meter} \\
-%     Single plate width   & \SI{30}{\milli\meter} \\
-%     Single plate length  & \SI{50}{\milli\meter} \\
-%     Nominal plate separation & \SI{40}{\milli\meter} \\
-%   \end{tabular}
-%   \caption[Plate capacitor and optic parameters for the experiment to test the electrostatic drives for the \SSM{}]{\label{tab:esd-expt-parameters}Plate capacitor and optic parameters for the experiment to test the electrostatic drives for the \SSM{}.}
-% \end{table}
-% 
-% Although the \gls{ESD}, and indeed the \SSM{} experiment, primarily require corrections at lower frequencies where seismic noise is dominant, it is beneficial to utilise an amplifier which can provide actuation up to many tens, if not hundreds, of \SI{}{\kilo\hertz}. This facilitates a transfer function which is flat across the vast majority of each experiment's measurement band, avoiding the roll-off at high frequencies due to the integrated circuits utilised within the high voltage amplifier. A flat transfer function makes the calibration of the actuator plant as part of the overall experiment as simple as possible. Another benefit of having a high bandwidth amplifier is the possibility to use it for common mode control loops, where laser frequency stabilisation can be split between feedback to the laser's piezoelectric transducer and actuators on the test masses.
-% 
-% The key component of a high bandwidth amplifier is the power op-amp. This class of op-amps typically utilises a \gls{MOSFET} design, and can provide high voltage output given a low voltage input. As an example, the Apex PA95 op-amps used in Advanced LIGO's \glspl{ESD} provide up to \SI{900}{\volt} output up to a frequency of around \SI{15}{\kilo\hertz}, and up to \SI{50}{\volt} at \SI{250}{\kilo\hertz}. The PA98 op-amp, also from Apex, provides an output of \SI{450}{\volt} nominally up to \SI{60}{\kilo\hertz}, potentially up to \SI{500}{\kilo\hertz} for a low capacitive load. For the purposes of this experiment, the choice was made to use the PA98 op-amp to provide the ability to study the effect of the actuator across a very wide bandwidth. To this end, an amplifier circuit utilising the PA98 was built based on a design used for the \AEIPROTOTYPE{}. This design provides up to \SI{\pm350}{\volt} output, and originates from a single-ended, \SI{350}{\volt} amplifier design where the PA98 is especially suited. Two notable modifications have been made, with a view to safety.
-% 
-% % claim about voltage output of PA95 comes from figure ``Power Response'' on p3 of PA95 datasheet (https://www.apexanalog.com/resources/products/pa95u.pdf)
-% % claim about voltage output of PA98 comes from figure 8: ``power Response'' on p7 of PA98 datasheet (https://www.apexanalog.com/resources/products/pa98u.pdf)
-
 \section{Outlook}
 For the control of suspended test masses at high frequencies, parallel plate capacitor \glspl{ESD} provide a low noise alternative to voice coils and their geometry can prevent clipping losses suffered in the use of metal comb \glspl{ESD}. It is intended for parallel plate capacitor \glspl{ESD} to be used as the high frequency actuators in the \SSMEXPT{} presented in Chapter\,\ref{c:speedmeter-intro}, and in order to provide actuation at the required level an \gls{HV} signal with suitably high magnitude and low noise must be available. The technical design of an \gls{HV} amplifier was presented which meets the experiment's range and noise requirements, providing output up to \SI{750}{\volt} with noise of around \SI{20}{\micro\volt\per\sqrthz} in the frequency band of interest.
 
