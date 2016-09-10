@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="91" name="Nets" color="34" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="33" fill="1" visible="yes" active="yes"/>
@@ -8991,16 +8991,16 @@ Internet search&lt;/a&gt; (Google results)&lt;br&gt;</description>
 SWITCH</text>
 <text x="281.94" y="360.68" size="2.54" layer="97" font="vector" align="center">DEWHITENING
 SWITCH</text>
-<text x="218.44" y="327.66" size="2.54" layer="97" font="vector" align="center">POSITIVE HV AMPLIFIER</text>
-<text x="218.44" y="266.7" size="2.54" layer="97" font="vector" align="center">NEGATIVE HV AMPLIFIER</text>
+<text x="218.44" y="327.66" size="2.54" layer="97" font="vector" align="center">NEGATIVE HV AMPLIFIER</text>
+<text x="218.44" y="266.7" size="2.54" layer="97" font="vector" align="center">POSITIVE HV AMPLIFIER</text>
 <text x="149.86" y="269.24" size="2.54" layer="97" font="vector" align="center">INVERTER</text>
-<text x="279.4" y="317.5" size="2.54" layer="97" font="vector" align="center">POSITIVE
+<text x="279.4" y="317.5" size="2.54" layer="97" font="vector" align="center">NEGATIVE
 HV OUTPUT</text>
-<text x="279.4" y="241.3" size="2.54" layer="97" font="vector" align="center">NEGATIVE
+<text x="279.4" y="241.3" size="2.54" layer="97" font="vector" align="center">POSITIVE
 HV OUTPUT</text>
-<text x="279.4" y="287.02" size="2.54" layer="97" font="vector" rot="R180" align="center">POSITIVE
+<text x="279.4" y="287.02" size="2.54" layer="97" font="vector" rot="R180" align="center">NEGATIVE
 MONITOR OUTPUT</text>
-<text x="279.4" y="271.78" size="2.54" layer="97" font="vector" rot="R180" align="center">NEGATIVE
+<text x="279.4" y="271.78" size="2.54" layer="97" font="vector" rot="R180" align="center">POSITIVE
 MONITOR OUTPUT</text>
 </plain>
 <instances>
