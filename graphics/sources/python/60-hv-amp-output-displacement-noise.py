@@ -93,7 +93,7 @@ ax1.set_xlabel('Frequency (Hz)')
 ax1.set_xlim([1e1, 1e5])
 ax1.set_ylim([1e-24, 1e-14])
 
-ax1.legend(['HV amplifier output', 'Required experiment sensitivity'], loc='upper right')
+ax1.legend(['HV amplifier at maximum output', 'Required experiment sensitivity'], loc='upper right')
 
 ax1.grid(True)
 
