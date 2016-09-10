@@ -58,21 +58,18 @@ The term $\mathbb{T}$ can be further broken down:
     -\kappa & 1
   \end{pmatrix},
 \end{equation}
-showing that the optomechanical coupling factor transforms the input $\vec{a}$ in the sine quadrature by the mirror dynamics on its way to the output. The noise spectral density at the output port, $S$, is given by averaging over all frequencies:
+showing that the optomechanical coupling factor transforms the input $\vec{a}$ in the cosine (amplitude) quadrature into the sine (phase) quadrature governed by the mirror dynamics on its way to the output. The matrix of noise power spectral densities for the quadratures of the light at the output port, $\mathbb{S}$, is given by averaging over all frequencies:
 \begin{equation}
-  S = \left< \vec{b} \cdot \vec{b}^{\dag} \right>,
+  \mathbb{S} = \left< \vec{b} \cdot \vec{b}^{\dag} \right>,
 \end{equation}
 Expanding the terms we get:
 \begin{equation}
-  S =
+  \mathbb{S} =
   \begin{pmatrix}
     1 & 0 \\
     -\kappa & 1
   \end{pmatrix}
-  \begin{pmatrix}
-    a_c \\
-    a_s
-  \end{pmatrix}
+  \left< \vec{a} \cdot \vec{a}^{\dag} \right>
   \begin{pmatrix}
     1 & -\kappa \\
     0 & 1
@@ -94,7 +91,7 @@ We can calculate the signal at the \gls{DC} readout of the \FPMI{}, $O_{\text{dc
 \begin{equation}
   \frac{O_{\text{dc}}}{h_{\left( - \right)}} = \frac{\text{e}^{\text{i} \beta_{\text{FP}}} \sqrt{2 \kappa_{\text{MI}}}}{h_{\text{SQL}}}.
 \end{equation}
-This is shown in Figure\,\ref{fig:fp-mich-response} for arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{250}{\hertz}. The units of magnitude are photons \SI{}{\per\sqrthz} strain.
+This is shown in Figure\,\ref{fig:fp-mich-response} for arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{250}{\hertz}.
 
 \begin{figure}
   \centering
@@ -105,16 +102,16 @@ This is shown in Figure\,\ref{fig:fp-mich-response} for arm length \SI{1}{\kilo\
 Normal, unsqueezed vacuum noise at the input has equal noise contributions in the cosine and sine quadratures, and so we can set it to the identity matrix:
 \begin{equation}
   \label{eq:unsqueezed-vacuum-amplitude}
-  \vec{a}_{\text{vacuum}} =
+  \left< \vec{a}_{\text{vacuum}} \cdot \vec{a}_{\text{vacuum}}^{\dag} \right> =
   \begin{pmatrix}
    1 & 0 \\
    0 & 1
   \end{pmatrix}.
 \end{equation}
-The noise power spectral density due to quantum noise entering at the input, $S_{\text{FPMI}}$, is then:
+The matrix of noise power spectral densities of the light quadratures at the output due to quantum noise, $\mathbb{S}_{\text{FPMI}}$, is then:
 \begin{equation}
   \begin{split}
-    S_{\text{FPMI}} &=
+    \mathbb{S}_{\text{FPMI}} &=
     \begin{pmatrix}
       1 & 0 \\
       -\kappa_{\text{MI}} & 1
@@ -134,13 +131,12 @@ The noise power spectral density due to quantum noise entering at the input, $S_
     \end{pmatrix}.
   \end{split}
 \end{equation}
-The noise read by the \gls{DC} readout is transformed by the homodyne angle:
+The noise seen by the \gls{DC} readout is determined by the homodyne angle:
 \begin{equation}
   \begin{split}
-    S_{\text{FPMI}}^{\text{dc}} &= \vec{H}_{\text{dc}}^{T} S_{\text{FPMI}} \vec{H}_{\text{dc}},
+    S_{\text{FPMI}}^{\text{dc}} &= \vec{H}_{\text{dc}}^{T} \mathbb{S}_{\text{FPMI}} \vec{H}_{\text{dc}}.
   \end{split}
 \end{equation}
-where the units are photons \SI{}{\per\hertz}.
 
 For \gls{DC} readout, the output noise spectral density is shown in Figure\,\ref{fig:fp-mich-noise}. This is the combination of radiation pressure noise from the mirrors and shot noise on the sensor, and these two effects combine to produce the quantum noise spectral density. At high frequencies, the quantum noise is equal to the quantum vacuum noise input from Equation\,\ref{eq:unsqueezed-vacuum-amplitude} (corresponding to $\kappa_{\text{MI}} \approx 0$) which shows that the signal on the sensor is limited by noise propagating to the output with no significant effect from optomechanical interactions. Below the cavity pole, the vacuum fluctuations move the mirror by an amount governed by the mirror's optomechanical coupling and this random detuning of the cavity converts coherent carrier light into radiation pressure noise at the output.
 
@@ -163,7 +159,7 @@ and this is shown in Figure\,\ref{fig:fp-mich-sensitivity}.
 \end{figure}
 
 \subsection{\label{sec:speed-meter-measurement}Sensitivity of a \SM{}}
-Since the early 1990s it has been known that the measurement of momentum, known to be a quantum non-demolition (\gls{QND}) observable, offers the ability to surpass the \gls{SQL} in interferometric measurement \cite{Braginsky1990}. Ideally, the force applied to test masses by a measurement of momentum does not affect its future value and so momentum can in principle be measured to arbitrary precision. Velocity is an appropriate observable to measure momentum and also approximates a \gls{QND} scheme due to its relation to momentum\footnote{Strictly, velocity is a \gls{QND} observable if the measurement is being made of a free mass \cite{Danilishin2012}. Since the test masses in a suspended interferometer only resemble free masses for frequencies far above the suspension poles, velocity only approximates a \gls{QND} observable.}. Interferometers that measure velocity are called \emph{\SM{}s}, and their principle of operation is as follows. Light from a laser enters the interferometer as it would for a position-meter, and accumulates a phase shift proportional to the propagation and the signal from any gravitational waves or disturbances in the positions of the test masses. As the light reflects from the test masses it imparts radiation pressure arising from its classical amplitude and the amplitude quantum vacuum fluctuations as discussed in Section\,\ref{sec:position-meter-measurement} for a \FPMI{}. Within the interferometer there must be a mechanism to impart a phase shift equivalent to \SI{180}{\degree} to one light field to create a second light field that samples the same mode. Propagating through the interferometer, the radiation pressure imparted to the mirrors by one field is superimposed upon the radiation pressure imparted from the other, and as these effects are out of phase within the light travel time the radiation pressure force can be suppressed.
+Since the early 1990s it has been known that the measurement of momentum, known to be a quantum non-demolition (\gls{QND}) observable, offers the ability to surpass the \gls{SQL} in interferometric measurement \cite{Braginsky1990}. Ideally, the force applied to test masses by a measurement of momentum does not affect its future value and so momentum can in principle be measured to arbitrary precision. Velocity is an appropriate observable to measure momentum and also approximates a \gls{QND} scheme due to its relation to momentum. Interferometers that measure velocity are called \emph{\SM{}s}, and their principle of operation is as follows. Light from a laser enters the interferometer as it would for a position-meter, and accumulates a phase shift proportional to the propagation and the signal from any gravitational waves or disturbances in the positions of the test masses. As the light reflects from the test masses it imparts radiation pressure arising from its classical amplitude and the amplitude quantum vacuum fluctuations as discussed in Section\,\ref{sec:position-meter-measurement} for a \FPMI{}. Within the interferometer there must be a mechanism to impart a phase shift equivalent to \SI{180}{\degree} to one light field to create a second light field that samples the same mode. Propagating through the interferometer, the radiation pressure imparted to the mirrors by one field is superimposed upon the radiation pressure imparted from the other, and as these effects are out of phase within the light travel time the radiation pressure force can be suppressed.
 
 % Hack: no \SM{} here because we need a capital letter
 There are many different \SM{} topologies in the literature \cite{Danilishin2004, Wang2013, Huttner2016, Wade2012}. Speed meters are also being considered as alternatives to the proposed \MI{}s in the \ET{} \cite{MuellerEbhardt2009a, Voronchev2015}. We consider here two \SM{} topologies to highlight the significantly different forms in which a \SM{} interferometer can take.
@@ -218,7 +214,7 @@ The response of a \SSM{} to differential arm cavity motion is shown in Figure\,\
   \caption[Response of a \SSM{} to differential arm cavity motion]{\label{fig:ssm-response}Response of a \SSM{} to differential arm cavity motion. In contrast to the \MI{}, the \SSM{} has response proportional to frequency below the cavity pole.}
 \end{figure}
 
-The corresponding quantum noise at the output port is shown in Figure\,\ref{fig:ssm-noise}. Note that the noise is unity at high frequencies as with the \FPMI{}, but is suppressed at low frequencies due to the cancellation of back-action due to radiation pressure from quantum vacuum fluctuations.
+The corresponding quantum noise at the output port is shown in Figure\,\ref{fig:ssm-noise}. Note that the noise is unity at high frequencies as with the \FPMI{}, but is suppressed at low frequencies due to the cancellation of back-action due to radiation pressure from quantum vacuum fluctuations. The cancellation is not perfect due to the time delay between the two consecutive visits of the arm cavities by the counter-propagating modes.
 
 \begin{figure}
   \centering

@@ -105,7 +105,7 @@ ax2.grid(True)
 ax2.set_ylim((-200, 200))
 
 # set labels
-ax1.set_ylabel('Response\n(photons / sqrt(Hz))')
+ax1.set_ylabel('Response\n(1 / sqrt(Hz))')
 ax2.set_xlabel('Frequency (Hz)')
 ax2.set_ylabel(u'Phase (°)')#, color=ax2colour)
 
