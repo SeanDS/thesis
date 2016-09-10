@@ -38,7 +38,7 @@ ax1.vlines(f, 1e-35, 1e2, colors=colours.next(), linestyles='dashed', zorder=2)
 ax1.set_ylim([1e-20, 1])
 
 ax1.set_xlabel('Frequency (Hz)')
-ax1.set_ylabel(r'Power ($\mathrm{Amplitude}^2$ / Hz)')
+ax1.set_ylabel('Power spectral density (power / Hz)')
 
 ax1.legend(['PSD estimate (Hanning window)', 'PSD estimate (flat window)', 'Signal frequency'], loc='lower left')
 
