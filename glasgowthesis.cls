@@ -154,12 +154,6 @@
 %    \vskip 8em
 %    \vfill
     \textsc{\@date}
-    \vskip 2em%
-    {
-      \textsc{\small
-        \copyright~\@author
-      }
-    }
   \end{center}
   \end{titlepage}%
   %
