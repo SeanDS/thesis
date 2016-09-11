@@ -100,9 +100,6 @@
 % Stop figures and other floats getting their own page unless they take up most of the page
 \renewcommand{\floatpagefraction}{0.8}
 
-% Specify page titles for well-known sections.
-\renewcommand{\contentsname}{Table of Contents}
-
 % Title page layout
 \renewcommand\maketitle{
   \begin{titlepage}%
