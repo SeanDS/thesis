@@ -85,6 +85,14 @@
 % gets 1.8cm and the body text still fits within guidelines.
 \textheight 24.3cm
 
+% Preface environment to vertically centre the text
+% from https://tex.stackexchange.com/questions/154733/
+\newenvironment{preface}{\clearpage\setlength{\topskip}{0pt}%
+  \newgeometry{vmargin=0cm,ignoreheadfoot}%
+  \thispagestyle{empty}%
+  \vspace*{\fill}\nointerlineskip\small}%
+  {\vspace*{\fill}\clearpage\restoregeometry}
+
 % Specify section number depth to allow subsubsection headings to be
 % numbered (so that they can be cross-referenced properly).
 \setcounter{secnumdepth}{3}
