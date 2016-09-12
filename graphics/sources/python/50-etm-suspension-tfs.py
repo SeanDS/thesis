@@ -41,7 +41,7 @@ ax2.vlines(18, -200, 200, colors=colour_c, linestyles='dashed', zorder=2)
 
 ax1.set_ylabel('Closed loop\ntransfer function')
 ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (°)')
+ax2.set_ylabel(u'Phase (deg)')
 
 ax1.set_xlim([1e-1, 1e4])
 ax1.set_ylim([1e-20, 1e1])

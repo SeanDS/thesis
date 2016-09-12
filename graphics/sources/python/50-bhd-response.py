@@ -44,7 +44,7 @@ ax2.set_ylim((-200, 200))
 # set labels
 ax1.set_ylabel('$L_{(-)}$ response to\nBHD readout (W / m)')
 ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (°)')#, color=ax2colour)
+ax2.set_ylabel(u'Phase (deg)')#, color=ax2colour)
 
 # set phase ticks
 ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])

@@ -22,7 +22,7 @@ gradient, intercept, _, _, _ = stats.linregress(data[:, 0], data[:, 6])
 # fit x-axis
 fitx = xrange(600, 800, 10)
 
-fig = plt.figure(figsize=lf.FIG_SIZE_A)
+fig = plt.figure(figsize=lf.FIG_SIZE_A_SM)
 
 ax1 = plt.gca()
 
@@ -39,7 +39,7 @@ ax1.plot(fitx,  1e6 * (fitx * gradient + intercept), '--', color=colours.current
 ax1.yaxis.get_major_formatter().set_powerlimits((0, 0))
 
 ax1.set_xlabel('Voltage (V)')
-ax1.set_ylabel(u'Force (μN)')
+ax1.set_ylabel(u'Force (microN)')
 
 with plt.rc_context({'legend.borderaxespad': 2}):
   ax1.legend(['Force in x-direction', 'Force in y-direction', 'Force in z-direction', 'Fit for force in z-direction\n(gradient = {:.2f} nN/V)'.format(gradient * 1e9)])
@@ -50,5 +50,7 @@ ax1.grid(True)
 
 ax1.set_xlim([640, 760])
 ax1.set_ylim([-1.6, 0.5e-1])
+
+plt.tight_layout()
 
 plt.savefig(save_path)

@@ -43,7 +43,7 @@ ax2.plot(data_h1_num[:, 0], scale * data_h1_num[:, 1], '-', color=colour_a, alph
 ax2.plot(data_l1_num[:, 0], scale * data_l1_num[:, 1], '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Strain')
-ax2.set_xlabel('Time (s)')
+ax2.set_xlabel(r'Time $\left(\SI{}{\second}\right)$')
 
 ax1.set_ylim([scale * -1.5, scale * 1.5])
 ax2.set_ylim([scale * -1.5, scale * 1.5])

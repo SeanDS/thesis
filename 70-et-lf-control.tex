@@ -71,7 +71,7 @@ To provide maximum astrophysical reach the facility is intended to provide sensi
 % data from http://www.et-gw.eu/etsensitivities
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-et-d-sensitivity-curves.pdf}
+  \input{graphics/generated/from-python/70-et-d-sensitivity-curves.pgf}
   \caption[Sensitivity curves for the Einstein Telescope]{\label{fig:et-d-sensitivity}Sensitivity of the \ET{} detectors, based on the ET-D design \cite{Hild2011}. \ETLF{} is optimised for low frequencies, \ETHF{} is optimised for high frequencies, and the combination yields sensitivity between \SI{2}{\hertz} and \SI{10}{\kilo\hertz}.}
 \end{figure}
 
@@ -223,7 +223,7 @@ Placing a power recycling mirror before a \MI{}, as discussed in Section\,\ref{s
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-reflected-power-vs-prm-transmissivity.pdf}
+  \input{graphics/generated/from-python/70-reflected-power-vs-prm-transmissivity.pgf}
   \caption[Reflected power from \ETLF{} as a function of power recycling mirror transmissivity]{\label{fig:reflected-power-vs-prm-trans}Reflected power from \ETLF{} as a function of power recycling mirror transmissivity. For optimal coupling of the input laser light to the interferometer, the transmissivity of the power recycling mirror must be set to balance the input light with the total loss from the interferometer. For \ETLF{} with loss as per the \gls{ET} design study, this transmissivity should be \SI{4.6}{\percent}.}
 \end{figure}
 
@@ -274,7 +274,7 @@ Figure\,\ref{fig:sideband-powers-vs-schnupp-detuned} shows the power of the uppe
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-schnupp-detuned.pdf}
+  \input{graphics/generated/from-python/70-sideband-powers-vs-schnupp-detuned.pgf}
   \caption[Power of the control sidebands in the cavities of \ETLF{} in detuned configuration as a function of Schnupp asymmetry]{\label{fig:sideband-powers-vs-schnupp-detuned}Power of the control sidebands in the cavities of \ETLF{} during detuned operation as a function of Schnupp asymmetry. A macroscopic offset\textemdash the \emph{Schnupp asymmetry}\textemdash is intentionally introduced to the Michelson length in order to allow the coupling of the sidebands $\pm f_1$ and $\pm f_2$ into the signal recycling cavity for the purposes of control while maintaining the dark fringe condition for the carrier. Here, we choose to allow $\pm f_2$, but not $\pm f_1$, to couple to the signal recycling cavity. The power is a reasonable estimate for the relative sensitivity of the sidebands in the recycling cavities, and we choose an asymmetry which gives good separation of the power of the sidebands in each cavity, \SI{0.08}{\meter}.}
 \end{figure}
 
@@ -283,7 +283,7 @@ Note the discrepancy between two of the control sideband frequency constraints i
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sideband-powers-vs-srcl-detuned.pdf}
+  \input{graphics/generated/from-python/70-sideband-powers-vs-srcl-detuned.pgf}
   \caption[Power of the control sidebands in the signal recycling cavity of \ETLF{} in detuned configuration as a function of signal recycling cavity length]{\label{fig:sideband-powers-srcl-detuned}The power in each sideband in each recycling cavity as a function of signal recycling cavity length. The nominal signal recycling cavity length defined by the \gls{ET} design study, \SI{310}{\meter}, is not resonant for the second sideband as intended. As the sideband frequencies are different, we can fix this situation by scanning the signal recycling cavity to find a length that is resonant for $f_2$ but not for $f_1$. For the given choice of Schnupp asymmetry, this occurs at a length of \SI{311.585}{\meter} for the upper sideband. The choice to optimise either the upper or lower sideband is arbitrary since both sidebands contribute signal at the readout.}
 \end{figure}
 
@@ -299,7 +299,7 @@ Figure\,\ref{fig:total-power-vs-darm-offset-detuned} shows the power at the outp
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-total-power-vs-darm-offset-detuned.pdf}
+  \input{graphics/generated/from-python/70-total-power-vs-darm-offset-detuned.pgf}
   \caption[Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity offset]{\label{fig:total-power-vs-darm-offset-detuned}Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity length (\gls{DARM}) offset. The differential arm detuning required to allow carrier light to enter the dark port for \gls{DC} readout involves an increase or decrease in the microscopic length of each arm cavity, and this changes the circulating power. The compromise must be made between the power available to the photodetector for sensing while maintaining reasonably balanced arm cavities to prevent optical springs from influencing the sensitive band and creating additional noise coupling.}
 \end{figure}
 % See "Stable optical spring in the Advanced LIGO detector with unbalanced arms and in the Michelson-Sagnac interferometer", equations 6f and 6g show a small part of the common mode entering the differential, and vice versa. Another way of looking at this is to say that the DARM offset at the point of maximum arm cavity power (for one arm) is compensating the detuned signal recycling such that the compound cavity formed by the SRM and (e.g.) the X arm is resonant. This explains the shape of the arm cavity power vs DARM offset.
@@ -427,7 +427,7 @@ Error signals corresponding to the suggested readouts for each degree of freedom
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-sweeps-detuned.pdf}
+  %\input{graphics/generated/from-python/70-sweeps-detuned.pgf}
   \caption[Sweeps through the zero-crossings of the chosen error signals in ET-LF]{\label{fig:sweeps-et-lf}Sweeps through the zero-crossings of the chosen error signals in \ETLF{} in the detuned configuration. Each error signal is linear about the operating point, which ensures a simple, bipolar error signal is available for the purposes of controlling each associated degree of freedom. This linearity has a different range for each readout, with \gls{CARM} and \gls{DARM} requiring the greatest precision.}
 \end{figure}
 
@@ -438,7 +438,7 @@ The sensitivity for \ETLF{} shown in Figure\,\ref{fig:et-d-sensitivity} assumes 
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/70-et-lf-control-scheme-sensitivity-curve.pdf}
+  \input{graphics/generated/from-python/70-et-lf-control-scheme-sensitivity-curve.pgf}
   \caption[ET-LF quantum noise limited sensitivity using the conceptual control scheme]{\label{fig:et-lf-control-scheme-sensitivity}\ETLF{} quantum noise limited sensitivity using the conceptual control scheme, with no squeezed light injection. The reference curve from the ET-D study is shown next to the sensitivity calculated with the Optickle model developed in this chapter, and also a \gls{FINESSE} curve generated using identical parameters. The reference and simulation curves broadly agree, showing that the chosen parameters do not negatively impact upon the sensitivity, though a difference in the noise calculations and the \gls{DARM} offset assumed in this work creates the slight mismatch in the most sensitive region.}
 \end{figure}
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import division
 
 import os
@@ -31,7 +32,7 @@ f.close()
 # colour wheel
 colours = lf.Colours()
 
-fig = plt.figure(figsize=lf.FIG_SIZE_A)
+fig = plt.figure(figsize=lf.FIG_SIZE_A_SM)
 ax = plt.gca()
 
 # normalise y-axis
@@ -72,5 +73,7 @@ ax.set_xlabel('Transverse to longitudinal coupling (m / m)')
 ax.set_ylim([0, 1])
 ax.set_xlim([0, max(data[:, 0])])
 
-plt.savefig(sys.argv[1], format="PDF")
+plt.tight_layout()
+
+plt.savefig(sys.argv[1])
 #pl.show()

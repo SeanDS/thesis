@@ -58,7 +58,7 @@ ax2.plot((lengths - nominal_length) * 1e9, phase_offset + np.angle(tf) * 180 / n
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Offset from resonance (nm)')
-ax2.set_ylabel(u'Phase (°)')
+ax2.set_ylabel(u'Phase (deg)')
 
 ax1.grid(True)
 ax2.grid(True)

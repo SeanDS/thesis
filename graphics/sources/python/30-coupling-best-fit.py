@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import division
+
 import os
 import sys
 import numpy as np
@@ -35,12 +38,11 @@ ax1.semilogy(simulated[:, 0], simulated[:, 1] / rotation, '-', color=colour_a, l
 ax1.semilogy(simulated[:, 0], simulated[:, 2] / rotation, '-', color=colour_b, lw=2)
 ax1.semilogy(simulated[:, 0], simulated[:, 3] / rotation, '-', color=colour_c, lw=2)
 ax1.semilogy(
-  real[0, :], real[1, :] / rotation, '*', color=colour_d, lw=2,
-  markersize=5, zorder=4)
-ax1.errorbar(x=real[0, :], y=real[1, :] / rotation, xerr=xerror, fmt=None, lw=1.5, zorder=3, ecolor=colour_e)
+  real[0, :], real[1, :] / rotation, '*', color=colour_d, lw=2, zorder=4)
+ax1.errorbar(x=real[0, :], y=real[1, :] / rotation, xerr=xerror, fmt='none', lw=1.5, zorder=3, ecolor=colour_e)
 
 ax1.grid(True)
-ax1.set_ylabel('Cavity length change (m / rad)')
+ax1.set_ylabel(r'Cavity length change $\left(\frac{\SI{}{\meter}}{\SI{}{\radian}}\right)$')
 legend1 = ax1.legend(['Model, 1:27600', 'Model, 1:17000', 'Model, no coupling', 'Measurements'], loc='lower left')
 ax1.set_xlim([-0.0225, 0.0225])
 
@@ -48,18 +50,17 @@ ax2.plot(simulated[:, 0], simulated[:, 4], '-', color=colour_a, lw=2)
 ax2.plot(simulated[:, 0], simulated[:, 5], '-', color=colour_b, lw=2)
 ax2.plot(simulated[:, 0], simulated[:, 6], '-', color=colour_c, lw=2)
 ax2.plot(
-  real[0, :], real[2, :], '*', color=colour_d, lw=2, markersize=5,
-  zorder=4)
+  real[0, :], real[2, :], '*', color=colour_d, lw=2, zorder=4)
 
 # yerrors, from calculate_snr.m.
 yerrors = [-3.2303,0.1721,-0.0342,0.0254,-2.0603,0.2178,-0.0336,0.0283,3.2726,0.1387,-0.0385,0.0188]
 
-ax2.errorbar(x=real[0, :], y=real[2, :], xerr=xerror, yerr=yerrors, fmt=None, lw=1.5, zorder=3, ecolor=colour_e)
+ax2.errorbar(x=real[0, :], y=real[2, :], xerr=xerror, yerr=yerrors, fmt='none', lw=1.5, zorder=3, ecolor=colour_e)
 ax2.grid(True)
-ax2.set_xlabel('Spot position on ETM (m)')
-ax2.set_ylabel(u'Phase (\xb0)')
+ax2.set_xlabel(r'Spot position on ETM $\left(\SI{}{\meter}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 ax2.set_ylim([-20, 200])
 
 fig.tight_layout()
 
-plt.savefig(sys.argv[1], format="PDF", bbox_extra_artists=(legend1,), bbox_inches='tight')
+plt.savefig(sys.argv[1], bbox_extra_artists=(legend1,), bbox_inches='tight')

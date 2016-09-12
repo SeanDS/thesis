@@ -55,7 +55,7 @@ Once a segment is created, the resulting Fourier transform is applied to the tim
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/AB-fft-windowing.pdf}
+  \input{graphics/generated/from-python/AB-fft-windowing.pgf}
   \caption[The effect of windowing on a power spectral density estimate]{\label{fig:fft-windowing}The effect of windowing on a power spectral density estimate. The underlying signal time series is a sine wave of frequency \SI{2499}{\hertz}, and the sample rate is \SI{10}{\kilo\hertz}. The power spectral density estimates have been made using both Hanning windows, which de-emphasise the start and end of each segment to suppress discontinuities, and a flat window which performs no relative scaling of the data points. Both methods recover the signal's frequency, but in the former case the noise floor is greatly reduced.}
 \end{figure}
 
@@ -96,7 +96,7 @@ As discussed in Section\,\ref{sec:rms-amplitude}, actuators and sensors have fin
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/AB-bandwidth.pdf}
+  \input{graphics/generated/from-python/AB-bandwidth.pgf}
   \caption[Limiting a servo to enhance gain in a certain band]{\label{fig:bandwidth}Limiting a servo to enhance gain in a certain band. The figure shows the loop gain of two servos, each consisting of a simple low pass filter. The area under each transfer function is equal, and this represents the ability of the controller to make corrections to the system (for example, the range of an actuator). To enhance the gain by a factor of \num{10} at \gls{DC}, the unity gain frequency has to be reduced by the same factor, meaning that the system will be controlled over a smaller bandwidth but with greater effort.}
 \end{figure}
 

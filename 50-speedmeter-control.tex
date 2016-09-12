@@ -17,7 +17,7 @@ To assess the importance of the optics to the interferometer's sensitivity to di
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-mirror-tfs.pdf}
+  \input{graphics/generated/from-python/50-mirror-tfs.pgf}
   \caption[Transfer functions from important mirrors/combinations of mirrors in the \SSMEXPT{} to the balanced homodyne detector]{\label{fig:ssm-mirror-tfs}Transfer functions from important mirrors or combinations of mirrors in the \SSMEXPT{} to the balanced homodyne detector. The \LMINUS{} degree of freedom has the strongest response by design. The main beam splitter, \MSIX{}, and the steering mirror for cavity A, \MSEVEN{}, have response approximately one one-hundredth that of \LMINUS{}. Other mirrors have significantly lower coupling.}
 \end{figure}
 
@@ -30,7 +30,7 @@ Measurements of the seismic motion present upon the ground outside the vacuum sy
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-m7-seismic-noise.pdf}
+  \input{graphics/generated/from-python/50-m7-seismic-noise.pgf}
   \caption[Effective \LMINUS{} seismic noise contribution from \MSEVEN{}]{\label{fig:m7-seismic-noise}Effective \LMINUS{} seismic noise contribution from \MSEVEN{}. This is calculated by first propagating a seismic noise spectral density for the laboratory near the vacuum system through damping and suspension models to obtain the motion of the \MSEVEN{} test mass. With this figure, the response at the \gls{BHD} can be calculated from the transfer function shown in Figure\,\ref{fig:ssm-mirror-tfs}, and this in turn can be expressed in units of differential arm cavity motion by dividing it by the response of \LMINUS{} to the \gls{BHD} port. The requirement is given only for frequencies above \SI{100}{\hertz} where the measurement of reduced radiation pressure noise will be made, and this figure shows that seismic motion of \MSEVEN{} will not represent a significant problem to the sensitivity of the experiment in the desired band. This conclusion applies also to the main beam splitter, \MSIX{}, which is expected to have even greater isolation from seismic noise.}
 \end{figure}
 
@@ -65,7 +65,7 @@ Other terms in the response function dependent upon mirror mass, laser power and
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-bhd-response.pdf}
+  \input{graphics/generated/from-python/50-bhd-response.pgf}
   \caption[The frequency response of the \SSMEXPT{}'s differential arm cavity degree of freedom to the balanced homodyne readout]{\label{fig:bhd-response}The frequency response of the \SSMEXPT{}'s \LMINUS{} degree of freedom to the \gls{BHD}, simulated numerically with Optickle. As the \gls{BHD} is sensitive to the arm cavity mirrors' velocity, the signal is proportional to frequency below the cavity pole, and thus zero at \gls{DC}.}
 \end{figure}
 
@@ -113,14 +113,14 @@ The circuit's output noise was recorded for a period of \SI{16}{} days alongside
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-time-series.pdf}
+  \input{graphics/generated/from-python/50-op-amp-noise-time-series.pgf}
   \caption[Time series of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-time-series}Time series of the output from the BHD noise measurement circuit shown in Figure\,\ref{fig:bhd-noise-electronics}. The op-amp noise (blue) drifts from \num{0} to a level of approximately \SI{-7.3}{\milli\volt} over the 16 day measurement. Simultaneously, a \gls{CDS} channel was measured without an input connected (orange) such that the input impedance was that of the channel's line receiver, \SI{34}{\mega\ohm}, in order to act as a null stream. The temperature was also measured by a sensor within the same housing as the noise circuit (green), showing a drift of around \SI{0.5}{\celsius}.}
 \end{figure}
 % input resistance based on THS4131 datasheet
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-op-amp-noise-spectrum.pdf}
+  \input{graphics/generated/from-python/50-op-amp-noise-spectrum.pgf}
   \caption[Amplitude spectral density of the noise measured from the balanced homodyne readout electronics]{\label{fig:op-amp-noise-spectrum}Amplitude spectral density of the noise measured from the \gls{BHD} readout electronics. The op-amp noise spectrum (blue) shows the amplitude spectral density estimate (see Appendix\,\ref{sec:windowing}) for the data in Figure\,\ref{fig:op-amp-noise-time-series}. The \gls{ADC} noise spectral density is also given (orange) along with modelled op-amp and resistor noise sources projected into the same measurement point (red and purple, respectively). The most significant contribution to the output is from the first op-amp, as intended; though the noise model, which accounts for the op-amp's input voltage and current noise and the Johnson-Nyquist noise of the resistors, departs from the measurements at lower frequencies.}
 \end{figure}
 
@@ -157,7 +157,7 @@ The use of whitening can lead to extra noise at higher frequencies, where the co
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-whitening-demo.pdf}
+  \input{graphics/generated/from-python/50-whitening-demo.pgf}
   \caption[The effect of whitening on a signal]{\label{fig:whitening}The effect of whitening on a signal. The unwhitened signal (blue, upper plot) drops below the sensor's noise above \SI{100}{\hertz}, and so it will output only the noise of the sensor (at $\text{SNR} = 0$) at higher frequencies. A whitening filter, shown in the lower plot, has been applied to the same data to produce the whitened curve (orange, upper plot). In this case the whitening filter is a high pass filter, but in general its dynamics should be determined by the shape of the underlying signal to be whitened. The whitening filter increases the signal's magnitude at higher frequencies and thus makes it detectable above the sensor's noise up to a higher frequency, in this case \SI{10}{\kilo\hertz}. Once the whitened signal has been detected the underlying, unwhitened signal can be recovered in the digital domain through the application of the corresponding inverse whitening filter.}
 \end{figure}
 
@@ -165,7 +165,7 @@ The whitening to be applied to the \SSMEXPT{}'s sensor and actuator signals is s
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-whitening-filter-tfs.pdf}
+  \input{graphics/generated/from-python/50-whitening-filter-tfs.pgf}
   \caption[Input and output whitening filters in the \SSMEXPT{}]{\label{fig:whitening-tfs}Input and output whitening filters in the \SSMEXPT{}. The input whitening will be implemented in the analogue domain whilst the output whitening will be implemented digitally in CDS. The equivalent dewhitening filters will be implemented in the digital and analogue domains, respectively.}
 \end{figure}
 
@@ -177,7 +177,7 @@ With \gls{CDS}, the sample frequency is \SI{65536}{\hertz}, and so the Nyquist f
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-aa-ai-filter-tfs.pdf}
+  \input{graphics/generated/from-python/50-aa-ai-filter-tfs.pgf}
   \caption[Anti-aliasing and anti-imaging filter transfer functions]{\label{fig:aa-ai-filter-tfs}Transfer functions of the anti-aliasing and anti-imaging filters implemented in CDS. The gain at low frequencies is unity to allow signals to pass unperturbed. From \SI{9}{\kilo\hertz}, the filters suppress higher frequency signal content to prevent aliasing or imaging into lower frequencies. At the sample frequency, a notch filter removes all but a factor of \SI{e-5}{} of the signal to prevent pick-up.}
 \end{figure}
 
@@ -227,7 +227,7 @@ If low frequency seismic noise must be suppressed further, an extra boost can be
 The closed-loop transfer functions for the voice coils and \gls{ESD} are shown in Figure\,\ref{fig:suspension-crossover}. This shows the gain of the \gls{ESD} with respect to the voice coils as a function of frequency, resembling the performance of the system in operation.
 
 \begin{figure}
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-etm-suspension-tfs.pdf}
+  \input{graphics/generated/from-python/50-etm-suspension-tfs.pgf}
   \caption[Simulated end test mass suspension actuator closed loop transfer functions]{\label{fig:suspension-crossover}Simulated \SSMEXPT{} ETM suspension actuator closed-loop transfer functions showing the difference in gain between the voice coils and \gls{ESD}. The voice coils provide extensive actuation range but are suppressed at high frequencies by the final stage pendulum. The \gls{ESD} actuates directly upon the test mass and is therefore capable of providing stronger correction than the voice coils at higher frequencies. A \nth{2} order notch filter is present on both actuators at \SI{800}{\hertz} to prevent excitation of the first suspension violin mode.}
 \end{figure}
 
@@ -280,13 +280,13 @@ The noise projection for \LMINUS{}, calculated using Optickle and the control no
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-velocity.pdf}
+  \input{graphics/generated/from-python/50-readout-noise-velocity.pgf}
   \caption[Spectral density noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity}Spectral density showing the noise associated with the readout of \LMINUS{} at the BHD. The significant noise sources associated with sensing (shot, op-amp and ADC noise) are shown alongside the contribution from suppressed displacement noise sources. Below around \SI{5}{\milli\hertz} the dominating sensing noise is due to the op-amp electronics. Lab measurements of seismic noise have been made down to \SI{0.3}{\hertz}, and this dominates the displacement noise between \SI{10}{\milli\hertz} and \SI{10}{\hertz}. The assumption has been made that the noise is sharply suppressed below the microseism at \SI{0.1}{\hertz}. Dominant displacement noise below \SI{10}{\milli\hertz} is due to the \glspl{DAC}.}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-velocity-rms.pdf}
+  \input{graphics/generated/from-python/50-readout-noise-velocity-rms.pgf}
   \caption[Root-mean-square noise projection for \LMINUS{} using velocity feedback]{\label{fig:readout-noise-velocity-rms}Root-mean-square noise projection for \LMINUS{} using velocity feedback. The requirement is exceeded beyond a few hours, after which the noise due to the BHD readout is enough for the cavities to drift beyond the displacement requirement and lose sensitivity.}
 \end{figure}
 
@@ -315,7 +315,7 @@ ignoring again the effect of losses and constant terms as with Equation \ref{eq:
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-pdh-response.pdf}
+  \input{graphics/generated/from-python/50-pdh-response.pgf}
   \caption[The frequency response of the differential arm cavity degree of freedom to the Pound-Drever-Hall readout]{\label{fig:pdh-response}The frequency response of the differential arm cavity degree of freedom to the \gls{PDH} readout alongside that of the \gls{BHD} readout, simulated numerically with Optickle. At low frequencies, the \gls{PDH} readout is flat whereas the \gls{BHD} signal decays towards zero. The flat \gls{PDH} error signal assists with the long term stability of the \SSMEXPT{}.}
 \end{figure}
 
@@ -377,7 +377,7 @@ The reflectivity of \MNINE{} is implicit in both the field-to-field and mode-to-
 The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in Optickle by default, and so some modifications to the code were necessary (see Appendix\,\ref{sec:optickle-field-tfs}). The effect of \MNINE{}'s reflectivity on $\alpha_{\textrm{opt}}$ is shown in Figure\,\ref{fig:optimal-filters}. Note that, because it is calculated with precomputed spectral densities and not tested for stability, the filter predicted by Equation\,\ref{eq:optimal-filter} is not necessarily realisable. A \emph{causal} Wiener filter, one which is implementable in a real experiment as opposed to one which can be applied to offline data, has previously been calculated for single-readout interferometers \cite{MuellerEbhardt2009, Miao2010}, but a similar calculation for more than one readout has to the author's knowledge not been investigated as of the time of writing.
 
 \begin{figure}
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-optimal-filters.pdf}
+  \input{graphics/generated/from-python/50-optimal-filters.pgf}
   \caption[Optimal filters to combine the balanced homodyne and Pound-Drever-Hall signals for different values of \MNINE{} reflectivity]{\label{fig:optimal-filters}Optimal filters to combine the \gls{BHD} and \gls{PDH} signals for different values of \MNINE{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the \gls{BHD} signal with respect to the \gls{PDH} signal before the two are combined, for different \MNINE{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the \gls{PDH} signal. For all values of \MNINE{} shown, the optimal combination involves suppressing the \gls{BHD} signal with respect to the \gls{PDH} at frequencies below around \SI{1}{\kilo\hertz}.}
 \end{figure}
 
@@ -396,20 +396,20 @@ The \LMINUS{} noise projection for a simple combined filter as discussed in Sect
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-mixed.pdf}
+  \input{graphics/generated/from-python/50-readout-noise-mixed.pgf}
   \caption[Spectral density noise projection for \LMINUS{} using both displacement and velocity feedback]{\label{fig:readout-noise-mixed}Spectral density noise projection for \LMINUS{} using both displacement and velocity feedback. The mixing of displacement information into the feedback signal at low frequencies leads to greatly reduced equivalent \LMINUS{} noise, as the noise from the velocity readout electronics is suppressed by the strong displacement response. As with Figure\,\ref{fig:readout-noise-velocity} some important individual contributions to the overall noise are shown.}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-readout-noise-mixed-rms.pdf}
+  \input{graphics/generated/from-python/50-readout-noise-mixed-rms.pgf}
   \caption[Root-mean-square noise projection for \LMINUS{} using both displacement and velocity feedback]{\label{fig:readout-noise-mixed-rms}Root-mean-square noise projection for \LMINUS{} using both displacement and velocity feedback. Unlike the velocity-only feedback, the combination of velocity and displacement feedback prevents the \gls{RMS} cavity mirror displacement from exceeding the required control precision after a few hours, instead allowing stability over much greater periods.}
 \end{figure}
 
 The open loop gain of the controller is shown in Figure\,\ref{fig:open-loop-gain}. This shows the unity gain frequency to be \SI{350}{\hertz}, with a phase margin of \SI{44}{\degree}. With this controller the system's differential arm cavity displacement is able to be controlled to within the requirement shown in Section\,\ref{sec:ssm-required-control}.
 
 \begin{figure}
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-controller-open-loop-gain.pdf}
+  \input{graphics/generated/from-python/50-controller-open-loop-gain.pgf}
   \caption[Simulated controller open loop gain]{\label{fig:open-loop-gain}Simulated \SSM{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
   % phase margin calculated with script graphics/scripts/open-loop-gain/phaseMargin.py
 \end{figure}
@@ -419,7 +419,7 @@ The open loop gain of the controller is shown in Figure\,\ref{fig:open-loop-gain
 In order to show that quantum noise is reduced with respect to an equivalent \FPMI{}, the design of the \SSMEXPT{} intends for it to be the limiting noise source in a frequency band in the region of a few hundreds of \SI{}{\hertz} \cite{Graef2014}. Using the linear projection technique outlined in Section\,\ref{sec:noise-projection}, each anticipated significant source of noise has been estimated and projected into \LMINUS{} noise to discover the limiting sources across the control bandwidth, and verify that the experiment will be limited by quantum noise in the intended band. The noise budget was created in steps. First, the individual noise sources contributing to the displacement of the test masses and the sensing of the interferometer signals were estimated individually, as described in Section\,\ref{sec:ssm-control}. Each individual noise source was then projected to the point in the loop where the data is recorded\textemdash \gls{CDS}\textemdash with all other noise sources switched off. Here, the open loop gain of the controller was applied to simulate the effect the loop has in suppressing displacement noise sources. Finally, to understand the sensitivity in terms of \LMINUS{}, the noise spectral density was divided by the transfer function from differential arm cavity mirror motion to \gls{CDS}. The noise budget for each significant noise source, calculated with SimulinkNb, is presented in Figure\,\ref{fig:noise-budget}. This budget is similar to the one presented in ref.\,\cite{Graef2014}, with the difference that this noise budget is the product of a comprehensive control noise study. The noise contribution from the \gls{PDH} feedback is shown to be vastly lower than the limiting noise in the intended measurement band, justifying its inclusion.
 
 \begin{figure}
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/50-speedmeter-noise-budget.pdf}
+  \input{graphics/generated/from-python/50-speedmeter-noise-budget.pgf}
   \caption[Control noise budget for the \SSMEXPT{}]{\label{fig:noise-budget}\SSM{} differential mode noise budget for the combined filter scheme with sensing and control noise taken into account. The shaded blue region represents the frequency band at which the intended direct measurement of reduced quantum radiation pressure noise is to be made in the experiment. The quantum noise contribution from the \gls{PDH} readout is more than an order of magnitude smaller than the total quantum noise, showing that its inclusion in the combined filter is not harmful to the overall sensitivity in this band. Displacement noise sources, such as coating noise, are suppressed by the loop gain below the unity gain frequency.}
 \end{figure}
 

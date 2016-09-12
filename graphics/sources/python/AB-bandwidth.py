@@ -34,7 +34,7 @@ tf2 = 100 / np.sqrt(1 + s2 ** 2)
 fill_indices_1 = np.where(tf1 >= 1)
 fill_indices_2 = np.where(tf2 >= 1)
 
-fig = plt.figure(figsize=lf.FIG_SIZE_B)
+fig = plt.figure(figsize=lf.FIG_SIZE_A_SM)
 
 ax1 = fig.gca()
 

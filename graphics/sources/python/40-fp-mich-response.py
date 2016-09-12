@@ -85,7 +85,7 @@ ax2.set_ylim((-10, 100))
 # set labels
 ax1.set_ylabel('Response\n(1 / sqrt(Hz))')
 ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (°)')#, color=ax2colour)
+ax2.set_ylabel(u'Phase (deg)')#, color=ax2colour)
 
 # set phase ticks
 ax2.set_yticks([0, 45, 90])

@@ -53,8 +53,8 @@ plt.grid(True)
 
 ax1.set_xlim((1e0, 1e4))
 ax1.set_ylim((1e-26, 1e-16))
-ax1.set_xlabel('Frequency (Hz)')
-ax1.set_ylabel('Strain (1 / sqrt(Hz))')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax1.set_ylabel(r'Strain $\left(\frac{1}{\sqrt{\SI{}{\hertz}}}\right)$')
 
 plt.tight_layout()
 

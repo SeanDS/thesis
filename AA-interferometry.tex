@@ -84,7 +84,7 @@ The reflected field transfer function $R$ is shown in Figure\,\ref{fig:cavity-tf
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/AA-cavity-tf.pdf}
+  \input{graphics/generated/from-python/AA-cavity-tf.pgf}
   \caption[Reflected field transfer function for a simple \FP{} cavity]{\label{fig:cavity-tf}Reflected field transfer function for a simple \FP{} cavity. When the cavity is on resonance, the reflected field drops to almost zero as the field coupling coefficients of the ITM favour transmission over reflection. Away from resonance, the coupling coefficients favour reflection over transmission. In this example the mirror reflectivities are $r_1 = r_2 = 0.99$, which is a configuration known as an \emph{impedance matched} cavity. A more complete description of the behaviour of cavities with different mirror reflectivities can be found in, for example, \cite{Freise2010}.}
 \end{figure}
 
@@ -108,7 +108,7 @@ As the resonance condition requires only an integer multiple of $\pi$, it is cle
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/AA-cavity-fsr.pdf}
+  \input{graphics/generated/from-python/AA-cavity-fsr.pgf}
   \caption[Resonant enhancement of input light in a cavity]{\label{fig:cavity-fsr}Resonant enhancement of input light in a cavity. When the length offset from zero is an integer number of half-wavelengths, the cavity enhances the input power many times over. When the offset is between integer half-wavelengths, it is anti-resonant and the cavity power is much smaller than the input power. In this example, the mirror properties are $r_1 = 0.99$, $r_2 = 1$, $t = \sqrt{1 - r_1^2}$ and the cavity's macroscopic length is \SI{10}{\meter}.}
 \end{figure}
 
@@ -180,6 +180,6 @@ An example of the sideband structure created by amplitude and phase modulation i
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/AA-sideband-structure.pdf}
+  \input{graphics/generated/from-python/AA-sideband-structure.pgf}
   \caption[Sideband structure for amplitude and phase modulation]{\label{fig:sideband-structure}Sideband structure for amplitude and phase modulation. The carrier, at frequency $\omega_0$, is present in the centre. Upper and lower sidebands appear offset from the carrier due to modulation. Amplitude modulation (AM) produces exactly two sidebands, whereas phase modulation (PM) produces infinitely many, though with drastically decreasing amplitude for higher orders. The vertical axis denotes the (arbitrary) power of each sideband, though in this example the modulation depth has been greatly exaggerated over that which would normally be used.}
 \end{figure}

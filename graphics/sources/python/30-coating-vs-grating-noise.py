@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import division
+
 import os
 import sys
 import numpy as np
@@ -29,10 +32,10 @@ with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
 ax1.set_ylim([0, 15e-22])
 ax1.grid(True)
 ax1.set_xlabel('Transmissivity')
-ax1.set_ylabel('Displacement equivalent noise (m / sqrt(Hz))')
+ax1.set_ylabel(r'Displacement equivalent noise $\left(\frac{\SI{}{\meter}}{\sqrt{\SI{}{\hertz}}}\right)$')
 legend1 = ax1.legend(['Dielectric coating stack', 'Grating', 'Advanced LIGO ETM'])
 
 fig.tight_layout()
 
-plt.savefig(save_path, format="PDF")
+plt.savefig(save_path)
 #plt.show()

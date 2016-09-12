@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import division
 
 import os
@@ -41,9 +42,8 @@ colours = lf.Colours()
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 ax = plt.gca()
 
-with plt.rc_context({'lines.markersize': 5, 'lines.markeredgewidth': 2}):
-    ax.plot(data[:, 0], data[:, 1], 'x', color=colours.next())
-    ax.plot(data[:, 0], fit_y, '-', color=colours.next())
+ax.plot(data[:, 0], data[:, 1], 'x', color=colours.next())
+ax.plot(data[:, 0], fit_y, '-', color=colours.next())
 
 ax.set_xlim([-6.5, 6.5])
 #ax.set_ylim([-0.5, 0.2])
@@ -54,5 +54,5 @@ ax.legend(['Measurements', 'Quadratic fit'], loc='lower left')
 
 fig.tight_layout()
 
-plt.savefig(save_path, format="PDF")
+plt.savefig(save_path)
 #plt.show()

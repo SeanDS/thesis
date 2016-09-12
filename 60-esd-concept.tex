@@ -54,8 +54,8 @@ Due to the dimensions of the \SI{100}{\gram} \glspl{ETM} for which the \glspl{ES
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-ansys.pdf}
-  \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:ssm-esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM experiment's ETMs. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. Greatest force coupling is produced when the mirror centre of mass is aligned to the edge of the plates and the plates are as close as possible to the mirror without touching. Although the force follows a quadratic relationship with voltage given by Equation\,\ref{eq:esd-force}, the range shown is in a highly linear region.}
+  \input{graphics/generated/from-python/60-esd-ansys.pgf}
+  \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:ssm-esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM{} experiment's \glspl{ETM}. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. Greatest force coupling is produced when the mirror centre of mass is aligned to the edge of the plates and the plates are as close as possible to the mirror without touching. Although the force follows a quadratic relationship with voltage given by Equation\,\ref{eq:esd-force}, the range shown is in a highly linear region.}
 \end{figure}
 
 \subsection{Maximum actuation requirements}
@@ -63,7 +63,7 @@ At the operating point the \gls{ESD}'s feedback force will be significantly lowe
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-ssm-etm-disp-esd-max.pdf}
+  \input{graphics/generated/from-python/60-ssm-etm-disp-esd-max.pgf}
   \caption[Maximum end test mass displacement the electrostatic drive can create]{\label{fig:ssm-etm-disp-esd-max}Maximum \gls{ETM} displacement the \gls{ESD} can create as a function of frequency with a potential difference of \SI{750}{\volt}. This is produced by multiplying the force to displacement transfer function calculated for the \glspl{ETM} using a state-space model by the force produced by the \gls{ESD} at maximum output. This assumes that the output is entirely concentrated in a sine wave at each particular frequency, but in reality the feedback signal will contain many frequency components and so the displacement applied at any one frequency will be reduced.}
 \end{figure}
 
@@ -125,7 +125,7 @@ The simulations conducted in Chapter\,\ref{c:speedmeter-control} suggest that th
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-dewhitening-sims.pdf}
+  \input{graphics/generated/from-python/60-hv-amp-dewhitening-sims.pgf}
   \caption[Simulated dewhitening filter frequency response]{Frequency response of the dewhitening filters simulated with \gls{LISO}. Each dewhitening filter provides \SI{-10}{\deci\bel} gain at high frequencies and so the combined pair produces an overall high frequency gain of $\SI{-20}{\deci\bel} \approx \num{e-1}$.}
   \label{fig:hv-amp-dewhitening-sims}
 \end{figure}
@@ -214,7 +214,7 @@ Although the use of high voltage plate capacitors is in general safe at both atm
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-esd-paschen.pdf}
+  \input{graphics/generated/from-python/60-esd-paschen.pgf}
   \caption[Minimum breakdown voltage between the two plates of the electrostatic drive for different separations]{\label{fig:esd-paschen}The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The real effect is a lot more complicated than this model, but the steep slope at lower pressures shown here indicates that the voltage created by the \gls{HV} amplifier for the \glspl{ESD} will avoid problems associated with arcing as long as the vacuum system is operated at atmosphere or high vacuum.}
 \end{figure}
 
@@ -232,7 +232,7 @@ Transfer functions for the \gls{HV} amplifier can be measured by injecting a kno
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-dewhitened-tfs.pdf}
+  \input{graphics/generated/from-python/60-hv-amp-dewhitened-tfs.pgf}
   \caption[Frequency response of the high voltage amplifier's channels with dewhitening enabled]{Second amplifier transfer functions with dewhitening enabled. The expected performance of the dewhitening filter from theory is shown in purple alongside the transfer functions of each channel. The curves agree closely, showing that the implemented filter operates as expected. The mismatch at high frequency is caused by the anti-aliasing filters implemented in \gls{CDS}, which aggressively filter signals above a few \SI{}{\kilo\hertz}.}
   \label{fig:hv-amp-dewhitened-tfs}
 \end{figure}
@@ -242,7 +242,7 @@ Figure\,\ref{fig:hv-amp-channel-one-tfs} shows swept sine measurements of the fi
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-channel-one-tfs.pdf}
+  \input{graphics/generated/from-python/60-hv-amp-channel-one-tfs.pgf}
   \caption[Transfer functions of the high voltage amplifier input to monitor output with the dewhiteners on and off]{Transfer functions of the high voltage amplifier input to monitor output with the dewhitening filters on and off. The monitor output is a \SI{1}{\percent} pick-off from the main \gls{HV} output, and so the gain is \num{0.4} instead of \num{40}. The curves simulated with \gls{LISO} agree exactly with the measurements within the bandwidth of \gls{CDS}, and at higher frequencies the transfer functions are suppressed by anti-aliasing filters.}
   \label{fig:hv-amp-channel-one-tfs}
 \end{figure}
@@ -252,7 +252,7 @@ The channels should be isolated from one another such that a signal injected at 
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-coherence.pdf}
+  \input{graphics/generated/from-python/60-hv-amp-coherence.pgf}
   \caption[High voltage amplifier cross-channel coherence]{\gls{HV} amplifier cross-channel normalised coherence. A swept sine was injected into each channel in turn whilst measurements of the output phase were made on all four channels. In each case, only the channel with the injection has coherence of \num{1}, while other channels only show the effect from noise.}
   \label{fig:hv-amp-coherence}
 \end{figure}
@@ -272,7 +272,7 @@ The left y-axis shows the measured monitor noise. The right y-axis shows the noi
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-output-noise.pdf}
+  \input{graphics/generated/from-python/60-hv-amp-output-noise.pgf}
   \caption[High voltage amplifier output noise]{\gls{HV} amplifier output noise. The noise of the amplifier was measured using the monitor output of the first channel, and this is shown in the green and orange traces using the left y-axis. The output noise projected from the monitor to the \gls{HV} rails is shown on the right y-axis. The green trace represents the noise from the amplifier when the input is at maximum and includes the noise contribution from the \glspl{DAC} on \gls{CDS}. The orange trace shows the output noise when \gls{CDS} is not connected. The noise floor of the SR785 spectrum analyser used to make these measurements is shown in blue.}
   \label{fig:hv-amp-output-noise}
 \end{figure}
@@ -292,7 +292,7 @@ The \gls{ETM} displacement noise this would create is then simply the product of
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/60-hv-amp-output-displacement-noise.pdf}
+  \input{graphics/generated/from-python/60-hv-amp-output-displacement-noise.pgf}
   \caption[High voltage amplifier output projected end test mass displacement noise]{\gls{HV} amplifier output voltage noise (without dewhiteners engaged) projected into effective \gls{ETM} displacement noise. The force produced by the \gls{ESD} is a function of the square of the voltage across its plates, and so the noise produced by the \gls{HV} amplifier has greatest effect when the signal is at a maximum. This plot shows the displacement noise for maximum signal, and within the measurement band (blue shaded region) it is below the requirement shown in black taken from the analysis conducted in Chapter\,\ref{c:speedmeter-control}. If necessary the \gls{HV} amplifier's noise could be reduced further by implementing a control loop between its monitor outputs and signal inputs.}
   \label{fig:hv-amp-output-displacement-noise}
 \end{figure}

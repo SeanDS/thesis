@@ -55,7 +55,7 @@ m.fillcontinents(color=colours.shades['lightgrey'])
 
 # add detectors
 # override the default look and feel for the markers
-with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 10, 'legend.fontsize': 12}):
+with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 10}):
     for detector in detectors:    
         x, y = m(detector['lon'], detector['lat'])
     
@@ -63,5 +63,6 @@ with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 10, 'legend
 
     plt.legend([detector['name'] for detector in detectors], numpoints=1, loc='lower left')
 
-# bbox_inches required to remove left and right padding
-plt.savefig(save_path, bbox_inches='tight')
+plt.tight_layout()
+
+plt.savefig(save_path)

@@ -60,7 +60,7 @@ ax2.semilogx(data_dual_sim[:, 0], data_dual_sim[:, 2], '-', color=colour_f, alph
 
 ax1.set_ylabel('Magnitude')
 ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (°)')
+ax2.set_ylabel(u'Phase (deg)')
 
 ax1.set_xlim([1e0, 1e6])
 #ax1.set_ylim([1e-2, 1e1])

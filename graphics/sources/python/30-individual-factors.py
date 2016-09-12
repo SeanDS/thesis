@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import division
+
 import os
 import sys
 import numpy as np
@@ -21,7 +24,7 @@ rotation = 1e-7
 selector = 200;
 
 # create subplot
-fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=lf.FIG_SIZE_A)
+fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=lf.FIG_SIZE_B)
 
 # colour wheel
 colours = lf.Colours()
@@ -43,8 +46,8 @@ ax1.hlines(5e-11 / rotation, curves[:, 0].min(), curves[:, 0].max(), colors=c3, 
 ax1.set_xlim([-0.05, 0.05])
 ax1.set_ylim([1e-4, 1e-1])
 ax1.grid(True)
-ax1.set_ylabel('Cavity length change\n(m / rad)')
-legend1 = ax1.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3', 'WGM 1', 'WGM 2', 'WGM 3'], bbox_to_anchor=(1.37, 1.065))
+ax1.set_ylabel(r'Cavity length change $\left(\frac{\SI{}{\meter}}{\SI{}{\radian}}\right)$')
+legend1 = ax1.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3', 'WGM 1', 'WGM 2', 'WGM 3'], bbox_to_anchor=(1.55, 1.065))
 
 ax2.plot(curves[:, 0], curves[:, 2], '--', color=c0, zorder=3)
 ax2.plot(curves[:, 0], curves[:, 6], '-', color=c1, zorder=3)
@@ -53,11 +56,11 @@ ax2.plot(curves[:, 0], curves[:, 8], '-', color=c3, zorder=3)
 
 ax2.set_ylim([-20, 200])
 ax2.grid(True)
-ax2.set_xlabel('Position of spot with respect to ETM\'s centre of rotation (m)')
-ax2.set_ylabel(u'Phase (\xb0)')
-legend2 = ax2.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3'], bbox_to_anchor=(1.37, 0.85))
+ax2.set_xlabel(r'Position of spot with respect to ETM centre of rotation $\left(\SI{}{\meter}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
+legend2 = ax2.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3'], bbox_to_anchor=(1.55, 0.85))
 
 #fig.tight_layout()
 
-plt.savefig(save_path, format="PDF", bbox_extra_artists=(legend1, legend2), bbox_inches='tight')
+plt.savefig(save_path, bbox_extra_artists=(legend1, legend2), bbox_inches='tight')
 #plt.show()

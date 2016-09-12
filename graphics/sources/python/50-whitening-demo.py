@@ -64,7 +64,7 @@ ax1.set_ylim([-50, 50])
 ax1.set_ylabel('SNR (dB)')
 ax2.set_xlabel('Frequency (Hz)')
 ax2.set_ylabel('Magnitude')
-ax3.set_ylabel(u'Phase (°)')
+ax3.set_ylabel(u'Phase (deg)')
 
 ax1.grid(True)
 ax2.grid(True)

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import division
 
 import os
@@ -37,8 +38,6 @@ colour_a = colours.next()
 
 fig = plt.figure(figsize=lf.FIG_SIZE_A_SM)
 
-#lf.set_fig_size_params('A_SM')
-
 ax1 = fig.add_subplot(121)
 ax2 = fig.add_subplot(122, sharey=ax1)
 
@@ -49,7 +48,7 @@ ax1.grid(True)
 ax2.grid(True)
 
 ax1.xaxis.set_major_formatter(FixedOrderFormatter(-3))
-ax1.xaxis.set_major_formatter(FixedOrderFormatter(-4))
+#ax1.xaxis.set_major_formatter(FixedOrderFormatter(-4))
 ax2.xaxis.set_major_formatter(FixedOrderFormatter(-4))
 
 ax1.set_xlabel('Scale factor')
@@ -58,4 +57,4 @@ ax2.set_xlabel('Spot movement\nstandard deviation (m)')
 
 fig.tight_layout()
 
-plt.savefig(sys.argv[1], format="PDF")#, bbox_extra_artists=(legend1,), bbox_inches='tight')
+plt.savefig(sys.argv[1])#, bbox_extra_artists=(legend1,), bbox_inches='tight')

@@ -72,8 +72,8 @@ labels.append("SQL")
 
 ax1.legend(labels, loc='lower left')
 
-ax1.set_xlabel('Frequency (Hz)')
-ax1.set_ylabel('Strain (1 / sqrt(Hz))')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax1.set_ylabel(r'Strain $\left(\frac{1}{\sqrt{\SI{}{\hertz}}}\right)$')
 ax1.grid(True)
 
 #ax1.set_xlim([-0.75, 0.75])

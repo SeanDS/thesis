@@ -51,7 +51,7 @@ data_c[:, 0] /= 1000
 data_d[:, 0] /= 1000
 
 # selector, to choose only every nth data point
-x_select = 10
+x_select = 100
 
 # plot coherence
 with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 3}):

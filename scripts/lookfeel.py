@@ -1,28 +1,42 @@
+# -*- coding: utf-8 -*-
 from __future__ import division
+
 import matplotlib
 
 """Look and feel settings for Sean's thesis"""
+
+# Document text width (use \the\textwidth in LaTeX to get)
+DOC_TEXT_WIDTH = 418.25368 # pt
+
+def latex_dimension(scale):
+    inches_per_pt = 1 / 72.27 # pt to inches
+    dimension_inches = DOC_TEXT_WIDTH * inches_per_pt * scale # width in inches
+    
+    return dimension_inches
+
+def latex_dimensions(scaleA, scaleB=None):
+    if scaleB is None:
+        scaleB = scaleA
+    
+    return latex_dimension(scaleA), latex_dimension(scaleB)
 
 ###
 # Useful quantities
 
 # default fig size
-FIG_SIZE_A = (10, 7)
+FIG_SIZE_A = latex_dimensions(1, 0.75)
 
-# smaller fig size (for two plots side-by-side)
-FIG_SIZE_A_SM = (FIG_SIZE_A[0], FIG_SIZE_A[1] / 1.41)
+# smaller fig size (shrunken height)
+FIG_SIZE_A_SM = latex_dimensions(1, 0.5)
 
-# faller fig size (for Bode-style plots)
-FIG_SIZE_A_TALL = (FIG_SIZE_A[0], FIG_SIZE_A[1] * 1.41)
+# faller fig size (extra height)
+FIG_SIZE_A_TALL = latex_dimensions(1, 1)
 
-# shallow figure for simple plots
-FIG_SIZE_B = (10, 3.5)
-
-# half-width figure for side-by-side
-FIG_SIZE_C = (5, 7)
+# narrower figure (to fit an outer legend)
+FIG_SIZE_B = latex_dimensions(0.75, 0.75)
 
 # big figure for full page
-FIG_SIZE_D = (10, 14)
+FIG_SIZE_D = latex_dimensions(1, 1.4)
 
 # default line transparency
 ALPHA_LINE_A = 0.8
@@ -34,30 +48,40 @@ ARROW_HEAD_LENGTH = 0.5
 ARROW_OVERHANG = 0.3
 
 # line widths
-LW_NORMAL = 2
+LW_NORMAL = 1.5
 LW_THICK = LW_NORMAL * 2
 
 ###
 # Matplotlib settings
 
 default_settings = {
-    'font.sans-serif': ['Linux Biolinum O'], 
-    'font.size': 20,
+    'pgf.texsystem': 'pdflatex',
+    'pgf.rcfonts': False,
+    'pgf.preamble': [
+        r'\usepackage[utf8x]{inputenc}',
+        r'\usepackage[T1]{fontenc}',
+        r'\usepackage{siunitx}'
+    ],
+    'text.usetex': True,
+    'font.serif': [],
+    'font.sans-serif': [],
+    'font.monospace': [],
+    'font.size': 12,
     'grid.alpha': 0.5,
     'grid.linestyle': ':',
     'legend.borderaxespad': 1,
     'legend.fancybox': True,
-    'legend.fontsize': 16,
+    'legend.fontsize': 10,
     'legend.framealpha': 0.9,
     'lines.linewidth': LW_NORMAL,
-    'lines.markeredgewidth': 3,
-    'lines.markersize': 15,
+    'lines.markeredgewidth': 2,
+    'lines.markersize': 8,
     'xtick.major.pad': 10,
     'xtick.minor.pad': 10,
-    'xtick.labelsize': 16,
+    'xtick.labelsize': 12,
     'ytick.major.pad': 10,
     'ytick.minor.pad': 10,
-    'ytick.labelsize': 16
+    'ytick.labelsize': 12
 }
 
 # set defaults

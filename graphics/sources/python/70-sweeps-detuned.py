@@ -39,6 +39,14 @@ ax3 = fig.add_subplot(323)
 ax4 = fig.add_subplot(324)
 ax5 = fig.add_subplot(325)
 
+# workaround for TikZ issue with infinite points
+# https://github.com/matplotlib/matplotlib/issues/4482
+ax1.set_xscale('log', nonposx='mask')
+ax2.set_xscale('log', nonposx='mask')
+ax3.set_xscale('log', nonposx='mask')
+ax4.set_xscale('log', nonposx='mask')
+ax5.set_xscale('log', nonposx='mask')
+
 # colour wheel
 colours = lf.Colours()
 

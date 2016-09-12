@@ -95,7 +95,7 @@ This is shown in Figure\,\ref{fig:fp-mich-response} for arm length \SI{1}{\kilo\
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-response.pdf}
+  \input{graphics/generated/from-python/40-fp-mich-response.pgf}
   \caption[Response of a \FPMI{} to differential arm cavity motion]{\label{fig:fp-mich-response}Response of a \FPMI{} to differential arm cavity motion. This shows the signal that would appear at a photodetector placed at the output of the interferometer given unit differential motion of the cavity. The cavity provides a signal with the same response for motion at frequencies below the cavity's pole frequency. Beyond the pole, the response is reduced as the motion becomes faster than the cavity's storage time.}
 \end{figure}
 
@@ -142,7 +142,7 @@ For \gls{DC} readout, the output noise spectral density is shown in Figure\,\ref
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-noise.pdf}
+  \input{graphics/generated/from-python/40-fp-mich-noise.pgf}
   \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port. This shows the noise present at the photodetector produced due to quantum noise entering the interferometer and interacting with the mechanics. At high frequencies, the noise in a \MI{} is almost entirely due to the quantum shot noise on the sensor; at low frequencies the noise is dominated by the light reaching the sensor due to fluctuations in the positions of the test masses due to quantum radiation pressure noise.}
 \end{figure}
 
@@ -154,7 +154,7 @@ and this is shown in Figure\,\ref{fig:fp-mich-sensitivity}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-fp-mich-sensitivity.pdf}
+  \input{graphics/generated/from-python/40-fp-mich-sensitivity.pgf}
   \caption[Sensitivity of a \FPMI{} at the output port to differential arm cavity motion]{\label{fig:fp-mich-sensitivity}Quantum noise limited sensitivity of a \FPMI{} at the output port to differential arm cavity motion. This is calculated by taking the quantum noise at the probe shown in Figure\,\ref{fig:fp-mich-noise} and dividing it by the response from differential arm cavity motion to the probe shown in Figure\,\ref{fig:fp-mich-response}. In this case the cavity power was chosen to touch the \gls{SQL} at the cavity pole and this is shown in the figure. For smaller cavity power, the touching frequency moves down in frequency.}
 \end{figure}
 
@@ -210,7 +210,7 @@ The response of a \SSM{} to differential arm cavity motion is shown in Figure\,\
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-ssm-response.pdf}
+  \input{graphics/generated/from-python/40-ssm-response.pgf}
   \caption[Response of a \SSM{} to differential arm cavity motion]{\label{fig:ssm-response}Response of a \SSM{} to differential arm cavity motion. In contrast to the \MI{}, the \SSM{} has response proportional to frequency below the cavity pole.}
 \end{figure}
 
@@ -218,7 +218,7 @@ The corresponding quantum noise at the output port is shown in Figure\,\ref{fig:
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-ssm-noise.pdf}
+  \input{graphics/generated/from-python/40-ssm-noise.pgf}
   \caption[Quantum noise of a \SSM{} at the output port]{\label{fig:ssm-noise}Quantum noise of a \SSM{} at the output port. Like the \MI{}, the high frequency noise contribution arises from quantum shot noise from incoherent vacuum fluctuations entering the interferometer. In contrast to the \MI{}, the \SSM{} has flat noise at low frequencies below a transition region, as the test mass noise fluctuations are cancelled by the counter-propagating modes in the instance where the quantum radiation pressure forces are balanced.}
 \end{figure}
 
@@ -226,7 +226,7 @@ While the response in a \SSM{} is reduced at low frequencies, the quantum noise 
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-ssm-sensitivity.pdf}
+  \input{graphics/generated/from-python/40-ssm-sensitivity.pgf}
   \caption[Sensitivity of a \SSM{} at the output port to differential arm cavity motion]{\label{fig:ssm-sensitivity}Quantum noise limited sensitivity of a \SSM{} at the output port to differential arm cavity motion. In contrast to the \MI{}, the \SSM{} sensitivity at low frequencies follows the gradient of the \gls{SQL} due to its reduced quantum noise. This improved sensitivity is in practice difficult to achieve as the presence of loss in the interferometer introduces a \emph{Michelson-like} sensitivity slope at a frequency proportional to the level of loss.}
 \end{figure}
 
@@ -277,7 +277,7 @@ Without including the effect of asymmetric loss, the quantum noise limited sensi
 
 \begin{figure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/generated/from-python/40-erc-ssm-qnls.pdf}
+  \input{graphics/generated/from-python/40-erc-ssm-qnls.pgf}
   \caption[Predicted quantum noise limited sensitivity of the \SSMEXPT{}]{\label{fig:erc-ssm-qnls}Predicted quantum noise limited sensitivity of the \SSMEXPT{} calculated with Optickle and \gls{FINESSE}. Also shown is the equivalent \FPMI{} configuration, calculated with Optickle, and the \gls{SQL} given the effective mass of the interferometer test masses. The shaded blue region shows the intended measurement band, where reduced quantum radiation pressure noise should be visible below the expected noise from the equivalent \FPMI{}.}
 \end{figure}
 

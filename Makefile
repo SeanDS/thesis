@@ -93,7 +93,7 @@ $(GFXGENSVG)/%.pdf: $(GFXSRCSVG)/%.svg
 # call inkscape to convert SVG to PDF
 	@inkscape --without-gui --file=$< --export-pdf=$@ --export-area-drawing
 
-$(GFXGENPY)/%.pdf: $(GFXSRCPY)/%.py $(LOOKFEELSCRIPT)
+$(GFXGENPY)/%.pgf: $(GFXSRCPY)/%.py $(LOOKFEELSCRIPT)
 # call Python script to generate graphic
 	@python $< $@
 
