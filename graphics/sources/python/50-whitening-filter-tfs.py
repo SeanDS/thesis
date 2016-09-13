@@ -35,8 +35,8 @@ ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, '-', color=colour_a
 ax2.semilogx(data[:, 0], np.angle(data[:, 2]) * 180 / np.pi, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (deg)')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 #ax1.set_ylim([1e-5, 2])
 #ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])

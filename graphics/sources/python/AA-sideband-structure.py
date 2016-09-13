@@ -96,8 +96,8 @@ ax2.legend([p3, p4], ['Carrier', 'PM sidebands'])
 ax2.set_xticks([-1.5, -1, -0.5, 0, 0.5, 1, 1.5])
 ax2.set_xticklabels([r'$\omega_0-3\omega$', r'$\omega_0-2\omega$', r'$\omega_0-\omega$', r'$\omega_0$', r'$\omega_0+\omega$', r'$\omega_0+2\omega$', r'$\omega_0+3\omega$'])
 
-ax1.set_ylabel('Power (arb. units)')
-ax2.set_ylabel('Power (arb. units)')
+ax1.set_ylabel(r'Power $\left(\textrm{arb. units}\right)$')
+ax2.set_ylabel(r'Power $\left(\textrm{arb. units}\right)$')
 ax2.set_xlabel('Frequency')
 
 ax1.grid(True)

@@ -53,8 +53,8 @@ ax1.vlines(1e3, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2)
 # vertical line representing operating pressure
 ax1.vlines(1e-4, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2)
 
-ax1.set_xlabel('Pressure (mbar)')
-ax1.set_ylabel('Breakdown voltage (V)')
+ax1.set_xlabel(r'Pressure $\left(\SI{}{\milli\bar}\right)$')
+ax1.set_ylabel(r'Breakdown voltage $\left(\SI{}{\volt}\right)$')
 
 # create legend strings
 legend_strings = ['{0:02.2f} mm separation'.format(float(d[i]) * 1e3) for i in range(len(d))]

@@ -61,10 +61,12 @@ with plt.rc_context({'legend.borderaxespad': 0.5}):
     ax2.legend(p1+p2, ['Magnitude', 'Phase'], loc='upper left')
 
 ax1.set_ylim([-50, 50])
-ax1.set_ylabel('SNR (dB)')
-ax2.set_xlabel('Frequency (Hz)')
+ax1.set_ylabel(r'SNR $\left(\SI{}{\decibel}\right)$')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax2.set_ylabel('Magnitude')
-ax3.set_ylabel(u'Phase (deg)')
+ax3.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
+
+ax3.set_yticks([0, 45, 90])
 
 ax1.grid(True)
 ax2.grid(True)

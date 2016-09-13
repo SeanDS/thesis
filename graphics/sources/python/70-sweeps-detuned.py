@@ -33,26 +33,18 @@ data_srcl = np.genfromtxt(data_path_srcl, delimiter=delimiter, skip_header=n_hea
 # figure
 fig = plt.figure(figsize=lf.FIG_SIZE_D)
 
-ax1 = fig.add_subplot(321)
-ax2 = fig.add_subplot(322)
-ax3 = fig.add_subplot(323)
-ax4 = fig.add_subplot(324)
-ax5 = fig.add_subplot(325)
-
-# workaround for TikZ issue with infinite points
-# https://github.com/matplotlib/matplotlib/issues/4482
-ax1.set_xscale('log', nonposx='mask')
-ax2.set_xscale('log', nonposx='mask')
-ax3.set_xscale('log', nonposx='mask')
-ax4.set_xscale('log', nonposx='mask')
-ax5.set_xscale('log', nonposx='mask')
-
 # colour wheel
 colours = lf.Colours()
 
 colour_a = colours.next()
 colour_line_1 = colours.next()
 colour_line_2 = colours.next()
+
+ax1 = plt.subplot2grid((3, 4), (0, 0), colspan=2)
+ax2 = plt.subplot2grid((3, 4), (0, 2), colspan=2)
+ax3 = plt.subplot2grid((3, 4), (1, 0), colspan=2)
+ax4 = plt.subplot2grid((3, 4), (1, 2), colspan=2)
+ax5 = plt.subplot2grid((3, 4), (2, 1), colspan=2)
 
 ###
 # CARM
@@ -71,10 +63,10 @@ data_carm_combined = data_carm[:, 1] * np.sin(np.radians(carm_angle)) + data_car
 ax1.plot(data_carm[:, 0] * x_scale_factor_carm, data_carm_combined * y_scale_factor_carm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax1.vlines(0, -1 * y_scale_factor_carm, 1 * y_scale_factor_carm, colors=colour_line_1, linestyles='dashed', zorder=2)
+ax1.vlines(0, -200, 200, colors=colour_line_1, linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Power (mW)')
-ax1.set_xlabel('Offset (pm)\n(A)')
+ax1.set_ylabel(r'Power $\left(\SI{}{\milli\watt}\right)$')
+ax1.set_xlabel(r'Offset $\left(\SI{}{\pico\meter}\right)$' '\n(A)')
 
 ax1.set_xlim([-3e-11 * x_scale_factor_carm, 3e-11 * x_scale_factor_carm])
 ax1.set_ylim([-200e-3 * y_scale_factor_carm, 200e-3 * y_scale_factor_carm])
@@ -104,10 +96,10 @@ y_scale_factor_darm = 1e3
 ax2.plot(data_darm[:, 0] * x_scale_factor_darm, data_darm[:, 1] * y_scale_factor_darm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax2.vlines(darm_offset * x_scale_factor_darm, 1e-3 * y_scale_factor_darm, 1e1 * y_scale_factor_darm, colors=colour_line_1, linestyles='dashed', zorder=2)
+ax2.vlines(darm_offset * x_scale_factor_darm, 0, 100, colors=colour_line_1, linestyles='dashed', zorder=2)
 
-ax2.set_ylabel('Power (mW)')
-ax2.set_xlabel('Offset (pm)\n(B)')
+ax2.set_ylabel(r'Power $\left(\SI{}{\milli\watt}\right)$')
+ax2.set_xlabel(r'Offset $\left(\SI{}{\pico\meter}\right)$' '\n(B)')
 
 ax2.set_xlim([-3e-11 * x_scale_factor_darm, 3e-11 * x_scale_factor_darm])
 ax2.set_ylim([1e-3 * y_scale_factor_darm, 1e-1 * y_scale_factor_darm])
@@ -131,10 +123,10 @@ y_scale_factor_mich = 1e3
 ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_mich[:, 2] * y_scale_factor_mich, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax3.vlines(0, -1 * y_scale_factor_mich, 1 * y_scale_factor_mich, colors=colour_line_1, linestyles='dashed', zorder=2)
+ax3.vlines(0, -0.7, 0.5, colors=colour_line_1, linestyles='dashed', zorder=2)
 
-ax3.set_ylabel('Power (mW)')
-ax3.set_xlabel('Offset (nm)\n(C)')
+ax3.set_ylabel(r'Power $\left(\SI{}{\milli\watt}\right)$')
+ax3.set_xlabel(r'Offset $\left(\SI{}{\nano\meter}\right)$' '\n(C)')
 
 ax3.set_xlim([-5e-8 * x_scale_factor_mich, 5e-8 * x_scale_factor_mich])
 ax3.set_ylim([-0.7e-3 * y_scale_factor_mich, 0.5e-3 * y_scale_factor_mich])
@@ -158,10 +150,10 @@ y_scale_factor_prcl = 1e3
 ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_prcl[:, 1] * y_scale_factor_prcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax4.vlines(0, -1 * y_scale_factor_prcl, 1 * y_scale_factor_prcl, colors=colour_line_1, linestyles='dashed', zorder=2)
+ax4.vlines(0, -0.5, 0.5, colors=colour_line_1, linestyles='dashed', zorder=2)
 
-ax4.set_ylabel('Power (mW)')
-ax4.set_xlabel('Offset (nm)\n(D)')
+ax4.set_ylabel(r'Power $\left(\SI{}{\milli\watt}\right)$')
+ax4.set_xlabel(r'Offset $\left(\SI{}{\nano\meter}\right)$' '\n(D)')
 
 ax4.set_xlim([-1e-8 * x_scale_factor_prcl, 1e-8 * x_scale_factor_prcl])
 ax4.set_ylim([-0.5e-3 * y_scale_factor_prcl, 0.5e-3 * y_scale_factor_prcl])
@@ -194,13 +186,13 @@ y_scale_factor_srcl = 1e3
 ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_srcl[:, 2] * y_scale_factor_srcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax5.vlines(srm_offset * x_scale_factor_srcl, -1 * y_scale_factor_srcl, 1 * y_scale_factor_srcl, colors=colour_line_1, linestyles='dashed', zorder=2)
+ax5.vlines(srm_offset * x_scale_factor_srcl, 0, 7, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 # horizontal line for offset
 ax5.hlines(srcl_sig_offset * y_scale_factor_srcl, -1e-6 * x_scale_factor_srcl, 1e-6 * x_scale_factor_srcl, colors=colour_line_2, linestyles='dashed', zorder=2)
 
-ax5.set_ylabel('Power (mW)')
-ax5.set_xlabel('Offset (nm)\n(E)')
+ax5.set_ylabel(r'Power $\left(\SI{}{\milli\watt}\right)$')
+ax5.set_xlabel(r'Offset $\left(\SI{}{\nano\meter}\right)$' '\n(E)')
 
 ax5.set_xlim([(srm_offset + -1e-8) * x_scale_factor_srcl, (srm_offset + 1e-8) * x_scale_factor_srcl])
 ax5.set_ylim([0 * y_scale_factor_srcl, 7e-3 * y_scale_factor_srcl])

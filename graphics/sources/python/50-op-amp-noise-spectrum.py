@@ -102,8 +102,8 @@ plt.grid(True)
 
 plt.xlim((1e-3, 1e2))
 plt.ylim((1e-6, 1e-3))
-plt.xlabel(r'Frequency (Hz)')
-plt.ylabel(r'Voltage (V / sqrt(Hz))')
+plt.xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+plt.ylabel(r'Voltage $\left(\frac{\SI{}{\volt}}{\sqrt{\SI{}{\hertz}}}\right)$')
 
 plt.tight_layout()
 

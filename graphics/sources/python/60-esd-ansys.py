@@ -38,8 +38,8 @@ ax1.plot(fitx,  1e6 * (fitx * gradient + intercept), '--', color=colours.current
 # enforce log tick labels
 ax1.yaxis.get_major_formatter().set_powerlimits((0, 0))
 
-ax1.set_xlabel('Voltage (V)')
-ax1.set_ylabel(u'Force (microN)')
+ax1.set_xlabel(r'Voltage $\left(\SI{}{\volt}\right)$')
+ax1.set_ylabel(r'Force $\left(\SI{}{\micro\newton}\right)$')
 
 with plt.rc_context({'legend.borderaxespad': 2}):
   ax1.legend(['Force in x-direction', 'Force in y-direction', 'Force in z-direction', 'Fit for force in z-direction\n(gradient = {:.2f} nN/V)'.format(gradient * 1e9)])

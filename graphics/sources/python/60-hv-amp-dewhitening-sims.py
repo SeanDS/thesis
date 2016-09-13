@@ -42,20 +42,20 @@ ax2.semilogx(data_single[:, 0], data_single[:, 2], color=colour_a, alpha=lf.ALPH
 ax2.semilogx(data_dual[:, 0], data_dual[:, 2], color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (deg)')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 #ax1.set_xlim([1e0, 1e4])
 #ax1.set_ylim([1e-2, 1e0])
-#ax2.set_ylim([-180, 180])
+ax2.set_ylim([-100, 200])
 
 # set y-labels for phase
-#ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
+ax2.set_yticks([-90, -45, 0, 45, 90, 135, 180])
 
 ax1.grid(True)
 ax2.grid(True)
 
-ax1.legend(['Single 10dB dewhitener', 'Dual 10db dewhiteners'], loc='lower left')
+ax1.legend(['Single 10dB dewhitener', 'Dual 10db dewhiteners'], loc='upper right')
 
 plt.tight_layout()
 

@@ -53,7 +53,7 @@ ax2.xaxis.set_major_formatter(FixedOrderFormatter(-4))
 
 ax1.set_xlabel('Scale factor')
 ax1.set_ylabel('Normalised probability density')
-ax2.set_xlabel('Spot movement\nstandard deviation (m)')
+ax2.set_xlabel('Spot movement\nstandard deviation ' r'$\left(\SI{}{\meter}\right)$')
 
 fig.tight_layout()
 

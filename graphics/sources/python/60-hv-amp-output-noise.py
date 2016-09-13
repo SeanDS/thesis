@@ -60,8 +60,8 @@ p3 = ax1.loglog(data[lf_select, 0], data[lf_select, 3], '-', color=colour_c, alp
 ax1.loglog(data[mf_select, 4], data[mf_select, 7], '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
 ax1.loglog(data[hf_select, 8], data[hf_select, 11], '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Measured monitor noise (V / sqrt(Hz))')
-ax1.set_xlabel('Frequency (Hz)')
+ax1.set_ylabel(r'Measured monitor noise $\left(\frac{\SI{}{\volt}}{\sqrt{\SI{}{\hertz}}}\right)$')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 
 ax1.set_xlim([1e0, 1e5])
 ax1.set_ylim([1e-9, 1e-4])
@@ -69,7 +69,7 @@ ax1.set_ylim([1e-9, 1e-4])
 # this axis doesn't have any data, but set its limits to match ax1 but with x100 (to represent HV noise)
 # need fake plot to make the y-axis scale properly
 ax2.loglog(1e-30, 1e-30)
-ax2.set_ylabel('Projected HV noise (V / sqrt(Hz))')
+ax2.set_ylabel(r'Projected HV noise $\left(\frac{\SI{}{\volt}}{\sqrt{\SI{}{\hertz}}}\right)$')
 ax2.set_ylim([1e-7, 1e-2])
 
 ax1.grid(True)

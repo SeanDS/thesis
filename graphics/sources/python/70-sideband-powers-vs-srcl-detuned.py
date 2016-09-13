@@ -51,8 +51,8 @@ ax1.semilogy(data[:, 0], data[:, 17], '-', color=colours.alternate(colour_d), al
 # vertical line for Schnupp length
 ax1.vlines(311.585, 1e-6, 1e1, colors=colours.next(), linestyles='dashed', zorder=2)
 
-ax1.set_ylabel(r'Power (W)')
-ax1.set_xlabel('Signal recycling cavity length (m)')
+ax1.set_ylabel(r'Power $\left(\SI{}{\watt}\right)$')
+ax1.set_xlabel(r'Signal recycling cavity length $\left(\SI{}{\meter}\right)$')
 
 ax1.set_xlim([309, 315])
 ax1.set_ylim([1e-5, 1e0])

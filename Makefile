@@ -104,95 +104,87 @@ $(GFXGENTIKZ)/%.pdf: $(GFXSRCTIKZ)/%.tex
 
 # ===== Extra dependencies for plot scripts =====
 
-$(GFXGENPY)/10-gw150914.pdf: $(DATA)/10-gw150914-h1.txt $(DATA)/10-gw150914-l1.txt $(DATA)/10-gw150914-h1-numerical.txt $(DATA)/10-gw150914-l1-numerical.txt
+$(GFXGENPY)/10-gw150914.pgf: $(DATA)/10-gw150914-h1.txt $(DATA)/10-gw150914-l1.txt $(DATA)/10-gw150914-h1-numerical.txt $(DATA)/10-gw150914-l1-numerical.txt
 
-$(GFXGENPY)/20-aligo-noise-budget.pdf: $(DATA)/20-aligo-noise-budget.csv
+$(GFXGENPY)/20-aligo-noise-budget.pgf: $(DATA)/20-aligo-noise-budget.csv
 
-$(GFXGENPY)/30-coating-vs-grating-noise.pdf: $(DATA)/30-coating-vs-grating-noise.csv
+$(GFXGENPY)/30-coating-vs-grating-noise.pgf: $(DATA)/30-coating-vs-grating-noise.csv
 
-$(GFXGENPY)/30-individual-factors.pdf: $(DATA)/30-individual-factors.csv
+$(GFXGENPY)/30-individual-factors.pgf: $(DATA)/30-individual-factors.csv
 
-$(GFXGENPY)/30-posterior-coupling.pdf: $(DATA)/30-posterior-coupling.csv
+$(GFXGENPY)/30-posterior-coupling.pgf: $(DATA)/30-posterior-coupling.csv
 
-$(GFXGENPY)/30-posterior-aux.pdf: $(DATA)/30-posterior-scaling.csv $(DATA)/30-posterior-stddev.csv
+$(GFXGENPY)/30-posterior-aux.pgf: $(DATA)/30-posterior-scaling.csv $(DATA)/30-posterior-stddev.csv
 
-$(GFXGENPY)/30-magnet-offset.py: $(DATA)/30-magnet-offset.csv
+$(GFXGENPY)/30-magnet-offset.pgf: $(DATA)/30-magnet-offset.csv
 
-$(GFXGENPY)/30-coupling-best-fit.pdf: $(DATA)/30-coupling-best-fit-measurements.csv $(DATA)/30-coupling-best-fit-simulations.csv
+$(GFXGENPY)/30-coupling-best-fit.pgf: $(DATA)/30-coupling-best-fit-measurements.csv $(DATA)/30-coupling-best-fit-simulations.csv
 
-$(GFXGENPY)/30-servo-tf.pdf: $(DATAGENMAT)/30-servo-tf.csv
+$(GFXGENPY)/30-servo-tf.pgf: $(DATAGENMAT)/30-servo-tf.csv
 
-$(GFXGENPY)/40-erc-ssm-qnls.pdf: $(DATAGENMAT)/40-erc-ssm-qnls.csv $(DATAGENMAT)/40-erc-equiv-mich-qnls.csv
+$(GFXGENPY)/40-erc-ssm-qnls.pgf: $(DATAGENMAT)/40-erc-ssm-qnls.csv $(DATAGENMAT)/40-erc-equiv-mich-qnls.csv
 
-$(GFXGENPY)/50-mirror-tfs.pdf: $(DATAGENMAT)/50-mirror-tfs.csv
+$(GFXGENPY)/50-mirror-tfs.pgf: $(DATAGENMAT)/50-mirror-tfs.csv
 
-$(GFXGENPY)/50-m7-seismic-noise.pdf: $(DATAGENMAT)/50-m7-seismic-noise.csv
+$(GFXGENPY)/50-m7-seismic-noise.pgf: $(DATAGENMAT)/50-m7-seismic-noise.csv
 
-$(GFXGENPY)/50-bhd-response.pdf: $(DATA)/50-bhd-response.csv
+$(GFXGENPY)/50-bhd-response.pgf: $(DATA)/50-bhd-response.csv
 
-$(GFXGENPY)/50-pdh-response.pdf: $(DATA)/50-pdh-response.csv $(DATA)/50-bhd-response.csv
+$(GFXGENPY)/50-pdh-response.pgf: $(DATA)/50-pdh-response.csv $(DATA)/50-bhd-response.csv
 
-$(GFXGENPY)/50-aa-ai-filter-tfs.pdf: $(DATAGENMAT)/50-aa-ai-filter-tfs.csv
+$(GFXGENPY)/50-aa-ai-filter-tfs.pgf: $(DATAGENMAT)/50-aa-ai-filter-tfs.csv
 
-$(GFXGENPY)/50-whitening-filter-tfs.pdf: $(DATAGENMAT)/50-whitening-filter-tfs.csv
+$(GFXGENPY)/50-whitening-filter-tfs.pgf: $(DATAGENMAT)/50-whitening-filter-tfs.csv
 
-$(GFXGENPY)/50-op-amp-noise-time-series.pdf: $(DATA)/50-op-amp-noise-time-series-reduced.csv $(DATA)/50-op-amp-null-time-series-reduced.csv $(DATA)/50-op-amp-temperature-time-series-reduced.csv
+$(GFXGENPY)/50-op-amp-noise-time-series.pgf: $(DATA)/50-op-amp-noise-time-series-reduced.csv $(DATA)/50-op-amp-null-time-series-reduced.csv $(DATA)/50-op-amp-temperature-time-series-reduced.csv
 
-$(GFXGENPY)/50-op-amp-noise-spectrum.pdf: $(DATA)/50-op-amp-noise-spectrum-reduced.csv $(DATA)/50-op-amp-null-spectrum-reduced.csv
+$(GFXGENPY)/50-op-amp-noise-spectrum.pgf: $(DATA)/50-op-amp-noise-spectrum-reduced.csv $(DATA)/50-op-amp-null-spectrum-reduced.csv
 
-$(GFXGENPY)/50-readout-noise-velocity.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv
+$(GFXGENPY)/50-readout-noise-velocity.pgf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv
 
-$(GFXGENPY)/50-readout-noise-velocity-rms.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv
+$(GFXGENPY)/50-readout-noise-velocity-rms.pgf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv
 
-$(GFXGENPY)/50-readout-noise-mixed.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
+$(GFXGENPY)/50-readout-noise-mixed.pgf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
 
-$(GFXGENPY)/50-readout-noise-mixed-rms.pdf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
+$(GFXGENPY)/50-readout-noise-mixed-rms.pgf: $(DATA)/50-sensing-noise-velocity.csv $(DATA)/50-feedback-noise-velocity.csv $(DATA)/50-sensing-noise-mixed.csv $(DATA)/50-feedback-noise-mixed.csv
 
-$(GFXGENPY)/50-etm-suspension-tfs.pdf: $(DATA)/50-etm-suspension-tfs.csv
+$(GFXGENPY)/50-etm-suspension-tfs.pgf: $(DATA)/50-etm-suspension-tfs.csv
 
-$(GFXGENPY)/50-controller-open-loop-gain.pdf: $(DATA)/50-controller-open-loop-gain.csv
+$(GFXGENPY)/50-controller-open-loop-gain.pgf: $(DATA)/50-controller-open-loop-gain.csv
 
-$(GFXGENPY)/50-optimal-filters.pdf: $(DATA)/50-optimal-filters.csv
+$(GFXGENPY)/50-optimal-filters.pgf: $(DATA)/50-optimal-filters.csv
 
-$(GFXGENPY)/50-speedmeter-noise-budget.pdf: $(DATA)/50-speedmeter-noise-budget.csv
+$(GFXGENPY)/50-speedmeter-noise-budget.pgf: $(DATA)/50-speedmeter-noise-budget.csv
 
-$(GFXGENPY)/60-esd-ansys.pdf: $(DATAGENPY)/60-esd-ansys.csv
+$(GFXGENPY)/60-esd-ansys.pgf: $(DATAGENPY)/60-esd-ansys.csv
 
-$(GFXGENPY)/60-ssm-etm-disp-esd-max.pdf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
+$(GFXGENPY)/60-ssm-etm-disp-esd-max.pgf: $(DATAGENMAT)/60-ssm-etm-disp-vs-esd-force.csv
 
-$(GFXGENPY)/60-hv-amp-dewhitened-tfs.pdf: $(DATA)/60-hv-amp-dewhitened-tfs-channel-one.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-two.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-three.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-four.txt $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
+$(GFXGENPY)/60-hv-amp-dewhitened-tfs.pgf: $(DATA)/60-hv-amp-dewhitened-tfs-channel-one.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-two.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-three.txt $(DATA)/60-hv-amp-dewhitened-tfs-channel-four.txt $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
-$(GFXGENPY)/60-hv-amp-channel-one-tfs.pdf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
+$(GFXGENPY)/60-hv-amp-channel-one-tfs.pgf: $(DATA)/60-hv-amp-channel-one-tfs.csv $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
-$(GFXGENPY)/60-hv-amp-coherence.pdf: $(DATA)/60-hv-amp-coherence-channel-one.txt $(DATA)/60-hv-amp-coherence-channel-two.txt $(DATA)/60-hv-amp-coherence-channel-three.txt $(DATA)/60-hv-amp-coherence-channel-four.txt
+$(GFXGENPY)/60-hv-amp-coherence.pgf: $(DATA)/60-hv-amp-coherence-channel-one.txt $(DATA)/60-hv-amp-coherence-channel-two.txt $(DATA)/60-hv-amp-coherence-channel-three.txt $(DATA)/60-hv-amp-coherence-channel-four.txt
 
-$(GFXGENPY)/60-hv-amp-dewhitening-sims.pdf: $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
+$(GFXGENPY)/60-hv-amp-dewhitening-sims.pgf: $(DATAGENMAT)/60-hv-amp-single-dewhitening-sim.csv $(DATAGENMAT)/60-hv-amp-dual-dewhitening-sim.csv
 
-$(GFXGENPY)/60-hv-amp-output-noise.pdf: $(DATA)/60-hv-amp-output-noise.csv
+$(GFXGENPY)/60-hv-amp-output-noise.pgf: $(DATA)/60-hv-amp-output-noise.csv
 
-$(GFXGENPY)/60-hv-amp-output-displacement-noise.pdf: $(DATA)/60-hv-amp-output-noise.csv $(DATA)/50-speedmeter-noise-budget.csv
+$(GFXGENPY)/60-hv-amp-output-displacement-noise.pgf: $(DATA)/60-hv-amp-output-noise.csv $(DATA)/50-speedmeter-noise-budget.csv
 
-$(GFXGENPY)/70-et-d-sensitivity-curves.pdf: $(DATA)/70-et-d-sensitivity-curves.txt
+$(GFXGENPY)/70-et-d-sensitivity-curves.pgf: $(DATA)/70-et-d-sensitivity-curves.txt
 
-$(GFXGENPY)/70-reflected-power-vs-prm-transmissivity.pdf: $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv
+$(GFXGENPY)/70-reflected-power-vs-prm-transmissivity.pgf: $(DATAGENMAT)/70-reflected-power-vs-prm-transmissivity.csv
 
-$(GFXGENPY)/70-sideband-powers-vs-srcl-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-srcl-tuned.csv
+$(GFXGENPY)/70-sideband-powers-vs-srcl-detuned.pgf: $(DATAGENMAT)/70-sideband-powers-vs-srcl-detuned.csv
 
-$(GFXGENPY)/70-sideband-powers-vs-srcl-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-srcl-detuned.csv
+$(GFXGENPY)/70-sideband-powers-vs-schnupp-detuned.pgf: $(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv
 
-$(GFXGENPY)/70-sideband-powers-vs-schnupp-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-schnupp-tuned.csv
+$(GFXGENPY)/70-sideband-powers-vs-darm-offset-detuned.pgf: $(DATAGENMAT)/70-sideband-powers-vs-darm-offset-detuned.csv
 
-$(GFXGENPY)/70-sideband-powers-vs-schnupp-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-schnupp-detuned.csv
+$(GFXGENPY)/70-sweeps-detuned.pgf: $(DATAGENMAT)/70-sweep-carm-detuned.csv $(DATAGENMAT)/70-sweep-darm-detuned.csv $(DATAGENMAT)/70-sweep-mich-detuned.csv $(DATAGENMAT)/70-sweep-prcl-detuned.csv $(DATAGENMAT)/70-sweep-srcl-detuned.csv
 
-$(GFXGENPY)/70-sideband-powers-vs-second-sideband-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-second-sideband-tuned.csv
-
-$(GFXGENPY)/70-sideband-powers-vs-darm-offset-tuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-darm-offset-tuned.csv
-
-$(GFXGENPY)/70-sideband-powers-vs-darm-offset-detuned.pdf: $(DATAGENMAT)/70-sideband-powers-vs-darm-offset-detuned.csv
-
-$(GFXGENPY)/70-sweeps-detuned.pdf: $(DATAGENMAT)/70-sweep-carm-detuned.csv $(DATAGENMAT)/70-sweep-darm-detuned.csv $(DATAGENMAT)/70-sweep-mich-detuned.csv $(DATAGENMAT)/70-sweep-prcl-detuned.csv $(DATAGENMAT)/70-sweep-srcl-detuned.csv
-
-$(GFXGENPY)/70-et-lf-control-scheme-sensitivity-curve.pdf: $(DATAGENMAT)/70-control-scheme-darm-sensitivity.csv $(DATA)/70-et-d-sensitivity-curve-no-sqz.csv $(DATA)/70-et-lf-control-scheme-curve-finesse.csv
+$(GFXGENPY)/70-et-lf-control-scheme-sensitivity-curve.pgf: $(DATAGENMAT)/70-control-scheme-darm-sensitivity.csv $(DATA)/70-et-d-sensitivity-curve-no-sqz.csv $(DATA)/70-et-lf-control-scheme-curve-finesse.csv
 
 # ===== Data dependencies =====
 

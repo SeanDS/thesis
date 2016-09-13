@@ -50,9 +50,9 @@ ax2.semilogx(data[:, 0], np.angle(data[:, 3]) * 180 / np.pi, '-', color=colour_a
 ax2.semilogx(data[:, 0], np.angle(data[:, 4]) * 180 / np.pi, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(data[:, 0], np.angle(data[:, 5]) * 180 / np.pi, '--', color=colour_c, alpha=lf.ALPHA_LINE_A)
 
-ax1.set_ylabel('Response to BHD\nreadout (W / m)')
-ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (deg)')
+ax1.set_ylabel(r'Response $\left(\frac{\SI{}{\watt}}{\SI{}{\meter}}\right)$')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 #ax1.set_xlim([1e0, 1e4])
 #ax1.set_ylim([1e-2, 1e1])

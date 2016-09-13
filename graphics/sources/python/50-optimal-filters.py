@@ -56,9 +56,9 @@ ax1.set_ylim((1e-6, 2))
 ax2.set_ylim((-45, 400))
 ax2.set_yticks([0, 90, 180, 270, 360])
 
-ax2.set_xlabel(r'Frequency (Hz)')
 ax1.set_ylabel('Magnitude')
-ax2.set_ylabel(u'Phase (deg)')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 plt.tight_layout()
 

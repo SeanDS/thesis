@@ -57,8 +57,8 @@ phase_offset = 0
 ax2.plot((lengths - nominal_length) * 1e9, phase_offset + np.angle(tf) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Offset from resonance (nm)')
-ax2.set_ylabel(u'Phase (deg)')
+ax2.set_xlabel(r'Offset from resonance $\left(\SI{}{\nano\meter}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 ax1.grid(True)
 ax2.grid(True)

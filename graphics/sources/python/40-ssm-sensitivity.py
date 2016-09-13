@@ -127,7 +127,7 @@ sens_mich = sensitivity_mich(f, f_0, m, L, gamma, I)
 sql = S_h_sql(f, m, L)
 
 # figure
-fig = plt.figure(figsize=lf.FIG_SIZE_B)
+fig = plt.figure(figsize=lf.FIG_SIZE_A_SM)
 
 ax1 = fig.gca()
 
@@ -151,8 +151,8 @@ ax1.set_ylim((1e-24, 1e-18))
 ax1.legend(['Sagnac speed-meter', 'Michelson position-meter', 'SQL'], loc='upper right', framealpha=lf.default_settings['legend.framealpha'])
 
 # set labels
-ax1.set_ylabel('Sensitivity\n(1 / sqrt(Hz))')
-ax1.set_xlabel('Frequency (Hz)')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax1.set_ylabel(r'Sensitivity $\left(\frac{1}{\sqrt{\SI{}{\hertz}}}\right)$')
 
 plt.tight_layout()
 

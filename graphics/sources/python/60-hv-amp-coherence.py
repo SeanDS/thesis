@@ -29,7 +29,7 @@ data_c = np.genfromtxt(data_path_c, delimiter=delimiter, skip_header=n_headers)
 data_d = np.genfromtxt(data_path_d, delimiter=delimiter, skip_header=n_headers)
 
 # figure
-fig = plt.figure(figsize=lf.FIG_SIZE_A)
+fig = plt.figure(figsize=lf.FIG_SIZE_B)
 
 ax1 = fig.add_subplot(221)
 ax2 = fig.add_subplot(222, sharex=ax1, sharey=ax1)
@@ -75,11 +75,8 @@ with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 3}):
   ax4.plot(data_d[::x_select, 0], data_d[::x_select, 3], '.', color=colour_c, alpha=lf.ALPHA_LINE_A)
   ld, = ax4.plot(data_d[::x_select, 0], data_d[::x_select, 4], '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
-#with plt.rc_context({'legend.borderaxispad': 0}):
-fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], loc='right')
-
-ax3.set_xlabel('Frequency (kHz)')
-ax4.set_xlabel('Frequency (kHz)')
+ax3.set_xlabel(r'Frequency $\left(\SI{}{\kilo\hertz}\right)$')
+ax4.set_xlabel(r'Frequency $\left(\SI{}{\kilo\hertz}\right)$')
 ax1.set_ylabel('Coherence')
 ax3.set_ylabel('Coherence')
 
@@ -91,8 +88,10 @@ ax2.grid(True)
 ax3.grid(True)
 ax4.grid(True)
 
+# call this BEFORE adding the legend, because tight_layout ignores legends
 plt.tight_layout()
 
-fig.subplots_adjust(right=0.74)
+#with plt.rc_context({'legend.borderaxispad': 0}):
+legend1 = fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], bbox_to_anchor=(1, 0.5), loc='center left')
 
-plt.savefig(save_path)
+plt.savefig(save_path, bbox_extra_artists=(legend1,), bbox_inches='tight')

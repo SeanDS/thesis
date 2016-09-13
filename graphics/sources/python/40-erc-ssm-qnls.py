@@ -56,8 +56,8 @@ ax1.set_ylim((1e-21, 1e-13))
 ax1.legend(['Finesse Sagnac speed meter', 'Optickle Sagnac speed meter', 'Optickle equivalent Fabry-Perot Michelson', 'SQL'], loc='upper right')
 
 # set labels
-ax1.set_ylabel('Sensitivity (m / sqrt(Hz))')
-ax1.set_xlabel('Frequency (Hz)')
+ax1.set_ylabel(r'Sensitivity $\left(\frac{\SI{}{\meter}}{\sqrt{\SI{}{\hertz}}}\right)$')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 
 plt.tight_layout()
 

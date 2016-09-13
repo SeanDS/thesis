@@ -47,7 +47,7 @@ ax1.set_xlim([-0.05, 0.05])
 ax1.set_ylim([1e-4, 1e-1])
 ax1.grid(True)
 ax1.set_ylabel(r'Cavity length change $\left(\frac{\SI{}{\meter}}{\SI{}{\radian}}\right)$')
-legend1 = ax1.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3', 'WGM 1', 'WGM 2', 'WGM 3'], bbox_to_anchor=(1.55, 1.065))
+legend1 = ax1.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3', 'WGM 1', 'WGM 2', 'WGM 3'], bbox_to_anchor=(1, 0.5), loc='center left')
 
 ax2.plot(curves[:, 0], curves[:, 2], '--', color=c0, zorder=3)
 ax2.plot(curves[:, 0], curves[:, 6], '-', color=c1, zorder=3)
@@ -58,9 +58,11 @@ ax2.set_ylim([-20, 200])
 ax2.grid(True)
 ax2.set_xlabel(r'Position of spot with respect to ETM centre of rotation $\left(\SI{}{\meter}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
-legend2 = ax2.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3'], bbox_to_anchor=(1.55, 0.85))
 
-#fig.tight_layout()
+# call this BEFORE adding the legend, because tight_layout ignores legends
+fig.tight_layout()
+
+legend2 = ax2.legend(['ETM Rotation', 'Total 1', 'Total 2', 'Total 3'], bbox_to_anchor=(1, 0.5), loc='center left')
 
 plt.savefig(save_path, bbox_extra_artists=(legend1, legend2), bbox_inches='tight')
 #plt.show()

@@ -24,7 +24,7 @@ data_single_sim = np.genfromtxt(data_path_single_sim, delimiter=delimiter, skip_
 data_dual_sim = np.genfromtxt(data_path_dual_sim, delimiter=delimiter, skip_header=0)
 
 # figure
-fig = plt.figure(figsize=lf.FIG_SIZE_A)
+fig = plt.figure(figsize=lf.FIG_SIZE_B)
 
 ax1 = fig.add_subplot(211)
 ax2 = fig.add_subplot(212, sharex=ax1)
@@ -59,10 +59,10 @@ ax2.semilogx(data_single_sim[:, 0], data_single_sim[:, 2], '-', color=colour_e, 
 ax2.semilogx(data_dual_sim[:, 0], data_dual_sim[:, 2], '-', color=colour_f, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
 ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (deg)')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
-ax1.set_xlim([1e0, 1e6])
+ax1.set_xlim([1e0, 1e4])
 #ax1.set_ylim([1e-2, 1e1])
 ax2.set_ylim([-200, 200])
 
@@ -72,8 +72,9 @@ ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 ax1.grid(True)
 ax2.grid(True)
 
-ax1.legend(['Both on', 'First on', 'Second on', 'Both off', 'Sim 10 dB', 'Sim 20 dB'], loc='upper right')
+# call this BEFORE adding the legend, because tight_layout ignores legends
+fig.tight_layout()
 
-plt.tight_layout()
+legend1 = ax1.legend(['Both on', 'First on', 'Second on', 'Both off', 'Sim 10 dB', 'Sim 20 dB'], bbox_to_anchor=(1, 0.5), loc='center left')
 
-plt.savefig(save_path)
+plt.savefig(save_path, bbox_extra_artists=(legend1,), bbox_inches='tight')

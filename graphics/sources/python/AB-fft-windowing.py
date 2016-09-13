@@ -31,14 +31,14 @@ colours = lf.Colours()
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 ax1 = plt.gca()
 
-ax1.semilogy(fvec_1, Pxx_1, color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.semilogy(fvec_2, Pxx_2, color=colours.next(), alpha=lf.ALPHA_LINE_A)
-ax1.vlines(f, 1e-35, 1e2, colors=colours.next(), linestyles='dashed', zorder=2)
+ax1.semilogy(fvec_1 / 1000, Pxx_1, color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.semilogy(fvec_2 / 1000, Pxx_2, color=colours.next(), alpha=lf.ALPHA_LINE_A)
+ax1.vlines(f / 1000, 1e-35, 1e2, colors=colours.next(), linestyles='dashed', zorder=2)
 
 ax1.set_ylim([1e-20, 1])
 
-ax1.set_xlabel('Frequency (Hz)')
-ax1.set_ylabel('Power spectral density (power / Hz)')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\kilo\hertz}\right)$')
+ax1.set_ylabel(r'Power spectral density $\left(\frac{\textrm{Power}}{\SI{}{\hertz}}\right)$')
 
 ax1.legend(['PSD estimate (Hanning window)', 'PSD estimate (flat window)', 'Signal frequency'], loc='lower left')
 

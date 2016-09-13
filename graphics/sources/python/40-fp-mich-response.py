@@ -83,9 +83,9 @@ ax2.grid(True)
 ax2.set_ylim((-10, 100))
 
 # set labels
-ax1.set_ylabel('Response\n(1 / sqrt(Hz))')
-ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (deg)')#, color=ax2colour)
+ax1.set_ylabel(r'Response $\left(\frac{1}{\sqrt{\SI{}{\hertz}}}\right)$')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 # set phase ticks
 ax2.set_yticks([0, 45, 90])

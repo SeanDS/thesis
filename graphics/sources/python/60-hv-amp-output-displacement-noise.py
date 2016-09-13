@@ -87,8 +87,8 @@ fill_indices = np.where(np.logical_and(f >= 100, f <= 700))
 # fill low frequency region, using same colour as shaded blue region of layout
 ax1.fill_between(f2[fill_indices], 1, requirement[fill_indices[0]], facecolor='#008cff', alpha=0.5)
 
-ax1.set_ylabel('Displacement noise (m / sqrt(Hz))')
-ax1.set_xlabel('Frequency (Hz)')
+ax1.set_ylabel(r'Displacement noise $\left(\frac{\SI{}{\meter}}{\sqrt{\SI{}{\hertz}}}\right)$')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 
 ax1.set_xlim([1e1, 1e5])
 ax1.set_ylim([1e-24, 1e-14])

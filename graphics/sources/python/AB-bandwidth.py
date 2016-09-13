@@ -51,7 +51,7 @@ ax1.fill_between(f[fill_indices_2], 1, tf2[fill_indices_2], color=colours.altern
 
 ax1.legend(['dc gain = 1000', 'dc gain = 100'], loc='upper right')
 
-ax1.set_xlabel('Frequency (Hz)')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax1.set_ylabel('Loop gain')
 
 ax1.set_xlim([1e-2, 1e5])

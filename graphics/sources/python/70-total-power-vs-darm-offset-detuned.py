@@ -46,9 +46,9 @@ ax2.plot(data[:, 0] * 1e12, data[:, 23] * 1e-3, '-', color=colours.next(), alpha
 # vertical line for DARM offset
 ax2.vlines(darm_offset * 1e12, 1, 30, colors=colour_line, linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Total power (W)')
-ax2.set_xlabel('DARM offset (pm)')
-ax2.set_ylabel('Carrier power (kW)')
+ax1.set_ylabel(r'Total power $\left(\SI{}{\watt}\right)$')
+ax2.set_xlabel(r'DARM offset $\left(\SI{}{\pico\meter}\right)$')
+ax2.set_ylabel(r'Carrier power $\left(\SI{}{\kilo\watt}\right)$')
 
 ax1.set_xlim([-1e2, 1e2])
 ax1.set_ylim([1e-5, 1e0])

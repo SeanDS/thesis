@@ -92,7 +92,7 @@ qn = noise(f, f_0, m, L, gamma, I)
 qn_mich = noise_mich(f, f_0, m, L, gamma, I)
 
 # figure
-fig = plt.figure(figsize=lf.FIG_SIZE_B)
+fig = plt.figure(figsize=lf.FIG_SIZE_A_SM)
 
 ax1 = fig.gca()
 
@@ -116,8 +116,8 @@ ax1.grid(True)
 ax1.set_ylim((1e-1, 1e10))
 
 # set labels
-ax1.set_ylabel('Noise\n(1 / Hz)')
-ax1.set_xlabel('Frequency (Hz)')
+ax1.set_ylabel(r'Noise $\left(\frac{1}{\SI{}{\hertz}}\right)$')
+ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 
 ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
 

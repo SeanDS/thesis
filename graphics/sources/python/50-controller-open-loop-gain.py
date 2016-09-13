@@ -38,9 +38,9 @@ ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alp
 # add unity gain line
 ax2.vlines(350, -200, 200, colors=colour_b, linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Magnitude')
-ax2.set_xlabel('Frequency (Hz)')
-ax2.set_ylabel(u'Phase (deg)')
+ax1.set_ylabel(r'Magnitude')
+ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
+ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 ax1.legend(['Open loop gain', 'Unity gain'], loc='lower left')
 
@@ -51,7 +51,7 @@ ax1.legend(['Open loop gain', 'Unity gain'], loc='lower left')
 ax1.set_yticks([1e-12, 1e-8, 1e-4, 1e0, 1e4, 1e8])
 
 # set y-labels for phase
-#ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
+ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 
 ax1.grid(True)
 ax2.grid(True)

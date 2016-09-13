@@ -61,6 +61,7 @@ plot_lengths = (lengths - exact_cavity_length) / lambda0
 ax1.semilogy(plot_lengths, powers, color=colour_a)
 
 ax1.set_ylabel('Cavity power / input power')
+ax1.set_xlabel(r'Length offset $\left(\lambda\right)$')
 
 ax1.grid(True)
 
@@ -79,7 +80,7 @@ ax2.set_xticks([tick * length_offset_to_megahertz for tick in ax1.get_xticks()])
 # set x-axis limit
 ax2.set_xlim([lower_limit * length_offset_to_megahertz, upper_limit * length_offset_to_megahertz])
 
-ax2.set_xlabel('Frequency offset for {0:.0f} m cavity [MHz]'.format(cavity_length))
+ax2.set_xlabel(' '.join(['Frequency offset for {0:.0f} m cavity'.format(cavity_length), r'$\left(\SI{}{\mega\hertz}\right)$']))
 
 fig.tight_layout()
 
