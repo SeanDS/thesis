@@ -1,5 +1,5 @@
 f = logspace(-2, 5, 100);
-opt = optSimpleSsm();
+opt = optSagnacWithRingCavities();
 
 w = 2 * pi * 1;
 dampRes = [0.01 + 1i, 0.01 - 1i];

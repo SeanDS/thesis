@@ -1,4 +1,4 @@
-function opt = optSimpleSsm()
+function opt = optSagnacWithRingCavities()
     %% Build the Optickle input parameters
     
     % homodyne angle
