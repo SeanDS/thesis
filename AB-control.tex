@@ -85,7 +85,7 @@ A control loop can be used to sense the error in an interferometer from its oper
 The controller cannot measure errors below its sensing noise and so sensing noise is not suppressed by the control loop.
 
 \subsection{Control loop figures of merit}
-A functioning control loop will suppress feedback noise by a level determined by the \emph{open-loop gain}, defined as the product of $G$ and $H$. This can be calculated by breaking the loop and taking a transfer function between the broken edges, and it shows the combined effect the the system under control, its actuators and sensors have on their inputs at their outputs.
+A functioning control loop will suppress feedback noise by a level determined by the \emph{open-loop gain}, defined as the product of $G$ and $H$. This can be calculated by breaking the loop and taking a transfer function between the broken edges, and it shows the combined effect the system under control, its actuators and sensors have on their inputs at their outputs.
 
 The \emph{closed-loop gain} is the effect that the control loop has on the system when negative feedback is being applied. If the controller is able to sense errors and fully correct them, then the closed-loop gain is unity. The frequency domain representation of the closed-loop gain is useful to visualise at which frequencies the gain from the controller is not being applied: closed-loop gain higher than \num{1} shows that the system is not controlling the error point  by matching it with equal magnitude and opposite sign, but rather following it. The closed-loop gain becomes particularly useful when comparing the effect of gain hierarchy, where multiple actuators are used to correct a single error point, as shown in Section\,\ref{sec:sus-gain-hierarchy}.
 
