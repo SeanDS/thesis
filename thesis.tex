@@ -1,5 +1,7 @@
-\documentclass[twoside,nogutter]{glasgowthesis}
-%\documentclass[twoside,hidelinks]{glasgowthesis}
+% for digital/drafts
+%\documentclass[twoside,nogutter]{glasgowthesis}
+% for printed copies
+\documentclass[twoside,hidelinks]{glasgowthesis}
 % ^^ draft shows overfilled boxes (but disables links)
 % ^^ replace "oneside" with "twoside" to set the gutter correctly for
 %    two-sided printing.
@@ -17,7 +19,6 @@
 \usepackage{color}
 \usepackage{bookmark}
 \usepackage{hyphenat} % for \hyp{} instead of "-".
-
 
 %%%
 % Bibliography
@@ -104,7 +105,7 @@
 % import package
 \usepackage{hyperref}
 \hypersetup{
-  colorlinks=true,
+  colorlinks=false,
   linkcolor=blue,
   filecolor=magenta,      
   urlcolor=cyan
