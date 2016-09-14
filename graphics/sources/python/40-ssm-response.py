@@ -105,7 +105,7 @@ ax2.grid(True)
 ax2.set_ylim((-200, 200))
 
 # set labels
-ax1.set_ylabel(r'Response $\left(\frac{1}{\sqrt{\SI{}{\hertz}}}\right)$')
+ax1.set_ylabel(r'Response $\left(\sqrt{\SI{}{\hertz}}\right)$')
 ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
