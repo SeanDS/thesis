@@ -202,7 +202,7 @@ Capacitors are present upon the \gls{HV} supply lines to filter \gls{AC} noise, 
 
 \begin{sidewaysfigure}
   \centering
-  \includegraphics[width=\columnwidth]{graphics/60-hv-amp-soft-start.pdf}
+  \includegraphics[width=0.75\columnwidth]{graphics/60-hv-amp-soft-start.pdf}
   \caption[High voltage amplifier soft-start schematic]{\label{fig:hv-amp-soft-start}Soft-start mechanism to prevent excessive power supply current draw. This is based on a design for the \AEIPROTOTYPE{} by Andreas Weidner. The leftmost optocouplers control whether current is allowed to flow from the power supplies given a control signal from an on-off switch on the enclosure. After the electronics are switched on, the current flow is initially limited by two \SI{5}{\kilo\ohm} resistors. Any \gls{AC} signal content above around \SI{500}{\hertz} is filtered by the presence of an low-pass LC filter formed of the \SI{1619}{\micro\henry} choke and \SI{47}{\micro\farad} capacitor (the low-pass corner frequency decreases further when additional capacitive load is attached). A \SI{2.5}{\percent} pick-off from each \gls{HV} rail is compared to a \SI{\pm5}{\volt} reference, with the resulting difference fed back to a second pair of optocouplers (different models from the first due to their lower duty cycle) which gradually open up a low-resistance path on each supply rail. Without these optocouplers, the power the \SI{5}{\kilo\ohm} resistors would need to dissipate would be considerable at maximum voltage. As the supply voltage increases beyond around \SI{200}{\volt}, the resistance through the optocoupler is reduced far below the \SI{5}{\kilo\ohm} resistors and so the power dissipated in the resistors is negligible.}
 \end{sidewaysfigure}
 
@@ -301,11 +301,13 @@ The \gls{ETM} displacement noise this would create is then simply the product of
 For the control of suspended test masses at high frequencies, parallel plate capacitor \glspl{ESD} provide a low noise alternative to voice coils and their geometry can prevent clipping losses suffered in the use of metal comb \glspl{ESD}. It is intended for parallel plate capacitor \glspl{ESD} to be used as the high frequency actuators in the \SSMEXPT{} presented in Chapter\,\ref{c:speedmeter-intro}, and in order to provide actuation at the required level an \gls{HV} signal with suitably high magnitude and low noise must be available. The technical design of an \gls{HV} amplifier was presented which meets the experiment's range and noise requirements, providing output up to \SI{750}{\volt} with noise of around \SI{20}{\micro\volt\per\sqrthz} in the frequency band of interest.
 
 \begin{sidewaysfigure}
-  \includegraphics[width=\textwidth]{graphics/60-hv-amp-top.pdf}
+  \centering
+  \includegraphics[width=0.8\textwidth]{graphics/60-hv-amp-top.pdf}
   \caption[High voltage amplifier board, top view]{\label{fig:hv-amp-top}Top view of the \gls{HV} amplifier printed circuit board showing the component and copper track layout. This side contains most of the components and all of the connectors that go to and from the enclosure. Areas not carrying signals are part of the ground plane, except for a relief at one side where the heat sinks for the PA95s are attached, isolated from the ground plane to minimise the risk of arcing.}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}
-  \includegraphics[width=\textwidth]{graphics/60-hv-amp-bottom.pdf}
+  \centering
+  \includegraphics[width=0.8\textwidth]{graphics/60-hv-amp-bottom.pdf}
   \caption[High voltage amplifier board, bottom view]{\label{fig:hv-amp-bottom}Bottom view of the \gls{HV} amplifier printed circuit board showing the component and copper track layout. This side is where the top components are soldered to the copper tracks. Some surface mount decoupling capacitors for the supply rails of the PA95s are present on the bottom as they could not be placed as closely to the op-amps on the top side.}
 \end{sidewaysfigure}
