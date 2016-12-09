@@ -23,8 +23,15 @@
 %%%
 % Bibliography
 
-% import package and set some options
-\usepackage[minnames=1,maxnames=5,style=numeric-comp,sorting=none,url=false,backend=bibtex]{biblatex}
+% import package and set some options:
+%   minnames: minimum number of author names to always show
+%   maxnames: maximum number of author names to show before making it "et al."
+%   style: biblatex entry style
+%   firstinits: initialise first names
+%   sorting: whether to sort other than order of occurrence
+%   url: whether to show entry URLs
+%   backend: bibtex compiler to use
+\usepackage[minnames=1,maxnames=5,style=numeric-comp,firstinits=true,sorting=none,url=false,backend=bibtex]{biblatex}
 
 % set path to database
 \bibliography{bibliography.bib}
