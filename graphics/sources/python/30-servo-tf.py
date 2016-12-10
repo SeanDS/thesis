@@ -32,7 +32,7 @@ a1 = ax1.loglog(data[:, 0], data[:, 3], '-', color=colour_a, alpha=lf.ALPHA_LINE
 a2 = ax1.loglog(data[:, 0], data[:, 1], '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 # add point representing measurement frequency
-a3 = ax1.vlines(70, 1e-1, 1e14, colors=colour_c, linestyles='dashed', zorder=2)
+a3 = ax1.vlines(70, 1e-3, 1e14, colors=colour_c, linestyles='dashed', zorder=2)
 
 # plot phase
 ax2.semilogx(data[:, 0], data[:, 4], '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
@@ -43,8 +43,8 @@ ax1.set_ylabel('Magnitude')
 ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
-ax1.set_ylim([1e0, 1e11])
-ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
+ax1.set_ylim([1e-2, 1e11])
+ax1.set_yticks([1e-2, 1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
 
 # switch off top plot x tick labels, as shared by bottom
 ax1.tick_params(axis='x', labelbottom='off')
