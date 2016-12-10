@@ -20,7 +20,7 @@ The first detection was made shortly before a science run in which the two \LIGO
 
 Beyond the detection of binary black hole mergers, other sources such as compact neutron star binaries have yet to be found but are predicted to exist producing signals within the sensitivity of the detector networks for future science runs \cite{Abbott2016f}. Subsequent observations will hope to probe for new sources of gravitational waves, and with longer integration time it will be possible to set improved limits on the population of some of these astrophysical objects in our universe.
 
-The long term goal of researchers in the field is to assemble a worldwide network of gravitational wave detectors to compliment the existing network of electromagnetic (\gls{EM}) telescopes to facilitate \emph{multi-messenger} astronomy. Such a network would be able to localise the sky position incident gravitational waves well enough to allow for \emph{\gls{EM} follow-up} \cite{Abbott2016e, Abbott2016f}, whereby the data from both telescopes and gravitational wave detectors can be combined to probe the astrophysics of the events in unprecedented detail and to identify and learn more about the nature and origin of host galaxies.
+The long term goal of researchers in the field is to assemble a worldwide network of gravitational wave detectors to compliment the existing network of electromagnetic (\gls{EM}) telescopes to facilitate \emph{multi-messenger} astronomy. Such a network would be able to localise the sky position of incident gravitational waves well enough to allow for \emph{\gls{EM} follow-up} \cite{Abbott2016e, Abbott2016f}, whereby the data from both optical telescopes and gravitational wave detectors can be combined to probe the astrophysics of the events in unprecedented detail and to identify and learn more about the nature and origin of their host galaxies.
 
 \section{General relativity and gravitational waves}
 A consequence of Einstein's theory of general relativity, gravitational waves are produced by changes in the quadrupole moment of mass distributions such as the presence of non-spherical asymmetries in spinning objects or pairs of objects coalescing with elliptical orbits. The effect a gravitational wave has on spacetime as it propagates is to stretch it in one direction whilst contracting it in another. This \emph{strain} can be expressed as a linear combination of ``plus'' and ``cross'' polarisation terms, shown for an initially circular ring of test particles on a 2D plane as a function of phase angle in Figure\,\ref{fig:gravitational-wave-polarisation}.
@@ -31,10 +31,10 @@ A consequence of Einstein's theory of general relativity, gravitational waves ar
   \caption[Plus and cross polarisations of a propagating gravitational wave]{\label{fig:gravitational-wave-polarisation}Plus and cross polarisations of a propagating gravitational wave. As the wave travels, shown in this depiction perpendicularly to the plane of this page, it stretches spacetime in one direction while contracting it in the other in an elliptic behaviour. A gravitational wave can be described as a linear combination of the two polarisations.}
 \end{figure}
 
-Although in principle gravitational waves can be produced by all massive bodies, gravitational waves from Earth-bound objects, including the Earth itself, are not even remotely detectable. The strain in spacetime produced by such objects is so weak that there is no hope for us to make such a detection with any known technology. A good estimate for the strain produced by a pair of rotating objects is given as \cite{Sathyaprakash2009}:
+Although in principle gravitational waves can be produced by all massive bodies, gravitational waves from Earth-bound objects, including the Earth itself, are not even remotely detectable. The strain in spacetime produced by such objects is so weak that there is no hope for us to make such a detection with any known technology. A good estimate for the strain, $h_0$, produced by a pair of rotating objects is given as \cite{Sathyaprakash2009}:
 \begin{equation}
   \label{eq:happrox}
-  h \lesssim \frac{2 G \left( M v^{2} \right)_{\text{nonspherical}}}{c^4 r},
+  h_0 \lesssim \frac{2 G \left( M v^{2} \right)_{\text{nonspherical}}}{c^4 r},
 \end{equation}
 where $G$ is the gravitational constant, $\left( M v^{2} \right)_{\text{nonspherical}}$ is the kinetic energy associated with the non-spherical parts of the source required for the creation of gravitational waves, $c$ is the speed of light and $r$ is the distance between the source and the detector. To get an idea of what the strain would be for man-made sources, we can consider as in \cite{Sathyaprakash2009} the case of two cars of mass $M = \SI{e3}{\kilo\gram}$ attached to opposite ends of a rod of length $d = \SI{10}{\meter}$, spinning about its centre in a centrifuge at a frequency of $f = \SI{10}{\hertz}$. The tangential velocity of the cars will be around $2 \pi f d \approx \SI{600}{\meter\per\second}$, about as fast as a modern fighter jet. Placing the detector one wavelength away, and using Equation\,\ref{eq:happrox}, the strain turns out to be around $\SI{4e-43}{}$. To be able to detect such a strain the current most sensitive detectors, \ALIGO{}, would require an improvement in sensitivity of \SI{20}{} orders of magnitude, which is clearly ludicrous.
 
@@ -53,7 +53,7 @@ The strain of an incident gravitational wave, $h_0$, can be determined from the 
 \end{equation}
 
 \subsection{Resonant bars}
-The first attempts to detect gravitational waves began with Joseph Weber's studies in the 1960s with his \emph{Weber bar} \cite{Weber1960}. This was a device developed to act as a direct strain meter, with incident gravitational waves exciting the separation of the material along the length of the bar. Piezoelectric sensors placed on the surface of an aluminium cylinder convert changes in length into electrical signals. Whilst the expected change in length of such a cylinder from gravitational radiation would in most cases be tiny, the resonant frequency of the cylinder, typically in the kilohertz range, acts to enhance the amplitude of the length change at nearby frequencies. The sensitivity of such a bar as a function of frequency is determined in part by its quality factor (Q), with a necessary trade-off being made between peak sensitivity (high Q) and detection bandwidth (low Q). As sources of gravitational radiation are almost universally weak, the only reasonable hope of making such a detection is to choose a high Q material and hope for a favourable signal frequency.
+The first attempts to detect gravitational waves began with Joseph Weber's studies in the 1960s with his \emph{Weber bar} \cite{Weber1960}. This was a device developed to act as a direct strain meter, with incident gravitational waves exciting the separation of the material along the length of the bar. Piezoelectric sensors placed on the surface of an aluminium cylinder convert changes in length into electrical signals. Whilst the expected change in length of such a cylinder from gravitational radiation would in most cases be tiny, the resonant frequency of the cylinder, typically in the kilohertz range, acts to enhance the amplitude of the length change at nearby frequencies. The sensitivity of such a bar as a function of frequency is determined in part by its quality factor ($Q$), with a necessary trade-off being made between peak sensitivity (high $Q$) and detection bandwidth (low $Q$). As sources of gravitational radiation are almost universally weak, the only reasonable hope of making such a detection is to choose a high $Q$ material and hope for a signal at a favourable frequency.
 
 Despite improvements over the following decades, the peak sensitivity of state-of-the-art resonant bar detectors was surpassed by \emph{interferometric} gravitational wave detectors in 2003 \cite{Pitkin2011} after it was shown that \emph{second generation} detectors improving upon the initial designs would offer superior sensitivity across a much wider bandwidth \cite{Harry2002a}. The interferometer was first suggested as a means for gravitational wave detection shortly after the introduction of the Weber bar \cite{Pustovoit1962}, but efforts to build prototypes and understand the significant sources of noise only gained momentum in the 1970s \cite{Moss1971, Weiss1972}.
 % Gertsenshtein and Pustovoit contains: "We shall show below that this corresponds to a secondary effect, namely to resonant excitation of gravitational waves by the electromagnetic field." (p3)
@@ -74,7 +74,7 @@ This shows that the measurement of length between test masses with light offers 
   h_0 = \frac{\text{\LMINUS{}}}{L} = \frac{\Delta \omega}{\omega_0}.
 \end{equation}
 
-From Equation\,\ref{eq:gw-phase-change} the \emph{modulation depth} (see Appendix\,\ref{sec:signal-sidebands}) can be approximated to:
+From Equation\,\ref{eq:gw-phase-change} the gravitational wave's \emph{modulation depth} (see Appendix\,\ref{sec:signal-sidebands}) can be approximated to:
 \begin{equation}
   \label{eq:gw-mod-depth}
   h_0 \frac{\omega_0}{\omega_g} \sin \left( \frac{\omega_g L}{c_0} \right),
@@ -87,7 +87,7 @@ Figure\,\ref{fig:mi} shows the \MI{} topology that all current detectors are bas
 \begin{figure}
   \centering
   \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/10-michelson.pdf}
-  \caption[Simple \MI{}]{\label{fig:mi}The simple \MI{} used since the famous Michelson and Morley experiments of the 1880s.}
+  \caption[Simple \MI{}]{\label{fig:mi}The simple \MI{} used since the famous Michelson and Morley experiments of the 1880s. This version uses a laser as a source of monochromatic input light.}
 \end{figure}
 
 Although this simple picture provides the foundation for the behaviour of the \MI{} as a gravitational wave detector, the operation of a real detector is more complex and requires its own discussion. Chapter\,\ref{c:instrumentation} will introduce the sensitivity improvements made to the \MI{} and the research into the main sources of noise affecting its sensitivity over the course of the last \num{40} years of development.
@@ -100,7 +100,7 @@ Beyond this generation, plans are afoot to build facilities which will push the 
 \begin{figure}
   \centering
   \input{graphics/generated/from-python/10-detector-network.pgf}
-  \caption[Worldwide interferometric gravitational wave detector network]{\label{fig:detector-network}Worldwide interferometric gravitational wave detector network. \GEO{}, \LHO{} and \LLO{} are operational, whilst \VIRGO{} and \KAGRA{} are being commissioned and \INDIGO{} is under construction. The locations of the \ET{} and \LIGOCE{} are as yet undecided.}
+  \caption[Worldwide interferometric gravitational wave detector network]{\label{fig:detector-network}Worldwide interferometric gravitational wave detector network. \GEO{}, \LHO{} and \LLO{} are operational, whilst \VIRGO{} and \KAGRA{} are being commissioned and \INDIGO{} is under construction. The locations of the \ET{} and \LIGOCE{} are as yet undecided. The long baselines between sites assists with sky localisation.}
 \end{figure}
 
 \section{Thesis structure}
