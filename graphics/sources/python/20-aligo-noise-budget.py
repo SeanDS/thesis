@@ -47,7 +47,7 @@ ax1.loglog(f, data[:, 8], '--', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 ax1.loglog(f, data[:, 9], '--', color=colours.next(), alpha=lf.ALPHA_LINE_A)
 ax1.loglog(f, data[:, 10], '-', color=colours.shades['black'], alpha=lf.ALPHA_LINE_A, lw=lf.LW_THICK, zorder=-1)
 
-leg = ax1.legend(['Quantum', 'Seismic', 'Newtonian', 'Suspension thermal', 'Coating Brownian', 'Coating thermooptic', 'Substrate Brownian', 'Substrate thermoelastic', 'Residual gas', 'Total'], loc='upper right')
+leg = ax1.legend(['Quantum', 'Seismic', 'Gravity gradient', 'Suspension thermal', 'Coating Brownian', 'Coating thermooptic', 'Substrate Brownian', 'Substrate thermoelastic', 'Residual gas', 'Total'], loc='upper right')
 
 plt.grid(True)
 
