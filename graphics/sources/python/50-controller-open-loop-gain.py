@@ -51,7 +51,7 @@ ax1.legend(['Open loop gain', 'Unity gain'], loc='lower left')
 ax1.set_yticks([1e-12, 1e-8, 1e-4, 1e0, 1e4, 1e8])
 
 # set y-labels for phase
-ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
+ax2.set_yticks([-180, -90, 0, 90, 180])
 
 # switch off top plot x tick labels, as shared by bottom
 ax1.tick_params(axis='x', labelbottom='off')
