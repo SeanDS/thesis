@@ -13,7 +13,7 @@
    height="1052.3622047"
    id="svg3289"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="30-grating-propagation.svg">
   <defs
      id="defs3291">
@@ -64,9 +64,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70000001"
-     inkscape:cx="424.81282"
-     inkscape:cy="422.39832"
+     inkscape:zoom="0.98994951"
+     inkscape:cx="485.65036"
+     inkscape:cy="409.91398"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -80,9 +80,9 @@
      inkscape:snap-global="false"
      inkscape:snap-bbox-midpoints="true"
      inkscape:window-width="998"
-     inkscape:window-height="853"
-     inkscape:window-x="1729"
-     inkscape:window-y="112"
+     inkscape:window-height="699"
+     inkscape:window-x="360"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata3294">
@@ -286,8 +286,8 @@
          y="722.75427"
          style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">δy</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
-       d="m 301.26201,699.78817 161.06271,0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 300.50309,699.78823 161.81545,0"
        id="path6278"
        inkscape:connector-curvature="0" />
     <text
