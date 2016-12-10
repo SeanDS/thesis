@@ -116,7 +116,7 @@ ax1.grid(True)
 ax1.set_ylim((1e-1, 1e10))
 
 # set labels
-ax1.set_ylabel('Noise (dimensionless)')
+ax1.set_ylabel('Noise (normalised)')
 ax1.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 
 ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
