@@ -11,7 +11,7 @@
    width="297mm"
    height="210mm"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="10-michelson.svg">
   <metadata
      id="metadata16">
@@ -58,15 +58,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1680"
-     inkscape:window-height="1030"
+     inkscape:window-width="1366"
+     inkscape:window-height="703"
      id="namedview12"
      showgrid="false"
      inkscape:zoom="2"
-     inkscape:cx="443.09719"
-     inkscape:cy="321.05506"
-     inkscape:window-x="-2"
-     inkscape:window-y="-3"
+     inkscape:cx="494.34719"
+     inkscape:cy="334.55506"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="b-bsp"
      units="mm" />
@@ -321,16 +321,16 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="469.45032"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="483.9527"
      y="436.66519"
      id="text4393-5-5-5"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4395-5-3-5"
-       x="469.45032"
+       x="483.9527"
        y="436.66519"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Output</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">Output</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -357,19 +357,55 @@
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Laser</tspan></text>
   <text
      xml:space="preserve"
-     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      x="512.75067"
-     y="328.20303"
+     y="336.20303"
      id="text4393-5-5-5-3-3"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4395-5-3-5-6-56"
        x="512.75067"
-       y="328.20303"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Beam</tspan><tspan
+       y="336.20303"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle">Beam</tspan><tspan
        sodipodi:role="line"
        x="512.75067"
-       y="353.20303"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       y="361.20303"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
        id="tspan3496">splitter</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="483.1127"
+     y="497.4852"
+     id="text4393-5-5-5-36"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5-7"
+       x="483.1127"
+       y="497.4852"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">Photodetector</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="483.71271"
+     y="172.18079"
+     id="text4393-5-5-5-5"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5-3"
+       x="483.71271"
+       y="172.18079"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">Mirror</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="650.91907"
+     y="349.09305"
+     id="text4393-5-5-5-5-5"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4395-5-3-5-3-6"
+       x="650.91907"
+       y="349.09305"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">Mirror</tspan></text>
 </svg>
