@@ -48,6 +48,9 @@ ax1.set_ylim([1e-5, 2])
 
 ax1.legend(['Anti-aliasing filter', 'Anti-imaging filter', 'Sample frequency'], loc='lower left')
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 # set y-labels for phase
 ax2.set_ylim([-200, 200])
 ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])

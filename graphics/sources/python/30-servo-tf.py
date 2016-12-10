@@ -46,6 +46,9 @@ ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 ax1.set_ylim([1e0, 1e11])
 ax1.set_yticks([1e0, 1e2, 1e4, 1e6, 1e8, 1e10])
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 with plt.rc_context({'legend.borderaxespad': 1}):
   ax1.legend(['Laser temperature', 'Laser PZT', 'Measurement frequency'], loc='lower left')
 

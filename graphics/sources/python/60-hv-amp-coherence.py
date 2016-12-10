@@ -88,6 +88,12 @@ ax2.grid(True)
 ax3.grid(True)
 ax4.grid(True)
 
+# switch off some tick labels shared with other axes
+ax1.tick_params(axis='x', labelbottom='off')
+ax2.tick_params(axis='x', labelbottom='off')
+ax2.tick_params(axis='y', labelleft='off')
+ax4.tick_params(axis='y', labelleft='off')
+
 # call this BEFORE adding the legend, because tight_layout ignores legends
 plt.tight_layout()
 

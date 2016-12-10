@@ -68,6 +68,9 @@ ax3.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
 ax3.set_yticks([0, 45, 90])
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 ax1.grid(True)
 ax2.grid(True)
 

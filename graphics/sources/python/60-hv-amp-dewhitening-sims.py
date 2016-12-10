@@ -45,6 +45,9 @@ ax1.set_ylabel('Magnitude')
 ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 #ax1.set_xlim([1e0, 1e4])
 #ax1.set_ylim([1e-2, 1e0])
 ax2.set_ylim([-100, 200])

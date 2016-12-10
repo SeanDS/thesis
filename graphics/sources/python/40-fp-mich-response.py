@@ -87,6 +87,9 @@ ax1.set_ylabel(r'Response $\left(\sqrt{\SI{}{\hertz}}\right)$')
 ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 # set phase ticks
 ax2.set_yticks([0, 45, 90])
 

@@ -45,6 +45,9 @@ ax2.plot(data_l1_num[:, 0], scale * data_l1_num[:, 1], '-', color=colour_b, alph
 ax1.set_ylabel('Strain')
 ax2.set_xlabel(r'Time $\left(\SI{}{\second}\right)$')
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 ax1.set_ylim([scale * -1.5, scale * 1.5])
 ax2.set_ylim([scale * -1.5, scale * 1.5])
 ax2.set_xlim([0.25, 0.45])

@@ -53,6 +53,9 @@ ax1.set_yticks([1e-20, 1e-16, 1e-12, 1e-8, 1e-4, 1e0])
 # set y-labels for phase
 ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 ax1.grid(True)
 ax2.grid(True)
 

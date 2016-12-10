@@ -73,6 +73,9 @@ ax2.set_ylim([-180, 180])
 # set y-labels for phase
 ax2.set_yticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
 
+# switch off top plot x tick labels, as shared by bottom
+ax1.tick_params(axis='x', labelbottom='off')
+
 ax1.grid(True)
 ax2.grid(True)
 

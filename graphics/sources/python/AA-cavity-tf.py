@@ -60,6 +60,8 @@ ax1.set_ylabel('Magnitude')
 ax2.set_xlabel(r'Offset from resonance $\left(\SI{}{\nano\meter}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
+ax1.tick_params(axis='x', labelbottom='off')
+
 ax1.grid(True)
 ax2.grid(True)
 

@@ -55,6 +55,9 @@ ax1.set_xlabel('Scale factor')
 ax1.set_ylabel('Normalised probability density')
 ax2.set_xlabel('Spot movement\nstandard deviation ' r'$\left(\SI{}{\meter}\right)$')
 
+# switch off top plot y tick labels, as shared by left plot
+ax2.tick_params(axis='y', labelleft='off')
+
 fig.tight_layout()
 
 plt.savefig(sys.argv[1])#, bbox_extra_artists=(legend1,), bbox_inches='tight')

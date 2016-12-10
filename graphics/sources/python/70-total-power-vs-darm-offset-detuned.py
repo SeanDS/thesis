@@ -54,6 +54,8 @@ ax1.set_xlim([-1e2, 1e2])
 ax1.set_ylim([1e-5, 1e0])
 ax2.set_ylim([16, 19])
 
+ax1.tick_params(axis='x', labelbottom='off')
+
 ax1.grid(True)
 ax2.grid(True)
 
