@@ -46,7 +46,7 @@ ax1.semilogy(data[:, 0], data[:, 11], '-', color=colour_d, alpha=lf.ALPHA_LINE_A
 ax1.semilogy(data[:, 0], data[:, 17], '-', color=colours.alternate(colour_d), alpha=lf.ALPHA_LINE_A)
 
 # vertical line for Schnupp length
-ax1.vlines(0.08, 1e-6, 1e1, colors=colours.next(), linestyles='dashed', zorder=2)
+ax1.vlines(0.08, 1e-6, 1e1, colors=colours.shades['black'], linestyles='dashed', zorder=2)
 
 ax1.set_ylabel(r'Power $\left(\SI{}{\watt}\right)$')
 ax1.set_xlabel(r'Schnupp asymmetry $\left(\SI{}{\meter}\right)$')
