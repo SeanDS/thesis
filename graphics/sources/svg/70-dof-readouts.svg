@@ -14,7 +14,7 @@
    width="297mm"
    height="210mm"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="70-dof-readouts.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -25,15 +25,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1680"
-     inkscape:window-height="1030"
+     inkscape:window-width="1366"
+     inkscape:window-height="703"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="480.68005"
-     inkscape:cy="411.73781"
-     inkscape:window-x="-2"
-     inkscape:window-y="-3"
+     inkscape:zoom="4.0000001"
+     inkscape:cx="366.18771"
+     inkscape:cy="412.18967"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="b-bsp"
      units="mm">
@@ -2366,12 +2366,12 @@
   </g>
   <g
      id="g40578-3"
-     transform="matrix(1.6424599,0,0,1.6424599,-152.92908,-205.4535)">
+     transform="matrix(1.1613945,-1.1613945,1.1613945,1.1613945,-391.16052,372.28927)">
     <path
        inkscape:connector-curvature="0"
        id="path4177-5-92-9-2"
        d="m 361.91215,341.19783 -9.65029,9.54617"
-       style="fill:none;stroke:#ff0000;stroke-width:0.30442142;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:none" />
+       style="fill:none;stroke:#ff0000;stroke-width:0.30442142;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:none" />
     <g
        transform="matrix(-0.20385549,-0.20385548,0.20385548,-0.20385549,345.64281,525.17889)"
        id="g4314-7-4-0">
@@ -2594,15 +2594,15 @@
        id="tspan5474-8-2-4">REFL</tspan></text>
   <text
      xml:space="preserve"
-     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="443.20508"
-     y="343.22797"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="424.9502"
+     y="335.55417"
      id="text19186-4-2-6-9-6-5"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
-       x="443.20508"
-       y="343.22797"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       x="424.9502"
+       y="335.55417"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:center;text-anchor:middle"
        id="tspan5474-8-2-4-0">POP</tspan></text>
   <g
      id="g3-5"
