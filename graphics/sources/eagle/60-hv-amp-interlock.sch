@@ -9008,6 +9008,8 @@ ____&lt;br&gt;&lt;br&gt;
 <part name="R151" library="miscs" deviceset="R" device="04" value="1M"/>
 <part name="$210" library="signals" deviceset="VG" device=""/>
 <part name="$211" library="signals" deviceset="VG" device=""/>
+<part name="R1" library="miscs" deviceset="R" device="04" value="1M"/>
+<part name="$1" library="signals" deviceset="VG" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9073,6 +9075,10 @@ INPUT</text>
 </instance>
 <instance part="$210" gate="A" x="180.34" y="210.82"/>
 <instance part="$211" gate="A" x="180.34" y="175.26"/>
+<instance part="R1" gate="A" x="152.4" y="167.64" smashed="yes" rot="R180">
+<attribute name="VALUE" x="152.4" y="165.1" size="1.524" layer="96" font="vector" rot="R180" align="center"/>
+</instance>
+<instance part="$1" gate="A" x="160.02" y="167.64" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -9105,6 +9111,11 @@ INPUT</text>
 <segment>
 <pinref part="R151" gate="A" pin="1"/>
 <pinref part="$211" gate="A" pin="GND"/>
+</segment>
+<segment>
+<pinref part="$1" gate="A" pin="GND"/>
+<pinref part="R1" gate="A" pin="1"/>
+<wire x1="160.02" y1="167.64" x2="157.48" y2="167.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+15V" class="0">
@@ -9280,6 +9291,9 @@ INPUT</text>
 <wire x1="137.16" y1="167.64" x2="142.24" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="167.64" x2="142.24" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="R110" gate="A" pin="1"/>
+<pinref part="R1" gate="A" pin="2"/>
+<wire x1="147.32" y1="167.64" x2="142.24" y2="167.64" width="0.1524" layer="91"/>
+<junction x="142.24" y="167.64"/>
 </segment>
 </net>
 </nets>
