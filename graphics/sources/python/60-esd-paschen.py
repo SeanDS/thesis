@@ -20,7 +20,7 @@ def paschen(A, B, p, d, gamma):
 # (source taken from Wikipedia: https://en.wikipedia.org/wiki/File:Paschen_curves.svg)
 A = 11.8
 B = 325
-p = np.logspace(-2, 7, 100000) # in pascals
+p = np.logspace(-2, 7, 10000) # in pascals
 d = np.logspace(-1, -3, 3)
 gamma_se = 0.01
 
@@ -40,18 +40,27 @@ ax1 = plt.gca()
 # colour wheel
 colours = lf.Colours()
 
+handles = []
+
 # plot, converting to mbar
 for i in range(len(d)):
-    ax1.loglog(p, V[i], color=colours.next(), alpha=lf.ALPHA_LINE_A)
+    this_color = colours.next()
+    
+    ax1.loglog(p, V[i], color=this_color, alpha=lf.ALPHA_LINE_A, zorder=i)
+    
+    # fill between curve and top
+    h = ax1.fill_between(p, V[i], 1e5, interpolate=True, color=this_color, alpha=lf.ALPHA_LINE_A, zorder=i)
+    
+    handles.append(h)
 
 # horizontal line representing maximum voltage
-ax1.hlines(750, p.min() * 1e-2, p.max() * 1e2, colors=colours.next(), linestyles='dashed', zorder=2)
+handles.append(ax1.hlines(750, p.min() * 1e-2, p.max() * 1e2, colors=colours.next(), linestyles='dashed', zorder=2))
 
 # vertical line representing atmospheric pressure
-ax1.vlines(1e3, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2)
+handles.append(ax1.vlines(1e3, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2))
 
 # vertical line representing operating pressure
-ax1.vlines(1e-4, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2)
+handles.append(ax1.vlines(1e-4, 1e1, 1e6, colors=colours.next(), linestyles='dashed', zorder=2))
 
 ax1.set_xlabel(r'Pressure $\left(\SI{}{\milli\bar}\right)$')
 ax1.set_ylabel(r'Breakdown voltage $\left(\SI{}{\volt}\right)$')
@@ -67,12 +76,12 @@ legend_strings.append('Max HV output')
 legend_strings.append('Atmospheric pressure')
 legend_strings.append('Max operating pressure')
 
-ax1.legend(legend_strings, loc='upper left', framealpha=lf.default_settings['legend.framealpha'])
+ax1.legend(handles, legend_strings, loc='upper left', framealpha=lf.default_settings['legend.framealpha'])
 
 ax1.grid(True)
 
 ax1.set_xlim([1e-5, 1e4])
-ax1.set_ylim([1e2, 1e5])
+ax1.set_ylim([1e2, 3e4])
 
 plt.tight_layout()
 
