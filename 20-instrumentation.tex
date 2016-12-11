@@ -38,23 +38,23 @@ where $L_n$ and $L_e$ are the two arm lengths. We employ a particular reflection
   E'_e &= \frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2k \left( L - \frac{\delta L}{2} \right) \right).
 \end{align}
 
-The superpositions of the light from the arms leaving the beam splitter towards the input laser, $E'_{\text{input}}$, and the light leaving at the output port, $E'_{\text{output}}$, are then:
+The superpositions of the light from the arms leaving the beam splitter towards the input laser, $E'_{\text{in}}$, and the light leaving at the output port, $E'_{\text{out}}$, are then:
 \begin{equation}
   \begin{split}
-    E'_{\text{input}} &= \frac{E'_{e} - E'_{n}}{\sqrt{2}} \\
+    E'_{\text{in}} &= \frac{E'_{e} - E'_{n}}{\sqrt{2}} \\
                       &= E'_0 \cos \left( \omega t - 2kL \right) \cos \left( k \delta L \right)
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    E'_{\text{output}} &= \frac{E'_{e} + E'_{n}}{\sqrt{2}} \\
+    E'_{\text{out}} &= \frac{E'_{e} + E'_{n}}{\sqrt{2}} \\
                        &= -E'_0 \sin \left( \omega t - 2kL \right) \sin \left( k \delta L \right).
   \end{split}
 \end{equation}
-A real photodetector is not quick enough to measure changes in intensity at the frequency of the light. Instead, it sees the time averaged square of the field. The photodetector power at the output as a function of $\delta L$, $P_{\text{output}}$, is:
+A real photodetector is not quick enough to measure changes in intensity at the frequency of the light. Instead, it sees the time averaged square of the field. The photodetector power at the output as a function of $\delta L$, $P_{\text{out}}$, is
 \begin{equation}
   \label{eq:mich-p-out}
-  P_{\text{output}} \left( \delta L \right) = \frac{P_0}{2} \left( 1 - \cos \left( 2k \delta L \right) \right),
+  P_{\text{out}} \left( \delta L \right) = \frac{P_0}{2} \left( 1 - \cos \left( 2k \delta L \right) \right),
 \end{equation}
 where $P_0$ is the power of the incident laser light, showing that the signal from the differential arm length is encoded in the power of the light present at the output port. Note that implicit in this derivation is the assumption that the arms are both perfectly reflective. When the optics within the interferometer have different reflectivity, the calculation becomes more complicated and it is sometimes more practical to use a simulation tool, as discussed in Appendix\,\ref{a:simulation-tools}.
 
@@ -64,9 +64,9 @@ The phase change created by the difference in the lengths of the arms shown in E
   k \delta L = \alpha + \delta \phi_{\text{GW}}.
 \end{equation}
 
-The static tuning $\alpha$ is the differential arm phase at which the interferometer is nominally held. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer in the state commonly referred to as ``half way up the fringe''. Here, the interferometer's arms are nominally tuned \SI{45}{\degree} out of phase such that the output signal oscillates about the midpoint between crest and trough of the superposition waveform at the output. As the gradient is steepest at this point, any small changes to the relative arm length of the \MI{} result in a significant difference in power at the photodetector. This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations. The static light power at this operating point contributes significant \emph{shot noise} at the output, $P_{\text{shot, out}}$, given by:
+The static tuning $\alpha$ is the differential arm phase at which the interferometer is nominally held. In experiments where sensitivity can be sacrificed for simplicity, often it is practical to keep the interferometer in the state commonly referred to as ``half way up the fringe''. Here, the interferometer's arms are nominally tuned \SI{45}{\degree} out of phase such that the output signal oscillates about the midpoint between crest and trough of the superposition waveform at the output. As the gradient is steepest at this point, any small changes to the relative arm length of the \MI{} result in a significant difference in power at the photodetector. This operating point, however, is not optimal in terms of \emph{sensitivity} to arm length fluctuations. The static light power at this operating point contributes significant \emph{shot noise} at the output. Its power spectral density is defined as \cite{Meers1991}
 \begin{equation}
-  P_{\text{shot, out}} = \sqrt{2 h f_0 P_0},
+  S_{\text{shot}} = 2 h f_0 P_{\text{out}},
 \end{equation}
 where $h$ is Planck's constant and $f_0$ is the light frequency. The optimally sensitive operating point is therefore not simply one which maximises the signal gradient, but rather one which maximises the \emph{signal-to-noise ratio} (\gls{SNR}). It turns out that the reduced signal in the case of the operating point close to the \emph{dark fringe}, where light from the two arms interferes destructively, is more than compensated for by the lack of shot noise such that the overall sensitivity is better. Interferometer operation near the dark fringe is the basis of \emph{\gls{DC} readout}, described in Section\,\ref{sec:homodyne-readout}, which is the standard measurement technique for all current generation detectors.
 
@@ -118,7 +118,7 @@ Quantum theory showed that the universe contains a continuous spectrum of quantu
 
 In lasers, a pumped electromagnetic field creates a state which can be used as the input light for an interferometer. This typically involves pumping the field into the \emph{coherent} state in which the average laser amplitude and phase quadratures are matched, and noise arises from the presence of virtual photons with arbitrary amplitude and phase in the pumped field leading to an uncertainty in the number of photons output from the laser.
 
-Noise in interferometers does not arise solely from the quantum vacuum, however. In general, noise was shown by Callen and Welton to arise from loss processes quantified by their \emph{fluctuation dissipation theorem} developed in the early \nth{20} Century \cite{Callen1951}, which showed that the noise spectral density created due to fluctuations,
+Noise in interferometers does not arise solely from the quantum vacuum, however. In general, noise was shown by Callen and Welton to arise from loss processes quantified by their \emph{fluctuation dissipation theorem} developed in the early \nth{20} Century \cite{Callen1951}, which showed that the noise power spectral density created due to fluctuations,
 \begin{equation}
   S_{\text{fluc}} \propto \frac{T}{Q},
 \end{equation}
@@ -142,10 +142,10 @@ In the conceptual design for the first generation of gravitational wave detector
 
 Over the past two decades, efforts have been made to both quantify and reduce coating thermal noise. Particular interest is being paid to the study of coatings for cryogenically cooled mirrors, such as the sapphire (\ce{Al_2O_3}) test masses to be used in \gls{KAGRA} \cite{Somiya2012}. A loss peak in the mirror material silica (\ce{SiO_2}), for detectors until recently ubiquitous, occurs at low temperature. This makes the material unsuitable for cryogenic use, as mechanical loss will couple into the light within the interferometer and make its way to the detection port. Other materials such as sapphire do not feature this loss peak and provide lower thermal noise than silica at room temperature for a given mirror design. Coating noise is also proportional to temperature, so cryogenically cooled mirrors can offer better performance. Additionally, crystalline coatings made from compounds such as \ce{AlGaAs} can offer future detectors a coating thermal noise reduction of up to \num{3} over the current state of the art \cite{Cole2013} if technical challenges in their manufacturing can be overcome.
 
-The dominant contribution to coating noise in current generation gravitational wave detectors, Brownian noise, is given as \cite{Harry2002}:
+The dominant contribution to coating noise in current generation gravitational wave detectors, Brownian noise, has a power spectral density given as \cite{Harry2002}
 \begin{equation}
   \label{eq:coating-brownian-psd}
-  S_{\text{x, coating}} = \frac{2 k_B T}{\pi^{3/2} f} \frac{1}{w Y} \left( \phi_{\text{sub}} + \frac{1}{\sqrt{\pi}} \frac{d}{w} \left( \frac{Y'}{Y} \phi_{\text{para}} + \frac{Y}{Y'} \phi_{\text{perp}} \right) \right),
+  S_{\text{coating}} = \frac{2 k_B T}{\pi^{3/2} f} \frac{1}{w Y} \left( \phi_{\text{sub}} + \frac{1}{\sqrt{\pi}} \frac{d}{w} \left( \frac{Y'}{Y} \phi_{\text{para}} + \frac{Y}{Y'} \phi_{\text{perp}} \right) \right),
 \end{equation}
 for Boltzmann constant $k_B$, temperature $T$, frequency $f$, beam size $w$, Young's modulus $Y$, loss angle $\phi$ and coating thickness $d$. The Young's moduli are split into components representing the coatings and substrate, $Y$ and $Y'$, and the loss angles are split into parallel and perpendicular components in the coatings, $\phi_{\text{para}}$ and $\phi_{\text{perp}}$, and substrate, $\phi_{\text{sub}}$, respectively. The measurement and interaction between these components is an active area of research. Figure\,\ref{fig:aligo-noise-budget} shows coating Brownian noise jointly dominating the noise in \ALIGO{} at frequencies around \SI{70}{\hertz}.
 
@@ -161,62 +161,62 @@ At higher frequencies, suspension \emph{violin modes} have a significant influen
 \subsection{\label{sec:quantum-noise}Quantum noise and the Standard Quantum Limit}
 Arising from the Heisenberg Uncertainty Principle, the quantum noise present within a classical interferometer\footnote{Note the misnomer: a \emph{classical} interferometer can still be limited by \emph{quantum} noise. The name refers to the readout technique, namely the measurement of classical light intensity to determine displacement.} limits its sensitivity.
 
-Classical laser light in the coherent state, approximating what a standard laser will output, contains equal fractional amplitude and phase uncertainties. The phase fluctuations appearing at the sensor used to measure the output of the interferometer and amplitude fluctuations interacting with the interferometer's test masses create noise at the measurement ports\footnote{A derivation of both effects can be found in, for example, ref. \cite{Danilishin2012}.}. A fundamental limit to the sensitivity of classical interferometers arises from the combination of these two effects; this is described in more detail in Section\,\ref{sec:sql}.
+Classical laser light in the coherent state, approximating what a standard laser will output, contains equal fractional amplitude and phase uncertainties. The phase fluctuations appearing at the sensor used to measure the output of the interferometer and amplitude fluctuations interacting with the interferometer's test masses create noise at the measurement ports\footnote{A derivation of both effects can be found in, for example, ref. \cite{Danilishin2012}.}. A fundamental limit to the sensitivity of classical interferometers arises from the combination of these two effects; this is described in more detail in Section\,\ref{sec:sql}. The following subsections summarise results from ref. \cite{Danilishin2012}.
 
 \subsubsection{\label{sec:quantum-shot-noise}Quantum shot noise}
-As described in Section\,\ref{sec:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter, and when this noise is measured by a photodetector it appears as \emph{quantum shot noise}. The phase fluctuations upon the light produce a varying photocurrent due to the stochastic arrival of photons at the sensor. The displacement-equivalent power spectral density of shot noise in an interferometer is:
+As described in Section\,\ref{sec:noise-via-loss}, open ports in the interferometer allow vacuum noise to enter, and when this noise is measured by a photodetector it appears as \emph{quantum shot noise}. The phase fluctuations upon the light produce a varying photocurrent due to the stochastic arrival of photons at the sensor. The displacement-equivalent power spectral density of shot noise in an interferometer is
 \begin{equation}
   \label{eq:shot-noise-psd}
-  S_{\text{shot}} = \frac{\hbar c^2}{P \omega_0},
+  \tilde{x}^2_{\text{shot}} = \frac{\hbar c^2}{P \omega_0},
 \end{equation}
-for power $P$ and laser angular frequency $\omega_0$. As this noise arises from  spontaneous creation and annihilation of photons in space, it is a statistical random process and so the spectral density has equal power at all frequencies; it is \emph{white}. In terms of strain equivalent noise we take the square root of the power spectral density and normalise to the arm length $L$:
+in units of \SI{}{\meter^2\per\hertz}, for power $P$ and laser angular frequency $\omega_0$. As this noise arises from  spontaneous creation and annihilation of photons in space, it is a statistical random process and so the spectral density has equal power at all frequencies; it is \emph{white}. The strain-equivalent power spectral density is Equation\,\ref{eq:shot-noise-psd} normalised to the arm length $L$:
 \begin{equation}
-  h_{\text{shot}} = \frac{1}{L} \sqrt{\frac{\hbar c^2}{P \omega_0}}.
+  \tilde{h}^2_{\text{shot}} = \frac{\hbar c^2}{P \omega_0 L^2}.
 \end{equation}
 
-Since it scales by the square root of the input power, the detrimental effect on the sensitivity due to phase uncertainty is mitigated by an increase in the classical light power injected into the interferometer.
+Since it scales with input power, the detrimental effect on the sensitivity due to phase uncertainty is mitigated by an increase in the classical light power injected into the interferometer.
 
 \subsubsection{\label{sec:quantum-rp-noise}Quantum radiation pressure noise}
 Despite being massless, photons impart momentum to mirrors upon reflection inversely proportional to their wavelength. The strongest effect this has on an interferometer is via \emph{\gls{DC} radiation pressure}, which arises from the classical light power circulating within the interferometer. In a suspended interferometer this radiation pressure effect extends the microscopic arm cavity length, with the equilibrium point being defined by the equivalence of the radiation pressure force to the suspension's restoring force.
 
-\emph{Quantum} radiation pressure, on the other hand, arises from the fluctuating momentum imparted onto the test masses by fluctuations in the number of photons present within the interferometer from the laser and loss points. As with quantum shot noise this effect is related to the input power of the interferometer, but in this case fluctuations in the number of input photons creates amplitude noise that is transformed into equivalent strain noise via the dynamics of the mirror. Amplitude fluctuations upon the light beat with the classical field, creating a force noise. This fluctuating force changes the position of the mirror microscopically via its mechanical susceptibility and this appears as phase noise at the output port. As the spectrum of noise from virtual photons is white the energy imparted to the mirror is the same at all frequencies. The mechanical susceptibility of a suspended mirror follows an inverse square law in frequency above the resonant frequency, and so in terms of strain this noise source is most important at low frequencies. The radiation pressure noise power spectral density is given in this case as:
+\emph{Quantum} radiation pressure, on the other hand, arises from the fluctuating momentum imparted onto the test masses by fluctuations in the number of photons present within the interferometer from the laser and loss points. As with quantum shot noise this effect is related to the input power of the interferometer, but in this case fluctuations in the number of input photons creates amplitude noise that is transformed into equivalent strain noise via the dynamics of the mirror. Amplitude fluctuations upon the light beat with the classical field, creating a force noise. This fluctuating force changes the position of the mirror microscopically via its mechanical susceptibility and this appears as phase noise at the output port. As the spectrum of noise from virtual photons is white the energy imparted to the mirror is the same at all frequencies. The mechanical susceptibility of a suspended mirror follows an inverse square law in frequency above the resonant frequency, and so in terms of strain this noise source is most important at low frequencies. The radiation pressure noise power spectral density is given in this case by
 \begin{equation}
   \label{eq:rp-noise-psd}
-  S_{\text{rp}} = \frac{P \hbar \omega_0}{c^2 m^2 \omega^4},
+  \tilde{x}^2_{\text{rp}} = \frac{P \hbar \omega_0}{c^2 m^2 \omega^4},
 \end{equation}
-with reduced mirror mass $m$ and angular frequency of mirror oscillation $\omega = 2 \pi f$. The reduced mirror mass is the effective mass of the mechanicam mode, given in the case of a \FPMI{} as:
+with reduced mirror mass $m$ and angular frequency of mirror oscillation $\omega = 2 \pi f$. The reduced mirror mass is the effective mass of the mechanical mode, given in the case of a \FPMI{} as:
 \begin{equation}
-  m = \frac{2 m_1 m_2}{m_1 + 2 m_2},
+  m = \frac{1}{2} \left(\frac{1}{m_1} + \frac{1}{m_2} \right)^{-1}
 \end{equation}
-where $m_1$ and $m_2$ denote the \gls{ITM} and \gls{ETM} masses, respectively.
+where $m_1$ and $m_2$ denote the individual cavity test masses.
 
-The strain noise spectral density shows the noise is proportional to $\frac{1}{f^2}$ as expected from a free mass:
+The strain-equivalent power spectral density is:
 \begin{equation}
-  h_{\text{rp}} = \frac{1}{L} \sqrt{\frac{P \hbar \omega_0}{c^2 m^2 \omega^4}}.
+  \tilde{h}^2_{\text{rp}} = \frac{P \hbar \omega_0}{c^2 m^2 \omega^4 L^2}.
 \end{equation}
+The strain amplitude noise, $\tilde{h}_{\text{rp}}$, is proportional to $\frac{1}{\omega^2}$ as expected from a free mass.
 
 \subsubsection{\label{sec:sql}The Standard Quantum Limit}
 Note that Equation\,\ref{eq:rp-noise-psd} is proportional to power whilst Equation\,\ref{eq:shot-noise-psd} is inversely proportional to power. This implies the existence of a lower bound on the achievable sensitivity at a given observation frequency $f$ in the case of uncorrelated shot and radiation pressure quantum noise sources. This bound, known as the \emph{standard quantum limit} (\gls{SQL}) \cite{Braginsky1967}, is a direct consequence of the Heisenberg Uncertainty Principle in a continuous measurement of a test mass.
 
-The \gls{SQL} is the point at which the sum power spectral density of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit with amplitude spectral density proportional to $\frac{1}{f}$ which can only be surpassed with special, \emph{sub}-\gls{SQL} techniques. The presence of cavities in the arms of a \MI{} (formed by placing an additional, partially reflecting mirror in each arm) can enhance the power available to be able to reach the \gls{SQL}. In terms of strain, the \gls{SQL} is defined for two free test masses separated by a distance $L$ as \cite{Braginsky1996}:
+The \gls{SQL} is the point at which the sum power spectral density of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit with amplitude spectral density proportional to $\frac{1}{f}$ which can only be surpassed with special, \emph{sub}-\gls{SQL} techniques. The presence of cavities in the arms of a \MI{} (formed by placing an additional, partially reflecting mirror in each arm) can enhance the power available to be able to reach the \gls{SQL}. In terms of the strain-equivalent power spectral density, the \gls{SQL} is defined for two free test masses separated by a distance $L$ as \cite{Braginsky1996}:
 \begin{equation}
   \label{eq:strainsql}
-  h_{SQL} = \sqrt{\frac{8 \hbar}{m \omega^2 L^2}}.
+  \tilde{h}^2_{SQL} = \frac{8 \hbar}{m \omega^2 L^2}.
 \end{equation}
-The power spectral density noise for a \MI{} with arm cavities is defined as:
+The strain-equivalent power spectral density noise for a \MI{} with arm cavities can be defined with respect to the \gls{SQL} \cite{Kimble2001}:
 \begin{equation}
   \label{eq:classicalifospectrum}
-  S_h = \frac{h^{2}_{SQL}}{2} \left( \frac{1}{\kappa} + \kappa \right),
+  S^{h}_{MI} = \frac{\tilde{h}^{2}_{SQL}}{2} \left( \frac{1}{\kappa} + \kappa \right),
 \end{equation}
-where the \gls{SQL} is reached only at a single frequency. The term $\kappa$ is defined as the \emph{opto-mechanical coupling factor}:
+where the \gls{SQL} is reached only at a single frequency. The term $\kappa$ is the \emph{opto-mechanical coupling factor} \cite{Kimble2001}:
 \begin{equation}
- \kappa = \frac{I_0}{I_{SQL}} \frac{2 \gamma^4}{\omega^2 \left( \gamma^2 +
-\omega^2 \right)},
+ \kappa = \frac{P_0}{P_{SQL}} \frac{2 \gamma^4}{\omega^2 \left( \gamma^2 + \omega^2 \right)},
  \label{eq:optomechanicalcoupling}
 \end{equation}
-with $I_0$ the laser power at the test masses, $I_{SQL}$ the laser power required to reach the \gls{SQL} at the cavity pole frequency and $\gamma$ the arm cavity half-bandwidth. $I_{SQL}$ can be itself defined as:
+with $P_0$ the laser power at the test masses, $P_{SQL}$ the laser power required to reach the \gls{SQL} at the cavity pole frequency and $\gamma$ the arm cavity half-bandwidth. $P_{SQL}$ is given by \cite{Kimble2001}
 \begin{equation}
- I_{SQL} = \frac{m L^2 \gamma^4}{4 \omega_0}.
+ P_{SQL} = \frac{m L^2 \gamma^4}{4 \omega_0}.
 \end{equation}
 The effect of $\kappa$ is described in more detail in Section\,\ref{sec:position-meter-measurement}.
 
@@ -257,23 +257,23 @@ Laser frequency noise affects the phase of the output light by creating beats be
 The spectral density of frequency noise can be calculated from the autocorrelation between a frequency fluctuation at time $t$ and another at time $t + \Delta t$, but a simpler method is to realise that the laser is used to measure the cavity length by relating its change in frequency to the change in length via Equation\,\ref{eq:freq-to-length}. Multiplying the relative frequency noise by the difference in arm lengths $\delta L$ gives a first order estimate of the displacement noise created by fluctuations in the laser:
 \begin{equation}
   \label{eq:laser-freq-noise}
-  x_{\text{freq. noise}} = \delta L \frac{\Delta f}{f}.
+  \tilde{x}_{\text{freq. noise}} = \delta L \frac{\Delta f}{f}.
 \end{equation}
 
 The laser's intensity fluctuates due to similar mechanisms. Thermally driven misalignments within the laser can lead to scattering and the production of higher order modes, which reduce the intensity of the fundamental mode. This has a similar effect on the output as frequency noise, coupling relative intensity noise $\frac{\Delta P}{P}$ directly to the output via the microscopic offset from the dark fringe condition $\delta l$:
 \begin{equation}
   \label{eq:laser-int-noise}
-  x_{\text{int. noise}} = \delta l \frac{\Delta P}{P}.
+  \tilde{x}_{\text{int. noise}} = \delta l \frac{\Delta P}{P}.
 \end{equation}
 
 Equations \ref{eq:laser-freq-noise} and \ref{eq:laser-int-noise} show that the level to which the dark fringe condition is satisfied determines the laser noise witnessed at the output. This is because of the cancellation at the beam splitter from noise in the two arms. Laser noise propagates to the beam splitter, where it is split between the arms. Matching the arms macroscopically cancels frequency noise and matching the arms microscopically cancels intensity noise.
 
 \subsubsection{\label{sec:johnson-nyquist-noise}Electronic noise}
-Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt\per\sqrthz} by the equation:
+Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt^2\per\hertz} by the equation:
 \begin{equation}
-  v_{\text{n}} = \sqrt{4 k_B T R},
+  \tilde{v}^2_{\text{john. noise}} = 4 k_B T R,
 \end{equation}
-where $v_{\text{n}}$ is the noise voltage, $k_B$ is the Boltzmann constant and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
+where $\tilde{v}^2_{\text{john. noise}}$ is the voltage noise power spectal density, $k_B$ is the Boltzmann constant and $R$ is the electrical resistance. The Johnson-Nyquist noise from a resistor in the \SI{}{\kilo\ohm} to \SI{}{\mega\ohm} range is comparable to the noise of some low-noise operational amplifiers at room temperature, and so care must be taken in the choice of passive and active components in the design of electronics to avoid introducing excess fluctuations.
 
 Other electronic noise can arise in integrated circuits used as part of readout electronics in detectors. Current and voltage noise present at the input and output of devices such as operational amplifiers (op-amps) can become larger than the signals being amplified without careful selection of the device for the intended application. This is examined in more detail in Sections \ref{sec:op-amp-noise} and \ref{sec:hv-amplifier}.
 
