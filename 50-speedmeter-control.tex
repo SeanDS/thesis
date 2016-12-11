@@ -3,10 +3,10 @@
 
 \newcommand{\RT}{$\textrm{R}_{\textrm{T}}$}
 
-As shown in Chapter\,\ref{c:speedmeter-intro}, the \SSM{} interferometer topology can potentially provide enhanced sensitivity to gravitational waves in the audio-band compared to equivalent \MI{}s. Using as an example the proof-of-concept \SSMEXPT{} in Glasgow, we discuss the issues surrounding the control of this type of interferometer and quantify the challenges using numerical simulations. We present a solution involving the extraction of multiple error signals that can be optimally blended to produce corrective signals to be applied to the test mass actuators. Furthermore we show that this control scheme can be implemented without reducing significantly the quantum non-demolition character of this type of interferometer.
+As shown in Chapter\,\ref{c:speedmeter-intro}, the \SSM{} interferometer topology can potentially provide enhanced sensitivity to gravitational waves in the audio-band compared to equivalent \MI{}s. Using as an example the proof-of-concept \SSMEXPT{} in Glasgow, we discuss the issues surrounding the control of this type of interferometer and quantify the challenges using numerical simulations. We present a solution involving the extraction of multiple error signals that can be blended to produce corrective signals to be applied to the test mass actuators. Furthermore we show that this control scheme can be implemented without reducing significantly the quantum non-demolition character of this type of interferometer.
 
 \section{Introduction}
-The presence of arm cavities within the \SSMEXPT{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers. In Section\,\ref{sec:ssm-control} we describe the \SSMEXPT{}'s sensors and actuators and its control requirements. We then describe in Section\,\ref{sec:velocity-control} a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, including a comprehensive noise budget, and derive an optimal filter to combine the two error signals. The parameters used for the control studies are listed in Section\,\ref{sec:control-parameters} and a summary is provided in Section\,\ref{sec:ssm-control-summary}.
+The presence of arm cavities within the \SSMEXPT{} gives rise to challenges not previously encountered in the control of gravitational wave detectors and other experiments involving Michelson or Sagnac interferometers. In Section\,\ref{sec:ssm-control} we describe the \SSMEXPT{}'s sensors and actuators and its control requirements. We then describe in Section\,\ref{sec:velocity-control} a control strategy for the \SSM{}'s differential degree of freedom based on that of Michelson designs, and demonstrate the challenges this approach introduces. In Section\,\ref{sec:mixed-control} we present an alternative strategy which achieves adequate control of the interferometer to reach its design sensitivity over extended periods, including a comprehensive noise budget. Section\,\ref{sec:optimal-filter} presents a calculation of a matched filter to optimally combine the two error signals to reduce the total quantum noise in post-processing. The parameters used for the control studies are listed in Section\,\ref{sec:control-parameters} and a summary is provided in Section\,\ref{sec:ssm-control-summary}.
 
 \section{\label{sec:ssm-control}Control of the proof-of-concept experiment}
 
@@ -333,55 +333,7 @@ where $\omega_{0}$ is the angular frequency of the carrier.
 
 Displacement noise sources are implicit in $L$, and we assume the sensing noise other than quantum noise associated with both the \gls{BHD} and \gls{PDH} readouts is the same. The excess noise at each readout port is therefore due to $\hat{n}_{\textrm{i}}$, the quantum vacuum entering at open ports within the interferometer. The presence of such vacuum noise limits the sensitivity of the readout in the measurement band. For this reason the reflectivity of \MNINE{} must be chosen to be close to unity, therefore only a small amount of light is available to the displacement readout for use as a low frequency error signal.
 
-By considering the response and quantum noise characteristics of the \gls{BHD} and \gls{PDH} readouts it is possible to combine them with a filter in order to maximise the interferometer's sensitivity across the full intended frequency range. A desirable crossover frequency for this filter is constrained from below by the signal-to-noise ratio of the \gls{BHD} and from above by the noise introduced onto the feedback signal by the \gls{PDH} readout. The optimal combination of the two readouts is discussed in the next section.
-
-\subsubsection{\label{sec:optimal-filter}Matched filter}
-By considering cross-correlations in the quantum noise at the \gls{BHD} and \gls{PDH} readouts, it is possible to produce an optimal filter with which to combine the two in such a way as to minimise the total noise spectral density. The noise at each readout is the sum of the quantum noise inputs at open ports propagated through the interferometer with appropriate transfer functions, so we can rewrite $\hat{n}_{\textrm{i}}$ in Equation\,\ref{eq:readout-signals} in terms of the quantum noise amplitudes $\hat{q}_{\textrm{m}}$ entering at $N_{\textrm{p}}$ open ports:
-\begin{equation}
-  \hat{n}_{\textrm{i}} \left( \Omega \right) = \sum_{m=1}^{N_{\textrm{p}}} M^{\textrm{ff}}_{\textrm{m,i}}\left( \Omega \right) \hat{q}_{\textrm{m}} \left( \Omega \right),
-\end{equation}
-where $M^{\textrm{ff}}_{\textrm{m,i}}\left( \Omega \right)$ represents the transfer function between input field $m$ and output field $i$ for signal sideband $\Omega$. The cross-correlation spectral density for unity noise at the $i^{\textrm{th}}$ and $j^{\textrm{th}}$ output channels, for the $k^{\textrm{th}}$ mode, is given by \cite{Danilishin2012}:
-\begin{equation}
-  \begin{split}
-    S_{\textrm{k,\,ij}}(\Omega) = \sum_{m=1}^{N_{\textrm{p}}} \dfrac{\left[M^{\textrm{ff\,*}}_{\textrm{m,\,i}}(\Omega)M^{\textrm{ff}}_{\textrm{m,\,j}}(\Omega)+M^{\textrm{ff\,*}}_{\textrm{m,\,j}}(-\Omega)M^{\textrm{ff}}_{\textrm{m,\,i}}(-\Omega)\right]}{[R^*_{\textrm{k,\,i}}(\Omega)+R_{\textrm{k,\,i}}(-\Omega)][R_{\textrm{k,\,j}}(\Omega)+R^*_{\textrm{k,\,j}}(-\Omega)]}.
-  \end{split}
-\end{equation}
-This reduces to the following form for noise entering the same port in which it exits:
-\begin{equation}
-  S_{i,i} = \frac{1}{2} \frac{\left| M^{\textrm{ff}}_{i,i}\left( \Omega \right) \right|^{2} + \left| M^{\textrm{ff}*}_{i,i}\left( -\Omega \right) \right|^{2}}{\left(\left| R^{ }_{k,i}\left( \Omega \right) \right| + \left| R^*_{k,i}\left(-\Omega\right)\right|\right)^{2}}.
-\end{equation}
-Assuming a filter $\alpha\left( \Omega \right)$ combines the BHD ($i = 1$) and PDH ($i = 2$) fields, its output for $L_{\textrm{k}}$ would be:
-\begin{equation}
-  \begin{split}
-    \hat{o}_{\textrm{k,combined}} \left( \Omega \right) &= \alpha\left( \Omega \right) \hat{o}_{\textrm{k,1}} \left( \Omega \right) + \left( 1 - \alpha\left( \Omega \right) \right) \hat{o}_{\textrm{k,2}} \left( \Omega \right) \\
-    &= \left( \alpha\left( \Omega \right) L_{\textrm{k}} \left( \Omega \right) + \left(1 - \alpha\left( \Omega \right) \right) L_{\textrm{k}} \left( \Omega \right) \right) \\
-    &+ \frac{\alpha\left( \Omega \right) \hat{n}_{\textrm{1}}}{R_{\textrm{k,1}}\left(\Omega\right)} + \frac{\left( 1 - \alpha\left( \Omega \right) \right) \hat{n}_{\textrm{2}}}{R_{\textrm{k,2}} \left(\Omega\right)}.
-  \end{split}
-\end{equation}      
-The corresponding total noise power spectral density of the combined readout is then:
-\begin{equation}
-  \label{eq:readout-spectral-density}
-  \begin{split}
-    S_{\textrm{readout}} &= \left| \alpha \right|^{2} S_{n_{1},n_{1}} + \left| 1 - \alpha \right|^{2} S_{n_{2},n_{2}} \\
-    &+ \Re \left[ \alpha^* \left(1 - \alpha \right) S_{n_{1},n_{2}} \right] \\
-    &+ \Re \left[ \alpha^* \left(1 - \alpha \right) S_{n_{2},n_{1}} \right],
-  \end{split}
-\end{equation}
-where $S_{n_{1},n_{1}}$ is the noise power spectral density at the \gls{BHD} port due to vacuum entering at the \gls{BHD} port, $S_{n_{2},n_{2}}$ is the noise power spectral density at the \gls{PDH} port due to vacuum entering at the \gls{PDH} port, and $S_{n_{1},n_{2}}$ and $S_{n_{2},n_{1}}$ are the noise power spectral densities for noise entering at one port and exiting at the other. The optimal filter $\alpha_{\textrm{opt}}$ can be determined by minimising Equation\,\ref{eq:readout-spectral-density} over $\alpha$:
-\begin{equation}
-  \label{eq:optimal-filter}
-  \alpha_{\textrm{opt}} = \frac{S_{n_{1},n_{2}} - S^*_{n_{1},n_{2}}}{S_{n_{1},n_{1}} + S_{n_{2},n_{2}} - \Re \left[ S_{n_{1},n_{2}} \right] - \Re \left[ S_{n_{2},n_{1}} \right]}.
-\end{equation}
-The reflectivity of \MNINE{} is implicit in both the field-to-field and mode-to-field transfer matrices for each signal sideband, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, and as such $\alpha_{\textrm{opt}}$ depends on the value of \MNINE{}.
-
-The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in Optickle by default, and so some modifications to the code were necessary (see Appendix\,\ref{sec:optickle-field-tfs}). The effect of \MNINE{}'s reflectivity on $\alpha_{\textrm{opt}}$ is shown in Figure\,\ref{fig:optimal-filters}. Note that, because it is calculated with precomputed spectral densities and not tested for stability, the filter predicted by Equation\,\ref{eq:optimal-filter} is not necessarily realisable. A \emph{causal} Wiener filter, one which is implementable in a real experiment as opposed to one which can be applied to offline data, has previously been calculated for single-readout interferometers \cite{MuellerEbhardt2009, Miao2010}, but a similar calculation for more than one readout has to the author's knowledge not been investigated as of the time of writing.
-
-\begin{figure}
-  \input{graphics/generated/from-python/50-optimal-filters.pgf}
-  \caption[Optimal filters to combine the balanced homodyne and Pound-Drever-Hall signals for different values of \MNINE{} reflectivity]{\label{fig:optimal-filters}Optimal filters to combine the \gls{BHD} and \gls{PDH} signals for different values of \MNINE{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the \gls{BHD} signal with respect to the \gls{PDH} signal before the two are combined, for different \MNINE{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the \gls{PDH} signal. For all values of \MNINE{} shown, the optimal combination involves suppressing the \gls{BHD} signal with respect to the \gls{PDH} at frequencies below around \SI{1}{\kilo\hertz}.}
-\end{figure}
-
-While the filters in Figure\,\ref{fig:optimal-filters} enable the lowest noise spectral density for the measurement of the motion of \LMINUS{} given the two readouts, we are only concerned with sensitivity above \SI{100}{\hertz} and so a practical filter can be approximated as a simple \nth{1} order high-pass applied to the \gls{BHD} before addition to the \gls{PDH} signal in \gls{CDS}, giving a stable \SI{90}{\degree} phase difference at the crossover frequency. The feedback of the output of this combined filter allows the displacement signal from the \gls{PDH} to control the cavity mirrors at low frequencies where it is stronger, while letting the \gls{BHD} signal provide feedback at higher frequencies where it yields the greatest response. The calculation for an optimal filter presented in this section, however, is a general solution for an interferometer with multiple readouts for a single variable and may prove useful for future gravitational wave detectors utilising \gls{QND} techniques.
+The blending of the two readouts must be causal in order to preserve the stability of the control loop. Due to the different frequency response of the \gls{PDH} and \gls{BHD} signals, a practical approach is simply to combine the two readouts together with different gain. In this case, the blending filter has a \SI{90}{\degree} phase difference at the crossover frequency determined by the relative gains for frequencies below the cavity pole, providing adequate phase margin. As we are concerned with greatest sensitivity above \SI{100}{\hertz}, yet must use the displacement information provided by the \gls{PDH} signal to control drifts at low frequencies, the blending filter's crossover frequency can in this case be placed in the region of \SI{1}{\hertz}. This results in \gls{BHD} feedback with magnitude at least a factor \num{100} greater than that of the \gls{PDH} feedback above \SI{100}{\hertz}, preventing the \gls{PDH}'s displacement-proportional noise in the measurement band from adversely affecting the overall sensitivity there.
 
 \subsection{Control loop}
 The intended control loop schematic for the experiment with combined feedback is shown in Figure\,\ref{fig:ssm-control-loop-mixed}. This is similar to the loop shown in Figure\,\ref{fig:ssm-control-loop-velocity}, but with the addition of signal paths from the interferometer's \gls{PDH} readout to the controller and two gain blocks to control the way in which the velocity and displacement readouts are combined. An additional step is modelled with the \gls{PDH} readout: the demodulation gain. This is the gain the signal receives as a result of the mixing of the sideband frequency as part of the \gls{PDH} technique. The responsivity of the photodiodes used for the \gls{PDH} readout has also been assumed smaller, at \SI{0.8}{\ampere\per\watt}, due to this channel's relaxed loss requirements. For the same reason, the photocurrent from the \gls{PDH} sensors is not directly subtracted, instead being combined into a signal representing \LMINUS{} within \gls{CDS}.
@@ -413,6 +365,56 @@ The open loop gain of the system is shown in Figure\,\ref{fig:open-loop-gain}. T
   \caption[Simulated controller open loop gain]{\label{fig:open-loop-gain}Simulated \SSM{} controller open loop gain. The majority of the gain is applied to correct displacements due to seismic noise below \SI{10}{\hertz}. The unity gain frequency is \SI{350}{\hertz} and the phase margin is \SI{44}{\degree}.}
   % phase margin calculated with script graphics/scripts/open-loop-gain/phaseMargin.py
 \end{figure}
+
+\section{\label{sec:optimal-filter}Matched filter}
+By considering cross-correlations in the quantum noise at the \gls{BHD} and \gls{PDH} readouts, it is possible to calculate a matched filter with which to combine the two outputs in post-processing so as to minimise the total noise spectral density. This can be applied to the offline data in order to calculate the noise spectral density of the interferometer during the data acquisition period.
+
+The noise at each readout is the sum of the quantum noise inputs at open ports propagated through the interferometer with appropriate transfer functions, so we can rewrite $\hat{n}_{\textrm{i}}$ in Equation\,\ref{eq:readout-signals} in terms of the quantum noise amplitudes $\hat{q}_{\textrm{m}}$ entering at $N_{\textrm{p}}$ open ports:
+\begin{equation}
+  \hat{n}_{\textrm{i}} \left( \Omega \right) = \sum_{m=1}^{N_{\textrm{p}}} M^{\textrm{ff}}_{\textrm{m,i}}\left( \Omega \right) \hat{q}_{\textrm{m}} \left( \Omega \right),
+\end{equation}
+where $M^{\textrm{ff}}_{\textrm{m,i}}\left( \Omega \right)$ represents the transfer function between input field $m$ and output field $i$ for signal sideband $\Omega$. The cross-correlation spectral density for unity noise at the $i^{\textrm{th}}$ and $j^{\textrm{th}}$ output channels, for the $k^{\textrm{th}}$ mode, is given by \cite{Danilishin2012}:
+\begin{equation}
+  \begin{split}
+    S_{\textrm{k,\,ij}}(\Omega) = \sum_{m=1}^{N_{\textrm{p}}} \dfrac{\left[M^{\textrm{ff\,*}}_{\textrm{m,\,i}}(\Omega)M^{\textrm{ff}}_{\textrm{m,\,j}}(\Omega)+M^{\textrm{ff\,*}}_{\textrm{m,\,j}}(-\Omega)M^{\textrm{ff}}_{\textrm{m,\,i}}(-\Omega)\right]}{[R^*_{\textrm{k,\,i}}(\Omega)+R_{\textrm{k,\,i}}(-\Omega)][R_{\textrm{k,\,j}}(\Omega)+R^*_{\textrm{k,\,j}}(-\Omega)]}.
+  \end{split}
+\end{equation}
+This reduces to the following form for noise entering the same port in which it exits:
+\begin{equation}
+  S_{i,i} = \frac{1}{2} \frac{\left| M^{\textrm{ff}}_{i,i}\left( \Omega \right) \right|^{2} + \left| M^{\textrm{ff}*}_{i,i}\left( -\Omega \right) \right|^{2}}{\left(\left| R^{ }_{k,i}\left( \Omega \right) \right| + \left| R^*_{k,i}\left(-\Omega\right)\right|\right)^{2}}.
+\end{equation}
+Assuming a filter $\alpha\left( \Omega \right)$ combines the BHD ($i = 1$) and PDH ($i = 2$) fields, its output for $L_{\textrm{k}}$ would be:
+\begin{equation}
+  \begin{split}
+    \hat{o}_{\textrm{k,combined}} \left( \Omega \right) &= \alpha\left( \Omega \right) \hat{o}_{\textrm{k,1}} \left( \Omega \right) + \left( 1 - \alpha\left( \Omega \right) \right) \hat{o}_{\textrm{k,2}} \left( \Omega \right) \\
+    &= \left( \alpha\left( \Omega \right) L_{\textrm{k}} \left( \Omega \right) + \left(1 - \alpha\left( \Omega \right) \right) L_{\textrm{k}} \left( \Omega \right) \right) \\
+    &+ \frac{\alpha\left( \Omega \right) \hat{n}_{\textrm{1}}}{R_{\textrm{k,1}}\left(\Omega\right)} + \frac{\left( 1 - \alpha\left( \Omega \right) \right) \hat{n}_{\textrm{2}}}{R_{\textrm{k,2}} \left(\Omega\right)}.
+  \end{split}
+\end{equation}      
+The corresponding total noise power spectral density of the combined readout is then:
+\begin{equation}
+  \label{eq:readout-spectral-density}
+  \begin{split}
+    S_{\textrm{readout}} &= \left| \alpha \right|^{2} S_{n_{1},n_{1}} + \left| 1 - \alpha \right|^{2} S_{n_{2},n_{2}} \\
+    &+ \Re \left[ \alpha^* \left(1 - \alpha \right) S_{n_{1},n_{2}} \right] \\
+    &+ \Re \left[ \alpha^* \left(1 - \alpha \right) S_{n_{2},n_{1}} \right],
+  \end{split}
+\end{equation}
+where $S_{n_{1},n_{1}}$ is the noise power spectral density at the \gls{BHD} port due to vacuum entering at the \gls{BHD} port, $S_{n_{2},n_{2}}$ is the noise power spectral density at the \gls{PDH} port due to vacuum entering at the \gls{PDH} port, and $S_{n_{1},n_{2}}$ and $S_{n_{2},n_{1}}$ are the noise power spectral densities for noise entering at one port and exiting at the other. The optimal matching filter $\alpha_{\textrm{matched}}$ can be determined by minimising Equation\,\ref{eq:readout-spectral-density} over $\alpha$:
+\begin{equation}
+  \label{eq:optimal-filter}
+  \alpha_{\textrm{matched}} = \frac{S_{n_{1},n_{2}} - S^*_{n_{1},n_{2}}}{S_{n_{1},n_{1}} + S_{n_{2},n_{2}} - \Re \left[ S_{n_{1},n_{2}} \right] - \Re \left[ S_{n_{2},n_{1}} \right]}.
+\end{equation}
+The reflectivity of \MNINE{} is implicit in both the field-to-field and mode-to-field transfer matrices for each signal sideband, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, and as such $\alpha_{\textrm{matched}}$ depends on the value of \MNINE{}.
+
+The matrices $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$ are not calculated in Optickle by default, and so some modifications to the code were necessary (see Appendix\,\ref{sec:optickle-field-tfs}). The effect of \MNINE{}'s reflectivity on $\alpha_{\textrm{matched}}$ is shown in Figure\,\ref{fig:optimal-filters}. Note that, because it is calculated with offline spectral densities and not tested for stability, the filter predicted by Equation\,\ref{eq:optimal-filter} is not necessarily realisable and therefore cannot be implemented in the real-time control system. A \emph{causal} Wiener filter\textemdash one which is implementable in a real-time experiment\textemdash has previously been calculated for \emph{single}-readout interferometers \cite{MuellerEbhardt2009, Miao2010}, but a similar calculation for more than one readout has to the author's knowledge not been investigated as of the time of writing.
+
+\begin{figure}
+  \input{graphics/generated/from-python/50-optimal-filters.pgf}
+  \caption[Matched filters to combine the balanced homodyne and Pound-Drever-Hall signals for different values of \MNINE{} reflectivity]{\label{fig:optimal-filters}Matched filters to combine the \gls{BHD} and \gls{PDH} signals for different values of \MNINE{} reflectivity. The red, yellow and green curves are the coefficients to be applied to the \gls{BHD} signal with respect to the \gls{PDH} signal before the two are combined, for different \MNINE{} (power) reflectivities. The black, dashed curve is the (unity) coefficient to be applied to the \gls{PDH} signal. For all values of \MNINE{} shown, the optimal combination involves suppressing the \gls{BHD} signal with respect to the \gls{PDH} at frequencies below around \SI{1}{\kilo\hertz}.}
+\end{figure}
+
+While the matched filter is presented in the context of the \SSMEXPT{}, it is a general solution for an interferometer with multiple readouts for a single variable and may prove useful for future gravitational wave detectors utilising \gls{QND} techniques regardless of topology.
 
 \subsection{\label{sec:noise-budget}Noise budget}
 
