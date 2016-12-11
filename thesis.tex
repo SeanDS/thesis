@@ -18,8 +18,7 @@
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage{bookmark}
-\usepackage{hyphenat} % for \hyp{} instead of "-".
-
+\usepackage{hyphenat} % for \hyp{} instead of "-"
 %%%
 % Bibliography
 
@@ -269,36 +268,54 @@
 %\setcounter{page}{1}
 
 % import glossary terms
-\input{"00-definitions.tex"} 
+\input{"00-definitions.tex"}
 
 \newpage
-
-% ensures that the front matter appears in the PDF table of contents
 \phantomsection
-
-\input{"00-abstract.tex"}
 \addcontentsline{toc}{section}{Abstract}
+\input{"00-abstract.tex"}
 
+% version history
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Revision history}
+\vspace*{3.5in}
+\begin{center}
+  \textbf{Revision history} \\
+  \begin{tabular}{ccl}
+    \textbf{Version} & \textbf{Date} & \textbf{Description} \\
+    1.0.0            & 2016-09-14    & Submitted for examination \\
+    1.0.1            & 2016-12-15    & Corrected version sent to senate \\
+  \end{tabular}
+\end{center}
+
+% licence
 \newpage
 \phantomsection
 \vspace*{8in}
+\addcontentsline{toc}{section}{Licence}
 \noindent Content from this work may be used under the terms of the \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons \emph{Attribution-NonCommercial-ShareAlike 4.0 International}} licence.
 \begin{center}
   \includegraphics[width=2in]{graphics/generated/from-svg/00-cc-by-nc-sa.pdf}
 \end{center}
-\addcontentsline{toc}{section}{Licence}
 
-\newpage
-% change contents title to lower case
+\cleardoublepage
+\phantomsection
 \renewcommand{\contentsname}{Table of contents}
-\tableofcontents
 \addcontentsline{toc}{section}{Table of contents}
+\tableofcontents
 
-\listoftables
+\cleardoublepage
+\phantomsection
+\renewcommand{\listtablename}{List of tables}
 \addcontentsline{toc}{section}{List of tables}
+\listoftables
 
-\listoffigures
+\cleardoublepage
+\phantomsection
+\renewcommand{\listfigurename}{List of figures}
 \addcontentsline{toc}{section}{List of figures}
+\listoffigures
 
 \cleardoublepage
 \section*{\label{c:intro:credits}Acknowledgements}
