@@ -5,9 +5,8 @@ Modified version of [Glasgow Thesis Template](https://github.com/sdstrowes/Glasg
 Follows the University of Glasgow style guide, as outlined in [this document](http://www.gla.ac.uk/services/library/enlighten/theses/thesispreparationguidelines.pdf).
 
 ### Dependencies ###
-Incomplete list:
-
- * pdflatex
+Circa late 2016 versions of the following packages are required (specified in the form of Ubuntu packages):
+ * texlive-full
  * circuitikz
  * python
  * python-numpy
