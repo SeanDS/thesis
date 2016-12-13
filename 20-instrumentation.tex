@@ -7,14 +7,14 @@ To achieve maximum sensitivity in an interferometric gravitational wave detector
 The effect that the output light from an interferometer has on a sensor (e.g. a photodetector) as some variable is modulated is termed its \emph{response}. As discussed in \cref{c:gw-detection} the most important response to consider in gravitational wave interferometry from an astrophysical perspective is that of the differential motion of the arms (\gls{DARM}) to the sensor at the output port. The response has a dependence on the input light power but it varies as a function of frequency due to the presence of additional \emph{cavities} used to enhance or suppress the response in a given frequency band.
 
 \subsection{Measurement of interferometer length fluctuations}
-The propagation of an electromagnetic wave can be represented by its complex-valued electric field amplitude, $E$, in time and space:
+The complex-valued electric field amplitude of an electromagnetic wave propagating in time and space, $E$, can be expressed as
 \begin{equation}
   \label{eq:em-propagation}
   E = E_0 \text{e}^{\text{i} \left( \omega t - kx \right)},
 \end{equation}
 where $i$ is the imaginary unit, $\omega$ is the wave's angular frequency, $t$ is time, $k = \frac{2 \pi}{\lambda}$ is the wave number and $x$ is the coordinate in the direction in which $E$ is measured. An arbitrary phase offset defined with respect to some point is contained within the complex-valued maximum field amplitude, $E_0$.
 
-Typically the underlying amplitude of a particular interferometer signal can only be inferred from the light power measured by a sensor. A simple example is the measurement of mirror displacement in a \MI{} via the photocurrent output of a photodetector. The measured power $P$ in this case would be:
+Typically the underlying amplitude of a particular interferometer signal can only be inferred from the light power measured by a sensor. A simple example is the measurement of mirror displacement in a \MI{} via the photocurrent output of a photodetector. The measured power $P$ in this case would be
 \begin{equation}
   P = E^{\ast} E,
 \end{equation}
@@ -27,7 +27,7 @@ where $\ast$ denotes the complex conjugate.
 \end{equation}
 and in this way we can express the measured power as the square of the real field amplitude, i.e. $P = E'^2$.
 
-Assuming that laser light with amplitude described by \cref{eq:em-propagation-real} is incident upon the beam splitter shown in the \MI{} in \cref{fig:mi}, the light returning to the beam splitter having reflected from the north and east arms, $n$ and $e$, respectively, would be:
+Assuming that laser light with amplitude described by \cref{eq:em-propagation-real} is incident upon the beam splitter shown in the \MI{} in \cref{fig:mi}, the light returning to the beam splitter having reflected from the north and east arms, $n$ and $e$, respectively, would be
 \begin{align}
   E'_n &= -\frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2kL_n \right) \\
   E'_e &= \frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2kL_e \right),
@@ -38,7 +38,7 @@ where $L_n$ and $L_e$ are the two arm lengths. We employ a particular reflection
   E'_e &= \frac{E'_0}{\sqrt{2}} \cos \left( \omega t - 2k \left( L - \frac{\delta L}{2} \right) \right).
 \end{align}
 
-The superpositions of the light from the arms leaving the beam splitter towards the input laser, $E'_{\text{in}}$, and the light leaving at the output port, $E'_{\text{out}}$, are then:
+The superpositions of the light from the arms leaving the beam splitter towards the input laser, $E'_{\text{in}}$, and the light leaving at the output port, $E'_{\text{out}}$, are then
 \begin{equation}
   \begin{split}
     E'_{\text{in}} &= \frac{E'_{e} - E'_{n}}{\sqrt{2}} \\
@@ -59,7 +59,7 @@ A real photodetector is not quick enough to measure changes in intensity at the 
 where $P_0$ is the power of the incident laser light, showing that the signal from the differential arm length is encoded in the power of the light present at the output port. Note that implicit in this derivation is the assumption that the arms are both perfectly reflective. When the optics within the interferometer have different reflectivity, the calculation becomes more complicated and it is sometimes more practical to use a simulation tool, as discussed in \cref{a:simulation-tools}.
 
 \subsection{\label{sec:operating-point}Optimal operating point}
-The phase change created by the difference in the lengths of the arms shown in \cref{eq:mich-p-out} as $k \delta L$ can be expressed as a combination of a \emph{static} tuning $\alpha$ and the phase change created by incident gravitational waves, $\delta \phi_{\text{GW}}$, i.e.:
+The phase change created by the difference in the lengths of the arms shown in \cref{eq:mich-p-out} as $k \delta L$ can be expressed as a combination of a \emph{static} tuning $\alpha$ and the phase change created by incident gravitational waves, $\delta \phi_{\text{GW}}$, i.e.
 \begin{equation}
   k \delta L = \alpha + \delta \phi_{\text{GW}}.
 \end{equation}
@@ -77,7 +77,7 @@ Note that the light power at the output shown in \cref{eq:mich-p-out} as a sinus
 There are two common types of readout technique. \emph{Heterodyne} readout involves the use of a second light frequency used as a \emph{local oscillator} for the primary light frequency that is resonant within the interferometer. This was one of the first techniques used to control laser interferometric gravitational wave detectors~\cite{Willke2002}, but due to the presence of \emph{cyclostationary} noise~\cite{Niebauer1991} and challenges related to the creation of a stable local oscillator frequency this has largely been superseded by \emph{homodyne} techniques as the \gls{DARM} sensor. Homodyne readout involves the use of the carrier as both a signal field and local oscillator, and this leads to some cancellation of noise sources common to the carrier at the expense of additional technical complexity. These techniques are discussed in greater detail in the following subsections.
 
 \subsubsection{Heterodyne readout}
-When light with multiple frequency components is incident upon a photodetector the resulting electrical signal shows the \emph{beat signal} between the two components. Assuming that a photodetector has an incident electric field amplitude composed of two frequency components, we get~\cite{Freise2010}:
+When light with multiple frequency components is incident upon a photodetector the resulting electrical signal shows the \emph{beat signal} between the two components. Assuming that a photodetector has an incident electric field amplitude composed of two frequency components, we get~\cite{Freise2010}
 \begin{equation}
   E' = E'_0 \cos \left( \omega_1 t \right) + E'_0 \cos \left( \omega_2 t \right),
 \end{equation}
@@ -98,7 +98,7 @@ The technical implementation of \gls{DC} readout is discussed in more detail in 
 \subsection{Control}
 In order for the interferometer to be kept at its operating point the readout signal representing the positions of the mirrors (\emph{test masses}) must be fed back to actuators. These actuators typically take the form of voice coils, piezoelectric stacks and other mechanical transducers. The ubiquitous technique for the control of the positions of mirrors is \emph{linear negative feedback}, where the readout signal is passed through a \emph{servo} which applies frequency-dependent filtering to enhance or suppress particular components and invert the signal before it is sent to the actuators. If the control system is designed to react quickly to test mass motion, the interferometer can be held almost exactly at the operating point where the error signal from the readout is nulled. \Cref{eq:mich-p-out} shows that small arm displacements lead to linear changes in the output power, as is the case for other readout techniques. Effective control of the interferometer holds it within this linear region to ensure that the readout is maximally sensitive to the displacement of the arms.
 
-Control strategies are discussed in greater detail in Chapters \ref{c:waveguides}, \ref{c:speedmeter-control} and \ref{c:et-lf-control}. \Cref{a:control} also introduces some background concepts useful for the understanding of the control strategies presented in these chapters.
+Control strategies are discussed in greater detail in \cref{c:waveguides,c:speedmeter-control,c:et-lf-control}. \Cref{a:control} also introduces some background concepts useful for the understanding of the control strategies presented in these chapters.
 
 \section{\label{sec:ifo-noise}Measurement noise in interferometers}
 The ``signal'' in an interferometer is the collection of electrical oscillations representing the particular variable of interest which, in most cases, represents the motion of the test masses in the arms. ``Noise'', on the other hand, refers to the unwanted oscillations that appear in the measurement independent of such a variable. The sensitivity of an interferometer is represented by the magnitude of the signal with respect to the noise, the \gls{SNR}, introduced in the context of the operating point in \cref{sec:operating-point}.
@@ -118,7 +118,7 @@ Quantum theory showed that the universe contains a continuous spectrum of quantu
 
 In lasers, a pumped electromagnetic field creates a state which can be used as the input light for an interferometer. This typically involves pumping the field into the \emph{coherent} state in which the average laser amplitude and phase quadratures are matched, and noise arises from the presence of virtual photons with arbitrary amplitude and phase in the pumped field leading to an uncertainty in the number of photons output from the laser.
 
-Noise in interferometers does not arise solely from the quantum vacuum, however. In general, noise was shown by Callen and Welton to arise from loss processes quantified by their \emph{fluctuation dissipation theorem} developed in the early \nth{20} Century~\cite{Callen1951}, which showed that the noise power spectral density created due to fluctuations,
+Noise in interferometers does not arise solely from the quantum vacuum, however. In general, noise was shown by Callen and Welton to arise from loss processes quantified by their \emph{fluctuation dissipation theorem} developed in the early \nth{20} century~\cite{Callen1951}, which showed that the noise power spectral density created due to fluctuations,
 \begin{equation}
   S_{\text{fluc}} \propto \frac{T}{Q},
 \end{equation}
@@ -142,7 +142,7 @@ In the conceptual design for the first generation of gravitational wave detector
 
 Over the past two decades, efforts have been made to both quantify and reduce coating thermal noise. Particular interest is being paid to the study of coatings for cryogenically cooled mirrors, such as the sapphire (\ce{Al_2O_3}) test masses to be used in \gls{KAGRA}~\cite{Somiya2012}. A loss peak in the mirror material silica (\ce{SiO_2}), for detectors until recently ubiquitous, occurs at low temperature. This makes the material unsuitable for cryogenic use, as mechanical loss will couple into the light within the interferometer and make its way to the detection port. Other materials such as sapphire do not feature this loss peak and provide lower thermal noise than silica at room temperature for a given mirror design. Coating noise is also proportional to temperature, so cryogenically cooled mirrors can offer better performance. Additionally, crystalline coatings made from compounds such as \ce{AlGaAs} can offer future detectors a coating thermal noise reduction of up to \num{3} over the current state of the art~\cite{Cole2013} if technical challenges in their manufacturing can be overcome.
 
-The dominant contribution to coating noise in current generation gravitational wave detectors, Brownian noise, has a power spectral density given as~\cite{Harry2002}
+The dominant contribution to coating noise in current generation gravitational wave detectors, Brownian noise, has a power spectral density given by~\cite{Harry2002}
 \begin{equation}
   \label{eq:coating-brownian-psd}
   S_{\text{coating}} = \frac{2 k_B T}{\pi^{3/2} f} \frac{1}{w Y} \left( \phi_{\text{sub}} + \frac{1}{\sqrt{\pi}} \frac{d}{w} \left( \frac{Y'}{Y} \phi_{\text{para}} + \frac{Y}{Y'} \phi_{\text{perp}} \right) \right),
@@ -184,13 +184,13 @@ Despite being massless, photons impart momentum to mirrors upon reflection inver
   \label{eq:rp-noise-psd}
   \tilde{x}^2_{\text{rp}} = \frac{P \hbar \omega_0}{c^2 m^2 \omega^4},
 \end{equation}
-with reduced mirror mass $m$ and angular frequency of mirror oscillation $\omega = 2 \pi f$. The reduced mirror mass is the effective mass of the mechanical mode, given in the case of a \FPMI{} as:
+with reduced mirror mass $m$ and angular frequency of mirror oscillation $\omega = 2 \pi f$. The reduced mirror mass is the effective mass of the mechanical mode, given in the case of a \FPMI{} as
 \begin{equation}
-  m = \frac{1}{2} \left(\frac{1}{m_1} + \frac{1}{m_2} \right)^{-1}
+  m = \frac{1}{2} \left(\frac{1}{m_1} + \frac{1}{m_2} \right)^{-1},
 \end{equation}
 where $m_1$ and $m_2$ denote the individual cavity test masses.
 
-The strain-equivalent power spectral density is:
+The strain-equivalent power spectral density is
 \begin{equation}
   \tilde{h}^2_{\text{rp}} = \frac{P \hbar \omega_0}{c^2 m^2 \omega^4 L^2}.
 \end{equation}
@@ -199,12 +199,12 @@ The strain amplitude noise, $\tilde{h}_{\text{rp}}$, is proportional to $\frac{1
 \subsubsection{\label{sec:sql}The Standard Quantum Limit}
 Note that \cref{eq:rp-noise-psd} is proportional to power whilst \cref{eq:shot-noise-psd} is inversely proportional to power. This implies the existence of a lower bound on the achievable sensitivity at a given observation frequency $f$ in the case of uncorrelated shot and radiation pressure quantum noise sources. This bound, known as the \emph{standard quantum limit} (\gls{SQL})~\cite{Braginsky1967}, is a direct consequence of the Heisenberg Uncertainty Principle in a continuous measurement of a test mass.
 
-The \gls{SQL} is the point at which the sum power spectral density of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit with amplitude spectral density proportional to $\frac{1}{f}$ which can only be surpassed with special, \emph{sub}-\gls{SQL} techniques. The presence of cavities in the arms of a \MI{} (formed by placing an additional, partially reflecting mirror in each arm) can enhance the power available to be able to reach the \gls{SQL}. In terms of the strain-equivalent power spectral density, the \gls{SQL} is defined for two free test masses separated by a distance $L$ as~\cite{Braginsky1996}:
+The \gls{SQL} is the point at which the sum power spectral density of shot and radiation pressure noise is minimised, and this occurs when the individual components are equal. For each laser power there exists a single frequency at which the \gls{SQL} can be reached. The \gls{SQL} forms a sensitivity limit with amplitude spectral density proportional to $\frac{1}{f}$ which can only be surpassed with special, \emph{sub}-\gls{SQL} techniques. The presence of cavities in the arms of a \MI{} (formed by placing an additional, partially reflecting mirror in each arm) can enhance the power available to be able to reach the \gls{SQL}. In terms of the strain-equivalent power spectral density, the \gls{SQL} is given for two free test masses separated by a distance $L$ by~\cite{Braginsky1996}
 \begin{equation}
   \label{eq:strainsql}
   \tilde{h}^2_{SQL} = \frac{8 \hbar}{m \omega^2 L^2}.
 \end{equation}
-The strain-equivalent power spectral density noise for a \MI{} with arm cavities can be defined with respect to the \gls{SQL}~\cite{Kimble2001}:
+The strain-equivalent power spectral density noise for a \MI{} with arm cavities can be written with respect to the \gls{SQL}~\cite{Kimble2001} as
 \begin{equation}
   \label{eq:classicalifospectrum}
   S^{h}_{MI} = \frac{\tilde{h}^{2}_{SQL}}{2} \left( \frac{1}{\kappa} + \kappa \right),
@@ -249,7 +249,7 @@ Gravity gradient noise will be discussed in the context of \ETLF{} in \cref{c:et
 \subsubsection{\label{sec:laser-noise}Laser frequency and intensity noise}
 A perfect laser would provide output at a single, well defined frequency. In reality such lasers do not exist and their outputs contain spectral impurities. As the laser wavelength is the ``metre stick'' by which we make displacement measurements in interferometers, it is very important to ensure that the laser's wavelength, and therefore frequency, is well defined. Frequency stabilisation control loops involving optics and electronics are usually necessary in high precision interferometric experiments.
 
-Laser frequency noise affects the phase of the output light by creating beats between waves with different frequencies, created via thermal effects in the laser material. This can be expressed as a time-varying shift $\phi \left( t \right)$ in the underlying wave's phase. This phase transforms into frequency noise via the relation:
+Laser frequency noise affects the phase of the output light by creating beats between waves with different frequencies, created via thermal effects in the laser material. This can be expressed as a time-varying shift $\phi \left( t \right)$ in the underlying wave's phase. This phase transforms into frequency noise via the relation
 \begin{equation}
   \Delta f = \frac{1}{2 \pi} \frac{d \phi}{dt}.
 \end{equation}
@@ -269,7 +269,7 @@ The laser's intensity fluctuates due to similar mechanisms. Thermally driven mis
 \Cref{eq:laser-freq-noise,eq:laser-int-noise} show that the level to which the dark fringe condition is satisfied determines the laser noise witnessed at the output. This is because of the cancellation at the beam splitter from noise in the two arms. Laser noise propagates to the beam splitter, where it is split between the arms. Matching the arms macroscopically cancels frequency noise and matching the arms microscopically cancels intensity noise.
 
 \subsubsection{\label{sec:johnson-nyquist-noise}Electronic noise}
-Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt^2\per\hertz} by the equation:
+Johnson-Nyquist noise arises from loss within electronic conductors. The noise scales with resistance and is characterised in units of \SI{}{\volt^2\per\hertz} by the equation
 \begin{equation}
   \tilde{v}^2_{\text{john. noise}} = 4 k_B T R,
 \end{equation}

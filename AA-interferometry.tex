@@ -2,7 +2,7 @@
 Basic interferometers can be modelled algebraically with only a few simple rules. This appendix introduces some of the mathematics describing \FP{} cavities and modulation used in the description of some of the control techniques discussed in the main text.
 
 \section{Interferometer fields}
-We can define the field amplitude of light across dimension $x$ as:
+We can define the field amplitude of light across dimension $x$ as
 \begin{equation}
   \label{eq:field-amplitude}
   E = E_0 \text{e}^{-\text{i} kx},
@@ -27,14 +27,14 @@ Note the presence of complex coefficient $\text{i}$, equivalent to a multiplicat
   \caption[\FP{} cavity with its mirror input and output coefficients]{\label{fig:fabry-perot}\FP{} cavity with its mirror input and output coefficients. Coefficients $a_0$ and $a_6$ are for the fields entering and leaving the cavity from the side of the \gls{ITM}, whilst $a_3$ represents the field leaving the cavity on the side of the \gls{ETM}. We assume the \gls{ETM} has high reflectivity and so neglect the field entering at the \gls{ETM} for simplicity. Coefficients $a_1$, $a_2$, $a_4$ and $a_5$ denote the circulating field at various points. The mirrors in the cavity are separated by free space through which the fields leaving each mirror's inside surface propagate.}
 \end{figure}
 
-Combining \cref{eq:field-amplitude,eq:transmitted-field,eq:reflected-field} allows us to determine the field amplitude at different ports of a collection of mirrors. Combinations of mirrors produce \emph{optical cavities}, which possess the property that they can, under certain conditions, accumulate light power. If we take the simplest of examples, the two-mirror \FP{} cavity (see \cref{fig:fabry-perot}), we can determine the fields coefficients present at the output nodes of the mirrors to be:
+Combining \cref{eq:field-amplitude,eq:transmitted-field,eq:reflected-field} allows us to determine the field amplitude at different ports of a collection of mirrors. Combinations of mirrors produce \emph{optical cavities}, which possess the property that they can, under certain conditions, accumulate light power. If we take the simplest of examples, the two-mirror \FP{} cavity (see \cref{fig:fabry-perot}), we can determine the fields coefficients present at the output nodes of the mirrors to be
 
 \begin{equation}
   \label{eq:fabry-perot-coefficients-1}
   \begin{split}
-    a_1 &= it_1 a_0 + r_1 a_5, \\
-    a_3 &= it_2 a_2, \\
-    a_4 &= r_2 a_2, \\
+    a_1 &= it_1 a_0 + r_1 a_5 \\
+    a_3 &= it_2 a_2 \\
+    a_4 &= r_2 a_2 \\
     a_6 &= r_1 a_0 + it_1 a_5.
   \end{split}
 \end{equation}
@@ -43,8 +43,8 @@ Similarly, the coefficients at the input nodes within the cavity can be determin
 \begin{equation}
   \label{eq:fabry-perot-coefficients-2}
   \begin{split}
-    a_2 &= a_1 \text{e}^{-\text{i} kx}, \\
-    a_5 &= a_4 \text{e}^{-\text{i} kx}, \\
+    a_2 &= a_1 \text{e}^{-\text{i} kx} \\
+    a_5 &= a_4 \text{e}^{-\text{i} kx}. \\
   \end{split}
 \end{equation}
 
@@ -69,7 +69,7 @@ where it is clear to see that the cavity coefficient depends on the input coeffi
   a_6 = a_0 \left( r_1 - \frac{t_1^2 r_2 \text{e}^{-2\text{i}kx}}{1 - r_1 r_2 \text{e}^{-2\text{i}kx}} \right).
 \end{equation}
 
-With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected field amplitude as a function of the input field. The output field as a function of input field $E_{\text{in}}$ is then simply:
+With $a_6$ expressed in terms of $a_0$, we can then calculate the reflected field amplitude as a function of the input field. The output field as a function of input field $E_{\text{in}}$ is then simply
 \begin{equation}
   \label{eq:fabry-perot-field}
   \begin{split}
@@ -95,7 +95,7 @@ Resonance is achieved within a \FP{} cavity by making the microscopic length equ
 \begin{equation}
   \frac{a_1}{a_0} = \frac{\text{i} t}{1 - r_1 r_2 \text{e}^{-2\text{i}kx}},
 \end{equation}
-but we see that the denominator contains a complex exponential with maxima in both the sine and cosine quadratures. In reality, we measure the light power with photodetectors, so taking the square of the modulus leads to:
+but we see that the denominator contains a complex exponential with maxima in both the sine and cosine quadratures. In reality, we measure the light power with photodetectors, so taking the square of the modulus leads to
 \begin{equation}
   \begin{split}
     \left|\frac{a_1}{a_0}\right|^2 &= \frac{t^2}{1-r_1 r_2 \text{e}^{2\text{i}kx} - r_1 r_2 \text{e}^{-2\text{i}kx} + r_1^2 r_2^2} \\
@@ -118,7 +118,7 @@ The frequency offset between successive resonant peaks is termed the \emph{free 
   \text{FSR} = \frac{c_0}{2L}.
 \end{equation}
 
-Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maximum} (\gls{FWHM}), also known as the \emph{linewidth}, which represents the width of a resonant peak at half of its maximum power, in units of frequency. As the width of the resonant peak is a function of mirror reflectivity, the \gls{FWHM} is defined:
+Another figure of merit for a \FP{} cavity is the \emph{full-width at half-maximum} (\gls{FWHM}), also known as the \emph{linewidth}, which represents the width of a resonant peak at half of its maximum power, in units of frequency. As the width of the resonant peak is a function of mirror reflectivity, the \gls{FWHM} is defined as
 \begin{equation}
   \text{FWHM} = \frac{c_0}{\pi L} \sin^{-1}{\left( \frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}} \right)}.
 \end{equation}
@@ -130,11 +130,11 @@ Sometimes used in the literature is the \emph{half-bandwidth}, $\gamma$, equival
 \end{equation}
 In the frequency domain $\gamma$ denotes the cavity's corner frequency, otherwise known as the \emph{pole frequency}. In a \FP{} cavity the response is essentially flat below this frequency, and degrading proportionally to frequency above it.
 
-The ratio of the \gls{FSR} to the \gls{FWHM} defines the cavity \emph{finesse}, $\mathcal{F}$, given as:
+The ratio of the \gls{FSR} to the \gls{FWHM} defines the cavity \emph{finesse}, $\mathcal{F}$, given as
 \begin{equation}
   \mathcal{F} = \frac{\text{FSR}}{\text{FWHM}} = \frac{\pi}{2 \sin^{-1}{\frac{1 - r_1 r_2}{2 \sqrt{r_1 r_2}}}},
 \end{equation}
-which indicates the cavity's ability to store photons. It is closely related to the quality factor $Q$, namely the ratio of the energy stored in the cavity to the energy lost per radian of oscillation, via the relation~\cite{Band2006}:
+which indicates the cavity's ability to store photons. It is closely related to the quality factor $Q$, namely the ratio of the energy stored in the cavity to the energy lost per radian of oscillation, via the relation~\cite{Band2006}
 \begin{equation}
 Q = \frac{f_0}{\text{FSR}} \mathcal{F}.
 \end{equation}
@@ -150,17 +150,17 @@ For clarity, we can express the constant $x$ term as a static phase representing
   \label{eq:field-amplitude-phase}
   E_{\text{r}} \left( t \right) = r E_0 \text{e}^{-\text{i} \left( \omega_0 t + k \Delta x\right)}.
 \end{equation}
-It is possible to express any particular motion in the form of a series of sinusoidal functions. Expressing mirror motion as a single frequency sinusoid modulating the impinging field, we see:
+It is possible to express any particular motion in the form of a series of sinusoidal functions. Expressing mirror motion as a single frequency sinusoid modulating the impinging field, we see
 \begin{equation}
   \label{eq:field-phase-modulation}
   E_{\text{r}} \left( t \right) = r E_0 \text{e}^{-\text{i} \left(\omega_0 t + m \cos{\left( \omega t \right)} \right)},
 \end{equation}
-where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. With some algebraic manipulation involving Bessel functions, we can express this as~\cite{Freise2010}:
+where we introduce $m$ as the \emph{modulation depth}, a dimensionless number expressing the strength of the mirror motion. With some algebraic manipulation involving Bessel functions, we can express this as~\cite{Freise2010}
 \begin{equation}
   \label{eq:field-phase-bessel}
   E_{\text{r}} \left( t \right) = r E_0 \text{e}^{-\text{i} \omega_0 t} \sum^{\infty}_{n=-\infty} \text{i}^n J_{n} \left( m \right) \text{e}^{\text{i} n \omega t}.
 \end{equation}
-When $m$ is $0$ all Bessel functions $J_{n}$ are $0$ except the first, which is $1$; this shows that the field contains only the carrier component when there is no external modulation applied by a moving mirror. Conversely, when a non-zero modulation index and signal frequency is present, there exists a sum of sinusoidal functions as a product of the carrier, which we call \emph{signal sidebands}. For small modulation depths $m \ll 1$, \cref{eq:field-phase-bessel} can be approximated to:
+When $m$ is $0$ all Bessel functions $J_{n}$ are $0$ except the first, which is $1$; this shows that the field contains only the carrier component when there is no external modulation applied by a moving mirror. Conversely, when a non-zero modulation index and signal frequency is present, there exists a sum of sinusoidal functions as a product of the carrier, which we call \emph{signal sidebands}. For small modulation depths $m \ll 1$, \cref{eq:field-phase-bessel} can be approximated to
 \begin{equation}
   \label{eq:field-phase-mod-expanded}
   E_{\text{r}} = E_0 \text{e}^{-\text{i} \omega_0 t} \left( 1 - \frac{m^2}{4} + \text{i} \frac{m}{2} \left( \text{e}^{-\text{i} \omega t} + \text{e}^{\text{i} \omega t} \right) \right).

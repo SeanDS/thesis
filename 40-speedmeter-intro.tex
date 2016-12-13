@@ -1,7 +1,7 @@
 \chapter{\label{c:speedmeter-intro}The \SSMEXPT{}: introduction and technical design}
 \chaptermark{\SSM{} introduction and technical design}
 
-This chapter introduces the ongoing \SSMEXPT{} in Glasgow and serves as background for the work presented in Chapters \ref{c:speedmeter-control} and \ref{c:esd-concept}. The first half of this chapter discusses the measurement of test mass displacement and speed in the context of interferometers, and compares the sensitivity of the two measurements. The second half details the particular setup employed in the Glasgow experiment.
+This chapter introduces the ongoing \SSMEXPT{} in Glasgow and serves as background for the work presented in \cref{c:speedmeter-control,c:esd-concept}. The first half of this chapter discusses the measurement of test mass displacement and speed in the context of interferometers, and compares the sensitivity of the two measurements. The second half details the particular setup employed in the Glasgow experiment.
 
 \section{\label{sec:pos-speed-meters}Position and \SM{}s}
 
@@ -31,12 +31,12 @@ where $\vec{a}$ is the input field and $\vec{b}$ is the output field. The output
 \end{equation}
 where $\vec{R}$ is the response of the interferometer from unit mirror motion to the output, $\frac{h}{h_{\text{SQL}}}$ is the motion of the mirrors in terms of strain normalised to the \gls{SQL} as discussed in \cref{sec:sql} and $\mathbb{T}$ represents the transfer matrix of the input fields to the output fields.
 
-The differential arm response, $\vec{R}_{\left( - \right)}$, is given by:
+The differential arm response, $\vec{R}_{\left( - \right)}$, is given by
 \begin{equation}
   \label{eq:fp-mich-response}
   \vec{R}_{\left( - \right)} = \text{e}^{\text{i} \beta_{\text{FP}}} \sqrt{2 \kappa} \vec{H},
 \end{equation}
-where $\beta_{\text{FP}}$ is the round-trip phase of the light in the arms, $\kappa$ is the optomechanical coupling factor (as introduced in \cref{sec:sql}) and $\vec{H}$ represents the readout angle or \emph{quadrature}, $\zeta$. The round-trip phase is defined:
+where $\beta_{\text{FP}}$ is the round-trip phase of the light in the arms, $\kappa$ is the optomechanical coupling factor (as introduced in \cref{sec:sql}) and $\vec{H}$ represents the readout angle or \emph{quadrature}, $\zeta$. The round-trip phase is defined as
 \begin{equation}
   \beta_{\text{FP}} = \arctan{\frac{f}{\gamma_{\text{arm}}}},
 \end{equation}
@@ -60,9 +60,9 @@ The term $\mathbb{T}$ can be further broken down:
 \end{equation}
 showing that the optomechanical coupling factor transforms the input $\vec{a}$ in the cosine (amplitude) quadrature into the sine (phase) quadrature governed by the mirror dynamics on its way to the output. The matrix of noise power spectral densities for the quadratures of the light at the output port, $\mathbb{S}$, is given by averaging over all frequencies:
 \begin{equation}
-  \mathbb{S} = \left< \vec{b} \cdot \vec{b}^{\dag} \right>,
+  \mathbb{S} = \left< \vec{b} \cdot \vec{b}^{\dag} \right>.
 \end{equation}
-Expanding the terms we get:
+Expanding the terms we get
 \begin{equation}
   \mathbb{S} =
   \begin{pmatrix}
@@ -108,7 +108,7 @@ Normal, unsqueezed vacuum noise at the input has equal noise contributions in th
    0 & 1
   \end{pmatrix}.
 \end{equation}
-The matrix of noise power spectral densities of the light quadratures at the output due to quantum noise, $\mathbb{S}_{\text{FPMI}}$, is then:
+The matrix of noise power spectral densities of the light quadratures at the output due to quantum noise, $\mathbb{S}_{\text{FPMI}}$, is then
 \begin{equation}
   \begin{split}
     \mathbb{S}_{\text{FPMI}} &=
@@ -146,7 +146,7 @@ For \gls{DC} readout, the output noise spectral density is shown in \cref{fig:fp
   \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port. This shows the noise present at the photodetector produced due to quantum noise entering the interferometer and interacting with the mechanics. At high frequencies, the noise in a \MI{} is almost entirely due to the quantum shot noise on the sensor; at low frequencies the noise is dominated by the light reaching the sensor due to fluctuations in the positions of the test masses due to quantum radiation pressure noise.}
 \end{figure}
 
-The amplitude spectral density of the interferometer's sensitivity to differential arm cavity motion, $s_{\left( - \right)}$, is given by the ratio of the quantum noise amplitude spectral density at the sensor ($\sqrt{S_{\text{FPMI}}^{\text{dc}}}$) to the response of the interferometer to that sensor for differential arm cavity motion, i.e.:
+The amplitude spectral density of the interferometer's sensitivity to differential arm cavity motion, $s_{\left( - \right)}$, is given by the ratio of the quantum noise amplitude spectral density at the sensor ($\sqrt{S_{\text{FPMI}}^{\text{dc}}}$) to the response of the interferometer to that sensor for differential arm cavity motion, i.e.
 \begin{equation}
   s_{\left( - \right)} = \frac{h_{\left( - \right)}}{O_{\text{dc}}} \sqrt{S_{\text{FPMI}}^{\text{dc}}},
 \end{equation}
@@ -170,16 +170,16 @@ Initial suggestions for the application of \SM{} type interferometers in the fie
 \begin{figure}
   \centering
   \includegraphics[width=0.6\columnwidth]{graphics/generated/from-svg/40-sloshing-michelson.pdf}
-  \caption[Layout of a \FPMI{} with a sloshing cavity]{\label{fig:sloshing-michelson}Layout of a \FPMI{} with a sloshing cavity as presented in~\cite{Purdue2002}. The light leaving the \FPMI{} is coupled into a sloshing cavity via a beam splitter where it receives a phase shift, and it re-enters the interferometer via the recycling mirror to the left of the sloshing beam splitter. The light incident upon the beam splitter then contains light that has sampled the mirrors at two points in time, leading to a \SM{} effect.}
+  \caption[Layout of a \FPMI{} with a sloshing cavity]{\label{fig:sloshing-michelson}Layout of a \FPMI{} with a sloshing cavity as presented in ref.~\cite{Purdue2002}. The light leaving the \FPMI{} is coupled into a sloshing cavity via a beam splitter where it receives a phase shift, and it re-enters the interferometer via the recycling mirror to the left of the sloshing beam splitter. The light incident upon the beam splitter then contains light that has sampled the mirrors at two points in time, leading to a \SM{} effect.}
 \end{figure}
 
 \subsubsection{The Sagnac-type \SM{}}
 It was realised by Chen that the \emph{zero-area Sagnac} interferometer topology is a \SM{}~\cite{Chen2003}. This interferometer is arranged such that incident photons enter into two counter-propagating modes which sample the position of the test masses at different intervals. The Sagnac interferometer is sensitive to the rotation of the Earth via the area enclosed by its arms, and so to avoid this the propagation of the light is arranged in a zero-area configuration to cancel the rotation-induced phase accumulation from each arm. The remaining signal at the output contains information of the difference in round-trip phase of the two counter-propagating modes due to test mass motion. Given two test mass positions $x_{A}$ and $x_{B}$ in arms $A$ and $B$, respectively, over a time interval of $\Delta t$ each counter-propagating mode will measure phase changes $\delta \phi_{A}$ and $\delta \phi_{B}$ arising from motion of the arms less than the light propagation time~\cite{Chen2003}:
 \begin{align}
-  \delta \phi_{A} &\propto \Delta x_{A} \left( t \right) + \Delta x_{B} \left( t + \Delta t \right), \\
+  \delta \phi_{A} &\propto \Delta x_{A} \left( t \right) + \Delta x_{B} \left( t + \Delta t \right) \\
   \delta \phi_{B} &\propto \Delta x_{B} \left( t \right) + \Delta x_{A} \left( t + \Delta t \right).
 \end{align}
-At the output port, the combined signal will then be the difference of phase:
+At the output port, the combined signal will then be the difference of phase,
 \begin{equation}
   \begin{split}
     \delta \phi_{A} - \delta \phi_{B} &\propto \left( \Delta x_{A} \left( t \right) - \Delta x_{A} \left( t + \Delta t \right) \right) - \left( \Delta x_{B} \left( t \right) - \Delta x_{B} \left( t + \Delta t \right) \right) \\
@@ -197,9 +197,9 @@ The layout of a \SSM{} interferometer can be arranged in different forms~\cite{H
 \end{figure} 
 
 \subsubsection{Input-output relations}
-The same approach to that for a \FPMI{} in \cref{sec:position-meter-measurement} can be taken to calculate the response and noise of a \SM{}, but with a value of $\kappa$ modified for a speed-meter~\cite{Chen2003}:
+The same approach to that for a \FPMI{} in \cref{sec:position-meter-measurement} can be taken to calculate the response and noise of a \SM{}, but with a value of $\kappa$ modified for a speed-meter~\cite{Chen2003},
 \begin{equation}
-  \kappa_{\text{SM}} = 4 \kappa_{\text{MI}} \sin^2 \beta_{\text{FP}}.
+  \kappa_{\text{SM}} = 4 \kappa_{\text{MI}} \sin^2 \beta_{\text{FP}},
 \end{equation}
 and as the round-trip phase includes both arms and an extra reflection from or transmission through the beam splitter, it is also modified:
 \begin{equation}
@@ -248,7 +248,7 @@ The intended optical layout is shown in \cref{fig:ssm-layout}. The input light i
   \caption[\SSMEXPT{} layout]{\label{fig:ssm-layout}\SSMEXPT{} layout. The in-vacuum part of the experiment will be situated in two \SI{1}{\meter} diameter tanks joined with a connecting tube. The suspended optics will be placed on breadboards atop passive isolation stacks, joined together with a bridge structure. Viewports are situated on both tanks at each side to facilitate in-air sensing. The vacuum system is capable of reaching pressures below \SI{e-6}{\milli\bar} to suppress the impact of residual gas noise.}
 \end{figure}
 
-The interferometer is to be situated within an ultra-high vacuum system formed from two adjoined cylindrical tanks with pumps capable of reaching pressures below \SI{e-6}{\milli\bar}. Each tank contains a breadboard for the attachment of components, and this breadboard is itself isolated from ground motion by a series of passive damping stacks. The breadboards are rigidly connected via a bridge structure to ensure that residual platform motion is common to all suspended optics. The optics will be suspended from pendulum systems, with the most important test masses suspended from multiple stages to provide additional isolation from seismic noise. The parameters for the optics, laser injection, suspension systems and materials can be found in~\cite{Graef2014},~\cite{Danilishin2015} and~\cite{Leavey2016} in chronological order.
+The interferometer is to be situated within an ultra-high vacuum system formed from two adjoined cylindrical tanks with pumps capable of reaching pressures below \SI{e-6}{\milli\bar}. Each tank contains a breadboard for the attachment of components, and this breadboard is itself isolated from ground motion by a series of passive damping stacks. The breadboards are rigidly connected via a bridge structure to ensure that residual platform motion is common to all suspended optics. The optics will be suspended from pendulum systems, with the most important test masses suspended from multiple stages to provide additional isolation from seismic noise. The parameters for the optics, laser injection, suspension systems and materials can be found in refs.~\cite{Graef2014},~\cite{Danilishin2015} and~\cite{Leavey2016} in chronological order.
 
 \subsection{\label{sec:bhd-intro}Balanced homodyne detection}
 The sensor for the gravitational wave channel, the differential arm cavity degree of freedom, will be balanced homodyne readout, in contrast to the \emph{de-facto} standard in gravitational wave observatories, \gls{DC} readout. It is difficult to change the \gls{DC} readout quadrature to optimise the sensitivity in the presence of imprecisely known loss; the homodyne angle is fixed by the propagation length between the detuned arm cavities and the output port. With balanced homodyne readout arbitrary homodyne angles can be chosen by microscopically tuning of the relative phase of the (separate) local oscillator and signal paths.
@@ -272,7 +272,7 @@ where we assume that the signal and local oscillator are split equally between t
 In the presence of imbalanced beam splitting the laser noise and residual carrier light in the signal path results in additional noise photocurrent and so it is important to use a beam splitter with balanced reflectivity and transmissivity and for the intensity noise of the laser to be controlled to a high degree~\cite{Steinlechner2015}.
 
 \subsubsection{Quantum noise limited sensitivity of the main readout}
-Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} is shown in \cref{fig:erc-ssm-qnls}, calculated with both \gls{FINESSE} and Optickle (see \cref{sec:finesse-sim,sec:optickle-sim}). Also shown is the sensitivity of an equivalent \FPMI{} using the same parameters as for the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match its high frequency sensitivity. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, to optimise both interferometers for high frequency sensitivity fairly. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz} so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are kept sufficiently low. A comprehensive consideration of the noise budget is given in Chapter\,\ref{c:speedmeter-control}.
+Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} is shown in \cref{fig:erc-ssm-qnls}, calculated with both \gls{FINESSE} and Optickle (see \cref{sec:finesse-sim,sec:optickle-sim}). Also shown is the sensitivity of an equivalent \FPMI{} using the same parameters as for the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match its high frequency sensitivity. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, to optimise both interferometers for high frequency sensitivity fairly. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz} so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are kept sufficiently low. A comprehensive consideration of the noise budget is given in \cref{c:speedmeter-control}.
 % Homodyne angles for SSM vs MI from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=5648
 
 \begin{figure}
@@ -287,7 +287,7 @@ The \emph{auxiliary} optics \MFOUR{}, \MFIVE{}, \MSEVEN{}-\MTEN{} and \MTWELVE{}
 \subsection{\label{sec:ssm-actuation}Actuation}
 The auxiliary suspensions will have voice coil actuators on their intermediate stages for local alignment control. The \SI{100}{\gram} suspensions will have voice coils on multiple stages in order to provide corrections for low frequency drifts, though the test mass stages will not have voice coils to prevent \emph{Barkhausen} noise~\cite{Weiss2008} coupling to the test masses via the actuators' magnets.
 
-The filtering effect from the final pendulum stage means that the voice coil actuators will not be able to effectively correct test mass positions at high frequencies. Instead, \emph{electrostatic drive} (\gls{ESD}) actuators will be placed behind each \gls{ETM} able to produce small corrective forces but without Barkhausen noise. \gls{ESD} actuators have been demonstrated in \GEO{}~\cite{Hewitson2007} and \ALIGO{}~\cite{Aston2012} based on a metallic comb arrangement, though in the \SSMEXPT{} the intention is to use a new \gls{ESD} design which will be discussed in Chapter\,\ref{c:esd-concept}.
+The filtering effect from the final pendulum stage means that the voice coil actuators will not be able to effectively correct test mass positions at high frequencies. Instead, \emph{electrostatic drive} (\gls{ESD}) actuators will be placed behind each \gls{ETM} able to produce small corrective forces but without Barkhausen noise. \gls{ESD} actuators have been demonstrated in \GEO{}~\cite{Hewitson2007} and \ALIGO{}~\cite{Aston2012} based on a metallic comb arrangement, though in the \SSMEXPT{} the intention is to use a new \gls{ESD} design which will be discussed in \cref{c:esd-concept}.
 
 \subsection{\label{sec:ssm-sensing-and-control}Sensing and control}
 While the main readout of the \SSMEXPT{} is to be the \gls{BHD}, in order to control the interferometer a number of other signals from different ports will need to be extracted and fed back to actuators to keep the interferometer at the operating point. The control topics can be split into two broad categories representing the process used to bring the interferometer to the operating point, \emph{lock acquisition}, and keeping it there, \emph{low-noise} control.
@@ -308,4 +308,4 @@ The control and data acquisition system developed for \gls{LIGO}, \emph{\gls{CDS
 The translation between the digital \gls{CDS} domain and the analogue domain takes the form of analogue-to-digital and digital-to-analogue converters (\glspl{ADC} and \glspl{DAC}) situated on \emph{front-end} computers which run software control modules in real time. A \emph{frame builder} computer communicates with the front ends over a fast network in order to build packets of measurements in \gls{GPS}-synchronised intervals.
 
 \section{Topics of particular focus}
-There are many areas of research and development required in order to meet the challenging goals of the \SSMEXPT{}, but we will focus in particular on the strategy for controlling the longitudinal degrees of freedom of the interferometer at its operating point. Chapter\,\ref{c:speedmeter-control} will develop a longitudinal sensing and control scheme for the interferometer taking into account anticipated sensors, actuators and noise sources, and Chapter\,\ref{c:esd-concept} will present the design of the high voltage electronics and signalling for the \gls{ESD} design to be used in the experiment.
+There are many areas of research and development required in order to meet the challenging goals of the \SSMEXPT{}, but we will focus in particular on the strategy for controlling the longitudinal degrees of freedom of the interferometer at its operating point. \Cref{c:speedmeter-control} will develop a longitudinal sensing and control scheme for the interferometer taking into account anticipated sensors, actuators and noise sources, and \cref{c:esd-concept} will present the design of the high voltage electronics and signalling for the \gls{ESD} design to be used in the experiment.

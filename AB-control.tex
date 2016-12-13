@@ -2,11 +2,11 @@
 Control is an essential aspect of gravitational wave interferometry. This appendix contains some background information on some control topics covered within the main text.
 
 \section{\label{sec:snr}Signal to noise ratio}
-Signal cannot be measured below the noise present on a photodetector. Maximum sensitivity can be achieved by maximising the ratio of signal power, $S$, to noise power, $N$, in the frequency band of interest. This is expressed as the \emph{signal-to-noise} ratio (SNR),
+Signal cannot be measured below the noise present on a photodetector. Maximum sensitivity can be achieved by maximising the ratio of signal power, $S$, to noise power, $N$, in the frequency band of interest. This is expressed as the \emph{signal-to-noise} ratio (\gls{SNR}),
 \begin{equation}
   \text{SNR} = \frac{S}{N}.
 \end{equation}
-When discussing controls, the standard representation of signal to noise is in units of \emph{decibels} (\SI{}{\deci\bel}), defined for signal power as:
+When discussing controls, the standard representation of signal to noise is in units of \emph{decibels} (\SI{}{\deci\bel}), defined for signal power as
 \begin{equation}
   \text{SNR}_{\SI{}{\deci\bel}} = 10 \log_{10} \left( \frac{S}{N} \right).
 \end{equation}
@@ -20,7 +20,7 @@ The factor \num{20} is present here instead of \num{10} in the case of power qua
 
 \section{\label{sec:freq-resp-signals}Frequency representation of signals and noise}
 \subsection{\label{sec:fourier-transform}Fourier transform}
-A Fourier transform represents a time-varying signal in terms of its frequency components, i.e. as a series of sinusoidal waves of different frequency and amplitude. The Fourier transform $x \left( f \right)$ of $x \left( t \right)$ can be defined as:
+A Fourier transform represents a time-varying signal in terms of its frequency components, i.e. as a series of sinusoidal waves of different frequency and amplitude. The Fourier transform $x \left( f \right)$ of $x \left( t \right)$ can be defined as
 \begin{equation}
   \label{eq:fourier-transform}
   x \left( f \right) = \int^{\infty}_{-\infty} x \left( t \right) \text{e}^{-2i \pi f t} dt.
@@ -34,7 +34,7 @@ The infinite time Fourier transform in \cref{eq:fourier-transform} can be trunca
 \begin{equation}
   x \left( f \right) \approx \frac{1}{\sqrt{T}} \int^{T}_{0} x \left( t \right) \text{e}^{-2i \pi f t} dt,
 \end{equation}
-and the power spectrum of the signal measured by a photodetector is then:
+and the power spectrum of the signal measured by a photodetector is then
 \begin{equation}
   \label{eq:psd}
   S_{xx} = \frac{1}{T} \int^{T}_{0} x \left( f \right)^2 dt.
@@ -60,7 +60,7 @@ Once a segment is created, the resulting Fourier transform is applied to the tim
 \end{figure}
 
 \section{\label{sec:rms-amplitude}Root mean square amplitude}
-A real actuator or sensor has finite range, and the sum of the signal spectral density must be within this range to avoid clipping. The \emph{root-mean-square} (\gls{RMS}) signal is equal to the sum of the absolute values of each of the frequency components. The \gls{RMS} representation is a useful form for the calculation of required actuator and sensor dynamic range (see, for example, Chapter\,\ref{c:speedmeter-control}).
+A real actuator or sensor has finite range, and the sum of the signal spectral density must be within this range to avoid clipping. The \emph{root-mean-square} (\gls{RMS}) signal is equal to the sum of the absolute values of each of the frequency components. The \gls{RMS} representation is a useful form for the calculation of required actuator and sensor dynamic range (see, for example, \cref{c:speedmeter-control}).
 
 The following equation converts a power spectral density defined between $f_{\text{min}}$ and $f_{\text{max}}$ to an equivalent \gls{RMS} value:
 \begin{equation}

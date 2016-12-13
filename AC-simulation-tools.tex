@@ -16,7 +16,7 @@ Both \gls{FINESSE} and Optickle use broadly the same approach to compute results
 The primary output from the tools is the calculation of field amplitudes or powers at ports of the interferometer at its operating point given a set of connected optics. In order to calculate these signals the simulation must map the effect that each optic's motion has onto the light fields within the interferometer, propagate these fields to each output and then calculate the corresponding electrical signals. These processes are described in more detail below in the context of Optickle, but the approach taken in \gls{FINESSE} is similar.
 
 \subsection{Optics}
-An \emph{optic} refers to any component within the interferometer which has an effect on the light's amplitude, phase or frequency. Apart from mirrors and beam splitters, components such as lasers, \glspl{EOM} and Faraday isolators can all be handled in the same way via matrices which translate inputs to outputs. Such \emph{transfer matrices} define the signal behaviour of the light fields entering and exiting the component from arbitrary directions. For example, the transfer matrix of a simple two-surface mirror can be defined as~\cite{Freise2010}:
+An \emph{optic} refers to any component within the interferometer which has an effect on the light's amplitude, phase or frequency. Apart from mirrors and beam splitters, components such as lasers, \glspl{EOM} and Faraday isolators can all be handled in the same way via matrices which translate inputs to outputs. Such \emph{transfer matrices} define the signal behaviour of the light fields entering and exiting the component from arbitrary directions. For example, the transfer matrix of a simple two-surface mirror can be defined as~\cite{Freise2010}
 \begin{equation}
   M =
   \begin{bmatrix}
@@ -26,7 +26,7 @@ An \emph{optic} refers to any component within the interferometer which has an e
 \end{equation}
 where $r$ and $t$ represent the amplitude reflectivity and transmissivity of the mirror, with the condition $r^2 + t^2 = 1$, assuming no loss.
 
-Using the first mirror in \cref{fig:fabry-perot} as an example, the inputs $a_0$ and $a_5$ map to outputs $a_1$ and $a_6$ as:
+Using the first mirror in \cref{fig:fabry-perot} as an example, the inputs $a_0$ and $a_5$ map to outputs $a_1$ and $a_6$ as
 \begin{equation}
   \begin{bmatrix}
     a_1 \\
@@ -88,14 +88,14 @@ where $\mathbf{M}_{\text{AC}}$ is the interferometer matrix specified earlier. T
 \begin{equation}
   \vec{v}_{\text{AC}} = \frac{\vec{v}_{\text{exc}}}{1 - \mathbf{M}_{\text{AC}}}.
 \end{equation}
-Since $\mathbf{M}_{\text{AC}}$ is a matrix and $\vec{v}_{\text{AC}}$ and $\vec{v}_{\text{exc}}$ are vectors, the problem can be represented as the equation:
+Since $\mathbf{M}_{\text{AC}}$ is a matrix and $\vec{v}_{\text{AC}}$ and $\vec{v}_{\text{exc}}$ are vectors, the problem can be represented as the equation
 \begin{equation}
   \vec{v}_{\text{AC}} = \left( \mathbb{I} - \mathbf{M}_{\text{AC}} \right)^{-1} \vec{v}_{\text{exc}},
 \end{equation}
 where $\mathbb{I}$ is the identity matrix. The calculation of the field amplitudes in the interferometer therefore becomes a task of finding the inverse of $\mathbb{I} - \mathbf{M}_{\text{AC}}$, which is a problem for which many optimised algorithms have been developed.
 
 \subsection{Probe signals}
-With the steady-state field amplitudes, the signals produced by the interferometer can be determined with the application of a \emph{probe matrix} $\mathbf{M}_{\text{probe}}$ which maps the fields in the interferometer to its probes. Since the fields amplitudes are determined for every wavelength under consideration, it is possible to calculate the signals that would appear on photodetector circuits implementing \gls{RF} demodulation. The probe matrix contains complex amplitudes to transform the fields at the location of the probe by the required amount given the demodulation frequencies and phase angles. The probe signals are therefore defined as:
+With the steady-state field amplitudes, the signals produced by the interferometer can be determined with the application of a \emph{probe matrix} $\mathbf{M}_{\text{probe}}$ which maps the fields in the interferometer to its probes. Since the fields amplitudes are determined for every wavelength under consideration, it is possible to calculate the signals that would appear on photodetector circuits implementing \gls{RF} demodulation. The probe matrix contains complex amplitudes to transform the fields at the location of the probe by the required amount given the demodulation frequencies and phase angles. The probe signals are therefore defined as
 \begin{equation}
   \vec{v}_{\text{probe}} = \mathbf{M}_{\text{probe}} \left( \mathbb{I} - \mathbf{M}_{\text{AC}} \right)^{-1} \vec{v}_{\text{exc}}.
 \end{equation}
