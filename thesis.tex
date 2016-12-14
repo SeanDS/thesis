@@ -104,6 +104,16 @@
 \usepackage{listings}
 
 %%%
+% Titling
+% Access to title, author, etc. in the document (\maketitle clears the \@author, \@title, etc. macros)
+\usepackage{titling}
+
+% now set the title, etc. (this has to be done before hyperref sets it in the PDF metadata)
+\title{Enhancing the Sensitivity of Future Laser-Interferometric Gravitational Wave Detectors}
+\author{Sean Stephan Leavey}
+\date{September 2016}
+
+%%%
 % Hyperlinks
 %
 % (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
@@ -111,6 +121,10 @@
 % import package
 \usepackage{hyperref}
 \hypersetup{
+  pdftitle={\thetitle},
+  pdfauthor={\theauthor},
+  pdfcreator={LaTeX, Python, Matlab, Inkscape, Eagle},
+  pdfpagelayout=TwoPageRight, % show cover page on its own
   colorlinks=false,
   linkcolor=blue,
   filecolor=magenta,
@@ -265,10 +279,7 @@
 %\pagestyle{empty}
 %\pagenumbering{gobble}
 
-\title{Enhancing the Sensitivity of Future Laser-Interferometric Gravitational Wave Detectors}
-\author{Sean Stephan Leavey}
-\date{September 2016}
-
+% generate the title (the macros are set above before hyperref)
 \maketitle
 
 \cleardoublepage
