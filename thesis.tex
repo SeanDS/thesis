@@ -1,3 +1,8 @@
+% Define book information commands (used in various places)
+\newcommand{\thesistitle}{Enhancing the Sensitivity of Future Laser-Interferometric Gravitational Wave Detectors}
+\newcommand{\thesisauthor}{Sean Stephan Leavey}
+\newcommand{\thesisdate}{September 2016}
+
 % for digital/drafts
 %\documentclass[twoside,nogutter]{glasgowthesis}
 % for printed copies
@@ -107,16 +112,6 @@
 \usepackage[version=3]{mhchem}
 
 %%%
-% Titling
-% Access to title, author, etc. in the document (\maketitle clears the \@author, \@title, etc. macros)
-\usepackage{titling}
-
-% now set the title, etc. (this has to be done before hyperref sets it in the PDF metadata)
-\title{Enhancing the Sensitivity of Future Laser-Interferometric Gravitational Wave Detectors}
-\author{Sean Stephan Leavey}
-\date{September 2016}
-
-%%%
 % Hyperlinks, cross reference links, contents, etc.
 %
 % (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
@@ -124,8 +119,8 @@
 % import package
 \usepackage{hyperref}
 \hypersetup{
-  pdftitle={\thetitle},
-  pdfauthor={\theauthor},
+  pdftitle={\thesistitle},
+  pdfauthor={\thesisauthor},
   pdfcreator={LaTeX, Python, Matlab, Inkscape, Eagle},
   pdfpagelayout=TwoPageRight, % show cover page on its own
   colorlinks=false,
@@ -277,16 +272,15 @@
 
 \begin{document}
 
-%\pagestyle{empty}
-%\pagenumbering{gobble}
+% set the title, author and date for the front cover
+\title{\thesistitle}
+\author{\thesisauthor}
+\date{\thesisdate}
 
-% generate the title (the macros are set above before hyperref)
+% generate the title
 \maketitle
 
 \cleardoublepage
-
-%\pagenumbering{roman}
-%\setcounter{page}{1}
 
 % import glossary terms
 \input{"00-definitions.tex"}
