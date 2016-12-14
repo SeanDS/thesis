@@ -165,7 +165,7 @@ The required \gls{DC} op-amp gain should be known ahead of time in order to full
 
 Finally, the quiescent current drawn by each op-amp determines the amount of heat it will produce, and since the \gls{HV} amplifier will be used continuously during interferometer operation this parameter should be as low as practical in the chosen model.
 
-\Cref{tab:hv-op-amp-comparison} shows the aforementioned parameters for some popular op-amp models produced by \emph{Apex}. The models shown have sufficient output voltage and identical input noise. The PA89's bandwidth is limited and the full output voltage is not available beyond \SI{7}{\kilo\hertz}, whilst the quiescent power in the PA94 and PA98 is high enough to warrant challenging heat sink requirements. In this case the optimal choice of op-amp is the PA95, which provides enough bandwidth and for which only a passive heat sink will be required.
+\Cref{tab:hv-op-amp-comparison} shows the aforementioned parameters for some popular op-amp models produced by \emph{Apex}. The models shown have sufficient output voltage and identical input noise. The PA89's bandwidth is limited and the full output voltage is not available beyond \SI{7}{\kilo\hertz}, while the quiescent power in the PA94 and PA98 is high enough to warrant challenging heat sink requirements. In this case the optimal choice of op-amp is the PA95, which provides enough bandwidth and for which only a passive heat sink will be required.
 
 \begin{table}
   \centering
@@ -253,7 +253,7 @@ The channels should be isolated from one another such that a signal injected at 
 \begin{figure}
   \centering
   \input{graphics/generated/from-python/60-hv-amp-coherence.pgf}
-  \caption[High voltage amplifier cross-channel coherence]{\gls{HV} amplifier cross-channel normalised coherence. A swept sine was injected into each channel in turn whilst measurements of the output phase were made on all four channels. In each case, only the channel with the injection has coherence of \num{1}, while other channels only show the effect from noise.}
+  \caption[High voltage amplifier cross-channel coherence]{\gls{HV} amplifier cross-channel normalised coherence. A swept sine was injected into each channel in turn while measurements of the output phase were made on all four channels. In each case, only the channel with the injection has coherence of \num{1}, while other channels only show the effect from noise.}
   \label{fig:hv-amp-coherence}
 \end{figure}
 
