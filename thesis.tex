@@ -10,15 +10,31 @@
 % ^^ add "hidelinks" option to remove coloured links (e.g. for printing)
 
 %%%
-% Packages
+% PGF support (for plots exported by Python)
+\usepackage{pgf}
 
-\usepackage{pgf} % for PGF inputs (plots exported by Python)
+%%%
+% Support for including external graphics (e.g. PDF plots)
 \usepackage{graphicx}
+
+%%%
+% AMS maths packages to improve typographical quality of equations and symbols
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+%%%
+% Support for adding coloured text
 \usepackage{color}
+
+%%%
+% Better bookmarks (contents shown by PDF viewer) than hyperref
 \usepackage{bookmark}
-\usepackage{hyphenat} % for \hyp{} instead of "-"
+
+%%%
+% Hyphenation
+% To allow manual hyphenation using \hyp{}
+\usepackage{hyphenat}
+
 %%%
 % Bibliography
 
@@ -79,14 +95,6 @@
 \usepackage[font=small]{caption}
 
 %%%
-% Subcaptions
-\usepackage{subcaption}
-
-%%%
-% Wrapping text around figures and tables
-\usepackage{wrapfig}
-
-%%%
 % Sideways figures
 \usepackage{rotating}
 
@@ -99,11 +107,6 @@
 \usepackage[version=3]{mhchem}
 
 %%%
-% Code listings
-% https://www.ctan.org/tex-archive/macros/latex/contrib/listings/
-\usepackage{listings}
-
-%%%
 % Titling
 % Access to title, author, etc. in the document (\maketitle clears the \@author, \@title, etc. macros)
 \usepackage{titling}
@@ -114,7 +117,7 @@
 \date{September 2016}
 
 %%%
-% Hyperlinks
+% Hyperlinks, cross reference links, contents, etc.
 %
 % (This should be as close to the end of the package imports as possible - see https://www.tug.org/applications/hyperref/manual.html)
 
@@ -133,11 +136,9 @@
 
 %%%
 % Clever cross references
-%
 % (This should be imported after hyperref - see https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing#Interpackage_interactions_for_varioref_.2C_hyperref_.2C_and_cleveref)
 %
-% Options:
-%  noabbrev - prevent abbreviated forms of reference type being used (e.g. eqn)
+% import with noabbrev to prevent abbreviated forms of reference type being used (e.g. eqn)
 \usepackage[noabbrev]{cleveref}
 
 %%%
