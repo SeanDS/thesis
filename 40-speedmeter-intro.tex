@@ -24,23 +24,19 @@ We use the \emph{two-photon formalism}~\cite{Caves1985, Schumaker1985} in order 
     b_s
   \end{pmatrix},
 \end{align}
-where $\vec{a}$ is the input field and $\vec{b}$ is the output field. The output for an interferometer can be expressed as the sum of the signal from the input scaled by the interferometer dynamics and the noise present at the detector~\cite{Danilishin2015}:
+where $\vec{a}$ and $\vec{b}$ are the input and output field vectors, respectively, both amplitude spectral density functions with units of \SI{}{\per\sqrthz}. The output for an interferometer can be expressed as the sum of the strain scaled by the interferometer dynamics and the noise present at the detector~\cite{Danilishin2015}:
 \begin{equation}
   \label{eq:ifo-output-signal}
-  \vec{b} = \vec{R} \frac{h}{h_{\text{SQL}}} + \mathbb{T} \vec{a},
+  \vec{b} = \frac{\tilde{h}}{\tilde{h}_{\text{SQL}}} \vec{R} + \mathbb{T} \vec{a},
 \end{equation}
-where $\vec{R}$ is the response of the interferometer from unit mirror motion to the output, $\frac{h}{h_{\text{SQL}}}$ is the motion of the mirrors in terms of strain normalised to the \gls{SQL} as discussed in \cref{sec:sql} and $\mathbb{T}$ represents the transfer matrix of the input fields to the output fields.
+where $\tilde{h}$ is the power spectral density of the strain applied to the test masses in units of \SI{}{\per\hertz}, normalised to the amplitude spectral density of the \gls{SQL}, $\tilde{h}_{\text{SQL}}$, as presented in \cref{eq:strainsql}; $\vec{R}$ is the (dimensionless) response of the interferometer from strain to the output and $\mathbb{T}$ represents the (dimensionless) transfer matrix of the input fields to the output fields.
 
 The differential arm response, $\vec{R}_{\left( - \right)}$, is given by
 \begin{equation}
   \label{eq:fp-mich-response}
   \vec{R}_{\left( - \right)} = \text{e}^{\text{i} \beta_{\text{FP}}} \sqrt{2 \kappa} \vec{H},
 \end{equation}
-where $\beta_{\text{FP}}$ is the round-trip phase of the light in the arms, $\kappa$ is the optomechanical coupling factor (as introduced in \cref{sec:sql}) and $\vec{H}$ represents the readout angle or \emph{quadrature}, $\zeta$. The round-trip phase is defined as
-\begin{equation}
-  \beta_{\text{FP}} = \arctan{\frac{f}{\gamma_{\text{arm}}}},
-\end{equation}
-where $f$ is frequency and $\gamma_{\text{arm}}$ is the \FP{} cavity half-bandwidth (see \cref{sec:cavity-fom}). $\vec{H}$ is defined as the cosine and sine quadratures of the readout angle:
+where $\beta_{\text{FP}}$ is the round-trip phase of the light in the arms, $\kappa$ is the optomechanical coupling factor (as introduced in \cref{sec:sql}) and $\vec{H}$ represents the cosine and sine quadratures of the readout angle, $\zeta$:
 \begin{equation}
   \vec{H} =
   \begin{pmatrix}
@@ -48,6 +44,13 @@ where $f$ is frequency and $\gamma_{\text{arm}}$ is the \FP{} cavity half-bandwi
     \sin \zeta
   \end{pmatrix}.
 \end{equation}
+
+The round-trip phase is defined as
+\begin{equation}
+  \beta_{\text{FP}} = \arctan{\frac{f}{\gamma_{\text{arm}}}},
+\end{equation}
+where $f$ is frequency and $\gamma_{\text{arm}}$ is the \FP{} cavity half-bandwidth (see \cref{sec:cavity-fom}).
+
 The effect that the mirror dynamics have on the readout is governed by $\kappa_{\text{MI}}$ defined for a \MI{} in \cref{eq:optomechanicalcoupling}. This models the effect that a force applied to a mirror has on its position. Mirrors suspended from pendulum systems can be approximated at high frequencies to be free masses, where the effect an applied force has on the position is diminished at higher frequencies, and in the case of a \FPMI{} this force-to-displacement filtering effect scales as $\frac{1}{f^2}$ below the cavity's pole frequency, and $\frac{1}{f^4}$ above it.
 
 The term $\mathbb{T}$ can be further broken down:
@@ -87,11 +90,11 @@ In the case of \gls{DC} readout as discussed in \cref{sec:homodyne-readout} and 
   \end{pmatrix}.
 \end{equation}
 
-We can calculate the signal at the \gls{DC} readout of the \FPMI{}, $O_{\text{dc}}$, as a function of differential arm cavity motion $h_{\left( - \right)}$ by rearranging \cref{eq:ifo-output-signal}:
+We can calculate the signal in the absence of noise at the \gls{DC} readout of the \FPMI{}, $O^{\text{dc}}_{\left( - \right)}$, as a function of differential arm cavity strain $\tilde{h}_{\left( - \right)}$ by rearranging \cref{eq:ifo-output-signal}:
 \begin{equation}
-  \frac{O_{\text{dc}}}{h_{\left( - \right)}} = \frac{\text{e}^{\text{i} \beta_{\text{FP}}} \sqrt{2 \kappa_{\text{MI}}}}{h_{\text{SQL}}}.
+  O^{\text{dc}}_{\left( - \right)} = \frac{\tilde{h}_{\left( - \right)}}{\tilde{h}_{\text{SQL}}} \text{e}^{\text{i} \beta_{\text{FP}}} \sqrt{2 \kappa_{\text{MI}}}.
 \end{equation}
-This is shown in \cref{fig:fp-mich-response} for arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{250}{\hertz}.
+This is shown in \cref{fig:fp-mich-response} for $\tilde{h} = 1$, arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{250}{\hertz}.
 
 \begin{figure}
   \centering
@@ -146,11 +149,11 @@ For \gls{DC} readout, the output noise spectral density is shown in \cref{fig:fp
   \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port. This shows the noise present at the photodetector produced due to quantum noise entering the interferometer and interacting with the mechanics. At high frequencies, the noise in a \MI{} is almost entirely due to the quantum shot noise on the sensor; at low frequencies the noise is dominated by the light reaching the sensor due to fluctuations in the positions of the test masses due to quantum radiation pressure noise.}
 \end{figure}
 
-The amplitude spectral density of the interferometer's sensitivity to differential arm cavity motion, $s_{\left( - \right)}$, is given by the ratio of the quantum noise amplitude spectral density at the sensor ($\sqrt{S_{\text{FPMI}}^{\text{dc}}}$) to the response of the interferometer to that sensor for differential arm cavity motion, i.e.
+The quantum noise power spectral density at the output as a function of $\tilde{h}_{\left( - \right)}$, $S_{\tilde{h}_{\left( - \right)}}$, is given by the ratio of the quantum noise power spectral density at the sensor to the response of the interferometer to that sensor for differential arm cavity strain, i.e.
 \begin{equation}
-  s_{\left( - \right)} = \frac{h_{\left( - \right)}}{O_{\text{dc}}} \sqrt{S_{\text{FPMI}}^{\text{dc}}},
+  S_{\tilde{h}_{\left( - \right)}} = \frac{S_{\text{FPMI}}^{\text{dc}}}{\left| O^{\text{dc}}_{\left( - \right)} \right|^2},
 \end{equation}
-and this is shown in \cref{fig:fp-mich-sensitivity}.
+in units of \SI{}{\per\hertz}. This is a useful indication of the sensitivity at the output of the interferometer. The more common amplitude spectral density representation, $s_{\tilde{h}_{\left( - \right)}} = \sqrt{S_{\tilde{h}_{\left( - \right)}}}$, is shown in \cref{fig:fp-mich-sensitivity}.
 
 \begin{figure}
   \centering
