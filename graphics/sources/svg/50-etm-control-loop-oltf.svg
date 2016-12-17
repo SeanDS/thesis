@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="50-etm-control-loop.svg">
+   sodipodi:docname="50-etm-control-loop-oltf.svg">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -23,8 +23,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8284271"
-     inkscape:cx="985.64895"
-     inkscape:cy="985.18329"
+     inkscape:cx="975.95007"
+     inkscape:cy="960.75102"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -1116,7 +1116,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1344,19 +1344,67 @@
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:nodetypes="cc"
+       sodipodi:nodetypes="ccscc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-67-0-67-7-9-6-2-5-0-6-6-4-3-3-9-8-7-9"
-       d="m 921.99551,136.51983 86.65909,0"
+       d="m 921.99551,136.51983 27.96926,0 c 0,0 2.75563,0.24725 4.10361,-1.23743 1.49979,-1.65191 1.43545,-3.67894 1.43545,-3.67894 l 0.0151,-18.17462"
        style="fill:none;stroke:#000000;stroke-width:2.99999928;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-2-6-2-3-6)" />
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="/tmp/ssm.png"
-       sodipodi:nodetypes="cc"
+       sodipodi:nodetypes="ccscc"
+       inkscape:connector-curvature="0"
+       id="path3821-3-5-7-67-0-67-7-9-6-2-5-0-6-6-4-3-3-9-8-7-5-7"
+       d="m 973.47897,114.98377 0,15.91515 c 0,0 -0.1912,2.60549 0.9569,3.88003 1.2774,1.41807 2.845,1.35724 2.845,1.35724 l 31.11623,0.014"
+       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-2-6-2-3-5-1)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/tmp/ssm.png"
+       sodipodi:nodetypes="ccscc"
        inkscape:connector-curvature="0"
        id="path3821-3-5-7-67-0-67-7-9-6-2-5-0-6-6-4-3-3-9-8-7-9-0"
-       d="m 922.31987,85.126024 179.99663,0"
+       d="m 922.31987,85.126024 98.32583,0 c 0,0 2.7557,0.24725 4.1036,-1.23743 1.4998,-1.65191 1.4355,-3.67894 1.4355,-3.67894 l 0.015,-18.174617"
        style="fill:none;stroke:#000000;stroke-width:2.99999928;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-2-6-2-3-6-3)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/tmp/ssm.png"
+       sodipodi:nodetypes="ccscc"
+       inkscape:connector-curvature="0"
+       id="path3821-3-5-7-67-0-67-7-9-6-2-5-0-6-6-4-3-3-9-8-7-5-7-6"
+       d="m 1044.16,63.589967 0,15.91515 c 0,0 -0.1912,2.605487 0.9569,3.880027 1.2774,1.41807 2.845,1.35724 2.845,1.35724 l 54.5096,0.014"
+       style="fill:none;stroke:#000000;stroke-width:2.99999952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Sstart-2-6-2-3-5-1-0)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4702-2-17-1-2-2"
+       y="55.439774"
+       x="1078.6898"
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ff7f0e;fill-opacity:1;stroke:none"
+       xml:space="preserve"
+       inkscape:export-filename="/tmp/ssm.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="55.439774"
+         x="1078.6898"
+         id="tspan4704-6-4-6-5-6"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';fill:#ff7f0e;fill-opacity:1">Coil I/O point</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4702-2-17-1-2-2-1"
+       y="106.77606"
+       x="1008.2228"
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#1f77b4;fill-opacity:1;stroke:none"
+       xml:space="preserve"
+       inkscape:export-filename="/tmp/ssm.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="106.77606"
+         x="1008.2228"
+         id="tspan4704-6-4-6-5-6-8"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';fill:#1f77b4;fill-opacity:1">ESD I/O point</tspan></text>
   </g>
 </svg>

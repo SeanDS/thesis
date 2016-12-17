@@ -39,7 +39,7 @@ ax2.semilogx(data[:, 0], np.angle(data[:, 1]) * 180 / np.pi, color=colour_a, alp
 ax2.semilogx(data[:, 0], np.angle(data[:, 2]) * 180 / np.pi, color=colour_b, alpha=lf.ALPHA_LINE_A)
 ax2.vlines(18, -200, 200, colors=colour_c, linestyles='dashed', zorder=2)
 
-ax1.set_ylabel('Closed loop transfer function')
+ax1.set_ylabel('Open loop transfer function')
 ax2.set_xlabel(r'Frequency $\left(\SI{}{\hertz}\right)$')
 ax2.set_ylabel(r'Phase $\left(\SI{}{\degree}\right)$')
 
