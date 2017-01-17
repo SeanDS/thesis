@@ -1,20 +1,10 @@
 % =============================================================================
 % Glasgow University thesis format, following as closely as possible:
-% http://theses.gla.ac.uk/gettingstarted/format.html#layout
-% 
+% http://www.gla.ac.uk/services/library/enlighten/theses/thesispreparationguidelines.pdf
+%
+% Originally by Stephen D. Strowes, modified by Sean Leavey
 % =============================================================================
 \NeedsTeXFormat{LaTeX2e}
-% \ProvidesClass{thesis}[%
-%  2009/01/09 Colin Perkins <csp@dcs.gla.ac.uk>. %
-%  2009/09/16 Modified by Tim Storer <tws@dcs.gla.ac.uk> to support non %
-%   pdf modes. %
-%  2009/11/12 Modified by Karen Renaud for PhD thesis %
-%  2011/03 Stephen Strowes <sds@dcs.gla.ac.uk> Heavily modified to match %
-%   Glasgow thesis format.%
-%  2015/08/12 Daniel Boland <email@dannyboland.com> Fixed title line spacing, %
-%   chapters openright in twoside, uses geometry package for margins with %
-%   'nogutter' option for digital copy.
-% ]
 \ProvidesClass{glasgowthesis}
 \PassOptionsToPackage{bindingoffset=2.5cm, left=1.5cm, right=1.5cm, top=1.8cm, bottom=1.8cm, includehead, includefoot}{geometry}
 \DeclareOption{nogutter}{
