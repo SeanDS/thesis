@@ -146,7 +146,7 @@ For \gls{DC} readout, the output noise spectral density is shown in \cref{fig:fp
 \begin{figure}
   \centering
   \input{graphics/generated/from-python/40-fp-mich-noise.pgf}
-  \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port. This shows the noise present at the photodetector produced due to quantum noise entering the interferometer and interacting with the mechanics. At high frequencies, the noise in a \MI{} is almost entirely due to the quantum shot noise on the sensor; at low frequencies the noise is dominated by the light reaching the sensor due to fluctuations in the positions of the test masses due to quantum radiation pressure noise.}
+  \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port, normalised to quantum shot noise. This shows the noise present at the photodetector produced due to quantum noise entering the interferometer and interacting with the mechanics. At high frequencies, the noise in a \MI{} is almost entirely due to the quantum shot noise on the sensor; at low frequencies the noise is dominated by the light reaching the sensor due to fluctuations in the positions of the test masses due to quantum radiation pressure noise.}
 \end{figure}
 
 The quantum noise power spectral density at the output as a function of $\tilde{h}_{\left( - \right)}$, $S_{\tilde{h}_{\left( - \right)}}$, is given by the ratio of the quantum noise power spectral density at the sensor to the response of the interferometer to that sensor for differential arm cavity strain, i.e.
@@ -222,7 +222,7 @@ The corresponding quantum noise at the output port is shown in \cref{fig:ssm-noi
 \begin{figure}
   \centering
   \input{graphics/generated/from-python/40-ssm-noise.pgf}
-  \caption[Quantum noise of a \SSM{} at the output port]{\label{fig:ssm-noise}Quantum noise of a \SSM{} at the output port. Like the \MI{}, the high frequency noise contribution arises from quantum shot noise from incoherent vacuum fluctuations entering the interferometer. In contrast to the \MI{}, the \SSM{} has flat noise at low frequencies below a transition region, as the test mass noise fluctuations are cancelled by the counter-propagating modes in the instance where the quantum radiation pressure forces are balanced.}
+  \caption[Quantum noise of a \SSM{} at the output port]{\label{fig:ssm-noise}Quantum noise of a \SSM{} at the output port, normalised to quantum shot noise. Like the \MI{}, the high frequency noise contribution arises from quantum shot noise from incoherent vacuum fluctuations entering the interferometer. In contrast to the \MI{}, the \SSM{} has flat noise at low frequencies below a transition region, as the test mass noise fluctuations are cancelled by the counter-propagating modes in the instance where the quantum radiation pressure forces are balanced.}
 \end{figure}
 
 While the response in a \SSM{} is reduced at low frequencies, the quantum noise is further reduced and so the overall quantum noise limited sensitivity is improved over an equivalent \FPMI{} in the absence of loss, as shown in \cref{fig:ssm-sensitivity}. For lossy \SM{}s the sensitivity is degraded. In the next subsection we consider loss in the case of a \SSM{} but loss in any \gls{QND} interferometers significantly affects sensitivity.
