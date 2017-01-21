@@ -6,7 +6,7 @@ import matplotlib
 """Look and feel settings for Sean's thesis"""
 
 # Document text width (use \the\textwidth in LaTeX to get)
-DOC_TEXT_WIDTH = 418.25368 # pt
+DOC_TEXT_WIDTH = 323 # pt
 
 def latex_dimension(scale):
     inches_per_pt = 1 / 72.27 # pt to inches
@@ -36,7 +36,7 @@ FIG_SIZE_A_TALL = latex_dimensions(1, 1)
 FIG_SIZE_B = latex_dimensions(0.75, 0.75)
 
 # big figure for full page
-FIG_SIZE_D = latex_dimensions(1, 1.4)
+FIG_SIZE_D = latex_dimensions(1, 1.25)
 
 # default line transparency
 ALPHA_LINE_A = 0.8
@@ -66,22 +66,22 @@ default_settings = {
     'font.serif': [],
     'font.sans-serif': [],
     'font.monospace': [],
-    'font.size': 12,
+    'font.size': 10,
     'grid.alpha': 0.5,
     'grid.linestyle': ':',
     'legend.borderaxespad': 1,
     'legend.fancybox': True,
-    'legend.fontsize': 10,
+    'legend.fontsize': 8,
     'legend.framealpha': 0.9,
     'lines.linewidth': LW_NORMAL,
     'lines.markeredgewidth': 2,
     'lines.markersize': 8,
     'xtick.major.pad': 10,
     'xtick.minor.pad': 10,
-    'xtick.labelsize': 12,
+    'xtick.labelsize': 10,
     'ytick.major.pad': 10,
     'ytick.minor.pad': 10,
-    'ytick.labelsize': 12
+    'ytick.labelsize': 10
 }
 
 # set defaults

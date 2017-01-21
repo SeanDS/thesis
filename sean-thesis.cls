@@ -5,16 +5,16 @@
 % Originally by Stephen D. Strowes, modified by Sean Leavey
 % =============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{glasgowthesis}
-\PassOptionsToPackage{bindingoffset=2.5cm, left=1.5cm, right=1.5cm, top=1.8cm, bottom=1.8cm, includehead, includefoot}{geometry}
-\DeclareOption{nogutter}{
-  \PassOptionsToPackage{bindingoffset=0cm, left=2.75cm, right=2.75cm, top=1.8cm, bottom=1.8cm, includehead, includefoot}{geometry}
-}
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
-\ProcessOptions
-\LoadClass[12pt,a4paper,openright]{book}
+\ProvidesClass{sean-thesis}
+\PassOptionsToPackage{bindingoffset=0mm, left=17mm, right=17mm, top=17mm, bottom=17mm, includehead, includefoot}{geometry}
 
-\usepackage{geometry}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
+
+\ProcessOptions
+\LoadClass[10pt,a5paper,openright]{book}
+
+% A5 page size
+\usepackage[paperheight=210mm, paperwidth=148mm]{geometry}
 
 \usepackage{ifpdf}
 \ifpdf
@@ -33,9 +33,9 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
-% Set line spacing to one-and-a-half.
+% Set line spacing to one.
 \usepackage{setspace}
-\onehalfspacing
+\singlespacing
 
 % Page margins. The University requires A4 (210 × 297 mm), with the following
 % spacings:
@@ -48,32 +48,11 @@
 % This page described the various parameters that can be set here:
 %  http://amath.colorado.edu/documentation/LaTeX/reference/layout.html
 
-% The actual width of the body text must be 15.5cm.
-\textwidth 15.5cm
+% 148mm (A5 width) minus the left and right padding
+\textwidth 114mm
 
-% The default side margin is 1" + whatever is set here. 1" == 2.54cm.
-% To meet the 4.0cm of 1.5cm margin + 2.5cm gutter:
-% 
-% On odd pages, the side margin must be set to 1.46cm. (i.e., the
-% default value of 2.54cm + an additional 1.46cm to achieve the 1.5cm
-% margin + 2.5cm gutter.)
-%\oddsidemargin 1.46cm
-% 
-% On even pages, the gutter is on the opposing side, to the side
-% margin is set to -1.04cm (i.e., the default value of 2.54cm - the
-% 1.04cm required to achieve the 1.5cm margin.)
-%\evensidemargin -1.04cm
-
-
-% The default top margin is also 1" (2.54cm), but must be 1.8cm to
-% conform to guidelines. Thus, the top margin must be set to 2.54cm -
-% 0.74cm to meet the required 1.8cm.
-%\topmargin -0.74cm
-
-% With 1.8cm at top and bottom, 26.1cm is left for body text. Instead
-% of 26.1cm, I set the text height to (26.1cm - 1.8cm), so the header
-% gets 1.8cm and the body text still fits within guidelines.
-\textheight 24.3cm
+% 210mm (A5 height) minus the top and bottom paddings, minus the header space
+\textheight 166mm
 
 % Preface environment to vertically centre the text
 % from https://tex.stackexchange.com/questions/154733/
@@ -88,14 +67,14 @@
 \setcounter{secnumdepth}{3}
 
 % Stop figures and other floats getting their own page unless they take up most of the page
-\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\floatpagefraction}{1}
+\renewcommand{\topfraction}{1}
 
 % Title page layout
 \renewcommand\maketitle{
   \begin{titlepage}%
     % This will apply only in here. It's the only way I know to affect
     % the positioning of the title without reverting to minipages.
-    \topmargin 2.54cm
     \let\footnotesize\small
     \let\footnoterule\relax
     \let\footnote \thanks

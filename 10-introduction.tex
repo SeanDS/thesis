@@ -7,7 +7,7 @@ At 09:50:45 \gls{UTC} on \nth{14} September 2015, gravitational waves from the e
 
 The waveforms for event \emph{\GWFIRSTEVENT{}}, as it has become known, are consistent with a binary black hole merger in that they were swept up in frequency before creating a loud ``chirp'' signal as shown in \cref{fig:gw150914}. The signal was only above each detector's background noise for the last few \SI{}{\milli\second} of this process, but it was consistent enough with theory that the collaboration could report a false alarm rate of less than \num{1} in \num{200000}. Not only did \LIGO{} make the first observation of a gravitational wave, it also made the first detection of a binary black hole system and found the missing experimental proof of Einstein's theory of general relativity. The field opening up due to \LIGO{} and the worldwide network of detectors in operation and under assembly, \GEO{}, \VIRGO{} and \KAGRA{}, represents an opportunity to study the universe in a completely new way.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/10-gw150914.pgf}
   \caption[Measured strain from the LIGO Hanford and Livingston detectors around the time of event \GWFIRSTEVENT{}]{\label{fig:gw150914}Measured strain from the \LIGO{} Hanford and Livingston detectors around the time of event \GWFIRSTEVENT{}. Fast data pipelines work to find the best fitting template for the calibrated detector measurements from precomputed banks representing the various combinations of the system's parameters. Beyond this initial identification, computationally intensive analysis of the data around the time of the candidate event is processed using a variety of techniques to identify the most likely source parameters, and these can later be matched to numerical relativity models. The numerical relativity models best fitting the analysed data are shown for each site in the lower panel. These curves were originally presented in ref.~\cite{Abbott2016}, and they have been passed through a \num{35} to \SI{350}{\hertz} bandpass filter to remove higher and lower frequency background noise unrelated to the signals.}
@@ -25,7 +25,7 @@ The long term goal of researchers in the field is to assemble a worldwide networ
 \section{General relativity and gravitational waves}
 A consequence of Einstein's theory of general relativity, gravitational waves are produced by changes in the quadrupole moment of mass distributions such as the presence of non-spherical asymmetries in spinning objects or pairs of objects coalescing with elliptical orbits. The effect a gravitational wave has on spacetime as it propagates is to stretch it in one direction whilst contracting it in another. This \emph{strain} can be expressed as a linear combination of ``plus'' and ``cross'' polarisation terms, shown for an initially circular ring of test particles on a 2D plane as a function of phase angle in \cref{fig:gravitational-wave-polarisation}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/10-gravitational-wave-polarisation.pdf}
   \caption[Plus and cross polarisations of a propagating gravitational wave]{\label{fig:gravitational-wave-polarisation}Plus and cross polarisations of a propagating gravitational wave. As the wave travels, shown in this depiction perpendicularly to the plane of this page, it stretches spacetime in one direction whilst contracting it in the other in an elliptic behaviour. A gravitational wave can be described as a linear combination of the two polarisations.}
@@ -84,7 +84,7 @@ showing that, in principle, the longer the distance separating the test masses t
 
 \Cref{fig:mi} shows the \MI{} topology that all current detectors are based on. Coherent light from a laser is incident at the input to a beam splitter whereupon it is coupled into two arms with highly reflective mirrors at each end. Perpendicular arms are most sensitive to the differential change in length in spacetime created by gravitational waves as shown in \cref{fig:gravitational-wave-polarisation}. The light recombining at the beam splitter contains phase fluctuations from the motion of each test mass with respect to the beam splitter. If the arm lengths are arranged in such a way as to cancel the round-trip phase accumulation at the beam splitter in the absence of gravitational wave signal, the phase change between the arms due to a signal will appear at the beam splitter's \emph{output} port where it can be measured by a photodetector.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/10-michelson.pdf}
   \caption[Simple \MI{}]{\label{fig:mi}The simple \MI{} used since the famous Michelson and Morley experiments of the 1880s. This version uses a laser as a source of monochromatic input light.}
@@ -97,7 +97,7 @@ As of the time of writing the \ALIGO{} detectors in the USA are online and commi
 
 Beyond this generation, plans are afoot to build facilities which will push the sensitivity of the ground-based gravitational wave detector to the limit, with the so-called \emph{third generation} detectors. A European collaboration is working towards the \emph{\ET{}}~\cite{ET2011} and the \LSC{} is working towards \emph{\LIGOCE{}}~\cite{Dwyer2015, aligocosmic2016}. Efforts are also under way to complement these detectors with a space-based counterpart with significantly enhanced low frequency sensitivity, \emph{\ELISA{}}~\cite{Amaro-Seoane2012}. Together, the network of ground- and space-based detectors will have unprecedented sensitivity from frequencies of \SI{}{\milli\hertz} to \SI{}{\kilo\hertz}, providing an ability to study the universe in unparalleled fidelity.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/10-detector-network.pgf}
   \caption[Worldwide interferometric gravitational wave detector network]{\label{fig:detector-network}Worldwide interferometric gravitational wave detector network. \GEO{}, \LHO{} and \LLO{} are operational, while \VIRGO{} and \KAGRA{} are being commissioned and \INDIGO{} is under construction. The locations of the \ET{} and \LIGOCE{} are as yet undecided. The long baselines between sites assists with sky localisation.}

@@ -69,7 +69,7 @@ There are a number of benefits to having multiple detectors located in the same 
 To provide maximum astrophysical reach the facility is intended to provide sensitivity across an unprecedented bandwidth, from around \SI{2}{\hertz} to \SI{10}{\kilo\hertz}\textemdash a bandwidth significantly larger than that of existing detectors. It was realised that the most technically feasible option to obtain this bandwidth would be to implement two different types of detector, each optimised to provide good sensitivity in either low or high frequencies~\cite{Hild2010}, an idea first proposed for \ALIGO{}~\cite{Conforto2004}. In the proposed \emph{ET-D} configuration~\cite{Hild2011}, a low power, cryogenic interferometer optimises sensitivity to reduce radiation pressure noise at the expense of shot noise, while a high power interferometer optimises high frequency sensitivity through the reduction of shot noise. The projected sensitivity of this arrangement is shown in black in \cref{fig:et-d-sensitivity}.
 
 % data from http://www.et-gw.eu/etsensitivities
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/70-et-d-sensitivity-curves.pgf}
   \caption[Sensitivity curves for the Einstein Telescope]{\label{fig:et-d-sensitivity}Sensitivity of the \ET{} detectors, based on the ET-D design~\cite{Hild2011}. \ETLF{} is optimised for low frequencies, \ETHF{} is optimised for high frequencies, and the combination yields sensitivity between \SI{2}{\hertz} and \SI{10}{\kilo\hertz}.}
@@ -116,7 +116,7 @@ The standard readout technique for \GEO{} and the current generation detectors i
 \subsection{\label{sec:dofs-of-drfpmi}Degrees of freedom}
 The \emph{degrees of freedom} of an interferometer are the non-degenerate ways in which the interferometer's mirrors may move away from the operating point. Each degree of freedom has a different precision requirement, with the most stringent typically being the degree of freedom corresponding to the gravitational wave channel. With \gls{DC} readout there is no local oscillator phase or alignment to independently control and so in a \DRFPMI{} the main degrees of freedom to consider are the arm cavity differential and common modes, the length between the beam splitter and the \glspl{ITM} and the recycling cavity lengths\footnote{Note that throughout this chapter we refer to the signal extraction cavity as a \emph{recycling} cavity to fit with convention.}. These are defined in the following sections and the lengths that compose each degree of freedom are shown in \cref{fig:et-lf-cavity-lengths}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\columnwidth]{graphics/generated/from-svg/70-cavity-lengths.pdf}
   \caption[Cavity lengths in a \DRFPMI{}]{\label{fig:et-lf-cavity-lengths}Cavity lengths in a \DRFPMI{}. The differential and common arm cavity modes compose $L_{\text{X}}$ and $L_{\text{Y}}$, while the auxiliary power and signal recycling and Michelson cavity lengths are composed of a subset of the distances between the beam splitter and each \gls{ITM} and the distances between each recycling mirror and the beam splitter.}
@@ -191,7 +191,7 @@ With the exception of the main \gls{DC} readout for \gls{DARM}, the error signal
 
 In a heterodyne sensing scheme, for the control sidebands to enter the output port their lengths must be macroscopically mismatched; this is called a \emph{Schnupp asymmetry}. For a Schnupp asymmetry $\Delta l_{\text{SCH}}$, the two arms in a \MI{} have length $l + \frac{\Delta l_{\text{SCH}}}{2}$ and $l - \frac{\Delta l_{\text{SCH}}}{2}$ where the nominal length is $l$. The Schnupp asymmetry differs from the previous microscopic distances defined in \crefrange{eq:darm-length}{eq:mich-length} in that it is typically equivalent to many thousands of wavelengths. Although a \DRFPMI{} will typically employ \gls{DC} readout and therefore does not require heterodyne error signals for the control of \gls{DARM}, this asymmetry is required for the control of \gls{SRCL}. The application of a Schnupp asymmetry within a \DRFPMI{} is shown in \cref{fig:schnupp-darm-offsets}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\columnwidth]{graphics/generated/from-svg/70-schnupp-darm-offsets.pdf}
   \caption[Schnupp asymmetry and differential arm cavity offset in a \DRFPMI{}]{\label{fig:schnupp-darm-offsets}The Schnupp asymmetry and differential arm cavity offset in a \DRFPMI{}. The Schnupp asymmetry allows the control sidebands resonant in the \MI{} to leave the beam splitter's output port where they may sense the motion of the signal recycling cavity. This is typically an offset of the order of \SI{}{\centi\meter}. The differential arm cavity (\gls{DARM}) offset is a microscopic detuning of the arm cavities to allow a small amount of light to interfere constructively at the beam splitter in order for it to act as a local oscillator to the signal sidebands at the output port. This detuning is typically of the order of \SI{}{\pico\meter}.}
@@ -223,7 +223,7 @@ The sensing scheme assumes that the interferometer has been brought close to its
 \subsubsection{Optimal input coupling}
 Placing a power recycling mirror before a \MI{}, as discussed in \cref{sec:power-recycling}, creates an additional cavity between the input and the \glspl{ITM}. The intention of the power recycling mirror is to minimise the light reflected back towards the laser, and in order to do this the cavity it creates should be \emph{impedance matched} (see, for example, ref.~\cite[section~5.1]{Freise2010}). The loss within the interferometer in combination with the transmissivity of the power recycling mirror $T_{\text{PRM}}$ determines the impedance matching. In the \gls{ET} design study the loss per surface is assumed to be \SI{35}{\ppm} and the transmissivity of the \glspl{ETM} is \SI{6}{\ppm}; both contribute to the total loss. It also suggests the transmissivity of the power recycling mirror to be \SI{4.6}{\percent}. \Cref{fig:reflected-power-vs-prm-trans} shows the ratio of the light power leaving the power recycling mirror heading back towards the laser to the input light power. The minimum reflected power corresponds to a power recycling mirror transmissivity of \SI{4.6}{\percent}, validating the choice from the \gls{ET} design study. If the scatter or substrate loss of the optics is changed in the future, for instance due to the development of new coatings or the introduction of additional steering mirrors, this model can be used to recalculate the optimum power recycling mirror transmissivity.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/70-reflected-power-vs-prm-transmissivity.pgf}
   \caption[Reflected power from \ETLF{} as a function of power recycling mirror transmissivity]{\label{fig:reflected-power-vs-prm-trans}Reflected power from \ETLF{} as a function of power recycling mirror transmissivity. For optimal coupling of the input laser light to the interferometer, the transmissivity of the power recycling mirror must be set to balance the input light with the total loss from the interferometer. For \ETLF{} with loss as per the \gls{ET} design study, this transmissivity should be \SI{4.6}{\percent}.}
@@ -274,7 +274,7 @@ In addition to facilitating the control of the signal recycling cavity, the Schn
 
 \Cref{fig:sideband-powers-vs-schnupp-detuned} shows the power of the upper and lower sideband fields with respect to the carrier in the recycling cavities of \ETLF{} given the Schnupp asymmetry and recycling cavity lengths with detuned signal recycling. Since the Schnupp asymmetry is a macroscopic length, it is not easily adjusted during operation and so it is necessary to designate this length in the design phase. Here we choose a Schnupp asymmetry that attempts to maximise the difference in power between the two sideband frequencies in the recycling cavities during detuned operation. This is around \SI{0.08}{\meter}, as shown by the black dashed line in \cref{fig:sideband-powers-vs-schnupp-detuned}. Also observe that a Schnupp asymmetry of \num{0} results in no sideband power in the signal recycling cavity, and that asymmetries of around \SI{0.5}{\meter} result in a situation where both sideband frequencies are resonant in both recycling cavities. In the latter case it would be possible to obtain decoupled control signals through control matrix operations as discussed in \cref{sec:control-matrix-operations}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/70-sideband-powers-vs-schnupp-detuned.pgf}
   \caption[Power of the control sidebands in the cavities of \ETLF{} in detuned configuration as a function of Schnupp asymmetry]{\label{fig:sideband-powers-vs-schnupp-detuned}Power of the control sidebands in the cavities of \ETLF{} during detuned operation as a function of Schnupp asymmetry. A macroscopic offset\textemdash the \emph{Schnupp asymmetry}\textemdash is intentionally introduced to the Michelson length in order to allow the coupling of the sidebands $\pm f_1$ and $\pm f_2$ into the signal recycling cavity for the purposes of control whilst maintaining the dark fringe condition for the carrier. Here, we choose to allow $\pm f_2$, but not $\pm f_1$, to couple to the signal recycling cavity. The power is a reasonable estimate for the relative sensitivity of the sidebands in the recycling cavities, and we choose an asymmetry which gives good separation of the power of the sidebands in each cavity, \SI{0.08}{\meter}.}
@@ -283,7 +283,7 @@ In addition to facilitating the control of the signal recycling cavity, the Schn
 \subsubsection{Optimisation of the signal recycling cavity length}
 Note the discrepancy between two of the control sideband frequency constraints in \cref{sec:control-sideband-freqs}: the power and signal recycling cavities cannot both be simultaneously resonant and anti-resonant to $f_1$ and $f_2$ given that $f_2 = 5 f_1$. To resolve this discrepancy we can scan the length of the signal recycling cavity in order to find a position where $f_2$ is resonant and $f_1$ is not, as shown in \cref{fig:sideband-powers-srcl-detuned}. This could otherwise have been achieved by changing $f_2$ by a fraction of the signal recycling cavity's \gls{FSR} given the relation between frequency and length shown in \cref{eq:freq-to-length}. We can see that changing the signal recycling cavity length from \SI{310}{\meter} to \SI{311.585}{\meter} results in the desired sideband resonance condition for the $+f_2$ sideband. The power of $f_2$ in the power recycling cavity drops as the lower and upper sidebands get critically coupled into the signal recycling cavity. As the signal recycling cavity detuning in \ETLF{} is large, the signal recycling cavity is not resonant for both the upper and lower $f_2$ sidebands (in the tuned signal recycling cavity configuration the upper and lower sidebands are degenerate).
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/70-sideband-powers-vs-srcl-detuned.pgf}
   \caption[Power of the control sidebands in the signal recycling cavity of \ETLF{} in detuned configuration as a function of signal recycling cavity length]{\label{fig:sideband-powers-srcl-detuned}The power in each sideband in each recycling cavity as a function of signal recycling cavity length. The nominal signal recycling cavity length defined by the \gls{ET} design study, \SI{310}{\meter}, is not resonant for the second sideband as intended. As the sideband frequencies are different, we can fix this situation by scanning the signal recycling cavity to find a length that is resonant for $f_2$ but not for $f_1$. For the given choice of Schnupp asymmetry, this occurs at a length of \SI{311.585}{\meter} for the upper sideband. The choice to optimise either the upper or lower sideband is arbitrary since both sidebands contribute signal at the readout.}
@@ -299,7 +299,7 @@ For our model we define the \gls{DARM} offset as a microscopic detuning of the a
 
 \Cref{fig:total-power-vs-darm-offset-detuned} shows the power at the output port and in the arm cavities as a function of \gls{DARM} offset in the detuned configuration. Standard photodetectors used in \ALIGO{} and \AVIRGO{} can handle up to a few \num{10}s of \SI{}{\milli\watt} and this should ideally be the power incident upon the photodetector at the output port to maximise the signal to dark noise ratio. In \ETLF{}, however, the \gls{DARM} offset required to reach this figure would create a significant mismatch in the power of each arm leading to a strong optical spring effect. For an offset of \SI{12}{\pico\meter}, the power at the output can be set to around \SI{10}{\milli\watt} with a difference of around 3\% in the power in the arms, which should be tolerable in terms of sensitivity and noise coupling.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/70-total-power-vs-darm-offset-detuned.pgf}
   \caption[Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity offset]{\label{fig:total-power-vs-darm-offset-detuned}Carrier power at the output port of \ETLF{} in detuned configuration as a function of differential arm cavity length (\gls{DARM}) offset. The differential arm detuning required to allow carrier light to enter the dark port for \gls{DC} readout involves an increase or decrease in the microscopic length of each arm cavity, and this changes the circulating power. The compromise must be made between the power available to the photodetector for sensing whilst maintaining reasonably balanced arm cavities to prevent optical springs from influencing the sensitive band and creating additional noise coupling.}
@@ -311,7 +311,7 @@ The power in each field within each relevant space or cavity of the interferomet
 
 \begin{table}
   \centering
-  \resizebox{16cm}{!}{%
+  \resizebox{\columnwidth}{!}{%
     \begin{tabular}{r|ccccccccc|c}
       & \textbf{-68 MHz} & \textbf{-57 MHz} & \textbf{-45 MHz} & \textbf{-11 MHz} & \textbf{Carrier} & \textbf{11 MHz} & \textbf{45 MHz} & \textbf{57 MHz} & \textbf{68 MHz} & \textbf{Total} \\
       \hline
@@ -338,7 +338,7 @@ The power in each field within each relevant space or cavity of the interferomet
   \item \textbf{AS} (\emph{asymmetric}) senses the light at the output port of the \DRFPMI{}.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/70-dof-readouts.pdf}
   \caption[Some available readout ports for sensing and control in \ETLF{} in detuned configuration]{\label{fig:dof-readouts}Some available readout ports for sensing motion of the degrees of freedom in \ETLF{} in detuned configuration. Phase modulation sidebands are imparted upon the input laser light at two primary frequencies before it enters the interferometer. Photodetectors are placed at three ports to sense the carrier and these sidebands for the purposes of sensing and control. The most important readout is \AS{}, which strongly senses \gls{DARM}, and this is placed in transmission of the signal recycling mirror. Light reflected back towards the laser is sensed via a Faraday isolator at the \REFL{} port, and a pick-off\textemdash \POP{}\textemdash senses light in the power recycling cavity.}
@@ -348,16 +348,18 @@ For the purposes of the control simulations, each readout port contains incident
 
 \begin{table}
   \centering
-  {\renewcommand{\arraystretch}{1.2} % for extra vertical spacing between rows
-    \begin{tabular}{r|ccc}
-      \textbf{Offset} & \textbf{Output port} & \textbf{Power recycling cavity pick-off} & \textbf{Reflected light pick-off} \\
-      \hline
-      \num{0} & \ASDC{} & \textemdash & \textemdash \\
-      $\pm f_1$    & \ASFIRSTI{}, \ASFIRSTQ{} & \POPFIRSTI{}, \POPFIRSTQ{} & \REFLFIRSTI{}, \REFLFIRSTQ{} \\
-      $\pm f_2$    & \ASSECONDI{}, \ASSECONDQ{} & \POPSECONDI{}, \POPSECONDQ{} & \REFLSECONDI{}, \REFLSECONDQ{} \\
-      $\pm \left( f_2 - f_1 \right)$ & \ASDIFFI{}, \ASDIFFQ{} & \POPDIFFI{}, \POPDIFFQ{} & \REFLDIFFI{}, \REFLDIFFQ{} \\
-      $\pm \left( f_1 + f_2 \right)$ & \ASSUMI{}, \ASSUMQ{} & \POPSUMI{}, \POPSUMQ{} & \REFLSUMI{}, \REFLSUMQ{}
-    \end{tabular}
+  \resizebox{\columnwidth}{!}{%
+    {\renewcommand{\arraystretch}{1.2} % for extra vertical spacing between rows
+      \begin{tabular}{r|ccc}
+        \textbf{Offset} & \textbf{Output port} & \textbf{Power recycling cavity pick-off} & \textbf{Reflected light pick-off} \\
+        \hline
+        \num{0} & \ASDC{} & \textemdash & \textemdash \\
+        $\pm f_1$    & \ASFIRSTI{}, \ASFIRSTQ{} & \POPFIRSTI{}, \POPFIRSTQ{} & \REFLFIRSTI{}, \REFLFIRSTQ{} \\
+        $\pm f_2$    & \ASSECONDI{}, \ASSECONDQ{} & \POPSECONDI{}, \POPSECONDQ{} & \REFLSECONDI{}, \REFLSECONDQ{} \\
+        $\pm \left( f_2 - f_1 \right)$ & \ASDIFFI{}, \ASDIFFQ{} & \POPDIFFI{}, \POPDIFFQ{} & \REFLDIFFI{}, \REFLDIFFQ{} \\
+        $\pm \left( f_1 + f_2 \right)$ & \ASSUMI{}, \ASSUMQ{} & \POPSUMI{}, \POPSUMQ{} & \REFLSUMI{}, \REFLSUMQ{}
+      \end{tabular}
+    }
   }
   \caption[Probes that sense the light fields propagating within \ETLF{}]{\label{tab:et-lf-probes}Probes that sense the light fields propagating within \ETLF{} with respect to the carrier frequency. The carrier is sensed by \ASDC{} at the interferometer's output port, which is the light that propagates through the signal recycling mirror. The control sidebands, and the beats between the sidebands, are sensed at the same port demodulated at each relevant frequency, along with similar readouts sensing a small transmission of light through a folding mirror in the power recycling cavity (\POP{}) and the light reflected from the interferometer (\REFL{}).}
 \end{table}
@@ -375,15 +377,23 @@ The sensing matrix for the detuned configuration given the readout ports defined
 
 The gravitational wave signal will primarily affect \gls{DARM}, and this is by design sensed by \ASDC{}. The common mode can be sensed at \REFLFIRST{}. The \gls{MICH}, \gls{PRCL} and \gls{SRCL} cavity error signals are difficult to separate due to the cross-coupling of control sidebands via the Schnupp asymmetry and the sideband asymmetry created by the presence of a detuned signal recycling cavity. As the control system will be implemented in a \LIGO{} \gls{CDS}-style system~\cite{Bork2010}, it will be possible to define in software error signals formed from linear combinations of different sensor signals that decouple other degrees of freedom from a particular readout, as discussed in \cref{sec:control-matrix-operations}. In \cref{tab:et-lf-sensing-matrix-detuned}, \gls{PRCL} is dominant over \gls{MICH} and \gls{SRCL} at \POPFIRST{} and so this represents a good extraction point for the motion of the power recycling cavity. \gls{MICH} couples strongly to a number of ports but alongside strong signals from the other degrees of freedom. Its strongest ports, \ASDC{} and \ASSECOND{}, contain much larger signals from \gls{DARM} due to the difference in finesse between the Michelson and the arm cavities, and this would be difficult to remove electronically given the phase degeneracy. A better readout could be to use \POPSECOND{} with the dominant \gls{PRCL} signal suppressed with careful tuning of the demodulation phase. Residual \gls{PRCL} coupling can be subtracted electronically.
 
+% Dirty hack to get this to display in a reasonable place
+\clearpage
+\begin{figure}[H]
+  \centering
+  \input{graphics/generated/from-python/70-sweeps-detuned.pgf}
+  \caption[Sweeps through the zero-crossings of the chosen error signals in ET-LF]{\label{fig:sweeps-et-lf}Sweeps through the zero-crossings of the chosen error signals in \ETLF{} in the detuned configuration. Each error signal is linear about the operating point, which ensures a simple, bipolar error signal is available for the purposes of controlling each associated degree of freedom. This linearity has a different range for each readout, with \gls{CARM} and \gls{DARM} requiring the greatest precision.}
+\end{figure}
+\clearpage
+
 \gls{SRCL} is difficult to sense with $\pm f_1$ because they are not resonant in the signal recycling cavity, nor a single demodulation at $\pm f_2$ because these error signals are contaminated with contributions from \gls{MICH} or \gls{PRCL} given the cross-coupling facilitated by the Schnupp asymmetry. A possible sensing strategy could utilise the beats between sidebands found at \REFLDIFF{} or \REFLSUM{} where the contribution from \gls{MICH} and \gls{PRCL} can be suppressed with suitable choice of demodulation phase. All \gls{SRCL} signals contain an offset from zero due to the detuning, since $-f_2$ is not resonant when the signal recycling mirror is at its operating point (see \cref{fig:sideband-powers-srcl-detuned}). To use \REFLSUM{} for \gls{SRCL} control an offset equivalent to \SI{-4.2}{\milli\watt} will be necessary.
 
-\begin{table}
+\begin{table}[t]
   \centering
-  \resizebox{16cm}{!}{%
+  \resizebox{\columnwidth}{!}{%
     {\renewcommand{\arraystretch}{1.2} % for extra vertical spacing between rows
       \begin{tabular}{r|ccccc}
 	& \textbf{CARM} & \textbf{DARM} & \textbf{MICH} & \textbf{PRCL} & \textbf{SRCL} \\ 
-	\hline
 	\hline
 	\textbf{\ASDC{}} & \num{1.44e+06} & \red{\textbf{\num{4.99e+08}}} & \num{1.17e+06} & \num{1.21e+05} & \num{1.39e+04} \\ 
 	\textbf{\ASFIRST{}} & \num{2.25e+06} (\SI{-32.56}{\degree}) & \num{3.00e+07} (\SI{55.83}{\degree}) & \num{6.25e+04} (\SI{56.09}{\degree}) & \num{7.54e+03} (\SI{77.99}{\degree}) & \num{1.09e+03} (\SI{58.46}{\degree}) \\ 
@@ -406,39 +416,34 @@ The gravitational wave signal will primarily affect \gls{DARM}, and this is by d
   \caption[Gradients of the error signals from each degree of freedom to each probe in \ETLF{} at dc]{\label{tab:et-lf-sensing-matrix-detuned}Gradients of the error signals from each degree of freedom to each probe, in units of \SI{}{\watt\per\meter}, in \ETLF{} at \gls{DC}. The suggested readout probes for each degree of freedom are shown in bold red. The $I$ and $Q$ quadratures of each heterodyne readout have been combined into a single magnitude and the phase representing the greatest slope and the phase at which it is achieved. They have maximum gradient at phase angles determined by the propagation of the control sidebands through the interferometer. Probes can be optimised to sense the motion of a particular degree of freedom by adjusting the angle at which the sensor $I$ and $Q$ quadratures are combined, but signals on sensors that contain strong signals from other degrees of freedom at nearby phase angles are difficult to use.}
 \end{table}
 
-\Cref{tab:et-lf-sensing-matrix-detuned-normalised} shows the gradient of each degree of freedom's error signal at each of the suggested sensors. The values have been normalised with respect to the degree of freedom to be read out. This table shows that the hierarchical control techniques discussed in \cref{sec:decoupled-sidebands} will be necessary in order to decouple the individual degrees of freedom.
-
-\begin{table}
+\begin{table}[t]
   \centering
-  {\renewcommand{\arraystretch}{1.2} % for extra vertical spacing between rows
-    \begin{tabular}{r|ccccc}
-      & \textbf{CARM} & \textbf{DARM} & \textbf{MICH} & \textbf{PRCL} & \textbf{SRCL} \\ 
-      \hline
-      \hline
-      \textbf{\REFLFIRST{}} & \red{\textbf{\num{1.0}}} & \num{9.1e-3} & \num{1.6e-5} & \num{3.5e-3} & \num{1.6e-6} \\
-      \textbf{\ASDC{}} & \num{2.8e-3} & \red{\textbf{\num{1.0}}} & \num{2.3e-3} & \num{2.4e-4}  & \num{2.8e-5} \\
-      \textbf{\POPSECOND{}} & \num{1.8e3} & \num{1.6e1} & \red{\textbf{\num{1.0}}} & \num{4.3e0} & \num{3.7e-1} \\
-      \textbf{\POPFIRST{}} & \num{3.0e2} & \num{2.7e0} & \num{3.4e-3} & \red{\textbf{\num{1.0}}} & \num{1.2e-4} \\
-      \textbf{\REFLSUM{}} & \num{2.0e1} & \num{6.5e0} & \num{1.1e0} & \num{6.9e0} & \red{\textbf{\num{1.0}}}
-    \end{tabular}
+  \resizebox{0.8\columnwidth}{!}{
+    {\renewcommand{\arraystretch}{1.2} % for extra vertical spacing between rows
+      \begin{tabular}{r|ccccc}
+        & \textbf{CARM} & \textbf{DARM} & \textbf{MICH} & \textbf{PRCL} & \textbf{SRCL} \\ 
+        \hline
+        \textbf{\REFLFIRST{}} & \red{\textbf{\num{1.0}}} & \num{9.1e-3} & \num{1.6e-5} & \num{3.5e-3} & \num{1.6e-6} \\
+        \textbf{\ASDC{}} & \num{2.8e-3} & \red{\textbf{\num{1.0}}} & \num{2.3e-3} & \num{2.4e-4}  & \num{2.8e-5} \\
+        \textbf{\POPSECOND{}} & \num{1.8e3} & \num{1.6e1} & \red{\textbf{\num{1.0}}} & \num{4.3e0} & \num{3.7e-1} \\
+        \textbf{\POPFIRST{}} & \num{3.0e2} & \num{2.7e0} & \num{3.4e-3} & \red{\textbf{\num{1.0}}} & \num{1.2e-4} \\
+        \textbf{\REFLSUM{}} & \num{2.0e1} & \num{6.5e0} & \num{1.1e0} & \num{6.9e0} & \red{\textbf{\num{1.0}}}
+      \end{tabular}
+    }
   }
   \caption[Normalised gradients of the suggested sensors to be used for the control of \ETLF{}'s degrees of freedom]{\label{tab:et-lf-sensing-matrix-detuned-normalised}Normalised gradients of the suggested sensors to be used for the control of \ETLF{}'s degrees of freedom. Each row from \cref{tab:et-lf-sensing-matrix-detuned} corresponding to a sensor used to control a degree of freedom has been scaled by the gradient of the error signal corresponding to the respective degree of freedom. This shows the prominence of the other degrees of freedom on each sensor without having applied any of the other control techniques as discussed in \cref{sec:decoupled-sidebands}.}
 \end{table}
 
-Error signals corresponding to the suggested readouts for each degree of freedom are shown in \cref{fig:sweeps-et-lf}. These are produced by calculating the power on each sensor at the relevant demodulation frequency as the mirrors are driven as shown in \cref{tab:et-lf-driving-coefficients} and represent the low-frequency limit of the transfer functions of each degree of freedom to each sensor.
+\Cref{tab:et-lf-sensing-matrix-detuned-normalised} shows the gradient of each degree of freedom's error signal at each of the suggested sensors. The values have been normalised with respect to the degree of freedom to be read out. This table shows that the hierarchical control techniques discussed in \cref{sec:decoupled-sidebands} will be necessary in order to decouple the individual degrees of freedom.
 
-\begin{figure}
-  \centering
-  \input{graphics/generated/from-python/70-sweeps-detuned.pgf}
-  \caption[Sweeps through the zero-crossings of the chosen error signals in ET-LF]{\label{fig:sweeps-et-lf}Sweeps through the zero-crossings of the chosen error signals in \ETLF{} in the detuned configuration. Each error signal is linear about the operating point, which ensures a simple, bipolar error signal is available for the purposes of controlling each associated degree of freedom. This linearity has a different range for each readout, with \gls{CARM} and \gls{DARM} requiring the greatest precision.}
-\end{figure}
+Error signals corresponding to the suggested readouts for each degree of freedom are shown in \cref{fig:sweeps-et-lf}. These are produced by calculating the power on each sensor at the relevant demodulation frequency as the mirrors are driven as shown in \cref{tab:et-lf-driving-coefficients} and represent the low-frequency limit of the transfer functions of each degree of freedom to each sensor.
 
 The gradient of the \ASDC{} readout is zero when the arm cavities are tuned, consistent with \cref{fig:total-power-vs-darm-offset-detuned}, showing that some classical carrier light power is always present for functional \gls{DC} readout. The \gls{SRCL} error signal shows the operating point crossing at a power of \SI{4.2}{\milli\watt}, necessitating an offset.
 
 \subsection{Sensitivity of the scheme}
 The sensitivity for \ETLF{} shown in \cref{fig:et-d-sensitivity} assumes that the interferometer contains squeezed vacuum input via two filter cavities in addition to the presence of seismic and other noise, and these features have not been modelled in this work. A comparison is shown in \cref{fig:et-lf-control-scheme-sensitivity} between the quantum noise limited sensitivity for \ETLF{} in the absence of squeezing, as calculated by the tool used to present the results in the ET-D study~\cite{Hild2011}, \gls{GWINC}~\cite{gwinc}, and the quantum noise limited sensitivity of the \ASDC{} readout in this scheme modelled with Optickle. The reference curve from \gls{GWINC} has been scaled to remove the effect of squeezing injection, for comparison to the work presented here. Also shown is a simulated curve generated using \emph{\gls{FINESSE}} (see \cref{sec:finesse-sim}) with identical parameters to those used in this work, showing good agreement with that of Optickle. The simulated curves show that the choice of parameters in this work do not negatively impact upon the design sensitivity of the interferometer. The difference in sensitivity between the new simulations and the reference in the region of the cavity pole (\SI{7}{\hertz}) and the optical spring from the detuned signal recycling cavity (\SI{25}{\hertz}) is due to the chosen \gls{DARM} offset, resulting in different quantum shot noise at the photodetector, and the inclusion of additional losses arising from the filter cavities in the reference curve.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/70-et-lf-control-scheme-sensitivity-curve.pgf}
   \caption[ET-LF quantum noise limited sensitivity using the conceptual control scheme]{\label{fig:et-lf-control-scheme-sensitivity}\ETLF{} quantum noise limited sensitivity using the conceptual control scheme, with no squeezed light injection. The reference curve from the ET-D study is shown next to the sensitivity calculated with the Optickle model developed in this chapter, and also a \gls{FINESSE} curve generated using identical parameters. The reference and simulation curves roughly agree, showing that the chosen parameters do not have a significant impact upon the sensitivity, though a difference in the noise calculations and the \gls{DARM} offset assumed in this work creates the slight mismatch in the most sensitive region.}
@@ -446,10 +451,10 @@ The sensitivity for \ETLF{} shown in \cref{fig:et-d-sensitivity} assumes that th
 
 The parameters used in the proposed control scheme are shown in \cref{tab:et-lf-updated-parameters} alongside the pre-existing parameters from the \gls{ET} design study. It should be noted that the proposed scheme is not rigorously optimised, and does not consider a number of other control possibilities such as the use of secondary reflections arising from the anti-reflective coatings on the beam splitter and \glspl{ITM} or the use of higher order combinations of $f_1$ and $f_2$ such as \emph{3f} signals used in the lock acquisition sequence of \VIRGO{}~\cite{Acernese2008} and \ALIGO{}~\cite{Staley2014}. It serves, however, as a first concept for the control of \ETLF{} proving that it can in principle be controlled in its detuned state.
 
-\begin{table}
+\begin{table}[htp]
   \centering
-  \resizebox{16cm}{!}{%
-    \begin{tabular}{r|c|cc}
+  \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{r|c|c|c}
       \textbf{Parameter} & \textbf{Symbol in text} & \textbf{Design study value} & \textbf{Updated value} \\
       \hline
       Laser wavelength & & \multicolumn{2}{c}{\SI{1550}{\nano\meter}} \\
@@ -465,7 +470,8 @@ The parameters used in the proposed control scheme are shown in \cref{tab:et-lf-
       Signal recycling cavity length & $L_{\text{SRCL}}$  & \SI{310}{\meter} & \SI{311.585}{\meter} \\
       Schnupp asymmetry & $\Delta l_{\text{SCH}}$  & \textemdash & \SI{0.08}{\meter} \\
       \gls{DARM} offset & $\delta L_{\text{DARM}}$  & \textemdash & \SI{12}{\pico\meter} \\
-      Control sideband frequencies & $f_1$, $f_2$ & \textemdash & \SI{11363101}{\hertz}, \SI{56815505}{\hertz} \\
+      First control sideband frequency & $f_1$ & \textemdash & \SI{11363101}{\hertz} \\
+      Second control sideband frequency & $f_2$ & \textemdash & \SI{56815505}{\hertz} \\
       Control sideband modulation depths & & \textemdash & \SI{0.1}{\radian} \\
       Demodulation frequencies & & \textemdash & $f_1$, $f_2$, $f_2 - f_1$, $f_1 + f_2$
     \end{tabular}

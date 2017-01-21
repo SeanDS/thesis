@@ -18,7 +18,7 @@ Apart from using different coating materials~\cite{Granata2013, Cole2013} or dif
   \label{eq:grating-equation}
 \end{equation}
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\textwidth]{graphics/generated/from-svg/30-waveguide-reflection.pdf}
   \caption[Propagation of light within a waveguide mirror]{\label{fig:waveguide-reflection}Propagation of light within a waveguide mirror (a reproduction of~\cite[figure~1]{Brown2013}). The grating and waveguide layers have refractive index $n_H$, and sit atop a substrate of refractive index $n_L$. The incident light (black) diffracts into the first orders $\pm 1$ (orange). At the substrate the light reflects and at the grating the light either interferes with the incident light to produce reflection or reflects back into the waveguide (blue). The numbers next to the arrows represent the diffraction order, $T$ represents transmission through the grating, $R$ represents reflection from the grating and each asterisk represents a single diffraction. The grating parameters can be tuned such that the phase difference at the front (waveguide) surface produces high reflection. In realisations of waveguide mirrors such as this, a thin etch-stop layer is placed between the grating and waveguide layers to assist fabrication~\cite{Friedrich2011}.}
@@ -26,7 +26,7 @@ Apart from using different coating materials~\cite{Granata2013, Cole2013} or dif
 
 We have shown in ref.~\cite{Heinert2013} that a suitably optimised \gls{WGM} can provide a reduction in coating thermal noise amplitude of a factor of 10 at cryogenic temperature compared to the \gls{ETM} employed in Advanced LIGO. \Cref{fig:coating-vs-grating-noise} shows Brownian thermal noise modelled for different numbers of bilayers (following ref.~\cite{Harry2002}) for the Advanced LIGO \gls{ETM} alongside the grating thermal noise result from Heinert \etal{}. For each additional bilayer in the dielectric stack, the mirror's transmissivity decreases but its Brownian thermal noise increases. The grating, however, requires only a change in grating parameters to produce a specific transmissivity, and this does not have a strong dependence on Brownian thermal noise.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/30-coating-vs-grating-noise.pgf}
   \caption[Brownian thermal noise in an Advanced LIGO style end test mass at room temperature versus that of a waveguide mirror at cryogenic temperature, as a function of transmissivity]{\label{fig:coating-vs-grating-noise}Reproduction of results from Heinert \etal{}~\cite{Heinert2013} showing Brownian thermal noise in an Advanced LIGO style \gls{ETM} at room temperature versus that of a \gls{WGM} at cryogenic temperature, as a function of transmissivity. The markers in the coating curve represent the number of quarter-wavelength bilayers forming the dielectric stack. Each additional bilayer in the coating stack produces lower overall transmissivity, but also increases Brownian thermal noise. The grating's Brownian thermal noise contribution is independent of transmissivity. The transmissivity of Advanced LIGO's \gls{ETM} is shown as a vertical, dashed line.}
@@ -42,7 +42,7 @@ Previous efforts to demonstrate grating structures as alternatives to dielectric
 where $\zeta_a$ and $\zeta_b$ represent the relative optical path length of each depicted ray.
 The phase modulation induced in the reflected light by periodic, transverse motion of the \gls{WGM} is proportional to the period with a \SI{90}{\degree} phase lead over the transverse motion~\cite{Barr2011}. The frequency noise added to the reflected light can be enough to mitigate the improvement in coating thermal noise, as witnessed in a study of \nth{2} order Littrow gratings~\cite{Barr2011}, where the level of coupling between longitudinal and transverse motion was found to be 1:100. Although \glspl{WGM} also possess gratings, the resonant waveguide structure can be tuned to remove this effect as shown in simulations by Brown \emph{et al.}~\cite{Brown2013}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\textwidth]{graphics/generated/from-svg/30-grating-propagation.pdf}
   \caption[Optical path length changes $\zeta_a$ and $\zeta_b$ due to transverse motion of a Littrow grating]{\label{fig:grating-propagation}Optical path length changes $\zeta_a$ and $\zeta_b$ due to transverse motion of a Littrow grating, based on ref.~\cite[figure~4]{Freise2007}. Incident light diffracted into a different order undergoes a path length change $\delta l_L = \zeta_a + \zeta_b$.}
@@ -50,7 +50,7 @@ The phase modulation induced in the reflected light by periodic, transverse moti
 
 There are two mechanisms by which grating mirrors can couple transverse motion into longitudinal phase changes (see \cref{fig:waveguide-scanning}). The first is through transverse motion of the grating, which can in principle be minimised with appropriate suspension design. The second mechanism is the coupling of changes in the opposite cavity mirror's alignment into the spot position on the grating mirror. This effect is of particular importance to gravitational wave interferometers, where longer arm lengths can increase its detrimental impact. The latter mechanism is the primary focus of this work.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/30-waveguide-scanning.pdf}
   \caption[Two ways in which light can be scanned across the surface of a waveguide mirror]{\label{fig:waveguide-scanning}Two ways in which light can be scanned across the surface of the \gls{WGM}. The left panel shows the effect of \gls{WGM} motion with respect to a static beam, while the right panel shows the effect of light beam motion (due to rotation of the cavity mirror opposite the \gls{WGM}) with respect to a static \gls{WGM}. In the latter picture, the cavity's eigenmode is translated transversely to the optical axis as one mirror is rotated.}
@@ -114,7 +114,7 @@ and the total length signal from all mirror effects will then be:
   \delta l \left( \theta \right) = \delta l_W + \delta l_E \approx \theta \kappa \omega_1 + y \theta + \frac{d}{4} \theta^2.
 \end{equation}
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.5\columnwidth]{graphics/generated/from-svg/30-mirror-longitudinal-effect.pdf}
   \caption[Geometrical end test mass longitudinal coupling]{\label{fig:mirror-longitudinal-effect}Geometrical \gls{ETM} longitudinal coupling. For a given rotation $\theta$ and spot centre position offset $y$, the (longitudinal) position change in the surface of the mirror (show in blue) as seen by the reflected light is approximately $y \theta + \frac{d}{4} \theta^2$. The straight, solid red line in the figure shows this longitudinal change.}
@@ -125,7 +125,7 @@ Considering the \gls{ETM}'s dimensions and mass, it is possible to calculate the
 
 Examples of \gls{WGM} coupling levels yielding cavity length changes smaller than (green), larger than (blue) and roughly equivalent to (orange) the \gls{ETM}'s effects are shown in \cref{fig:coupling-contributions}. For cases where the \gls{WGM}'s coupling level yields a significant cavity length change with respect to that of the \gls{ETM}'s rotation, coherent cancellation creates a trough significantly offset from the \gls{ETM}'s centre of rotation.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/30-individual-factors.pgf}
   \caption[Simulations of indicative cavity longitudinal error signals during end test mass rotation for different levels of waveguide mirror coupling]{\label{fig:coupling-contributions}Simulations of indicative cavity longitudinal error signals during \gls{ETM} rotation for different levels of \gls{WGM} coupling. The signals are functions of the transverse position of the reflected light relative to the \gls{ETM}'s centre of rotation, the angle of rotation, the mirror depth and the \gls{WGM}'s coupling level. The rotation to longitudinal coupling of the \gls{ETM} (black dashed line) combines with the transverse to longitudinal coupling of the \gls{WGM} (green, orange and blue dashed lines) to produce cavity length changes (green, orange and blue solid lines). In this example configuration, the \gls{ETM} rotation is \SI{1e-7}{\radian}, the \gls{ETM}'s depth is \SI{0.1}{\meter} and the corresponding \gls{WGM} coupling levels are 1:370 (blue), 1:3700 (orange) and 1:37000 (green).}
@@ -141,14 +141,8 @@ Examples of \gls{WGM} coupling levels yielding cavity length changes smaller tha
 % green: 5e-10 m, so 1:3702
 % blue: 5e-11, so 1:37024
 
-\subsection{Experiment infrastructure}
-\label{sec:glasgow10m}
-
-The \GLASGOWTENM{} facility provides a test bed in which the \gls{WGM}'s transverse to longitudinal coupling can be quantified. The prototype is housed in a class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
-
-In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering, and an electro-optic modulator (\gls{EOM}) to impose \gls{RF} sidebands on the light required to produce an error signal with the \gls{PDH} technique. The light was then coupled into the vacuum system via a periscope. A control system senses the motion of the cavity with the \gls{RF} photodiode near tank 1 and provides corrective actuation on the laser crystal's piezoelectric transducer (\gls{PZT}) and temperature via a frequency stabilisation servo and associated electronics (see \cref{sec:cavity-length-measurement}). This configuration is shown in \cref{fig:prototype-setup}.
-
-\begin{figure}
+% This is actually part of the next section, but moved here because it takes up a full page
+\begin{figure}[H]
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-waveguide-arm-in-prototype.pdf}
   \caption[Experimental setup for measurement of waveguide transverse to longitudinal coupling]{\label{fig:prototype-setup}The experimental setup in the prototype facility. The laser light is passed through input optics (not shown), a mode cleaning fibre and an \gls{EOM} before being coupled into the vacuum system via a periscope. It then travels to tank 2 where it is reflected off a beam splitter and directed into one of the arms of the prototype by a steering mirror in tank 3. The two mirrors in tanks 4 and 5 form a \FP{} cavity. The cavity mirrors are suspended from triple stage suspensions, and the beam splitter and steering mirror are both suspended from double suspensions. \\
@@ -156,11 +150,18 @@ In the experiment, \SI{1064}{\nano\meter} laser light was passed through a singl
   \\The cavity is held on resonance by the frequency stabilisation servo. This feeds back to the light's frequency via the laser crystal's temperature below \SI{12}{\hertz} and its PZT above \SI{12}{\hertz} up to a unity gain frequency of \SI{16}{\kilo\hertz} (see \cref{sec:cavity-control}).}
 \end{figure}
 
+\subsection{Experiment infrastructure}
+\label{sec:glasgow10m}
+
+The \GLASGOWTENM{} facility provides a test bed in which the \gls{WGM}'s transverse to longitudinal coupling can be quantified. The prototype is housed in a class 1000 clean room and consists of an input bench at atmospheric pressure and a vacuum envelope able to reach pressures of order \SI{e-3}{\pascal}. The envelope consists of nine \SI{1}{\meter} diameter steel tanks, each connected by steel tubes, arranged into two parallel arms of length \SI{10}{\meter}, with a shorter arm for input optics situated between them.
+
+In the experiment, \SI{1064}{\nano\meter} laser light was passed through a single-mode fibre to provide spatial filtering, and an electro-optic modulator (\gls{EOM}) to impose \gls{RF} sidebands on the light required to produce an error signal with the \gls{PDH} technique. The light was then coupled into the vacuum system via a periscope. A control system senses the motion of the cavity with the \gls{RF} photodiode near tank 1 and provides corrective actuation on the laser crystal's piezoelectric transducer (\gls{PZT}) and temperature via a frequency stabilisation servo and associated electronics (see \cref{sec:cavity-length-measurement}). This configuration is shown in \cref{fig:prototype-setup}.
+
 Tanks 2 and 3 house a beam splitter and steering mirror, respectively, attached to double stage suspensions. In tanks 4 and 5 were sets of two triple suspension chains based on the \GEO{} design~\cite{Plissi2000}. A viewport present to the rear of tank 5, and to the side of tank 1, allowed for light to exit the vacuum envelope for the purposes of sensing and control.
 
 The \gls{WGM} was attached to an aluminium block of mass \SI{2.7}{\kilo\gram} and suspended from tank 4's cascaded (triple) pendulum, forming the cavity's \gls{ITM}. A silica test mass, also \SI{2.7}{\kilo\gram}, with a \SI{40}{ppm} transmission coating, was used as the \gls{ETM}, suspended from a similar triple pendulum in tank 5. On the rear surface of the \gls{ETM} were three magnets for the purpose of actuation, the positions of which are shown in \cref{fig:etm-rear}. With optimal alignment the mirrors formed an overcoupled cavity with finesse \num{155}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.4\columnwidth]{graphics/generated/from-svg/30-etm-rear.pdf}
   \caption[Positions of the magnets on the rear surface of the end test mass used in the waveguide experiment]{\label{fig:etm-rear}The positions of the magnets on the rear surface of the \gls{ETM}. The designations used in this article are shown next to each magnet. The top magnet is positioned at the centre of yaw, near the top of the mass. The left and right magnets are positioned \SI{56.3}{\milli\meter} either side of the centre of yaw. Coils on the \gls{ETM}'s reaction mass (not shown) are positioned coaxially behind each magnet.}
@@ -213,7 +214,7 @@ In a typical \gls{PDH} setup, a frequency generator is fed both to the \gls{EOM}
 \subsubsection{\label{sec:cavity-control}Cavity control}
 The reflected light from the cavity was sensed with the \gls{RF} photodiode placed near tank 1. This was mixed in order to demodulate the field and recover the cavity error signal, and this was coupled into an analogue servo containing filters designed to keep the \FP{} cavity on resonance. This analogue servo design resembles that of the servo presented in ref.~\cite{Macarthur2014}, and contains feedback paths to the laser's temperature and \gls{PZT}, able to correct the laser's frequency at low and high frequencies, respectively, thus providing a way to maintain the cavity resonance condition. Estimated open loop gains of both the temperature and \gls{PZT} feedback are shown in \cref{fig:servo-tf}. The \gls{PZT} feedback is flat below \SI{30}{\hertz}, where the temperature feedback servo performs the majority of the actuation. Above this point, a slope proportional to $\frac{1}{f^3}$ removes feedback at higher frequencies to provide greater control bandwidth for corrections at low frequencies where it is most needed due to seismic noise (see \cref{sec:control-bandwidth}). A differentiator is present above \SI{3}{\kilo\hertz} to correct the phase of the feedback signal to allow it to cross below the unity gain point without creating unstable signals with equal magnitude but opposite sign to the measured motion, as discussed in \cref{sec:gain-phase-margin}. A copy of the feedback to the \gls{PZT} is sent to \gls{CDS} where a series of filters produce the temperature feedback signal. Gain is applied to the low frequency components to ensure the laser temperature's signal is strong where its response is strong. Additional resonant gain is applied at the suspension resonance frequency of \SI{0.6}{\hertz} to prevent it from ringing. One further filter is used to provide a stable crossover with the \gls{PZT} feedback at around \SI{12}{\hertz}. Above \SI{12}{\hertz} the response of the temperature feedback is greatly suppressed due to material's time constant. The unity gain point of the combined servo is around \SI{16}{\kilo\hertz}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/30-servo-tf.pgf}
   \caption[Waveguide cavity frequency stabilisation servo open loop gain]{\label{fig:servo-tf}Estimated open loop gain of the analogue servo used to feed the cavity error signal back to the laser's temperature and \gls{PZT}. The laser temperature actuator provides the majority of the feedback below \SI{12}{\hertz}, where it has a strong response. Its effect is significantly reduced above this point, where the time constant of the material becomes significant. The \gls{PZT} actuator provides actuation at higher frequencies, where it can provide smaller but faster corrections up to many tens of \SI{}{\kilo\hertz}. Various filters are required to produce stable temperature-to-\gls{PZT} crossover and unity gain points. The frequency used for measurements discussed later is shown as a dashed line.}
@@ -254,7 +255,7 @@ To remove the noise floor from the data, measured cavity length signals from fre
 \subsubsection{Effect of voice coil misalignment}
 Misalignment between the voice coils and magnets can lead to unintended torque and longitudinal actuation, confusing the calibration. Literature appears to be sparse on this matter, and preliminary analysis involving finite element simulation packages were unfruitful. Instead, to evaluate whether this effect could be significant, a small experiment was configured as shown in \cref{fig:misaligned-voice-coil-experiment}. A rod was placed above a magnet with the voice coil attached to its end, with both magnet and voice coil having the same dimensions as those of the main experiment. The magnet was glued to a thick perspex disc attached to the base edge of an upturned plastic cup to allow the force applied to the magnet to rigidly couple to the base of the cup. The cup was itself placed upon scales with \SI{1}{\micro\gram} precision and a translation stage with \SI{25}{\micro\meter} precision.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/30-magnet-offset-experiment.pdf}
   \caption[Experiment to measure the effect of misaligned voice coil actuation]{\label{fig:misaligned-voice-coil-experiment}Experiment to measure the effect of misaligned voice coil actuation.}
@@ -262,7 +263,7 @@ Misalignment between the voice coils and magnets can lead to unintended torque a
 
 With the front edge of the voice coil separated from the base of the magnet by \SI{7.9}{\milli\meter}\textemdash close to that of the main experiment\textemdash a series of force measurements were taken. A constant current source of \SI{50}{\milli\ampere} was applied through the coil whilst incrementing the translation stage in steps of \SI{0.1}{\milli\meter}. \Cref{fig:misaligned-voice-coil-results} shows the results from this experiment. Individual data points are dominated by hysteresis of the measurement apparatus but taken as a collection of points appear to follow a quadratic scaling law. With a simple \nth{2} order quadratic regression, the results show that the force drop due to voice coil and magnet misalignment has an upper limit of \SI{0.11}{}\% given the error from determining the alignment by visual inspection. This corresponds to a negligible error of less than \SI{\pm30}{\micro\meter} in the results, showing that the dominant source of error in the experiment comes from the spot positions.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/30-magnet-offset.pgf}
   \caption[Change in force as a function of transverse displacement from voice coil axis]{\label{fig:misaligned-voice-coil-results}Change in force as a function of transverse displacement from voice coil axis. A quadratic fit has been applied to the data and the axes shown are with respect to the position and magnitude of the maximum fitted force, following the assumption that this position is nearest to the optimal alignment. This fit shows that, within the alignment error of the voice coils and magnets (\SI{0.5}{\milli\meter}), the maximum drop in force is negligible.}
@@ -352,13 +353,13 @@ To ensure the convergence of the MCMC on the posterior, a `burn-in' period of \n
 \label{sec:summary}
 From the parameter marginalisation it was possible to produce a posterior probability density distribution for the coupling level as shown in \cref{fig:wgm-coupling-prob}. The coupling level predicted from the distribution is bounded between 0 and 1:17000 with 95\% confidence, with a mean coupling level of 1:27600. The probability density distributions for the scaling and standard deviation parameters are shown in \cref{fig:posterior-aux}. The scaling posterior distribution indicates a mean value of \num{29.3e-3} with standard deviation \num{0.94e-3}. The posterior distribution for the beam smearing parameter indicates a range of possible values between \num{0} and \SI{1.3e-3}{\meter}. All of the posterior distributions lie well within their prior ranges (see \cref{tab:priors}), showing that the marginalisation did not indicate that a better fitting set of parameters could be found beyond the space defined by the priors.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/30-posterior-coupling.pgf}
   \caption[Posterior probability density distribution of the waveguide mirror coupling levels]{\label{fig:wgm-coupling-prob}Posterior probability density distribution of \gls{WGM} coupling levels (in units of meters longitudinal per metre transverse) yielded by statistical analysis of the data. The shaded region shows the coupling levels falling within the most probable 95\% of the distribution.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \input{graphics/generated/from-python/30-posterior-aux.pgf}
   \caption[Posterior probability density distributions of scaling and spot position standard deviation factors applied to the waveguide model]{\label{fig:posterior-aux}Posterior probability density distributions of scaling applied to the model's predicted longitudinal signal (left) and standard deviation assumed for the Gaussian distribution used to model beam smearing (right).}
@@ -366,7 +367,7 @@ From the parameter marginalisation it was possible to produce a posterior probab
 
 The measured cavity length signals as well as the 95\% upper limit and mean \gls{WGM} coupling level predicted by the analysis are shown in \cref{fig:wgm-coupling}. The phase discrepancy between the model and the measurements, as witnessed in this figure most profoundly for the spot positions around \SI{-5e-3}{\meter}, is thought to be an artefact from the modelling of the beam smearing effect. The residual test mass motion that motivated the inclusion in the model of beam smearing may have contained some non-Gaussian behaviour; this is indicated by the shape of the beam smearing distribution shown in \cref{fig:posterior-aux}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/30-coupling-best-fit.pgf}
   \caption[Measurements and simulations of the cavity length signal for spot positions with respect to the end test mass's centre of yaw]{\label{fig:wgm-coupling}Measurements and simulations of the cavity length signal for spot positions with respect to the \gls{ETM}'s centre of yaw. The calibrated cavity length change per radian (vertical axis) from the measurements is shown (blue stars) alongside the model's simulated cavity length changes per radian for the mean (red), 95\% upper limit (green) and zero (black) \gls{WGM} coupling levels. The simulated plots use a scaling factor of \num{29.3e-3} and a beam smearing standard deviation of \SI{0.8e-3}{\meter}.

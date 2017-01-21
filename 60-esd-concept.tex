@@ -52,7 +52,7 @@ Due to the dimensions of the \SI{100}{\gram} \glspl{ETM} for which the \glspl{ES
 \end{table}
 % from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4507
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-esd-ansys.pgf}
   \caption[Simulations of the actuation force produced by the proposed electrostatic drive design]{\label{fig:ssm-esd-ansys}Simulations of the actuation force produced by the proposed \gls{ESD} design upon a \SI{100}{\gram} cylindrical test mass of diameter \SI{48.6}{\milli\meter} and depth \SI{24.5}{\milli\meter} resembling that of the \SSM{} experiment's \glspl{ETM}. The plate separation and the position of the mirror with respect to the plates influence the level of force produced. Greatest force coupling is produced when the mirror centre of mass is aligned to the edge of the plates and the plates are as close as possible to the mirror without touching. Although the force follows a quadratic relationship with voltage given by \cref{eq:esd-force}, the range shown is in a highly linear region.}
@@ -61,7 +61,7 @@ Due to the dimensions of the \SI{100}{\gram} \glspl{ETM} for which the \glspl{ES
 \subsection{Maximum actuation requirements}
 At the operating point the \gls{ESD}'s feedback force will be significantly lower than its maximum. The requirement for the \gls{ESD}'s range is set by the lock acquisition sequence performed to reach the low noise state, where the \glspl{ESD} have to be able to respond to changes in classical radiation pressure forces as the light power is increased in the cavities. The suggested lock acquisition schemes for the \SSMEXPT{} require of the order \SI{}{\micro\newton} actuation at high frequencies to bring the test masses to the operating point~\cite{Glaefke2015}, and this therefore requires an \gls{HV} amplifier capable of providing close to \SI{750}{\volt} limit set by the vacuum system. The maximum displacement each \gls{ESD} can apply to each \gls{ETM} as a function of frequency given this limit is shown in \cref{fig:ssm-etm-disp-esd-max}, calculated using the state-space model for the \glspl{ETM} discussed in \cref{c:speedmeter-control}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-ssm-etm-disp-esd-max.pgf}
   \caption[Maximum end test mass displacement the electrostatic drive can create]{\label{fig:ssm-etm-disp-esd-max}Maximum \gls{ETM} displacement the \gls{ESD} can create as a function of frequency with a potential difference of \SI{750}{\volt}. This is produced by multiplying the force to displacement transfer function calculated for the \glspl{ETM} using a state-space model by the force produced by the \gls{ESD} at maximum output. This assumes that the output is entirely concentrated in a sine wave at each particular frequency, but in reality the feedback signal will contain many frequency components and so the displacement applied at any one frequency will be reduced.}
@@ -116,14 +116,14 @@ Whitening and dewhitening was introduced in \cref{sec:whitening-dewhitening}. To
 
 The simulations conducted in \cref{c:speedmeter-control} suggest that the whitening at the output from \gls{CDS} should provide amplification by a factor of \num{10} above \SI{100}{\hertz}, which means the dewhitening should reduce the magnitude by the same amount. Simulating one or two \SI{10}{\deci\bel} active dewhitening circuits as shown in \cref{fig:hv-amp-dewhitening-circuit} with the circuit simulation tool \emph{\gls{LISO}} the resulting transfer functions are shown in \cref{fig:hv-amp-dewhitening-sims}. The difference in phase between the two filters can be compensated with a sign flip applied to the feedback signal during filter transitions.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\columnwidth]{graphics/60-hv-amp-dewhitening.pdf}
   \caption[Active inverting dewhitening circuit]{Active inverting dewhitening circuit. This filter uses an inverting op-amp with parallel feedback resistors to achieve the desired frequency response. At low frequencies, the capacitor's impedance is high and so the feedback path is dominated by the impedance of the \SI{10}{\kilo\ohm} resistor and the gain is \num{1}. At high frequencies the capacitor produces very low impedance and so the feedback path's total impedance is the equivalent resistance of the parallel \SI{4.7}{\kilo\ohm} and \SI{10}{\kilo\ohm} resistors and the gain is then $\frac{\SI{10}{\kilo\ohm}}{\SI{3.2}{\kilo\ohm}} \approx \SI{-10}{\deci\bel}$. The simulated transfer functions for one and two of these filters is shown in \cref{fig:hv-amp-dewhitening-sims}.}
   \label{fig:hv-amp-dewhitening-circuit}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-hv-amp-dewhitening-sims.pgf}
   \caption[Simulated dewhitening filter frequency response]{Frequency response of the dewhitening filters simulated with \gls{LISO}. Each dewhitening filter provides \SI{-10}{\deci\bel} gain at high frequencies and so the combined pair produces an overall high frequency gain of $\SI{-20}{\deci\bel} \approx \num{e-1}$.}
@@ -133,7 +133,7 @@ The simulations conducted in \cref{c:speedmeter-control} suggest that the whiten
 \subsubsection{Digital switching electronics}
 A series of digital outputs from \gls{CDS} can be used to control the \gls{HV} amplifier's dewhitening filters. The Contec DO-32L-PE output card provides a 32 channel binary switch with an equivalent schematic shown in the left side of \cref{fig:hv-amp-sigital-switching}. The control signal from \gls{CDS} for a particular output is inverted and attaches to the negative input of an optocoupler which acts as a relay without an electrical connection between the input and output. The positive input is attached to a voltage supply such that a digital output of \num{1} results in a closed circuit once inverted. An output of \num{0} is inverted to \num{1} and so there is no potential difference to close the optocoupler's circuit. The optocoupler's output in turn connects to the base of a transistor which controls current flow between the collector and emitter. Once the potential difference between the transistor's base and emitter exceeds around \SI{0.7}{\volt}, current is allowed to flow from the collector to the emitter, forcing the potential difference between collector and emitter to be zero.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/60-hv-amp-digital-switching.pdf}
   \caption[Digital signalling between the control and data acquisition system and a channel within the high voltage amplifier]{\label{fig:hv-amp-sigital-switching}Digital signalling between \gls{CDS} and a channel within the \gls{HV} amplifier. The digital control signal operates an optocoupler which allows current to flow from the $V_{\text{HIGH}}$ voltage reference to a transistor which operates the analogue control signal $V_{\text{CONTROL}}$. This signal is used by the \gls{CMOS} switch in the \gls{HV} amplifier to select either the dewhitened or unfiltered inputs.}
@@ -183,7 +183,7 @@ Finally, the quiescent current drawn by each op-amp determines the amount of hea
 \subsection{Amplifier signal path}
 The constructed amplifier signal path is shown for a single channel in \cref{fig:hv-amp-signal-path}. The inputs IN+ and IN- are differentially received and converted to a single-ended signal which is then passed through the two dewhitening stages controlled by digital switches. The signal is then split into two parts, with one part being inverted, and these become the inputs to the PA95 \gls{HV} op-amps. The inverting and non-inverting inputs on each op-amp are bridged with diodes to ensure that the voltage difference is less than \SI{\pm0.7}{\volt}; this is to prevent accidental overvoltage at the inputs. Although the differential input range of the PA95s is \SI{\pm20}{\volt}, the \SI{\pm0.7}{\volt} limit is sufficient to reach the required bandwidth in this application, and avoids potential damage to the costly op-amps from incorrect input. A \SI{1}{\percent} voltage divider at each of the differential outputs provides a signal that is within the input range of \gls{CDS} for the purpose of output monitoring. This so-called \emph{monitor} provides a reference channel for the controller in order to assist with the calibration of the device as well as a possible error signal extraction point for a feedback loop intended to suppress amplifier noise. The resistors near pins 7 and 8 of each op-amp provide current limiting, discussed in \cref{sec:hv-amp-current-limit}. The capacitor placed between pins 4 and 6 on each amplifier provides compensation for the phase of the op-amp at high frequencies, and its value is determined from a look-up table provided by the manufacturer.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/60-hv-amp-signal-path.pdf}
   \caption[High voltage amplifier signal schematic]{\label{fig:hv-amp-signal-path}Schematic of a single high voltage amplifier channel. The input from \gls{CDS} is differentially received, dewhitened and then split into differential outputs that are amplified by PA95 op-amps. A pick-off reads \SI{1}{\percent} of the output voltage for calibration and noise projection purposes.}
@@ -200,11 +200,14 @@ The resistor placed between pins 7 and 8 also acts as an \emph{active} current l
 \subsubsection{Soft-start}
 Capacitors are present upon the \gls{HV} supply lines to filter \gls{AC} noise, and these must be charged when the device is switched on. Normally these capacitors would present very little impedance to the power supplies and so a large initial current would be drawn potentially damaging components in its path. The simplest technique to prevent this from happening would be to put resistors in the path of the power supplies, but resistors that would charge the capacitors at a safe rate in a short time would also dissipate a lot of power and require additional heat sinking. Instead, we use a \emph{soft-start} mechanism which controls the current flow during the charging of the capacitors. The \gls{HV} amplifier's on-off switch operates optocouplers which allow current to flow into the circuit. Initially, when the circuit's \gls{HV} capacitors are discharged, the current on each \gls{HV} rail is limited by the parallel \SI{5}{\kilo\ohm} resistors. A \SI{2.5}{\percent} pick-off from each \gls{HV} rail is compared to a reference \SI{5}{\volt} potential at an op-amp, the output of which operates a second optocoupler on each rail. When the voltage surpasses \SI{200}{\volt} the power the \SI{5}{\kilo\ohm} resistors dissipate is \SI{8}{\watt}, which is near their limit. At this point, the capacitors are almost fully charged and the pick-off voltage surpasses the \SI{5}{\volt} reference and so the op-amp's output operates the optocoupler to open up a low-resistance path that bypasses the \SI{5}{\kilo\ohm} resistors and prevents them from overheating. The soft-start circuit is shown in \cref{fig:hv-amp-soft-start}. The capacitors to be charged by this circuit would be attached between the +HV and -HV rails and ground.
 
+% ensure this is on a page on its own near where it is supposed to be
+\clearpage
 \begin{sidewaysfigure}
   \centering
   \includegraphics[width=0.75\columnwidth]{graphics/60-hv-amp-soft-start.pdf}
   \caption[High voltage amplifier soft-start schematic]{\label{fig:hv-amp-soft-start}Soft-start mechanism to prevent excessive power supply current draw. This is based on a design for the \AEIPROTOTYPE{} by Andreas Weidner. The leftmost optocouplers control whether current is allowed to flow from the power supplies given a control signal from an on-off switch on the enclosure. After the electronics are switched on, the current flow is initially limited by two \SI{5}{\kilo\ohm} resistors. Any \gls{AC} signal content above around \SI{500}{\hertz} is filtered by the presence of an low-pass LC filter formed of the \SI{1619}{\micro\henry} choke and \SI{47}{\micro\farad} capacitor (the low-pass corner frequency decreases further when additional capacitive load is attached). A \SI{2.5}{\percent} pick-off from each \gls{HV} rail is compared to a \SI{\pm5}{\volt} reference, with the resulting difference fed back to a second pair of optocouplers (different models from the first due to their lower duty cycle) which gradually open up a low-resistance path on each supply rail. Without these optocouplers, the power the \SI{5}{\kilo\ohm} resistors would need to dissipate would be considerable at maximum voltage. As the supply voltage increases beyond around \SI{200}{\volt}, the resistance through the optocoupler is reduced far below the \SI{5}{\kilo\ohm} resistors and so the power dissipated in the resistors is negligible.}
 \end{sidewaysfigure}
+\clearpage
 
 \subsubsection{Pressure and temperature interlock}
 The breakdown voltage of the plate capacitors as a function of pressure, given by Paschen's Law, has a minimum in the region of \SI{e-1}{\milli\bar} to \SI{e1}{\milli\bar} depending on the separation and geometry of the anode and cathode. If the gas pressure and plate separation are favourable, it is possible for arcing to occur between the anode and cathode of each \gls{ESD}. Estimates of the Paschen curves for parallel plates with varying separations in nitrogen are shown as a function of pressure in \cref{fig:esd-paschen}. Apart from arcing, related effects such as creepage\textemdash tracking of charge across insulative surfaces\textemdash can lead to arcing at voltages above \SI{50}{\volt} in low vacuum, though the use of highly insulating material such as ceramics can help to mitigate this risk almost entirely~\cite{EN2010}.
@@ -212,13 +215,13 @@ The breakdown voltage of the plate capacitors as a function of pressure, given b
 Although the use of high voltage plate capacitors is in general safe at both atmospheric pressure and high vacuum, the act of pumping gas out of the vacuum system passes through pressures at which arcing and surface tracking can occur. To prevent this possibility a cut-off function was implemented within the circuit to prevent \gls{HV} output unless a control signal is supplied (see \cref{fig:hv-amp-interlock}). The switching mechanism uses the same \gls{CMOS} switches as the digital dewhitening filters shown in \cref{fig:hv-amp-sigital-switching}, with the threshold signal being generated by \gls{CDS} based on a signal from a separate pressure monitor input. Additionally, as a temperature fail-safe for the amplifier components, temperature sensors are present within the enclosure which operate threshold switches able to remove the supply to the \gls{HV} op-amps using the same mechanism as the pressure interlock. The outputs from each interlock are sent to an AND gate, and only if both the pressure and temperature switches are in a safe state will the \gls{HV} op-amp's supplies switch on. The interlock circuit is shown in \cref{fig:hv-amp-interlock}.
 % pressure vs voltage claim from speedmeter labbook, at https://arran.physics.gla.ac.uk/wp/speedmeter/2015/01/30/esd-hv-amplifier-pressure-cutoff/
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-esd-paschen.pgf}
   \caption[Minimum breakdown voltage between the two plates of the electrostatic drive for different separations]{\label{fig:esd-paschen}The minimum breakdown voltage between the two plates of the \gls{ESD} for different separations. This is calculated using Paschen's Law, assuming nitrogen gas and a flat plate geometry. The real effect is a lot more complicated than this model, but the steep slope at lower pressures shown here indicates that the voltage created by the \gls{HV} amplifier for the \glspl{ESD} will avoid problems associated with arcing as long as the vacuum system is operated at atmosphere or high vacuum.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/60-hv-amp-interlock.pdf}
   \caption[High voltage amplifier interlock schematic]{\label{fig:hv-amp-interlock}Pressure and temperature interlock circuit. The digital interlock signal from \gls{CDS} operates one switch and the output from a temperature sensor threshold switch operates another. Only if both switches output \SI{15}{\volt} will the control signal used to operate the \gls{HV} supplies switch on.}
@@ -230,7 +233,7 @@ The monitor output provides a means of measuring \SI{1}{\percent} of the full \g
 \subsubsection{Swept sine response of each channel}
 Transfer functions for the \gls{HV} amplifier can be measured by injecting a known signal into one channel and measuring the corresponding output. \Cref{fig:hv-amp-dewhitened-tfs} shows the \emph{swept sine} response, calculated by injecting a sine wave at a given frequency, measuring the output signal and dividing it by the injection, and repeating this process over a given frequency range. These measurements were made without the digital dewhitening switches disengaged such that they provide \SI{20}{\deci\bel} of low-pass filtering. The figure shows the response expected from the predictions made by \gls{LISO} shown in \cref{fig:hv-amp-dewhitening-sims}, and the measurements agree once the filtering effect of the \gls{CDS} anti-aliasing filters are taken into account.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-hv-amp-dewhitened-tfs.pgf}
   \caption[Frequency response of the high voltage amplifier's channels with dewhitening enabled]{Second amplifier transfer functions with dewhitening enabled. The expected performance of the dewhitening filter from theory is shown in purple alongside the transfer functions of each channel. The curves agree closely, showing that the implemented filter operates as expected. The mismatch at high frequency is caused by the anti-aliasing filters implemented in \gls{CDS}, which aggressively filter signals above a few \SI{}{\kilo\hertz}.}
@@ -240,7 +243,7 @@ Transfer functions for the \gls{HV} amplifier can be measured by injecting a kno
 \subsubsection{Response with and without dewhitening}
 \Cref{fig:hv-amp-channel-one-tfs} shows swept sine measurements of the first channel with the dewhitening filters in various states: both on, the first on and the second off, the first off and the second on, and both off. The measurements match predictions and the response with both dewhiteners off is flat as intended across the measurement band.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-hv-amp-channel-one-tfs.pgf}
   \caption[Transfer functions of the high voltage amplifier input to monitor output with the dewhiteners on and off]{Transfer functions of the high voltage amplifier input to monitor output with the dewhitening filters on and off. The monitor output is a \SI{1}{\percent} pick-off from the main \gls{HV} output, and so the gain is \num{0.4} instead of \num{40}. The curves simulated with \gls{LISO} agree exactly with the measurements within the bandwidth of \gls{CDS}, and at higher frequencies the transfer functions are suppressed by anti-aliasing filters.}
@@ -250,7 +253,7 @@ Transfer functions for the \gls{HV} amplifier can be measured by injecting a kno
 \subsubsection{Coherence between channels}
 The channels should be isolated from one another such that a signal injected at one input does not appear at the output of another. Op-amp power supply filtering is implemented using decoupling capacitors, inductors and diodes such that there should be minimal cross-coupling between the channels. \Cref{fig:hv-amp-coherence} shows the coherence for each channel to each other channel, measuring whether the output signal has the same phase angle as the input signal. Coherence of \num{1} indicates that there is causal coupling between the two channels, whereas coherence less than around \num{0.5} is expected from statistical random noise processes. The results confirm that a high level of isolation between channels has been achieved.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-hv-amp-coherence.pgf}
   \caption[High voltage amplifier cross-channel coherence]{\gls{HV} amplifier cross-channel normalised coherence. A swept sine was injected into each channel in turn while measurements of the output phase were made on all four channels. In each case, only the channel with the injection has coherence of \num{1}, while other channels only show the effect from noise.}
@@ -270,7 +273,7 @@ Each of the spectral densities shown were produced using amplitude spectral dens
 
 The left y-axis shows the measured monitor noise. The right y-axis shows the noise projected into equivalent noise on the \gls{HV} output. The noise is different in the case of zero (orange) or full (green) \gls{DC} output not because of an input voltage dependency but rather due to the inclusion of the \gls{CDS} \glspl{DAC} in the signal path in the latter case which contribute noise as discussed in \cref{sec:adcs-and-dacs}. Some large amplitude noise is present around \SI{50}{\hertz} and its first harmonic due to pick-up from the electricity mains on the power supply.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-hv-amp-output-noise.pgf}
   \caption[High voltage amplifier output noise]{\gls{HV} amplifier output noise. The noise of the amplifier was measured using the monitor output of the first channel, and this is shown in the green and orange traces using the left y-axis. The output noise projected from the monitor to the \gls{HV} rails is shown on the right y-axis. The green trace represents the noise from the amplifier when the input is at maximum and includes the noise contribution from the \glspl{DAC} on \gls{CDS}. The orange trace shows the output noise when \gls{CDS} is not connected. The noise floor of the SR785 spectrum analyser used to make these measurements is shown in blue.}
@@ -290,7 +293,7 @@ where $V_{\text{noise}}$ is the \gls{HV} amplifier's output noise. This shows th
 The \gls{ETM} displacement noise this would create is then simply the product of the force noise and the suspension transfer function, and this is shown in \cref{fig:hv-amp-output-displacement-noise}. The effective displacement noise is below the noise budget presented in \cref{c:speedmeter-control} within the measurement band, and given that this assumes the \gls{ESD} is at maximum output the displacement noise when the interferometer is at the operating point, requiring only a fraction of its maximum range, will be lower. If the noise from the \gls{HV} amplifier is found to be higher in practice, it should be possible to feed the monitor outputs back to their respective inputs in order to stabilise each channel.
 % (Would need to have the whitening calibrated out in real time, but this would be pretty straightforward since the filters are so simple.)
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/60-hv-amp-output-displacement-noise.pgf}
   \caption[High voltage amplifier output projected end test mass displacement noise]{\gls{HV} amplifier output voltage noise (without dewhiteners engaged) projected into effective \gls{ETM} displacement noise. The force produced by the \gls{ESD} is a function of the square of the voltage across its plates, and so the noise produced by the \gls{HV} amplifier has greatest effect when the signal is at a maximum. This plot shows the displacement noise for maximum signal, and within the measurement band (blue shaded region) it is below the requirement shown in black taken from the analysis conducted in \cref{c:speedmeter-control}. If necessary the \gls{HV} amplifier's noise could be reduced further by implementing a control loop between its monitor outputs and signal inputs.}
@@ -300,14 +303,20 @@ The \gls{ETM} displacement noise this would create is then simply the product of
 \section{Outlook}
 For the control of suspended test masses at high frequencies, parallel plate capacitor \glspl{ESD} provide a low noise alternative to voice coils and their geometry can prevent clipping losses suffered in the use of metal comb \glspl{ESD}. It is intended for parallel plate capacitor \glspl{ESD} to be used as the high frequency actuators in the \SSMEXPT{} presented in Chapter\,\ref{c:speedmeter-intro}, and in order to provide actuation at the required level an \gls{HV} signal with suitably high magnitude and low noise must be available. The technical design of an \gls{HV} amplifier was presented which meets the experiment's range and noise requirements, providing output up to \SI{750}{\volt} with noise of around \SI{20}{\micro\volt\per\sqrthz} in the frequency band of interest.
 
+% ensure this is on a page on its own near where it is supposed to be
+\clearpage
 \begin{sidewaysfigure}
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/60-hv-amp-top.pdf}
   \caption[High voltage amplifier board, top view]{\label{fig:hv-amp-top}Top view of the \gls{HV} amplifier printed circuit board showing the component and copper track layout. This side contains most of the components and all of the connectors that go to and from the enclosure. Areas not carrying signals are part of the ground plane, except for a relief at one side where the heat sinks for the PA95s are attached, isolated from the ground plane to minimise the risk of arcing.}
 \end{sidewaysfigure}
+\clearpage
 
+% ensure this is on a page on its own near where it is supposed to be
+\clearpage
 \begin{sidewaysfigure}
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/60-hv-amp-bottom.pdf}
   \caption[High voltage amplifier board, bottom view]{\label{fig:hv-amp-bottom}Bottom view of the \gls{HV} amplifier printed circuit board showing the component and copper track layout. This side is where the top components are soldered to the copper tracks. Some surface mount decoupling capacitors for the supply rails of the PA95s are present on the bottom as they could not be placed as closely to the op-amps on the top side.}
 \end{sidewaysfigure}
+\clearpage

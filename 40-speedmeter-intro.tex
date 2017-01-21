@@ -96,7 +96,7 @@ We can calculate the signal in the absence of noise at the \gls{DC} readout of t
 \end{equation}
 This is shown in \cref{fig:fp-mich-response} for $\tilde{h} = 1$, arm length \SI{1}{\kilo\meter}, mirror mass \SI{40}{\kilo\gram}, laser wavelength \SI{1064}{\nano\meter} and cavity half-bandwidth \SI{250}{\hertz}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-fp-mich-response.pgf}
   \caption[Response of a \FPMI{} to differential arm cavity motion]{\label{fig:fp-mich-response}Response of a \FPMI{} to differential arm cavity motion. This shows the signal that would appear at a photodetector placed at the output of the interferometer given unit differential motion of the cavity. The cavity provides a signal with the same response for motion at frequencies below the cavity's pole frequency. Beyond the pole, the response is reduced as the motion becomes faster than the cavity's storage time.}
@@ -143,7 +143,7 @@ The noise seen by the \gls{DC} readout is determined by the homodyne angle:
 
 For \gls{DC} readout, the output noise spectral density is shown in \cref{fig:fp-mich-noise}. This is the combination of radiation pressure noise from the mirrors and shot noise on the sensor, and these two effects combine to produce the quantum noise spectral density. At high frequencies, the quantum noise is equal to the quantum vacuum noise input from \cref{eq:unsqueezed-vacuum-amplitude} (corresponding to $\kappa_{\text{MI}} \approx 0$) which shows that the signal on the sensor is limited by noise propagating to the output with no significant effect from optomechanical interactions. Below the cavity pole, the vacuum fluctuations move the mirror by an amount governed by the mirror's optomechanical coupling and this random detuning of the cavity converts coherent carrier light into radiation pressure noise at the output.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-fp-mich-noise.pgf}
   \caption[Quantum noise of a \FPMI{} at the output port]{\label{fig:fp-mich-noise}Quantum noise of a \FPMI{} at the output port, normalised to quantum shot noise. This shows the noise present at the photodetector produced due to quantum noise entering the interferometer and interacting with the mechanics. At high frequencies, the noise in a \MI{} is almost entirely due to the quantum shot noise on the sensor; at low frequencies the noise is dominated by the light reaching the sensor due to fluctuations in the positions of the test masses due to quantum radiation pressure noise.}
@@ -155,7 +155,7 @@ The quantum noise power spectral density at the output as a function of $\tilde{
 \end{equation}
 in units of \SI{}{\per\hertz}. This is a useful indication of the sensitivity at the output of the interferometer. The more common amplitude spectral density representation, $s_{\tilde{h}_{\left( - \right)}} = \sqrt{S_{\tilde{h}_{\left( - \right)}}}$, is shown in \cref{fig:fp-mich-sensitivity}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-fp-mich-sensitivity.pgf}
   \caption[Sensitivity of a \FPMI{} at the output port to differential arm cavity motion]{\label{fig:fp-mich-sensitivity}Quantum noise limited sensitivity of a \FPMI{} at the output port to differential arm cavity motion. This is calculated by taking the quantum noise at the probe shown in \cref{fig:fp-mich-noise} and dividing it by the response from differential arm cavity motion to the probe shown in \cref{fig:fp-mich-response}. In this case the cavity power was chosen to touch the \gls{SQL} at the cavity pole and this is shown in the figure. For smaller cavity power, the touching frequency moves down in frequency.}
@@ -170,7 +170,7 @@ There are many different \SM{} topologies in the literature~\cite{Danilishin2004
 \subsubsection{The Michelson-type \SM{}}
 Initial suggestions for the application of \SM{} type interferometers in the field of gravitational wave detection were focused on a \FPMI{} topology with the addition of a \emph{sloshing cavity} at the output port~\cite{Braginsky2000, Purdue2002} as shown in \cref{fig:sloshing-michelson}. Here the \SI{180}{\degree} phase shift is imparted to the light by the addition of a beam splitter and sloshing cavity at the output of the interferometer. The light returning from the sloshing cavity is either re-injected into the interferometer or transmits through the beam splitter where it reflects from a signal recycling mirror (SR). The light at the output of this interferometer then contains reduced quantum radiation pressure noise.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\columnwidth]{graphics/generated/from-svg/40-sloshing-michelson.pdf}
   \caption[Layout of a \FPMI{} with a sloshing cavity]{\label{fig:sloshing-michelson}Layout of a \FPMI{} with a sloshing cavity as presented in ref.~\cite{Purdue2002}. The light leaving the \FPMI{} is coupled into a sloshing cavity via a beam splitter where it receives a phase shift, and it re-enters the interferometer via the recycling mirror to the left of the sloshing beam splitter. The light incident upon the beam splitter then contains light that has sampled the mirrors at two points in time, leading to a \SM{} effect.}
@@ -193,7 +193,7 @@ which shows that the signal is proportional to the relative velocity of the test
 
 The layout of a \SSM{} interferometer can be arranged in different forms~\cite{Huttner2016}, and we show one based on a zero-area Sagnac enhanced with ring cavities as arms in \cref{fig:zero-area-ssm}.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=0.6\columnwidth]{graphics/generated/from-svg/40-zero-area-ssm.pdf}
   \caption[Layout of a zero-area \SSM{}]{\label{fig:zero-area-ssm}Layout of a zero-area \SSM{} with ring cavities. The input light is split at the beam splitter where it forms two counter-propagating modes within the inner Sagnac mirrors, denoted by black arrows. At each \gls{ITM}, the light is partially transmitted into the arm cavities, and upon exiting the cavities this light is either sent back to the beam splitter or to the next cavity. The recombined light at the beam splitter contains fields that have interacted with all of the mirrors and the difference in phase between the counter-propagating modes provides a signal proportional to relative test mass velocity.}
@@ -211,7 +211,7 @@ and as the round-trip phase includes both arms and an extra reflection from or t
 
 The response of a \SSM{} to differential arm cavity motion is shown in \cref{fig:ssm-response} for parameters identical to that of \cref{fig:fp-mich-response}. Notice that below the cavity pole, the response vanishes towards \gls{DC}, consistent with a speed measurement. The higher response above the cavity pole is a consequence of the fact that the light samples the interferometer in both directions. For fair comparisons to the \MI{} the choice may be made to alter the input power and readout angle of one with respect to the other.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-ssm-response.pgf}
   \caption[Response of a \SSM{} to differential arm cavity motion]{\label{fig:ssm-response}Response of a \SSM{} to differential arm cavity motion. In contrast to the \MI{}, the \SSM{} has response proportional to frequency below the cavity pole.}
@@ -219,7 +219,7 @@ The response of a \SSM{} to differential arm cavity motion is shown in \cref{fig
 
 The corresponding quantum noise at the output port is shown in \cref{fig:ssm-noise}. Note that the noise is unity at high frequencies as with the \FPMI{}, but is suppressed at low frequencies due to the cancellation of back-action due to radiation pressure from quantum vacuum fluctuations. The cancellation is not perfect due to the time delay between the two consecutive visits of the arm cavities by the counter-propagating modes.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-ssm-noise.pgf}
   \caption[Quantum noise of a \SSM{} at the output port]{\label{fig:ssm-noise}Quantum noise of a \SSM{} at the output port, normalised to quantum shot noise. Like the \MI{}, the high frequency noise contribution arises from quantum shot noise from incoherent vacuum fluctuations entering the interferometer. In contrast to the \MI{}, the \SSM{} has flat noise at low frequencies below a transition region, as the test mass noise fluctuations are cancelled by the counter-propagating modes in the instance where the quantum radiation pressure forces are balanced.}
@@ -227,7 +227,7 @@ The corresponding quantum noise at the output port is shown in \cref{fig:ssm-noi
 
 While the response in a \SSM{} is reduced at low frequencies, the quantum noise is further reduced and so the overall quantum noise limited sensitivity is improved over an equivalent \FPMI{} in the absence of loss, as shown in \cref{fig:ssm-sensitivity}. For lossy \SM{}s the sensitivity is degraded. In the next subsection we consider loss in the case of a \SSM{} but loss in any \gls{QND} interferometers significantly affects sensitivity.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-ssm-sensitivity.pgf}
   \caption[Sensitivity of a \SSM{} at the output port to differential arm cavity motion]{\label{fig:ssm-sensitivity}Quantum noise limited sensitivity of a \SSM{} at the output port to differential arm cavity motion. In contrast to the \MI{}, the \SSM{} sensitivity at low frequencies follows the gradient of the \gls{SQL} due to its reduced quantum noise. This improved sensitivity is in practice difficult to achieve as the presence of loss in the interferometer introduces a \emph{Michelson-like} sensitivity slope at a frequency proportional to the level of loss.}
@@ -245,7 +245,7 @@ The Glasgow \SSMEXPT{} is enhanced with the presence of triangular ring cavities
 
 The intended optical layout is shown in \cref{fig:ssm-layout}. The input light is coupled by the main beam splitter \MSIX{} into counter-propagating modes in the \emph{inner Sagnac}, i.e. the cavity formed by the mirrors \MSIX{}, \MSEVEN{}, \MONEA{}, \MTEN{}, \MNINE{}, \MEIGHT{} and \MONEB{}. At \glspl{ITM} \MONEA{} and \MONEB{} the light is partially transmitted into arm cavities $A$ and $B$, respectively, where the light is resonantly enhanced by the highly reflective \glspl{ETM} \MTWOA{} and \MTHREEA{} and \MTWOB{} and \MTHREEB{}. Upon exiting the cavities, the light again propagates through the inner Sagnac where parts recombine at \MSIX{} and parts enter the opposite arm cavity. The light leaving \MSIX{} towards \MFOURTEEN{} contains the signal encoded as quantum correlations on the light, and this is enhanced at \MSIXTEEN{} by the local oscillator provided by the light leaving \MSIX{} towards \MTWELVE{}. The balanced homodyne detectors (\glspl{BHD}) \HDA{} and \HDB{} measure the transmitted light, and the signals primarily contain information regarding the relative velocity of the arm cavities.
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=\columnwidth]{graphics/generated/from-svg/40-speedmeter-layout.pdf}
   \caption[\SSMEXPT{} layout]{\label{fig:ssm-layout}\SSMEXPT{} layout. The in-vacuum part of the experiment will be situated in two \SI{1}{\meter} diameter tanks joined with a connecting tube. The suspended optics will be placed on breadboards atop passive isolation stacks, joined together with a bridge structure. Viewports are situated on both tanks at each side to facilitate in-air sensing. The vacuum system is capable of reaching pressures below \SI{e-6}{\milli\bar} to suppress the impact of residual gas noise.}
@@ -278,7 +278,7 @@ In the presence of imbalanced beam splitting the laser noise and residual carrie
 Without including the effect of asymmetric loss, the quantum noise limited sensitivity of the \gls{BHD} readout in the \SSMEXPT{} is shown in \cref{fig:erc-ssm-qnls}, calculated with both \gls{FINESSE} and Optickle (see \cref{sec:finesse-sim,sec:optickle-sim}). Also shown is the sensitivity of an equivalent \FPMI{} using the same parameters as for the \SSM{}, but with input power scaled by a factor of approximately \num{2.5} to match its high frequency sensitivity. The homodyne angles of the \SSM{} and \MI{} are \SI{45}{\degree} and \SI{90}{\degree}, respectively, to optimise both interferometers for high frequency sensitivity fairly. The intended measurement band is between \SI{100}{\hertz} and \SI{700}{\hertz} so a reduction of a factor of around \num{3} to \num{5} is in theory possible as long as other sources of noise are kept sufficiently low. A comprehensive consideration of the noise budget is given in \cref{c:speedmeter-control}.
 % Homodyne angles for SSM vs MI from https://arran.physics.gla.ac.uk/wp/speedmeter/?p=5648
 
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \input{graphics/generated/from-python/40-erc-ssm-qnls.pgf}
   \caption[Predicted quantum noise limited sensitivity of the \SSMEXPT{}]{\label{fig:erc-ssm-qnls}Predicted quantum noise limited sensitivity of the \SSMEXPT{} calculated with Optickle and \gls{FINESSE}. Also shown is the equivalent \FPMI{} configuration, calculated with Optickle, and the \gls{SQL} given the effective mass of the interferometer test masses. The shaded blue region shows the intended measurement band, where reduced quantum radiation pressure noise should be visible below the expected noise from the equivalent \FPMI{}.}

@@ -3,16 +3,11 @@
 \newcommand{\thesisauthor}{Sean Stephan Leavey}
 \newcommand{\thesisdate}{September 2016}
 
-% for digital/drafts
-%\documentclass[twoside,nogutter]{sean-thesis}
-% for printed copies
 \documentclass[twoside,hidelinks]{sean-thesis}
-% ^^ draft shows overfilled boxes (but disables links)
-% ^^ replace "oneside" with "twoside" to set the gutter correctly for
-%    two-sided printing.
-% ^^ add "nogutter" option for digital copy (without binding offsets),
-%    if printed copy is twoside, use [twoside,nogutter] for digital copy.
-% ^^ add "hidelinks" option to remove coloured links (e.g. for printing)
+
+%%%
+% Floating of graphics
+\usepackage{float}
 
 %%%
 % PGF support (for plots exported by Python)
@@ -97,7 +92,7 @@
 
 %%%
 % Smaller text in captions
-\usepackage[font=small]{caption}
+\usepackage[font=footnotesize]{caption}
 
 %%%
 % Sideways figures
@@ -294,20 +289,20 @@
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{Revision history}
-\vspace*{3.5in}
+\vspace*{1.5in}
 \begin{center}
   \textbf{Revision history} \\
   \begin{tabular}{ccl}
     \textbf{Version} & \textbf{Date} & \textbf{Description} \\
     1.0.0            & 2016-09-14    & Submitted for examination \\
-    1.1.0            & 2016-12-19    & Corrected version sent to senate \\
+    1.1.0            & 2017-01-18    & Approved version deposited in university archive \\
   \end{tabular}
 \end{center}
 
 % licence
 \newpage
 \phantomsection
-\vspace*{8in}
+\vspace*{132mm}
 \addcontentsline{toc}{section}{Licence}
 \noindent Content from this work may be used under the terms of the \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons \emph{Attribution-NonCommercial-ShareAlike 4.0 International}} licence.
 \begin{center}
