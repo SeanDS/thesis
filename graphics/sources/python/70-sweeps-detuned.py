@@ -37,6 +37,10 @@ fig = plt.figure(figsize=lf.FIG_SIZE_D)
 colours = lf.Colours()
 
 colour_a = colours.next()
+colour_b = colours.next()
+colour_c = colours.next()
+colour_d = colours.next()
+colour_e = colours.next()
 colour_line_1 = colours.next()
 colour_line_2 = colours.next()
 
@@ -44,7 +48,7 @@ ax1 = plt.subplot2grid((3, 4), (0, 0), colspan=2)
 ax2 = plt.subplot2grid((3, 4), (0, 2), colspan=2)
 ax3 = plt.subplot2grid((3, 4), (1, 0), colspan=2)
 ax4 = plt.subplot2grid((3, 4), (1, 2), colspan=2)
-ax5 = plt.subplot2grid((3, 4), (2, 1), colspan=2)
+ax5 = plt.subplot2grid((3, 4), (2, 0), colspan=2)
 
 ###
 # CARM
@@ -60,7 +64,7 @@ carm_angle = -20 # eyeball
 data_carm_combined = data_carm[:, 1] * np.sin(np.radians(carm_angle)) + data_carm[:, 2] * np.cos(np.radians(carm_angle))
 
 # plot
-ax1.plot(data_carm[:, 0] * x_scale_factor_carm, data_carm_combined * y_scale_factor_carm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+l1 = ax1.plot(data_carm[:, 0] * x_scale_factor_carm, data_carm_combined * y_scale_factor_carm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
 ax1.vlines(0, -200, 200, colors=colour_line_1, linestyles='dashed', zorder=2)
@@ -72,10 +76,6 @@ ax1.set_xlim([-3e-11 * x_scale_factor_carm, 3e-11 * x_scale_factor_carm])
 ax1.set_ylim([-200e-3 * y_scale_factor_carm, 200e-3 * y_scale_factor_carm])
 
 ax1.grid(True)
-
-# override legend padding
-#with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax1.legend([r'CARM to $\mathrm{REFL}_{\mathrm{11}}$', 'Operating point'], loc='upper left', framealpha=0.8)
 
 ###
 # DARM
@@ -93,7 +93,7 @@ x_scale_factor_darm = 1e12
 y_scale_factor_darm = 1e3
 
 # plot
-ax2.plot(data_darm[:, 0] * x_scale_factor_darm, data_darm[:, 1] * y_scale_factor_darm, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+l2 = ax2.plot(data_darm[:, 0] * x_scale_factor_darm, data_darm[:, 1] * y_scale_factor_darm, '-', color=colour_b, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
 ax2.vlines(darm_offset * x_scale_factor_darm, 0, 100, colors=colour_line_1, linestyles='dashed', zorder=2)
@@ -106,10 +106,6 @@ ax2.set_ylim([1e-3 * y_scale_factor_darm, 1e-1 * y_scale_factor_darm])
 
 ax2.grid(True)
 
-# override legend padding
-#with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax2.legend([r'DARM to $\mathrm{AS}_{\mathrm{DC}}$', 'Operating point'], loc='upper left', framealpha=0.8)
-
 ###
 # MICH
 
@@ -120,7 +116,7 @@ x_scale_factor_mich = 1e9
 y_scale_factor_mich = 1e3
 
 # plot
-ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_mich[:, 2] * y_scale_factor_mich, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+l3 = ax3.plot(data_mich[:, 0] * x_scale_factor_mich, data_mich[:, 2] * y_scale_factor_mich, '-', color=colour_c, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
 ax3.vlines(0, -0.7, 0.5, colors=colour_line_1, linestyles='dashed', zorder=2)
@@ -133,10 +129,6 @@ ax3.set_ylim([-0.7e-3 * y_scale_factor_mich, 0.5e-3 * y_scale_factor_mich])
 
 ax3.grid(True)
 
-# override legend padding
-#with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax3.legend([r'MICH to $\mathrm{POP}_{\mathrm{57}}$', 'Operating point'], loc='upper left', framealpha=0.8)
-
 ###
 # PRCL
 
@@ -147,7 +139,7 @@ x_scale_factor_prcl = 1e9
 y_scale_factor_prcl = 1e3
 
 # plot
-ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_prcl[:, 1] * y_scale_factor_prcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+l4 = ax4.plot(data_prcl[:, 0] * x_scale_factor_prcl, data_prcl[:, 1] * y_scale_factor_prcl, '-', color=colour_d, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
 ax4.vlines(0, -0.5, 0.5, colors=colour_line_1, linestyles='dashed', zorder=2)
@@ -159,10 +151,6 @@ ax4.set_xlim([-1e-8 * x_scale_factor_prcl, 1e-8 * x_scale_factor_prcl])
 ax4.set_ylim([-0.5e-3 * y_scale_factor_prcl, 0.5e-3 * y_scale_factor_prcl])
 
 ax4.grid(True)
-
-# override legend padding
-#with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax4.legend([r'PRCL to $\mathrm{POP}_{\mathrm{11}}$', 'Operating point'], loc='upper right', framealpha=0.8)
 
 ###
 # SRCL
@@ -183,13 +171,13 @@ x_scale_factor_srcl = 1e9
 y_scale_factor_srcl = 1e3
 
 # plot
-ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_srcl[:, 2] * y_scale_factor_srcl, '-', color=colour_a, alpha=lf.ALPHA_LINE_A)
+l5 = ax5.plot(data_srcl[:, 0] * x_scale_factor_srcl, data_srcl[:, 2] * y_scale_factor_srcl, '-', color=colour_e, alpha=lf.ALPHA_LINE_A)
 
 # vertical line for operating point
-ax5.vlines(srm_offset * x_scale_factor_srcl, 0, 7, colors=colour_line_1, linestyles='dashed', zorder=2)
+l6 = ax5.vlines(srm_offset * x_scale_factor_srcl, 0, 7, colors=colour_line_1, linestyles='dashed', zorder=2)
 
 # horizontal line for offset
-ax5.hlines(srcl_sig_offset * y_scale_factor_srcl, -1e-6 * x_scale_factor_srcl, 1e-6 * x_scale_factor_srcl, colors=colour_line_2, linestyles='dashed', zorder=2)
+l7 = ax5.hlines(srcl_sig_offset * y_scale_factor_srcl, -1e-6 * x_scale_factor_srcl, 1e-6 * x_scale_factor_srcl, colors=colour_line_2, linestyles='dashed', zorder=2)
 
 ax5.set_ylabel(r'Power $\left(\SI{}{\milli\watt}\right)$')
 ax5.set_xlabel(r'Offset $\left(\SI{}{\nano\meter}\right)$' '\n(E)')
@@ -201,7 +189,7 @@ ax5.grid(True)
 
 # override legend padding
 #with plt.rc_context({'legend.borderaxespad': 0.5}):
-ax5.legend([r'SRCL to $\mathrm{REFL}_{\mathrm{68}}$', 'Operating point', 'Signal offset'], loc='lower left', framealpha=lf.default_settings['legend.framealpha'])
+ax5.legend(l1+l2+l3+l4+l5+[l6, l7], [r'CARM to $\mathrm{REFL}_{\mathrm{11}}$', r'DARM to $\mathrm{AS}_{\mathrm{DC}}$', r'MICH to $\mathrm{POP}_{\mathrm{57}}$', r'PRCL to $\mathrm{POP}_{\mathrm{11}}$', r'SRCL to $\mathrm{REFL}_{\mathrm{68}}$', 'Operating point', 'Signal offset'], loc='lower left', framealpha=lf.default_settings['legend.framealpha'], bbox_to_anchor=(1.5, 0))
 
 ###
 
