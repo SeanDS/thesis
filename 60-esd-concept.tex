@@ -1,7 +1,8 @@
 \chapter{\label{c:esd-concept}Infrastructure for the control of a plate capacitor electrostatic drive with reduced seismic coupling}
-\chaptermark{Infrastructure for the control of a low noise ESD}
+\chaptermark{Infrastructure for a low noise ESD}
 
 \section{Electrostatic drives as actuators in suspended interferometer experiments}
+\sectionmark{ESDs as actuators in suspended interferometers}
 Suspended test masses in interferometers require positional corrections in order for the interferometer to be kept at its operating point. This is typically provided via actuators on the suspension system and predominantly involves voice coil actuators composing magnets and wound wire. Force noise can be introduced to the test masses by their actuators due to various effects such as stray magnetic field coupling, electronic noise in the driver circuitry, Barkhausen noise~\cite{Weiss2008} and seismic coupling via the actuator attachment point. The first two effects can usually be mitigated with appropriate design and shielding, for example by choosing appropriate electronic components and by making the magnets small and the electromagnetic environment quiet. The third effect is often mitigated by suspending the actuators from a separate suspension behind the test mass called a \emph{reaction} suspension. This provides seismic filtering to the actuators such that the ground motion coupling introduced to the test masses from the actuators is of similar magnitude to the ground motion the test masses would in any case receive with no actuation.
 
 As introduced in \cref{c:speedmeter-control}, electrostatic drives (\glspl{ESD}) are a type of actuator employed in \GEO{} and \ALIGO{} for fast (high frequency) corrections to the interferometer. This actuator creates a force on a dielectric test mass by creating a potential difference between anodes and cathodes upon the face of the dielectric reaction mass. Electromagnetic field gradients are then formed in such a way that a force can be applied to the test mass in a particular direction.
@@ -34,14 +35,15 @@ Apart from the availability of a clear aperture behind the test mass for sensing
 % misalignments described by Christian at https://arran.physics.gla.ac.uk/wp/speedmeter/?p=4828
 
 \section{Electrostatic drives for the \SSMEXPT{}}
+\sectionmark{ESDs for the \SSMEXPT{}}
 The plan for the \SSMEXPT{} is to adopt a plate capacitor design for the actuation of the \glspl{ETM} so that the transmitted beam is available for the purposes of sensing and control and to reduce the number of suspensions required in the limited space within the vacuum enclosure.
 
 Due to the dimensions of the \SI{100}{\gram} \glspl{ETM} for which the \glspl{ESD} will eventually be used, the plate capacitor parameters shown in \cref{tab:ssm-esd-parameters} were deemed appropriate. As \cref{eq:esd-force} assumes that the dielectric test mass completely fills the region between the plates it is only an approximation for this situation where each \emph{round} test mass is offset from the plates to avoid ground motion coupling and friction. In order to gain a more complete understanding of the force produced on the test mass by the plates finite element simulations were conducted. A basic model of the plates and test mass described in \cref{tab:ssm-esd-parameters} was built with \emph{ANSYS} in order to model the effect of force coupling in each direction from an applied voltage, given perfectly aligned plates. \Cref{fig:ssm-esd-ansys} shows the results of this simulation, with the force along the beam axis given by the z-direction and the forces in the transverse directions given by $x$ and $y$ as a function of potential difference. For a voltage of \SI{750}{\volt}, which is what we think our vacuum feedthrough connectors should be able to handle, the \gls{ESD} is able to provide a force of around \SI{-1.48e-6}{\newton}. The force-voltage behaviour is approximately linear in this region giving a gradient of \SI{-3.68}{\nano\newton\per\volt}.
 
 \begin{table}
   \centering
-  \begin{tabular}{ll}
-    \textbf{Parameter}   & \textbf{Value} \\
+  \begin{tabular}{l|l}
+    \textbf{Parameter}   & \textbf{Value} \\ \hline
     \gls{ETM} diameter      & \SI{48.6}{\milli\meter} \\
     \gls{ETM} thickness     & \SI{24.5}{\milli\meter} \\
     Single plate width   & \SI{48.6}{\milli\meter} \\

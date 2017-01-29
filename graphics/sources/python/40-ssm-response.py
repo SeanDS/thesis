@@ -95,7 +95,7 @@ ax1.loglog(f, np.abs(resp_mich), color=colour_b, alpha=lf.ALPHA_LINE_A, zorder=-
 ax2.semilogx(f, np.angle(resp) * 180 / np.pi, color=colour_a, alpha=lf.ALPHA_LINE_A)
 ax2.semilogx(f, np.angle(resp_mich) * 180 / np.pi, color=colour_b, alpha=lf.ALPHA_LINE_A, zorder=-1)
 
-ax1.legend(['Sagnac speed-meter', 'Michelson position-meter'], loc='upper right', framealpha=lf.default_settings['legend.framealpha'])
+ax1.legend(['Sagnac speed-meter', 'Michelson position-meter'], loc='lower left', framealpha=lf.default_settings['legend.framealpha'])
 
 ax1.grid(True)
 ax2.grid(True)

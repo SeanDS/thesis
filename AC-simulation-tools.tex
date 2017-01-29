@@ -108,7 +108,7 @@ The quantum noise calculations are similar in \gls{FINESSE} and Optickle, and th
 
 The sensitivity of a probe within an interferometer model is simply the noise on that probe divided by the relevant transfer function. When only quantum noise is considered, the sensitivity is \emph{quantum noise limited}.
 
-\section{\label{sec:optickle-field-tfs}Calculation of field transfer matrices in Optickle}
+\section{\label{sec:optickle-field-tfs}Field transfer matrices in Optickle}
 In the process of determining a probe signal in Optickle, the quadrature sum of the field amplitudes immediately in front of the probe is computed and the phase information contained within these fields is lost. Similarly, transfer functions from drives to probes are provided, but not transfer functions from drives to fields.
 
 In order to calculate the cross-correlation spectral density required for the calculation of the optimal filter in \cref{sec:optimal-filter}, the complex field and drive transfer matrices, $\mathbf{M}^{\textrm{ff}}$ and $\mathbf{R}$, respectively, must be extracted from Optickle indirectly. Optickle's calculation of the quantum noise at each probe within the interferometer uses field to field and drive to field matrices, but because the quantum noise and drive excitations are not necessarily unity, these matrices are not transfer matrices. In order to obtain $\mathbf{M}^{\textrm{ff}}$ the code which computes the quantum noise at each probe has to be modified to instead inject quantum noise at open ports with unity amplitude. Similarly, $\mathbf{R}$ can be computed by setting the drive amplitudes to unity. The modified source code is publicly available~\cite{controlspaperdata}.

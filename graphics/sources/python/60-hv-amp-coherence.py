@@ -98,6 +98,6 @@ ax4.tick_params(axis='y', labelleft='off')
 plt.tight_layout()
 
 #with plt.rc_context({'legend.borderaxispad': 0}):
-legend1 = fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], bbox_to_anchor=(1, 0.5), loc='center left')
+legend1 = fig.legend([la, lb, lc, ld], ['Channel A', 'Channel B', 'Channel C', 'Channel D'], bbox_to_anchor=(1, 0.55), loc='center left')
 
 plt.savefig(save_path, bbox_extra_artists=(legend1,), bbox_inches='tight')

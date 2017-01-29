@@ -80,11 +80,15 @@
     \let\footnote \thanks
     \begin{center}
     {
-       \Huge\textsc{
-        \@title
+       \Large\textsc{
+        Enhancing the Sensitivity of \\
+      }
+       \huge\textsc{
+        Future Laser-Interferometric \\
+        Gravitational Wave Detectors
       }\par
     }
-    \vskip 6em%
+    \vskip 7em%
     {
       \textsc{\LARGE
         \@author
@@ -94,7 +98,7 @@
     {
       \textsc{MSci}
     }
-    \vskip 3em%
+    \vskip 7em%
     {
       \textsc{
         Submitted in fulfilment of the requirements for the degree of
@@ -104,7 +108,7 @@
     {
       \emph{Doctor of Philosophy}
     }
-    \vskip 3em%
+    \vskip 5em%
     {
       \textsc{\large
         School of Physics and Astronomy

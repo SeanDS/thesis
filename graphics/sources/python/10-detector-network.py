@@ -55,7 +55,7 @@ m.fillcontinents(color=colours.shades['lightgrey'])
 
 # add detectors
 # override the default look and feel for the markers
-with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 10}):
+with plt.rc_context({'lines.markeredgewidth': 1, 'lines.markersize': 7}):
     for detector in detectors:    
         x, y = m(detector['lon'], detector['lat'])
     
