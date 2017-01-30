@@ -16,8 +16,8 @@
    height="744.09448"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="50-speedmeter-layout.svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="40-speedmeter-layout.svg">
   <defs
      id="defs4">
     <clipPath
@@ -1289,7 +1289,7 @@
        y1="14.548"
        x2="10.67"
        y2="14.548"
-       gradientTransform="matrix(0.22494569,0,0,0.33231666,-308.1822,707.18126)" />
+       gradientTransform="matrix(0.22494569,0,0,0.33231666,-294.0401,721.32336)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient2241-2-1-6-3-4-5-5"
@@ -1331,7 +1331,7 @@
        x2="10.67"
        y1="14.548"
        x1="0"
-       gradientTransform="matrix(0.22494569,0,0,0.33231666,-225.32498,580.041)"
+       gradientTransform="matrix(0.22494569,0,0,0.33231666,-211.18288,594.1831)"
        gradientUnits="userSpaceOnUse"
        id="linearGradient16943"
        xlink:href="#linearGradient2241-2-1-6-3-4-5-5"
@@ -1476,16 +1476,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="551.53741"
-     inkscape:cy="473.65455"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="516.04645"
+     inkscape:cy="354.25161"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1236"
-     inkscape:window-height="813"
-     inkscape:window-x="316"
-     inkscape:window-y="70"
+     inkscape:window-height="699"
+     inkscape:window-x="126"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -1504,245 +1504,245 @@
      id="layer1"
      transform="translate(0,-308.2677)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.417;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       d="M 287 146.625 C 189.155 146.625 109.84375 225.93625 109.84375 323.78125 C 109.84375 421.6275 189.155 500.9375 287 500.9375 C 340.5815 500.9375 388.60662 477.15156 421.09375 439.5625 L 684.40625 439.5625 C 716.89338 477.15156 764.9185 500.9375 818.5 500.9375 C 916.34625 500.9375 995.65625 421.6275 995.65625 323.78125 C 995.65625 225.93625 916.34625 146.625 818.5 146.625 C 764.9185 146.625 716.89338 170.41115 684.40625 208 L 421.09375 208 C 388.60662 170.41115 340.5815 146.625 287 146.625 z "
+       style="fill:none;stroke:#000000;stroke-width:1.41700006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       d="m 307,454.8927 c -97.845,0 -177.15625,79.31125 -177.15625,177.15625 0,97.84625 79.31125,177.15625 177.15625,177.15625 53.5815,0 101.60662,-23.78594 134.09375,-61.375 l 263.3125,0 c 32.48713,37.58906 80.51225,61.375 134.09375,61.375 97.84625,0 177.1562,-79.31 177.1562,-177.15625 0,-97.845 -79.30995,-177.15625 -177.1562,-177.15625 -53.5815,0 -101.60662,23.78615 -134.09375,61.375 l -263.3125,0 C 408.60662,478.67885 360.5815,454.8927 307,454.8927 Z"
        id="path3237"
-       transform="translate(0,308.2677)" />
+       inkscape:connector-curvature="0" />
     <path
        id="path3249"
        style="fill:#ebebeb;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 455.31629,632.04844 c 0,-92.9525 -75.35375,-168.30625 -168.3075,-168.30625 -92.9525,0 -168.3075,75.35375 -168.3075,168.30625 0,92.95375 75.355,168.30875 168.3075,168.30875 92.95375,0 168.3075,-75.355 168.3075,-168.30875"
+       d="m 475.31629,632.04844 c 0,-92.9525 -75.35375,-168.30625 -168.3075,-168.30625 -92.9525,0 -168.3075,75.35375 -168.3075,168.30625 0,92.95375 75.355,168.30875 168.3075,168.30875 92.95375,0 168.3075,-75.355 168.3075,-168.30875"
        inkscape:connector-curvature="0" />
     <path
        id="path3251"
        style="fill:#ebebeb;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 986.81379,632.04844 c 0,-92.9525 -75.355,-168.30625 -168.3075,-168.30625 -92.95375,0 -168.3075,75.35375 -168.3075,168.30625 0,92.95375 75.35375,168.30875 168.3075,168.30875 92.9525,0 168.3075,-75.355 168.3075,-168.30875"
+       d="m 1006.8138,632.04844 c 0,-92.9525 -75.35501,-168.30625 -168.30751,-168.30625 -92.95375,0 -168.3075,75.35375 -168.3075,168.30625 0,92.95375 75.35375,168.30875 168.3075,168.30875 92.9525,0 168.30751,-75.355 168.30751,-168.30875"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 819.92367,658.61555 -9.48639,69.27479 -452.2272,-68.9902 z"
+       style="fill:none;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 839.92367,658.61555 -9.48639,69.27479 -452.2272,-68.9902 z"
        id="path17100-6-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <path
        id="path3725"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 74.410537,632.54469 0,-0.99125 0,0 89.053253,0.025 0,0 -0.9425,0.94125 0,0 -88.110753,0.025"
+       d="m 94.410537,632.54469 0,-0.99125 0,0 89.053253,0.025 0,0 -0.9425,0.94125 0,0 -88.110753,0.025"
        inkscape:connector-curvature="0" />
     <path
        id="path3727"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 163.46379,631.57844 -0.9425,0.94125 0,0 0.007,-31.4575 0.008,-27.705 0,0 0.91375,-0.91375 0,0.004 0.007,28.62 0.006,30.51125"
+       d="m 183.46379,631.57844 -0.9425,0.94125 0,0 0.007,-31.4575 0.008,-27.705 0,0 0.91375,-0.91375 0,0.004 0.007,28.62 0.006,30.51125"
        inkscape:connector-curvature="0" />
     <path
        id="path3729"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 162.53629,573.35719 0.91375,-0.91375 0,0.004 90.53125,0.0213 0,0 0.86875,0.86875 0,0 -92.31,0.02"
+       d="m 182.53629,573.35719 0.91375,-0.91375 0,0.004 90.53125,0.0213 0,0 0.86875,0.86875 0,0 -92.31,0.02"
        inkscape:connector-curvature="0" />
     <path
        id="path3731"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 253.98129,572.46844 0.86875,0.86875 0,0 -0.006,25.53625 0,0 -0.855,-0.85375 -0.002,0 -0.007,-25.55125"
+       d="m 273.98129,572.46844 0.86875,0.86875 0,0 -0.006,25.53625 0,0 -0.855,-0.85375 -0.002,0 -0.007,-25.55125"
        inkscape:connector-curvature="0" />
     <path
        id="path3733"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 253.98504,598.01969 0.85375,0.85375 0.005,0 -2.81125,9.9175 0,0.004 -0.85375,-0.85375 0,0 2.80625,-9.92125"
+       d="m 273.98504,598.01969 0.85375,0.85375 0.005,0 -2.81125,9.9175 0,0.004 -0.85375,-0.85375 0,0 2.80625,-9.92125"
        inkscape:connector-curvature="0" />
     <path
        id="path3735"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 251.17879,607.94094 0.85375,0.85375 0,0 -0.006,28.85625 0,5.13125 0,0 -0.83625,-0.97875 -0.004,0.004 0,-4.15625 -0.008,-29.71"
+       d="m 271.17879,607.94094 0.85375,0.85375 0,0 -0.006,28.85625 0,5.13125 0,0 -0.83625,-0.97875 -0.004,0.004 0,-4.15625 -0.008,-29.71"
        inkscape:connector-curvature="0" />
     <path
        id="path3737"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 252.02629,642.78219 -0.83625,-0.97875 -0.004,0.004 104.47875,16.1925 0.002,0 -0.06,0.79125 0,0 -103.58125,-16.00875"
+       d="m 272.02629,642.78219 -0.83625,-0.97875 -0.004,0.004 104.47875,16.1925 0.002,0 -0.06,0.79125 0,0 -103.58125,-16.00875"
        inkscape:connector-curvature="0" />
     <path
        id="path3747"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 254.85004,573.33719 -0.86875,-0.86875 0,0 2.3425,-0.6625 0,0 0.86875,0.8675 0,0 -2.3425,0.66375"
+       d="m 274.85004,573.33719 -0.86875,-0.86875 0,0 2.3425,-0.6625 0,0 0.86875,0.8675 0,0 -2.3425,0.66375"
        inkscape:connector-curvature="0" />
     <path
        id="path3749"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 257.19254,572.67344 -0.86875,-0.8675 0,0 48.40125,0.0113 0,0.84625 -47.5325,0.01"
+       d="m 277.19254,572.67344 -0.86875,-0.8675 0,0 48.40125,0.0113 0,0.84625 -47.5325,0.01"
        inkscape:connector-curvature="0" />
     <path
        id="path3751"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 254.84254,598.87344 -0.85375,-0.85375 -0.004,0 18.85125,0.003 0,0.8475 0,0 -17.99375,0.004"
+       d="m 274.84254,598.87344 -0.85375,-0.85375 -0.004,0 18.85125,0.003 0,0.8475 0,0 -17.99375,0.004"
        inkscape:connector-curvature="0" />
     <path
        id="path3753"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 252.03254,608.79469 -0.85375,-0.85375 0,-10e-4 9.92125,-2.80625 0,0 0.85,0.85125 0,0 -9.9175,2.81"
+       d="m 272.03254,608.79469 -0.85375,-0.85375 0,-10e-4 9.92125,-2.80625 0,0 0.85,0.85125 0,0 -9.9175,2.81"
        inkscape:connector-curvature="0" />
     <path
        id="path3755"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 261.95004,605.98469 -0.85,-0.85125 0,0 25.045,0.008 104.88125,0.0213 0,0 0.06,0.79375 0.004,0 -104.9425,0.0212 -24.1925,0.008"
+       d="m 281.95004,605.98469 -0.85,-0.85125 0,0 25.045,0.008 104.88125,0.0213 0,0 0.06,0.79375 0.004,0 -104.9425,0.0212 -24.1925,0.008"
        inkscape:connector-curvature="0" />
     <path
        id="path3767"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 355.65004,658.23719 -0.06,0.79125 -0.004,0 -105.9775,0.0275 -70.5075,0.0213 0.002,0.004 -0.79,-0.87125 -0.002,0 71.2975,0.01 106.0375,0.0175"
+       d="m 375.65004,658.23719 -0.06,0.79125 -0.004,0 -105.9775,0.0275 -70.5075,0.0213 0.002,0.004 -0.79,-0.87125 -0.002,0 71.2975,0.01 106.0375,0.0175"
        inkscape:connector-curvature="0" />
     <path
        id="path3769"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 179.10379,659.08094 -0.79,-0.87125 -0.002,0 10.21125,-106.64 0.77625,-8.10375 -0.001,0 0.4675,0 0.4675,0 10e-4,0 -0.79,8.1925 -10.34,107.4225"
+       d="m 199.10379,659.08094 -0.79,-0.87125 -0.002,0 10.21125,-106.64 0.77625,-8.10375 -0.001,0 0.4675,0 0.4675,0 10e-4,0 -0.79,8.1925 -10.34,107.4225"
        inkscape:connector-curvature="0" />
     <path
        id="path3771"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 189.29754,543.46594 0.4675,0 0.4675,0 -0.002,0 1.07125,11.215 7.76625,81.305 0.004,0 -0.95625,-0.74375 -0.004,0 -7.7275,-80.4725 -1.085,-11.30375"
+       d="m 209.29754,543.46594 0.4675,0 0.4675,0 -0.002,0 1.07125,11.215 7.76625,81.305 0.004,0 -0.95625,-0.74375 -0.004,0 -7.7275,-80.4725 -1.085,-11.30375"
        inkscape:connector-curvature="0" />
     <path
        id="path3773"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 199.07129,635.98594 -0.95625,-0.745 -0.004,10e-4 95.81125,-14.815 97.12125,-15.02 0.004,0.004 0.06,0.79375 0,0 -97.055,15.05125 -94.98125,14.73375"
+       d="m 219.07129,635.98594 -0.95625,-0.745 -0.004,10e-4 95.81125,-14.815 97.12125,-15.02 0.004,0.004 0.06,0.79375 0,0 -97.055,15.05125 -94.98125,14.73375"
        inkscape:connector-curvature="0" />
     <path
        id="path3783"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 261.10004,605.13344 0.85,0.85125 0,0 -2.80875,9.9175 0.004,0 -0.85125,-0.85 0,0.004 2.80625,-9.9225"
+       d="m 281.10004,605.13344 0.85,0.85125 0,0 -2.80875,9.9175 0.004,0 -0.85125,-0.85 0,0.004 2.80625,-9.9225"
        inkscape:connector-curvature="0" />
     <path
        id="path3785"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 258.29379,615.05594 0.85125,0.85 0,-0.004 -0.004,16.14625 -0.84375,0 -0.004,-16.9925"
+       d="m 278.29379,615.05594 0.85125,0.85 0,-0.004 -0.004,16.14625 -0.84375,0 -0.004,-16.9925"
        inkscape:connector-curvature="0" />
     <path
        id="path3789"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 392.02582,605.24471 0.0615,0.79777 0,0 -104.36395,16.17912 -88.66852,13.74684 -0.004,0 -0.9611,-0.74878 0,0 89.50147,-13.83102 104.43053,-16.14393"
+       d="m 412.02582,605.24471 0.0615,0.79777 0,0 -104.36395,16.17912 -88.66852,13.74684 -0.004,0 -0.9611,-0.74878 0,0 89.50147,-13.83102 104.43053,-16.14393"
        inkscape:connector-curvature="0" />
     <path
        id="path3791"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 199.04629,635.96844 -0.95625,-0.745 0,0 -8.515,-88.5925 -0.305,-3.165 0,0 0.4675,0 0.4675,0 -0.002,0 0.29375,3.07625 8.54625,89.42625"
+       d="m 219.04629,635.96844 -0.95625,-0.745 0,0 -8.515,-88.5925 -0.305,-3.165 0,0 0.4675,0 0.4675,0 -0.002,0 0.29375,3.07625 8.54625,89.42625"
        inkscape:connector-curvature="0" />
     <path
        id="path3793"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 189.27004,543.46594 0.4675,0 0.4675,0 -0.002,0 -1.25125,12.9825 -9.87875,102.5975 0,0 -0.79,-0.8725 0,0.004 9.75125,-101.81375 1.23625,-12.89375"
+       d="m 209.27004,543.46594 0.4675,0 0.4675,0 -0.002,0 -1.25125,12.9825 -9.87875,102.5975 0,0 -0.79,-0.8725 0,0.004 9.75125,-101.81375 1.23625,-12.89375"
        inkscape:connector-curvature="0" />
     <path
        id="path3795"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 179.07254,659.04594 -0.79,-0.8725 0,0.004 74.83875,0.0113 102.52875,0.0137 0,-0.004 -0.06,0.79 0,0 -102.46875,0.0325 -74.04875,0.025"
+       d="m 199.07254,659.04594 -0.79,-0.8725 0,0.004 74.83875,0.0113 102.52875,0.0137 0,-0.004 -0.06,0.79 0,0 -102.46875,0.0325 -74.04875,0.025"
        inkscape:connector-curvature="0" />
     <path
        id="path3807"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 392.03973,605.16969 0.0605,0.79375 0,0 -113.91342,0.0175 -16.22511,0.004 0,0 -0.85787,-0.85125 0,0 17.08298,0.004 113.84918,0.0325"
+       d="m 412.03973,605.16969 0.0605,0.79375 0,0 -113.91342,0.0175 -16.22511,0.004 0,0 -0.85787,-0.85125 0,0 17.08298,0.004 113.84918,0.0325"
        inkscape:connector-curvature="0" />
     <path
        id="path3809"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 261.10379,605.13344 0.85125,0.85125 0,0 -9.91875,2.81 -0.004,0 -0.85,-0.85 0,0 9.92125,-2.80625"
+       d="m 281.10379,605.13344 0.85125,0.85125 0,0 -9.91875,2.81 -0.004,0 -0.85,-0.85 0,0 9.92125,-2.80625"
        inkscape:connector-curvature="0" />
     <path
        id="path3811"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 251.18254,607.94469 0.85,0.85 0,0 -27.495,0.004 0,0 0.86375,-0.865 0,0 25.78125,0.007"
+       d="m 271.18254,607.94469 0.85,0.85 0,0 -27.495,0.004 0,0 0.86375,-0.865 0,0 25.78125,0.007"
        inkscape:connector-curvature="0" />
     <path
        id="path3813"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 224.53754,608.79844 0.86375,-0.865 0,0 0.0363,113.13125 0,0.002 -0.9225,-0.92 0,0 0.0225,-111.34875"
+       d="m 244.53754,608.79844 0.86375,-0.865 0,0 0.0363,113.13125 0,0.002 -0.9225,-0.92 0,0 0.0225,-111.34875"
        inkscape:connector-curvature="0" />
     <path
        id="path3815"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 225.43754,721.06719 -0.9225,-0.92 0,0 20.655,-0.005 39.1425,-0.006 0,0 0.95,0.95 0.002,0 -40.095,-0.015 -19.7325,-0.006"
+       d="m 245.43754,721.06719 -0.9225,-0.92 0,0 20.655,-0.005 39.1425,-0.006 0,0 0.95,0.95 0.002,0 -40.095,-0.015 -19.7325,-0.006"
        inkscape:connector-curvature="0" />
     <path
        id="path3817"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 285.26629,721.08594 -0.95,-0.95 -0.004,0 2.3425,-0.6625 0,-0.004 0.9525,0.95375 0,0 -2.34125,0.6625"
+       d="m 305.26629,721.08594 -0.95,-0.95 -0.004,0 2.3425,-0.6625 0,-0.004 0.9525,0.95375 0,0 -2.34125,0.6625"
        inkscape:connector-curvature="0" />
     <path
        id="path3823"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 251.98004,642.72844 -0.83625,-0.97375 0,0 -0.004,-12.76375 -0.006,-21.1 0,0.004 0.85,0.85 0,0 -0.004,20.25 -0.004,13.7375"
+       d="m 271.98004,642.72844 -0.83625,-0.97375 0,0 -0.004,-12.76375 -0.006,-21.1 0,0.004 0.85,0.85 0,0 -0.004,20.25 -0.004,13.7375"
        inkscape:connector-curvature="0" />
     <path
        id="path3827"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 254.79379,598.82344 -0.855,-0.85375 0,0.004 -0.006,-25.55125 0,-0.004 0.86375,0.865 0,0.004 -0.002,25.54"
+       d="m 274.79379,598.82344 -0.855,-0.85375 0,0.004 -0.006,-25.55125 0,-0.004 0.86375,0.865 0,0.004 -0.002,25.54"
        inkscape:connector-curvature="0" />
     <path
        id="path3829"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 253.93254,572.41844 0.86375,0.865 0,0.004 -92.2,0.0175 0,-0.004 0.91,-0.91 -0.002,0 90.42875,0.0275"
+       d="m 273.93254,572.41844 0.86375,0.865 0,0.004 -92.2,0.0175 0,-0.004 0.91,-0.91 -0.002,0 90.42875,0.0275"
        inkscape:connector-curvature="0" />
     <path
        id="path3831"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 162.59629,573.30094 0.91,-0.91 -0.002,0 0.0137,38.04375 0.007,21.0825 0,0 -0.93875,0.94 0,0 0.002,-22.02625 0.008,-37.13375"
+       d="m 182.59629,573.30094 0.91,-0.91 -0.002,0 0.0137,38.04375 0.007,21.0825 0,0 -0.93875,0.94 0,0 0.002,-22.02625 0.008,-37.13375"
        inkscape:connector-curvature="0" />
     <path
        id="path3833"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 163.52504,631.51719 -0.93875,0.94 0,0 -88.175753,0.0175 0,-0.98875 0,0.002 89.114503,0.0325"
+       d="m 183.52504,631.51719 -1.14567,0.94 0,0 -107.61169,0.0175 0,-0.98875 0,0.002 108.75736,0.0325"
        inkscape:connector-curvature="0" />
     <path
        id="path3837"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 261.95504,605.98469 -0.85125,-0.85125 0,0 -0.006,-23.75375 0.86,0 0,0 -0.002,24.605"
+       d="m 281.95504,605.98469 -0.85125,-0.85125 0,0 -0.006,-23.75375 0.86,0 0,0 -0.002,24.605"
        inkscape:connector-curvature="0" />
     <path
        id="path3839"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 253.93879,597.97344 0.855,0.85375 0,-0.004 -9.91875,2.81 -0.003,0 -0.855,-0.85375 0,0 9.92125,-2.80625"
+       d="m 273.93879,597.97344 0.855,0.85375 0,-0.004 -9.91875,2.81 -0.003,0 -0.855,-0.85375 0,0 9.92125,-2.80625"
        inkscape:connector-curvature="0" />
     <path
        id="path3841"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 244.01754,600.77969 0.855,0.85375 0,0 -11.01375,0.004 0,-0.86125 0,0 10.15875,0.004"
+       d="m 264.01754,600.77969 0.855,0.85375 0,0 -11.01375,0.004 0,-0.86125 0,0 10.15875,0.004"
        inkscape:connector-curvature="0" />
     <path
        id="path3843"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 254.79629,573.28719 -0.86375,-0.865 0,-0.004 0.6625,-2.3425 0,10e-4 0.86375,0.86375 0,0 -0.6625,2.3425"
+       d="m 274.79629,573.28719 -0.86375,-0.865 0,-0.004 0.6625,-2.3425 0,10e-4 0.86375,0.86375 0,0 -0.6625,2.3425"
        inkscape:connector-curvature="0" />
     <path
        id="path3845"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 255.45879,570.94094 -0.86375,-0.865 0,0 -0.008,-25.1425 0,0 0.87875,-0.87875 0,0.004 -0.004,26.88625"
+       d="m 275.45879,570.94094 -0.86375,-0.865 0,0 -0.008,-25.1425 0,0 0.87875,-0.87875 0,0.004 -0.004,26.88625"
        inkscape:connector-curvature="0" />
     <path
        id="path3847"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 254.58754,544.93344 0.87875,-0.87875 0,0.004 31.26625,-0.008 0,0 0.8925,0.89375 0,0 -33.04125,-0.0113"
+       d="m 274.58754,544.93344 0.87875,-0.87875 0,0.004 31.26625,-0.008 0,0 0.8925,0.89375 0,0 -33.04125,-0.0113"
        inkscape:connector-curvature="0" />
     <path
        id="path3849"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 286.73254,544.05094 0.89375,0.89375 -10e-4,-0.001 0.0213,69.1875 0.0362,106.37 0.004,0 -0.98625,-0.985 0,0 0.0225,-105.385 0.0138,-70.08"
+       d="m 306.73254,544.05094 0.89375,0.89375 -10e-4,-0.001 0.0213,69.1875 0.0362,106.37 0.004,0 -0.98625,-0.985 0,0 0.0225,-105.385 0.0138,-70.08"
        inkscape:connector-curvature="0" />
     <path
        id="path3851"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 286.65504,719.46969 0.9525,0.95375 0,0 -0.6625,2.34125 0,0 -0.9525,-0.9525 0,0.003 0.6625,-2.34125"
+       d="m 306.65504,719.46969 0.9525,0.95375 0,0 -0.6625,2.34125 0,0 -0.9525,-0.9525 0,0.003 0.6625,-2.34125"
        inkscape:connector-curvature="0" />
     <path
        id="path3853"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 285.99254,721.81594 0.9525,0.9525 0,-0.004 0.004,15.58375 -0.96,0 0.004,-16.5325"
+       d="m 305.99254,721.81594 0.9525,0.9525 0,-0.004 0.004,15.58375 -0.96,0 0.004,-16.5325"
        inkscape:connector-curvature="0" />
     <path
        id="path3855"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 287.60754,720.42344 -0.9525,-0.95375 0,0 18.07,-0.004 0,0.96375 -17.1175,-0.008"
+       d="m 307.60754,720.42344 -0.9525,-0.95375 0,0 18.07,-0.004 0,0.96375 -17.1175,-0.008"
        inkscape:connector-curvature="0" />
     <path
        id="path3857"
-       style="fill:none;stroke:#000000;stroke-width:0.35433125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:7.086625, 2.480325, 2.1259875, 2.480325;stroke-dashoffset:0"
-       d="m 74.410537,632.04844 0,0"
+       style="fill:none;stroke:#000000;stroke-width:0.35433125;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:7.086625, 2.480325, 2.1259875, 2.480325;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 94.410537,632.04844 0,0"
        inkscape:connector-curvature="0" />
     <g
        transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
@@ -1760,96 +1760,98 @@
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,6.816606,208.14719)"
        id="g4033">
       <text
          id="text4035"
          transform="matrix(0,1,1,0,356.312,127.795)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4037"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M4</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M4</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-20.601034,206.14719)"
+       transform="matrix(0,1.25,1.25,0,-0.601034,206.14719)"
        id="g4055">
       <text
          id="text4057"
-         transform="matrix(0,1,1,0,287.736,127.795)">
+         transform="matrix(0,1,1,0,0,0)"
+         x="126.195"
+         y="287.73599">
         <tspan
            id="tspan4059"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M5</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="126.195"
+           y="287.73599">M5</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,46.541823,244.86148)"
        id="g4077">
       <text
          id="text4079"
          transform="matrix(0,1,1,0,307.579,192.756)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4081"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M6</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M6</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,9.827537,216.14719)"
        id="g4099">
       <text
          id="text4101"
          transform="matrix(0,1,1,0,358.809,193.228)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4103"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M7</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M7</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,5.827537,206.14719)"
        id="g4121">
       <text
          id="text4123"
          transform="matrix(0,1,1,0,359.062,164.41)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4125"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M8</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M8</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,2.515978,206.14719)"
        id="g4143">
       <text
          id="text4145"
          transform="matrix(0,1,1,0,264.186,154.724)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4147"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M9</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M9</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,1.827537,208.14719)"
        id="g4165">
       <text
          id="text4167"
@@ -1857,13 +1859,13 @@
         <tspan
            id="tspan4169"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M10</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M10</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,-0.172463,206.14719)"
        id="g4187">
       <text
          id="text4189"
@@ -1871,13 +1873,13 @@
         <tspan
            id="tspan4191"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M11</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M11</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-25.789217,206.14719)"
+       transform="matrix(0,1.25,1.25,0,-1.789217,204.14719)"
        id="g4209">
       <text
          id="text4211"
@@ -1885,13 +1887,13 @@
         <tspan
            id="tspan4213"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M12</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M12</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,2.4950541,206.14719)"
+       transform="matrix(0,1.25,1.25,0,20.495054,204.14719)"
        id="g4231">
       <text
          id="text4233"
@@ -1899,58 +1901,58 @@
         <tspan
            id="tspan4235"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M13</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M13</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,1.827537,206.14719)"
        id="g4253">
       <text
          id="text4255"
          transform="matrix(0,1,1,0,314.666,168.423)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4257"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M14</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M14</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,1.827537,208.14719)"
        id="g4275">
       <text
          id="text4277"
          transform="matrix(0,1,1,0,427.179,179.761)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4279"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M15</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M15</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,-4.172463,206.14719)"
        id="g4297">
       <text
          id="text4299"
          transform="matrix(0,1,1,0,405.272,214.955)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4301"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M16</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M16</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,195.39271)"
+       transform="matrix(0,1.25,1.25,0,5.827537,193.39271)"
        id="g4319">
       <text
          id="text4321"
@@ -1958,121 +1960,121 @@
         <tspan
            id="tspan4323"
            sodipodi:role="line"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            y="0">Laser</tspan>
         <tspan
            sodipodi:role="line"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
-           y="14.881875"
+           y="20"
            id="tspan8839">stabilisation</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,8.5559693,221.52451)"
+       transform="matrix(0,1.25,1.25,0,28.555969,227.52451)"
        id="g4341">
       <text
          id="text4343"
          transform="matrix(0,1,1,0,398.894,245.9)"
-         style="font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4345"
            sodipodi:role="line"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            x="0"
            y="0">HDa</tspan>
       </text>
     </g>
     <text
-       style="font-size:15px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:15px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
        id="text4365"
-       x="266.54895"
-       y="759.60846">
+       x="286.54895"
+       y="763.60846">
       <tspan
-         y="759.60846"
-         x="266.54895"
-         style="font-size:14.88187599px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+         y="763.60846"
+         x="286.54895"
+         style="font-variant:normal;font-weight:normal;font-size:20px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          sodipodi:role="line"
          id="tspan4367">HDb</tspan>
     </text>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,-0.172463,206.14719)"
        id="g4417">
       <text
          id="text4419"
          transform="matrix(0,1,1,0,380.407,286.061)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4421"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M1a</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M1a</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-15.182616,196.55074)"
+       transform="matrix(0,1.25,1.25,0,0.817384,196.55074)"
        id="g4439">
       <text
          id="text4441"
          transform="matrix(0,1,1,0,361.981,678.57)"
-         style="font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4443"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M3a</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M3a</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-18.718149,215.23856)"
+       transform="matrix(0,1.25,1.25,0,-6.718149,215.23856)"
        id="g4461">
       <text
          id="text4463"
          transform="matrix(0,1,1,0,428.429,674.221)"
-         style="font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4465"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M2a</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M2a</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-14.172463,206.14719)"
+       transform="matrix(0,1.25,1.25,0,1.827537,206.14719)"
        id="g4483">
       <text
          id="text4485"
          transform="matrix(0,1,1,0,337.887,314.407)"
-         style="-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4487"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041000000014px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M1b</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M1b</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-16.192768,193.01521)"
+       transform="matrix(0,1.25,1.25,0,-4.192768,195.01521)"
        id="g4505">
       <text
          id="text4507"
          transform="matrix(0,1,1,0,262.936,702.568)"
-         style="font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">
+         style="font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'">
         <tspan
            id="tspan4509"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M3b</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M3b</tspan>
       </text>
     </g>
     <g
-       transform="matrix(0,1.25,1.25,0,-16.192768,212.20811)"
+       transform="matrix(0,1.25,1.25,0,-0.192768,216.20811)"
        id="g4527">
       <text
          id="text4529"
@@ -2080,27 +2082,27 @@
         <tspan
            id="tspan4531"
            sodipodi:role="line"
-           y="0"
-           x="0 9.9172812 16.536739"
-           style="font-size:11.90550041px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">M2b</tspan>
+           style="font-variant:normal;font-weight:normal;font-size:16px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           x="0"
+           y="0">M2b</tspan>
       </text>
     </g>
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="25.714287"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="27.714287"
        y="621.64789"
        id="text8841"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan8843"
-         x="25.714287"
+         x="27.714287"
          y="621.64789"
-         style="font-size:16px">Input beam</tspan></text>
+         style="font-size:20px">Input beam</tspan></text>
     <g
        style="display:inline;enable-background:new"
        id="g7548"
-       transform="matrix(0,-0.18738816,0.18738816,0,258.42361,581.42859)">
+       transform="matrix(0,-0.18738816,0.18738816,0,278.42361,581.42859)">
       <linearGradient
          id="linearGradient7550"
          gradientUnits="userSpaceOnUse"
@@ -2197,7 +2199,7 @@
     <g
        style="display:inline;enable-background:new"
        id="g7548-1"
-       transform="matrix(0.18738816,0,0,0.18738816,272.67062,595.34276)">
+       transform="matrix(0.18738816,0,0,0.18738816,292.67062,595.34276)">
       <linearGradient
          id="linearGradient7550-8"
          gradientUnits="userSpaceOnUse"
@@ -2294,7 +2296,7 @@
     <g
        style="display:inline;enable-background:new"
        id="g7548-1-7"
-       transform="matrix(-0.18738816,0,0,-0.18738816,234.11029,604.31099)">
+       transform="matrix(-0.18738816,0,0,-0.18738816,254.11029,604.31099)">
       <linearGradient
          id="linearGradient7550-8-9"
          gradientUnits="userSpaceOnUse"
@@ -2391,7 +2393,7 @@
     <g
        style="display:inline;enable-background:new"
        id="g7548-1-4"
-       transform="matrix(0,0.18738816,-0.18738816,0,261.82334,631.87875)">
+       transform="matrix(0,0.18738816,-0.18738816,0,281.82334,631.87875)">
       <linearGradient
          id="linearGradient7550-8-3"
          gradientUnits="userSpaceOnUse"
@@ -2491,7 +2493,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g7532"
-       transform="matrix(0.42869551,0,0,0.42869551,304.39431,567.21798)">
+       transform="matrix(0.42869551,0,0,0.42869551,324.39431,567.21798)">
       <g
          id="g7534">
         <radialGradient
@@ -2542,7 +2544,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g7532-5"
-       transform="matrix(0.42869551,0,0,0.42869551,304.34154,714.92583)">
+       transform="matrix(0.42869551,0,0,0.42869551,324.34154,714.92583)">
       <g
          id="g7534-0">
         <radialGradient
@@ -2593,7 +2595,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g7532-0"
-       transform="matrix(0,0.42869551,-0.42869551,0,291.49078,737.60649)">
+       transform="matrix(0,0.42869551,-0.42869551,0,311.49078,737.60649)">
       <g
          id="g7534-1">
         <radialGradient
@@ -2639,12 +2641,12 @@
       </g>
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239"
-       transform="matrix(0.27749447,0.27749447,-0.27749447,0.27749447,167.0541,628.03602)">
+       transform="matrix(0.27749447,0.27749447,-0.27749447,0.27749447,187.0541,628.03602)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2678,15 +2680,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15321);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15321);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3"
-       transform="matrix(-0.27749447,-0.27749447,0.27749447,-0.27749447,158.97044,576.95537)">
+       transform="matrix(-0.27749447,-0.27749447,0.27749447,-0.27749447,178.97044,576.95537)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2720,15 +2722,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15379);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15379);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-1"
-       transform="matrix(0,-0.39243644,0.39243644,0,183.859,543.43459)">
+       transform="matrix(0,-0.39243644,0.39243644,0,203.859,543.43459)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2762,15 +2764,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15434);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15434);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-1-3"
-       transform="matrix(-0.29163711,0.26259123,-0.26259123,-0.29163711,182.50992,662.89767)">
+       transform="matrix(-0.29163711,0.26259123,-0.26259123,-0.29163711,202.50992,662.89767)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2804,15 +2806,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15498);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15498);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-1-4"
-       transform="matrix(-0.24160799,0.30924413,-0.30924413,-0.24160799,203.20954,639.24399)">
+       transform="matrix(-0.24160799,0.30924413,-0.30924413,-0.24160799,223.20954,639.24399)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2846,15 +2848,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15544);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15544);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4"
-       transform="matrix(-0.27749447,-0.27749447,0.27749447,-0.27749447,220.56088,612.84427)">
+       transform="matrix(-0.27749447,-0.27749447,0.27749447,-0.27749447,240.56088,612.84427)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2888,15 +2890,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15590);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15590);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1"
-       transform="matrix(-0.27749447,-0.27749447,0.27749447,-0.27749447,250.82732,548.78361)">
+       transform="matrix(-0.27749447,-0.27749447,0.27749447,-0.27749447,270.82732,548.78361)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2930,15 +2932,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15654);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15654);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2"
-       transform="matrix(0.27749447,-0.27749447,0.27749447,0.27749447,283.00739,540.30993)">
+       transform="matrix(0.27749447,-0.27749447,0.27749447,0.27749447,303.00739,540.30993)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -2972,15 +2974,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15700);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15700);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-6"
-       transform="matrix(-0.30062375,0.25225328,-0.25225328,-0.30062375,255.3495,646.53062)">
+       transform="matrix(-0.30062375,0.25225328,-0.25225328,-0.30062375,275.3495,646.53062)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3014,15 +3016,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15767);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15767);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="display:inline;enable-background:new;opacity:0.7"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-0"
-       transform="matrix(-0.27749447,0.27749447,-0.27749447,-0.27749447,228.821,724.29373)">
+       transform="matrix(-0.27749447,0.27749447,-0.27749447,-0.27749447,248.821,724.29373)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3056,15 +3058,15 @@
          i:knockout="Off"
          y="0.375"
          x="0.375"
-         style="fill:url(#linearGradient15822);fill-opacity:1;stroke:#000000;stroke-width:0.75000000000000000" />
+         style="fill:url(#linearGradient15822);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-8"
-       transform="matrix(0.68850127,-0.68850127,0.68850127,0.68850127,240.68553,598.87615)">
+       transform="matrix(0.68850127,-0.68850127,0.68850127,0.68850127,260.68553,598.87615)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3102,35 +3104,35 @@
     </g>
     <rect
        style="opacity:0.7;fill:url(#linearGradient16943);fill-opacity:1;stroke:#000000;stroke-width:0.294;stroke-miterlimit:4;stroke-dasharray:none"
-       x="-225.24059"
-       y="580.16565"
+       x="-211.09843"
+       y="594.3075"
        i:knockout="Off"
        width="2.2314615"
        height="9.4198475"
        id="rect2232-5-8-5-8-1-0-1"
        transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
     <rect
-       style="opacity:0.69999999999999996;fill:url(#linearGradient16158);fill-opacity:1;stroke:#000000;stroke-width:0.294;stroke-miterlimit:4;stroke-dasharray:none"
-       x="-308.09781"
-       y="707.30591"
+       style="opacity:0.7;fill:url(#linearGradient16158);fill-opacity:1;stroke:#000000;stroke-width:0.294;stroke-miterlimit:4;stroke-dasharray:none"
+       x="-293.95566"
+       y="721.44775"
        i:knockout="Off"
        width="2.2314615"
        height="9.4198475"
        id="rect2232-5-8-5-8-1-0"
        transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 856.49392,605.60916 -9.48639,-69.27479 -452.2272,68.9902 z"
+       style="fill:none;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 876.49392,605.60916 -9.48639,-69.27479 -452.2272,68.9902 z"
        id="path17100-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-63"
-       transform="matrix(0.43532956,-0.55719643,0.55719643,0.43532956,838.64804,528.00865)">
+       transform="matrix(0.43532956,-0.55719643,0.55719643,0.43532956,858.64804,528.00865)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3167,12 +3169,12 @@
          style="fill:url(#linearGradient15877);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-63-1"
-       transform="matrix(0.51713466,0.48223587,-0.48223587,0.51713466,863.38806,599.63232)">
+       transform="matrix(0.51713466,0.48223587,-0.48223587,0.51713466,883.38806,599.63232)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3209,12 +3211,12 @@
          style="fill:url(#linearGradient15941);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-6-4"
-       transform="matrix(-0.25430548,0.01778277,-0.01778277,-0.25430548,394.97971,609.10407)">
+       transform="matrix(-0.25430548,0.01778277,-0.01778277,-0.25430548,414.97971,609.10407)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3251,12 +3253,12 @@
          style="fill:url(#linearGradient17027);fill-opacity:1;stroke:#000000;stroke-width:1.15455782" />
     </g>
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-63-1-8-1"
-       transform="matrix(0.44498767,0.54951403,-0.54951403,0.44498767,819.14499,722.45467)">
+       transform="matrix(0.44498767,0.54951403,-0.54951403,0.44498767,839.14499,722.45467)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3293,12 +3295,12 @@
          style="fill:url(#linearGradient16051);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-63-1-8"
-       transform="matrix(0.51713467,-0.48223586,0.48223586,0.51713467,813.5941,649.93144)">
+       transform="matrix(0.51713467,-0.48223586,0.48223586,0.51713467,833.5941,649.93144)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"
@@ -3335,12 +3337,12 @@
          style="fill:url(#linearGradient15987);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
     </g>
     <g
-       style="opacity:0.7;display:inline;enable-background:new"
+       style="display:inline;opacity:0.7;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g2239-3-4-1-2-6-4-6"
-       transform="matrix(-0.25430548,-0.01778278,0.01778278,-0.25430548,357.95366,662.56662)">
+       transform="matrix(-0.25430548,-0.01778278,0.01778278,-0.25430548,377.95366,662.56662)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
          y2="22.892099"

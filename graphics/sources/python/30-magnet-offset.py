@@ -42,8 +42,9 @@ colours = lf.Colours()
 fig = plt.figure(figsize=lf.FIG_SIZE_A)
 ax = plt.gca()
 
-ax.plot(data[:, 0], data[:, 1], 'x', color=colours.next())
-ax.plot(data[:, 0], fit_y, '-', color=colours.next())
+with plt.rc_context({'lines.markersize': 2, 'lines.markeredgewidth': 2}):
+    ax.plot(data[:, 0], data[:, 1], '.', color=colours.next())
+    ax.plot(data[:, 0], fit_y, '-', color=colours.next())
 
 ax.set_xlim([-6.5, 6.5])
 #ax.set_ylim([-0.5, 0.2])

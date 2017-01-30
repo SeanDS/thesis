@@ -82,9 +82,13 @@ When light with multiple frequency components is incident upon a photodetector t
   E' = E'_0 \cos \left( \omega_1 t \right) + E'_0 \cos \left( \omega_2 t \right),
 \end{equation}
 where $\omega_1$ and $\omega_2$ are the two frequencies and $t$ is time. The photodetector measures the power of the field, $P$:
+% hack with \left. and \right. to avoid issue with open brackets across a new line (http://latex-community.org/forum/viewtopic.php?f=46&t=4823)
 \begin{equation}
   \label{eq:photodetector-beat-power}
-  P = {E'}^2 = {E'}_0^2 \left( \cos^2 \left( \omega_1 t \right) + \cos^2 \left( \omega_2 t \right) + \cos \left( \left( \omega_1 + \omega_2 \right) t \right) + \cos \left( \left( \omega_1 - \omega_2 \right) t \right) \right).
+  \begin{split}
+    P = {E'}^2 = &{E'}_0^2 \left( \cos^2 \left( \omega_1 t \right) + \cos^2 \left( \omega_2 t \right) \right. \\
+    &+ \left. \cos \left( \left( \omega_1 + \omega_2 \right) t \right) + \cos \left( \left( \omega_1 - \omega_2 \right) t \right) \right).
+  \end{split}
 \end{equation}
 If the difference frequency $\omega_1 - \omega_2$ in \cref{eq:photodetector-beat-power} is small, it can be measured by the photodetector. Most heterodyne techniques involve the phase modulation of a single carrier which creates a series of sidebands offset in frequency (see \cref{fig:sideband-structure}) from the carrier that beat together at the photodetector. Different resonant conditions for the sidebands with respect to the carrier allow some to act as phase discriminants for others, and with suitable \emph{demodulation} at the photodetector these can be used to sense displacement in the interferometer arms.
 

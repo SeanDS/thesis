@@ -12,7 +12,7 @@
    width="297mm"
    height="210mm"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="30-magnet-offset-experiment.svg">
   <metadata
      id="metadata16">
@@ -140,6 +140,88 @@
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
     </marker>
+    <linearGradient
+       id="c-laser1-grad"
+       gradientUnits="userSpaceOnUse"
+       x1="28.721701"
+       y1="32.972698"
+       x2="28.721701"
+       y2="13.1309">
+      <stop
+         offset="0"
+         style="stop-color:#FFFFFF"
+         id="stop4171" />
+      <stop
+         offset="0.0051"
+         style="stop-color:#FEFCFC"
+         id="stop4173" />
+      <stop
+         offset="0.1497"
+         style="stop-color:#E6A4A4"
+         id="stop4175" />
+      <stop
+         offset="0.277"
+         style="stop-color:#D35E5E"
+         id="stop4177" />
+      <stop
+         offset="0.3823"
+         style="stop-color:#C62B2B"
+         id="stop4179" />
+      <stop
+         offset="0.4615"
+         style="stop-color:#BD0C0C"
+         id="stop4181" />
+      <stop
+         offset="0.5056"
+         style="stop-color:#BA0000"
+         id="stop4183" />
+      <stop
+         offset="0.7077"
+         style="stop-color:#D86E6E"
+         id="stop4185" />
+      <stop
+         offset="0.9099"
+         style="stop-color:#F4D6D6"
+         id="stop4187" />
+      <stop
+         offset="1"
+         style="stop-color:#FFFFFF"
+         id="stop4189" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.35,0,0,1,-116.2935,-14.3086)"
+       y2="22.892099"
+       x2="364.5545"
+       y1="34.8228"
+       x1="330.4668"
+       gradientUnits="userSpaceOnUse"
+       id="b-bsp-grad">
+      <stop
+         id="stop6"
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <stop
+         id="stop8"
+         style="stop-color:#89A4B6"
+         offset="1" />
+    </linearGradient>
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       fy="7.4608998"
+       fx="8.8794003"
+       r="17.067101"
+       cy="7.4608998"
+       cx="8.8794003"
+       id="e-pd1-grad">
+      <stop
+         id="stop4294"
+         style="stop-color:#FEDE58"
+         offset="0" />
+      <stop
+         id="stop4296"
+         style="stop-color:#BA0000"
+         offset="0.6854" />
+    </radialGradient>
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -150,15 +232,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1680"
-     inkscape:window-height="1030"
+     inkscape:window-width="1366"
+     inkscape:window-height="703"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="618.76192"
-     inkscape:cy="391.19481"
-     inkscape:window-x="-2"
-     inkscape:window-y="-3"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="688.7668"
+     inkscape:cy="420.78844"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="b-bsp"
      units="mm" />
@@ -624,5 +706,5 @@
        id="tspan5951-8-8-9"
        x="725.33813"
        y="320.25867"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">7.9 mm</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">7.9 mm</tspan></text>
 </svg>
