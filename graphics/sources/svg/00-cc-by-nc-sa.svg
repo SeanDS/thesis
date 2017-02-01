@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
@@ -12,9 +13,9 @@
    height="42"
    id="svg2759"
    sodipodi:version="0.32"
-   inkscape:version="0.45+devel"
+   inkscape:version="0.91 r13725"
    version="1.0"
-   sodipodi:docname="by-nc-sa.svg"
+   sodipodi:docname="00-cc-by-nc-sa.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <defs
      id="defs2761" />
@@ -39,7 +40,9 @@
      inkscape:window-width="1198"
      inkscape:window-height="624"
      inkscape:window-x="170"
-     inkscape:window-y="319" />
+     inkscape:window-y="319"
+     showgrid="false"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata2764">
     <rdf:RDF>
@@ -91,30 +94,19 @@
       </g>
       <g
          id="g126">
-        <circle
-           cx="491.94629"
-           cy="90.231934"
-           r="10.80615"
-           id="circle128"
-           sodipodi:cx="491.94629"
-           sodipodi:cy="90.231934"
-           sodipodi:rx="10.80615"
-           sodipodi:ry="10.80615"
-           style="fill:#ffffff" />
+        <path
+           style="fill:#ffffff"
+           d="M 502.75244,90.231934 A 10.80615,10.80615 0 0 1 491.94629,101.03808 10.80615,10.80615 0 0 1 481.14014,90.231934 10.80615,10.80615 0 0 1 491.94629,79.425783 10.80615,10.80615 0 0 1 502.75244,90.231934 Z"
+           id="circle128" />
         <g
            id="g130">
           <path
              d="M 495.07373,87.10498 C 495.07373,86.68848 494.73584,86.35107 494.31982,86.35107 L 489.54736,86.35107 C 489.13134,86.35107 488.79345,86.68847 488.79345,87.10498 L 488.79345,91.87793 L 490.1245,91.87793 L 490.1245,97.52979 L 493.74169,97.52979 L 493.74169,91.87793 L 495.07372,91.87793 L 495.07372,87.10498 L 495.07373,87.10498 z"
              id="path132" />
-          <circle
-             cx="491.93359"
-             cy="84.090332"
-             r="1.63232"
-             id="circle134"
-             sodipodi:cx="491.93359"
-             sodipodi:cy="84.090332"
-             sodipodi:rx="1.63232"
-             sodipodi:ry="1.63232" />
+          <path
+             style=""
+             d="m 493.56591,84.090332 a 1.63232,1.63232 0 0 1 -1.63232,1.63232 1.63232,1.63232 0 0 1 -1.63232,-1.63232 1.63232,1.63232 0 0 1 1.63232,-1.63232 1.63232,1.63232 0 0 1 1.63232,1.63232 z"
+             id="circle134" />
         </g>
         <path
            clip-rule="evenodd"

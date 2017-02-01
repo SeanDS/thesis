@@ -232,13 +232,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="703"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="688.7668"
-     inkscape:cy="420.78844"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="634.91506"
+     inkscape:cy="284.56166"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -270,21 +270,15 @@
          style="stop-color:#89A4B6;fill-opacity:1.0;fill:url(#linearGradient5633)"
          offset="1" />
     </linearGradient>
-    <rect
-       id="rect4230"
-       height="28.346001"
-       width="9.9209995"
-       y="0.375"
-       x="0.375"
-       style="fill:url(#linearGradient5635);fill-opacity:1;stroke:none;stroke-width:0.75;stroke-opacity:1" />
+    <path
+       style="fill:url(#linearGradient5635);fill-opacity:1;stroke:none;stroke-width:0.75;stroke-opacity:1"
+       d="m 0.375,0.375 9.921,0 0,28.346001 -9.921,0 z"
+       id="rect4230" />
   </g>
-  <rect
+  <path
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect5790"
-     width="9.25"
-     height="57.5"
-     x="666.24316"
-     y="234.30675" />
+     d="m 666.24316,234.30675 9.25,0 0,57.5 -9.25,0 z"
+     id="rect5790" />
   <g
      id="g5775"
      transform="matrix(1,0,0,0.72773199,0,88.954301)">
@@ -352,153 +346,99 @@
          inkscape:connector-curvature="0" />
     </g>
   </g>
-  <rect
+  <path
+     transform="matrix(0,1,-1,0,0,0)"
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect5790-4"
-     width="0.94149536"
-     height="58.737438"
-     x="249.09837"
-     y="-700.23688"
-     transform="matrix(0,1,-1,0,0,0)" />
+     d="m 249.09837,-700.23688 0.9415,0 0,58.73744 -0.9415,0 z"
+     id="rect5790-4" />
   <g
      id="g5927"
      transform="translate(1.9093422,2.3239227)">
-    <rect
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-338.69809"
-       x="638.06488"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 638.06488,-338.69809 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-341.21875"
-       x="640.58551"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-3"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 640.58551,-341.21875 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-3" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-343.73938"
-       x="643.1062"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-9"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 643.1062,-343.73938 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-9" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-346.2601"
-       x="645.62689"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-0"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 645.62689,-346.2601 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-0" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-348.78073"
-       x="648.14752"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-06"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 648.14752,-348.78073 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-06" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-351.30142"
-       x="650.66821"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-6"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 650.66821,-351.30142 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-6" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-353.82205"
-       x="653.18884"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-7"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 653.18884,-353.82205 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-7" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-356.34271"
-       x="655.70947"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-68"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 655.70947,-356.34271 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-68" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-358.8634"
-       x="658.23016"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-2"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 658.23016,-358.8634 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-2" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-361.38403"
-       x="660.75079"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-4"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 660.75079,-361.38403 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-4" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-363.90472"
-       x="663.27155"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-8"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 663.27155,-363.90472 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-8" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-366.42538"
-       x="665.79218"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-63"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 665.79218,-366.42538 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-63" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-368.94601"
-       x="668.31281"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-37"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 668.31281,-368.94601 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-37" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-371.46667"
-       x="670.8335"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-1"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 670.8335,-371.46667 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-1" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-373.98737"
-       x="673.35413"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-04"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 673.35413,-373.98737 0.22024,0 0,9.58115 -0.22024,0 z"
+       id="rect5790-4-0-04" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-376.50806"
-       x="675.87482"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-048"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 675.87482,-376.50806 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-048" />
+    <path
        transform="matrix(0.66384346,0.74787156,-0.66384346,0.74787156,0,0)"
-       y="-379.02869"
-       x="678.39545"
-       height="9.5811415"
-       width="0.22024091"
-       id="rect5790-4-0-13"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 678.39545,-379.02869 0.22024,0 0,9.58114 -0.22024,0 z"
+       id="rect5790-4-0-13" />
   </g>
   <path
      style="opacity:0.125;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -506,172 +446,426 @@
      id="rect5946"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccc" />
-  <text
-     xml:space="preserve"
-     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-     x="522.84973"
-     y="265.85278"
-     id="text5949"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951"
-       x="522.84973"
-       y="265.85278"
-       style="font-size:7.5px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Dielectric rod</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-     x="535.62091"
-     y="302.62134"
-     id="text5949-0"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8"
-       x="535.62091"
-       y="302.62134"
-       style="font-size:7.5px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Voice coil</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="773.80426"
-     y="325.14365"
-     id="text5949-0-3"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8"
-       x="773.80426"
-       y="325.14365"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Magnet</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="773.80426"
-     y="372.11588"
-     id="text5949-0-3-7"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8-2"
-       x="773.80426"
-       y="372.11588"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Dielectric cup</tspan></text>
-  <rect
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     id="text5949">
+    <path
+       d="m 524.27473,265.23778 0,-3.615 c 0,-0.2625 0.2625,-0.3 0.63,-0.3 1.62,0 2.1075,1.245 2.1075,2.4 0,1.515 -0.8625,1.815 -1.92,1.815 -0.735,0 -0.8175,-0.06 -0.8175,-0.3 z m -0.3225,-4.2225 c -0.255,0 -0.3825,-0.0225 -0.3825,-0.0225 l -0.015,0.0225 c 0.06,0.4275 0.075,0.9375 0.075,1.5 l 0,1.8375 c 0,0.5625 -0.015,1.095 -0.075,1.5 l 0.008,0.0225 c 0,0 0.1275,-0.0225 0.39,-0.0225 0.5325,0 0.6,0.015 1.3725,0.015 1.0575,0 2.46,-0.48 2.46,-2.325 0,-1.395 -1.155,-2.55 -2.595,-2.55 -0.48,0 -0.7575,0.0225 -1.2375,0.0225 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3618" />
+    <path
+       d="m 528.78176,261.37528 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.007 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3620" />
+    <path
+       d="m 531.0675,263.80528 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3622" />
+    <path
+       d="m 534.20344,264.35278 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-2.25 c 0,-0.5625 0.03,-0.93 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,2.115 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3624" />
+    <path
+       d="m 536.35559,263.80528 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3626" />
+    <path
+       d="m 540.75012,262.86028 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3628" />
+    <path
+       d="m 542.81028,262.63528 c -0.1575,0 -0.315,0 -0.405,-0.015 -0.0525,0.1275 -0.0975,0.195 -0.165,0.3075 l 0.0375,0.0525 c 0.1275,-0.007 0.36,-0.007 0.5325,-0.015 l 0,1.0275 c 0,0.45 -0.0225,0.99 -0.0225,1.215 0,0.4875 0.315,0.72 0.66,0.72 0.315,0 0.555,-0.075 0.87,-0.2775 l -0.0975,-0.18 c -0.225,0.075 -0.3975,0.0825 -0.585,0.0525 -0.18,-0.0225 -0.2475,-0.2025 -0.2475,-0.615 0,-0.225 0.0225,-0.5475 0.0225,-0.9975 l 0,-0.945 0.285,0 c 0.18,0 0.435,0.007 0.54,0.015 0.0225,-0.12 0.045,-0.195 0.09,-0.3075 l -0.0375,-0.0525 c -0.135,0.007 -0.3525,0.015 -0.525,0.015 l -0.3525,0 c 0,-0.555 0,-0.66 0.0375,-1.095 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.285,0.1575 -0.525,0.1875 l -0.015,0.0225 c -0.015,0.2625 -0.03,0.525 -0.03,0.96 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3630" />
+    <path
+       d="m 545.89911,263.34778 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3632" />
+    <path
+       d="m 547.91262,261.37528 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.007 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3634" />
+    <path
+       d="m 551.13586,262.86028 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3636" />
+    <path
+       d="m 555.61102,263.34778 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3638" />
+    <path
+       d="m 557.25094,264.31528 c 0,0.9 0.5925,1.6125 1.59,1.6125 0.99,0 1.59,-0.6975 1.59,-1.68 0,-1.02 -0.5475,-1.6875 -1.56,-1.6875 -0.9825,0 -1.62,0.69 -1.62,1.755 z m 1.5675,-1.455 c 0.795,0 0.9525,0.615 0.9525,1.5225 0,0.72 -0.36,1.245 -0.8625,1.245 -0.795,0 -0.9975,-0.8625 -0.9975,-1.44 0,-0.6525 0.2025,-1.3275 0.9075,-1.3275 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3640" />
+    <path
+       d="m 563.48204,265.00528 c -0.2775,0.3525 -0.6225,0.5325 -0.9225,0.5325 -0.405,0 -0.75,-0.405 -0.75,-1.3425 0,-1.125 0.5925,-1.335 0.96,-1.335 0.3525,0 0.5325,0.15 0.7125,0.435 l 0,1.71 z m 0,0.4125 0.015,0 0.0375,0.435 c 0,0.015 0.0225,0.0225 0.0675,0.0225 0.0975,-0.007 0.15,-0.0225 0.255,-0.0225 0.0975,0 0.24,0.007 0.3375,0.0225 l 0.015,-0.0225 c -0.06,-0.3225 -0.1275,-0.8775 -0.1275,-1.44 l 0,-2.31 c 0,-0.555 0.03,-0.945 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,0.4875 c -0.1725,-0.0975 -0.48,-0.165 -0.63,-0.165 -0.9825,0 -1.695,0.675 -1.695,1.695 0,0.9225 0.5475,1.6725 1.3575,1.6725 0.36,0 0.6975,-0.1575 0.9675,-0.51 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3642" />
+  </g>
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     id="text5949-0">
+    <path
+       d="m 538.05091,301.63134 -0.015,0 c -0.99,-2.28 -1.365,-3.6075 -1.4325,-3.87 -0.1275,0.015 -0.3,0.0225 -0.4125,0.0225 -0.12,0 -0.33,-0.007 -0.45,-0.0225 0.375,0.7575 1.365,3.2925 2.055,4.935 l 0.21,0 c 0.72,-1.665 1.455,-3.2775 2.2125,-4.935 -0.09,0.015 -0.2325,0.0225 -0.3,0.0225 -0.0825,0 -0.255,-0.007 -0.3375,-0.0225 -0.2625,0.9675 -0.9975,2.625 -1.53,3.87 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3599" />
+    <path
+       d="m 540.03677,301.08384 c 0,0.9 0.5925,1.6125 1.59,1.6125 0.99,0 1.59,-0.6975 1.59,-1.68 0,-1.02 -0.5475,-1.6875 -1.56,-1.6875 -0.9825,0 -1.62,0.69 -1.62,1.755 z m 1.5675,-1.455 c 0.795,0 0.9525,0.615 0.9525,1.5225 0,0.72 -0.36,1.245 -0.8625,1.245 -0.795,0 -0.9975,-0.8625 -0.9975,-1.44 0,-0.6525 0.2025,-1.3275 0.9075,-1.3275 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3601" />
+    <path
+       d="m 544.10177,298.14384 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.008 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.008 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3603" />
+    <path
+       d="m 547.32501,299.62884 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3605" />
+    <path
+       d="m 549.61017,300.57384 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3607" />
+    <path
+       d="m 555.82111,299.62884 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3609" />
+    <path
+       d="m 557.45376,301.08384 c 0,0.9 0.5925,1.6125 1.59,1.6125 0.99,0 1.59,-0.6975 1.59,-1.68 0,-1.02 -0.5475,-1.6875 -1.56,-1.6875 -0.9825,0 -1.62,0.69 -1.62,1.755 z m 1.5675,-1.455 c 0.795,0 0.9525,0.615 0.9525,1.5225 0,0.72 -0.36,1.245 -0.8625,1.245 -0.795,0 -0.9975,-0.8625 -0.9975,-1.44 0,-0.6525 0.2025,-1.3275 0.9075,-1.3275 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3611" />
+    <path
+       d="m 561.51876,298.14384 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.008 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.008 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3613" />
+    <path
+       d="m 563.542,301.12134 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.008 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-2.25 c 0,-0.5625 0.03,-0.93 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,2.115 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3615" />
+  </g>
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3">
+    <path
+       d="m 775.25176,320.17865 c -0.2625,1.515 -0.675,3.585 -0.9675,4.9875 0.0825,-0.0225 0.1575,-0.0225 0.2475,-0.0225 0.0825,0 0.1425,0 0.225,0.0225 0.1125,-0.7875 0.3675,-2.46 0.5475,-3.5925 l 0.0375,0 c 0.5625,1.1925 1.095,2.4075 1.575,3.57 l 0.1425,0 c 0.54,-1.23 1.0725,-2.37 1.665,-3.5475 l 0.0225,0.007 c 0.1575,1.1775 0.3075,2.325 0.42,3.5625 0.1125,-0.0225 0.255,-0.0225 0.3675,-0.0225 0.1125,0 0.3075,0 0.42,0.0225 -0.27,-1.605 -0.495,-3.165 -0.705,-4.9875 l -0.1875,0 -1.8225,3.72 -0.06,0 c -0.5925,-1.23 -1.1325,-2.43 -1.68,-3.72 l -0.2475,0 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3586" />
+    <path
+       d="m 782.77965,323.45615 -0.03,0.8925 c 0,0.0975 -0.045,0.15 -0.105,0.195 -0.21,0.1575 -0.465,0.2925 -0.69,0.2925 -0.3375,0 -0.555,-0.225 -0.555,-0.4575 0,-0.3375 0.1575,-0.5925 0.7425,-0.75 l 0.6375,-0.1725 z m 0,1.3275 c 0.0825,0.3 0.3075,0.435 0.585,0.435 0.1875,0 0.42,-0.045 0.5925,-0.2325 l -0.0525,-0.18 c -0.0825,0.03 -0.15,0.0375 -0.2025,0.0375 -0.075,0 -0.1725,-0.015 -0.225,-0.06 -0.075,-0.0675 -0.12,-0.2475 -0.12,-0.585 0,-0.2175 0.0225,-1.05 0.0225,-1.1325 0,-1.0125 -0.6675,-1.215 -1.2375,-1.215 -0.57,0 -0.915,0.2775 -1.1025,0.435 l -0.0225,0.03 0.1275,0.5025 0.0975,0.007 c 0.21,-0.3375 0.465,-0.6375 0.825,-0.6375 0.27,0 0.72,0.0375 0.72,0.885 0,0.0525 -0.03,0.0825 -0.0525,0.09 l -0.6975,0.1575 c -0.765,0.1725 -1.245,0.5775 -1.245,1.0875 0,0.555 0.3825,0.81 0.9375,0.81 0.4125,0 0.6225,-0.0975 1.02,-0.435 l 0.03,0 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3588" />
+    <path
+       d="m 784.81567,325.92365 c 0,-0.2475 0.225,-0.525 0.4875,-0.6675 0.2175,0 0.5625,-0.0225 0.6675,-0.0225 0.36,0 0.585,0.007 0.795,0.1275 0.2175,0.1275 0.2925,0.345 0.2925,0.54 0,0.4575 -0.615,0.6975 -1.26,0.6975 -0.4875,0 -0.9825,-0.165 -0.9825,-0.675 z m 2.1675,-2.9175 c 0,-0.5175 -0.2025,-0.7575 -0.3825,-0.87 0.225,0.015 0.4725,0.045 0.7875,0.075 l 0.0225,-0.0225 c -0.015,-0.0675 -0.0225,-0.1275 -0.0225,-0.195 0,-0.0675 0.008,-0.1275 0.0225,-0.195 l -0.0225,-0.0225 c -0.36,0.0375 -0.63,0.1125 -1.185,0.1425 -0.135,-0.045 -0.3,-0.0675 -0.4575,-0.0675 -0.5925,0 -1.275,0.3975 -1.275,1.14 0,0.5625 0.3225,0.8175 0.5325,0.9375 -0.2175,0.15 -0.48,0.3675 -0.48,0.6225 0,0.3075 0.18,0.5775 0.5775,0.6525 -0.2025,0.0825 -0.4425,0.225 -0.63,0.375 -0.0975,0.1425 -0.1725,0.36 -0.1725,0.495 0,0.5925 0.645,0.8475 1.44,0.8475 1.17,0 1.8675,-0.4875 1.8675,-1.1925 0,-0.33 -0.105,-0.5625 -0.315,-0.7425 -0.285,-0.24 -0.795,-0.2475 -1.0575,-0.2475 -0.1275,0 -0.4275,0.015 -0.6,0.0375 -0.105,0.008 -0.18,0.015 -0.2175,0.015 -0.21,0 -0.435,-0.03 -0.435,-0.3525 0,-0.15 0.0375,-0.2775 0.2025,-0.42 0.0975,0.0525 0.3225,0.105 0.555,0.105 0.78,0 1.245,-0.525 1.245,-1.1175 z m -0.585,0.007 c 0,0.4575 -0.1875,0.81 -0.6375,0.81 -0.54,0 -0.705,-0.3525 -0.705,-0.87 0,-0.495 0.225,-0.8175 0.66,-0.8175 0.4875,0 0.6825,0.345 0.6825,0.8775 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3590" />
+    <path
+       d="m 791.24352,323.79365 c 0,-0.24 0.015,-0.5175 0.015,-0.7575 0,-0.78 -0.255,-1.185 -0.93,-1.185 -0.285,0 -0.8175,0.1125 -1.2975,0.675 l -0.015,-0.0225 0,-0.5475 c -0.008,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.008,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.8775 c 0.3825,-0.45 0.8175,-0.615 1.0875,-0.615 0.3825,0 0.54,0.15 0.54,0.7575 l 0,0.735 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3592" />
+    <path
+       d="m 792.77399,323.09615 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3594" />
+    <path
+       d="m 795.94742,321.92615 c -0.1575,0 -0.315,0 -0.405,-0.015 -0.0525,0.1275 -0.0975,0.195 -0.165,0.3075 l 0.0375,0.0525 c 0.1275,-0.007 0.36,-0.007 0.5325,-0.015 l 0,1.0275 c 0,0.45 -0.0225,0.99 -0.0225,1.215 0,0.4875 0.315,0.72 0.66,0.72 0.315,0 0.555,-0.075 0.87,-0.2775 l -0.0975,-0.18 c -0.225,0.075 -0.3975,0.0825 -0.585,0.0525 -0.18,-0.0225 -0.2475,-0.2025 -0.2475,-0.615 0,-0.225 0.0225,-0.5475 0.0225,-0.9975 l 0,-0.945 0.285,0 c 0.18,0 0.435,0.007 0.54,0.015 0.0225,-0.12 0.045,-0.195 0.09,-0.3075 l -0.0375,-0.0525 c -0.135,0.007 -0.3525,0.015 -0.525,0.015 l -0.3525,0 c 0,-0.555 0,-0.66 0.0375,-1.095 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.285,0.1575 -0.525,0.1875 l -0.015,0.0225 c -0.015,0.2625 -0.03,0.525 -0.03,0.96 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3596" />
+  </g>
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3-7">
+    <path
+       d="m 775.22926,371.50088 0,-3.615 c 0,-0.2625 0.2625,-0.3 0.63,-0.3 1.62,0 2.1075,1.245 2.1075,2.4 0,1.515 -0.8625,1.815 -1.92,1.815 -0.735,0 -0.8175,-0.06 -0.8175,-0.3 z m -0.3225,-4.2225 c -0.255,0 -0.3825,-0.0225 -0.3825,-0.0225 l -0.015,0.0225 c 0.06,0.4275 0.075,0.9375 0.075,1.5 l 0,1.8375 c 0,0.5625 -0.015,1.095 -0.075,1.5 l 0.007,0.0225 c 0,0 0.1275,-0.0225 0.39,-0.0225 0.5325,0 0.6,0.015 1.3725,0.015 1.0575,0 2.46,-0.48 2.46,-2.325 0,-1.395 -1.155,-2.55 -2.595,-2.55 -0.48,0 -0.7575,0.0225 -1.2375,0.0225 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3559" />
+    <path
+       d="m 779.73629,367.63838 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.007 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3561" />
+    <path
+       d="m 782.02203,370.06838 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3563" />
+    <path
+       d="m 785.15797,370.61588 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-2.25 c 0,-0.5625 0.03,-0.93 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,2.115 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3565" />
+    <path
+       d="m 787.31012,370.06838 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3567" />
+    <path
+       d="m 791.70465,369.12338 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3569" />
+    <path
+       d="m 793.76481,368.89838 c -0.1575,0 -0.315,0 -0.405,-0.015 -0.0525,0.1275 -0.0975,0.195 -0.165,0.3075 l 0.0375,0.0525 c 0.1275,-0.007 0.36,-0.007 0.5325,-0.015 l 0,1.0275 c 0,0.45 -0.0225,0.99 -0.0225,1.215 0,0.4875 0.315,0.72 0.66,0.72 0.315,0 0.555,-0.075 0.87,-0.2775 l -0.0975,-0.18 c -0.225,0.075 -0.3975,0.0825 -0.585,0.0525 -0.18,-0.0225 -0.2475,-0.2025 -0.2475,-0.615 0,-0.225 0.0225,-0.5475 0.0225,-0.9975 l 0,-0.945 0.285,0 c 0.18,0 0.435,0.007 0.54,0.015 0.0225,-0.12 0.045,-0.195 0.09,-0.3075 l -0.0375,-0.0525 c -0.135,0.007 -0.3525,0.015 -0.525,0.015 l -0.3525,0 c 0,-0.555 0,-0.66 0.0375,-1.095 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.285,0.1575 -0.525,0.1875 l -0.015,0.0225 c -0.015,0.2625 -0.03,0.525 -0.03,0.96 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3571" />
+    <path
+       d="m 796.85364,369.61088 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3573" />
+    <path
+       d="m 798.86715,367.63838 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.007 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3575" />
+    <path
+       d="m 802.09039,369.12338 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3577" />
+    <path
+       d="m 807.18805,369.12338 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3579" />
+    <path
+       d="m 811.27321,371.42588 0.03,0.0225 0.0375,0.6675 c 0,0.015 0.008,0.0225 0.03,0.0225 0.0975,-0.007 0.1875,-0.0225 0.2925,-0.0225 0.0975,0 0.24,0.007 0.3375,0.0225 l 0.015,-0.0225 c -0.06,-0.3225 -0.1275,-0.8775 -0.1275,-1.44 l 0,-0.4275 c 0,-0.5625 0.008,-0.9525 0.0675,-1.35 l -0.015,-0.0225 c -0.09,0.015 -0.2625,0.0225 -0.3525,0.0225 -0.09,0 -0.2625,-0.007 -0.3525,-0.0225 l -0.015,0.0225 c 0.0525,0.435 0.0675,0.78 0.0675,1.35 l 0,0.735 c -0.2325,0.39 -0.66,0.7875 -1.0275,0.7875 -0.2625,0 -0.5025,-0.0825 -0.5025,-0.78 l 0,-0.7425 c 0,-0.5625 0.008,-0.9525 0.0675,-1.35 l -0.015,-0.0225 c -0.09,0.015 -0.2625,0.0225 -0.3525,0.0225 -0.09,0 -0.2625,-0.007 -0.3525,-0.0225 l -0.015,0.0225 c 0.06,0.4275 0.0675,0.78 0.0675,1.35 l 0,0.9 c 0,0.5175 0.24,1.0425 0.9825,1.0425 0.465,0 0.885,-0.3825 1.1325,-0.765 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3581" />
+    <path
+       d="m 813.77903,369.91088 c 0.165,-0.3975 0.6075,-0.7425 0.9,-0.7425 0.51,0 0.7725,0.465 0.7725,1.3125 0,0.615 -0.1725,1.41 -0.975,1.41 -0.12,0 -0.435,-0.03 -0.6975,-0.3375 l 0,-1.6425 z m 0,-0.435 0,-0.5475 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,2.0025 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-0.33 c 0.195,0.105 0.4725,0.165 0.7425,0.165 0.99,0 1.59,-0.75 1.59,-1.8075 0,-0.795 -0.465,-1.56 -1.305,-1.56 -0.2925,0 -0.6675,0.15 -1.0125,0.675 l -0.015,-0.0225 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3583" />
+  </g>
+  <path
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect6027"
-     width="187"
-     height="10"
-     x="577.36816"
-     y="407.56024"
-     rx="7.5"
-     ry="7.5" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="774.04596"
-     y="415.35626"
-     id="text5949-0-3-7-5"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8-2-2"
-       x="774.04596"
-       y="415.35626"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Scales</tspan></text>
+     d="m 584.86816,407.56024 172,0 c 4.155,0 7.5,2.23 7.5,5 0,2.77 -3.345,5 -7.5,5 l -172,0 c -4.155,0 -7.5,-2.23 -7.5,-5 0,-2.77 3.345,-5 7.5,-5 z"
+     id="rect6027" />
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3-7-5">
+    <path
+       d="m 775.86096,415.10126 c -0.42,0 -0.96,-0.3675 -1.1925,-0.81 l -0.075,0.007 c -0.03,0.27 -0.1125,0.5475 -0.1725,0.7725 l 0.015,0.0225 c 0,0 0.4875,0.3375 1.365,0.3375 0.9225,0 1.635,-0.5625 1.635,-1.4325 0,-0.87 -0.7425,-1.2675 -1.3425,-1.5 -0.3825,-0.1425 -0.915,-0.36 -0.915,-0.9825 0,-0.27 0.15,-0.57 0.345,-0.675 0.1275,-0.0675 0.285,-0.09 0.4575,-0.09 0.4125,0 0.8175,0.3225 1.02,0.7875 l 0.075,-0.008 c 0.03,-0.27 0.105,-0.525 0.1725,-0.75 l -0.015,-0.0225 c 0,0 -0.315,-0.3375 -1.1925,-0.3375 -0.2025,0 -0.4275,0.0375 -0.645,0.1275 -0.4425,0.1875 -0.825,0.6225 -0.825,1.17 0,0.7875 0.6675,1.155 1.29,1.4175 0.4875,0.2025 0.8775,0.45 0.8775,1.0875 0,0.5625 -0.435,0.8775 -0.8775,0.8775 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3545" />
+    <path
+       d="m 779.7149,412.36376 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3547" />
+    <path
+       d="m 783.38756,413.66876 -0.03,0.8925 c 0,0.0975 -0.045,0.15 -0.105,0.195 -0.21,0.1575 -0.465,0.2925 -0.69,0.2925 -0.3375,0 -0.555,-0.225 -0.555,-0.4575 0,-0.3375 0.1575,-0.5925 0.7425,-0.75 l 0.6375,-0.1725 z m 0,1.3275 c 0.0825,0.3 0.3075,0.435 0.585,0.435 0.1875,0 0.42,-0.045 0.5925,-0.2325 l -0.0525,-0.18 c -0.0825,0.03 -0.15,0.0375 -0.2025,0.0375 -0.075,0 -0.1725,-0.015 -0.225,-0.06 -0.075,-0.0675 -0.12,-0.2475 -0.12,-0.585 0,-0.2175 0.0225,-1.05 0.0225,-1.1325 0,-1.0125 -0.6675,-1.215 -1.2375,-1.215 -0.57,0 -0.915,0.2775 -1.1025,0.435 l -0.0225,0.03 0.1275,0.5025 0.0975,0.008 c 0.21,-0.3375 0.465,-0.6375 0.825,-0.6375 0.27,0 0.72,0.0375 0.72,0.885 0,0.0525 -0.03,0.0825 -0.0525,0.09 l -0.6975,0.1575 c -0.765,0.1725 -1.245,0.5775 -1.245,1.0875 0,0.555 0.3825,0.81 0.9375,0.81 0.4125,0 0.6225,-0.0975 1.02,-0.435 l 0.03,0 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3549" />
+    <path
+       d="m 785.34108,413.85626 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-2.25 c 0,-0.5625 0.03,-0.93 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,2.115 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3551" />
+    <path
+       d="m 787.49323,413.30876 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3553" />
+    <path
+       d="m 790.32916,414.59876 -0.1275,0.63 c 0.4275,0.15 0.8475,0.2025 1.1325,0.2025 1.035,0 1.275,-0.615 1.275,-1.0275 0,-0.615 -0.4875,-0.855 -1.02,-0.9825 -0.285,-0.0675 -0.6975,-0.21 -0.6975,-0.585 0,-0.3075 0.2475,-0.4725 0.57,-0.4725 0.39,0 0.63,0.3075 0.8025,0.51 l 0.105,-0.007 0.15,-0.555 -0.015,-0.0225 c -0.2175,-0.1125 -0.63,-0.225 -1.0125,-0.225 -0.555,0 -1.1325,0.2925 -1.1325,0.915 0,0.6 0.4425,0.8025 0.9,0.9225 0.435,0.12 0.7575,0.24 0.7575,0.6075 0,0.3975 -0.2925,0.6225 -0.69,0.6225 -0.36,0 -0.675,-0.2475 -0.885,-0.54 l -0.1125,0.008 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3555" />
+  </g>
   <g
      id="g6135"
      transform="translate(0,-3.5)">
-    <rect
-       ry="0"
-       rx="0"
-       y="421.06024"
-       x="615.90546"
-       height="35.578575"
-       width="109.92536"
-       id="rect6027-1"
-       style="opacity:1;fill:#747474;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       ry="0"
-       rx="0"
-       y="435.15817"
-       x="725.83081"
-       height="7.3826919"
-       width="28.254528"
-       id="rect6027-1-6"
-       style="opacity:1;fill:#c9c9c9;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       ry="1.9445436"
-       rx="1.9445436"
-       y="434.36267"
-       x="746.01251"
-       height="8.9736824"
-       width="10.753635"
-       id="rect6027-1-6-8"
-       style="opacity:1;fill:#747474;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       style="opacity:1;fill:#747474;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 615.90546,421.06024 109.92536,0 0,35.57858 -109.92536,0 z"
+       id="rect6027-1" />
+    <path
+       style="opacity:1;fill:#c9c9c9;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 725.83081,435.15817 28.25453,0 0,7.38269 -28.25453,0 z"
+       id="rect6027-1-6" />
+    <path
+       style="opacity:1;fill:#747474;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 747.95706,434.36267 6.86454,0 c 1.07728,0 1.94455,0.86727 1.94455,1.94454 l 0,5.0846 c 0,1.07728 -0.86727,1.94454 -1.94455,1.94454 l -6.86454,0 c -1.07728,0 -1.94455,-0.86726 -1.94455,-1.94454 l 0,-5.0846 c 0,-1.07727 0.86727,-1.94454 1.94455,-1.94454 z"
+       id="rect6027-1-6-8" />
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="774.56232"
-     y="432.34201"
-     id="text5949-0-3-7-5-0"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8-2-2-2"
-       x="774.56232"
-       y="432.34201"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Translation</tspan><tspan
-       sodipodi:role="line"
-       x="774.56232"
-       y="441.71701"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       id="tspan6133">stage</tspan></text>
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3-7-5-0">
+    <path
+       d="m 776.26482,429.00451 0,1.8375 c 0,0.5625 -0.015,1.095 -0.075,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2925,-0.0225 0.3825,-0.0225 0.09,0 0.2925,0.007 0.3825,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.075,-0.9375 -0.075,-1.5 l 0,-1.8375 c 0,-0.1275 0.008,-0.9 0.06,-1.08 1.005,0 1.515,0.105 1.515,0.105 l 0.015,-0.03 c -0.015,-0.1125 -0.015,-0.285 0,-0.495 l -0.015,-0.0225 c -0.12,0.015 -0.2925,0.0225 -0.45,0.0225 l -2.895,0 c -0.1575,0 -0.33,-0.007 -0.45,-0.0225 l -0.015,0.0225 c 0.015,0.21 0.015,0.3825 0,0.495 l 0.015,0.03 c 0,0 0.51,-0.105 1.515,-0.105 0.0525,0.18 0.06,0.9525 0.06,1.08 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3509" />
+    <path
+       d="m 779.7113,429.83701 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3511" />
+    <path
+       d="m 783.44982,430.65451 -0.03,0.8925 c 0,0.0975 -0.045,0.15 -0.105,0.195 -0.21,0.1575 -0.465,0.2925 -0.69,0.2925 -0.3375,0 -0.555,-0.225 -0.555,-0.4575 0,-0.3375 0.1575,-0.5925 0.7425,-0.75 l 0.6375,-0.1725 z m 0,1.3275 c 0.0825,0.3 0.3075,0.435 0.585,0.435 0.1875,0 0.42,-0.045 0.5925,-0.2325 l -0.0525,-0.18 c -0.0825,0.03 -0.15,0.0375 -0.2025,0.0375 -0.075,0 -0.1725,-0.015 -0.225,-0.06 -0.075,-0.0675 -0.12,-0.2475 -0.12,-0.585 0,-0.2175 0.0225,-1.05 0.0225,-1.1325 0,-1.0125 -0.6675,-1.215 -1.2375,-1.215 -0.57,0 -0.915,0.2775 -1.1025,0.435 l -0.0225,0.03 0.1275,0.5025 0.0975,0.007 c 0.21,-0.3375 0.465,-0.6375 0.825,-0.6375 0.27,0 0.72,0.0375 0.72,0.885 0,0.0525 -0.03,0.0825 -0.0525,0.09 l -0.6975,0.1575 c -0.765,0.1725 -1.245,0.5775 -1.245,1.0875 0,0.555 0.3825,0.81 0.9375,0.81 0.4125,0 0.6225,-0.0975 1.02,-0.435 l 0.03,0 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3513" />
+    <path
+       d="m 788.17833,430.99201 c 0,-0.24 0.015,-0.5175 0.015,-0.7575 0,-0.78 -0.255,-1.185 -0.93,-1.185 -0.285,0 -0.8175,0.1125 -1.2975,0.675 l -0.015,-0.0225 0,-0.5475 c -0.008,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.8775 c 0.3825,-0.45 0.8175,-0.615 1.0875,-0.615 0.3825,0 0.54,0.15 0.54,0.7575 l 0,0.735 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3515" />
+    <path
+       d="m 789.1463,431.58451 -0.1275,0.63 c 0.4275,0.15 0.8475,0.2025 1.1325,0.2025 1.035,0 1.275,-0.615 1.275,-1.0275 0,-0.615 -0.4875,-0.855 -1.02,-0.9825 -0.285,-0.0675 -0.6975,-0.21 -0.6975,-0.585 0,-0.3075 0.2475,-0.4725 0.57,-0.4725 0.39,0 0.63,0.3075 0.8025,0.51 l 0.105,-0.007 0.15,-0.555 -0.015,-0.0225 c -0.2175,-0.1125 -0.63,-0.225 -1.0125,-0.225 -0.555,0 -1.1325,0.2925 -1.1325,0.915 0,0.6 0.4425,0.8025 0.9,0.9225 0.435,0.12 0.7575,0.24 0.7575,0.6075 0,0.3975 -0.2925,0.6225 -0.69,0.6225 -0.36,0 -0.675,-0.2475 -0.885,-0.54 l -0.1125,0.008 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3517" />
+    <path
+       d="m 792.41993,430.84201 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-2.25 c 0,-0.5625 0.03,-0.93 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,2.115 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3519" />
+    <path
+       d="m 795.95958,430.65451 -0.03,0.8925 c 0,0.0975 -0.045,0.15 -0.105,0.195 -0.21,0.1575 -0.465,0.2925 -0.69,0.2925 -0.3375,0 -0.555,-0.225 -0.555,-0.4575 0,-0.3375 0.1575,-0.5925 0.7425,-0.75 l 0.6375,-0.1725 z m 0,1.3275 c 0.0825,0.3 0.3075,0.435 0.585,0.435 0.1875,0 0.42,-0.045 0.5925,-0.2325 l -0.0525,-0.18 c -0.0825,0.03 -0.15,0.0375 -0.2025,0.0375 -0.075,0 -0.1725,-0.015 -0.225,-0.06 -0.075,-0.0675 -0.12,-0.2475 -0.12,-0.585 0,-0.2175 0.0225,-1.05 0.0225,-1.1325 0,-1.0125 -0.6675,-1.215 -1.2375,-1.215 -0.57,0 -0.915,0.2775 -1.1025,0.435 l -0.0225,0.03 0.1275,0.5025 0.0975,0.007 c 0.21,-0.3375 0.465,-0.6375 0.825,-0.6375 0.27,0 0.72,0.0375 0.72,0.885 0,0.0525 -0.03,0.0825 -0.0525,0.09 l -0.6975,0.1575 c -0.765,0.1725 -1.245,0.5775 -1.245,1.0875 0,0.555 0.3825,0.81 0.9375,0.81 0.4125,0 0.6225,-0.0975 1.02,-0.435 l 0.03,0 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3521" />
+    <path
+       d="m 797.9506,429.12451 c -0.1575,0 -0.315,0 -0.405,-0.015 -0.0525,0.1275 -0.0975,0.195 -0.165,0.3075 l 0.0375,0.0525 c 0.1275,-0.007 0.36,-0.007 0.5325,-0.015 l 0,1.0275 c 0,0.45 -0.0225,0.99 -0.0225,1.215 0,0.4875 0.315,0.72 0.66,0.72 0.315,0 0.555,-0.075 0.87,-0.2775 l -0.0975,-0.18 c -0.225,0.075 -0.3975,0.0825 -0.585,0.0525 -0.18,-0.0225 -0.2475,-0.2025 -0.2475,-0.615 0,-0.225 0.0225,-0.5475 0.0225,-0.9975 l 0,-0.945 0.285,0 c 0.18,0 0.435,0.007 0.54,0.015 0.0225,-0.12 0.045,-0.195 0.09,-0.3075 l -0.0375,-0.0525 c -0.135,0.007 -0.3525,0.015 -0.525,0.015 l -0.3525,0 c 0,-0.555 0,-0.66 0.0375,-1.095 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.285,0.1575 -0.525,0.1875 l -0.015,0.0225 c -0.015,0.2625 -0.03,0.525 -0.03,0.96 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3523" />
+    <path
+       d="m 800.38693,427.86451 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.007 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3525" />
+    <path
+       d="m 802.02017,430.80451 c 0,0.9 0.5925,1.6125 1.59,1.6125 0.99,0 1.59,-0.6975 1.59,-1.68 0,-1.02 -0.5475,-1.6875 -1.56,-1.6875 -0.9825,0 -1.62,0.69 -1.62,1.755 z m 1.5675,-1.455 c 0.795,0 0.9525,0.615 0.9525,1.5225 0,0.72 -0.36,1.245 -0.8625,1.245 -0.795,0 -0.9975,-0.8625 -0.9975,-1.44 0,-0.6525 0.2025,-1.3275 0.9075,-1.3275 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3527" />
+    <path
+       d="m 808.93517,430.99201 c 0,-0.24 0.015,-0.5175 0.015,-0.7575 0,-0.78 -0.255,-1.185 -0.93,-1.185 -0.285,0 -0.8175,0.1125 -1.2975,0.675 l -0.015,-0.0225 0,-0.5475 c -0.008,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.8775 c 0.3825,-0.45 0.8175,-0.615 1.0875,-0.615 0.3825,0 0.54,0.15 0.54,0.7575 l 0,0.735 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3529" />
+    <path
+       d="m 774.93732,440.95951 -0.1275,0.63 c 0.4275,0.15 0.8475,0.2025 1.1325,0.2025 1.035,0 1.275,-0.615 1.275,-1.0275 0,-0.615 -0.4875,-0.855 -1.02,-0.9825 -0.285,-0.0675 -0.6975,-0.21 -0.6975,-0.585 0,-0.3075 0.2475,-0.4725 0.57,-0.4725 0.39,0 0.63,0.3075 0.8025,0.51 l 0.105,-0.007 0.15,-0.555 -0.015,-0.0225 c -0.2175,-0.1125 -0.63,-0.225 -1.0125,-0.225 -0.555,0 -1.1325,0.2925 -1.1325,0.915 0,0.6 0.4425,0.8025 0.9,0.9225 0.435,0.12 0.7575,0.24 0.7575,0.6075 0,0.3975 -0.2925,0.6225 -0.69,0.6225 -0.36,0 -0.675,-0.2475 -0.885,-0.54 l -0.1125,0.008 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3531" />
+    <path
+       d="m 778.24845,438.49951 c -0.1575,0 -0.315,0 -0.405,-0.015 -0.0525,0.1275 -0.0975,0.195 -0.165,0.3075 l 0.0375,0.0525 c 0.1275,-0.007 0.36,-0.007 0.5325,-0.015 l 0,1.0275 c 0,0.45 -0.0225,0.99 -0.0225,1.215 0,0.4875 0.315,0.72 0.66,0.72 0.315,0 0.555,-0.075 0.87,-0.2775 l -0.0975,-0.18 c -0.225,0.075 -0.3975,0.0825 -0.585,0.0525 -0.18,-0.0225 -0.2475,-0.2025 -0.2475,-0.615 0,-0.225 0.0225,-0.5475 0.0225,-0.9975 l 0,-0.945 0.285,0 c 0.18,0 0.435,0.007 0.54,0.015 0.0225,-0.12 0.045,-0.195 0.09,-0.3075 l -0.0375,-0.0525 c -0.135,0.007 -0.3525,0.015 -0.525,0.015 l -0.3525,0 c 0,-0.555 0,-0.66 0.0375,-1.095 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.285,0.1575 -0.525,0.1875 l -0.015,0.0225 c -0.015,0.2625 -0.03,0.525 -0.03,0.96 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3533" />
+    <path
+       d="m 782.40978,440.02951 -0.03,0.8925 c 0,0.0975 -0.045,0.15 -0.105,0.195 -0.21,0.1575 -0.465,0.2925 -0.69,0.2925 -0.3375,0 -0.555,-0.225 -0.555,-0.4575 0,-0.3375 0.1575,-0.5925 0.7425,-0.75 l 0.6375,-0.1725 z m 0,1.3275 c 0.0825,0.3 0.3075,0.435 0.585,0.435 0.1875,0 0.42,-0.045 0.5925,-0.2325 l -0.0525,-0.18 c -0.0825,0.03 -0.15,0.0375 -0.2025,0.0375 -0.075,0 -0.1725,-0.015 -0.225,-0.06 -0.075,-0.0675 -0.12,-0.2475 -0.12,-0.585 0,-0.2175 0.0225,-1.05 0.0225,-1.1325 0,-1.0125 -0.6675,-1.215 -1.2375,-1.215 -0.57,0 -0.915,0.2775 -1.1025,0.435 l -0.0225,0.03 0.1275,0.5025 0.0975,0.007 c 0.21,-0.3375 0.465,-0.6375 0.825,-0.6375 0.27,0 0.72,0.0375 0.72,0.885 0,0.0525 -0.03,0.0825 -0.0525,0.09 l -0.6975,0.1575 c -0.765,0.1725 -1.245,0.5775 -1.245,1.0875 0,0.555 0.3825,0.81 0.9375,0.81 0.4125,0 0.6225,-0.0975 1.02,-0.435 l 0.03,0 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3535" />
+    <path
+       d="m 784.44579,442.49701 c 0,-0.2475 0.225,-0.525 0.4875,-0.6675 0.2175,0 0.5625,-0.0225 0.6675,-0.0225 0.36,0 0.585,0.007 0.795,0.1275 0.2175,0.1275 0.2925,0.345 0.2925,0.54 0,0.4575 -0.615,0.6975 -1.26,0.6975 -0.4875,0 -0.9825,-0.165 -0.9825,-0.675 z m 2.1675,-2.9175 c 0,-0.5175 -0.2025,-0.7575 -0.3825,-0.87 0.225,0.015 0.4725,0.045 0.7875,0.075 l 0.0225,-0.0225 c -0.015,-0.0675 -0.0225,-0.1275 -0.0225,-0.195 0,-0.0675 0.008,-0.1275 0.0225,-0.195 l -0.0225,-0.0225 c -0.36,0.0375 -0.63,0.1125 -1.185,0.1425 -0.135,-0.045 -0.3,-0.0675 -0.4575,-0.0675 -0.5925,0 -1.275,0.3975 -1.275,1.14 0,0.5625 0.3225,0.8175 0.5325,0.9375 -0.2175,0.15 -0.48,0.3675 -0.48,0.6225 0,0.3075 0.18,0.5775 0.5775,0.6525 -0.2025,0.0825 -0.4425,0.225 -0.63,0.375 -0.0975,0.1425 -0.1725,0.36 -0.1725,0.495 0,0.5925 0.645,0.8475 1.44,0.8475 1.17,0 1.8675,-0.4875 1.8675,-1.1925 0,-0.33 -0.105,-0.5625 -0.315,-0.7425 -0.285,-0.24 -0.795,-0.2475 -1.0575,-0.2475 -0.1275,0 -0.4275,0.015 -0.6,0.0375 -0.105,0.007 -0.18,0.015 -0.2175,0.015 -0.21,0 -0.435,-0.03 -0.435,-0.3525 0,-0.15 0.0375,-0.2775 0.2025,-0.42 0.0975,0.0525 0.3225,0.105 0.555,0.105 0.78,0 1.245,-0.525 1.245,-1.1175 z m -0.585,0.007 c 0,0.4575 -0.1875,0.81 -0.6375,0.81 -0.54,0 -0.705,-0.3525 -0.705,-0.87 0,-0.495 0.225,-0.8175 0.66,-0.8175 0.4875,0 0.6825,0.345 0.6825,0.8775 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3537" />
+    <path
+       d="m 788.36115,439.66951 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3539" />
+  </g>
   <path
      style="fill:none;fill-rule:evenodd;stroke:#c66a00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      d="m 652.76505,305.70491 c -5.5965,-5.08956 -13.03059,-8.11372 -20.59071,-8.37623 -7.56012,-0.26251 -15.18607,2.23871 -21.12212,6.92782 -4.52327,3.5731 -8.06028,8.38069 -10.13177,13.75991 -0.94816,2.46218 -1.59209,5.03004 -2.17109,7.60416 -1.16188,5.16548 -2.07142,10.38405 -3.13603,15.57045 -1.09513,5.3351 -2.35412,10.63501 -3.61849,15.93255 -1.16026,4.86131 -2.32682,9.72716 -3.85972,14.48413 -2.38041,7.387 -5.64923,14.50232 -9.89054,21.00197 -7.20469,11.04094 -17.08491,20.1204 -27.74175,27.88196 -5.59341,4.07378 -11.46476,7.83731 -17.85121,10.50098 -4.05298,1.69042 -8.28218,2.92476 -12.5441,3.98315 -4.90249,1.21747 -9.90516,2.21121 -14.95642,2.17262 -1.97695,-0.0151 -3.95266,-0.18881 -5.90191,-0.51889"
-     id="path6335"
-     inkscape:path-effect="#path-effect6337"
-     inkscape:original-d="m 652.76505,305.70491 c -6.98332,-2.04955 -23.34594,43.30484 -41.71283,-1.44841 -2.99401,-7.29528 -5.66957,7.0619 -10.13177,13.75991 -1.20617,1.81053 -0.96493,5.79366 -2.17109,7.60416 -1.71961,2.58123 -1.8016,12.56586 -3.13603,15.57045 -2.16891,4.88346 -1.25902,12.39086 -3.61849,15.93255 -2.20904,3.31589 -1.52639,10.98167 -3.85972,14.48413 -3.73899,5.6124 -6.16042,15.40287 -9.89054,21.00197 -7.38139,11.07987 -17.66635,20.32009 -27.74175,27.88196 -5.71863,4.29198 -12.57392,5.21999 -17.85121,10.50098 -3.46615,3.46858 -7.94383,3.98315 -12.5441,3.98315 -13.3474,0 -12.97617,5.14508 -14.95642,2.17262 -0.90089,-1.35229 -5.90191,-0.51889 -5.90191,-0.51889"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="csssssssssssc" />
+     id="path6335" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#c66a00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      d="m 652.8323,293.01499 c -4.04762,4.05102 -8.86404,7.33121 -14.11613,9.61366 -5.14398,2.23547 -10.65039,3.5048 -15.921,5.42273 -8.65095,3.14801 -16.76228,8.16148 -22.64015,15.24665 -7.59009,9.14908 -10.94519,20.96215 -14.80473,32.20577 -2.59426,7.55761 -5.49684,15.00938 -8.6981,22.33055 -4.08585,11.43253 -10.91443,21.87431 -19.75018,30.20057 -14.11935,13.3052 -33.40496,20.9797 -52.80556,21.01341"
-     id="path6351"
-     inkscape:path-effect="#path-effect6353"
-     inkscape:original-d="m 652.8323,293.01499 c -0.50117,8.07263 -12.42053,4.87907 -14.11613,9.61366 -0.0181,0.0502 -15.80173,5.42273 -15.921,5.42273 -12.33653,0 -16.27723,6.36316 -22.64015,15.24665 -6.33775,8.84834 -8.30348,23.12915 -14.80473,32.20577 -1.64241,2.29304 -7.0892,20.08431 -8.6981,22.33055 -5.36991,14.43501 -12.60058,20.6901 -19.75018,30.20057 -14.10426,19.69144 -23.48302,29.20104 -52.80556,21.01341"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="ccsssccc" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="429.13324"
-     y="434.46558"
-     id="text5949-0-3-7-9"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8-2-1"
-       x="429.13324"
-       y="434.46558"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">To current source</tspan></text>
-  <rect
+     id="path6351" />
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3-7-9">
+    <path
+       d="m 430.83574,431.12808 0,1.8375 c 0,0.5625 -0.015,1.095 -0.075,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2925,-0.0225 0.3825,-0.0225 0.09,0 0.2925,0.007 0.3825,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.075,-0.9375 -0.075,-1.5 l 0,-1.8375 c 0,-0.1275 0.007,-0.9 0.06,-1.08 1.005,0 1.515,0.105 1.515,0.105 l 0.015,-0.03 c -0.015,-0.1125 -0.015,-0.285 0,-0.495 l -0.015,-0.0225 c -0.12,0.015 -0.2925,0.0225 -0.45,0.0225 l -2.895,0 c -0.1575,0 -0.33,-0.007 -0.45,-0.0225 l -0.015,0.0225 c 0.015,0.21 0.015,0.3825 0,0.495 l 0.015,0.03 c 0,0 0.51,-0.105 1.515,-0.105 0.0525,0.18 0.06,0.9525 0.06,1.08 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3476" />
+    <path
+       d="m 432.99246,432.92808 c 0,0.9 0.5925,1.6125 1.59,1.6125 0.99,0 1.59,-0.6975 1.59,-1.68 0,-1.02 -0.5475,-1.6875 -1.56,-1.6875 -0.9825,0 -1.62,0.69 -1.62,1.755 z m 1.5675,-1.455 c 0.795,0 0.9525,0.615 0.9525,1.5225 0,0.72 -0.36,1.245 -0.8625,1.245 -0.795,0 -0.9975,-0.8625 -0.9975,-1.44 0,-0.6525 0.2025,-1.3275 0.9075,-1.3275 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3478" />
+    <path
+       d="m 440.20746,431.47308 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3480" />
+    <path
+       d="m 444.29261,433.77558 0.03,0.0225 0.0375,0.6675 c 0,0.015 0.007,0.0225 0.03,0.0225 0.0975,-0.008 0.1875,-0.0225 0.2925,-0.0225 0.0975,0 0.24,0.007 0.3375,0.0225 l 0.015,-0.0225 c -0.06,-0.3225 -0.1275,-0.8775 -0.1275,-1.44 l 0,-0.4275 c 0,-0.5625 0.008,-0.9525 0.0675,-1.35 l -0.015,-0.0225 c -0.09,0.015 -0.2625,0.0225 -0.3525,0.0225 -0.09,0 -0.2625,-0.007 -0.3525,-0.0225 l -0.015,0.0225 c 0.0525,0.435 0.0675,0.78 0.0675,1.35 l 0,0.735 c -0.2325,0.39 -0.66,0.7875 -1.0275,0.7875 -0.2625,0 -0.5025,-0.0825 -0.5025,-0.78 l 0,-0.7425 c 0,-0.5625 0.007,-0.9525 0.0675,-1.35 l -0.015,-0.0225 c -0.09,0.015 -0.2625,0.0225 -0.3525,0.0225 -0.09,0 -0.2625,-0.007 -0.3525,-0.0225 l -0.015,0.0225 c 0.06,0.4275 0.0675,0.78 0.0675,1.35 l 0,0.9 c 0,0.5175 0.24,1.0425 0.9825,1.0425 0.465,0 0.885,-0.3825 1.1325,-0.765 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3482" />
+    <path
+       d="m 446.83594,431.96058 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3484" />
+    <path
+       d="m 449.50195,431.96058 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3486" />
+    <path
+       d="m 451.79437,432.41808 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3488" />
+    <path
+       d="m 457.70531,433.11558 c 0,-0.24 0.015,-0.5175 0.015,-0.7575 0,-0.78 -0.255,-1.185 -0.93,-1.185 -0.285,0 -0.8175,0.1125 -1.2975,0.675 l -0.015,-0.0225 0,-0.5475 c -0.007,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.8775 c 0.3825,-0.45 0.8175,-0.615 1.0875,-0.615 0.3825,0 0.54,0.15 0.54,0.7575 l 0,0.735 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3490" />
+    <path
+       d="m 459.01078,431.24808 c -0.1575,0 -0.315,0 -0.405,-0.015 -0.0525,0.1275 -0.0975,0.195 -0.165,0.3075 l 0.0375,0.0525 c 0.1275,-0.007 0.36,-0.007 0.5325,-0.015 l 0,1.0275 c 0,0.45 -0.0225,0.99 -0.0225,1.215 0,0.4875 0.315,0.72 0.66,0.72 0.315,0 0.555,-0.075 0.87,-0.2775 l -0.0975,-0.18 c -0.225,0.075 -0.3975,0.0825 -0.585,0.0525 -0.18,-0.0225 -0.2475,-0.2025 -0.2475,-0.615 0,-0.225 0.0225,-0.5475 0.0225,-0.9975 l 0,-0.945 0.285,0 c 0.18,0 0.435,0.007 0.54,0.015 0.0225,-0.12 0.045,-0.195 0.09,-0.3075 l -0.0375,-0.0525 c -0.135,0.008 -0.3525,0.015 -0.525,0.015 l -0.3525,0 c 0,-0.555 0,-0.66 0.0375,-1.095 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.285,0.1575 -0.525,0.1875 l -0.015,0.0225 c -0.015,0.2625 -0.03,0.525 -0.03,0.96 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3492" />
+    <path
+       d="m 463.09711,433.70808 -0.1275,0.63 c 0.4275,0.15 0.8475,0.2025 1.1325,0.2025 1.035,0 1.275,-0.615 1.275,-1.0275 0,-0.615 -0.4875,-0.855 -1.02,-0.9825 -0.285,-0.0675 -0.6975,-0.21 -0.6975,-0.585 0,-0.3075 0.2475,-0.4725 0.57,-0.4725 0.39,0 0.63,0.3075 0.8025,0.51 l 0.105,-0.007 0.15,-0.555 -0.015,-0.0225 c -0.2175,-0.1125 -0.63,-0.225 -1.0125,-0.225 -0.555,0 -1.1325,0.2925 -1.1325,0.915 0,0.6 0.4425,0.8025 0.9,0.9225 0.435,0.12 0.7575,0.24 0.7575,0.6075 0,0.3975 -0.2925,0.6225 -0.69,0.6225 -0.36,0 -0.675,-0.2475 -0.885,-0.54 l -0.1125,0.007 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3494" />
+    <path
+       d="m 465.98074,432.92808 c 0,0.9 0.5925,1.6125 1.59,1.6125 0.99,0 1.59,-0.6975 1.59,-1.68 0,-1.02 -0.5475,-1.6875 -1.56,-1.6875 -0.9825,0 -1.62,0.69 -1.62,1.755 z m 1.5675,-1.455 c 0.795,0 0.9525,0.615 0.9525,1.5225 0,0.72 -0.36,1.245 -0.8625,1.245 -0.795,0 -0.9975,-0.8625 -0.9975,-1.44 0,-0.6525 0.2025,-1.3275 0.9075,-1.3275 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3496" />
+    <path
+       d="m 472.18324,433.77558 0.03,0.0225 0.0375,0.6675 c 0,0.015 0.007,0.0225 0.03,0.0225 0.0975,-0.008 0.1875,-0.0225 0.2925,-0.0225 0.0975,0 0.24,0.007 0.3375,0.0225 l 0.015,-0.0225 c -0.06,-0.3225 -0.1275,-0.8775 -0.1275,-1.44 l 0,-0.4275 c 0,-0.5625 0.007,-0.9525 0.0675,-1.35 l -0.015,-0.0225 c -0.09,0.015 -0.2625,0.0225 -0.3525,0.0225 -0.09,0 -0.2625,-0.007 -0.3525,-0.0225 l -0.015,0.0225 c 0.0525,0.435 0.0675,0.78 0.0675,1.35 l 0,0.735 c -0.2325,0.39 -0.66,0.7875 -1.0275,0.7875 -0.2625,0 -0.5025,-0.0825 -0.5025,-0.78 l 0,-0.7425 c 0,-0.5625 0.007,-0.9525 0.0675,-1.35 l -0.015,-0.0225 c -0.09,0.015 -0.2625,0.0225 -0.3525,0.0225 -0.09,0 -0.2625,-0.007 -0.3525,-0.0225 l -0.015,0.0225 c 0.06,0.4275 0.0675,0.78 0.0675,1.35 l 0,0.9 c 0,0.5175 0.24,1.0425 0.9825,1.0425 0.465,0 0.885,-0.3825 1.1325,-0.765 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3498" />
+    <path
+       d="m 474.72656,431.96058 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3500" />
+    <path
+       d="m 477.95648,431.47308 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3502" />
+    <path
+       d="m 480.24164,432.41808 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3504" />
+  </g>
+  <path
      style="opacity:0.54299999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect6027-4"
-     width="57.75"
-     height="3"
-     x="641.99316"
-     y="329.03333"
-     rx="1.75"
-     ry="1.25" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="526.58307"
-     y="332.60242"
-     id="text5949-0-3-9"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8-4"
-       x="526.58307"
-       y="332.60242"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.50000000000000000px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">Perspex disc</tspan></text>
+     d="m 643.74316,329.03333 54.25,0 c 0.9695,0 1.75,0.5575 1.75,1.25 l 0,0.5 c 0,0.6925 -0.7805,1.25 -1.75,1.25 l -54.25,0 c -0.9695,0 -1.75,-0.5575 -1.75,-1.25 l 0,-0.5 c 0,-0.6925 0.7805,-1.25 1.75,-1.25 z"
+     id="rect6027-4" />
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3-9">
+    <path
+       d="m 528.00807,328.36492 c 0,-0.2175 0.135,-0.33 0.675,-0.33 0.5175,0 1.065,0.1425 1.065,1.035 0,0.8625 -0.42,1.14 -1.1475,1.14 -0.1875,0 -0.495,-0.0225 -0.5925,-0.075 l 0,-1.77 z m -0.645,0.9 0,1.8375 c 0,0.5625 -0.015,1.095 -0.075,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2925,-0.0225 0.3825,-0.0225 0.09,0 0.2925,0.007 0.3825,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.075,-0.9375 -0.075,-1.5 l 0,-0.645 c 0.165,0.0525 0.3675,0.075 0.63,0.075 1.365,0 1.8375,-0.8625 1.8375,-1.5 0,-0.555 -0.3525,-1.32 -1.74,-1.32 -0.195,0 -0.825,0.0525 -1.05,0.0525 -0.09,0 -0.2925,-0.007 -0.3825,-0.0225 l -0.015,0.0225 c 0.06,0.4275 0.075,0.9375 0.075,1.5 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3452" />
+    <path
+       d="m 531.71002,330.55492 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3454" />
+    <path
+       d="m 535.42346,330.09742 0,-0.6825 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.015,0.9525 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.39 c 0,-0.315 0.09,-0.495 0.255,-0.7425 0.105,-0.165 0.2775,-0.2625 0.42,-0.2625 0.15,0 0.2925,0.015 0.39,0.105 l 0.06,-0.015 0.15,-0.555 -0.03,-0.03 c -0.1275,-0.0375 -0.135,-0.0525 -0.27,-0.0525 -0.405,0 -0.6225,0.2325 -0.9525,0.8025 l -0.0225,-0.015 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3456" />
+    <path
+       d="m 537.21198,331.84492 -0.1275,0.63 c 0.4275,0.15 0.8475,0.2025 1.1325,0.2025 1.035,0 1.275,-0.615 1.275,-1.0275 0,-0.615 -0.4875,-0.855 -1.02,-0.9825 -0.285,-0.0675 -0.6975,-0.21 -0.6975,-0.585 0,-0.3075 0.2475,-0.4725 0.57,-0.4725 0.39,0 0.63,0.3075 0.8025,0.51 l 0.105,-0.007 0.15,-0.555 -0.015,-0.0225 c -0.2175,-0.1125 -0.63,-0.225 -1.0125,-0.225 -0.555,0 -1.1325,0.2925 -1.1325,0.915 0,0.6 0.4425,0.8025 0.9,0.9225 0.435,0.12 0.7575,0.24 0.7575,0.6075 0,0.3975 -0.2925,0.6225 -0.69,0.6225 -0.36,0 -0.675,-0.2475 -0.885,-0.54 l -0.1125,0.007 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3458" />
+    <path
+       d="m 541.02561,330.39742 c 0.165,-0.3975 0.6075,-0.7425 0.9,-0.7425 0.51,0 0.7725,0.465 0.7725,1.3125 0,0.615 -0.1725,1.41 -0.975,1.41 -0.12,0 -0.435,-0.03 -0.6975,-0.3375 l 0,-1.6425 z m 0,-0.435 0,-0.5475 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,2.0025 c 0,0.5625 -0.015,1.1025 -0.0675,1.5 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.93 -0.0675,-1.5 l 0,-0.33 c 0.195,0.105 0.4725,0.165 0.7425,0.165 0.99,0 1.59,-0.75 1.59,-1.8075 0,-0.795 -0.465,-1.56 -1.305,-1.56 -0.2925,0 -0.6675,0.15 -1.0125,0.675 l -0.015,-0.0225 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3460" />
+    <path
+       d="m 544.73248,330.55492 c 0.1275,-0.78 0.615,-0.945 0.855,-0.945 0.2925,0 0.63,0.2775 0.63,0.84 0,0.0675 -0.03,0.105 -0.105,0.105 l -1.38,0 z m 2.0025,1.2675 c -0.2625,0.285 -0.615,0.4125 -1.0275,0.4125 -0.2625,0 -0.615,-0.0975 -0.8175,-0.4275 -0.135,-0.21 -0.18,-0.51 -0.18,-0.9525 l 2.04,0 c 0.0825,0 0.135,-0.045 0.135,-0.1275 0,-0.63 -0.3075,-1.4175 -1.2975,-1.4175 -0.7725,0 -1.5375,0.6225 -1.5375,1.725 0,0.4275 0.0825,0.8475 0.3375,1.1475 0.255,0.315 0.6825,0.495 1.1925,0.495 0.54,0 1.02,-0.2775 1.305,-0.6675 l -0.15,-0.1875 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3462" />
+    <path
+       d="m 548.51483,331.05742 -1.17,1.5675 c 0.0675,-0.007 0.195,-0.0225 0.27,-0.0225 0.075,0 0.2475,0.015 0.33,0.0225 0.285,-0.4275 0.51,-0.84 0.81,-1.26 0.3,0.42 0.5175,0.8325 0.795,1.26 0.105,-0.015 0.2625,-0.0225 0.3825,-0.0225 0.1125,0 0.3075,0.015 0.4275,0.0225 -0.4575,-0.585 -0.825,-1.1625 -1.23,-1.7475 l 1.2375,-1.515 c -0.0975,0.0225 -0.2625,0.0225 -0.3375,0.0225 -0.0825,0 -0.2025,0 -0.2775,-0.0225 -0.2925,0.42 -0.525,0.8175 -0.84,1.23 -0.3,-0.4125 -0.51,-0.81 -0.7575,-1.23 -0.135,0.0225 -0.2775,0.0225 -0.405,0.0225 -0.12,0 -0.315,0 -0.435,-0.0225 l 1.2,1.695 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3464" />
+    <path
+       d="m 555.13041,331.75492 c -0.2775,0.3525 -0.6225,0.5325 -0.9225,0.5325 -0.405,0 -0.75,-0.405 -0.75,-1.3425 0,-1.125 0.5925,-1.335 0.96,-1.335 0.3525,0 0.5325,0.15 0.7125,0.435 l 0,1.71 z m 0,0.4125 0.015,0 0.0375,0.435 c 0,0.015 0.0225,0.0225 0.0675,0.0225 0.0975,-0.007 0.15,-0.0225 0.255,-0.0225 0.0975,0 0.24,0.007 0.3375,0.0225 l 0.015,-0.0225 c -0.06,-0.3225 -0.1275,-0.8775 -0.1275,-1.44 l 0,-2.31 c 0,-0.555 0.03,-0.945 0.0675,-1.41 0,-0.0525 -0.0225,-0.075 -0.0675,-0.075 -0.195,0.075 -0.3525,0.1275 -0.6525,0.15 l -0.015,0.0225 c 0.0525,0.3225 0.0675,0.8775 0.0675,1.4475 l 0,0.4875 c -0.1725,-0.0975 -0.48,-0.165 -0.63,-0.165 -0.9825,0 -1.695,0.675 -1.695,1.695 0,0.9225 0.5475,1.6725 1.3575,1.6725 0.36,0 0.6975,-0.1575 0.9675,-0.51 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3466" />
+    <path
+       d="m 556.99264,328.12492 c 0,0.2025 0.18,0.3825 0.3825,0.3825 0.2025,0 0.3825,-0.18 0.3825,-0.3825 0,-0.2025 -0.18,-0.3825 -0.3825,-0.3825 -0.2025,0 -0.3825,0.18 -0.3825,0.3825 z m 0.075,2.715 0,0.4125 c 0,0.5625 -0.015,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.42 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.5325 c 0,-0.5625 0.015,-0.8325 0.0675,-1.29 0,-0.0675 -0.015,-0.075 -0.0675,-0.075 -0.1725,0.0225 -0.495,0.0225 -0.6525,0.007 l -0.015,0.0225 c 0.045,0.3225 0.0675,0.8925 0.0675,1.455 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3468" />
+    <path
+       d="m 558.71588,331.84492 -0.1275,0.63 c 0.4275,0.15 0.8475,0.2025 1.1325,0.2025 1.035,0 1.275,-0.615 1.275,-1.0275 0,-0.615 -0.4875,-0.855 -1.02,-0.9825 -0.285,-0.0675 -0.6975,-0.21 -0.6975,-0.585 0,-0.3075 0.2475,-0.4725 0.57,-0.4725 0.39,0 0.63,0.3075 0.8025,0.51 l 0.105,-0.007 0.15,-0.555 -0.015,-0.0225 c -0.2175,-0.1125 -0.63,-0.225 -1.0125,-0.225 -0.555,0 -1.1325,0.2925 -1.1325,0.915 0,0.6 0.4425,0.8025 0.9,0.9225 0.435,0.12 0.7575,0.24 0.7575,0.6075 0,0.3975 -0.2925,0.6225 -0.69,0.6225 -0.36,0 -0.675,-0.2475 -0.885,-0.54 l -0.1125,0.007 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3470" />
+    <path
+       d="m 563.18951,329.60992 c 0.285,0 0.5475,0.2175 0.75,0.555 l 0.0975,-0.007 0.1725,-0.615 -0.015,-0.0225 c -0.2325,-0.12 -0.6225,-0.21 -0.9975,-0.21 -0.78,0 -1.5975,0.6375 -1.5975,1.6575 0,1.05 0.5925,1.71 1.5075,1.71 0.45,0 0.8025,-0.15 1.1025,-0.5325 l -0.1425,-0.1575 -0.03,0 c -0.285,0.255 -0.525,0.315 -0.8025,0.315 -0.5475,0 -0.975,-0.495 -0.975,-1.3725 0,-0.825 0.435,-1.32 0.93,-1.32 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3472" />
+  </g>
   <g
      id="g6077">
     <path
@@ -695,16 +889,28 @@
        d="m 722.47119,315.93313 0,-6.33426"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Send-3)" />
   </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="725.33813"
-     y="320.25867"
-     id="text5949-0-3-3"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan5951-8-8-9"
-       x="725.33813"
-       y="320.25867"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O">7.9 mm</tspan></text>
+  <g
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text5949-0-3-3">
+    <path
+       d="m 727.92563,316.32117 c -0.585,1.4475 -1.155,2.865 -1.6575,3.99 l 0.0225,0.045 0.5475,-0.03 c 0.4275,-1.275 0.84,-2.52 1.68,-4.5675 l -0.1275,-0.075 c -0.1125,0.0375 -0.2475,0.075 -0.48,0.075 -1.1175,0 -1.7775,-0.007 -2.1,-0.0525 0.015,0.1125 0.0375,0.2025 0.0375,0.315 0,0.1125 -0.0225,0.255 -0.0375,0.3675 0.5475,-0.075 1.62,-0.0825 2.115,-0.0675 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3441" />
+    <path
+       d="m 729.22946,319.92867 c 0.06,0.255 0.165,0.3525 0.405,0.405 l 0.03,0 c 0.21,-0.0525 0.3225,-0.1575 0.405,-0.405 l 0,-0.03 c -0.075,-0.21 -0.1875,-0.3225 -0.405,-0.405 l -0.03,0 c -0.2325,0.0975 -0.3375,0.21 -0.405,0.405 l 0,0.03 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3443" />
+    <path
+       d="m 732.97724,317.83617 c -0.2925,0.3 -0.5925,0.3075 -0.7575,0.3075 -0.7575,0 -0.87,-0.72 -0.87,-1.0875 0,-0.825 0.3075,-1.095 0.6675,-1.095 0.3975,0 0.9675,0.2625 0.9675,1.5975 0,0.075 0,0.2025 -0.007,0.2775 z m -2.0475,2.295 0.0225,0.21 c 0.7725,-0.045 1.32,-0.255 1.83,-0.7725 0.5475,-0.5475 0.8025,-1.26 0.8025,-1.9875 0,-1.575 -0.9075,-1.89 -1.485,-1.89 -1.095,0 -1.41,0.8775 -1.41,1.4175 0,0.36 0.2025,1.335 1.3725,1.335 0.3,0 0.72,-0.165 0.9,-0.39 -0.0825,0.6375 -0.3525,1.17 -0.7125,1.5225 -0.3825,0.3675 -0.8025,0.5025 -1.32,0.555 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3445" />
+    <path
+       d="m 737.05606,317.61867 0,-0.5475 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.9075 c 0.3525,-0.36 0.7725,-0.585 1.035,-0.585 0.285,0 0.495,0.165 0.495,0.6675 l 0,0.825 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.7575 c 0,-0.105 0,-0.195 -0.008,-0.285 0.36,-0.3975 0.66,-0.45 0.9525,-0.45 0.405,0 0.6,0.165 0.6,0.6675 l 0,0.825 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.75 c 0,-0.6675 -0.12,-1.1925 -0.93,-1.1925 -0.405,0 -0.84,0.1425 -1.2675,0.5925 -0.0675,-0.36 -0.375,-0.5925 -0.795,-0.5925 -0.465,0 -0.9075,0.3 -1.26,0.675 l -0.0225,-0.0225 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3447" />
+    <path
+       d="m 743.10587,317.61867 0,-0.5475 c 0,-0.0525 -0.015,-0.075 -0.045,-0.075 -0.1725,0.0375 -0.4425,0.045 -0.6075,0.0225 l -0.015,0.0225 c 0.0525,0.33 0.0675,0.8925 0.0675,1.455 l 0,0.4125 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.9075 c 0.3525,-0.36 0.7725,-0.585 1.035,-0.585 0.285,0 0.495,0.165 0.495,0.6675 l 0,0.825 c 0,0.5625 -0.007,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.7575 c 0,-0.105 0,-0.195 -0.007,-0.285 0.36,-0.3975 0.66,-0.45 0.9525,-0.45 0.405,0 0.6,0.165 0.6,0.6675 l 0,0.825 c 0,0.5625 -0.008,0.945 -0.0675,1.35 l 0.015,0.0225 c 0.09,-0.015 0.2625,-0.0225 0.3525,-0.0225 0.09,0 0.2625,0.007 0.3525,0.0225 l 0.015,-0.0225 c -0.06,-0.4275 -0.0675,-0.78 -0.0675,-1.35 l 0,-0.75 c 0,-0.6675 -0.12,-1.1925 -0.93,-1.1925 -0.405,0 -0.84,0.1425 -1.2675,0.5925 -0.0675,-0.36 -0.375,-0.5925 -0.795,-0.5925 -0.465,0 -0.9075,0.3 -1.26,0.675 l -0.0225,-0.0225 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+       id="path3449" />
+  </g>
 </svg>

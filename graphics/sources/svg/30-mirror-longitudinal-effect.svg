@@ -13,7 +13,7 @@
    height="600px"
    id="svg4528"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="30-mirror-longitudinal-effect.svg">
   <defs
      id="defs4530">
@@ -38,19 +38,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="247.64261"
-     inkscape:cy="292.22681"
+     inkscape:zoom="0.5"
+     inkscape:cx="-20.583278"
+     inkscape:cy="236.36361"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="false"
-     showguides="false"
+     showguides="true"
      inkscape:snap-midpoints="true"
      inkscape:window-width="1320"
      inkscape:window-height="644"
      inkscape:window-x="0"
      inkscape:window-y="59"
-     inkscape:window-maximized="0">
+     inkscape:window-maximized="0"
+     inkscape:guide-bbox="true">
     <inkscape:grid
        type="xygrid"
        id="grid5274" />
@@ -91,64 +92,45 @@
        id="path5280-5"
        style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.5,5;stroke-dashoffset:0"
        d="M 297.76617,110.90903 512.45625,571.31339 M 265.53981,406.19442 544.68261,276.028 M 372.88485,636.3966 158.19477,175.99225 437.33757,45.82582 652.02765,506.23017 z" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="321.26257"
-       y="331.86026"
-       id="text5957"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5959"
-         x="321.26257"
-         y="331.86026"
-         style="font-size:28px;-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">θ</tspan></text>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="text5957">
+      <path
+         d="m 331.62257,321.64026 -6.944,0 c 0.028,-3.612 1.036,-8.232 3.388,-8.232 2.072,0 3.528,3.864 3.556,8.232 z m 0,1.232 c -0.028,4.06 -1.26,8.148 -3.416,8.148 -2.156,0 -3.5,-4.116 -3.528,-8.148 l 6.944,0 z m -9.268,-0.644 c 0,7.616 3.304,9.912 5.712,9.912 2.24,0 5.88,-2.24 5.88,-9.912 0,-7.42 -3.472,-9.912 -5.712,-9.912 -2.744,0 -5.88,3.192 -5.88,9.912 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+         id="path3368" />
+    </g>
     <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#ff7f0e;stroke-width:1.85399341999999989;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path5969"
-       sodipodi:cx="382"
-       sodipodi:cy="318"
-       sodipodi:rx="52.488239"
-       sodipodi:ry="52.488239"
-       d="M 359.83422,270.42171 A 52.488239,52.488239 0 0 1 382,265.51176 L 382,318 z"
-       sodipodi:start="4.2764078"
-       sodipodi:end="4.712389"
-       transform="matrix(0,-1.3484406,1.3484406,0,-23.692914,856.2155)" />
+       transform="matrix(0,-1.3484406,1.3484406,0,-23.692914,856.2155)"
+       style="fill:none;stroke:#ff7f0e;stroke-width:1.85399342;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 359.83422,270.42171 A 52.488239,52.488239 0 0 1 382,265.51176 L 382,318 Z"
+       id="path5969" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#StopM);marker-end:url(#StopM)"
        d="m 251.07996,36.61121 308.0625,0"
        id="path5971"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="396.72351"
-       y="23.040897"
-       id="text6913"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan6915"
-         x="396.72351"
-         y="23.040897"
-         style="font-size:28px;-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">d</tspan></text>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="text6913">
+      <path
+         d="m 406.83151,19.876897 c -1.036,1.316 -2.324,1.988 -3.444,1.988 -1.512,0 -2.8,-1.512 -2.8,-5.012 0,-4.2 2.212,-4.984 3.584,-4.984 1.316,0 1.988,0.56 2.66,1.624 l 0,6.384 z m 0,1.54 0.056,0 0.14,1.624 c 0,0.056 0.084,0.084 0.252,0.084 0.364,-0.028 0.56,-0.084 0.952,-0.084 0.364,0 0.896,0.028 1.26,0.084 l 0.056,-0.084 c -0.224,-1.204 -0.476,-3.276 -0.476,-5.376 l 0,-8.6239996 c 0,-2.072 0.112,-3.528 0.252,-5.264 0,-0.196 -0.084,-0.28 -0.252,-0.28 -0.728,0.28 -1.316,0.476 -2.436,0.56 l -0.056,0.084 c 0.196,1.204 0.252,3.276 0.252,5.404 l 0,1.8199996 c -0.644,-0.364 -1.792,-0.616 -2.352,-0.616 -3.668,0 -6.328,2.52 -6.328,6.328 0,3.444 2.044,6.244 5.068,6.244 1.344,0 2.604,-0.588 3.612,-1.904 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+         id="path3364" />
+    </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:2.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#StopM);marker-end:url(#StopM)"
        d="m 141.11121,249.06768 0,88.04353"
        id="path5971-2"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="92.017578"
-       y="297.81683"
-       id="text6913-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan6915-5"
-         x="92.017578"
-         y="297.81683"
-         style="font-size:28px;-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">y</tspan></text>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="text6913-7">
+      <path
+         d="m 92.801578,285.72083 c 1.092,2.492 4.424,9.716 5.432,12.376 -0.896,2.1 -2.044,4.256 -3.304,6.356 0.28,-0.084 0.7,-0.14 0.98,-0.14 0.28,0 1.092,0.056 1.372,0.14 1.064,-3.5 7.196002,-16.856 8.120002,-18.732 -0.28,0.084 -0.924,0.084 -1.204,0.084 -0.28,0 -0.812,0 -1.092,-0.084 -1.008,3.164 -2.324,6.748 -3.696002,9.66 l -0.056,0 c -1.372,-3.332 -2.688,-6.44 -3.724,-9.66 -0.364,0.084 -0.98,0.084 -1.372,0.084 -0.364,0 -1.064,0 -1.456,-0.084 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+         id="path3361" />
+    </g>
     <path
        inkscape:connector-curvature="0"
        id="path5280-3"
@@ -159,20 +141,18 @@
        d="m 207.11121,341.11121 0,36.0369"
        id="path5971-2-4"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="158.00031"
-       y="362.68469"
-       id="text6913-7-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan6915-5-8"
-         x="158.00031"
-         y="362.68469"
-         style="font-size:28px;-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">y<tspan
-   style="font-size:65%;baseline-shift:sub;-inkscape-font-specification:Linux Biolinum O;font-family:Linux Biolinum O;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
-   id="tspan3025">d</tspan></tspan></text>
+    <g
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="text6913-7-0">
+      <path
+         d="m 158.78431,350.58869 c 1.092,2.492 4.424,9.716 5.432,12.376 -0.896,2.1 -2.044,4.256 -3.304,6.356 0.28,-0.084 0.7,-0.14 0.98,-0.14 0.28,0 1.092,0.056 1.372,0.14 1.064,-3.5 7.196,-16.856 8.12,-18.732 -0.28,0.084 -0.924,0.084 -1.204,0.084 -0.28,0 -0.812,0 -1.092,-0.084 -1.008,3.164 -2.324,6.748 -3.696,9.66 l -0.056,0 c -1.372,-3.332 -2.688,-6.44 -3.724,-9.66 -0.364,0.084 -0.98,0.084 -1.372,0.084 -0.364,0 -1.064,0 -1.456,-0.084 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O'"
+         id="path3356" />
+      <path
+         d="m 178.73457,366.22809 c -0.6734,0.8554 -1.5106,1.2922 -2.2386,1.2922 -0.9828,0 -1.82,-0.9828 -1.82,-3.2578 0,-2.73 1.4378,-3.2396 2.3296,-3.2396 0.8554,0 1.2922,0.364 1.729,1.0556 l 0,4.1496 z m 0,1.001 0.0364,0 0.091,1.0556 c 0,0.0364 0.0546,0.0546 0.1638,0.0546 0.2366,-0.0182 0.364,-0.0546 0.6188,-0.0546 0.2366,0 0.5824,0.0182 0.819,0.0546 l 0.0364,-0.0546 c -0.1456,-0.7826 -0.3094,-2.1294 -0.3094,-3.4944 l 0,-5.6056 c 0,-1.3468 0.0728,-2.2932 0.1638,-3.4216 0,-0.1274 -0.0546,-0.182 -0.1638,-0.182 -0.4732,0.182 -0.8554,0.3094 -1.5834,0.364 l -0.0364,0.0546 c 0.1274,0.7826 0.1638,2.1294 0.1638,3.5126 l 0,1.183 c -0.4186,-0.2366 -1.1648,-0.4004 -1.5288,-0.4004 -2.3842,0 -4.1132,1.638 -4.1132,4.1132 0,2.2386 1.3286,4.0586 3.2942,4.0586 0.8736,0 1.6926,-0.3822 2.3478,-1.2376 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64.99999762%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O';baseline-shift:sub"
+         id="path3358" />
+    </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 341.53257,328.36027 c 11.69259,9.65667 12.75325,23.0917 12.75325,23.0917"
